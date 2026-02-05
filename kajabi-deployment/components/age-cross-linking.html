@@ -1,0 +1,246 @@
+<!-- ============================================
+     AGE PAGE CROSS-LINKING COMPONENT
+     Shows links to other age-specific pages
+     Demonstrates comprehensiveness of Snooze
+     ============================================ -->
+
+<section class="snooze-age-crosslinks">
+  <div class="snooze-container">
+    <h2 class="snooze-section-title">All Age Guides Available</h2>
+    <p class="snooze-section-intro">Snooze covers every stage from newborn through toddler. All guides are included in your membership.</p>
+    
+    <div class="snooze-age-grid">
+      <!-- Newborn (0-3 Months) -->
+      <div class="snooze-age-card" data-age="newborn">
+        <div class="snooze-age-badge">0-3 Months</div>
+        <h3>Newborn Sleep Help</h3>
+        <p>Foundation, safe sleep, and establishing routines for your newborn.</p>
+        <a href="https://joinsnooze.com/newborn-baby-sleep-help" class="snooze-age-link">
+          View Newborn Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <!-- 3-4 Month -->
+      <div class="snooze-age-card" data-age="3-4month">
+        <div class="snooze-age-badge">3-4 Months</div>
+        <h3>3-4 Month Sleep Help</h3>
+        <p>Fourth-trimester sleep, developmental changes, and nap consolidation.</p>
+        <a href="https://joinsnooze.com/3-4-month-baby-sleep-help" class="snooze-age-link">
+          View 3-4 Month Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <!-- 5-12 Month -->
+      <div class="snooze-age-card" data-age="5-12month">
+        <div class="snooze-age-badge">5-12 Months</div>
+        <h3>5-12 Month Sleep Help</h3>
+        <p>Sleep training, night weaning, and schedule optimization.</p>
+        <a href="https://joinsnooze.com/5-12-month-baby-sleep-help" class="snooze-age-link">
+          View 5-12 Month Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <!-- Toddler (12+ Months) -->
+      <div class="snooze-age-card" data-age="toddler">
+        <div class="snooze-age-badge">12+ Months</div>
+        <h3>Toddler Sleep Help</h3>
+        <p>Nap transitions, bedtime battles, and regressions.</p>
+        <a href="https://joinsnooze.com/toddler-sleep-help" class="snooze-age-link">
+          View Toddler Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Membership CTA -->
+    <div class="snooze-age-cta">
+      <p class="snooze-age-cta-text">All guides included in Snooze membership</p>
+      <a href="https://joinsnooze.com/offers/6iRarwak/checkout" class="snooze-btn-primary">
+        Join Snooze to Access All Guides
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Age Cross-Linking Styles */
+.snooze-age-crosslinks {
+  padding: 4rem 2rem;
+  background-color: #faf9f7;
+}
+
+.snooze-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.snooze-section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.snooze-section-intro {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.snooze-age-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.snooze-age-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.snooze-age-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.snooze-age-badge {
+  display: inline-block;
+  background: #f43357;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.snooze-age-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.snooze-age-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.snooze-age-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f43357;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: gap 0.2s;
+}
+
+.snooze-age-link:hover {
+  gap: 0.75rem;
+  color: #d12a4a;
+}
+
+.snooze-age-link i {
+  font-size: 0.85rem;
+}
+
+.snooze-age-cta {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e5e5e5;
+}
+
+.snooze-age-cta-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.snooze-btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #f43357;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.snooze-btn-primary:hover {
+  background-color: #d12a4a;
+  color: white;
+}
+
+/* Hide current age card (optional - can be controlled via data attribute) */
+.snooze-age-card[data-current-age] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .snooze-age-crosslinks {
+    padding: 3rem 1.5rem;
+  }
+  
+  .snooze-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .snooze-age-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .snooze-age-card {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+<script>
+// Optionally hide the current age card
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get current page age from URL or data attribute
+    var currentPath = window.location.pathname;
+    var currentAge = '';
+    
+    if (currentPath.indexOf('newborn') !== -1) {
+      currentAge = 'newborn';
+    } else if (currentPath.indexOf('3-4-month') !== -1) {
+      currentAge = '3-4month';
+    } else if (currentPath.indexOf('5-12-month') !== -1) {
+      currentAge = '5-12month';
+    } else if (currentPath.indexOf('toddler') !== -1) {
+      currentAge = 'toddler';
+    }
+    
+    // Hide current age card if found
+    if (currentAge) {
+      var currentCard = document.querySelector('[data-age="' + currentAge + '"]');
+      if (currentCard) {
+        currentCard.setAttribute('data-current-age', 'true');
+      }
+    }
+  });
+})();
+</script>
+

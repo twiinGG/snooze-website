@@ -1,0 +1,1461 @@
+{
+  "analysis_date": "2025-12-04T08:42:33.796441",
+  "results": {
+    "newborn": {
+      "age_range": "0-3 months",
+      "qa_count": 265,
+      "comment_count": 0,
+      "video_count": 100,
+      "questions": [
+        {
+          "text": "Should I transition to arms\u2011out sleep in a cot gradually or switch all at once?",
+          "source": "qa",
+          "problem_category": "Sleep environment transition / arms-out",
+          "priority": "high"
+        },
+        {
+          "text": "My baby woke 4\u20136 times a night from about 3.5 to 10 months until I started the sleep techniques.",
+          "source": "qa",
+          "problem_category": "Breastfeeding-related night waking / sleep training",
+          "priority": "high"
+        },
+        {
+          "text": "When is it appropriate to start weaning night feeds for a 7\u201312 month-old?",
+          "source": "qa",
+          "problem_category": "Night Feeds Weaning",
+          "priority": "high"
+        },
+        {
+          "text": "Does daytime sleep lasting longer than 2 hours matter after immunisations?",
+          "source": "qa",
+          "problem_category": "Health-related sleep disruption",
+          "priority": "high"
+        },
+        {
+          "text": "What are quick strategies to cope with caregiver sleep deprivation in the newborn period?",
+          "source": "qa",
+          "problem_category": "caregiver_sleep_deprivation",
+          "priority": "high"
+        },
+        {
+          "text": "My baby had a regression and started waking more at night; how can I restore consistent sleep?",
+          "source": "qa",
+          "problem_category": "Regressions and night-time waking",
+          "priority": "high"
+        },
+        {
+          "text": "When is it appropriate to start a structured sleep schedule for a newborn and to discuss melatonin use?",
+          "source": "qa",
+          "problem_category": "Circadian Rhythm / Melatonin Considerations",
+          "priority": "high"
+        },
+        {
+          "text": "What strategies are most helpful for a baby to sleep through the night?",
+          "source": "qa",
+          "problem_category": "Night sleep strategy",
+          "priority": "high"
+        },
+        {
+          "text": "What are the key sleep guidelines, including wake windows and total daily sleep, for my baby under 3 months?",
+          "source": "qa",
+          "problem_category": "Infant sleep guidance (0-3 months)",
+          "priority": "high"
+        },
+        {
+          "text": "My baby slept through the night; how do I maintain this pattern?",
+          "source": "qa",
+          "problem_category": "Maintaining sleep through the night",
+          "priority": "high"
+        },
+        {
+          "text": "At 10 months old, with two naps, my baby is waking around 4:30\u20135:00 am. Should the 9:00 am nap be later, and how should I time naps and bedtime with a ~3.5 hour wake window?",
+          "source": "qa",
+          "problem_category": "Early waking / nap timing",
+          "priority": "high"
+        },
+        {
+          "text": "Is the 9-12 month sleep schedule included in the 6-7 month pack?",
+          "source": "qa",
+          "problem_category": "Guide contents",
+          "priority": "high"
+        },
+        {
+          "text": "Baby cries when placed in the cot for sleep; what can I do to help settle?",
+          "source": "qa",
+          "problem_category": "crib_transition_and_safe_sleep_environment",
+          "priority": "high"
+        },
+        {
+          "text": "Why might milk production seem to be lower on the very first postpartum days?",
+          "source": "qa",
+          "problem_category": "Milk supply in early postpartum",
+          "priority": "high"
+        },
+        {
+          "text": "Is it normal for a newborn to feed frequently and have several stools in the early days?",
+          "source": "qa",
+          "problem_category": "Newborn feeding and digestion",
+          "priority": "high"
+        },
+        {
+          "text": "At 10.5 months with a 10-11am nap and a 2-3:30pm nap and a 7:30pm bedtime, should I switch to the 8-12 month routine?",
+          "source": "qa",
+          "problem_category": "Nap/bedtime schedule adjustment",
+          "priority": "high"
+        },
+        {
+          "text": "My 12-month-old suddenly won't nap and is resisting sleep; rocking is exhausting and there are multiple night wakings.",
+          "source": "qa",
+          "problem_category": "12-month sleep regression / transition to two naps",
+          "priority": "high"
+        },
+        {
+          "text": "How can I help my baby fall asleep on their own?",
+          "source": "qa",
+          "problem_category": "Self-soothing / independent sleep",
+          "priority": "high"
+        },
+        {
+          "text": "We had a good night with no wakeups; how can we keep this going?",
+          "source": "qa",
+          "problem_category": "sleep_routine_consistency",
+          "priority": "high"
+        },
+        {
+          "text": "My infant seems exhausted at bedtime.",
+          "source": "qa",
+          "problem_category": "Bedtime routine and soothing",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My 3-month-old sleeps through the night, but I rock to sleep for naps and feed to sleep at bedtime. I\u2019m worried about the 4-month regression and want to know what access I have to sleep coaching.",
+          "source": "qa",
+          "problem_category": "Infant sleep training planning and coaching access",
+          "priority": "high"
+        },
+        {
+          "text": "My infant won\u2019t settle to sleep unless I\u2019m holding them.",
+          "source": "qa",
+          "problem_category": "Sleep disruption / self-soothing development (infant)",
+          "priority": "high"
+        },
+        {
+          "text": "After a day out, my baby seems hungrier and more unsettled at bedtime. How can I support better sleep in this scenario?",
+          "source": "qa",
+          "problem_category": "Post-outing sleep disruption",
+          "priority": "high"
+        },
+        {
+          "text": "My infant is overtired when I'm juggling a toddler.",
+          "source": "qa",
+          "problem_category": "Overtiredness due to toddler in household",
+          "priority": "high"
+        },
+        {
+          "text": "How can I, as an exhausted parent, improve my own sleep while still supporting my child's sleep?",
+          "source": "qa",
+          "problem_category": "Parental sleep strategies",
+          "priority": "high"
+        },
+        {
+          "text": "My baby is fussy and unsettled in the evenings; what sleep strategies can help?",
+          "source": "qa",
+          "problem_category": "Infant sleep routines and soothing",
+          "priority": "high"
+        },
+        {
+          "text": "Q: Does your program mainly use crying it out, and can it be adjusted if I\u2019m uncomfortable with tears?",
+          "source": "qa",
+          "problem_category": "Crying tolerance / sleep technique options",
+          "priority": "high"
+        },
+        {
+          "text": "Q: Is it okay to continue nursing to sleep and co-sleep, or should I make changes to the sleep arrangement?",
+          "source": "qa",
+          "problem_category": "Night feeding & cosleeping choices",
+          "priority": "high"
+        },
+        {
+          "text": "Q: After weaned the midnight bottle and switched to water, my baby woke at night and I settled them in the cot with back rubs before leaving the room. Is there a cot-based approach I should follow?",
+          "source": "qa",
+          "problem_category": "Nighttime waking; sleep training; night-time settling in cot",
+          "priority": "high"
+        },
+        {
+          "text": "What is a good sleep schedule for a 12-month-old, and how much daytime sleep is typical?",
+          "source": "qa",
+          "problem_category": "Toddler sleep schedule and daytime sleep duration",
+          "priority": "high"
+        },
+        {
+          "text": "Should I wait until a baby is truly 3 months for sleep coaching, or does it matter?",
+          "source": "qa",
+          "problem_category": "Timing of sleep coaching readiness",
+          "priority": "high"
+        },
+        {
+          "text": "Should I keep a strict routine and try controlled crying at night?",
+          "source": "qa",
+          "problem_category": "Nighttime settling / sleep training methods",
+          "priority": "high"
+        },
+        {
+          "text": "My 11-month-old has frequent night waking and early starts; I want a gentle sleep plan.",
+          "source": "qa",
+          "problem_category": "Sleep training foundations / gentle sleep plan",
+          "priority": "high"
+        },
+        {
+          "text": "Do you work with complex sleep cases where feeding issues, reflux and weight gain affect sleep in a 9.5\u2011month\u2011old?",
+          "source": "qa",
+          "problem_category": "Complex medical/feeding-related sleep issues",
+          "priority": "high"
+        },
+        {
+          "text": "My baby relies on contact naps; how can I transition daytime naps to the bassinet without risking overtiredness?",
+          "source": "qa",
+          "problem_category": "Nap transitions / Reducing contact naps",
+          "priority": "high"
+        },
+        {
+          "text": "How can I adjust the pre-bed routine and keep my baby in the cot until morning?",
+          "source": "qa",
+          "problem_category": "Bedtime routine adjustments / staying in cot",
+          "priority": "high"
+        },
+        {
+          "text": "How should I respond to sleep disruption after a developmental day with extra movement?",
+          "source": "qa",
+          "problem_category": "developmental_disruption_and_resettling",
+          "priority": "high"
+        },
+        {
+          "text": "My baby settles faster with an earlier bedtime, around 6:15pm.",
+          "source": "qa",
+          "problem_category": "Bedtime timing and settling",
+          "priority": "high"
+        },
+        {
+          "text": "My 5mo wakes for 1\u20132 hours in the early morning despite a 7pm bedtime and a 10pm dream feed.",
+          "source": "qa",
+          "problem_category": "Overnight waking",
+          "priority": "high"
+        },
+        {
+          "text": "We are waking 8 times a night and feel exhausted; is a 60-minute sleep consult worth it?",
+          "source": "qa",
+          "problem_category": "Consultation for persistent night wakings",
+          "priority": "high"
+        },
+        {
+          "text": "Recently, after immunizations, my baby is settling at bedtime but struggles to link sleep cycles for the first nap. The room isn\u2019t very dark yet. What can help?",
+          "source": "qa",
+          "problem_category": "Difficulty linking sleep cycles / environmental factors",
+          "priority": "high"
+        },
+        {
+          "text": "Do you have sleep guides for 12 months and older?",
+          "source": "qa",
+          "problem_category": "Sleep guides for older infants; self-settling",
+          "priority": "high"
+        },
+        {
+          "text": "My breastfeeding baby used to wake 4-6 times a night; how can sleep techniques reduce night wakes?",
+          "source": "qa",
+          "problem_category": "Night wakings & routines",
+          "priority": "high"
+        },
+        {
+          "text": "My 0-3 month old slept basically all day; could this affect tonight's sleep or day-night balance?",
+          "source": "qa",
+          "problem_category": "Day-night sleep balance / daytime sleep affecting night sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My infant seems overtired and cranky at bedtime.",
+          "source": "qa",
+          "problem_category": "Nap adequacy / overtiredness",
+          "priority": "high"
+        },
+        {
+          "text": "My 6-month-old won't nap and cries in the cot.",
+          "source": "qa",
+          "problem_category": "Nap timing/settling",
+          "priority": "high"
+        },
+        {
+          "text": "My baby only naps when riding in a car or stroller and won't nap at home.",
+          "source": "qa",
+          "problem_category": "Nap transition / daytime sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My newborn seems to feed a lot and has gassy episodes\u2014will this disrupt sleep?",
+          "source": "qa",
+          "problem_category": "Feeding-related sleep disruption (newborn)",
+          "priority": "high"
+        },
+        {
+          "text": "I'm considering blackout curtains to improve my baby's sleep.",
+          "source": "qa",
+          "problem_category": "Sleep environment / light exposure",
+          "priority": "high"
+        },
+        {
+          "text": "How did your baby sleep last night, and did reflux affect your sleep?",
+          "source": "qa",
+          "problem_category": "Infant sleep and reflux",
+          "priority": "high"
+        }
+      ],
+      "top_problem_categories": {
+        "safe sleep environment": 3,
+        "sleep environment / light exposure": 2,
+        "sleep training resources": 2,
+        "nap resistance / nap wall": 2,
+        "light exposure / bedroom environment": 2,
+        "illness-related sleep disruption": 2,
+        "caregiver sleep / daytime napping": 2,
+        "caregiver sleep deprivation": 2,
+        "sleep environment transition / arms-out": 1,
+        "breastfeeding-related night waking / sleep training": 1
+      },
+      "top_video_topics": {
+        "sleep training": 14,
+        "sleep regressions": 11,
+        "nap management": 8,
+        "age-specific guidance": 6,
+        "stitch/response content": 5,
+        "parent readiness & mindset": 1,
+        "early rising": 1,
+        "feeding & sleep": 1,
+        "sleep schedules": 1
+      },
+      "high_engagement_videos": 100,
+      "high_view_videos": 50,
+      "avg_engagement_rate": 2.4112689528090043,
+      "avg_views": 29304.43
+    },
+    "3-4-month": {
+      "age_range": "3-4 months",
+      "qa_count": 87,
+      "comment_count": 0,
+      "video_count": 100,
+      "questions": [
+        {
+          "text": "My 4-month-old won\u2019t finish bottles and still wakes at night; how can I stop night wakings?",
+          "source": "qa",
+          "problem_category": "Night wakings related to feeding",
+          "priority": "high"
+        },
+        {
+          "text": "What are quick strategies to cope with caregiver sleep deprivation in the newborn period?",
+          "source": "qa",
+          "problem_category": "caregiver_sleep_deprivation",
+          "priority": "high"
+        },
+        {
+          "text": "When is it appropriate to start a structured sleep schedule for a newborn and to discuss melatonin use?",
+          "source": "qa",
+          "problem_category": "Circadian Rhythm / Melatonin Considerations",
+          "priority": "high"
+        },
+        {
+          "text": "Do I need a pitch-dark room for day naps, or is some light okay?",
+          "source": "qa",
+          "problem_category": "environmental_sleep_factors",
+          "priority": "high"
+        },
+        {
+          "text": "What are the key sleep guidelines, including wake windows and total daily sleep, for my baby under 3 months?",
+          "source": "qa",
+          "problem_category": "Infant sleep guidance (0-3 months)",
+          "priority": "high"
+        },
+        {
+          "text": "What should I do when a daytime nap is very short, like 25 minutes?",
+          "source": "qa",
+          "problem_category": "Sleep troubleshooting for short naps",
+          "priority": "high"
+        },
+        {
+          "text": "I'm looking for sleep help for a 14\u2011month\u2011old and want to know how to book a sleep consult.",
+          "source": "qa",
+          "problem_category": "Sleep consultation process",
+          "priority": "high"
+        },
+        {
+          "text": "Undertired causing split nights?",
+          "source": "qa",
+          "problem_category": "Undertired leading to split nights",
+          "priority": "high"
+        },
+        {
+          "text": "Q: If a scheduled nap is missed or moved due to activities, should I wake the baby to stay on schedule or adjust the next nap?",
+          "source": "qa",
+          "problem_category": "Nap scheduling",
+          "priority": "high"
+        },
+        {
+          "text": "My baby never naps in the car.",
+          "source": "qa",
+          "problem_category": "nap_routines_car_naps",
+          "priority": "high"
+        },
+        {
+          "text": "We had a good night with no wakeups; how can we keep this going?",
+          "source": "qa",
+          "problem_category": "sleep_routine_consistency",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My 3-month-old sleeps through the night, but I rock to sleep for naps and feed to sleep at bedtime. I\u2019m worried about the 4-month regression and want to know what access I have to sleep coaching.",
+          "source": "qa",
+          "problem_category": "Infant sleep training planning and coaching access",
+          "priority": "high"
+        },
+        {
+          "text": "How can I keep a consistent 6:00 am wake-up?",
+          "source": "qa",
+          "problem_category": "wake_time_consistency",
+          "priority": "high"
+        },
+        {
+          "text": "My infant won\u2019t settle to sleep unless I\u2019m holding them.",
+          "source": "qa",
+          "problem_category": "Sleep disruption / self-soothing development (infant)",
+          "priority": "high"
+        },
+        {
+          "text": "I'm looking for a quick check-in for my 1-year-old, but the earliest slot is far away; is there a cancellation list or alternative?",
+          "source": "qa",
+          "problem_category": "Consultation availability",
+          "priority": "high"
+        },
+        {
+          "text": "How should sleep training work with adjusted age for twins?",
+          "source": "qa",
+          "problem_category": "Sleep training timing (adjusted age for twins)",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler wakes up very early and naps poorly; what would a typical schedule look like?",
+          "source": "qa",
+          "problem_category": "Early waking / nap issues",
+          "priority": "high"
+        },
+        {
+          "text": "Should I wait until a baby is truly 3 months for sleep coaching, or does it matter?",
+          "source": "qa",
+          "problem_category": "Timing of sleep coaching readiness",
+          "priority": "high"
+        },
+        {
+          "text": "How should I handle the 4-month regression when sleep has been good?",
+          "source": "qa",
+          "problem_category": "Regression / sleep stability",
+          "priority": "high"
+        },
+        {
+          "text": "Is the 4-month regression real if a baby has been sleeping 10-12 hours at night and naps are going well?",
+          "source": "qa",
+          "problem_category": "regression; sleep schedule",
+          "priority": "high"
+        },
+        {
+          "text": "How do I manage nap transitions and avoid a very late bedtime?",
+          "source": "qa",
+          "problem_category": "Nap transition and bedtime scheduling",
+          "priority": "high"
+        },
+        {
+          "text": "When is a good time to start sleep training around 4 months?",
+          "source": "qa",
+          "problem_category": "Sleep training timing",
+          "priority": "high"
+        },
+        {
+          "text": "My 0-3 month old slept basically all day; could this affect tonight's sleep or day-night balance?",
+          "source": "qa",
+          "problem_category": "Day-night sleep balance / daytime sleep affecting night sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My newborn seems to feed a lot and has gassy episodes\u2014will this disrupt sleep?",
+          "source": "qa",
+          "problem_category": "Feeding-related sleep disruption (newborn)",
+          "priority": "high"
+        },
+        {
+          "text": "My 4mo struggles to settle at bedtime",
+          "source": "qa",
+          "problem_category": "Bedtime Settling",
+          "priority": "high"
+        },
+        {
+          "text": "Q: I'm worried I'm not feeding long enough and I hope this will create longer night stretches\u2014is that realistic in early infancy?",
+          "source": "qa",
+          "problem_category": "Nighttime sleep length and feeding schedules",
+          "priority": "high"
+        },
+        {
+          "text": "Q: I'm considering starting a dream feed to help me get to bed earlier\u2014should I try it around 6\u20138 weeks, and what should I expect?",
+          "source": "qa",
+          "problem_category": "Sleep timing - Dream feed introduction",
+          "priority": "high"
+        },
+        {
+          "text": "Is it appropriate to start sleep training at 3 months?",
+          "source": "qa",
+          "problem_category": "Age-appropriate sleep training",
+          "priority": "high"
+        },
+        {
+          "text": "Should I choose a 2-week sleep coaching package or a single session for a 4 months old?",
+          "source": "qa",
+          "problem_category": "Sleep coaching package options",
+          "priority": "high"
+        },
+        {
+          "text": "My 4-month-old isn\u2019t finishing bottles and wakes at night\u2014how can I address this?",
+          "source": "qa",
+          "problem_category": "Night waking and feeding; bottle feeding concerns",
+          "priority": "high"
+        },
+        {
+          "text": "My 13-month-old wakes at night for a bottle; how should I handle night waking?",
+          "source": "qa",
+          "problem_category": "Night wakings / feeding",
+          "priority": "high"
+        },
+        {
+          "text": "I can\u2019t book a full one-on-one session right now. What are my options for getting guidance soon?",
+          "source": "qa",
+          "problem_category": "Access to consultation / flexible options",
+          "priority": "high"
+        },
+        {
+          "text": "My child settles easily at night but struggles to wind down in the late afternoon. Any tips for improving late-day sleep?",
+          "source": "qa",
+          "problem_category": "Late-afternoon wind-down",
+          "priority": "high"
+        },
+        {
+          "text": "\"Should I book a 2-week sleep support package for a 4-month-old, or is there another option?\"",
+          "source": "qa",
+          "problem_category": "Consultation Options",
+          "priority": "high"
+        },
+        {
+          "text": "Are you a sleep consultant in Australia and can you help with babies around 3 months old?",
+          "source": "qa",
+          "problem_category": "Infant sleep readiness at 3 months",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler who learned to self-settle is suddenly resisting bedtime with night waking; will the original sleep training work again?",
+          "source": "qa",
+          "problem_category": "Toddler sleep regression / return to sleep training",
+          "priority": "high"
+        },
+        {
+          "text": "My 16-month-old twins are fighting naps and waking earlier; what could be going on?",
+          "source": "qa",
+          "problem_category": "Nap resistance / nap wall",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler still wakes at night after sleep training and reflux issues\u2014what should I do?",
+          "source": "qa",
+          "problem_category": "Overnight wakings / Nighttime feeding",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler slept from 12:30 to 1:30 today and was in bed by 7:00 without a fuss; is that a sign the routine is working?",
+          "source": "qa",
+          "problem_category": "Sleep routine validation",
+          "priority": "high"
+        },
+        {
+          "text": "My child's sleep has regressed significantly after surgery, and I'm hesitant to re-sleep train at 14 months, wondering if methods used at 6 months are still appropriate. Do you have resources for re-sleep training?",
+          "source": "qa",
+          "problem_category": "Sleep regression, re-sleep training, post-surgery sleep challenges",
+          "priority": "high"
+        },
+        {
+          "text": "Can a sleep consultant help with a 3-month-old, and is it okay to work with an international client from Australia?",
+          "source": "qa",
+          "problem_category": "Early infancy sleep coaching",
+          "priority": "high"
+        },
+        {
+          "text": "Is it okay to start sleep training around 3 months (12 weeks), and could starting earlier help with a potential 4-month regression?",
+          "source": "qa",
+          "problem_category": "Early sleep training eligibility / readiness",
+          "priority": "high"
+        },
+        {
+          "text": "Where can I find the 4-month sleep regression survival guide?",
+          "source": "qa",
+          "problem_category": "Sleep resources / guides",
+          "priority": "high"
+        },
+        {
+          "text": "I\u2019ve been following a program since around 3 months and still struggle with night wakes. Is there a better schedule?",
+          "source": "qa",
+          "problem_category": "Schedule adjustment / night wakings",
+          "priority": "high"
+        },
+        {
+          "text": "My nearly 14-month-old still wakes at night after sleep school; what now?",
+          "source": "qa",
+          "problem_category": "Overnight wakeups / plan",
+          "priority": "high"
+        },
+        {
+          "text": "Is a sleep guide for 5-12 months suitable for a baby just over 12 months?",
+          "source": "qa",
+          "problem_category": "Age-appropriate sleep schedules / nap transition",
+          "priority": "high"
+        },
+        {
+          "text": "Is it okay to start a pick up put down sleep training at 3 months or should I wait until 4 months?",
+          "source": "qa",
+          "problem_category": "Age readiness for sleep training",
+          "priority": "high"
+        },
+        {
+          "text": "For a 3-month-old baby, what can cause false starts or waking after 30\u201360 minutes at night?",
+          "source": "qa",
+          "problem_category": "False Starts & Night Wakings (Infant)",
+          "priority": "high"
+        },
+        {
+          "text": "My 4-month-old won\u2019t finish a bottle (150 ml offered, 100 ml taken) and I\u2019m worried about night waking.",
+          "source": "qa",
+          "problem_category": "Night waking / feeding / bottle intake",
+          "priority": "high"
+        },
+        {
+          "text": "Is a 2-week sleep support package available, and how do I book it?",
+          "source": "qa",
+          "problem_category": "Sleep coaching package options",
+          "priority": "high"
+        }
+      ],
+      "top_problem_categories": {
+        "sleep coaching package options": 2,
+        "nap resistance / nap wall": 2,
+        "night wakings related to feeding": 1,
+        "caregiver_sleep_deprivation": 1,
+        "circadian rhythm / melatonin considerations": 1,
+        "environmental_sleep_factors": 1,
+        "infant sleep guidance (0-3 months)": 1,
+        "sleep troubleshooting for short naps": 1,
+        "sleep consultation process": 1,
+        "undertired leading to split nights": 1
+      },
+      "top_video_topics": {
+        "sleep training": 19,
+        "sleep regressions": 13,
+        "nap management": 5,
+        "age-specific guidance": 4,
+        "stitch/response content": 3,
+        "feeding & sleep": 1,
+        "night waking": 1
+      },
+      "high_engagement_videos": 100,
+      "high_view_videos": 51,
+      "avg_engagement_rate": 2.3575447290953964,
+      "avg_views": 30670.49
+    },
+    "5-12-month": {
+      "age_range": "5-12 months",
+      "qa_count": 512,
+      "comment_count": 0,
+      "video_count": 100,
+      "questions": [
+        {
+          "text": "What should you do if a 5-month-old rolls onto their stomach in the crib and can't consistently roll back\u2014should you flip them back?",
+          "source": "qa",
+          "problem_category": "Safe sleep / rolling over",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My baby is around 6 months old and born prematurely; at corrected age around 5\u20136 months, should I use three daytime naps and focus on improving nighttime sleep first?",
+          "source": "qa",
+          "problem_category": "Premature birth / Corrected age sleep strategy",
+          "priority": "high"
+        },
+        {
+          "text": "Should I transition to arms\u2011out sleep in a cot gradually or switch all at once?",
+          "source": "qa",
+          "problem_category": "Sleep environment transition / arms-out",
+          "priority": "high"
+        },
+        {
+          "text": "My baby woke 4\u20136 times a night from about 3.5 to 10 months until I started the sleep techniques.",
+          "source": "qa",
+          "problem_category": "Breastfeeding-related night waking / sleep training",
+          "priority": "high"
+        },
+        {
+          "text": "My 5mo has rolled over in the crib and can't consistently roll back; should I flip them back?",
+          "source": "qa",
+          "problem_category": "Rolling over in crib / sleep positioning",
+          "priority": "high"
+        },
+        {
+          "text": "What about a 8.5 month old?",
+          "source": "qa",
+          "problem_category": "Daytime sleep / naps",
+          "priority": "high"
+        },
+        {
+          "text": "My 7-month-old's first or second nap was cut short (about 30 minutes) and can't be saved.",
+          "source": "qa",
+          "problem_category": "Nap duration / nap rescue",
+          "priority": "high"
+        },
+        {
+          "text": "Thank you. I have purchased your guide. I guess I\u2019m just not really sure where to start \ud83d\ude0a he is 9 months x",
+          "source": "qa",
+          "problem_category": "Guided plan / Personalization",
+          "priority": "high"
+        },
+        {
+          "text": "At around 5.5 months, how important are a consistent sleep routine and practice for sleep?",
+          "source": "qa",
+          "problem_category": "General sleep routine / consistency",
+          "priority": "high"
+        },
+        {
+          "text": "My baby naps are inconsistent, with a long car nap and short main naps",
+          "source": "qa",
+          "problem_category": "Nap disruption / Car naps",
+          "priority": "high"
+        },
+        {
+          "text": "When is it appropriate to start weaning night feeds for a 7\u201312 month-old?",
+          "source": "qa",
+          "problem_category": "Night Feeds Weaning",
+          "priority": "high"
+        },
+        {
+          "text": "Does daytime sleep lasting longer than 2 hours matter after immunisations?",
+          "source": "qa",
+          "problem_category": "Health-related sleep disruption",
+          "priority": "high"
+        },
+        {
+          "text": "My 5-month-old naps with arms inside his sleep suit and still wakes often at night.",
+          "source": "qa",
+          "problem_category": "Arms-in/Arms-out sleep and self-settling",
+          "priority": "high"
+        },
+        {
+          "text": "What should I do if my baby won't take a pacifier, and I\u2019m trying to soothe during sleep?",
+          "source": "qa",
+          "problem_category": "pacifier use",
+          "priority": "high"
+        },
+        {
+          "text": "My 9-month-old still wakes a couple of times at night and settles slowly; what should a sleep plan look like?",
+          "source": "qa",
+          "problem_category": "9-month sleep / nap transition / overnight planning",
+          "priority": "high"
+        },
+        {
+          "text": "My baby had a regression and started waking more at night; how can I restore consistent sleep?",
+          "source": "qa",
+          "problem_category": "Regressions and night-time waking",
+          "priority": "high"
+        },
+        {
+          "text": "I\u2019m about to start nap training; do I try a 5/5/5 schedule or a 5/10 approach with sitting nearby but not touching?",
+          "source": "qa",
+          "problem_category": "Nap training methods",
+          "priority": "high"
+        },
+        {
+          "text": "When is it appropriate to start a structured sleep schedule for a newborn and to discuss melatonin use?",
+          "source": "qa",
+          "problem_category": "Circadian Rhythm / Melatonin Considerations",
+          "priority": "high"
+        },
+        {
+          "text": "What strategies are most helpful for a baby to sleep through the night?",
+          "source": "qa",
+          "problem_category": "Night sleep strategy",
+          "priority": "high"
+        },
+        {
+          "text": "My baby takes 40-minute naps; should I try to extend them or continue as is?",
+          "source": "qa",
+          "problem_category": "Nap duration and wake windows",
+          "priority": "high"
+        },
+        {
+          "text": "My baby slept through the night; how do I maintain this pattern?",
+          "source": "qa",
+          "problem_category": "Maintaining sleep through the night",
+          "priority": "high"
+        },
+        {
+          "text": "My baby seems to wake early in the morning after a nap transition from 3 to 2 naps.",
+          "source": "qa",
+          "problem_category": "Nap schedule and early waking",
+          "priority": "high"
+        },
+        {
+          "text": "My baby takes short naps (30-40 min) and bedtime is early",
+          "source": "qa",
+          "problem_category": "Nap duration & bedtime relationship",
+          "priority": "high"
+        },
+        {
+          "text": "What is your wait time for a consult? I\u2019m struggling with my 9-month-old\u2019s sleep and feeding and have tried other consultants, but there\u2019s still bedtime resistance and long overnight wake times. Do you offer payment plans?",
+          "source": "qa",
+          "problem_category": "Consultation options and payment plans",
+          "priority": "high"
+        },
+        {
+          "text": "At 10 months old, with two naps, my baby is waking around 4:30\u20135:00 am. Should the 9:00 am nap be later, and how should I time naps and bedtime with a ~3.5 hour wake window?",
+          "source": "qa",
+          "problem_category": "Early waking / nap timing",
+          "priority": "high"
+        },
+        {
+          "text": "My 4.5-month-old is a catnapper, rarely sleeping longer than 40 minutes for daytime naps. How can I support self-settling as naps mature around 5 months?",
+          "source": "qa",
+          "problem_category": "Nap development / self-settling",
+          "priority": "high"
+        },
+        {
+          "text": "Is the 9-12 month sleep schedule included in the 6-7 month pack?",
+          "source": "qa",
+          "problem_category": "Guide contents",
+          "priority": "high"
+        },
+        {
+          "text": "Baby cries when placed in the cot for sleep; what can I do to help settle?",
+          "source": "qa",
+          "problem_category": "crib_transition_and_safe_sleep_environment",
+          "priority": "high"
+        },
+        {
+          "text": "Oh my goodness. My baby slept for a very long stretch\u2014what does that mean?",
+          "source": "qa",
+          "problem_category": "Unusually long sleep duration",
+          "priority": "high"
+        },
+        {
+          "text": "My baby calms with white noise.",
+          "source": "qa",
+          "problem_category": "Sleep environment / soothing",
+          "priority": "high"
+        },
+        {
+          "text": "My 5mo goes to bed at 5pm",
+          "source": "qa",
+          "problem_category": "Bedtime timing too early",
+          "priority": "high"
+        },
+        {
+          "text": "My infant wakes early and seems hard to settle at night; what can help improve consistency?",
+          "source": "qa",
+          "problem_category": "Infant sleep maintenance",
+          "priority": "high"
+        },
+        {
+          "text": "My 6mo wakes up during the night; what is a gentle way to encourage longer sleep stretches?",
+          "source": "qa",
+          "problem_category": "Night Wakings",
+          "priority": "high"
+        },
+        {
+          "text": "My baby had nearly 3 hours between feeds; is that okay?",
+          "source": "qa",
+          "problem_category": "Feeding schedule and daytime wake windows",
+          "priority": "high"
+        },
+        {
+          "text": "How can I time feeding, diaper changes, and cuddles to help my baby sleep?",
+          "source": "qa",
+          "problem_category": "Nighttime routine / self-soothing",
+          "priority": "high"
+        },
+        {
+          "text": "My 6mo wakes early",
+          "source": "qa",
+          "problem_category": "Early wake / overtiredness",
+          "priority": "high"
+        },
+        {
+          "text": "At 10.5 months with a 10-11am nap and a 2-3:30pm nap and a 7:30pm bedtime, should I switch to the 8-12 month routine?",
+          "source": "qa",
+          "problem_category": "Nap/bedtime schedule adjustment",
+          "priority": "high"
+        },
+        {
+          "text": "My 12-month-old suddenly won't nap and is resisting sleep; rocking is exhausting and there are multiple night wakings.",
+          "source": "qa",
+          "problem_category": "12-month sleep regression / transition to two naps",
+          "priority": "high"
+        },
+        {
+          "text": "How can I help my baby fall asleep on their own?",
+          "source": "qa",
+          "problem_category": "Self-soothing / independent sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My baby snorts or sounds congested at night and seems uncomfortable while sleeping.",
+          "source": "qa",
+          "problem_category": "congestion_sleep_disruption",
+          "priority": "high"
+        },
+        {
+          "text": "My infant seems exhausted at bedtime.",
+          "source": "qa",
+          "problem_category": "Bedtime routine and soothing",
+          "priority": "high"
+        },
+        {
+          "text": "My baby giggles in his sleep\u2014normal?",
+          "source": "qa",
+          "problem_category": "Normal infant sleep behaviours",
+          "priority": "high"
+        },
+        {
+          "text": "My baby had two daytime naps today\u2014should I still push for an earlier bedtime?",
+          "source": "qa",
+          "problem_category": "Two naps affecting bedtime",
+          "priority": "high"
+        },
+        {
+          "text": "After a day out, my baby seems hungrier and more unsettled at bedtime. How can I support better sleep in this scenario?",
+          "source": "qa",
+          "problem_category": "Post-outing sleep disruption",
+          "priority": "high"
+        },
+        {
+          "text": "My infant is overtired when I'm juggling a toddler.",
+          "source": "qa",
+          "problem_category": "Overtiredness due to toddler in household",
+          "priority": "high"
+        },
+        {
+          "text": "How can I, as an exhausted parent, improve my own sleep while still supporting my child's sleep?",
+          "source": "qa",
+          "problem_category": "Parental sleep strategies",
+          "priority": "high"
+        },
+        {
+          "text": "My baby is fussy and unsettled in the evenings; what sleep strategies can help?",
+          "source": "qa",
+          "problem_category": "Infant sleep routines and soothing",
+          "priority": "high"
+        },
+        {
+          "text": "Q: An 8\u2011month\u2011old is waking every couple of hours after midnight and seems distressed\u2014is there help and what does a sleep consult involve?",
+          "source": "qa",
+          "problem_category": "Consultation process",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My infant's bedtime is inconsistent (between about 6:45 pm and 8:00 pm) and they wake at night after rolling onto their tummy\u2014how can I make bedtime and naps more predictable?",
+          "source": "qa",
+          "problem_category": "Bedtime routine & night wakings",
+          "priority": "high"
+        },
+        {
+          "text": "Q: Does your program mainly use crying it out, and can it be adjusted if I\u2019m uncomfortable with tears?",
+          "source": "qa",
+          "problem_category": "Crying tolerance / sleep technique options",
+          "priority": "high"
+        }
+      ],
+      "top_problem_categories": {
+        "nap scheduling / wake windows": 3,
+        "sleep environment / light exposure": 3,
+        "early morning waking": 3,
+        "safe sleep environment": 3,
+        "nap duration and wake windows": 2,
+        "nighttime routine / self-soothing": 2,
+        "sleep training timing": 2,
+        "nap schedule / transition": 2,
+        "night awakenings / feeding": 2,
+        "bedtime resistance / regression": 2
+      },
+      "top_video_topics": {
+        "sleep training": 15,
+        "sleep regressions": 8,
+        "nap management": 8,
+        "age-specific guidance": 5,
+        "feeding & sleep": 5,
+        "sleep schedules": 4,
+        "early rising": 3,
+        "stitch/response content": 1
+      },
+      "high_engagement_videos": 100,
+      "high_view_videos": 62,
+      "avg_engagement_rate": 2.451739559707431,
+      "avg_views": 40004.14
+    },
+    "toddler": {
+      "age_range": "12+ months",
+      "qa_count": 180,
+      "comment_count": 0,
+      "video_count": 100,
+      "questions": [
+        {
+          "text": "My child wants to stay up for Friday movie night; how can I protect their sleep schedule?",
+          "source": "qa",
+          "problem_category": "Schedule disruption / after-hours routine",
+          "priority": "high"
+        },
+        {
+          "text": "Is an earlier, consistent bedtime around 5:30 helpful to reduce tantrums and nightmares during daycare transitions?",
+          "source": "qa",
+          "problem_category": "Early bedtime to prevent tantrums/nightmares during daycare changes",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My toddler skipped a nap today and I'm exhausted; how can I handle the rest of the day and help them sleep better tonight?",
+          "source": "qa",
+          "problem_category": "Nap resistance / daytime sleep and overtiredness",
+          "priority": "high"
+        },
+        {
+          "text": "No luck with a late in-day catnap; should bedtime be earlier?",
+          "source": "qa",
+          "problem_category": "Nap timing / Early bedtime adjustment",
+          "priority": "high"
+        },
+        {
+          "text": "Do I need a pitch-dark room for day naps, or is some light okay?",
+          "source": "qa",
+          "problem_category": "environmental_sleep_factors",
+          "priority": "high"
+        },
+        {
+          "text": "What should I do when a daytime nap is very short, like 25 minutes?",
+          "source": "qa",
+          "problem_category": "Sleep troubleshooting for short naps",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler takes off their sleeping bag and starts singing in bed at bedtime. What should I do?",
+          "source": "qa",
+          "problem_category": "Bedtime resistance / self-soothing",
+          "priority": "high"
+        },
+        {
+          "text": "If my child skips a nap and has a long afternoon, should I move bedtime earlier?",
+          "source": "qa",
+          "problem_category": "nap_time_disruption",
+          "priority": "high"
+        },
+        {
+          "text": "I'm looking for sleep help for a 14\u2011month\u2011old and want to know how to book a sleep consult.",
+          "source": "qa",
+          "problem_category": "Sleep consultation process",
+          "priority": "high"
+        },
+        {
+          "text": "After a vomiting episode, a caregiver placed the child back to bed; what steps support sleep and safety going forward?",
+          "source": "qa",
+          "problem_category": "Post-illness sleep; safety and routine",
+          "priority": "high"
+        },
+        {
+          "text": "Q: We're dealing with illness and sleep disruption; how can we support our child's sleep schedule?",
+          "source": "qa",
+          "problem_category": "Sleep disruption during illness",
+          "priority": "high"
+        },
+        {
+          "text": "Bedtime has more protest than expected; what should I do?",
+          "source": "qa",
+          "problem_category": "Bedtime resistance/protest",
+          "priority": "high"
+        },
+        {
+          "text": "Undertired causing split nights?",
+          "source": "qa",
+          "problem_category": "Undertired leading to split nights",
+          "priority": "high"
+        },
+        {
+          "text": "Q: If a scheduled nap is missed or moved due to activities, should I wake the baby to stay on schedule or adjust the next nap?",
+          "source": "qa",
+          "problem_category": "Nap scheduling",
+          "priority": "high"
+        },
+        {
+          "text": "How can I keep a consistent 6:00 am wake-up?",
+          "source": "qa",
+          "problem_category": "wake_time_consistency",
+          "priority": "high"
+        },
+        {
+          "text": "My baby had two daytime naps today\u2014should I still push for an earlier bedtime?",
+          "source": "qa",
+          "problem_category": "Two naps affecting bedtime",
+          "priority": "high"
+        },
+        {
+          "text": "My infant is overtired when I'm juggling a toddler.",
+          "source": "qa",
+          "problem_category": "Overtiredness due to toddler in household",
+          "priority": "high"
+        },
+        {
+          "text": "What should I do when my child skips a nap and it's going to be a long afternoon?",
+          "source": "qa",
+          "problem_category": "Nap timing / Early bedtime",
+          "priority": "high"
+        },
+        {
+          "text": "Would a quiet space with books and soft toys help with naps or calming transitions for my child?",
+          "source": "qa",
+          "problem_category": "Nap/wind-down environment",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler may be ready to drop a nap and is waking at night; should I book a sleep consult and how will scheduling work?",
+          "source": "qa",
+          "problem_category": "Nap transition in toddlers; schedule flexibility",
+          "priority": "high"
+        },
+        {
+          "text": "I'm looking for a quick check-in for my 1-year-old, but the earliest slot is far away; is there a cancellation list or alternative?",
+          "source": "qa",
+          "problem_category": "Consultation availability",
+          "priority": "high"
+        },
+        {
+          "text": "How can we help a 2-year-old fall asleep independently if they currently need to be cuddled to sleep?",
+          "source": "qa",
+          "problem_category": "Toddler independent sleep and separation anxiety",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler wakes up very early and naps poorly; what would a typical schedule look like?",
+          "source": "qa",
+          "problem_category": "Early waking / nap issues",
+          "priority": "high"
+        },
+        {
+          "text": "What is sleep pressure and how does it affect wake times and bedtimes?",
+          "source": "qa",
+          "problem_category": "Sleep pressure / undertiredness",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler's sleep pattern regressed; would a gro clock help with morning wake times?",
+          "source": "qa",
+          "problem_category": "Morning wake times / Sleep tools",
+          "priority": "high"
+        },
+        {
+          "text": "A 2\u2011year\u2011old sleeps in our arms at night and sometimes needs cuddling to sleep; how can we help them settle more independently?",
+          "source": "qa",
+          "problem_category": "Toddler sleep independence / Separation anxiety",
+          "priority": "high"
+        },
+        {
+          "text": "I want a gentle plan to move away from co-sleeping; is there help?",
+          "source": "qa",
+          "problem_category": "Co-sleeping transition / gentle sleep approach",
+          "priority": "high"
+        },
+        {
+          "text": "How do I manage nap transitions and avoid a very late bedtime?",
+          "source": "qa",
+          "problem_category": "Nap transition and bedtime scheduling",
+          "priority": "high"
+        },
+        {
+          "text": "My child is sick and has been sleeping a lot; should I adjust the sleep schedule during illness?",
+          "source": "qa",
+          "problem_category": "Illness-related sleep needs",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler resists bedtime and won't settle.",
+          "source": "qa",
+          "problem_category": "Bedtime resistance / Sleep onset difficulties (toddler)",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler has frequent bedtime meltdowns and resists going to bed.",
+          "source": "qa",
+          "problem_category": "Toddler bedtime resistance and routines",
+          "priority": "high"
+        },
+        {
+          "text": "My 2-year-old had the worst naps today.",
+          "source": "qa",
+          "problem_category": "Nap/Daytime Sleep",
+          "priority": "high"
+        },
+        {
+          "text": "Should I consider melatonin for my child's sleep issues?",
+          "source": "qa",
+          "problem_category": "Medication consideration: melatonin",
+          "priority": "high"
+        },
+        {
+          "text": "Why is my toddler waking at night after a late bedtime?",
+          "source": "qa",
+          "problem_category": "Overtiredness/night awakenings due to late bedtime",
+          "priority": "high"
+        },
+        {
+          "text": "One nap lasted only 7 minutes. How can I help lengthen naps?",
+          "source": "qa",
+          "problem_category": "Nap duration/nap length",
+          "priority": "high"
+        },
+        {
+          "text": "My 2-year-old toddler insists on a parent sleeping in their room every night. What's the best approach to help them sleep independently?",
+          "source": "qa",
+          "problem_category": "Co-sleeping/Sleep independence",
+          "priority": "high"
+        },
+        {
+          "text": "If a toddler had an unusually short daytime nap due to daycare, should I still aim for self-settling at bedtime on schedule?",
+          "source": "qa",
+          "problem_category": "Nap disruption and bedtime consistency",
+          "priority": "high"
+        },
+        {
+          "text": "How can I help a toddler move from co-sleeping to their own room without sacrificing sleep for everyone?",
+          "source": "qa",
+          "problem_category": "Co-sleeping transition to independent sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My child's longest sleep stretch currently runs from early evening to midnight; is this normal, and can I shift it later?",
+          "source": "qa",
+          "problem_category": "Sleep timing and longest stretch",
+          "priority": "high"
+        },
+        {
+          "text": "Q: My toddler is around 17\u201318 months and sleep has been disrupted\u2014could this be the 18\u2011month sleep regression?",
+          "source": "qa",
+          "problem_category": "Sleep regression / Toddler sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My child insists on taking a book into the cot and falls asleep while holding it; should I fight this or leave it?",
+          "source": "qa",
+          "problem_category": "Sleep routines/bedtime behaviors",
+          "priority": "high"
+        },
+        {
+          "text": "How can I gently transition my 17-month-old from co-sleeping and night feeds to their own room, and what are your consultation services?",
+          "source": "qa",
+          "problem_category": "Co-sleeping transition, night weaning, sleep training, service inquiry",
+          "priority": "high"
+        },
+        {
+          "text": "A toddler who used to self-settle now hates bedtime; screams and won\u2019t lay down; is training still effective since I\u2019m pregnant?",
+          "source": "qa",
+          "problem_category": "Bedtime resistance / regression",
+          "priority": "high"
+        },
+        {
+          "text": "Travel disruption has my child waking differently; how do I reset after returning from travel?",
+          "source": "qa",
+          "problem_category": "Post-travel sleep reset",
+          "priority": "high"
+        },
+        {
+          "text": "Q: If a child is sick but still sleeps well at night (e.g., 7:00pm\u20138:00am) and takes a 12:30\u20132:30 nap, should I worry about the night sleep?",
+          "source": "qa",
+          "problem_category": "Illness and sleep",
+          "priority": "high"
+        },
+        {
+          "text": "My 13-month-old wakes at night for a bottle; how should I handle night waking?",
+          "source": "qa",
+          "problem_category": "Night wakings / feeding",
+          "priority": "high"
+        },
+        {
+          "text": "During bedtime my toddler tries to do something unsafe; how should I respond?",
+          "source": "qa",
+          "problem_category": "bedtime_boundaries",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler resists bedtime with stalling tactics (like asking for 'one more minute'). What\u2019s the best approach?",
+          "source": "qa",
+          "problem_category": "Bedtime routine/bedtime resistance",
+          "priority": "high"
+        },
+        {
+          "text": "My toddler won't nap and the house is noisy during nap time.",
+          "source": "qa",
+          "problem_category": "nap_resistance",
+          "priority": "high"
+        },
+        {
+          "text": "Why does it take hours for my child to fall asleep even when they go to bed early?",
+          "source": "qa",
+          "problem_category": "Sleep onset delay",
+          "priority": "high"
+        }
+      ],
+      "top_problem_categories": {
+        "sleep timing and longest stretch": 2,
+        "sleep regression (18 months)": 2,
+        "sleep training / gradual withdrawal": 2,
+        "nap resistance / nap wall": 2,
+        "bedtime resistance": 2,
+        "illness impact on sleep": 2,
+        "schedule disruption / after-hours routine": 1,
+        "early bedtime to prevent tantrums/nightmares during daycare changes": 1,
+        "nap resistance / daytime sleep and overtiredness": 1,
+        "nap timing / early bedtime adjustment": 1
+      },
+      "top_video_topics": {
+        "nap management": 7,
+        "early rising": 7,
+        "sleep schedules": 7,
+        "stitch/response content": 6,
+        "sleep training": 6,
+        "sleep regressions": 4,
+        "bedtime routines": 2,
+        "feeding & sleep": 2,
+        "age-specific guidance": 1,
+        "night waking": 1
+      },
+      "high_engagement_videos": 100,
+      "high_view_videos": 40,
+      "avg_engagement_rate": 1.8659989774508858,
+      "avg_views": 21383.86
+    }
+  },
+  "recommendations": {
+    "newborn": {
+      "urgent_needs": [
+        "safe sleep environment",
+        "sleep environment / light exposure",
+        "sleep training resources",
+        "nap resistance / nap wall",
+        "light exposure / bedroom environment"
+      ],
+      "prominent_topics": [
+        "sleep training",
+        "sleep regressions",
+        "nap management",
+        "age-specific guidance",
+        "stitch/response content"
+      ],
+      "key_questions": [
+        "Should I transition to arms\u2011out sleep in a cot gradually or switch all at once?",
+        "My baby woke 4\u20136 times a night from about 3.5 to 10 months until I started the sleep techniques.",
+        "When is it appropriate to start weaning night feeds for a 7\u201312 month-old?",
+        "Does daytime sleep lasting longer than 2 hours matter after immunisations?",
+        "What are quick strategies to cope with caregiver sleep deprivation in the newborn period?",
+        "My baby had a regression and started waking more at night; how can I restore consistent sleep?",
+        "When is it appropriate to start a structured sleep schedule for a newborn and to discuss melatonin use?",
+        "What strategies are most helpful for a baby to sleep through the night?",
+        "What are the key sleep guidelines, including wake windows and total daily sleep, for my baby under 3 months?",
+        "My baby slept through the night; how do I maintain this pattern?"
+      ],
+      "content_focus": "Focus on: safe sleep environment, sleep environment / light exposure, sleep training resources"
+    },
+    "3-4-month": {
+      "urgent_needs": [
+        "sleep coaching package options",
+        "nap resistance / nap wall",
+        "night wakings related to feeding",
+        "caregiver_sleep_deprivation",
+        "circadian rhythm / melatonin considerations"
+      ],
+      "prominent_topics": [
+        "sleep training",
+        "sleep regressions",
+        "nap management",
+        "age-specific guidance",
+        "stitch/response content"
+      ],
+      "key_questions": [
+        "My 4-month-old won\u2019t finish bottles and still wakes at night; how can I stop night wakings?",
+        "What are quick strategies to cope with caregiver sleep deprivation in the newborn period?",
+        "When is it appropriate to start a structured sleep schedule for a newborn and to discuss melatonin use?",
+        "Do I need a pitch-dark room for day naps, or is some light okay?",
+        "What are the key sleep guidelines, including wake windows and total daily sleep, for my baby under 3 months?",
+        "What should I do when a daytime nap is very short, like 25 minutes?",
+        "I'm looking for sleep help for a 14\u2011month\u2011old and want to know how to book a sleep consult.",
+        "Undertired causing split nights?",
+        "Q: If a scheduled nap is missed or moved due to activities, should I wake the baby to stay on schedule or adjust the next nap?",
+        "My baby never naps in the car."
+      ],
+      "content_focus": "Focus on: sleep coaching package options, nap resistance / nap wall, night wakings related to feeding"
+    },
+    "5-12-month": {
+      "urgent_needs": [
+        "nap scheduling / wake windows",
+        "sleep environment / light exposure",
+        "early morning waking",
+        "safe sleep environment",
+        "nap duration and wake windows"
+      ],
+      "prominent_topics": [
+        "sleep training",
+        "sleep regressions",
+        "nap management",
+        "age-specific guidance",
+        "feeding & sleep"
+      ],
+      "key_questions": [
+        "What should you do if a 5-month-old rolls onto their stomach in the crib and can't consistently roll back\u2014should you flip them back?",
+        "Q: My baby is around 6 months old and born prematurely; at corrected age around 5\u20136 months, should I use three daytime naps and focus on improving nighttime sleep first?",
+        "Should I transition to arms\u2011out sleep in a cot gradually or switch all at once?",
+        "My baby woke 4\u20136 times a night from about 3.5 to 10 months until I started the sleep techniques.",
+        "My 5mo has rolled over in the crib and can't consistently roll back; should I flip them back?",
+        "What about a 8.5 month old?",
+        "My 7-month-old's first or second nap was cut short (about 30 minutes) and can't be saved.",
+        "Thank you. I have purchased your guide. I guess I\u2019m just not really sure where to start \ud83d\ude0a he is 9 months x",
+        "At around 5.5 months, how important are a consistent sleep routine and practice for sleep?",
+        "My baby naps are inconsistent, with a long car nap and short main naps"
+      ],
+      "content_focus": "Focus on: nap scheduling / wake windows, sleep environment / light exposure, early morning waking"
+    },
+    "toddler": {
+      "urgent_needs": [
+        "sleep timing and longest stretch",
+        "sleep regression (18 months)",
+        "sleep training / gradual withdrawal",
+        "nap resistance / nap wall",
+        "bedtime resistance"
+      ],
+      "prominent_topics": [
+        "nap management",
+        "early rising",
+        "sleep schedules",
+        "stitch/response content",
+        "sleep training"
+      ],
+      "key_questions": [
+        "My child wants to stay up for Friday movie night; how can I protect their sleep schedule?",
+        "Is an earlier, consistent bedtime around 5:30 helpful to reduce tantrums and nightmares during daycare transitions?",
+        "Q: My toddler skipped a nap today and I'm exhausted; how can I handle the rest of the day and help them sleep better tonight?",
+        "No luck with a late in-day catnap; should bedtime be earlier?",
+        "Do I need a pitch-dark room for day naps, or is some light okay?",
+        "What should I do when a daytime nap is very short, like 25 minutes?",
+        "My toddler takes off their sleeping bag and starts singing in bed at bedtime. What should I do?",
+        "If my child skips a nap and has a long afternoon, should I move bedtime earlier?",
+        "I'm looking for sleep help for a 14\u2011month\u2011old and want to know how to book a sleep consult.",
+        "After a vomiting episode, a caregiver placed the child back to bed; what steps support sleep and safety going forward?"
+      ],
+      "content_focus": "Focus on: sleep timing and longest stretch, sleep regression (18 months), sleep training / gradual withdrawal"
+    }
+  }
+}

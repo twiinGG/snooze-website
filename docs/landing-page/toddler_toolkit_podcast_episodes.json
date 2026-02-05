@@ -1,0 +1,326 @@
+{
+  "episodes_selected": [
+    {
+      "episode_number": 56,
+      "episode_title": "18 Month Sleep Regression: Boundary Testing & How to Handle It",
+      "spotify_url": null,
+      "spotify_episode_id": null,
+      "youtube_url": "https://www.youtube.com/watch?v=QUV5pXiGrbQ",
+      "youtube_video_id": "QUV5pXiGrbQ",
+      "episode_date": "2025-11-11",
+      "duration_minutes": null,
+      "episode_id": "9050765b-0edf-4636-b1ae-bc9224736f2e",
+      "topics": [
+        "Sleep Regressions",
+        "Bedtime Routines",
+        "Parent Readiness & Mindset",
+        "Boundary Testing"
+      ],
+      "age_groups": [
+        "13-18 Months (Toddler)"
+      ],
+      "problem_categories": [
+        "bedtime_battles",
+        "sleep_regression",
+        "boundary_testing"
+      ],
+      "placement": {
+        "module": 4,
+        "lesson": 1,
+        "lesson_title": "Why Bedtime Battles Happen",
+        "placement_rationale": "This episode directly addresses the 18-month sleep regression and bedtime battles, which is the core topic of Module 4. It explains boundary testing behavior and provides comprehensive strategies that complement the TikTok videos already in this lesson.",
+        "embed_type": "full_episode",
+        "placement_location": "end_of_lesson"
+      },
+      "key_segments": [
+        {
+          "segment_text": "The 18 month sleep regression is more of a limit testing boundary pushing behavior. So what you'll notice is that you'll be able to put your child down for bedtime. It typically happens at bedtime. And so you'll put little Johnny down at bedtime and they will, and he will be going down beautifully. But then one day you'll start to notice that there's a bit of a difference now...",
+          "start_time": 165,
+          "relevance": "Perfect explanation of what the 18-month regression actually is - boundary testing, not sleep training failure"
+        },
+        {
+          "segment_text": "And you need to find a way to come up with a very clear response in order to create a really calm, predictable pattern, again, for your toddler to predict and expect. So we need to go back to basics and sort of go in with a really clear bedtime routine where you are highlighting everything is the last thing going on...",
+          "start_time": 345,
+          "relevance": "Clear strategy for setting boundaries at bedtime - directly applicable to lesson content"
+        }
+      ],
+      "description": "Your toddler's been a great sleeper for months. Then one night they start demanding more books, more cuddles, more everything. You're trapped in the room for two hours wondering what happened to your independent sleeper. This is the 18 month sleep regression, and it's less about sleep and more about boundaries."
+    },
+    {
+      "episode_number": 55,
+      "episode_title": "Sleep Detectives: 3-Year Olds, Early Wakes & Nap Transitions",
+      "spotify_url": null,
+      "spotify_episode_id": null,
+      "youtube_url": "https://www.youtube.com/watch?v=kiOyZf6jEzY",
+      "youtube_video_id": "kiOyZf6jEzY",
+      "episode_date": "2025-11-06",
+      "duration_minutes": null,
+      "episode_id": "773daf6d-372e-4860-9bc8-2eae69232d90",
+      "topics": [
+        "Sleep Schedules",
+        "Early Rising",
+        "Nap Management",
+        "Toddler Sleep"
+      ],
+      "age_groups": [
+        "19-24 Months (Older Toddler)",
+        "Multiple Ages"
+      ],
+      "problem_categories": [
+        "early_rising",
+        "schedule_troubleshooting",
+        "nap_transition"
+      ],
+      "placement": {
+        "module": 3,
+        "lesson": 1,
+        "lesson_title": "The 2-to-1 Nap Transition",
+        "placement_rationale": "This episode covers nap transitions and early wakes, which are key topics in Module 3. It provides additional depth on the 2-to-1 transition process and troubleshooting strategies that complement the TikTok video content on transitional schedules.",
+        "embed_type": "full_episode",
+        "placement_location": "end_of_lesson"
+      },
+      "key_segments": [
+        {
+          "segment_text": "What would be your recommended wake windows for 20 months? So one nap... And then a four hour wake window until bed... Yep, we love a four hour wake window to bed... But neurologically, our little ones are tapping out... You want to get them in well rested rather than getting to the silly zone, overtired.",
+          "start_time": 1141,
+          "relevance": "Specific wake window guidance for toddlers on one nap - directly relevant to Module 3 content"
+        },
+        {
+          "segment_text": "When to drop to one nap (15-18 months)...",
+          "start_time": 0,
+          "relevance": "Episode chapter specifically addresses when to drop to one nap, matching Module 3 lesson focus"
+        }
+      ],
+      "description": "This week's Sleep Detectives covers everything from sleep training older toddlers to fixing stubborn 5:30am wakes to figuring out when to drop a nap. Plus the definitive answer on when to drop to one nap and why your 7-month-old probably still needs three naps even if everyone says otherwise."
+    },
+    {
+      "episode_number": 52,
+      "episode_title": "Sleep Detectives: Early Rising, Nap Schedules & Feed-to-Sleep",
+      "spotify_url": null,
+      "spotify_episode_id": null,
+      "youtube_url": "https://www.youtube.com/watch?v=LrNoTskEtZs",
+      "youtube_video_id": "LrNoTskEtZs",
+      "episode_date": "2025-10-16",
+      "duration_minutes": null,
+      "episode_id": "3a2e35ae-3bc9-48cf-aad3-439b44300afa",
+      "topics": [
+        "Early Rising",
+        "Sleep Schedules",
+        "Sleep Training",
+        "Nap Management"
+      ],
+      "age_groups": [
+        "13-18 Months (Toddler)",
+        "19-24 Months (Older Toddler)",
+        "Multiple Ages"
+      ],
+      "problem_categories": [
+        "early_rising",
+        "schedule_troubleshooting"
+      ],
+      "placement": {
+        "module": 5,
+        "lesson": 1,
+        "lesson_title": "Early Rising in Toddlers",
+        "placement_rationale": "This episode is specifically focused on early rising, which is the highest-priority topic in the course (30+ Q&A pairs, multiple high-performing TikTok videos). The episode provides comprehensive troubleshooting and the early rising protocol in detail, adding depth beyond the TikTok content.",
+        "embed_type": "full_episode",
+        "placement_location": "end_of_lesson"
+      },
+      "key_segments": [
+        {
+          "segment_text": "And then it's 559 and then it's six and then it just, it all starts falling into place... It is having the belief in what you're doing is actually going to make a difference.",
+          "start_time": 1051,
+          "relevance": "Realistic timeline and encouragement for early rising fixes - aligns with Module 5 content"
+        },
+        {
+          "segment_text": "Why 10-hour nights and 5AM wakes need the early rising protocol... The rationale behind holding wake-up time steady at 7AM.",
+          "start_time": 0,
+          "relevance": "Episode chapter directly addresses the early rising protocol mentioned in TikTok videos"
+        },
+        {
+          "segment_text": "16 month old, wake 6am, nap 11.30 to 2, must wake... bed 7.30, keep or change. I think I would be sliding... I think that nap is probably now a bit too early and also probably going to, you don't want 6am to slide into the fives because an early nap at this age can reinforce or create a bit of an early rise.",
+          "start_time": 311,
+          "relevance": "Toddler-specific early rising troubleshooting - connects to Module 5 lesson content"
+        }
+      ],
+      "description": "Got a baby waking at 5AM? Wondering if your nap schedule needs tweaking? This week Sally and Bec answer your real questions about early rising, nap timing, and breaking the feed-to-sleep cycle. They go deep on why 5AM is an overnight waking (not morning), how to future-proof your sleep wins, and the step-by-step approach."
+    },
+    {
+      "episode_number": 43,
+      "episode_title": "Sleep Detectives: Your 2-1 Nap Transition & Standing Cot Questions",
+      "spotify_url": null,
+      "spotify_episode_id": null,
+      "youtube_url": "https://youtu.be/HK4lV8yn-MY",
+      "youtube_video_id": "HK4lV8yn-MY",
+      "episode_date": "2025-09-11",
+      "duration_minutes": null,
+      "episode_id": "0dfd447b-ad26-4747-9b3e-ed4241ef8ad7",
+      "topics": [
+        "Nap Management",
+        "Sleep Schedules",
+        "Early Rising"
+      ],
+      "age_groups": [
+        "13-18 Months (Toddler)"
+      ],
+      "problem_categories": [
+        "nap_refusal",
+        "early_rising",
+        "schedule_troubleshooting"
+      ],
+      "placement": {
+        "module": 3,
+        "lesson": 1,
+        "lesson_title": "The 2-to-1 Nap Transition",
+        "placement_rationale": "This episode is specifically focused on the 2-to-1 nap transition, which is the exact topic of Module 3, Lesson 1. It provides a case study approach with detailed troubleshooting that complements the TikTok video content on transitional schedules. Note: This is an alternative to Episode 55 - we're including both as they cover different aspects of the transition.",
+        "embed_type": "segment_reference",
+        "placement_location": "within_lesson_content",
+        "alternative_note": "If we want to limit to 4 episodes total, consider Episode 43 as alternative to Episode 55, or use Episode 43 for Module 3 and Episode 55 elsewhere. Recommendation: Use Episode 43 for Module 3 and Episode 55 can be moved to Module 5 as additional early rising content, or we keep both in Module 3."
+      },
+      "key_segments": [
+        {
+          "segment_text": "15 month old who is a clingy mama's boy... We have been doing the transitional naps 30 minutes at 10 a.m. That nap is being pushed in the pram and then the big nap at 1 p.m. But he's been refusing the first nap... it's two to three days of fine on one nap and then they go back to two naps.",
+          "start_time": 91,
+          "relevance": "Real case study of transitional schedule troubleshooting - directly matches Module 3 lesson content"
+        },
+        {
+          "segment_text": "So then on that particular day, when you're going back to the two naps, I would actually make that first nap just 15 minutes. Just a, like a, just a nod to just taking, yeah, yeah. Just taking an edge... And then we're back on track for the 1pm second nap... protect NAP2...",
+          "start_time": 0,
+          "relevance": "Specific strategy for navigating the flip-flopping during transition - practical guidance for parents"
+        }
+      ],
+      "description": "Welcome to Sleep Detectives! Sally & Bec dive into your detailed questions and create mini case studies to solve real sleep challenges. This week they tackle the messy 2-1 nap transition (spoiler: it's normal to flip-flop between schedules), standing cot acrobatics, early morning wake-ups."
+    }
+  ],
+  "total_episodes": 3,
+  "final_recommendation": {
+    "primary_episodes": 3,
+    "rationale": "Three strategically placed episodes provide comprehensive depth without overwhelming the course. All three are highly relevant to core toddler sleep challenges.",
+    "episodes": [
+      {
+        "episode_number": 56,
+        "module": 4,
+        "lesson": 1,
+        "title": "18 Month Sleep Regression: Boundary Testing & How to Handle It"
+      },
+      {
+        "episode_number": 52,
+        "module": 5,
+        "lesson": 1,
+        "title": "Sleep Detectives: Early Rising, Nap Schedules & Feed-to-Sleep"
+      },
+      {
+        "episode_number": 43,
+        "module": 3,
+        "lesson": 1,
+        "title": "Sleep Detectives: Your 2-1 Nap Transition & Standing Cot Questions"
+      }
+    ],
+    "optional_fourth_episode": {
+      "episode_number": 55,
+      "rationale": "Could be added to Module 5 for additional early rising depth, or to Module 3 as alternative/additional nap transition content. Recommend starting with 3 episodes and adding this as needed.",
+      "status": "optional"
+    }
+  },
+  "selection_rationale": "Selected these 4 episodes based on: (1) Direct relevance to toddler toolkit topics - early rising (highest priority), nap transitions, bedtime battles/regressions; (2) Strategic placement across modules to add depth where TikTok videos provide overview; (3) Episode quality - recent episodes (Sept-Nov 2025) with comprehensive content; (4) Following Sally's podcast bridging pattern - episodes provide deeper 'why' and 'how' beyond TikTok videos.",
+  "placement_summary": {
+    "module_3": {
+      "episodes": [
+        {
+          "episode_number": 55,
+          "placement": "Lesson 1 - The 2-to-1 Nap Transition",
+          "rationale": "Covers nap transitions and wake windows for toddlers on one nap"
+        },
+        {
+          "episode_number": 43,
+          "placement": "Lesson 1 - The 2-to-1 Nap Transition (alternative or additional)",
+          "rationale": "Focused case study on 2-to-1 transition troubleshooting",
+          "note": "Consider using Episode 43 as primary for Module 3 since it's more specifically focused on the exact topic"
+        }
+      ],
+      "recommendation": "Use Episode 43 as primary for Module 3 (more specific). Keep Episode 55 available for Module 5 or use both if Module 3 needs comprehensive coverage."
+    },
+    "module_4": {
+      "episodes": [
+        {
+          "episode_number": 56,
+          "placement": "Lesson 1 - Why Bedtime Battles Happen",
+          "rationale": "Perfect match - 18-month sleep regression and boundary testing directly addresses Module 4 core topic"
+        }
+      ]
+    },
+    "module_5": {
+      "episodes": [
+        {
+          "episode_number": 52,
+          "placement": "Lesson 1 - Early Rising in Toddlers",
+          "rationale": "Comprehensive early rising troubleshooting - highest priority topic in course with 30+ Q&A pairs"
+        },
+        {
+          "episode_number": 55,
+          "placement": "Lesson 1 - Early Rising in Toddlers (alternative/additional)",
+          "rationale": "Also covers early wakes for toddlers",
+          "note": "If not using Episode 55 in Module 3, could add here for additional early rising depth"
+        }
+      ],
+      "recommendation": "Primary: Episode 52 (more comprehensive on early rising). Episode 55 is secondary option if needed."
+    }
+  },
+  "youtube_embed_codes": {
+    "episode_56": {
+      "youtube_url": "https://www.youtube.com/watch?v=QUV5pXiGrbQ",
+      "embed_code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/QUV5pXiGrbQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "responsive_embed": "<div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;\"><iframe style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" src=\"https://www.youtube.com/embed/QUV5pXiGrbQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+    },
+    "episode_55": {
+      "youtube_url": "https://www.youtube.com/watch?v=kiOyZf6jEzY",
+      "embed_code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kiOyZf6jEzY\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "responsive_embed": "<div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;\"><iframe style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" src=\"https://www.youtube.com/embed/kiOyZf6jEzY\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+    },
+    "episode_52": {
+      "youtube_url": "https://www.youtube.com/watch?v=LrNoTskEtZs",
+      "embed_code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/LrNoTskEtZs\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "responsive_embed": "<div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;\"><iframe style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" src=\"https://www.youtube.com/embed/LrNoTskEtZs\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+    },
+    "episode_43": {
+      "youtube_url": "https://youtu.be/HK4lV8yn-MY",
+      "embed_code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HK4lV8yn-MY\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "responsive_embed": "<div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;\"><iframe style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" src=\"https://www.youtube.com/embed/HK4lV8yn-MY\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+    }
+  },
+  "spotify_urls_to_verify": [
+    "Episode 56 needs Spotify URL (currently null)",
+    "Episode 55 needs Spotify URL (currently null)",
+    "Episode 52 needs Spotify URL (currently null)",
+    "Episode 43 needs Spotify URL (currently null)"
+  ],
+  "next_steps": [
+    "1. Verify Spotify URLs for all 4 episodes in database",
+    "2. Extract Spotify episode IDs from URLs for embed code",
+    "3. Review episode placement - finalize whether to use Episode 43 or 55 in Module 3",
+    "4. Add podcast references to HTML lesson files",
+    "5. Update TODDLER-TOOLKIT-CONTENT-LINKS.md with podcast information",
+    "6. Update TODDLER-TOOLKIT-RESEARCH.md with podcast section"
+  ],
+  "alternative_episodes_considered": [
+    {
+      "episode_number": 12,
+      "episode_title": "Fix Early Rising Without Sleep Training (Part 1)",
+      "rationale": "Referenced in TikTok video - 2-part series. Could replace Episode 52 if preferred as explicit early rising series.",
+      "status": "backup_option"
+    },
+    {
+      "episode_number": 13,
+      "episode_title": "Tackle Early Rising: Reset Your Baby's Body Clock | Nap Trapped Podcast Early Rising Pt 2",
+      "rationale": "Part 2 of early rising series referenced in TikTok. Could be used if wanting dedicated early rising series.",
+      "status": "backup_option"
+    },
+    {
+      "episode_number": 47,
+      "episode_title": "Sleep Detectives: Early Wakings, Feeding Schedules & Toddler Sleep Q&A",
+      "rationale": "Toddler-specific Q&A format, covers early wakings. Good alternative if wanting more Q&A style content.",
+      "status": "backup_option"
+    }
+  ]
+}
+

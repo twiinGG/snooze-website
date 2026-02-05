@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-12-07 16:58:20",
+  "model": "gemini-3-pro",
+  "pages_generated": 4,
+  "pages_failed": 0,
+  "results": {
+    "5-12-month-guide": {
+      "success": true,
+      "file": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze Landing Page Kajabi/projects/snooze-website/kajabi-deployment/pages/product-pages/generated-html-pages/5-12-month-guide-landing-page.html"
+    },
+    "toddler-toolkit": {
+      "success": true,
+      "file": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze Landing Page Kajabi/projects/snooze-website/kajabi-deployment/pages/product-pages/generated-html-pages/toddler-toolkit-landing-page.html"
+    },
+    "snooze-method": {
+      "success": true,
+      "file": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze Landing Page Kajabi/projects/snooze-website/kajabi-deployment/pages/product-pages/generated-html-pages/snooze-method-landing-page.html"
+    },
+    "newborn-guide": {
+      "success": true,
+      "file": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze Landing Page Kajabi/projects/snooze-website/kajabi-deployment/pages/product-pages/generated-html-pages/newborn-guide-landing-page.html"
+    }
+  }
+}

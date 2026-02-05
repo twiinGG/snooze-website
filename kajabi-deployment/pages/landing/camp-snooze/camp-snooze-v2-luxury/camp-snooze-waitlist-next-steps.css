@@ -1,0 +1,386 @@
+/* ============================================
+   CAMP SNOOZE WAITLIST - NEXT STEPS
+   ============================================ */
+
+:root {
+  --camp-forest: hsl(150, 35%, 25%);
+  --camp-sage: hsl(140, 25%, 75%);
+  --camp-cream: hsl(42, 33%, 96%);
+  --camp-gold: hsl(38, 70%, 55%);
+  --camp-rust: hsl(20, 60%, 45%);
+  --camp-navy: hsl(215, 40%, 25%);
+  --background: hsl(42, 33%, 96%);
+  --foreground: hsl(150, 25%, 20%);
+  --muted-foreground: hsl(150, 15%, 40%);
+  --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 8px 26px -10px rgba(45, 80, 22, 0.2);
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --font-display: 'Satisfy', cursive;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+.camp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.camp-section {
+  padding: 5rem 0;
+}
+
+.pine-pattern {
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='100' viewBox='0 0 80 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L48 25 L32 25 Z M40 20 L52 40 L28 40 Z M40 35 L55 58 L25 58 Z M37 58 L43 58 L43 72 L37 72 Z' fill='%23355E3B' fill-opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 80px 100px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.btn-camp {
+  display: inline-block;
+  background: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn-camp:hover {
+  background: hsl(150, 35%, 30%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px -4px hsl(150 25% 20% / 0.2);
+}
+
+.btn-camp-cta {
+  background: var(--camp-gold);
+  color: var(--camp-forest);
+}
+
+.btn-camp-cta:hover {
+  background: hsl(38, 70%, 60%);
+}
+
+.waitlist-next {
+  min-height: 100vh;
+}
+
+.waitlist-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.waitlist-tag {
+  font-size: 1.5rem;
+  color: var(--camp-gold);
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-title {
+  font-size: 3rem;
+  color: var(--camp-forest);
+  margin-bottom: 0.75rem;
+}
+
+.waitlist-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.waitlist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.waitlist-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid hsl(150, 35%, 25% / 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+.waitlist-card h2,
+.waitlist-card h3 {
+  color: var(--camp-forest);
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-card-subtitle {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 1.5rem 0;
+}
+
+.waitlist-price-amount {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--camp-forest);
+  font-weight: 700;
+}
+
+.waitlist-price-period {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+}
+
+.waitlist-breakdown {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.waitlist-breakdown-row:last-child {
+  border-bottom: none;
+}
+
+.waitlist-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.waitlist-cta {
+  width: 100%;
+  text-align: center;
+}
+
+.waitlist-micro {
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.waitlist-card-alt {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #ffffff);
+}
+
+.waitlist-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.waitlist-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.waitlist-step-number {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--camp-forest);
+  color: var(--camp-cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.waitlist-step strong {
+  display: block;
+  color: var(--camp-forest);
+  margin-bottom: 0.25rem;
+}
+
+.waitlist-step p {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.waitlist-secondary {
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  color: var(--camp-forest);
+  border: 2px solid hsl(150, 35%, 25% / 0.2);
+  box-shadow: none;
+}
+
+.waitlist-secondary:hover {
+  background: hsl(150, 35%, 95%);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 960px) {
+  .waitlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .camp-section {
+    padding: 3.5rem 0;
+  }
+
+  .waitlist-card {
+    padding: 2rem;
+  }
+
+  .waitlist-price-amount {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================
+   GLOBAL FOOTER STYLES
+   ============================================ */
+.snooze-footer-clean {
+  background-color: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 60px 0 30px;
+  font-family: var(--font-body);
+  margin-top: auto;
+}
+
+.sf-container {
+  max-width: var(--sn-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .sf-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; }
+}
+
+.sf-col { text-align: center; }
+.sf-logo {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sf-logo a {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+}
+.sf-logo svg {
+  height: auto;
+  max-height: 52px;
+  width: 150px;
+  display: block !important;
+  flex-shrink: 0;
+}
+.sf-logo a svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.sf-logo-text { font-family: var(--font-heading); font-size: 24px; color: var(--camp-cream); display: block; margin-bottom: 16px; }
+.sf-tagline { color: rgba(255, 255, 255, 0.85); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; margin-left: auto; margin-right: auto; }
+.sf-socials { display: flex; gap: 16px; justify-content: center; }
+.sf-social-link { color: var(--camp-cream); font-size: 13px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
+.sf-social-link:hover { opacity: 1; color: var(--camp-gold); }
+.sf-heading { color: var(--camp-gold) !important; font-size: 16px; font-weight: 600; margin: 0 0 20px 0; font-family: var(--font-heading); }
+.sf-links { list-style: none; padding: 0; margin: 0; }
+.sf-links li { margin-bottom: 12px; text-align: center; }
+.sf-links a { color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.sf-links a:hover { color: var(--camp-gold); }
+.sf-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
+.sf-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; margin: 0; }
+
+@media (max-width: 767px) {
+  .snooze-footer-clean { padding: 40px 0 20px; }
+  .sf-container { padding: 0 20px; }
+  .sf-grid { gap: 24px; margin-bottom: 32px; }
+  .sf-logo svg {
+    max-height: 40px !important;
+    width: 120px !important;
+  }
+  .sf-logo-text { font-size: 20px; margin-bottom: 12px; }
+  .sf-tagline { font-size: 13px; margin-bottom: 16px; }
+  .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .sf-social-link { font-size: 12px; }
+  .sf-heading { font-size: 14px; margin-bottom: 12px; }
+  .sf-links li { margin-bottom: 8px; }
+  .sf-links a { font-size: 13px; }
+  .sf-bottom { padding-top: 20px; }
+  .sf-bottom p { font-size: 11px; }
+}
+
+/* Home Page Footer Overrides (Dark Section) */
+footer {
+  background-color: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 60px 24px 30px;
+  text-align: center;
+}
+footer, footer * { color: var(--camp-cream); }
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 { color: var(--camp-cream) !important; }
+footer .logo { color: var(--camp-gold); font-size: 2rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-heading); }
+footer .logo svg { max-width: 150px; height: auto; display: block; margin: 0 auto; }
+footer p { color: rgba(255, 255, 255, 0.85); font-size: 0.9rem; }
+footer a { color: var(--camp-cream); }
+footer a:hover { color: var(--camp-gold); }
+footer i, footer .fa { color: var(--camp-cream); }
+footer a:hover i, footer a:hover .fa { color: var(--camp-gold); }

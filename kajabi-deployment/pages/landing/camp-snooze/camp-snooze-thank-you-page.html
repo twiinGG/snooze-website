@@ -1,0 +1,332 @@
+<!-- ============================================
+     CAMP SNOOZE - POST-PURCHASE THANK YOU PAGE
+     Matches other thank you page formats for consistency
+     
+     Instructions:
+     1. Copy entire code block
+     2. Go to Kajabi → Sales → Offers → [Camp Snooze Jan '26 Offer] → Settings
+     3. Scroll to "Thank You Page" section
+     4. Select "Custom Thank You Page" or "Redirect to URL"
+     5. Create a new page in Kajabi and paste this code
+     ============================================ -->
+
+<style>
+  .thank-you-container {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F293B;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .thank-you-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .thank-you-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2D5016;
+    margin-bottom: 1rem;
+  }
+
+  .thank-you-header p {
+    font-size: 1.125rem;
+    color: #7C8A98;
+    margin-bottom: 1rem;
+  }
+
+  .camp-badge {
+    display: inline-block;
+    background: #E8F5E0;
+    border: 2px solid #2D5016;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #1F293B;
+    font-size: 1rem;
+  }
+
+  .step-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2D5016;
+  }
+
+  .step-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2D5016;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-box p {
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+
+  .step-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .step-box ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #1F293B;
+  }
+
+  .step-box ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2D5016;
+    font-weight: 700;
+  }
+
+  .step-box a {
+    color: #2D5016;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #2D5016;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #4A7C2A;
+    text-decoration: none;
+    color: white;
+  }
+
+  .key-dates-box {
+    background: #E8F5E0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 2px solid #2D5016;
+  }
+
+  .key-dates-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2D5016;
+    margin-bottom: 1rem;
+  }
+
+  .key-dates-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .key-dates-box li {
+    padding: 0.75rem 0;
+    color: #1F293B;
+    border-bottom: 1px solid rgba(45, 80, 22, 0.2);
+  }
+
+  .key-dates-box li:last-child {
+    border-bottom: none;
+  }
+
+  .key-dates-box li strong {
+    color: #2D5016;
+    min-width: 180px;
+    display: inline-block;
+  }
+
+  .what-you-get-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .what-you-get-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2D5016;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefits-list li {
+    padding: 0.75rem 0;
+    color: #1F293B;
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2D5016;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .note-box {
+    background: #F9F2F2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .note-box p {
+    color: #1F293B;
+    margin-bottom: 0.5rem;
+  }
+
+  .note-box a {
+    color: #2D5016;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .key-dates-box li strong {
+      min-width: auto;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+</style>
+
+<div class="thank-you-container">
+  <div class="thank-you-header">
+    <h1>Welcome to Camp Snooze! 🏕️</h1>
+    <p>You're all set for your virtual baby sleep summer camp experience.</p>
+    <div class="camp-badge">⛺ Camp Snooze January 2026</div>
+  </div>
+
+  <!-- Step 1: Check Your Email -->
+  <div class="step-box">
+    <h2>Step 1: Check Your Email</h2>
+    <p>We've sent you a confirmation email with your purchase details and next steps. Check your inbox (and spam folder)
+      for important information about Camp Snooze.</p>
+    <p>This email contains your receipt and everything you need to know about what happens next.</p>
+  </div>
+
+  <!-- Step 2: Complete Intake Form -->
+  <div class="step-box">
+    <h2>Step 2: Complete Your Intake Form</h2>
+    <p>Please complete your intake form as soon as possible. This helps us understand:</p>
+    <ul>
+      <li>Your baby's age and current sleep situation</li>
+      <li>Your goals and what you'd like to achieve</li>
+      <li>What's been happening so far</li>
+    </ul>
+    <p>This information helps Sally and Bec create the perfect sleep plan for your family.</p>
+    <a href="https://forms.gle/JxzVuV4LBdjRvkZf6" class="cta-button" target="_blank" rel="noopener noreferrer">
+      Complete Your Intake Form <i class="fas fa-external-link-alt"></i>
+    </a>
+  </div>
+
+  <!-- Step 3: Get Your Packing List & Schedule -->
+  <div class="step-box">
+    <h2>Step 3: Receive Your Packing List & Sleep Schedule</h2>
+    <p>On <strong>Friday, January 23 (AEDT) / Thursday, January 22 (ET)</strong>, you'll receive:</p>
+    <ul>
+      <li>Your packing list (supplies checklist) - so you can grab anything you need over the weekend</li>
+      <li>Your custom sleep schedule - tailored to your baby and goals</li>
+    </ul>
+    <p>This gives you the weekend to prepare before camp starts on <strong>Tuesday, January 27 (AEDT) / Monday, January
+        26 (ET)</strong>.</p>
+  </div>
+
+  <!-- Step 4: Access Video Modules -->
+  <div class="step-box">
+    <h2>Step 4: Access Your Video Modules</h2>
+    <p>You'll get access to step-by-step video modules that guide you through bedtime and overnight implementation.
+      These videos will be available before camp starts so you can familiarize yourself with the techniques.</p>
+    <p>All videos are available in your Camp Snooze portal.</p>
+  </div>
+
+  <!-- Step 5: Join Camp Activities -->
+  <div class="step-box">
+    <h2>Step 5: Join Camp Activities</h2>
+    <p><strong>Kick-off Call (Tuesday, January 27, 10-11am AEDT / Monday, January 26, 8-9pm ET):</strong> Live
+      onboarding session where Sally and Bec walk through technique options and your personalized plan together.</p>
+    <p><strong>Daily Morning Roll Call (10-11am AEDT / 8-9pm ET):</strong> Live group check-in each morning to review
+      the last 24 hours, adjust the plan, and keep momentum. Recordings available if you miss it.</p>
+    <p><strong>Afternoon Troubleshooting Chats:</strong> Daily support in the forum for curveballs, nap chaos, and "what
+      do I do now?" moments.</p>
+    <p style="font-style: italic; color: #2D5016; margin-top: 1rem;"><strong>Note:</strong> Camp Snooze is open to all
+      time zones, as long as you can make the 10-11am AEDT / 8-9pm ET calls.</p>
+  </div>
+
+  <!-- Key Dates -->
+  <div class="key-dates-box">
+    <h3>📅 Important Dates</h3>
+    <ul>
+      <li><strong>Packing list sent:</strong> Friday, January 23 (AEDT) / Thursday, January 22 (ET)</li>
+      <li><strong>Camp starts:</strong> Tuesday, January 27 (AEDT) / Monday, January 26 (ET)</li>
+      <li><strong>Kick-off call:</strong> Tuesday, January 27, 10-11am AEDT / Monday, January 26, 8-9pm ET</li>
+      <li><strong>Daily roll call:</strong> 10-11am AEDT / 8-9pm ET (recordings available)</li>
+    </ul>
+  </div>
+
+  <!-- What You'll Get -->
+  <div class="what-you-get-box">
+    <h2>What's Included in Camp Snooze</h2>
+    <ul class="benefits-list">
+      <li>Quick intake form to personalize your plan</li>
+      <li>Packing list and custom sleep schedule (sent January 23 AEDT / January 22 ET)</li>
+      <li>Step-by-step video modules for implementation</li>
+      <li>Private camp forum for daily support</li>
+      <li>Kick-off call with Sally & Bec (group session)</li>
+      <li>Daily morning roll call (group session, recordings available)</li>
+      <li>Afternoon troubleshooting chats in the forum</li>
+      <li>Two weeks of expert guidance from Sally Woods & Bec Maher</li>
+    </ul>
+  </div>
+
+  <!-- Footer Note -->
+  <div class="note-box">
+    <h3
+      style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #1F293B; margin-bottom: 1rem;">
+      Questions Before Camp Starts?</h3>
+    <p>We're here to help! If you have any questions about Camp Snooze or what to expect, just reach out.</p>
+    <p>
+      <a href="mailto:support@joinsnooze.com">support@joinsnooze.com</a>
+    </p>
+    <p style="margin-top: 1rem; font-weight: 600;">
+      <strong>See you at roll call!</strong> 🏕️<br>
+      Sally + Bec
+    </p>
+  </div>
+</div>

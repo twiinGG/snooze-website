@@ -1,0 +1,54 @@
+{
+  "note": "This manifest is for reference only. All hero sections are now integrated into complete page files.",
+  "templates": {
+    "age-specific": "hero-template-age-specific.html",
+    "product": "hero-template-product.html",
+    "landing": "hero-template-landing.html"
+  },
+  "complete_pages": {
+    "age_pages": "../age-pages/",
+    "other_pages": "../pages/"
+  },
+  "content_reference": {
+    "newborn": {
+      "headline": "Confident, calm newborn sleep.",
+      "subheadline": "Step-by-step guidance from a paediatric nurse and certified sleep consultant to help you understand your newborn's sleep patterns and build healthy foundations.",
+      "supporting_points": [
+        "What you're experiencing is normal—newborns wake every 2-3 hours",
+        "Evidence-based guidance that respects your baby's feeding needs",
+        "A calm, flexible approach—no rigid schedules, just practical help"
+      ],
+      "page_type": "age-specific"
+    },
+    "3-4-month": {
+      "headline": "Turn the four-month regression into an opportunity.",
+      "subheadline": "Your baby's sleep is permanently changing. This isn't scary—it's actually the perfect time to establish healthy sleep habits with clear, evidence-based support.",
+      "supporting_points": [
+        "Understand why your baby's sleep changed (it's permanent, not temporary)",
+        "Learn when and how to start establishing sleep patterns",
+        "Get step-by-step guidance from someone who's helped thousands of families"
+      ],
+      "page_type": "age-specific"
+    },
+    "5-12-month": {
+      "headline": "Solve early rising and build consistent sleep.",
+      "subheadline": "By now, your baby can learn independent sleep skills. Whether you're dealing with early rising, nap struggles, or frequent night wakings, we can help you make lasting changes.",
+      "supporting_points": [
+        "Early rising solved—the most common concern at this age",
+        "Nap scheduling that works with your baby's development",
+        "Sleep training readiness guidance—know when your baby is ready"
+      ],
+      "page_type": "age-specific"
+    },
+    "toddler": {
+      "headline": "Navigate toddler sleep challenges with confidence.",
+      "subheadline": "Bedtime battles, nap transitions, and boundary testing are all normal parts of toddler development. Understanding what's happening helps you know when to address it and when to wait it out.",
+      "supporting_points": [
+        "Bedtime battles—understand what's developmental vs. needs attention",
+        "Nap transitions—know when and how to drop naps",
+        "Boundary testing—normal behavior, not defiance"
+      ],
+      "page_type": "age-specific"
+    }
+  }
+}

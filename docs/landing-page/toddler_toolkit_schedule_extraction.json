@@ -1,0 +1,577 @@
+{
+  "schedules": [
+    {
+      "items": [
+        "6:45-7:00am: Wake and milk feed",
+        "8:00am: Breakfast (if on solids)",
+        "9:30-10:15am: Nap 1 (45 minutes - can be assisted if needed)",
+        "11:00am: Milk feed",
+        "12:00pm: Lunch",
+        "12:45-2:15pm: Nap 2 (1.5 hours - this is the protected nap)",
+        "3:00pm: Milk feed",
+        "5:30pm: Dinner",
+        "6:30pm: Final milk feed (30 minutes before bed, out on lounge)",
+        "7:00-7:30pm: Bedtime"
+      ],
+      "module": "Module 2",
+      "lesson": "Lesson 1: Schedules for 12-18 Months",
+      "file": "module-2-lesson-1.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:45-7:00am: Wake and milk feed"
+        },
+        {
+          "raw": "8:00am: Breakfast (if on solids)"
+        },
+        {
+          "raw": "9:30-10:15am: Nap 1 (45 minutes - can be assisted if needed)"
+        },
+        {
+          "raw": "11:00am: Milk feed"
+        },
+        {
+          "raw": "12:00pm: Lunch"
+        },
+        {
+          "raw": "12:45-2:15pm: Nap 2 (1.5 hours - this is the protected nap)"
+        },
+        {
+          "raw": "3:00pm: Milk feed"
+        },
+        {
+          "raw": "5:30pm: Dinner"
+        },
+        {
+          "raw": "6:30pm: Final milk feed (30 minutes before bed, out on lounge)"
+        },
+        {
+          "raw": "7:00-7:30pm: Bedtime"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6:00-7:00am: Wake (stay in cot until 6:30+ if needed)",
+        "10:00-10:30am: Nap 1 (15-30 minutes - can be fully assisted)",
+        "1:00-3:00pm: Nap 2 (long, protected nap - 2 hours)",
+        "7:00-7:30pm: Bedtime (4-hour wake window)"
+      ],
+      "module": "Module 2",
+      "lesson": "Lesson 1: Schedules for 12-18 Months",
+      "file": "module-2-lesson-1.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:00-7:00am: Wake (stay in cot until 6:30+ if needed)"
+        },
+        {
+          "raw": "10:00-10:30am: Nap 1 (15-30 minutes - can be fully assisted)"
+        },
+        {
+          "raw": "1:00-3:00pm: Nap 2 (long, protected nap - 2 hours)"
+        },
+        {
+          "raw": "7:00-7:30pm: Bedtime (4-hour wake window)"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6:30-7:00am: Wake and milk feed",
+        "8:00am: Breakfast",
+        "10:00am: Morning snack",
+        "12:00pm: Lunch",
+        "12:30-2:30pm: Nap (1.5-2.5 hours - protected)",
+        "3:00pm: Afternoon snack",
+        "5:30pm: Dinner",
+        "6:30pm: Final milk feed (if still having milk, 30 min before bed)",
+        "7:00-7:30pm: Bedtime (4-5 hour wake window)"
+      ],
+      "module": "Module 2",
+      "lesson": "Lesson 2: Schedules for 18-24 Months",
+      "file": "module-2-lesson-2.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:30-7:00am: Wake and milk feed"
+        },
+        {
+          "raw": "8:00am: Breakfast"
+        },
+        {
+          "raw": "10:00am: Morning snack"
+        },
+        {
+          "raw": "12:00pm: Lunch"
+        },
+        {
+          "raw": "12:30-2:30pm: Nap (1.5-2.5 hours - protected)"
+        },
+        {
+          "raw": "3:00pm: Afternoon snack"
+        },
+        {
+          "raw": "5:30pm: Dinner"
+        },
+        {
+          "raw": "6:30pm: Final milk feed (if still having milk, 30 min before bed)"
+        },
+        {
+          "raw": "7:00-7:30pm: Bedtime (4-5 hour wake window)"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6:30-7:00am: Wake",
+        "8:00am: Breakfast",
+        "10:00am: Morning snack",
+        "12:00pm: Lunch",
+        "12:30-2:30pm: Nap (1-2 hours, may start getting shorter)",
+        "3:00pm: Afternoon snack",
+        "5:30pm: Dinner",
+        "7:00-7:30pm: Bedtime (5-6 hour wake window)"
+      ],
+      "module": "Module 2",
+      "lesson": "Lesson 3: Schedules for 2-3 Years",
+      "file": "module-2-lesson-3.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:30-7:00am: Wake"
+        },
+        {
+          "raw": "8:00am: Breakfast"
+        },
+        {
+          "raw": "10:00am: Morning snack"
+        },
+        {
+          "raw": "12:00pm: Lunch"
+        },
+        {
+          "raw": "12:30-2:30pm: Nap (1-2 hours, may start getting shorter)"
+        },
+        {
+          "raw": "3:00pm: Afternoon snack"
+        },
+        {
+          "raw": "5:30pm: Dinner"
+        },
+        {
+          "raw": "7:00-7:30pm: Bedtime (5-6 hour wake window)"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6:30-7:00am: Wake",
+        "8:00am: Breakfast",
+        "10:00am: Morning snack",
+        "12:00pm: Lunch",
+        "12:30-1:30pm: Quiet time (in room, low stimulation, not required to sleep)",
+        "3:00pm: Afternoon snack",
+        "5:30pm: Dinner",
+        "6:30-7:00pm: Bedtime (earlier during transition, then can move to 7-7:30pm)"
+      ],
+      "module": "Module 2",
+      "lesson": "Lesson 3: Schedules for 2-3 Years",
+      "file": "module-2-lesson-3.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:30-7:00am: Wake"
+        },
+        {
+          "raw": "8:00am: Breakfast"
+        },
+        {
+          "raw": "10:00am: Morning snack"
+        },
+        {
+          "raw": "12:00pm: Lunch"
+        },
+        {
+          "raw": "12:30-1:30pm: Quiet time (in room, low stimulation, not required to sleep)"
+        },
+        {
+          "raw": "3:00pm: Afternoon snack"
+        },
+        {
+          "raw": "5:30pm: Dinner"
+        },
+        {
+          "raw": "6:30-7:00pm: Bedtime (earlier during transition, then can move to 7-7:30pm)"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6-7am: Wake (stay in cot until 6:30+ if needed)",
+        "10-10:30am: Nap 1 (15-30 minutes - can be fully assisted)",
+        "1-3pm: Nap 2 (long, protected nap - this is the one we want)",
+        "7-7:30pm: Bedtime (4-hour wake window)"
+      ],
+      "module": "Module 3",
+      "lesson": "Lesson 1: The 2-to-1 Nap Transition",
+      "file": "module-3-lesson-1.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6-7am: Wake (stay in cot until 6:30+ if needed)"
+        },
+        {
+          "raw": "10-10:30am: Nap 1 (15-30 minutes - can be fully assisted)"
+        },
+        {
+          "raw": "1-3pm: Nap 2 (long, protected nap - this is the one we want)"
+        },
+        {
+          "raw": "7-7:30pm: Bedtime (4-hour wake window)"
+        }
+      ]
+    },
+    {
+      "items": [
+        "6:30-7am: Wake",
+        "12:30-2:30pm: Nap (1.5-2.5 hours)",
+        "7-7:30pm: Bedtime (4-5 hour wake window)"
+      ],
+      "module": "Module 3",
+      "lesson": "Lesson 1: The 2-to-1 Nap Transition",
+      "file": "module-3-lesson-1.html",
+      "title": "",
+      "parsed_items": [
+        {
+          "raw": "6:30-7am: Wake"
+        },
+        {
+          "raw": "12:30-2:30pm: Nap (1.5-2.5 hours)"
+        },
+        {
+          "raw": "7-7:30pm: Bedtime (4-5 hour wake window)"
+        }
+      ]
+    }
+  ],
+  "verification_report": {
+    "total_schedules": 7,
+    "verified_schedules": [
+      {
+        "schedule": {
+          "items": [
+            "6:45-7:00am: Wake and milk feed",
+            "8:00am: Breakfast (if on solids)",
+            "9:30-10:15am: Nap 1 (45 minutes - can be assisted if needed)",
+            "11:00am: Milk feed",
+            "12:00pm: Lunch",
+            "12:45-2:15pm: Nap 2 (1.5 hours - this is the protected nap)",
+            "3:00pm: Milk feed",
+            "5:30pm: Dinner",
+            "6:30pm: Final milk feed (30 minutes before bed, out on lounge)",
+            "7:00-7:30pm: Bedtime"
+          ],
+          "module": "Module 2",
+          "lesson": "Lesson 1: Schedules for 12-18 Months",
+          "file": "module-2-lesson-1.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:45-7:00am: Wake and milk feed"
+            },
+            {
+              "raw": "8:00am: Breakfast (if on solids)"
+            },
+            {
+              "raw": "9:30-10:15am: Nap 1 (45 minutes - can be assisted if needed)"
+            },
+            {
+              "raw": "11:00am: Milk feed"
+            },
+            {
+              "raw": "12:00pm: Lunch"
+            },
+            {
+              "raw": "12:45-2:15pm: Nap 2 (1.5 hours - this is the protected nap)"
+            },
+            {
+              "raw": "3:00pm: Milk feed"
+            },
+            {
+              "raw": "5:30pm: Dinner"
+            },
+            {
+              "raw": "6:30pm: Final milk feed (30 minutes before bed, out on lounge)"
+            },
+            {
+              "raw": "7:00-7:30pm: Bedtime"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6:00-7:00am: Wake (stay in cot until 6:30+ if needed)",
+            "10:00-10:30am: Nap 1 (15-30 minutes - can be fully assisted)",
+            "1:00-3:00pm: Nap 2 (long, protected nap - 2 hours)",
+            "7:00-7:30pm: Bedtime (4-hour wake window)"
+          ],
+          "module": "Module 2",
+          "lesson": "Lesson 1: Schedules for 12-18 Months",
+          "file": "module-2-lesson-1.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:00-7:00am: Wake (stay in cot until 6:30+ if needed)"
+            },
+            {
+              "raw": "10:00-10:30am: Nap 1 (15-30 minutes - can be fully assisted)"
+            },
+            {
+              "raw": "1:00-3:00pm: Nap 2 (long, protected nap - 2 hours)"
+            },
+            {
+              "raw": "7:00-7:30pm: Bedtime (4-hour wake window)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6:30-7:00am: Wake and milk feed",
+            "8:00am: Breakfast",
+            "10:00am: Morning snack",
+            "12:00pm: Lunch",
+            "12:30-2:30pm: Nap (1.5-2.5 hours - protected)",
+            "3:00pm: Afternoon snack",
+            "5:30pm: Dinner",
+            "6:30pm: Final milk feed (if still having milk, 30 min before bed)",
+            "7:00-7:30pm: Bedtime (4-5 hour wake window)"
+          ],
+          "module": "Module 2",
+          "lesson": "Lesson 2: Schedules for 18-24 Months",
+          "file": "module-2-lesson-2.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:30-7:00am: Wake and milk feed"
+            },
+            {
+              "raw": "8:00am: Breakfast"
+            },
+            {
+              "raw": "10:00am: Morning snack"
+            },
+            {
+              "raw": "12:00pm: Lunch"
+            },
+            {
+              "raw": "12:30-2:30pm: Nap (1.5-2.5 hours - protected)"
+            },
+            {
+              "raw": "3:00pm: Afternoon snack"
+            },
+            {
+              "raw": "5:30pm: Dinner"
+            },
+            {
+              "raw": "6:30pm: Final milk feed (if still having milk, 30 min before bed)"
+            },
+            {
+              "raw": "7:00-7:30pm: Bedtime (4-5 hour wake window)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6:30-7:00am: Wake",
+            "8:00am: Breakfast",
+            "10:00am: Morning snack",
+            "12:00pm: Lunch",
+            "12:30-2:30pm: Nap (1-2 hours, may start getting shorter)",
+            "3:00pm: Afternoon snack",
+            "5:30pm: Dinner",
+            "7:00-7:30pm: Bedtime (5-6 hour wake window)"
+          ],
+          "module": "Module 2",
+          "lesson": "Lesson 3: Schedules for 2-3 Years",
+          "file": "module-2-lesson-3.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:30-7:00am: Wake"
+            },
+            {
+              "raw": "8:00am: Breakfast"
+            },
+            {
+              "raw": "10:00am: Morning snack"
+            },
+            {
+              "raw": "12:00pm: Lunch"
+            },
+            {
+              "raw": "12:30-2:30pm: Nap (1-2 hours, may start getting shorter)"
+            },
+            {
+              "raw": "3:00pm: Afternoon snack"
+            },
+            {
+              "raw": "5:30pm: Dinner"
+            },
+            {
+              "raw": "7:00-7:30pm: Bedtime (5-6 hour wake window)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6:30-7:00am: Wake",
+            "8:00am: Breakfast",
+            "10:00am: Morning snack",
+            "12:00pm: Lunch",
+            "12:30-1:30pm: Quiet time (in room, low stimulation, not required to sleep)",
+            "3:00pm: Afternoon snack",
+            "5:30pm: Dinner",
+            "6:30-7:00pm: Bedtime (earlier during transition, then can move to 7-7:30pm)"
+          ],
+          "module": "Module 2",
+          "lesson": "Lesson 3: Schedules for 2-3 Years",
+          "file": "module-2-lesson-3.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:30-7:00am: Wake"
+            },
+            {
+              "raw": "8:00am: Breakfast"
+            },
+            {
+              "raw": "10:00am: Morning snack"
+            },
+            {
+              "raw": "12:00pm: Lunch"
+            },
+            {
+              "raw": "12:30-1:30pm: Quiet time (in room, low stimulation, not required to sleep)"
+            },
+            {
+              "raw": "3:00pm: Afternoon snack"
+            },
+            {
+              "raw": "5:30pm: Dinner"
+            },
+            {
+              "raw": "6:30-7:00pm: Bedtime (earlier during transition, then can move to 7-7:30pm)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6-7am: Wake (stay in cot until 6:30+ if needed)",
+            "10-10:30am: Nap 1 (15-30 minutes - can be fully assisted)",
+            "1-3pm: Nap 2 (long, protected nap - this is the one we want)",
+            "7-7:30pm: Bedtime (4-hour wake window)"
+          ],
+          "module": "Module 3",
+          "lesson": "Lesson 1: The 2-to-1 Nap Transition",
+          "file": "module-3-lesson-1.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6-7am: Wake (stay in cot until 6:30+ if needed)"
+            },
+            {
+              "raw": "10-10:30am: Nap 1 (15-30 minutes - can be fully assisted)"
+            },
+            {
+              "raw": "1-3pm: Nap 2 (long, protected nap - this is the one we want)"
+            },
+            {
+              "raw": "7-7:30pm: Bedtime (4-hour wake window)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      },
+      {
+        "schedule": {
+          "items": [
+            "6:30-7am: Wake",
+            "12:30-2:30pm: Nap (1.5-2.5 hours)",
+            "7-7:30pm: Bedtime (4-5 hour wake window)"
+          ],
+          "module": "Module 3",
+          "lesson": "Lesson 1: The 2-to-1 Nap Transition",
+          "file": "module-3-lesson-1.html",
+          "title": "",
+          "parsed_items": [
+            {
+              "raw": "6:30-7am: Wake"
+            },
+            {
+              "raw": "12:30-2:30pm: Nap (1.5-2.5 hours)"
+            },
+            {
+              "raw": "7-7:30pm: Bedtime (4-5 hour wake window)"
+            }
+          ]
+        },
+        "bible_reference": null,
+        "matches": false,
+        "discrepancies": [],
+        "notes": [
+          "Manual verification needed against Sleep Schedule Bible"
+        ]
+      }
+    ],
+    "discrepancies": [],
+    "missing_from_bible": [],
+    "accuracy_score": 0.0
+  },
+  "extraction_date": "1764735000.605325"
+}

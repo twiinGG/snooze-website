@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Snooze - Member Exclusive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --camp-forest: #2d5016;
+            --camp-sage: #94a3b8;
+            --camp-cream: #fdfcf8;
+            --camp-gold: #d4af37;
+            --camp-rust: #a34a20;
+            --shadow-soft: 0 10px 30px -5px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--camp-cream);
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pricing-section {
+            padding: 5rem 1rem;
+            text-align: center;
+            background: white;
+        }
+
+        /* Prominent Price Box */
+        .hero-price-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 1.5rem;
+            border: 2px solid #f1f5f9;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        .value-anchor {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+        }
+
+        .prominent-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--camp-forest);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .price-label {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--camp-gold);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .price-details-link {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            width: 100%;
+            max-width: 480px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+
+        /* Upsell Modal Specifics */
+        .upsell-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .upsell-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            color: var(--camp-forest);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .benefit-item i { color: #22c55e; margin-top: 4px; }
+
+        .btn-upgrade {
+            background: var(--camp-forest);
+            color: white;
+            padding: 1rem;
+            border-radius: 999px;
+            width: 100%;
+            border: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .btn-upgrade:hover { transform: scale(1.02); }
+
+        .non-member-option {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Price Breakdown List */
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .breakdown-row.total {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--camp-forest);
+        }
+
+        .discount-text { color: #22c55e; }
+    </style>
+</head>
+<body>
+
+<section class="pricing-section">
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--camp-forest);">Your Sleep Transformation</h2>
+    
+    <div class="hero-price-container">
+        <div class="value-anchor">Total Value: $3,530</div>
+        <p class="prominent-price">$390</p>
+        <div class="price-label">
+            <i class="fa-solid fa-crown"></i> Snooze Member Price
+        </div>
+        <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem;">Non-member price: $690</p>
+        
+        <div class="price-details-link" onclick="toggleModal('details-modal', true)">
+            View Price Details & Breakdown
+        </div>
+
+        <button class="btn-upgrade" style="margin-top: 2rem; background: var(--camp-gold); color: var(--camp-forest);" onclick="toggleModal('upsell-modal', true)">
+            Join Camp Snooze
+        </button>
+    </div>
+</section>
+
+<!-- Price Details Modal -->
+<div id="details-modal" class="modal-overlay" onclick="toggleModal('details-modal', false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="toggleModal('details-modal', false)">&times;</span>
+        <h3 class="upsell-title">Price Breakdown</h3>
+        <div class="breakdown-row">
+            <span>2-Week 1:1 Transformation Value</span>
+            <span>$3,500</span>
+        </div>
+        <div class="breakdown-row">
+            <span>2 Weeks of Snooze Access</span>
+            <span>$30</span>
+        </div>
+        <div class="breakdown-row">
+            <span>Public Camp Discount</span>
+            <span class="discount-text">-$2,840</span>
+        </div>
+        <div class="breakdown-row">
+            <span>Snooze Member Exclusive</span>
+            <span class="discount-text">-$300</span>
+        </div>
+        <div class="breakdown-row total">
+            <span>Final Member Price</span>
+            <span>$390</span>
+        </div>
+    </div>
+</div>
+
+<!-- Upsell Interstitial Modal -->
+<div id="upsell-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="modal-close" onclick="toggleModal('upsell-modal', false)">&times;</span>
+        <div class="upsell-header">
+            <h3 class="upsell-title">Unlock Member Pricing</h3>
+            <p style="color: #64748b;">Become a Snooze Member today and save $300 instantly on your camp booking.</p>
+        </div>
+
+        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e2e8f0;">
+            <p style="font-weight: 700; color: var(--camp-forest); margin-top: 0;">Snooze Member Benefits:</p>
+            <ul class="benefit-list">
+                <li class="benefit-item"><i class="fa-solid fa-check"></i> Weekly Live Coaching with Sally & Bec</li>
+                <li class="benefit-item"><i class="fa-solid fa-check"></i> Access to all Sleep Courses & Guides</li>
+                <li class="benefit-item"><i class="fa-solid fa-check"></i> Priority 24/7 Troubleshooting Support</li>
+            </ul>
+            <p style="font-weight: 700; font-size: 1.1rem; text-align: center;">$197 / quarter</p>
+        </div>
+
+        <button class="btn-upgrade" style="margin-top: 1.5rem;" onclick="location.href='https://www.joinsnooze.com/offers/K3Y6FEKX/checkout'">
+            Upgrade & Save $300
+        </button>
+
+        <div style="text-align: center;">
+            <span class="non-member-option" onclick="location.href='https://www.joinsnooze.com/offers/muRW6ug5/checkout'">
+                No thanks, I'll pay the non-member price ($690)
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleModal(id, show) {
+        const modal = document.getElementById(id);
+        modal.style.display = show ? 'flex' : 'none';
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+        }
+    });
+</script>
+
+</body>
+</html>

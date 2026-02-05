@@ -1,0 +1,14 @@
+{
+  "generated_at": "2025-12-07 16:32:03",
+  "model": "claude-opus-4-5-20251101",
+  "courses_processed": 4,
+  "courses": [
+    "snooze-method",
+    "5-12-month-guide",
+    "toddler-toolkit",
+    "newborn-guide"
+  ],
+  "successful": 4,
+  "failed": 0,
+  "elapsed_time_seconds": 50.51
+}

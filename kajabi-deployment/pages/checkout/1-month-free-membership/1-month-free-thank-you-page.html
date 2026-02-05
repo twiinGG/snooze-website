@@ -1,0 +1,295 @@
+<!-- ============================================
+     SNOOZE 1-MONTH FREE ACCESS - THANK YOU PAGE
+     
+     Instructions:
+     1. Copy entire code block
+     2. Go to Kajabi → Sales → Offers → [1 Month Free Offer] → Settings
+     3. Scroll to "Thank You Page" section
+     4. Select "Custom Thank You Page" or "Redirect to URL"
+     5. Create a new page in Kajabi and paste this code
+     ============================================ -->
+
+<style>
+  .thank-you-container {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F293B;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .thank-you-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .thank-you-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1rem;
+  }
+  
+  .thank-you-header p {
+    font-size: 1.125rem;
+    color: #7C8A98;
+    margin-bottom: 1rem;
+  }
+  
+  .free-badge {
+    display: inline-block;
+    background: #FFE7EA;
+    border: 2px solid #F43357;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #1F293B;
+    font-size: 1rem;
+  }
+  
+  .timer-box {
+    background: #F9F2F2;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .timer-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timer-box p {
+    color: #1F293B;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .step-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .step-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-box p {
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .step-box a {
+    color: #F43357;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #F43357;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #D12A47;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .quick-access {
+    background: #F9F2F2;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .quick-access h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .quick-access-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .quick-access-links a {
+    color: #F43357;
+    text-decoration: underline;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+  
+  .benefits-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .benefits-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1.5rem;
+  }
+  
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .benefits-list li {
+    padding: 0.75rem 0;
+    color: #1F293B;
+    padding-left: 2rem;
+    position: relative;
+  }
+  
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #F43357;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  .note-box {
+    background: #FFE7EA;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .note-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .note-box p {
+    color: #1F293B;
+    margin-bottom: 0.5rem;
+  }
+  
+  .note-box a {
+    color: #F43357;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .quick-access-links {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="thank-you-container">
+  <div class="thank-you-header">
+    <h1>Your Free Month Starts Now!</h1>
+    <p>You've been granted 1 month of full access to Snooze.</p>
+    <div class="free-badge">🎁 1 Month Free Access - No Commitment</div>
+  </div>
+  
+  <!-- Timer Box -->
+  <div class="timer-box">
+    <h3>Your Free Access Period</h3>
+    <p>You have 30 days of full access to explore everything Snooze has to offer. After your free month ends, your access will expire unless you choose to upgrade to a paid membership.</p>
+  </div>
+  
+  <!-- Step 1: Check Your Email -->
+  <div class="step-box">
+    <h2>Step 1: Check Your Email</h2>
+    <p>We've sent you a welcome email with your login details and getting started guide. Check your inbox (and spam folder) for access instructions.</p>
+    <p>This email contains everything you need to get started, including links to access your membership and a quick guide to navigating Snooze.</p>
+  </div>
+  
+  <!-- Step 2: Access Your Library -->
+  <div class="step-box">
+    <h2>Step 2: Access Your Library</h2>
+    <p>Your Snooze Library is ready with all courses, guides, and resources. Start with the age-based pathway that matches your baby's stage.</p>
+    <p>You'll find everything from newborn sleep foundations to toddler sleep strategies, all organized by age so you can find exactly what you need.</p>
+    <a href="/products/communities/v2/snooze/library" class="cta-button">Go to Library</a>
+  </div>
+  
+  <!-- Step 3: Join the Village Community -->
+  <div class="step-box">
+    <h2>Step 3: Join the Village Community</h2>
+    <p>Connect with other parents in the Snooze Village. Share wins, ask questions, and get support from our expert-moderated community.</p>
+    <p>This is where you'll find daily support, celebrate milestones, and connect with parents who are on the same journey.</p>
+    <a href="/products/communities/v2/snooze" class="cta-button">Join Village</a>
+  </div>
+  
+  <!-- Quick Access -->
+  <div class="quick-access">
+    <h3>Quick Access</h3>
+    <div class="quick-access-links">
+      <a href="/products/communities/v2/snooze/library">📚 Snooze Library</a>
+      <a href="/products/communities/v2/snooze">💬 Snooze Village</a>
+      <a href="/one-on-one-consultations">👩‍⚕️ Book a Consult</a>
+    </div>
+  </div>
+  
+  <!-- What's Included -->
+  <div class="benefits-box">
+    <h2>What's Included in Your Free Month</h2>
+    <ul class="benefits-list">
+      <li>All sleep courses & guides</li>
+      <li>Weekly live coaching</li>
+      <li>Expert-moderated community</li>
+      <li>Replay vault</li>
+      <li>Member pricing on consults</li>
+      <li>New content monthly</li>
+    </ul>
+  </div>
+  
+  <!-- Footer Note -->
+  <div class="note-box">
+    <h3>About Your Free Month</h3>
+    <p><strong>No commitment:</strong> This is a free gift with no strings attached. Enjoy your month of access, and if you want to continue, you can upgrade anytime.</p>
+    <p><strong>After 30 days:</strong> Your free access will expire. If you'd like to continue, simply upgrade to a paid membership before your access ends.</p>
+    <p><strong>Upgrade anytime:</strong> You can upgrade during your free month, and your access will continue seamlessly without interruption.</p>
+    <p><strong>Need help?</strong> If you have any questions about your free access or getting started, just reply to your welcome email or contact us at <a href="mailto:support@sleepconcierge.com.au">support@sleepconcierge.com.au</a></p>
+  </div>
+</div>

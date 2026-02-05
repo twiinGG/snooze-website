@@ -1,0 +1,311 @@
+<!-- ============================================
+     SNOOZE 7-DAY TRIAL - POST-PURCHASE THANK YOU PAGE
+     
+     Instructions:
+     1. Copy entire code block
+     2. Go to Kajabi → Sales → Offers → [7-Day Trial Offer] → Settings
+     3. Scroll to "Thank You Page" section
+     4. Select "Custom Thank You Page" or "Redirect to URL"
+     5. Create a new page in Kajabi and paste this code
+     ============================================ -->
+
+<style>
+  .thank-you-container {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F293B;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .thank-you-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .thank-you-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1rem;
+  }
+  
+  .thank-you-header p {
+    font-size: 1.125rem;
+    color: #7C8A98;
+    margin-bottom: 1rem;
+  }
+  
+  .trial-badge {
+    display: inline-block;
+    background: #FFE7EA;
+    border: 2px solid #F43357;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #1F293B;
+    font-size: 1rem;
+  }
+  
+  .trial-timer {
+    background: #F9F2F2;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .trial-timer h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 0.5rem;
+  }
+  
+  .trial-timer p {
+    color: #1F293B;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .step-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .step-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-box p {
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .step-box a {
+    color: #F43357;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #F43357;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #D12A47;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .quick-access {
+    background: #F9F2F2;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .quick-access h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .quick-access-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .quick-access-links a {
+    color: #F43357;
+    text-decoration: underline;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+  
+  .benefits-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .benefits-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1.5rem;
+  }
+  
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .benefits-list li {
+    padding: 0.75rem 0;
+    color: #1F293B;
+    padding-left: 2rem;
+    position: relative;
+  }
+  
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #F43357;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  .note-box {
+    background: #FFE7EA;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .note-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+  
+  .note-box p {
+    color: #1F293B;
+    margin-bottom: 0.5rem;
+  }
+  
+  .note-box a {
+    color: #F43357;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .quick-access-links {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="thank-you-container">
+  <div class="thank-you-header">
+    <h1>Your 7-Day Trial Starts Now!</h1>
+    <p>Welcome to Snooze. You have full access to everything for the next 7 days.</p>
+    <div class="trial-badge">✨ 7-Day Full Access Trial</div>
+  </div>
+  
+  <!-- Trial Timer -->
+  <div class="trial-timer">
+    <h3>Your Trial Period</h3>
+    <p>You have 7 days of full access to explore everything Snooze has to offer. After your trial ends, your membership will automatically convert to a paid subscription, or you can cancel anytime with no charges.</p>
+  </div>
+  
+  <!-- Step 1: Check Your Email -->
+  <div class="step-box">
+    <h2>Step 1: Check Your Email</h2>
+    <p>We've sent you a welcome email with your login details and getting started guide. Check your inbox (and spam folder) for access instructions.</p>
+    <p>This email contains everything you need to get started, including links to access your membership and a quick guide to navigating Snooze.</p>
+  </div>
+  
+  <!-- Step 2: Access Your Library -->
+  <div class="step-box">
+    <h2>Step 2: Access Your Library</h2>
+    <p>Your Snooze Library is ready with all courses, guides, and resources. Start with the age-based pathway that matches your baby's stage.</p>
+    <p>You'll find everything from newborn sleep foundations to toddler sleep strategies, all organized by age so you can find exactly what you need.</p>
+    <a href="/products/communities/v2/snooze/library" class="cta-button">Go to Library</a>
+  </div>
+  
+  <!-- Step 3: Join the Village Community -->
+  <div class="step-box">
+    <h2>Step 3: Join the Village Community</h2>
+    <p>Connect with other parents in the Snooze Village. Share wins, ask questions, and get support from our expert-moderated community.</p>
+    <p>This is where you'll find daily support, celebrate milestones, and connect with parents who are on the same journey.</p>
+    <a href="/products/communities/v2/snooze" class="cta-button">Join Village</a>
+  </div>
+  
+  <!-- Step 4: Introduce Yourself -->
+  <div class="step-box">
+    <h2>Step 4: Introduce Yourself in the Village</h2>
+    <p>Not sure where to start? Head to the Snooze Village and introduce yourself. Share your baby's age and main challenge, and we'll point you to the right resources.</p>
+    <p>This helps us get to know you and ensures you're connected with the most relevant content and support for your situation.</p>
+    <a href="/products/communities/v2/snooze">Join Village →</a>
+  </div>
+  
+  <!-- Step 5: Join Live Coaching -->
+  <div class="step-box">
+    <h2>Step 5: Join Live Coaching</h2>
+    <p>Attend weekly live coaching sessions with Sally. Can't make it live? Watch replays anytime in the replay vault.</p>
+    <p>These sessions are where you can ask questions, get real-time support, and learn from other parents' experiences. All sessions are recorded so you never miss out.</p>
+    <a href="/products/communities/v2/snooze">View Schedule →</a>
+  </div>
+  
+  <!-- Quick Access -->
+  <div class="quick-access">
+    <h3>Quick Access</h3>
+    <div class="quick-access-links">
+      <a href="/products/communities/v2/snooze/library">📚 Snooze Library</a>
+      <a href="/products/communities/v2/snooze">💬 Snooze Village</a>
+      <a href="/one-on-one-consultations">👩‍⚕️ Book a Consult</a>
+    </div>
+  </div>
+  
+  <!-- What's Included -->
+  <div class="benefits-box">
+    <h2>What's Included in Your Trial</h2>
+    <ul class="benefits-list">
+      <li>All sleep courses & guides</li>
+      <li>Weekly live coaching</li>
+      <li>Expert-moderated community</li>
+      <li>Replay vault</li>
+      <li>Member pricing on consults</li>
+      <li>New content monthly</li>
+    </ul>
+  </div>
+  
+  <!-- Footer Note -->
+  <div class="note-box">
+    <h3>Important: About Your Trial</h3>
+    <p><strong>Your trial period:</strong> You have 7 days of full access to explore everything Snooze has to offer.</p>
+    <p><strong>After 7 days:</strong> Your trial will automatically convert to a paid membership. You'll be charged at the standard membership rate (quarterly or annual, depending on what you selected).</p>
+    <p><strong>Cancel anytime:</strong> You can cancel your trial at any time during the 7-day period and you won't be charged. Simply go to your account settings to cancel.</p>
+    <p><strong>Need help?</strong> If you have any questions about your trial or getting started, just reply to your welcome email or contact us at <a href="mailto:support@sleepconcierge.com.au">support@sleepconcierge.com.au</a></p>
+  </div>
+</div>

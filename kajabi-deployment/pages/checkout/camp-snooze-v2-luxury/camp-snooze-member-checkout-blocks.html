@@ -1,0 +1,178 @@
+<!--
+  CAMP SNOOZE V2 - EXISTING MEMBER CHECKOUT
+  For existing Snooze members purchasing Camp Snooze at member price
+  Offer: [YOUR_OFFER_ID] - Update with actual offer ID
+
+  DEPLOYMENT INSTRUCTIONS:
+  1. Create checkout page in Kajabi for your member-only Camp Snooze offer
+  2. Add this HTML to a Custom Code Block BELOW the Kajabi checkout form
+  3. Paste camp-snooze-v2-checkout.css into Custom CSS field
+  4. Paste camp-snooze-v2-checkout.js into Custom JavaScript field
+  5. Add Google Fonts to Header Tracking Code (optional - also loaded inline below):
+     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+-->
+
+<!-- Load Font Awesome and Google Fonts inline -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" <!-- pragma: allowlist secret -->
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Satisfy&display=swap"
+  rel="stylesheet">
+
+<div id="snooze-custom-checkout" class="checkout-v2 checkout-member-existing">
+
+  <!-- Member Recognition Banner -->
+  <div class="success-banner">
+    <div class="success-icon">
+      <i class="fa-solid fa-crown"></i>
+    </div>
+    <div class="success-content">
+      <h2>Member Pricing Applied</h2>
+      <p>You're saving $300 on Camp Snooze with your Snooze membership</p>
+    </div>
+  </div>
+
+  <!-- Order Summary Card -->
+  <div class="order-summary-card">
+    <h3>Your Order Summary</h3>
+
+    <div class="order-breakdown">
+      <div class="order-item">
+        <div class="item-details">
+          <span class="item-name">Camp Snooze Jan '26</span>
+          <span class="item-desc">2-Week Intensive Program</span>
+        </div>
+        <div class="item-pricing">
+          <span class="original-price">$690</span>
+          <span class="member-price">$390</span>
+        </div>
+      </div>
+
+      <div class="order-divider"></div>
+
+      <div class="savings-row">
+        <span><i class="fa-solid fa-tag"></i> Member Discount Applied</span>
+        <span class="savings-amount">-$300</span>
+      </div>
+
+      <div class="order-total">
+        <span>Total Today</span>
+        <span class="total-amount">$390 <span class="currency">USD</span></span>
+      </div>
+    </div>
+
+    <div class="membership-note">
+      <i class="fa-solid fa-crown" style="color: #d4af37;"></i>
+      <span>Your Snooze membership benefits are already active. This purchase adds Camp Snooze to your account.</span>
+    </div>
+  </div>
+
+  <!-- What You're Getting -->
+  <div class="whats-included-section">
+    <h3>What You're Getting</h3>
+
+    <div class="included-grid single-card">
+      <!-- Camp Snooze -->
+      <div class="included-card">
+        <div class="card-header">
+          <span class="card-icon">🏕️</span>
+          <h4>Camp Snooze</h4>
+          <span class="card-badge">2 Weeks</span>
+        </div>
+        <ul class="benefits-list">
+          <li><i class="fa-solid fa-check"></i> Personalized sleep plan for your baby</li>
+          <li><i class="fa-solid fa-check"></i> Daily group coaching calls (10-11am AEDT)</li>
+          <li><i class="fa-solid fa-check"></i> Daily forum troubleshooting support</li>
+          <li><i class="fa-solid fa-check"></i> Step-by-step video modules</li>
+          <li><i class="fa-solid fa-check"></i> Expert guidance from Sally & Bec</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Existing Membership Benefits Reminder -->
+  <div class="whats-included-section">
+    <h3>Plus Your Snooze Membership Includes</h3>
+
+    <div class="included-grid single-card">
+      <div class="included-card featured">
+        <div class="card-header">
+          <span class="card-icon"><i class="fa-solid fa-crown" style="color: #d4af37;"></i></span>
+          <h4>Your Snooze Membership</h4>
+          <span class="card-badge gold">Active</span>
+        </div>
+        <ul class="benefits-list">
+          <li><i class="fa-solid fa-crown" style="color: #d4af37;"></i> Weekly live coaching with Sally</li>
+          <li><i class="fa-solid fa-crown" style="color: #d4af37;"></i> All sleep courses & guides</li>
+          <li><i class="fa-solid fa-crown" style="color: #d4af37;"></i> 24/7 community support</li>
+          <li><i class="fa-solid fa-crown" style="color: #d4af37;"></i> Age-based pathways</li>
+          <li><i class="fa-solid fa-crown" style="color: #d4af37;"></i> Regressions, travel & transition tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Dates -->
+  <div class="key-dates-section">
+    <h3>Key Dates</h3>
+    <div class="dates-grid">
+      <div class="date-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <div>
+          <strong>Camp Starts</strong>
+          <span>Tuesday, January 27, 2026</span>
+        </div>
+      </div>
+      <div class="date-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <strong>Packing List Sent</strong>
+          <span>Friday, January 23, 2026</span>
+        </div>
+      </div>
+      <div class="date-item">
+        <i class="fa-solid fa-clock"></i>
+        <div>
+          <strong>Daily Calls</strong>
+          <span>10-11am AEDT / 8-9pm ET</span>
+        </div>
+      </div>
+      <div class="date-item">
+        <i class="fa-solid fa-users"></i>
+        <div>
+          <strong>Capacity</strong>
+          <span>Limited to 7 families</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Indicators -->
+  <div class="trust-section">
+    <div class="trust-item">
+      <i class="fa-solid fa-shield-check"></i>
+      <span>Secure Checkout</span>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-lock"></i>
+      <span>SSL Encrypted</span>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-credit-card"></i>
+      <span>Safe Payment</span>
+    </div>
+  </div>
+
+  <!-- Mobile CTA -->
+  <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">
+    Complete Checkout - $390
+  </a>
+
+  <!-- Footer -->
+  <div class="checkout-footer">
+    <p>Questions? Email <a href="mailto:hello@joinsnooze.com">hello@joinsnooze.com</a></p>
+    <p class="footer-note">Camp Snooze is a one-time program. Your Snooze membership continues separately.</p>
+  </div>
+
+</div>

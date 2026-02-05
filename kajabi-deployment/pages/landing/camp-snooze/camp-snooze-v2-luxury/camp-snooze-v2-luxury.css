@@ -1,0 +1,1087 @@
+/* ============================================
+   CAMP SNOOZE V2 - MEMBER-FIRST PRICING
+   Simplified Single-Price with Upsell Modals
+
+   Paste this into Kajabi: Settings → Website → Theme → Custom CSS
+   (Or into the page's custom CSS field)
+   ============================================ */
+
+:root {
+  /* Camp Snooze Palette - Nostalgic Summer Camp */
+  --camp-forest: hsl(150, 35%, 25%);
+  --camp-sage: hsl(140, 25%, 75%);
+  --camp-cream: hsl(42, 33%, 96%);
+  --camp-gold: hsl(38, 70%, 55%);
+  --camp-rust: hsl(20, 60%, 45%);
+  --camp-navy: hsl(215, 40%, 25%);
+
+  --background: hsl(42, 33%, 96%);
+  --foreground: hsl(150, 25%, 20%);
+  --muted-foreground: hsl(150, 15%, 40%);
+
+  /* Typography */
+  --font-display: 'Satisfy', cursive;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px -4px hsl(150 25% 20% / 0.1);
+  --shadow-polaroid: 0 8px 30px -8px hsl(150 25% 20% / 0.2);
+  --shadow-badge: 0 2px 8px hsl(150 25% 20% / 0.15);
+  --shadow-modal: 0 25px 60px -12px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.camp-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Pine Tree Background Pattern */
+.pine-pattern {
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='100' viewBox='0 0 80 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L48 25 L32 25 Z M40 20 L52 40 L28 40 Z M40 35 L55 58 L25 58 Z M37 58 L43 58 L43 72 L37 72 Z' fill='%23355E3B' fill-opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 80px 100px;
+}
+
+/* Section Styles */
+.camp-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.camp-section-alt {
+  background: white;
+}
+
+/* Typography */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Section Divider */
+.section-divider {
+  width: 96px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--camp-sage), var(--camp-gold));
+}
+
+/* Buttons */
+.btn-camp {
+  display: inline-block;
+  background: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn-camp:hover {
+  background: hsl(150, 35%, 30%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px -4px hsl(150 25% 20% / 0.2);
+}
+
+.btn-camp-xl {
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+}
+
+.btn-camp-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+.btn-camp-cta {
+  background: var(--camp-gold);
+  color: var(--camp-forest);
+}
+
+.btn-camp-cta:hover {
+  background: hsl(38, 70%, 60%);
+}
+
+/* Camp Badge */
+.camp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: white;
+  color: var(--foreground);
+  border: 2px solid hsl(150, 35%, 25% / 0.2);
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-badge);
+  transition: all 0.3s ease;
+}
+
+.camp-badge:hover {
+  background: var(--camp-sage);
+  background-opacity: 0.3;
+}
+
+/* Polaroid Photo Effect */
+.polaroid {
+  background: white;
+  padding: 0.75rem;
+  padding-bottom: 3rem;
+  box-shadow: var(--shadow-polaroid);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid.rotate-3 {
+  transform: rotate(3deg);
+}
+
+.polaroid.rotate-3:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes leafFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-subtle {
+
+  0%,
+  100% {
+    box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 10px 40px -5px rgba(212, 175, 55, 0.35);
+  }
+}
+
+@media (min-width: 640px) {
+  .sticky-cta-text {
+    display: block !important;
+  }
+
+  .sticky-cta-mobile {
+    display: none !important;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Sticky Footer CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 1rem;
+  box-shadow: 0 -4px 20px hsl(150 35% 25% / 0.3);
+  display: none;
+}
+
+.sticky-cta.show {
+  display: block;
+}
+
+.sticky-cta-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Camp Scene Illustration */
+.camp-scene-illustration {
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camp-scene-image {
+  width: 100%;
+  max-width: 56rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 8px 24px rgba(45, 80, 22, 0.15));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.camp-scene-image:hover {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
+
+.countdown-wrapper {
+  margin-bottom: 2rem;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  color: var(--camp-rust);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.countdown-label i {
+  font-size: 0.85rem;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--camp-forest);
+  color: var(--camp-cream);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  min-width: 60px;
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+}
+
+.countdown-value {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+  color: var(--camp-sage);
+}
+
+.countdown-separator {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+  padding: 0 0.25rem;
+}
+
+/* Countdown expired state */
+.countdown-expired {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background: var(--camp-rust);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+/* Sticky CTA countdown (compact version) */
+.sticky-countdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--camp-sage);
+}
+
+.sticky-countdown-value {
+  font-weight: 700;
+  color: var(--camp-cream);
+}
+
+@media (max-width: 480px) {
+  .countdown-unit {
+    padding: 0.5rem 0.6rem;
+    min-width: 50px;
+  }
+
+  .countdown-value {
+    font-size: 1.35rem;
+  }
+
+  .countdown-text {
+    font-size: 0.6rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.25rem;
+    padding: 0 0.15rem;
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   HERO PRICING - Single Prominent Price Box
+   ============================================ */
+
+.hero-price-container {
+  max-width: 420px;
+  margin: 2rem auto 0;
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 1.5rem;
+  border: 2px solid #f1f5f9;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  text-align: center;
+}
+
+.value-anchor {
+  font-size: 0.9rem;
+  color: #64748b;
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.prominent-price {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+  margin: 0;
+  line-height: 1;
+}
+
+.price-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--camp-gold);
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.price-details-link {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.price-details-link:hover {
+  color: #2563eb;
+}
+
+.btn-hero-cta {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Dark Pricing Card (for dark section) */
+.pricing-card-dark {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: var(--shadow-modal);
+  animation: modalFadeIn 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 1.75rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #64748b;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Price Breakdown Styles */
+.breakdown-container {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.breakdown-row:last-child {
+  border-bottom: none;
+}
+
+.breakdown-row.discount {
+  color: #64748b;
+}
+
+.breakdown-row.total {
+  border-top: 2px solid #e2e8f0;
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--camp-forest);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.discount-text {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Upsell Modal Specifics */
+.upsell-modal {
+  max-width: 460px;
+}
+
+.upsell-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.upsell-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.upsell-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.upsell-benefits-box {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.benefits-title {
+  font-weight: 700;
+  color: var(--camp-forest);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #475569;
+  align-items: flex-start;
+}
+
+.benefit-item:last-child {
+  margin-bottom: 0;
+}
+
+.benefit-item i {
+  color: #22c55e;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.membership-price {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.price-amount {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.cancel-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.cancel-note i {
+  color: #22c55e;
+  margin-right: 4px;
+}
+
+/* Upgrade Button */
+.btn-upgrade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--camp-forest);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  width: 100%;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+}
+
+.btn-upgrade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 80, 22, 0.3);
+  background: hsl(150, 35%, 30%);
+}
+
+.btn-subtext {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Non-member Option */
+.non-member-section {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.non-member-option {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.non-member-option:hover {
+  color: #475569;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .camp-section {
+    padding: 3rem 0;
+  }
+
+  .sticky-cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .camp-scene-image {
+    max-width: 100%;
+    opacity: 0.9;
+  }
+
+  .prominent-price {
+    font-size: 3.5rem;
+  }
+
+  .hero-price-container {
+    padding: 2rem 1.5rem;
+    margin: 1.5rem auto 0;
+  }
+
+  .modal-content {
+    padding: 2rem 1.5rem;
+    margin: 0.5rem;
+    max-height: 85vh;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .upsell-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .upsell-icon i {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .prominent-price {
+    font-size: 3rem;
+  }
+
+  .price-label {
+    font-size: 1rem;
+  }
+
+  .btn-upgrade {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .benefit-item {
+    font-size: 0.85rem;
+  }
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body scroll lock when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ============================================
+   TESTIMONIAL CAROUSEL - Horizontal Scrolling
+   ============================================ */
+.testimonial-carousel-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 0;
+}
+
+.carousel-track-full {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner-full {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  animation: scroll-testimonials 40s linear infinite;
+  width: max-content;
+}
+
+.carousel-inner-full:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-320px * 15 - 1.5rem * 15));
+  }
+}
+
+.review-card-full {
+  flex: 0 0 auto;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid hsl(140, 25%, 75% / 0.5);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px -8px hsl(150 25% 20% / 0.15);
+}
+
+.review-card-full p {
+  font-style: italic;
+  color: var(--camp-forest);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.camp-testimonial-card p {
+  min-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .review-card-full {
+    width: 280px;
+    padding: 1.5rem;
+  }
+
+  .carousel-inner-full {
+    gap: 1rem;
+  }
+
+  @keyframes scroll-testimonials {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-280px * 15 - 1rem * 15));
+    }
+  }
+}
+
+/* ============================================
+   CAMP SNOOZE CURRENCY TOGGLE (AUD/USD)
+   ============================================ */
+
+/* FOUC prevention: hide dynamic prices until currency loaded */
+body:not(.currency-loaded) .dynamic-price {
+  visibility: hidden;
+}
+
+body.currency-loaded .dynamic-price {
+  visibility: visible;
+}
+
+/* Toggle container (pricing section) */
+.camp-currency-toggle-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 50px;
+}
+
+.camp-currency-toggle {
+  display: inline-flex !important;
+  border: 2px solid hsl(140, 25%, 75%);
+  border-radius: 9999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px;
+  gap: 0;
+}
+
+.camp-currency-toggle button {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: hsl(42, 33%, 96%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 40px;
+}
+
+.camp-currency-toggle button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.camp-currency-toggle button.active {
+  background: hsl(38, 70%, 55%);
+  color: hsl(150, 35%, 25%);
+}
+
+.camp-currency-toggle button:focus-visible {
+  outline: 2px solid hsl(38, 70%, 55%);
+  outline-offset: 2px;
+}
+
+/* Nav-injected toggle (desktop/mobile) */
+.camp-nav-currency-toggle {
+  display: inline-flex !important;
+  border: 1px solid hsl(150, 25%, 60%);
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  margin-left: 1rem;
+}
+
+.camp-nav-currency-toggle button {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  background: transparent;
+  color: hsl(150, 35%, 25%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.camp-nav-currency-toggle button:hover {
+  background: hsl(150, 25%, 95%);
+}
+
+.camp-nav-currency-toggle button.active {
+  background: hsl(150, 35%, 25%);
+  color: hsl(42, 33%, 96%);
+}
+
+.camp-nav-currency-toggle button:focus-visible {
+  outline: 2px solid hsl(38, 70%, 55%);
+  outline-offset: 2px;
+}
+
+/* Sticky footer toggle */
+.sticky-currency-toggle {
+  display: inline-flex !important;
+}
+
+.sticky-currency-toggle button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background: transparent;
+  color: hsl(42, 33%, 96%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.sticky-currency-toggle button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sticky-currency-toggle button.active {
+  background: hsl(38, 70%, 55%);
+  color: hsl(150, 35%, 25%);
+}
+
+@media (max-width: 768px) {
+  .camp-currency-toggle button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .camp-nav-currency-toggle {
+    margin-left: 0;
+  }
+  
+  .sticky-currency-toggle button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

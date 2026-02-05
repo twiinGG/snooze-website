@@ -1,0 +1,330 @@
+<!-- ============================================
+     VALUE COMPARISON COMPONENT
+     Compares individual product vs Snooze membership
+     Reusable across product and age-specific pages
+     ============================================ -->
+
+<section class="snooze-value-comparison">
+  <div class="snooze-container">
+    <h2 class="snooze-section-title">Get This + Everything Else</h2>
+    <p class="snooze-section-intro">For just a little more than a single course, you get access to everything in Snooze.</p>
+    
+    <div class="snooze-comparison-grid">
+      <!-- Individual Product -->
+      <div class="snooze-comparison-card snooze-comparison-individual">
+        <div class="snooze-comparison-header">
+          <h3>Individual Course</h3>
+          <div class="snooze-price">
+            <span class="snooze-price-amount" data-product-price="$117">$117</span>
+            <span class="snooze-price-note">one-time</span>
+          </div>
+        </div>
+        <ul class="snooze-comparison-features">
+          <li><i class="fa-solid fa-check"></i> This course only</li>
+          <li><i class="fa-solid fa-check"></i> Lifetime access to this course</li>
+          <li><i class="fa-solid fa-xmark"></i> No access to other age guides</li>
+          <li><i class="fa-solid fa-xmark"></i> No Library access</li>
+          <li><i class="fa-solid fa-xmark"></i> No Village community</li>
+          <li><i class="fa-solid fa-xmark"></i> No live coaching</li>
+        </ul>
+      </div>
+      
+      <!-- VS Divider -->
+      <div class="snooze-comparison-vs">
+        <div class="snooze-vs-line"></div>
+        <div class="snooze-vs-text">vs</div>
+        <div class="snooze-vs-line"></div>
+      </div>
+      
+      <!-- Snooze Membership -->
+      <div class="snooze-comparison-card snooze-comparison-membership">
+        <div class="snooze-comparison-badge">Best Value</div>
+        <div class="snooze-comparison-header">
+          <h3>Snooze Membership</h3>
+          <div class="snooze-price">
+            <span class="snooze-price-amount">$147</span>
+            <span class="snooze-price-period">/quarter</span>
+            <span class="snooze-price-note">Launch pricing</span>
+          </div>
+        </div>
+        <ul class="snooze-comparison-features">
+          <li><i class="fa-solid fa-check"></i> This course included</li>
+          <li><i class="fa-solid fa-check"></i> All age guides (newborn through toddler)</li>
+          <li><i class="fa-solid fa-check"></i> Complete Library access</li>
+          <li><i class="fa-solid fa-check"></i> The Village community</li>
+          <li><i class="fa-solid fa-check"></i> Weekly live coaching with Sally</li>
+          <li><i class="fa-solid fa-check"></i> Member pricing on consultations</li>
+        </ul>
+        <div class="snooze-comparison-cta">
+          <a href="https://joinsnooze.com/offers/6iRarwak/checkout" class="snooze-btn-primary snooze-btn-large">
+            Join Snooze
+          </a>
+          <p class="snooze-comparison-note">For just $30 more, you get everything</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Value Message -->
+    <div class="snooze-value-message">
+      <p><strong>Individual courses:</strong> $117-$129 each</p>
+      <p><strong>Snooze Membership:</strong> $147/quarter (Launch) - Get all courses + Library + Village + Coaching</p>
+      <p class="snooze-value-highlight">For just $30 more than a single course, you get everything.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Value Comparison Styles */
+.snooze-value-comparison {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.snooze-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.snooze-section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.snooze-section-intro {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.snooze-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.snooze-comparison-card {
+  background: #faf9f7;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.snooze-comparison-membership {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+  border-color: #f43357;
+  border-width: 3px;
+}
+
+.snooze-comparison-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f43357;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.snooze-comparison-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.snooze-comparison-membership .snooze-comparison-header {
+  border-bottom-color: #f43357;
+}
+
+.snooze-comparison-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.snooze-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.snooze-price-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f43357;
+  line-height: 1;
+}
+
+.snooze-price-period {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.snooze-price-note {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+.snooze-comparison-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.snooze-comparison-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.snooze-comparison-features i {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.snooze-comparison-features .fa-check {
+  color: #10b981;
+}
+
+.snooze-comparison-features .fa-xmark {
+  color: #ef4444;
+}
+
+.snooze-comparison-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.snooze-vs-line {
+  width: 2px;
+  height: 60px;
+  background: #e5e5e5;
+}
+
+.snooze-vs-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.snooze-comparison-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.snooze-btn-large {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+}
+
+.snooze-comparison-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.snooze-value-message {
+  text-align: center;
+  padding: 2rem;
+  background: #faf9f7;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.snooze-value-message p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.snooze-value-highlight {
+  margin-top: 1rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #f43357 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .snooze-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .snooze-comparison-vs {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
+  
+  .snooze-vs-line {
+    width: 60px;
+    height: 2px;
+  }
+  
+  .snooze-comparison-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .snooze-value-comparison {
+    padding: 3rem 1.5rem;
+  }
+  
+  .snooze-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .snooze-price-amount {
+    font-size: 2rem;
+  }
+  
+  .snooze-comparison-card {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+<script>
+// Update product price dynamically if data attribute is set
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var priceElement = document.querySelector('[data-product-price]');
+    if (priceElement) {
+      var price = priceElement.getAttribute('data-product-price');
+      priceElement.textContent = price;
+    }
+  });
+})();
+</script>
+

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Snooze Village Day Pass | Free Access Today</title>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ============================================
+       SNOOZE VILLAGE DAY PASS CHECKOUT
+       Fun & Engaging Design
+       ============================================ */
+    
+    :root {
+      --color-primary: #F43357;
+      --color-navy: #1F293B;
+      --color-cream: #FAF7F4;
+      --color-beige: #F2EDEA;
+      --color-sage: #7C8A98;
+      --color-white: #FFFFFF;
+      --color-coral-tint: #FFE7EA;
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-base: 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: linear-gradient(135deg, #FAF7F4 0%, #F2EDEA 100%);
+      color: var(--color-navy);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    
+    .checkout-container {
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.6s ease;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Header Section */
+    .checkout-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+    }
+    
+    .pass-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #F43357 0%, #E87080 100%);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    .checkout-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--color-navy);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .checkout-header .subtitle {
+      font-size: 1.25rem;
+      color: var(--color-sage);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Main Content Card */
+    .checkout-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    
+    .checkout-card-header {
+      background: linear-gradient(135deg, var(--color-navy) 0%, #2a3852 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .checkout-card-header h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .checkout-card-header .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 0.5rem 0;
+    }
+    
+    .checkout-card-header .price-label {
+      font-size: 1rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Benefits Section */
+    .benefits-section {
+      padding: 2.5rem;
+    }
+    
+    .benefits-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+    
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      background: var(--color-coral-tint);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-primary);
+      transition: transform var(--transition-base);
+    }
+    
+    .benefits-list li:hover {
+      transform: translateX(5px);
+    }
+    
+    .benefits-list li i {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-right: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+    
+    .benefits-list li .benefit-text {
+      flex: 1;
+    }
+    
+    .benefits-list li .benefit-title {
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--color-navy);
+      margin-bottom: 0.25rem;
+    }
+    
+    .benefits-list li .benefit-desc {
+      color: var(--color-sage);
+      font-size: 0.95rem;
+    }
+    
+    /* What's Included Section */
+    .includes-section {
+      padding: 2.5rem;
+      background: var(--color-beige);
+      border-top: 3px dashed var(--color-primary);
+    }
+    
+    .includes-section h3 {
+      font-size: 1.5rem;
+      color: var(--color-navy);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .include-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .include-item i {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .include-item h4 {
+      font-size: 1.125rem;
+      color: var(--color-navy);
+      margin-bottom: 0.5rem;
+    }
+    
+    .include-item p {
+      font-size: 0.9rem;
+      color: var(--color-sage);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 2.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-coral-tint) 0%, #fff0f2 100%);
+    }
+    
+    .cta-section h3 {
+      font-size: 1.75rem;
+      color: var(--color-navy);
+      margin-bottom: 1rem;
+    }
+    
+    .cta-section p {
+      font-size: 1.125rem;
+      color: var(--color-sage);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      padding: 1.25rem 3rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+      border: none;
+      cursor: pointer;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    
+    .cta-button:hover {
+      background: #d92a48;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(244, 51, 87, 0.3);
+    }
+    
+    .cta-button:active {
+      transform: translateY(-1px);
+    }
+    
+    /* Fun Elements */
+    .sparkle {
+      display: inline-block;
+      animation: sparkle 2s infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      50% {
+        opacity: 0.7;
+        transform: scale(1.2) rotate(180deg);
+      }
+    }
+    
+    /* Trust Badge */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-sage);
+      font-size: 0.9rem;
+    }
+    
+    .trust-badge i {
+      color: var(--color-primary);
+    }
+    
+    /* Footer Note */
+    .footer-note {
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-sage);
+      font-size: 0.95rem;
+    }
+    
+    .footer-note a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .checkout-header {
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .benefits-section,
+      .includes-section,
+      .cta-section {
+        padding: 1.5rem;
+      }
+      
+      .includes-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .checkout-card-header .price {
+        font-size: 2.5rem;
+      }
+      
+      .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+      }
+    }
+    
+    /* Kajabi Checkout Integration */
+    .kajabi-checkout-wrapper {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    
+    <!-- Header -->
+    <div class="checkout-header">
+      <div class="pass-badge">
+        <i class="fas fa-ticket-alt"></i> Limited Time Pass
+      </div>
+      <h1>Your Snooze Village Day Pass</h1>
+      <p class="subtitle">Experience the support, community, and expert coaching that makes Snooze special. All yours for a day, on us!</p>
+    </div>
+    
+    <!-- Main Card -->
+    <div class="checkout-card">
+      
+      <!-- Card Header with Price -->
+      <div class="checkout-card-header">
+        <h2>Get Your Free Day Pass</h2>
+        <div class="price">FREE</div>
+        <div class="price-label">No credit card required</div>
+      </div>
+      
+      <!-- Benefits Section -->
+      <div class="benefits-section">
+        <h3 style="font-size: 1.5rem; color: var(--color-navy); margin-bottom: 1rem;">What You'll Get Today:</h3>
+        <ul class="benefits-list">
+          <li>
+            <i class="fas fa-video"></i>
+            <div class="benefit-text">
+              <div class="benefit-title">Attend Live Coaching Calls</div>
+              <div class="benefit-desc">Join our weekly group coaching sessions with Sally and get real-time answers to your sleep questions</div>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-users"></i>
+            <div class="benefit-text">
+              <div class="benefit-title">Connect in Snooze Village</div>
+              <div class="benefit-desc">Meet other parents, share wins, ask questions, and feel supported in your sleep journey</div>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-comments"></i>
+            <div class="benefit-text">
+              <div class="benefit-title">Expert-Moderated Support</div>
+              <div class="benefit-desc">Get guidance from certified sleep consultants right when you need it</div>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-calendar-check"></i>
+            <div class="benefit-text">
+              <div class="benefit-title">24 Hours of Full Access</div>
+              <div class="benefit-desc">Explore everything the Village has to offer - no limits, no restrictions (just no courses or Library resources)</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- What's Included -->
+      <div class="includes-section">
+        <h3><i class="fas fa-check-circle sparkle"></i> What's Included</h3>
+        <div class="includes-grid">
+          <div class="include-item">
+            <i class="fas fa-video"></i>
+            <h4>Live Coaching</h4>
+            <p>Attend scheduled calls</p>
+          </div>
+          <div class="include-item">
+            <i class="fas fa-comments"></i>
+            <h4>Community Chat</h4>
+            <p>Connect with parents</p>
+          </div>
+          <div class="include-item">
+            <i class="fas fa-user-md"></i>
+            <h4>Expert Q&A</h4>
+            <p>Get your questions answered</p>
+          </div>
+          <div class="include-item">
+            <i class="fas fa-heart"></i>
+            <h4>Support & Encouragement</h4>
+            <p>Feel part of the village</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <h3>Ready to Experience Snooze Village? <span class="sparkle">✨</span></h3>
+        <p>Claim your free day pass and see what it feels like to have a village supporting your sleep journey.</p>
+        
+        <!-- Kajabi Checkout Button -->
+        <!-- Replace [YOUR_CHECKOUT_URL] with your actual Kajabi checkout URL -->
+        <a href="#" class="cta-button" id="checkout-button">
+          Get My Free Day Pass <i class="fas fa-arrow-right"></i>
+        </a>
+        
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-lock"></i>
+            <span>Secure & Free</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-clock"></i>
+            <span>Instant Access</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-heart"></i>
+            <span>No Credit Card</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Footer Note -->
+    <div class="footer-note">
+      <p>
+        <i class="fas fa-info-circle"></i> This day pass gives you access to Snooze Village (community and coaching) but does not include courses or resources from the Library. Want full access? <a href="/offers/6iRarwak/checkout">Become a Snooze Member</a>
+      </p>
+    </div>
+    
+  </div>
+  
+  <script>
+    // Update checkout button URL with your actual Kajabi checkout URL
+    // Replace this with your day pass offer checkout URL
+    const checkoutButton = document.getElementById('checkout-button');
+    
+    // You'll need to replace this with your actual Kajabi checkout URL
+    // It should look like: https://joinsnooze.com/offers/[YOUR_OFFER_ID]/checkout
+    checkoutButton.addEventListener('click', function(e) {
+      // Uncomment and update this line with your actual checkout URL:
+      // window.location.href = 'https://joinsnooze.com/offers/[YOUR_OFFER_ID]/checkout';
+      
+      // For now, this prevents the default link behavior
+      // Remove this once you've added the actual URL above
+      e.preventDefault();
+      alert('Please update the checkout URL in the script section with your actual Kajabi checkout URL!');
+    });
+    
+    // Smooth scroll animation on load
+    window.addEventListener('load', function() {
+      document.body.style.opacity = '0';
+      setTimeout(function() {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
+

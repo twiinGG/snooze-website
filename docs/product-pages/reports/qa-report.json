@@ -1,0 +1,114 @@
+{
+  "generated_at": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze Landing Page Kajabi/projects/snooze-website/kajabi-deployment/pages/product-pages/scripts",
+  "pages_reviewed": [
+    {
+      "course": "5-12-month-guide",
+      "course_name": "5-12 Month Course",
+      "status": "passed",
+      "overall_score": 100.0,
+      "scores": {
+        "tone_of_voice": 100,
+        "technical_accuracy": 100,
+        "html_structure": 100,
+        "content_accuracy": 100
+      },
+      "issues": [],
+      "critical_issues": [],
+      "tone_warnings": [
+        {
+          "type": "tone_preference",
+          "preference": "use_i_would",
+          "count": 3,
+          "status": "good"
+        },
+        {
+          "type": "tone_preference",
+          "preference": "use_usually",
+          "count": 2,
+          "status": "good"
+        }
+      ],
+      "issue_count": 0,
+      "critical_count": 0
+    },
+    {
+      "course": "toddler-toolkit",
+      "course_name": "Toddler Toolkit",
+      "status": "passed",
+      "overall_score": 100.0,
+      "scores": {
+        "tone_of_voice": 100,
+        "technical_accuracy": 100,
+        "html_structure": 100,
+        "content_accuracy": 100
+      },
+      "issues": [],
+      "critical_issues": [],
+      "tone_warnings": [
+        {
+          "type": "tone_preference",
+          "preference": "use_i_would",
+          "count": 3,
+          "status": "good"
+        }
+      ],
+      "issue_count": 0,
+      "critical_count": 0
+    },
+    {
+      "course": "snooze-method",
+      "course_name": "The Snooze Method",
+      "status": "passed",
+      "overall_score": 100.0,
+      "scores": {
+        "tone_of_voice": 100,
+        "technical_accuracy": 100,
+        "html_structure": 100,
+        "content_accuracy": 100
+      },
+      "issues": [],
+      "critical_issues": [],
+      "tone_warnings": [
+        {
+          "type": "tone_preference",
+          "preference": "use_i_would",
+          "count": 2,
+          "status": "good"
+        }
+      ],
+      "issue_count": 0,
+      "critical_count": 0
+    },
+    {
+      "course": "newborn-guide",
+      "course_name": "Newborn Sleep Guide",
+      "status": "passed",
+      "overall_score": 100.0,
+      "scores": {
+        "tone_of_voice": 100,
+        "technical_accuracy": 100,
+        "html_structure": 100,
+        "content_accuracy": 100
+      },
+      "issues": [],
+      "critical_issues": [],
+      "tone_warnings": [
+        {
+          "type": "tone_preference",
+          "preference": "use_i_would",
+          "count": 4,
+          "status": "good"
+        }
+      ],
+      "issue_count": 0,
+      "critical_count": 0
+    }
+  ],
+  "summary": {
+    "total_pages": 4,
+    "pages_passed": 4,
+    "pages_failed": 0,
+    "total_issues": 0,
+    "critical_issues": 0
+  }
+}

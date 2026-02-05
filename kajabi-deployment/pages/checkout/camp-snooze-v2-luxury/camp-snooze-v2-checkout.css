@@ -1,0 +1,564 @@
+/* ============================================
+   CAMP SNOOZE V2 - CHECKOUT PAGE STYLES
+   Unified styles for both Member Bundle & Standalone checkouts
+
+   Paste this into Kajabi: Settings → Website → Custom CSS
+   (Or into the page's custom CSS field)
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+#snooze-custom-checkout {
+  --camp-forest: #2d5016;
+  --camp-sage: #94a3b8;
+  --camp-cream: #fdfcf8;
+  --camp-gold: #d4af37;
+  --camp-rust: #a34a20;
+  --shadow-soft: 0 10px 30px -5px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 20px rgba(0,0,0,0.08);
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+}
+
+/* ============================================
+   BASE CHECKOUT CONTAINER
+   ============================================ */
+#snooze-custom-checkout.checkout-v2 {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #1e293b;
+}
+
+#snooze-custom-checkout h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+#snooze-custom-checkout h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ============================================
+   SUCCESS BANNER (Member Bundle Only)
+   ============================================ */
+#snooze-custom-checkout .success-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 1px solid #86efac;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .success-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--camp-gold), #e6c555);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#snooze-custom-checkout .success-icon i {
+  font-size: 1.25rem;
+  color: white;
+}
+
+#snooze-custom-checkout .success-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+  margin: 0 0 0.25rem 0;
+}
+
+#snooze-custom-checkout .success-content p {
+  font-size: 0.9rem;
+  color: #16a34a;
+  margin: 0;
+}
+
+/* ============================================
+   ORDER SUMMARY CARD
+   ============================================ */
+#snooze-custom-checkout .order-summary-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+#snooze-custom-checkout .order-breakdown {
+  margin-top: 1rem;
+}
+
+#snooze-custom-checkout .order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+#snooze-custom-checkout .order-item:last-of-type {
+  border-bottom: none;
+}
+
+#snooze-custom-checkout .item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#snooze-custom-checkout .item-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+#snooze-custom-checkout .item-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+#snooze-custom-checkout .item-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+#snooze-custom-checkout .original-price {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+#snooze-custom-checkout .member-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+}
+
+#snooze-custom-checkout .order-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.5rem 0;
+}
+
+#snooze-custom-checkout .savings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f0fdf4;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+#snooze-custom-checkout .savings-row span {
+  font-size: 0.9rem;
+  color: #16a34a;
+}
+
+#snooze-custom-checkout .savings-row i {
+  margin-right: 0.5rem;
+}
+
+#snooze-custom-checkout .savings-amount {
+  font-weight: 700;
+}
+
+#snooze-custom-checkout .order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+  margin-top: 0.5rem;
+}
+
+#snooze-custom-checkout .order-total span:first-child {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#snooze-custom-checkout .total-amount {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--camp-forest);
+}
+
+#snooze-custom-checkout .total-amount .currency {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+#snooze-custom-checkout .membership-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fef9e7;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #92400e;
+}
+
+#snooze-custom-checkout .membership-note i {
+  color: var(--camp-gold);
+}
+
+/* ============================================
+   UPGRADE PROMPT (Standalone Only)
+   ============================================ */
+#snooze-custom-checkout .upgrade-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .upgrade-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--camp-gold), #e6c555);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#snooze-custom-checkout .upgrade-icon i {
+  font-size: 1rem;
+  color: white;
+}
+
+#snooze-custom-checkout .upgrade-content h4 {
+  font-size: 1rem;
+  color: var(--camp-forest);
+  margin-bottom: 0.5rem;
+}
+
+#snooze-custom-checkout .upgrade-content p {
+  font-size: 0.85rem;
+  color: #78350f;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+#snooze-custom-checkout .upgrade-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--camp-forest);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: gap 0.2s ease;
+}
+
+#snooze-custom-checkout .upgrade-link:hover {
+  gap: 0.5rem;
+  text-decoration: underline;
+}
+
+/* ============================================
+   WHAT'S INCLUDED SECTION
+   ============================================ */
+#snooze-custom-checkout .whats-included-section {
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#snooze-custom-checkout .included-grid.single-card {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#snooze-custom-checkout .included-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-medium);
+}
+
+#snooze-custom-checkout .included-card.featured {
+  border-color: var(--camp-gold);
+  background: linear-gradient(to bottom, #fffbeb, white);
+}
+
+#snooze-custom-checkout .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+#snooze-custom-checkout .card-icon {
+  font-size: 1.5rem;
+}
+
+#snooze-custom-checkout .card-header h4 {
+  font-size: 1.125rem;
+  color: var(--camp-forest);
+  flex: 1;
+}
+
+#snooze-custom-checkout .card-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 999px;
+}
+
+#snooze-custom-checkout .card-badge.gold {
+  background: linear-gradient(135deg, var(--camp-gold), #e6c555);
+  color: white;
+}
+
+#snooze-custom-checkout .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#snooze-custom-checkout .benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+#snooze-custom-checkout .benefits-list li i {
+  color: #22c55e;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   KEY DATES SECTION
+   ============================================ */
+#snooze-custom-checkout .key-dates-section {
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .dates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#snooze-custom-checkout .date-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+#snooze-custom-checkout .date-item i {
+  font-size: 1.25rem;
+  color: var(--camp-forest);
+  margin-top: 0.125rem;
+}
+
+#snooze-custom-checkout .date-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+#snooze-custom-checkout .date-item span {
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ============================================
+   TRUST INDICATORS
+   ============================================ */
+#snooze-custom-checkout .trust-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+#snooze-custom-checkout .trust-item i {
+  color: #22c55e;
+}
+
+/* ============================================
+   MOBILE SCROLL-TO-CHECKOUT CTA
+   ============================================ */
+#snooze-custom-checkout .mobile-scroll-to-checkout {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--camp-forest);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+#snooze-custom-checkout .mobile-scroll-to-checkout:hover {
+  background: #234012;
+}
+
+/* ============================================
+   CHECKOUT FOOTER
+   ============================================ */
+#snooze-custom-checkout .checkout-footer {
+  text-align: center;
+  padding: 1.5rem 0 3rem;
+}
+
+#snooze-custom-checkout .checkout-footer p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0.5rem 0;
+}
+
+#snooze-custom-checkout .checkout-footer a {
+  color: var(--camp-forest);
+  text-decoration: underline;
+}
+
+#snooze-custom-checkout .footer-note {
+  font-size: 0.8rem !important;
+  color: #94a3b8 !important;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 768px) {
+  #snooze-custom-checkout.checkout-v2 {
+    padding: 0 0.75rem;
+    margin: 1rem auto;
+  }
+
+  #snooze-custom-checkout .success-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  #snooze-custom-checkout .upgrade-prompt {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #snooze-custom-checkout .upgrade-icon {
+    margin: 0 auto;
+  }
+
+  #snooze-custom-checkout .order-summary-card {
+    padding: 1.25rem;
+  }
+
+  #snooze-custom-checkout .included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #snooze-custom-checkout .dates-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  #snooze-custom-checkout .trust-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  #snooze-custom-checkout .mobile-scroll-to-checkout {
+    display: block;
+  }
+
+  #snooze-custom-checkout .checkout-footer {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #snooze-custom-checkout h3 {
+    font-size: 1.25rem;
+  }
+
+  #snooze-custom-checkout .total-amount {
+    font-size: 1.5rem;
+  }
+
+  #snooze-custom-checkout .order-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #snooze-custom-checkout .item-pricing {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}

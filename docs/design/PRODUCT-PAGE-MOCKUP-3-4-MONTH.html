@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-4 Month Baby Sleep Course - Design Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 64px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        /* Navigation */
+        .nav {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+        }
+        
+        /* Hero - Simplified */
+        .hero-simple {
+            padding: 80px 0 64px;
+            text-align: center;
+            background: #fafafa;
+        }
+        
+        .hero-simple h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .hero-simple .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 24px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .hero-stats span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero-cta-subtle {
+            margin-top: 32px;
+        }
+        
+        .btn-subtle {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .btn-subtle:hover {
+            background: #333;
+        }
+        
+        /* Course Overview */
+        .course-overview {
+            background: #fff;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .overview-card {
+            padding: 24px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+        }
+        
+        .overview-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .overview-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .overview-card li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .overview-card li:before {
+            content: "•";
+            color: #666;
+            margin-right: 8px;
+        }
+        
+        /* Curriculum - PROMINENT */
+        .curriculum {
+            background: #fafafa;
+        }
+        
+        .curriculum-intro {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            max-width: 800px;
+        }
+        
+        .module-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .module-item {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .module-header {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        
+        .module-header:hover {
+            background: #f9f9f9;
+        }
+        
+        .module-header h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .module-info {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        .module-toggle {
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .module-content {
+            padding: 0 24px 24px;
+            display: none;
+        }
+        
+        .module-content.expanded {
+            display: block;
+        }
+        
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .lesson-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lesson-item:last-child {
+            border-bottom: none;
+        }
+        
+        .lesson-name {
+            font-size: 15px;
+            color: #333;
+        }
+        
+        .lesson-time {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .module-resources {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Course Resources */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .resource-item {
+            padding: 20px;
+            border-left: 3px solid #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .resource-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .resource-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* How to Use Section */
+        .how-to-use {
+            background: #fff;
+        }
+        
+        .use-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .use-step {
+            padding: 24px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+        }
+        
+        .use-step h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .use-step p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Right for You Section */
+        .right-for-you {
+            background: #fafafa;
+        }
+        
+        .assessment-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 24px;
+        }
+        
+        .assessment-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 15px;
+            color: #333;
+        }
+        
+        .assessment-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Pricing - Simplified */
+        .pricing-simple {
+            background: #fff;
+            text-align: center;
+        }
+        
+        .pricing-card {
+            max-width: 400px;
+            margin: 32px auto 0;
+            padding: 40px;
+            border: 2px solid #1a1a1a;
+            border-radius: 12px;
+            background: #fff;
+        }
+        
+        .price-amount {
+            font-size: 48px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .price-note {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .pricing-includes {
+            text-align: left;
+            margin: 24px 0;
+            padding-top: 24px;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        .pricing-includes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pricing-includes li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .pricing-includes li:before {
+            content: "✓";
+            color: #1a1a1a;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .membership-note {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .membership-note a {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .faq-answer {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* About Creator */
+        .about-creator {
+            background: #fafafa;
+        }
+        
+        .creator-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .creator-content p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        
+        /* Related Resources */
+        .related-resources {
+            background: #fff;
+        }
+        
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .resource-link {
+            padding: 12px 24px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .resource-link:hover {
+            background: #f9f9f9;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 48px 0;
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-simple h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .section {
+                padding: 48px 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+        /* Mockup annotations */
+        .mockup-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 13px;
+            color: #856404;
+        }
+        
+        .comparison {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .comparison strong {
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-weight: 600; font-size: 18px;">Snooze</div>
+                <div style="display: flex; gap: 24px; font-size: 14px;">
+                    <a href="#" style="color: #333; text-decoration: none;">Library</a>
+                    <a href="#" style="color: #333; text-decoration: none;">Village</a>
+                    <a href="#" style="color: #333; text-decoration: none;">Courses</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 1. Simplified Hero -->
+    <section class="hero-simple">
+        <div class="container">
+            <h1>3-4 Month Baby Sleep Course</h1>
+            <p class="subtitle">A self-paced course covering sleep changes, nap consolidation, and building independent sleep skills for babies 3-4 months old.</p>
+            
+            <div class="hero-stats">
+                <span><strong>11</strong> modules</span>
+                <span><strong>20+</strong> lessons</span>
+                <span><strong>Downloadable</strong> resources</span>
+                <span><strong>Lifetime</strong> access</span>
+            </div>
+            
+            <div class="hero-cta-subtle">
+                <a href="#pricing" class="btn-subtle">View Course Details</a>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Removed large callout banner, multiple benefit bullets, and oversized CTA. Hero is now content-focused with course stats and subtle CTA.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 2. Course Overview -->
+    <section class="course-overview section">
+        <div class="container">
+            <h2 class="section-title">Course Overview</h2>
+            <p style="font-size: 18px; color: #666; max-width: 800px; margin-bottom: 32px;">
+                This course provides comprehensive guidance for navigating your baby's 3-4 month sleep changes. You'll learn evidence-based strategies for extending naps, reducing night wakings, and building healthy sleep foundations.
+            </p>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>What You'll Learn</h3>
+                    <ul>
+                        <li>Why sleep changes at 3-4 months</li>
+                        <li>How to extend 30-minute cat naps</li>
+                        <li>Settling techniques for this age</li>
+                        <li>Night wake patterns and responses</li>
+                        <li>Creating optimal sleep environment</li>
+                        <li>Flexible routines for real life</li>
+                    </ul>
+                </div>
+                
+                <div class="overview-card">
+                    <h3>Course Format</h3>
+                    <ul>
+                        <li>Text-based lessons (primary)</li>
+                        <li>Video demonstrations</li>
+                        <li>Downloadable PDF guides</li>
+                        <li>Checklists and trackers</li>
+                        <li>Sample schedules</li>
+                        <li>Self-paced learning</li>
+                    </ul>
+                </div>
+                
+                <div class="overview-card">
+                    <h3>Time Investment</h3>
+                    <ul>
+                        <li>Self-paced, learn at your own speed</li>
+                        <li>Estimated 3-4 hours total content</li>
+                        <li>Can complete in one session or over weeks</li>
+                        <li>Reference back anytime</li>
+                        <li>Lifetime access to all updates</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> New section providing clear overview of course content, format, and time commitment. Educational tone, no sales language.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 3. Course Curriculum - PROMINENT -->
+    <section class="curriculum section">
+        <div class="container">
+            <h2 class="section-title">Course Curriculum</h2>
+            <p class="curriculum-intro">
+                Complete module-by-module breakdown. Click each module to see detailed lessons, learning objectives, and included resources.
+            </p>
+            
+            <div class="module-list">
+                <!-- Module 1 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 1: Understanding 3-4 Month Sleep Changes</h3>
+                            <div class="module-info">5 lessons • 45 minutes • 3 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">Introduction to baby sleep at this age and stage</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Understanding sleep cycles at 3–4 months</span>
+                                <span class="lesson-time">12 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Why cat naps happen (30-minute cycles)</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Night wake patterns and what's normal</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Emotional wellbeing for parents</span>
+                                <span class="lesson-time">5 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Sleep Cycle Diagram (PDF), Normal vs. Needs Attention Guide (PDF), Parent Support Checklist (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 2: Creating Optimal Sleep Environment</h3>
+                            <div class="module-info">3 lessons • 25 minutes • 2 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">Room setup checklist</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Blackout and white noise setup</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Safe sleep environment review</span>
+                                <span class="lesson-time">7 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Environment Checklist (PDF), Safe Sleep Guide (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 3: Schedules & Routines</h3>
+                            <div class="module-info">4 lessons • 35 minutes • 4 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">3-4 month wake windows</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Short-nap day schedules</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Long-nap day schedules</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Flexible routines for real life</span>
+                                <span class="lesson-time">9 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Wake Window Guide (PDF), Short-Nap Day Schedule (PDF), Long-Nap Day Schedule (PDF), Flexible Routine Template (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 4: Settling Techniques</h3>
+                            <div class="module-info">5 lessons • 50 minutes • 3 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">The importance of self-settling</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Hierarchy of soothing techniques</span>
+                                <span class="lesson-time">12 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Selecting your settling style</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Video: Gentle settling demonstration</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Troubleshooting common challenges</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Settling Technique Guide (PDF), Video Demonstration, Troubleshooting Flowchart (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 5 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 5: Night Wakes & Feeding</h3>
+                            <div class="module-info">4 lessons • 40 minutes • 2 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">Understanding night wake patterns</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Night wake decision flowchart</span>
+                                <span class="lesson-time">12 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Feeding vs. resettling guide</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Overnight feeds and resettling roadmap</span>
+                                <span class="lesson-time">8 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Night Wake Flowchart (PDF), Feeding Guide (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 6 -->
+                <div class="module-item">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <div>
+                            <h3>Module 6: Extending Naps</h3>
+                            <div class="module-info">3 lessons • 30 minutes • 2 resources</div>
+                        </div>
+                        <div class="module-toggle">+</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="lesson-list">
+                            <li class="lesson-item">
+                                <span class="lesson-name">Why naps are 30 minutes</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Le Pause technique</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                            <li class="lesson-item">
+                                <span class="lesson-name">Cot-Hour strategy</span>
+                                <span class="lesson-time">10 min</span>
+                            </li>
+                        </ul>
+                        <div class="module-resources">
+                            <strong>Resources included:</strong> Nap Extension Guide (PDF), Technique Comparison Chart (PDF)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional modules would continue... -->
+                <div class="module-item">
+                    <div class="module-header">
+                        <div>
+                            <h3>Module 7-11: Additional Topics</h3>
+                            <div class="module-info">Continuing with remaining modules...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Curriculum moved to top third of page, expanded with detailed lesson breakdowns, time estimates, and resources. Accordion-style expandable modules. This is now the MOST PROMINENT section.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. Course Resources -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Course Resources</h2>
+            <p style="font-size: 18px; color: #666; max-width: 800px; margin-bottom: 32px;">
+                Everything included in this course. All resources are downloadable and yours to keep.
+            </p>
+            
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <h4>Video Lessons</h4>
+                    <p>5 video demonstrations covering settling techniques, room setup, and troubleshooting common challenges</p>
+                </div>
+                
+                <div class="resource-item">
+                    <h4>Written Guides</h4>
+                    <p>11 comprehensive text-based lessons with detailed explanations and step-by-step instructions</p>
+                </div>
+                
+                <div class="resource-item">
+                    <h4>Downloadable PDFs</h4>
+                    <p>15+ printable resources including checklists, trackers, schedules, and reference guides</p>
+                </div>
+                
+                <div class="resource-item">
+                    <h4>Sample Schedules</h4>
+                    <p>Multiple schedule templates for short-nap days, long-nap days, and flexible routines</p>
+                </div>
+                
+                <div class="resource-item">
+                    <h4>Decision Flowcharts</h4>
+                    <p>Visual guides for night wake responses, feeding decisions, and troubleshooting challenges</p>
+                </div>
+                
+                <div class="resource-item">
+                    <h4>Progress Trackers</h4>
+                    <p>Printable sheets to track sleep patterns, progress, and implementation notes</p>
+                </div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Replaced "What You'll Learn" marketing copy with factual "Course Resources" list. Focuses on tangible items included, not benefits.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 5. How to Use This Course -->
+    <section class="how-to-use section">
+        <div class="container">
+            <h2 class="section-title">How to Use This Course</h2>
+            <p style="font-size: 18px; color: #666; max-width: 800px; margin-bottom: 32px;">
+                Practical guidance on getting the most out of this course. Learn at your own pace and reference back as needed.
+            </p>
+            
+            <div class="use-steps">
+                <div class="use-step">
+                    <h4>Self-Paced Learning</h4>
+                    <p>Complete the course at your own speed. Some parents finish in one session, others prefer to work through modules over several days or weeks. There's no deadline or rush.</p>
+                </div>
+                
+                <div class="use-step">
+                    <h4>Recommended Order</h4>
+                    <p>Modules are designed to be completed sequentially, as each builds on the previous. However, you can jump to specific topics if you have urgent questions. All content remains available for reference.</p>
+                </div>
+                
+                <div class="use-step">
+                    <h4>Implementation Timeline</h4>
+                    <p>You can start implementing strategies immediately, even while still watching lessons. Many parents begin with environment setup and routines, then move to settling techniques when ready.</p>
+                </div>
+                
+                <div class="use-step">
+                    <h4>Reference Back Anytime</h4>
+                    <p>All course content remains accessible for lifetime. Reference specific lessons, download resources again, or review modules as your baby grows and changes.</p>
+                </div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Replaced sales-focused "How It Works" (Buy → Watch → Implement → Results) with educational "How to Use This Course" providing practical learning guidance.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 6. Is This Course Right for You? -->
+    <section class="right-for-you section">
+        <div class="container">
+            <h2 class="section-title">Is This Course Right for You?</h2>
+            <p style="font-size: 18px; color: #666; max-width: 800px; margin-bottom: 32px;">
+                This course is designed for parents of babies between 3-4 months old who are experiencing sleep challenges or want to prepare for upcoming changes.
+            </p>
+            
+            <ul class="assessment-list">
+                <li class="assessment-item">
+                    <strong>Best for:</strong> Babies aged 3-4 months (or approaching this age) experiencing cat naps, frequent night wakings, or parents wanting to build better sleep foundations.
+                </li>
+                <li class="assessment-item">
+                    <strong>Time commitment:</strong> Self-paced learning. Estimated 3-4 hours to complete all content, but can be spread over days or weeks.
+                </li>
+                <li class="assessment-item">
+                    <strong>What you'll need:</strong> Willingness to implement strategies, time to complete checklists, and patience as changes take time to establish.
+                </li>
+                <li class="assessment-item">
+                    <strong>Not the right fit?</strong> If your baby is outside the 3-4 month window, check out our <a href="#" style="color: #1a1a1a; text-decoration: underline;">Newborn Sleep Guide</a> or <a href="#" style="color: #1a1a1a; text-decoration: underline;">5-12 Month Guide</a> instead.
+                </li>
+            </ul>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Replaced marketing "This Course is for You If..." with educational self-assessment "Is This Course Right for You?" Helps parents decide, doesn't sell.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 7. Course Access & Pricing - Simplified -->
+    <section id="pricing" class="pricing-simple section">
+        <div class="container">
+            <h2 class="section-title">Course Access</h2>
+            
+            <div class="pricing-card">
+                <div class="price-amount">$117</div>
+                <div class="price-note">one-time payment (Launch pricing)</div>
+                
+                <div class="pricing-includes">
+                    <strong style="display: block; margin-bottom: 12px; color: #1a1a1a;">Includes:</strong>
+                    <ul>
+                        <li>Full course access (11 modules)</li>
+                        <li>All video and written lessons</li>
+                        <li>Downloadable resources (PDFs)</li>
+                        <li>Lifetime access</li>
+                        <li>Future course updates</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="btn-subtle" style="width: 100%; text-align: center; display: block;">Purchase Course</a>
+                
+                <div class="membership-note">
+                    This course is also included in <a href="#">Snooze Membership</a> ($147/quarter), which includes this course plus all other age guides, Library access, and live coaching support.
+                </div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Removed multiple comparison sections. Single, simple pricing card with clear inclusions. Membership mention is subtle, not competing for attention.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 8. FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I access the course after purchase?</div>
+                <div class="faq-answer">You'll receive an email with login instructions immediately after purchase. The course will appear in your account library, accessible anytime from any device.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I download the content?</div>
+                <div class="faq-answer">All PDF resources are downloadable. Video and written lessons are accessible online through your account, allowing you to reference them anytime.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if my baby is already 4 months old?</div>
+                <div class="faq-answer">This course is designed for babies 3-4 months, but the strategies work well for babies up to 5-6 months. The foundations and settling techniques apply to slightly older babies too.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Will I receive updates if the course is updated?</div>
+                <div class="faq-answer">Yes, lifetime access includes all future course updates and improvements. You'll automatically have access to new content and revisions.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is this course suitable for breastfeeding mothers?</div>
+                <div class="faq-answer">Absolutely. The course includes guidance on navigating night feeds while improving sleep, and respects your feeding choices. There's no pressure to night-wean before you're ready.</div>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> FAQ focuses on course access, content, and practical questions rather than sales objections or pricing comparisons.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 9. About the Course Creator -->
+    <section class="about-creator section">
+        <div class="container">
+            <div class="creator-content">
+                <h2 class="section-title">About the Course Creator</h2>
+                <p>
+                    <strong>Sally Woods</strong> is a paediatric nurse, certified sleep consultant, and mum of two. She's helped over 10,000 families improve their baby's sleep with evidence-based, judgment-free guidance.
+                </p>
+                <p>
+                    This course was created based on her experience helping thousands of families navigate the 3-4 month sleep changes. The strategies are evidence-based, practical, and designed to work in real life with contact naps, pram naps, and all the realities of parenting.
+                </p>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> Replaced large "Meet Your Instructor" section with brief, factual "About the Course Creator" text. Less prominent, more like course credits.
+            </div>
+        </div>
+    </section>
+    
+    <!-- 10. Related Resources -->
+    <section class="related-resources section">
+        <div class="container">
+            <h2 class="section-title">Related Resources</h2>
+            <p style="font-size: 18px; color: #666; max-width: 800px; margin-bottom: 24px;">
+                Explore related courses and resources that complement this course.
+            </p>
+            
+            <div class="resource-links">
+                <a href="#" class="resource-link">The Snooze Method (Foundational Course)</a>
+                <a href="#" class="resource-link">Newborn Sleep Guide</a>
+                <a href="#" class="resource-link">5-12 Month Sleep Guide</a>
+                <a href="#" class="resource-link">Early Rising Support</a>
+                <a href="#" class="resource-link">Sleep Library</a>
+            </div>
+            
+            <div class="mockup-note">
+                <strong>Design Change:</strong> New section connecting to other resources. Feels like course library navigation, not sales cross-selling.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Sleep Concierge / Snooze. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleModule(header) {
+            const module = header.parentElement;
+            const content = module.querySelector('.module-content');
+            const toggle = header.querySelector('.module-toggle');
+            
+            content.classList.toggle('expanded');
+            
+            if (content.classList.contains('expanded')) {
+                toggle.textContent = '−';
+            } else {
+                toggle.textContent = '+';
+            }
+        }
+        
+        // Expand first module by default for demo
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstModule = document.querySelector('.module-header');
+            if (firstModule) {
+                toggleModule(firstModule);
+            }
+        });
+    </script>
+    
+    <div style="background: #fff3cd; border-top: 4px solid #ffc107; padding: 24px; margin-top: 48px;">
+        <div class="container">
+            <h3 style="margin-bottom: 16px; color: #856404;">Design Mockup Notes</h3>
+            <div style="font-size: 14px; color: #856404; line-height: 1.8;">
+                <p><strong>Key Design Changes:</strong></p>
+                <ul style="margin-left: 24px; margin-top: 12px;">
+                    <li><strong>Simplified Hero:</strong> Removed callout banner, reduced CTA size, focused on course information</li>
+                    <li><strong>Curriculum First:</strong> Moved to top third, expanded with detailed lessons, made most prominent</li>
+                    <li><strong>Resource-Focused:</strong> Replaced marketing copy with factual resource lists</li>
+                    <li><strong>Educational Tone:</strong> All content uses resource language, not sales language</li>
+                    <li><strong>Simplified Pricing:</strong> Single pricing card, subtle membership mention</li>
+                    <li><strong>Removed Sales Elements:</strong> No comparison tables, minimal testimonials, reduced CTAs</li>
+                    <li><strong>Practical Guidance:</strong> "How to Use" replaces "How It Works" sales process</li>
+                    <li><strong>Self-Assessment:</strong> Helps parents decide, doesn't sell to them</li>
+                </ul>
+                <p style="margin-top: 24px;"><strong>Result:</strong> Page feels like a course preview/resource catalog, not a sales page. Parents can see exactly what they're buying before making a purchase decision.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+

@@ -1,0 +1,458 @@
+<!-- ============================================
+     STORE PAGE V2 - SUPPORT MAP
+     Page wrapper ID: #store-page-v2
+     Created: January 2026
+
+     Sections:
+     1. Hero (Orientation)
+     2. Interactive Four-Tier Support Map
+     3. Individual Guides Section
+     4. Snooze Section
+     5. Camp Snooze Section
+     6. 1:1 Consults Section
+     7. Reassurance
+     8. FAQ Accordion
+     9. Final CTA
+     ============================================ -->
+
+<div id="store-page-v2">
+
+  <!-- ============================================
+       SECTION 1: HERO
+       ============================================ -->
+  <section class="snooze-section hero-section bg-cream">
+    <div class="snooze-container text-center max-800">
+      <h1>Support for Baby Sleep, at Every Level</h1>
+      <p class="hero-subline">From self-guided foundations to hands-on support, Snooze is designed to meet you where you are.</p>
+      <p class="hero-microline">Evidence-based. Age-specific. Human-led.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 2: INTERACTIVE FOUR-TIER SUPPORT MAP
+       ============================================ -->
+  <section class="snooze-section support-map-section bg-white">
+    <div class="snooze-container">
+      <h2 class="text-center" style="margin-bottom: 3rem;">Choose Your Level of Support</h2>
+
+      <div class="support-map-layout">
+
+        <!-- Visual: Four-Tier Stack -->
+        <div class="support-map-visual">
+          <div class="tier-stack">
+            <!-- Tier 4: 1:1 Consults (Top - Narrowest) -->
+            <div class="tier-bar tier-consults-bar" data-tier="consults">
+              <span class="tier-bar-label">1:1 Consults</span>
+              <span class="tier-bar-tag">Personalized</span>
+            </div>
+            <!-- Tier 3: Camp Snooze -->
+            <div class="tier-bar tier-camp-bar" data-tier="camp">
+              <span class="tier-bar-label"><i class="fa-solid fa-campground"></i> Camp Snooze</span>
+              <span class="tier-bar-tag">Intensive</span>
+            </div>
+            <!-- Tier 2: Snooze -->
+            <div class="tier-bar tier-snooze-bar active" data-tier="snooze">
+              <span class="tier-bar-label">Snooze</span>
+              <span class="tier-bar-tag">Core Support</span>
+            </div>
+            <!-- Tier 1: Individual Guides (Bottom - Widest) -->
+            <div class="tier-bar tier-guides-bar" data-tier="guides">
+              <span class="tier-bar-label">Individual Guides</span>
+              <span class="tier-bar-tag">Self-Paced</span>
+            </div>
+          </div>
+          <p class="tier-stack-hint">Click a level to learn more</p>
+        </div>
+
+        <!-- Descriptions Panel -->
+        <div class="support-map-descriptions">
+
+          <!-- Individual Guides Description -->
+          <div class="tier-description" data-desc="guides">
+            <span class="tier-desc-badge guides">Self-Paced Education</span>
+            <h3>Individual Guides</h3>
+            <p>Age-specific sleep education you can access anytime. Clear, practical guidance for each developmental stage.</p>
+            <ul class="tier-desc-features">
+              <li>Newborn, 3-4 month, 5-12 month, and toddler guides</li>
+              <li>Evidence-based routines and schedules</li>
+              <li>Self-paced learning</li>
+              <li>Lifetime access to purchased guides</li>
+            </ul>
+            <p class="tier-desc-price">From $79 <span>per guide</span></p>
+            <a href="#guides-section" class="btn btn-outline btn-small">View Guides Below</a>
+          </div>
+
+          <!-- Snooze Description (default active) -->
+          <div class="tier-description active" data-desc="snooze">
+            <span class="tier-desc-badge core">Core Support</span>
+            <h3>Snooze</h3>
+            <p>All-access baby sleep support combining education, community, and live guidance. This is where most families start.</p>
+            <ul class="tier-desc-features">
+              <li>All guides included</li>
+              <li>Weekly live group coaching and Q&A</li>
+              <li>Private support community</li>
+              <li>Troubleshooting support for regressions</li>
+            </ul>
+            <p class="tier-desc-price">$39/month <span>or $349/year</span></p>
+            <a href="#snooze-section" class="btn btn-small">View Snooze Below</a>
+          </div>
+
+          <!-- Camp Snooze Description -->
+          <div class="tier-description" data-desc="camp">
+            <span class="tier-desc-badge intensive"><i class="fa-solid fa-campground"></i> Intensive Support</span>
+            <h3>Camp Snooze</h3>
+            <p>A focused, high-touch coaching experience for parents ready to make meaningful sleep changes quickly over two weeks.</p>
+            <ul class="tier-desc-features">
+              <li>Small-group coaching (7 families per intake)</li>
+              <li>Daily guidance from Sally & Bec</li>
+              <li>Custom sleep plan</li>
+              <li>Private camp forum</li>
+            </ul>
+            <p class="tier-desc-price">$690 <span>($390 for Snooze members)</span></p>
+            <a href="#camp-section" class="btn btn-camp btn-small">View Camp Below</a>
+          </div>
+
+          <!-- 1:1 Consults Description -->
+          <div class="tier-description" data-desc="consults">
+            <span class="tier-desc-badge personalized">Personalized Support</span>
+            <h3>1:1 Consult Packages</h3>
+            <p>Private consultations for families who need tailored guidance for complex situations or prefer one-on-one support.</p>
+            <ul class="tier-desc-features">
+              <li>Personalized sleep assessment</li>
+              <li>Custom plan for your family</li>
+              <li>Follow-up support included</li>
+              <li>Flexible scheduling</li>
+            </ul>
+            <p class="tier-desc-price">From $199 <span>per session</span></p>
+            <a href="#consults-section" class="btn btn-outline btn-small">View Consults Below</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 3: INDIVIDUAL GUIDES
+       ============================================ -->
+  <section class="snooze-section tier-detail-section bg-cream" id="guides-section">
+    <div class="snooze-container">
+      <div class="tier-detail-header">
+        <span class="tier-detail-badge guides">Self-Paced Education</span>
+        <h2>Individual Sleep Guides</h2>
+        <p class="tier-detail-lead">Age-specific guidance for each developmental stage. Clear, practical, evidence-based.</p>
+      </div>
+
+      <div class="guides-grid">
+        <div class="guide-card">
+          <h4>Newborn Guide</h4>
+          <p class="guide-age">0-3 months</p>
+          <p>Foundations for healthy sleep habits from the start.</p>
+          <a href="https://joinsnooze.com/newborn-sleep-guide" class="btn btn-outline btn-small">View Guide</a>
+        </div>
+        <div class="guide-card">
+          <h4>3-4 Month Guide</h4>
+          <p class="guide-age">3-4 months</p>
+          <p>Navigate the sleep regression and establish routines.</p>
+          <a href="https://joinsnooze.com/3-4-month-baby-sleep-course" class="btn btn-outline btn-small">View Guide</a>
+        </div>
+        <div class="guide-card">
+          <h4>5-12 Month Guide</h4>
+          <p class="guide-age">5-12 months</p>
+          <p>Comprehensive sleep training and schedule guidance.</p>
+          <a href="https://joinsnooze.com/5-12-month-baby-sleep-course" class="btn btn-outline btn-small">View Guide</a>
+        </div>
+        <div class="guide-card">
+          <h4>Toddler Toolkit</h4>
+          <p class="guide-age">12+ months</p>
+          <p>Big kid beds, boundaries, and toddler sleep challenges.</p>
+          <a href="https://joinsnooze.com/toddler-toolkit" class="btn btn-outline btn-small">View Guide</a>
+        </div>
+      </div>
+
+      <div class="tier-detail-note">
+        <p><i class="fa-solid fa-lightbulb"></i> <strong>All guides are included with Snooze membership.</strong> Purchase individually or get full access with Snooze.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 4: SNOOZE
+       ============================================ -->
+  <section class="snooze-section tier-detail-section bg-white" id="snooze-section">
+    <div class="snooze-container">
+      <div class="tier-detail-header">
+        <span class="tier-detail-badge core">Core Support</span>
+        <h2>Snooze Membership</h2>
+        <p class="tier-detail-lead">Ongoing, expert-led support that grows with your child. This is where most families start.</p>
+      </div>
+
+      <div class="tier-detail-grid">
+        <div class="tier-detail-content">
+          <h3>Everything You Need for Better Sleep</h3>
+          <ul class="tier-detail-features">
+            <li><strong>All Guides Included</strong> - Every age-specific course, from newborn to toddler</li>
+            <li><strong>Weekly Live Coaching</strong> - Group Q&A sessions with Sally</li>
+            <li><strong>The Snooze Village</strong> - Private community of parents going through the same thing</li>
+            <li><strong>Troubleshooting Support</strong> - Help when regressions hit or plans need adjusting</li>
+            <li><strong>Member Pricing</strong> - Save on Camp Snooze and 1:1 consultations</li>
+          </ul>
+        </div>
+        <div class="tier-detail-cta-card">
+          <h4>Join Snooze</h4>
+          <div class="pricing-options">
+            <div class="price-option">
+              <span class="price-label">Monthly</span>
+              <span class="price-amount">$39<span>/month</span></span>
+              <span class="price-note">Cancel anytime</span>
+            </div>
+            <div class="price-option featured">
+              <span class="price-label">Annual</span>
+              <span class="price-amount">$349<span>/year</span></span>
+              <span class="price-note">Save $119</span>
+            </div>
+          </div>
+          <a href="https://joinsnooze.com/offers/dRN7QR7k" class="btn" style="width: 100%; margin-top: 20px;">Get Full Access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 5: CAMP SNOOZE
+       ============================================ -->
+  <section class="snooze-section tier-detail-section camp-detail-section bg-cream" id="camp-section">
+    <div class="snooze-container">
+      <div class="tier-detail-header">
+        <span class="tier-detail-badge intensive"><i class="fa-solid fa-campground"></i> Intensive Support</span>
+        <h2>Camp Snooze</h2>
+        <p class="tier-detail-lead">2 weeks of daily coaching, custom plans, and expert support. Limited to 7 families per intake.</p>
+      </div>
+
+      <div class="tier-detail-grid">
+        <div class="tier-detail-content">
+          <h3>What Happens at Camp</h3>
+          <ul class="tier-detail-features camp-features">
+            <li><strong>Custom Sleep Plan</strong> - A schedule tailored to your baby and your goals</li>
+            <li><strong>Daily Morning Roll Call</strong> - Check-ins with Sally & Bec to review progress</li>
+            <li><strong>Private Camp Forum</strong> - Troubleshooting support for curveballs and questions</li>
+            <li><strong>Small Group Environment</strong> - Just 7 families tackling sleep together</li>
+            <li><strong>Clear Settling Strategies</strong> - Age-appropriate approaches that match your comfort level</li>
+          </ul>
+        </div>
+        <div class="tier-detail-cta-card camp-cta-card">
+          <div class="camp-card-decoration">
+            <svg viewBox="0 0 80 50" style="width: 60px; height: 38px;">
+              <path d="M10 48 L35 35 L50 48" stroke="#355E3B" stroke-width="3" fill="none" opacity="0.4"/>
+              <path d="M30 48 L55 35 L70 48" stroke="#355E3B" stroke-width="3" fill="none" opacity="0.4"/>
+              <path d="M40 32 Q32 18 40 2 Q48 18 40 32" fill="#D4AF37" opacity="0.6"/>
+            </svg>
+          </div>
+          <h4>Join the Next Intake</h4>
+          <div class="pricing-options">
+            <div class="price-option">
+              <span class="price-label">Snooze Members</span>
+              <span class="price-amount camp-price">$390</span>
+              <span class="price-note">Save $300</span>
+            </div>
+            <div class="price-option">
+              <span class="price-label">Non-members</span>
+              <span class="price-amount camp-price">$690</span>
+            </div>
+          </div>
+          <a href="https://joinsnooze.com/camp-snooze" class="btn btn-camp" style="width: 100%; margin-top: 20px;">View Upcoming Intakes</a>
+          <p class="camp-note">Led by Sally Woods & Bec Maher</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 6: 1:1 CONSULTS
+       ============================================ -->
+  <section class="snooze-section tier-detail-section bg-white" id="consults-section">
+    <div class="snooze-container">
+      <div class="tier-detail-header">
+        <span class="tier-detail-badge personalized">Personalized Support</span>
+        <h2>1:1 Consultation Packages</h2>
+        <p class="tier-detail-lead">Private consultations for complex situations or families who prefer one-on-one guidance.</p>
+      </div>
+
+      <div class="consults-grid">
+        <div class="consult-card">
+          <h4>Signature Consult</h4>
+          <p>Comprehensive 1:1 consultation with Sally</p>
+          <div class="consult-pricing">
+            <span class="consult-price">$650</span>
+            <span class="consult-member-price"><i class="fa-solid fa-tag"></i> Members: $525</span>
+          </div>
+          <a href="https://joinsnooze.com/one-on-one-sleep-consultations" class="btn btn-outline btn-small">View Details</a>
+        </div>
+        <div class="consult-card">
+          <h4>45-Minute Follow-up</h4>
+          <p>Additional support after your initial consult</p>
+          <div class="consult-pricing">
+            <span class="consult-price">$390</span>
+            <span class="consult-member-price"><i class="fa-solid fa-tag"></i> Members: $315</span>
+          </div>
+          <a href="https://joinsnooze.com/one-on-one-sleep-consultations" class="btn btn-outline btn-small">View Details</a>
+        </div>
+        <div class="consult-card">
+          <h4>2-Week Package</h4>
+          <p>Intensive 1:1 support over two weeks</p>
+          <div class="consult-pricing">
+            <span class="consult-price">$3,500</span>
+            <span class="consult-member-price"><i class="fa-solid fa-tag"></i> Members: $2,800</span>
+          </div>
+          <a href="https://joinsnooze.com/one-on-one-sleep-consultations" class="btn btn-outline btn-small">View Details</a>
+        </div>
+      </div>
+
+      <div class="tier-detail-note">
+        <p><i class="fa-solid fa-info-circle"></i> <strong>Member pricing available on all consultations.</strong> <a href="https://joinsnooze.com/offers/dRN7QR7k" style="color: #F43357;">Join Snooze</a> to save on 1:1 support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 7: REASSURANCE
+       ============================================ -->
+  <section class="snooze-section reassurance-section bg-cream">
+    <div class="snooze-container">
+      <h2>You Don't Have to Choose Perfectly</h2>
+
+      <div class="reassurance-grid">
+        <div class="reassurance-item">
+          <div class="reassurance-icon">
+            <i class="fa-solid fa-arrows-up-down"></i>
+          </div>
+          <h4>Move Between Levels</h4>
+          <p>Families often move between guides, ongoing support, and coaching as their needs change.</p>
+        </div>
+
+        <div class="reassurance-item">
+          <div class="reassurance-icon">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h4>We'll Guide You</h4>
+          <p>Not sure where to start? We can help you find the right level of support for your family.</p>
+        </div>
+
+        <div class="reassurance-item">
+          <div class="reassurance-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Most Start with Snooze</h4>
+          <p>The majority of families begin with Snooze and add intensive support if needed later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 8: FAQ ACCORDION
+       ============================================ -->
+  <section class="snooze-section faq-section bg-white">
+    <div class="snooze-container">
+      <h2>Common Questions</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq-1" class="faq-toggle">
+          <label for="faq-1" class="faq-question">What's the difference between a guide and ongoing support?</label>
+          <div class="faq-answer">
+            <p>Guides provide education you can follow at your own pace. Ongoing support (Snooze) includes live guidance, feedback, community access, and help applying that information to your baby as things change.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq-2" class="faq-toggle">
+          <label for="faq-2" class="faq-question">Do I need coaching or ongoing support?</label>
+          <div class="faq-answer">
+            <p>Many parents start with education and move into support when they want help implementing changes or navigating regressions. If you feel stuck or overwhelmed and want faster, more hands-on guidance, Camp Snooze may be right for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq-3" class="faq-toggle">
+          <label for="faq-3" class="faq-question">Can I change levels later?</label>
+          <div class="faq-answer">
+            <p>Yes. Families often move between guides, ongoing support, and coaching as their needs change. There's no lock-in, and you can adjust your support level at any time.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq-4" class="faq-toggle">
+          <label for="faq-4" class="faq-question">Are the guides included with Snooze?</label>
+          <div class="faq-answer">
+            <p>Yes. All four age-specific guides are included with your Snooze membership. You get instant access to every course from newborn through toddler.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 9: FINAL CTA
+       ============================================ -->
+  <section class="snooze-section final-cta-section bg-cream">
+    <div class="snooze-container text-center max-700">
+      <h2>Ready to Get Support?</h2>
+      <p>Most families start with Snooze for ongoing guidance, then add intensive support if needed.</p>
+      <a href="https://joinsnooze.com/offers/dRN7QR7k" class="btn">Get Full Access</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================
+     JAVASCRIPT: Tier Stack Interaction
+     Scoped to #store-page-v2 only
+     ============================================ -->
+<script>
+(function() {
+  var wrapper = document.getElementById('store-page-v2');
+  if (!wrapper) return;
+
+  var tierBars = wrapper.querySelectorAll('[data-tier]');
+  var tierDescriptions = wrapper.querySelectorAll('[data-desc]');
+
+  function activateTier(tierName) {
+    // Update tier bars
+    tierBars.forEach(function(bar) {
+      if (bar.getAttribute('data-tier') === tierName) {
+        bar.classList.add('active');
+      } else {
+        bar.classList.remove('active');
+      }
+    });
+
+    // Update descriptions
+    tierDescriptions.forEach(function(desc) {
+      if (desc.getAttribute('data-desc') === tierName) {
+        desc.classList.add('active');
+      } else {
+        desc.classList.remove('active');
+      }
+    });
+  }
+
+  // Click events
+  tierBars.forEach(function(bar) {
+    bar.addEventListener('click', function() {
+      activateTier(this.getAttribute('data-tier'));
+    });
+
+    // Touch support
+    bar.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      activateTier(this.getAttribute('data-tier'));
+    }, { passive: false });
+  });
+
+  // Default: Snooze active
+  activateTier('snooze');
+})();
+</script>

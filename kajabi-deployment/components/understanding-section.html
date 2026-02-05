@@ -1,0 +1,277 @@
+<!-- ============================================
+     UNDERSTANDING & INSIGHT SECTION COMPONENT
+     Provides value-first educational content before sales
+     Age-specific, SEO-optimized, normalizes experiences
+     ============================================ -->
+
+<section class="snooze-understanding-section" data-age="[AGE_PLACEHOLDER]">
+  <div class="snooze-container">
+    
+    <!-- Section Header -->
+    <div class="snooze-understanding-header">
+      <h2 class="snooze-section-title">Understanding [AGE] Sleep</h2>
+      <p class="snooze-section-intro">Before we talk about support, let's understand what's happening with your baby's sleep at this stage.</p>
+    </div>
+
+    <!-- What's Normal Subsection -->
+    <div class="snooze-understanding-subsection">
+      <h3 class="snooze-subsection-title">What's Normal for [AGE]</h3>
+      <div class="snooze-understanding-content">
+        <p>[CONTENT_PLACEHOLDER_WHATS_NORMAL]</p>
+        <ul class="snooze-insight-list">
+          <!-- Will be populated by age-specific content -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Why This Happens Subsection -->
+    <div class="snooze-understanding-subsection">
+      <h3 class="snooze-subsection-title">Why This Happens</h3>
+      <div class="snooze-understanding-content">
+        <p>[CONTENT_PLACEHOLDER_WHY_HAPPENS]</p>
+        <div class="snooze-insight-callout">
+          <p class="snooze-callout-text"><strong>Key Insight:</strong> [KEY_INSIGHT_PLACEHOLDER]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Is This Something to Address Subsection -->
+    <div class="snooze-understanding-subsection">
+      <h3 class="snooze-subsection-title">Is This Something to Address?</h3>
+      <div class="snooze-understanding-content">
+        <p>[CONTENT_PLACEHOLDER_WHEN_TO_ADDRESS]</p>
+        <div class="snooze-normal-vs-attention">
+          <div class="snooze-normal-box">
+            <h4>Usually Normal (Can Wait)</h4>
+            <ul>
+              <!-- Will be populated by age-specific content -->
+            </ul>
+          </div>
+          <div class="snooze-attention-box">
+            <h4>Might Need Attention</h4>
+            <ul>
+              <!-- Will be populated by age-specific content -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Message -->
+    <div class="snooze-understanding-close">
+      <p class="snooze-close-message">[CLOSING_MESSAGE_PLACEHOLDER]</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* Understanding Section Styles */
+.snooze-understanding-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.snooze-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.snooze-understanding-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.snooze-section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.snooze-section-intro {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Subsection Styles */
+.snooze-understanding-subsection {
+  margin-bottom: 3rem;
+}
+
+.snooze-subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f43357;
+}
+
+.snooze-understanding-content {
+  line-height: 1.8;
+  color: #333;
+}
+
+.snooze-understanding-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+/* Insight List Styles */
+.snooze-insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.snooze-insight-list li {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #faf9f7;
+  border-left: 4px solid #f43357;
+  border-radius: 4px;
+}
+
+.snooze-insight-list li strong {
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Insight Callout */
+.snooze-insight-callout {
+  background-color: #fff5f7;
+  border: 2px solid #f43357;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.snooze-callout-text {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+}
+
+.snooze-callout-text strong {
+  color: #f43357;
+}
+
+/* Normal vs Attention Boxes */
+.snooze-normal-vs-attention {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.snooze-normal-box,
+.snooze-attention-box {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.snooze-normal-box {
+  background-color: #f0fdf4;
+  border: 2px solid #86efac;
+}
+
+.snooze-attention-box {
+  background-color: #fff5f7;
+  border: 2px solid #f43357;
+}
+
+.snooze-normal-box h4,
+.snooze-attention-box h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.snooze-normal-box h4 {
+  color: #166534;
+}
+
+.snooze-attention-box h4 {
+  color: #991b1b;
+}
+
+.snooze-normal-box ul,
+.snooze-attention-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.snooze-normal-box li,
+.snooze-attention-box li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.snooze-normal-box li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.snooze-attention-box li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f43357;
+  font-weight: bold;
+}
+
+/* Closing Message */
+.snooze-understanding-close {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #faf9f7;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.snooze-close-message {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .snooze-understanding-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .snooze-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .snooze-subsection-title {
+    font-size: 1.25rem;
+  }
+  
+  .snooze-normal-vs-attention {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .snooze-understanding-content p {
+    font-size: 1rem;
+  }
+}
+</style>
+

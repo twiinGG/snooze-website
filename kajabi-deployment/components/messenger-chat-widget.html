@@ -1,0 +1,70 @@
+<!-- ============================================
+     MESSENGER CHAT WIDGET
+     Custom pop-up chat widget that links to Messenger
+     ============================================ -->
+
+<!-- Floating Button -->
+<button class="snooze-messenger-trigger" id="snooze-messenger-trigger" aria-label="Open chat">
+  <svg class="messenger-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0C5.373 0 0 4.925 0 11c0 2.13.694 4.11 1.87 5.73L0 24l7.437-4.9c1.02.28 2.1.43 3.163.43 6.627 0 12-4.925 12-11S18.627 0 12 0zm0 19.25c-1.03 0-2.04-.15-3-.43l-.22-.06-2.31.61.61-2.25-.07-.23c-.3-.95-.45-1.95-.45-2.97 0-4.56 3.7-8.25 8.25-8.25S20.25 6.44 20.25 11c0 4.56-3.7 8.25-8.25 8.25z"/>
+  </svg>
+  <span class="messenger-text">Need Help?</span>
+  <span class="messenger-notification-dot"></span>
+</button>
+
+<!-- Chat Modal -->
+<div class="snooze-messenger-modal" id="snooze-messenger-modal" role="dialog" aria-labelledby="messenger-modal-title" aria-hidden="true">
+  <div class="messenger-modal-backdrop" id="messenger-modal-backdrop"></div>
+  <div class="messenger-modal-content">
+    <!-- Header -->
+    <div class="messenger-modal-header">
+      <div class="messenger-header-left">
+        <div class="messenger-avatar">
+          <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161797115/settings_images/c0d2c2a-05e0-a12f-120-75ab72aff35b_TSC_-_Logo_-_Dk_Navy_-_Web_300.webp" alt="Sally" class="messenger-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="messenger-avatar-fallback" style="display: none;">
+            <span>S</span>
+          </div>
+          <span class="messenger-online-indicator"></span>
+        </div>
+        <div class="messenger-header-info">
+          <h3 class="messenger-business-name" id="messenger-modal-title">Snooze by The Sleep Concierge</h3>
+          <p class="messenger-response-time">Typically replies within a day</p>
+        </div>
+      </div>
+      <button class="messenger-close-btn" id="messenger-close-btn" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Message Area -->
+    <div class="messenger-modal-body">
+      <div class="messenger-timestamp">13:01</div>
+      <div class="messenger-message">
+        <div class="messenger-message-avatar">
+          <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161797115/settings_images/c0d2c2a-05e0-a12f-120-75ab72aff35b_TSC_-_Logo_-_Dk_Navy_-_Web_300.webp" alt="Sally" class="messenger-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="messenger-avatar-fallback" style="display: none;">
+            <span>S</span>
+          </div>
+        </div>
+        <div class="messenger-message-bubble">
+          <p>Hi Sally here 👋 If you need help with any question about Snooze, message me here and I'll answer you as soon as possible.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="messenger-modal-footer">
+      <a href="#" class="messenger-cta-btn" id="messenger-cta-btn" target="_blank" rel="noopener noreferrer">
+        <svg class="messenger-icon-large" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.373 0 0 4.925 0 11c0 2.13.694 4.11 1.87 5.73L0 24l7.437-4.9c1.02.28 2.1.43 3.163.43 6.627 0 12-4.925 12-11S18.627 0 12 0zm0 19.25c-1.03 0-2.04-.15-3-.43l-.22-.06-2.31.61.61-2.25-.07-.23c-.3-.95-.45-1.95-.45-2.97 0-4.56 3.7-8.25 8.25-8.25S20.25 6.44 20.25 11c0 4.56-3.7 8.25-8.25 8.25z"/>
+        </svg>
+        <span>Chat with Sally</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Note: JavaScript for this widget is in global/js/snooze-globals.js -->

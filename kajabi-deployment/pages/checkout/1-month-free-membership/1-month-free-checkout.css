@@ -1,0 +1,268 @@
+/* ============================================
+   SNOOZE 1-MONTH FREE ACCESS CHECKOUT
+   SCOPED CSS - Only affects #snooze-custom-checkout
+   ============================================ */
+
+#snooze-custom-checkout {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1F293B;
+  line-height: 1.6;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+#snooze-custom-checkout .snooze-checkout-hero {
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .snooze-checkout-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+#snooze-custom-checkout .snooze-checkout-hero .subheadline {
+  font-size: 1.125rem;
+  color: #7C8A98;
+  margin-bottom: 1.5rem;
+}
+
+/* Free Access Highlight */
+#snooze-custom-checkout .free-highlight {
+  background: #FFE7EA;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 2px solid #F43357;
+}
+
+#snooze-custom-checkout .free-highlight h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 1rem;
+}
+
+#snooze-custom-checkout .free-highlight p {
+  color: #1F293B;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* What's Included Section */
+#snooze-custom-checkout .whats-included {
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#snooze-custom-checkout .whats-included h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 1.25rem;
+}
+
+#snooze-custom-checkout .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#snooze-custom-checkout .benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #F2EDEA;
+}
+
+#snooze-custom-checkout .benefits-list li:last-child {
+  border-bottom: none;
+}
+
+#snooze-custom-checkout .benefits-list .check-icon {
+  color: #F43357;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  font-weight: bold;
+}
+
+#snooze-custom-checkout .benefits-list .benefit-text {
+  flex: 1;
+  color: #1F293B;
+  font-size: 0.95rem;
+}
+
+#snooze-custom-checkout .benefits-list .benefit-detail {
+  color: #7C8A98;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* How It Works Section */
+#snooze-custom-checkout .how-it-works {
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#snooze-custom-checkout .how-it-works h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#snooze-custom-checkout .steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#snooze-custom-checkout .step {
+  text-align: center;
+}
+
+#snooze-custom-checkout .step-number {
+  width: 3rem;
+  height: 3rem;
+  background: #F43357;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+#snooze-custom-checkout .step-content h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 0.5rem;
+}
+
+#snooze-custom-checkout .step-content p {
+  color: #7C8A98;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Why Join Section */
+#snooze-custom-checkout .why-join {
+  background: #F9F2F2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .why-join h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 1.25rem;
+}
+
+#snooze-custom-checkout .why-join p {
+  color: #1F293B;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+#snooze-custom-checkout .why-join p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer Note */
+#snooze-custom-checkout .checkout-footer-note {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E5E7EB;
+  font-size: 0.875rem;
+  color: #7C8A98;
+  line-height: 1.6;
+}
+
+#snooze-custom-checkout .checkout-footer-note a {
+  color: #F43357;
+  text-decoration: underline;
+}
+
+/* Mobile Scroll to Checkout Button */
+#snooze-custom-checkout .mobile-scroll-to-checkout {
+  display: none;
+  width: 100%;
+  background: #F43357;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgba(244, 51, 87, 0.3);
+  transition: all 0.3s ease;
+}
+
+#snooze-custom-checkout .mobile-scroll-to-checkout:hover {
+  background: #e02d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 51, 87, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #snooze-custom-checkout .snooze-checkout-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  #snooze-custom-checkout .snooze-checkout-hero .subheadline {
+    font-size: 1rem;
+  }
+  
+  #snooze-custom-checkout .free-highlight,
+  #snooze-custom-checkout .whats-included,
+  #snooze-custom-checkout .how-it-works {
+    padding: 1.5rem;
+  }
+  
+  #snooze-custom-checkout .whats-included h2,
+  #snooze-custom-checkout .how-it-works h2,
+  #snooze-custom-checkout .why-join h2 {
+    font-size: 1.5rem;
+  }
+  
+  #snooze-custom-checkout .steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  #snooze-custom-checkout .mobile-scroll-to-checkout {
+    display: block;
+  }
+}
