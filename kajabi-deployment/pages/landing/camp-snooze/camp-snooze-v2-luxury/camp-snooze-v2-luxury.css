@@ -523,6 +523,15 @@ h6 {
   text-align: center;
 }
 
+/* Waitlist section (replaces pricing when in waitlist mode) */
+#waitlist-section .waitlist-form-wrap {
+  min-height: 120px;
+}
+
+#waitlist-section .waitlist-form-wrap iframe {
+  max-width: 100%;
+}
+
 /* ============================================
    MODAL STYLES
    ============================================ */

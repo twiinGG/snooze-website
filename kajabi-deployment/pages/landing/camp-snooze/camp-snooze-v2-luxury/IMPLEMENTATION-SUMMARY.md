@@ -30,12 +30,13 @@ This implementation introduces a simplified, conversion-optimized pricing experi
 
 ## 📁 Files Created/Updated
 
-### Landing Page Files
-| File | Purpose | Lines |
-|------|---------|-------|
-| `camp-snooze-landing-page-blocks.html` | Main page HTML with hero, sections, modals | 698 |
-| `camp-snooze-v2-luxury.css` | Complete styling for landing page | 712 |
-| `camp-snooze-v2-luxury.js` | Modals, countdown, animations, sticky CTA | 234 |
+### Landing Page Files (one CSS, one JS for both modes)
+| File | Purpose |
+|------|---------|
+| `camp-snooze-landing-page-blocks.html` | **Checkout mode:** CTAs to checkout, pricing section, currency toggle, countdown |
+| `camp-snooze-landing-page-blocks-waitlist.html` | **Waitlist mode:** CTAs to #waitlist-section, waitlist form embed, no pricing/checkout |
+| `camp-snooze-v2-luxury.css` | Shared styles for both landing versions |
+| `camp-snooze-v2-luxury.js` | Shared JS; detects waitlist vs checkout (data-camp-mode / #waitlist-section) and injects appropriate sticky CTA, runs countdown only in checkout mode |
 
 ### Checkout Page Files
 | File | Purpose | Lines |

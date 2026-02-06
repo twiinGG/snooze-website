@@ -354,35 +354,55 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   // ============================================
-  // STICKY CTA WITH COUNTDOWN (Feb 9 intake)
+  // WAITLIST vs CHECKOUT MODE (same JS, two HTML versions)
+  // Relies on window.CAMP_PAGE_MODE set by waitlist HTML so detection works in Kajabi
+  // ============================================
+  const isWaitlistMode = window.CAMP_PAGE_MODE === 'waitlist' ||
+    document.querySelector('[data-camp-mode="waitlist"]') ||
+    document.getElementById('waitlist-section');
+
+  // ============================================
+  // STICKY CTA (checkout: price + countdown + CTA; waitlist: CTA only)
   // ============================================
   (function () {
     const hero = document.querySelector('.camp-section');
     const stickyCTA = document.createElement('div');
     stickyCTA.className = 'sticky-cta';
-    stickyCTA.innerHTML = `
-      <div class="sticky-cta-content">
-        <div style="display: flex; align-items: center; gap: 1rem; width: 100%; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>
-                <span class="dynamic-price" data-usd="590" data-aud="885" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$590 USD</span>
-              </div>
-              <div id="sticky-countdown" class="sticky-countdown">
-                <i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">--</span> left
-              </div>
-            </div>
-            <div class="sticky-currency-toggle camp-currency-toggle" style="display: inline-flex; border: 1px solid hsl(140,25%,60%); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.1); padding: 2px;">
-              <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">USD</button>
-              <button type="button" data-currency="AUD" aria-label="Australian Dollar" onclick="campSetCurrency('AUD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">AUD</button>
-            </div>
+    if (isWaitlistMode) {
+      stickyCTA.innerHTML = `
+        <div class="sticky-cta-content">
+          <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
+            <a href="#waitlist-section" class="btn-camp btn-camp-cta" style="padding: 0.75rem 1.5rem; font-size: 1rem; text-decoration: none;">
+              Join the Waitlist
+            </a>
           </div>
-          <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp btn-camp-cta dynamic-cta" data-checkout style="padding: 0.75rem 1.5rem; font-size: 1rem; text-decoration: none;">
-            Join Camp
-          </a>
         </div>
-      </div>
-    `;
+      `;
+    } else {
+      stickyCTA.innerHTML = `
+        <div class="sticky-cta-content">
+          <div style="display: flex; align-items: center; gap: 1rem; width: 100%; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <div>
+                  <span class="dynamic-price" data-usd="590" data-aud="885" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$590 USD</span>
+                </div>
+                <div id="sticky-countdown" class="sticky-countdown">
+                  <i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">--</span> left
+                </div>
+              </div>
+              <div class="sticky-currency-toggle camp-currency-toggle" style="display: inline-flex; border: 1px solid hsl(140,25%,60%); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.1); padding: 2px;">
+                <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">USD</button>
+                <button type="button" data-currency="AUD" aria-label="Australian Dollar" onclick="campSetCurrency('AUD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">AUD</button>
+              </div>
+            </div>
+            <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp btn-camp-cta dynamic-cta" data-checkout style="padding: 0.75rem 1.5rem; font-size: 1rem; text-decoration: none;">
+              Join Camp
+            </a>
+          </div>
+        </div>
+      `;
+    }
     document.body.appendChild(stickyCTA);
 
     if (hero) {
@@ -401,22 +421,24 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   // ============================================
-  // CURRENCY TOGGLE INIT (after sticky CTA so it gets updated)
+  // CURRENCY TOGGLE INIT (after sticky CTA so it gets updated; waitlist may still have .dynamic-price in value breakdown)
   // ============================================
   campInitCurrency();
 
   // ============================================
-  // START COUNTDOWN TIMER (applications close Feb 6)
+  // START COUNTDOWN TIMER (checkout only; applications close Feb 6)
   // ============================================
-  (function () {
-    updateCountdown();
-    const countdownInterval = setInterval(function () {
-      const stillRunning = updateCountdown();
-      if (!stillRunning) {
-        clearInterval(countdownInterval);
-      }
-    }, 1000);
-  })();
+  if (!isWaitlistMode) {
+    (function () {
+      updateCountdown();
+      const countdownInterval = setInterval(function () {
+        const stillRunning = updateCountdown();
+        if (!stillRunning) {
+          clearInterval(countdownInterval);
+        }
+      }, 1000);
+    })();
+  }
 
   // ============================================
   // SCROLL ANIMATIONS
