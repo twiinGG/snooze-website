@@ -55,6 +55,7 @@ Use a single, unique wrapper ID on each Website Page body container. All page sp
 - Product Page - Snooze Method: `#product-snooze-method-page`
 - Product Page - Toddler Toolkit: `#product-toddler-toolkit-page`
 - Store Page V2: `#store-page-v2`
+- Snooze Academy (Landing Page): `#snooze-academy-page`
 
 ## Scoping Rules
 - Page specific selectors must be prefixed with the page wrapper ID.
