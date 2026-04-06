@@ -1,4 +1,5 @@
-<!-- Camp Snooze - CHECKOUT mode (March 16 intake). Checkout: https://www.joinsnooze.com/offers/K3Y6FEKX/checkout. For waitlist use camp-snooze-landing-page-blocks-waitlist.html -->
+<!-- Camp Snooze - WAITLIST mode. Form: https://www.joinsnooze.com/forms/2149246740. Use camp-snooze-v2-luxury.css and camp-snooze-v2-luxury.js -->
+<script>window.CAMP_PAGE_MODE = 'waitlist';</script>
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- pragma: allowlist secret -->
@@ -6,7 +7,7 @@
 <!-- ============================================
      SECTION 1: HERO
      ============================================ -->
-<section class="camp-section pine-pattern" style="padding: 4rem 0; overflow: hidden; position: relative;">
+<section class="camp-section pine-pattern" data-camp-mode="waitlist" style="padding: 4rem 0; overflow: hidden; position: relative;">
   <!-- Falling Leaves Animation -->
   <div class="falling-leaves" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;">
   </div>
@@ -69,13 +70,13 @@
         March 2026
       </p>
 
-      <!-- Hero CTA - March 16 intake open -->
+      <!-- Hero CTA - Waitlist -->
       <div class="fade-in-up" style="margin-bottom: 1.5rem;">
         <p style="color: var(--camp-forest); font-size: 1rem; margin-bottom: 1rem;">
-          Next intake starts <strong>Monday, March 16, 2026</strong>.<br>Includes Camp Snooze plus one month of Snooze access.
+          We'll email you when the next intake opens so you can secure a spot.
         </p>
-        <a href="#pricing-section" class="btn-camp btn-camp-cta btn-hero-cta" style="text-decoration: none; display: inline-block; width: 100%; max-width: 280px;">
-          Join Camp Snooze
+        <a href="#waitlist-section" class="btn-camp btn-camp-cta btn-hero-cta" style="text-decoration: none; display: inline-block; width: 100%; max-width: 280px;">
+          Join the Waitlist
         </a>
       </div>
 
@@ -362,8 +363,8 @@
       </div>
 
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="#pricing-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
-          Join Camp Snooze
+        <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
         </a>
         <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">6 spots per intake</p>
       </div>
@@ -385,13 +386,8 @@
     </div>
 
     <p class="fade-in-up"
-      style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 42rem; margin: 0 auto 1.5rem; text-align: center;">
+      style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 42rem; margin: 0 auto 2.5rem; text-align: center;">
       Camp Snooze is built for parents who need support addressing the big sleep challenges:
-    </p>
-
-    <p class="fade-in-up"
-      style="font-size: 1rem; color: var(--camp-forest); font-weight: 600; max-width: 42rem; margin: 0 auto 2.5rem; text-align: center;">
-      Designed for babies aged 6 months plus.
     </p>
 
     <div class="fade-in-up"
@@ -412,8 +408,8 @@
     </div>
 
     <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="#pricing-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
-        Join Camp Snooze
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
       </a>
     </div>
   </div>
@@ -515,8 +511,8 @@
       </div>
 
       <div style="text-align: center; margin-top: 3rem;">
-        <a href="#pricing-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
-          Join Camp Snooze
+        <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
         </a>
       </div>
     </div>
@@ -597,17 +593,6 @@
         <div style="display: flex; align-items: center; gap: 1rem;">
           <div
             style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
-            <i class="fa-solid fa-clock" style="font-size: 0.875rem;"></i>
-          </div>
-          <div>
-            <span style="font-weight: 600; color: var(--camp-forest);">Applications close:</span>
-            <span style="color: var(--muted-foreground); margin-left: 0.5rem;">Tuesday 10 March</span>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <div
-            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
             <i class="fa-solid fa-key" style="font-size: 0.875rem;"></i>
           </div>
           <div>
@@ -660,18 +645,11 @@
           </div>
         </div>
       </div>
-
-      <div style="margin-top: 1rem; padding: 1rem; background: hsl(38, 70%, 55% / 0.1); border-radius: 0.5rem; border: 1px solid hsl(38, 70%, 55% / 0.2);">
-        <p style="color: var(--camp-forest); font-size: 0.9rem; line-height: 1.6; margin: 0;">
-          <i class="fa-solid fa-circle-info" style="margin-right: 0.5rem; color: var(--camp-gold);"></i>
-          <strong>For best results:</strong> We ask for no childcare during camp and for classes such as swimming, gymbaroo, etc. to please be rescheduled to maximise results and consistency.
-        </p>
-      </div>
     </div>
 
     <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp btn-camp-lg dynamic-cta" data-checkout style="text-decoration: none; display: inline-block;">
-        Join Camp Snooze
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
       </a>
     </div>
   </div>
@@ -707,71 +685,44 @@
         <span class="dynamic-price discount-text" data-usd="-2889" data-aud="-4372">-$2,889</span>
       </div>
       <div class="breakdown-row total">
-        <span>Your Price Today</span>
+        <span>Camper Price</span>
         <span class="dynamic-price" data-usd="690" data-aud="997">$690</span>
       </div>
     </div>
 
     <p class="fade-in-up" style="text-align: center; font-size: 0.9rem; color: var(--muted-foreground); margin-top: 1rem;">
-      Snooze members use checkout link inside Snooze Village for your discount.
+      Snooze members use a coupon at checkout for <span class="dynamic-price" data-usd="510" data-aud="765">$510</span>. Or subscribe at <span class="dynamic-price" data-usd="197" data-aud="295" data-period-usd="/quarter" data-period-aud="/quarter">$197/quarter</span>.
     </p>
 
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp btn-camp-lg dynamic-cta" data-checkout style="text-decoration: none; display: inline-block;">
-        Join Camp Snooze
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
       </a>
     </div>
   </div>
 </section>
 
 <!-- ============================================
-     SECTION 7: PRICING (March 16 intake)
+     WAITLIST SECTION (replaces Pricing when in waitlist mode)
      ============================================ -->
-<section id="pricing-section" class="camp-section"
+<section id="waitlist-section" class="camp-section" data-camp-mode="waitlist"
   style="background: var(--camp-forest); color: var(--camp-cream); padding: 5rem 0;">
   <div class="camp-container">
-    <div style="max-width: 40rem; margin: 0 auto; text-align: center;">
+    <div style="max-width: 36rem; margin: 0 auto; text-align: center;">
       <h2 class="font-heading fade-in-up"
         style="font-size: 2.5rem; font-weight: 700; color: var(--camp-cream); margin-bottom: 1rem;">
-        Your Sleep Transformation
+        Get Notified When the Next Intake Opens
       </h2>
-      <p class="fade-in-up" style="font-size: 1rem; color: var(--camp-sage); margin-bottom: 1rem;">
-        Camp Snooze plus one month of Snooze access included. Snooze access starts the Friday before kickoff (March 13 for this intake).
+      <p class="fade-in-up" style="font-size: 1rem; color: var(--camp-sage); margin-bottom: 2rem;">
+        Join the waitlist and we'll email you first when applications open. Strictly capped at 6 babies per intake.
       </p>
 
-      <div id="camp-currency-toggle-wrap" class="camp-currency-toggle-wrap" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-        <div class="camp-currency-toggle" style="display: inline-flex; border: 2px solid hsl(140,25%,75%); border-radius: 9999px; overflow: hidden; background: rgba(255,255,255,0.15); padding: 4px;">
-          <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.6rem 1.25rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem;">
-            <span style="font-size: 1.1em;"></span>USD
-          </button>
-          <button type="button" data-currency="AUD" aria-label="Australian Dollar" onclick="campSetCurrency('AUD', true)" style="padding: 0.6rem 1.25rem; border: none; background: hsl(38,70%,55%); color: hsl(150,35%,25%); font-family: DM Sans, sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem;">
-            <span style="font-size: 1.1em;"></span>AUD
-          </button>
-        </div>
+      <div class="fade-in-up pricing-card-dark waitlist-form-wrap" style="padding: 2.5rem 2rem;">
+        <script src="https://www.joinsnooze.com/forms/2149246740/embed.js"></script>
       </div>
 
-      <div class="fade-in-up pricing-card-dark">
-        <p class="prominent-price" style="color: var(--camp-cream);"><span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD">$690 USD</span></p>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Camp Snooze + Monthly Snooze access<br>(continues <span class="dynamic-price" data-usd="79" data-aud="119" data-period-usd="/month" data-period-aud="/month">$79/month</span>)</p>
-        <p style="color: var(--camp-sage); font-size: 0.9rem; margin-top: 0.5rem;">
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Camp Snooze + Monthly Snooze access<br>(continues <span class="dynamic-price" data-usd="79" data-aud="119" data-period-usd="/month" data-period-aud="/month">$79/month</span>. Cancel anytime)</p>         </p>
-        <p style="color: var(--camp-sage); font-size: 0.9rem; margin-top: 0.5rem;">
-          Existing Snooze member? Get your discount via the special link inside the Snooze Village.
-        </p>
-
-        <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp btn-camp-cta btn-camp-xl dynamic-cta" data-checkout style="margin-top: 2rem; width: 100%; max-width: 300px; text-decoration: none; display: inline-block;">
-          Join Camp Snooze
-        </a>
-
-        <p style="font-size: 0.8rem; color: var(--camp-sage); margin-top: 1rem;">
-          <i class="fa-solid fa-shield-check" style="margin-right: 4px;"></i> Secure checkout • 6 spots only
-        </p>
-      </div>
-
-      <p class="fade-in-up" style="color: var(--camp-sage); font-size: 0.875rem; margin-top: 2rem;">
-        <strong>Already a Snooze member?</strong> Your member coupon is available inside the <a
-          href="https://joinsnooze.com/products/communities/v2/snooze"
-          style="color: var(--camp-sage); text-decoration: underline;">Snooze Village</a>.
+      <p class="fade-in-up" style="color: var(--camp-sage); font-size: 0.875rem; margin-top: 1.5rem;">
+        Can't wait? <a href="https://www.joinsnooze.com/offers/z63s9VaR" style="color: var(--camp-gold); text-decoration: underline;">Join Snooze</a> and get weekly support now.
       </p>
     </div>
   </div>
@@ -799,7 +750,7 @@
             What ages is this for?
           </h3>
           <p style="color: var(--muted-foreground); line-height: 1.75;">
-            Camp Snooze is designed for babies aged 6 months. If your baby is younger and you need support, see our age-specific courses or <a href="https://joinsnooze.com" style="color: var(--camp-forest); text-decoration: underline;">join snooze</a> for resources and sleep coaches in your corner. If your baby is almost 6 months old, <a href="mailto:camp@joinsnooze.com?subject=Question%20about%20Camp%20Snooze" style="color: var(--camp-forest); text-decoration: underline;">Email us</a> and we will help make sure it is right for you.
+            Most families join when they're past the newborn stage and ready to implement a plan. <a href="mailto:camp@joinsnooze.com?subject=Question%20about%20Camp%20Snooze" style="color: var(--camp-forest); text-decoration: underline;">Email us</a> and we will help make sure it is right for you.
           </p>
         </div>
 
@@ -857,7 +808,7 @@
           </h3>
           <p style="color: var(--muted-foreground); line-height: 1.75;">
             Along with the two-week intensive Camp experience you will gain access to Snooze, the all-access baby sleep support from The Sleep Concierge.
-            <p style="color: var(--muted-foreground); line-height: 1.75;">Your investment is <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD">$690 USD</span> with monthly Snooze access or get two weeks free with quarterly access (<span class="dynamic-price" data-usd="828" data-aud="1195">$828</span>).</p>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">Your investment is $690 USD ($997 AUD) with monthly Snooze access or get two weeks free with quarterly access.</p>
           </p>
         </div>
       </div>
@@ -892,13 +843,13 @@
         See You at Roll Call
       </h2>
       <p class="fade-in-up" style="color: var(--muted-foreground); max-width: 36rem; margin: 0 auto 2.5rem;">
-        March 16 intake is open.<br>Camp includes one month of Snooze access starting Friday, March 13.
+        We'll email you when the next intake opens so you can secure your spot.
       </p>
       <div class="fade-in-up">
-        <a href="#pricing-section" class="btn-camp btn-camp-xl" style="text-decoration: none; display: inline-block;">
-          Join Camp Snooze
+        <a href="#waitlist-section" class="btn-camp btn-camp-xl" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
         </a>
-        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">6 spots • Applications close Tuesday 10 March</p>
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">6 spots per intake</p>
       </div>
     </div>
   </div>

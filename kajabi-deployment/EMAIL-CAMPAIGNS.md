@@ -23,19 +23,19 @@
 - **Send Date:** January 16, 2026  
 - **Subject:** Your Camp Snooze spot is open  
 - **Preheader:** Your waitlist spot is open. Camp Snooze enrollment is live now.  
-- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/camp-snooze-waitlist-01-open.html`
+- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/EMCMWL02/camp-snooze-waitlist-01-open.html`
 
 2) **Email 2**  
 - **Send Date:** January 19, 2026  
 - **Subject:** A quick look inside Camp Snooze  
 - **Preheader:** Here is what Camp Snooze includes and how the cohort works.  
-- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/camp-snooze-waitlist-02-inside.html`
+- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/EMCMWL02/camp-snooze-waitlist-02-inside.html`
 
 3) **Email 3**  
 - **Send Date:** January 21, 2026  
 - **Subject:** Final call for the waitlist window  
 - **Preheader:** Enrollment closes January 23, 2026. This is your final reminder.  
-- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/camp-snooze-waitlist-03-last-chance.html`
+- **Template:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/emails/EMCMWL02/camp-snooze-waitlist-03-last-chance.html`
 
 ### Kajabi Setup Notes
 

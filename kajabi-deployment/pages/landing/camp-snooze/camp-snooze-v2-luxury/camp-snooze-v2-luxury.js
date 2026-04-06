@@ -209,9 +209,9 @@ function campInjectToggles() {
 
 // ============================================
 // COUNTDOWN TIMER - Global Configuration
-// Deadline: 11:59pm Thursday 6 Feb 2026 AEDT (applications close)
+// Deadline: 11:59pm Tuesday 10 March 2026 AEDT (applications close)
 // ============================================
-const COUNTDOWN_DEADLINE = new Date('2026-02-06T23:59:00+11:00').getTime();
+const COUNTDOWN_DEADLINE = new Date('2026-03-31T23:59:00+11:00').getTime();
 
 // ============================================
 // MODAL TOGGLE FUNCTION (Global)
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="display: flex; align-items: center; gap: 0.75rem;">
               <div style="display: flex; flex-direction: column; gap: 0.25rem;">
                 <div>
-                  <span class="dynamic-price" data-usd="590" data-aud="885" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$590 USD</span>
+                  <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
                 </div>
                 <div id="sticky-countdown" class="sticky-countdown">
                   <i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">--</span> left
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
   campInitCurrency();
 
   // ============================================
-  // START COUNTDOWN TIMER (checkout only; applications close Feb 6)
+  // START COUNTDOWN TIMER (checkout only; applications close March 10)
   // ============================================
   if (!isWaitlistMode) {
     (function () {

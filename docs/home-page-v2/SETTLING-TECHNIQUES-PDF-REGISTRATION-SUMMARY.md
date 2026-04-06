@@ -15,15 +15,16 @@
 **Status:** Active  
 **Pricing:** Free
 
-**Description:**  
-Two proven settling techniques (Soothe and Support Checks and The Vanishing Chair) extracted from the 5-12 Month Sleep Course. Used as lead magnet/value bomb and given to Camp Snooze members.
+**Description:**
+Three proven settling techniques (Soothe and Support Checks, The Vanishing Chair, and Pick Up / Put Down) extracted from the 5-12 Month Sleep Course. Used as lead magnet/value bomb and given to Camp Snooze members.
 
-**Content Source:**  
-5-12 Month Sleep Course, Module 3, Lessons 1.2 and 1.3
+**Content Source:**
+5-12 Month Sleep Course, Module 3
 
 **Modules Included:**
 - Option 1 - Soothe and Support Checks
 - Option 2 - The Vanishing Chair
+- Option 3 - Pick Up / Put Down (PU/PD)
 
 **Use Cases:**
 - Lead magnet for email capture
@@ -111,3 +112,9 @@ Two proven settling techniques (Soothe and Support Checks and The Vanishing Chai
 **Registration Complete:** ✅  
 **Ready for Use:** ✅  
 **Supabase Sync:** ✅ Complete (ID: `7b1b77c7-9319-41f9-b699-ef1f595df11e`)
+
+### TSC Library (Notion)
+
+**Notion Page ID:** `30233898b6c2805e9e06d5b86b525d92`  
+**Working file (source):** [Google Doc](https://docs.google.com/document/d/1y3JjiL4DHc5633AyGHbq3gZqusS3pVXIPc-RvOpDc_o/edit)  
+**Update script:** `apps/brand-content-consultant/scripts/update_settling_techniques_library_page.py` (fills Title, Internal ID, Type, Tags, Focus Areas, Status, Age Range, Lead Magnet Type, Ticket Price, Content Preview, URL, Last Updated)
