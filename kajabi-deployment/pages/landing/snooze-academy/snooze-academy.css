@@ -1,7 +1,152 @@
 /* ============================================
-   SNOOZE ACADEMY - PAGE-SPECIFIC STYLES
+   SNOOZE ACADEMY - STANDALONE STYLES
    Landing page for sleep consultant training
-   Depends on System Init in snooze-unified-theme.css
+   Self-contained: includes System Init + page styles
+   Deploy this directory as Vercel root
+   ============================================ */
+
+/* ============================================
+   SYSTEM INITIALIZATION
+   (Design system variables, base typography,
+   layout utilities, buttons, hero, grid, full-bleed)
+   ============================================ */
+
+/* 1. Initialize Variables & Base Typography */
+#snooze-academy-page {
+  --c-coral: #F43357;
+  --c-coral-hover: #D62646;
+  --c-navy: #1F293B;
+  --c-cream: #FAF7F4;
+  --c-beige: #F2EDEA;
+  --c-white: #FFFFFF;
+  --c-sage: #7C8A98;
+  --c-yellow: #FFC107;
+  --c-text: #161E2A;
+  --c-muted: #64748B;
+
+  --font-body: 'Poppins', sans-serif;
+  --font-head: 'Playfair Display', serif;
+
+  --radius: 20px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
+  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);
+
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--c-text);
+  line-height: 1.6;
+  background: var(--c-cream);
+  isolation: isolate;
+}
+
+#snooze-academy-page *,
+#snooze-academy-page *::before,
+#snooze-academy-page *::after { box-sizing: border-box; }
+#snooze-academy-page img { max-width: 100%; height: auto; display: block; }
+#snooze-academy-page a { text-decoration: none; transition: 0.3s ease; }
+
+/* 2. Headings */
+#snooze-academy-page h1, #snooze-academy-page h2, #snooze-academy-page h3, #snooze-academy-page h4 {
+  font-family: var(--font-head);
+  color: var(--c-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+#snooze-academy-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+#snooze-academy-page h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+#snooze-academy-page h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
+
+/* 3. Layout Utilities */
+#snooze-academy-page .snooze-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+#snooze-academy-page .snooze-section { padding: 72px 0; }
+#snooze-academy-page .bg-white { background: var(--c-white); }
+#snooze-academy-page .bg-cream { background: var(--c-cream); }
+#snooze-academy-page .text-center { text-align: center; }
+#snooze-academy-page .max-800 { max-width: 800px; margin: 0 auto; }
+
+/* 4. Buttons */
+#snooze-academy-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: var(--c-coral);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  min-height: 48px;
+  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);
+  letter-spacing: 0.1px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+#snooze-academy-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }
+#snooze-academy-page .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(244, 51, 87, 0.45);
+  color: var(--c-coral);
+  box-shadow: none;
+}
+#snooze-academy-page .btn-outline:hover {
+  background: rgba(244, 51, 87, 0.08);
+  border-color: rgba(244, 51, 87, 0.7);
+  color: var(--c-coral);
+}
+
+/* 5. Hero Layout */
+#snooze-academy-page .hero-wrap {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+#snooze-academy-page .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media(min-width: 900px) {
+  #snooze-academy-page .hero-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+  #snooze-academy-page .hero-content { order: 1; }
+  #snooze-academy-page .hero-img { order: 2; }
+}
+
+/* 6. Steps Grid */
+#snooze-academy-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+#snooze-academy-page .step-card {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#snooze-academy-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  #snooze-academy-page .snooze-section { padding: 56px 0; }
+  #snooze-academy-page .btn { width: 100%; }
+}
+
+/* ============================================
+   PAGE-SPECIFIC STYLES
    ============================================ */
 
 /* ---- Hero Section ---- */
