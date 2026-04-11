@@ -94,9 +94,9 @@ The design system (colors, buttons, fonts) is scoped to `#home-page`. New page w
 - Email HTML uses `<br />` for vertical spacing
 - Email HTML preserves header comments
 
-### No Em Dashes
+### AI Writing Rules
 
-Never use `&mdash;` or em dash character in any code files. Use commas, colons, or periods instead.
+All content and code must follow `~/KhorusOS/system/AI-WRITING-RULES.md` (base layer) and `snooze-content/docs/reference/SNOOZE-TONE-OF-VOICE-v1.2.md` (brand voice). See root AGENTS.md section 7 for full details.
 
 ### Free Module Bundle File Naming
 
