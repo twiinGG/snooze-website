@@ -242,13 +242,9 @@ function updateCountdown() {
   if (distance < 0) {
     // Timer expired
     const heroCountdown = document.getElementById('hero-countdown');
-    const stickyCountdown = document.getElementById('sticky-countdown');
 
     if (heroCountdown) {
       heroCountdown.innerHTML = '<div class="countdown-expired"><i class="fa-solid fa-circle-xmark"></i> Applications are now closed</div>';
-    }
-    if (stickyCountdown) {
-      stickyCountdown.innerHTML = '<span style="color: var(--camp-rust);">Applications closed</span>';
     }
     return false;
   }
@@ -269,16 +265,6 @@ function updateCountdown() {
   if (heroHours) heroHours.textContent = hours.toString().padStart(2, '0');
   if (heroMinutes) heroMinutes.textContent = minutes.toString().padStart(2, '0');
   if (heroSeconds) heroSeconds.textContent = seconds.toString().padStart(2, '0');
-
-  // Update sticky countdown
-  const stickyCountdown = document.getElementById('sticky-countdown');
-  if (stickyCountdown) {
-    if (days > 0) {
-      stickyCountdown.innerHTML = `<i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">${days}d ${hours}h</span> left`;
-    } else {
-      stickyCountdown.innerHTML = `<i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">${hours}h ${minutes}m</span> left`;
-    }
-  }
 
   return true;
 }
@@ -362,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('waitlist-section');
 
   // ============================================
-  // STICKY CTA (checkout: price + countdown + CTA; waitlist: CTA only)
+  // STICKY CTA (checkout: price + CTA; waitlist: CTA only)
   // ============================================
   (function () {
     const hero = document.querySelector('.camp-section');
@@ -383,13 +369,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="sticky-cta-content">
           <div style="display: flex; align-items: center; gap: 1rem; width: 100%; justify-content: space-between;">
             <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-                <div>
-                  <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
-                </div>
-                <div id="sticky-countdown" class="sticky-countdown">
-                  <i class="fa-solid fa-clock"></i> <span class="sticky-countdown-value">--</span> left
-                </div>
+              <div>
+                <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
               </div>
               <div class="sticky-currency-toggle camp-currency-toggle" style="display: inline-flex; border: 1px solid hsl(140,25%,60%); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.1); padding: 2px;">
                 <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">USD</button>
