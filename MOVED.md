@@ -1,9 +1,11 @@
-# Website Code Moved
+# Notice withdrawn
 
-The Kajabi website code has been moved to a standalone repository for VSP development:
+The April 2026 notice claiming this directory had moved to `twiinGG/snooze-website` was incorrect. That external repo was an old prototype experiment, not the active website.
 
-**Repository:** https://github.com/twiinGG/snooze-website
+**Authoritative location for all Kajabi website code (HTML, CSS, JS, emails):** this directory, `apps/snooze-website/`.
 
-This directory is kept as a frozen reference. Do not make changes here; work in the new repo instead.
+**Deploy mechanism:** pages, checkout blocks, course lessons, and email templates are manually pasted into Kajabi CMS custom code blocks. Git is the source of truth; Kajabi is the rendering surface.
 
-**Moved:** April 2026
+Confirmed by root `AGENTS.md` §2 (Active apps: 1. apps/snooze-website), apps/snooze-website/README.md (Status: Active Development), and recent commit activity.
+
+Corrected June 7, 2026.
