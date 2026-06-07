@@ -56,11 +56,12 @@
 // Primary checkout URL for Snooze Access (currency-aware)
 // PRD: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §4.8
 // Reads localStorage['snooze_currency_preference'] set by currency-toggle.js.
-// AUD offer ID is a placeholder until Stream A1 publishes the new AUD Snooze Access offer.
-// Once published, replace <NEW_AUD_ACCESS_OFFER_ID> with the real Kajabi offer ID.
+// Offer IDs (numeric) and slugs both resolve in Kajabi. URLs use slugs to match
+// the canonical customer-facing form. USD offer 2150754998 (slug z63s9VaR),
+// AUD offer 2151212200 (slug bEsVXFXG, draft as of 2026-06-08).
 (function() {
-  var USD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/2150754998/checkout';
-  var AUD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/<NEW_AUD_ACCESS_OFFER_ID>/checkout';
+  var USD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
+  var AUD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/bEsVXFXG/checkout';
 
   function readCurrencyPreference() {
     try {

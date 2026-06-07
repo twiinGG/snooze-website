@@ -20,21 +20,33 @@
     // variants; variant-level routing is handled by variantMapping below.
     offerMapping: {
       // Snooze Access (Core membership), PRD §4.5
-      '2150754998': '<NEW_AUD_ACCESS_OFFER_ID>',
+      // USD offer 2150754998 (3 variants) to AUD offer 2151212200 (3 variants, draft pending Sally's variant adds)
+      '2150754998': '2151212200',
+      // Also map by checkout slug, so canonical customer URLs route correctly
+      'z63s9VaR': 'bEsVXFXG',
       // Camp Snooze, retained
       '2150884129': '2150946767',
-      // Day Pass cold-ads dedicated, filled in Wave 0b
-      '<USD_DAYPASS_OFFER>': '<AUD_DAYPASS_OFFER>'
+      // Camp Snooze slug pair (canonical customer URL form)
+      'K3Y6FEKX': '46Bz9tk6'
+      // Day Pass cold-ads (offer 2151212201, slug ZvzAZKqz) is a single free
+      // offer with no currency twin. Currency preference is captured on the
+      // day_pass_grant row and used by the Message 2 conversion CTA to route
+      // to the correctly-priced Snooze Access checkout. No offerMapping entry
+      // needed here. See PRD §5.3.
     },
     // Variant-aware checkout routing for Snooze Access (PRD §4.7).
     // MAP: 'USD_VARIANT_ID' : 'AUD_VARIANT_ID'
+    // AUD variant IDs are placeholders until Sally adds the quarterly and
+    // yearly variants to offer 2151212200 in the Kajabi admin UI. The MCP
+    // create_offer call only creates the primary (monthly) tier.
     variantMapping: {
-      '68112': '<AUD_MONTHLY_VARIANT>',   // monthly  ($79 USD to $119 AUD)
+      '68112': '<AUD_MONTHLY_VARIANT>',   // monthly   ($79 USD to $119 AUD)
       '37262': '<AUD_QUARTERLY_VARIANT>', // quarterly ($197 USD to $299 AUD)
       '37263': '<AUD_YEARLY_VARIANT>'     // yearly    ($657 USD to $997 AUD)
     },
-    // AUD Offer IDs for GTM tracking
-    audOfferIds: ['2150946767', '<NEW_AUD_ACCESS_OFFER_ID>', '<AUD_DAYPASS_OFFER>']
+    // AUD Offer IDs for GTM tracking. Day Pass cold-ads is currency-neutral
+    // (free) so it is not listed here.
+    audOfferIds: ['2150946767', '2151212200']
   };
 
   // Legacy offer mapping (kept for historical campaign URL parity, PRD §4.6).

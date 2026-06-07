@@ -96,29 +96,29 @@ const cases = [
     name: 'Snooze Access monthly USD to AUD (variant 68112)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=68112',
     target: 'AUD',
-    expectIncludes: ['<NEW_AUD_ACCESS_OFFER_ID>', 'variant=<AUD_MONTHLY_VARIANT>']
+    expectIncludes: ['2151212200', 'variant=<AUD_MONTHLY_VARIANT>']
   },
   {
     name: 'Snooze Access quarterly USD to AUD (variant 37262)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=37262',
     target: 'AUD',
-    expectIncludes: ['<NEW_AUD_ACCESS_OFFER_ID>', 'variant=<AUD_QUARTERLY_VARIANT>']
+    expectIncludes: ['2151212200', 'variant=<AUD_QUARTERLY_VARIANT>']
   },
   {
     name: 'Snooze Access yearly USD to AUD (variant 37263)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=37263',
     target: 'AUD',
-    expectIncludes: ['<NEW_AUD_ACCESS_OFFER_ID>', 'variant=<AUD_YEARLY_VARIANT>']
+    expectIncludes: ['2151212200', 'variant=<AUD_YEARLY_VARIANT>']
   },
   {
     name: 'Snooze Access monthly AUD to USD (round trip)',
-    href: 'https://www.joinsnooze.com/offers/<NEW_AUD_ACCESS_OFFER_ID>/checkout?variant=<AUD_MONTHLY_VARIANT>',
+    href: 'https://www.joinsnooze.com/offers/2151212200/checkout?variant=<AUD_MONTHLY_VARIANT>',
     target: 'USD',
     expectIncludes: ['/offers/2150754998/', 'variant=68112']
   },
   {
     name: 'Snooze Access quarterly AUD to USD with extra query',
-    href: 'https://www.joinsnooze.com/offers/<NEW_AUD_ACCESS_OFFER_ID>/checkout?variant=<AUD_QUARTERLY_VARIANT>&utm_source=meta',
+    href: 'https://www.joinsnooze.com/offers/2151212200/checkout?variant=<AUD_QUARTERLY_VARIANT>&utm_source=meta',
     target: 'USD',
     expectIncludes: ['/offers/2150754998/', 'variant=37262', 'utm_source=meta']
   },
