@@ -1,9 +1,9 @@
 # Snooze Technical Architecture: Tracking & Performance
 
-**Version:** 2.2 (Final Price Tracking Fix)
-**Date:** December 13, 2025
-**Status:** Live
-**Last Updated:** December 16, 2025 - Fixed final price tracking after discount (tracks actual revenue, not base price)
+**Version:** 3.0 (Stape outage recovery + verified live state)
+**Date:** June 8, 2026
+**Status:** Live (recovered)
+**Last Updated:** June 8, 2026 - Documented the Apr-Jun 2026 Stape outage and recovery, corrected GCP usage, captured the verified live GTM topology and server-side GA4 ID pattern. See `docs/operations/TRACKING-RECOVERY-AND-GA4-MCP-2026-06-08.md`.
 **Tech Stack:** Kajabi, Google Tag Manager (Web + Server), Stape.io, Meta CAPI, GA4
 **Maintainers:** Sally & Kade
 
@@ -33,9 +33,10 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
                                           +---> [GA4 Server-Side]
 ```
 
-### The Two GTM Containers
+### The GTM Containers (GTM account `6058575269`)
 *   **Web Container (`GTM-KNRTH6P`):** Acts as the "Scraper." It runs in the user's browser, detects button clicks, scrapes pricing/email data from the DOM, and sends it to the server.
-*   **Server Container (`GTM-PHFGMTQJ`):** Acts as the "Broadcaster." It receives data, cleans it, anonymizes IP addresses, and sends it to ad platforms via API.
+*   **Server Container, Stape (`GTM-PHFGMTQJ`):** The **live** "Broadcaster." It receives data, cleans it, anonymizes IP addresses, and sends it to ad platforms via API. The web container routes to this one (`server_container_url = https://ss.joinsnooze.com`).
+*   **Server Container, GCP (`GTM-WGPK9KFP`):** A parallel/staged server container ("server (GCP)"). Not the live route as of June 2026; likely the target of a future Stape-to-GCP migration. Confirm before switching the web container's `server_container_url` to it.
 
 ---
 
@@ -64,10 +65,12 @@ The script checks the URL slug.
   // Add any URL slug here that needs to load INSTANTLY (Delay tracking)
   var fastPages = [
     '/links', 
-    '/waitlist',
+    '/snooze',
     '/bio',
     '/free-guide' 
   ];
+  // Live as of June 2026. The LCP preload (above) must point at the current /links
+  // profile image on the active theme (2161797115). Confirm the href against live Kajabi.
   // ---------------------
 
   // Check if current URL matches any fast page
@@ -247,13 +250,14 @@ Kajabi does not provide a native Data Layer for checkouts. We rely on **GTM Tag 
 ## 4. Server Infrastructure (Stape.io)
 
 *   **Server Location:** AU East (Australia)
-*   **Tagging URL:** `https://ss.joinsnooze.com` (Updated Dec 13, 2025 - migrated from `ss.joinsnooze.com`)
-*   **Custom Loader:** `https://load.ss.joinsnooze.com` (Updated Dec 13, 2025 - migrated from `load.ss.joinsnooze.com`)
+*   **Tagging URL:** `https://ss.joinsnooze.com`
+*   **Custom Loader:** `https://load.ss.joinsnooze.com`
     *   *Purpose:* Hides GTM from Ad Blockers by serving it from our own domain.
 *   **Power-Ups:**
     *   **Cookie Keeper:** Extends cookie life (fbp/fbc) from 7 days to 2 years on Safari.
     *   **GA4 Ad Block Bypass:** Active.
-*   **Note:** References to "BigQuery" in the Server Container are dormant/legacy and can be ignored. We do not use Google Cloud Platform (GCP).
+*   **Single point of failure:** GA4 and Meta CAPI both broadcast through this one Stape container. If the Stape subscription lapses, GA4 and Meta both go dark together (see the Outage & Recovery section).
+*   **GCP usage:** A GCP service account now backs GA4/GTM read access (analytics tooling, not the live tag path), and a parallel GCP server container exists (`GTM-WGPK9KFP`). The "BigQuery" references in the Stape server container remain dormant/legacy and can be ignored.
 
 ---
 
@@ -267,9 +271,29 @@ Kajabi does not provide a native Data Layer for checkouts. We rely on **GTM Tag 
     *   *Reason:* We scrape and hash user data manually in GTM (Server-Side) for higher accuracy and security. Turning it on in Facebook is redundant and wastes browser CPU.
 
 ### Google Analytics 4 (GA4)
-*   **Measurement ID:** `G-J4TY43FW1G`
+*   **Measurement ID:** `G-J4TY43FW1G` | **Property ID:** `401774815`.
 *   **Data Retention:** 14 Months (Manually set).
 *   **Google Signals:** OFF (To prevent data thresholding).
+*   **Server-side routing:** GA4 hits go through the Stape server container, not direct to GA4. The web GA4 config sends to `https://ss.joinsnooze.com` with `send_page_view=false`; the server `GA4 SS Tag` applies the real measurement ID and forwards to GA4.
+*   **Client-side `{{GA4 Id}} = G-1111111111` is an intentional dummy.** The real ID is applied server-side. Do not "correct" the web value to `G-J4TY43FW1G`.
+*   **Programmatic access:** the official `google-analytics-mcp` server queries GA4 via a service account (`khorus-spellbook@spellbook-459212`, key in `~/.config/snooze/`). Migration target off Khorus is `ga4-mcp@tsc-ga4-analysis`. See the recovery doc.
+
+---
+
+## 5.5 Outage & Recovery (Apr-Jun 2026)
+
+The Stape subscription lapsed around mid-April 2026. Because GA4 and Meta both route through the
+one Stape container, both went dark together, and the failure went unnoticed for about seven weeks.
+
+*   **Outage window:** GA4 data healthy through **Apr 17, 2026**, dark **Apr 18 - Jun 7** (only
+    negligible 1-session blips), recovering from **Jun 8, 2026** when Stape was reactivated.
+*   **Reporting impact:** treat Apr 18 - Jun 7, 2026 as a known GA4/Meta data gap, not a real drop.
+*   **Recovery confirmed:** GA4 realtime showed real homepage and `/blog` traffic on Jun 8. Re-verify
+    full GA4 volume and Meta server (CAPI) events after the ~24h reporting lag clears.
+*   **Prevention:** monitoring is planned (daily GA4/Meta zero-or-stale-data alert + Stape endpoint
+    and subscription check) so a future lapse is caught in days. Tracked in the recovery doc.
+
+Full detail: `docs/operations/TRACKING-RECOVERY-AND-GA4-MCP-2026-06-08.md`.
 
 ---
 
