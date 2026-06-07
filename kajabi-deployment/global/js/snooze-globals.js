@@ -53,8 +53,42 @@
  * Update these values to change checkout URLs site-wide
  */
 
-// Primary checkout URL for Snooze Founding Member Offer
-window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/6iRarwak/checkout';
+// Primary checkout URL for Snooze Access (currency-aware)
+// PRD: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §4.8
+// Reads localStorage['snooze_currency_preference'] set by currency-toggle.js.
+// AUD offer ID is a placeholder until Stream A1 publishes the new AUD Snooze Access offer.
+// Once published, replace <NEW_AUD_ACCESS_OFFER_ID> with the real Kajabi offer ID.
+(function() {
+  var USD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/2150754998/checkout';
+  var AUD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/<NEW_AUD_ACCESS_OFFER_ID>/checkout';
+
+  function readCurrencyPreference() {
+    try {
+      var pref = window.localStorage && window.localStorage.getItem('snooze_currency_preference');
+      if (pref === 'AUD' || pref === 'USD') return pref;
+    } catch (e) {
+      // localStorage unavailable, fall through to default
+    }
+    // Geo fallback when no explicit preference is set
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && tz.indexOf('Australia') !== -1) return 'AUD';
+    } catch (e) {
+      // Intl unavailable, fall through
+    }
+    return 'USD';
+  }
+
+  window.getSnoozeCheckoutUrl = function() {
+    return readCurrencyPreference() === 'AUD' ? AUD_ACCESS_OFFER_URL : USD_ACCESS_OFFER_URL;
+  };
+
+  // Backwards compatibility, callers reading window.SNOOZE_CHECKOUT_URL directly still work.
+  Object.defineProperty(window, 'SNOOZE_CHECKOUT_URL', {
+    configurable: true,
+    get: function() { return window.getSnoozeCheckoutUrl(); }
+  });
+})();
 
 // Library URL
 window.SNOOZE_LIBRARY_URL = '/snooze-library';
