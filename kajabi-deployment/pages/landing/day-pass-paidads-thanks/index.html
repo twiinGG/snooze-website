@@ -1,0 +1,168 @@
+<!--
+  Snooze Day Pass - Cold-Ads Thank-You Page
+  Slug: /day-pass/from-our-ads/thanks
+  Source: docs/projects/day-pass/09-landing-page-implementation.md section 5a (thank-you header)
+  Related: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §5.3
+  Related folder: apps/snooze-website/kajabi-deployment/pages/landing/day-pass-paidads/
+
+  Wave 1 polish. V1 cold-ads redirects to /day-pass/thanks; flip the redirect
+  in day-pass-paidads/index.html (and script.js) to /day-pass/from-our-ads/thanks
+  once this page is published.
+
+  Section 5b (question-capture form) is intentionally omitted; cold-ad clickers
+  have no event context, so the question prompt makes no sense for this funnel.
+
+  Wrapper ID: #day-pass-thanks-page (self-contained inline styles; no theme CSS).
+  Pass first_name, access_url, expires_at_local via URL query parameters or
+  Kajabi merge tags before this page renders.
+-->
+
+<div id="day-pass-thanks-page">
+
+<!-- ============================================================== -->
+<!-- SECTION 1: THANK-YOU HEADER                                      -->
+<!-- ============================================================== -->
+<section style="padding: 3.5rem 1.5rem 1.5rem; max-width: 640px; margin: 0 auto; text-align: center;">
+  <div style="display: inline-block; padding: 0.5rem 1rem; background: #f0f7f4; border-radius: 999px; font-size: 0.8125rem; font-weight: 600; color: #29563f; margin-bottom: 1rem;">
+    Access link sent to your inbox. Your library is ready when you want it.
+  </div>
+  <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #1f293b; margin: 0 0 0.75rem;">
+    You're in, {{first_name}}.
+  </h1>
+  <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0 0 1.25rem;">
+    Your 24 hours starts now and runs until <span id="dp-expires">{{expires_at_local}}</span>.
+  </p>
+  <p style="line-height: 1.7; color: #374151; margin: 0;">
+    Have a look around. Use what helps, ignore what doesn't, come back tomorrow with one less thing to worry about.
+  </p>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 2: ONBOARDING (replaces canonical question form)         -->
+<!-- ============================================================== -->
+<section style="padding: 1.5rem 1.5rem 1rem; max-width: 640px; margin: 0 auto;">
+  <h2 style="font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
+    Where to start
+  </h2>
+  <p style="line-height: 1.7; color: #374151; margin: 0 0 1.25rem;">
+    Your library is sorted by age stage. Open the path that matches your child, pick the first resource at the top, and try one thing tonight if you want to.
+  </p>
+  <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem; display: flex; flex-direction: column; gap: 1rem;">
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">1</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">Open your library.</strong> The link is in your inbox and on the button below. Pick the age-stage path that fits your child.
+      </p>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">2</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">Start with the starter sleep plan.</strong> Clear steps, no jargon. Try one tonight if you want to.
+      </p>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">3</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">Use the 24 hours your way.</strong> Watch what's useful, skip what isn't. When your pass wraps, you'll get one short note with the option to continue.
+      </p>
+    </li>
+  </ul>
+
+  <div style="text-align: center;">
+    <a href="{{access_url}}" style="display: inline-block; padding: 1rem 2.25rem; background: #29563f; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 1.0625rem; font-weight: 600;">
+      Open my library
+    </a>
+    <p style="font-size: 0.8125rem; color: #6b7280; margin: 0.75rem 0 0;">
+      Or open the access link in your inbox; both go to the same place.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 3: SUPPORT FOOTER                                        -->
+<!-- ============================================================== -->
+<section style="padding: 2rem 1.5rem 4rem; max-width: 640px; margin: 0 auto;">
+  <div style="padding: 1.5rem; background: #f9fafb; border-radius: 12px; border-left: 3px solid #29563f;">
+    <p style="line-height: 1.7; color: #374151; margin: 0 0 0.75rem; font-size: 0.9375rem;">
+      Hi, I'm Sally. If anything's broken or your access link doesn't land in the next few minutes, reply to any Snooze email or write to me at <a href="mailto:{{support_email}}" style="color: #29563f;">{{support_email}}</a>. Me or one of my Snooze team will sort it.
+    </p>
+    <p style="line-height: 1.7; color: #374151; margin: 0; font-size: 0.9375rem;">
+      x Sally
+    </p>
+  </div>
+</section>
+
+</div>
+<!-- end #day-pass-thanks-page -->
+
+<script>
+(function () {
+  // Read currency preference from URL or localStorage. V1 does not render
+  // currency-aware copy on this page (the Day Pass is free), but the value
+  // is stored for any future pricing teaser and for downstream attribution.
+  function getCurrencyPreference() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var fromUrl = (params.get('currency') || '').toLowerCase();
+      if (fromUrl === 'aud' || fromUrl === 'usd') {
+        try {
+          window.localStorage.setItem('snooze_currency_preference', fromUrl);
+        } catch (storageErr) {
+          // localStorage may be blocked; ignore.
+        }
+        return fromUrl;
+      }
+      try {
+        var fromStorage = (window.localStorage.getItem('snooze_currency_preference') || '').toLowerCase();
+        if (fromStorage === 'aud' || fromStorage === 'usd') {
+          return fromStorage;
+        }
+      } catch (storageErr) {
+        // localStorage may be blocked; ignore.
+      }
+      return '';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  // Hydrate the access URL and expiry from query params if Kajabi merge tags
+  // are not resolving. This is a fallback for the case where the redirect
+  // from the signup form carries the values as ?access_url=...&expires_at=...
+  function hydrateFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var firstName  = params.get('first_name');
+      var accessUrl  = params.get('access_url');
+      var expiresAt  = params.get('expires_at');
+
+      if (firstName) {
+        var headings = document.querySelectorAll('#day-pass-thanks-page h1');
+        for (var i = 0; i < headings.length; i++) {
+          headings[i].textContent = headings[i].textContent.replace('{{first_name}}', firstName);
+        }
+      }
+
+      if (accessUrl) {
+        var links = document.querySelectorAll('#day-pass-thanks-page a[href="{{access_url}}"]');
+        for (var j = 0; j < links.length; j++) {
+          links[j].setAttribute('href', accessUrl);
+        }
+      }
+
+      if (expiresAt) {
+        var expiresNode = document.getElementById('dp-expires');
+        if (expiresNode) {
+          expiresNode.textContent = expiresAt;
+        }
+      }
+    } catch (e) {
+      // Silent fallback; the Kajabi merge tags are the primary path.
+    }
+  }
+
+  // Store currency preference for downstream pages and run any fallback hydration.
+  getCurrencyPreference();
+  hydrateFromQuery();
+}());
+</script>
