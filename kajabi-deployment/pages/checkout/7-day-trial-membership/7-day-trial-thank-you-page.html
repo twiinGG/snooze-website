@@ -309,3 +309,24 @@
     <p><strong>Need help?</strong> If you have any questions about your trial or getting started, just reply to your welcome email or contact us at <a href="mailto:support@sleepconcierge.com.au">support@sleepconcierge.com.au</a></p>
   </div>
 </div>
+
+<!-- Currency preference read for any .dynamic-price spans. PRD §4.8.
+     Display-only; no checkout impact. -->
+<script>
+(function() {
+  try {
+    var pref = window.localStorage && window.localStorage.getItem('snooze_currency_preference');
+    if (pref !== 'AUD' && pref !== 'USD') return;
+    var els = document.querySelectorAll('.dynamic-price');
+    els.forEach(function(el) {
+      var val = el.getAttribute('data-' + pref.toLowerCase());
+      if (val) {
+        var symbol = pref === 'AUD' ? 'A$' : '$';
+        el.textContent = symbol + val;
+      }
+    });
+  } catch (e) {
+    // Silent fail; thank-you page must not block rendering on toggle errors
+  }
+})();
+</script>
