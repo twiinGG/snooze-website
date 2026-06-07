@@ -1,0 +1,383 @@
+<!-- ============================================
+     LMCR08 - 3-4 Month 4hr Feeds Free Module
+     Thank You / Access Page
+     
+     Page ID: LMCR08_TY_Access
+     
+     Instructions:
+     1. Copy entire code block
+     2. Go to Kajabi → Sales → Offers → LMCR08_OFR_Free-3-4M-4HR-Feeds → Settings
+     3. Scroll to "Thank You Page" section
+     4. Select "Custom Thank You Page" or "Redirect to URL"
+     5. Create a new page in Kajabi and paste this code
+     ============================================ -->
+
+<style>
+  /* ============================================
+     LMCR08 THANK YOU PAGE STYLES
+     Mobile-first, calm, uncluttered, directive
+     ============================================ */
+  
+  .lmcr08-thank-you-container {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F293B;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Section 1: Confirmation (Immediate Relief) */
+  .confirmation-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .confirmation-section h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    color: #F43357;
+    margin-bottom: 1rem;
+  }
+
+  .confirmation-section .subhead {
+    font-size: 1.25rem;
+    color: #1F293B;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .confirmation-section .reassurance {
+    font-size: 1.125rem;
+    color: #7C8A98;
+    margin-top: 1rem;
+  }
+
+  /* Section 2: Primary Action Button */
+  .primary-action-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .primary-cta-button {
+    display: inline-block;
+    padding: 1.125rem 2.5rem;
+    background: #F43357;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(244, 51, 87, 0.2);
+  }
+
+  .primary-cta-button:hover {
+    background: #D62646;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 6px 16px rgba(244, 51, 87, 0.3);
+  }
+
+  /* Section 3: How to Use This Module */
+  .how-to-section {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .how-to-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1.5rem;
+  }
+
+  .how-to-section ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .how-to-section ol li {
+    counter-increment: step-counter;
+    padding: 1rem 0 1rem 3rem;
+    position: relative;
+    color: #1F293B;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .how-to-section ol li:before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: #FFE7EA;
+    color: #F43357;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .how-to-section .supportive-line {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #7C8A98;
+    font-size: 1rem;
+  }
+
+  /* Section 4: Scope Boundary */
+  .scope-boundary {
+    background: #FAF7F4;
+    border-left: 4px solid #F43357;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .scope-boundary h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1rem;
+  }
+
+  .scope-boundary p {
+    color: #1F293B;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Section 5: What Happens Next */
+  .next-steps-section {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .next-steps-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1F293B;
+    margin-bottom: 1.5rem;
+  }
+
+  .next-steps-section p {
+    color: #1F293B;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .next-steps-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .next-steps-section ul li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    position: relative;
+    color: #1F293B;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .next-steps-section ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #F43357;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* Section 6: Optional Next Steps (Secondary CTAs) */
+  .optional-next-steps {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .optional-next-steps h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #7C8A98;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .upsell-option {
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s ease;
+  }
+
+  .upsell-option:hover {
+    border-color: #F43357;
+  }
+
+  .upsell-option .upsell-button {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: transparent;
+    color: #F43357;
+    text-decoration: none;
+    border: 2px solid #F43357;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .upsell-option .upsell-button:hover {
+    background: #F43357;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .upsell-option .microcopy {
+        font-size: 0.9375rem;
+        color: #7C8A98;
+        line-height: 1.6;
+        max-width: 64%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+  /* Section 7: Closing Reassurance */
+  .closing-reassurance {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .closing-reassurance p {
+        font-size: 1.125rem;
+        color: #1F293B;
+        font-style: italic;
+        line-height: 1.7;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .lmcr08-thank-you-container {
+      padding: 1.5rem 1rem;
+    }
+
+    .confirmation-section h1 {
+      font-size: 2rem;
+    }
+
+    .how-to-section,
+    .next-steps-section {
+      padding: 1.5rem;
+    }
+
+    .primary-cta-button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .upsell-option .upsell-button {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="lmcr08-thank-you-container">
+  
+  <!-- Section 1: Confirmation (Immediate Relief) -->
+  <div class="confirmation-section">
+    <h1>You&rsquo;re in 🎉</h1>
+    <p class="subhead">Your free Feed or Resettle Module is now unlocked.</p>
+    <p class="reassurance">You don&rsquo;t need to do anything else to access it.<br>It&rsquo;s already in your library.</p>
+  </div>
+
+  <!-- Section 2: Primary Action (Non-Negotiable) -->
+  <div class="primary-action-section">
+    <a href="#" class="primary-cta-button">👉 Go to the Free Module</a>
+    <!-- TODO: Replace # with deep-link to orientation lesson or unlocked feeds lesson -->
+  </div>
+
+  <!-- Section 3: How to Use This Module (Expectation Setting) -->
+  <div class="how-to-section">
+    <h2>Start here for best results</h2>
+    <ol>
+      <li>Read through the short orientation lesson first</li>
+      <li>Watch the Overnight Feeds and Resettling video</li>
+      <li>Download the Feed vs Resettle guide and identify your baby&rsquo;s patterns</li>
+      <li>Apply the 3hr/4hr rule for at least 3-4 nights before adjusting</li>
+    </ol>
+    <p class="supportive-line">You don&rsquo;t need to be perfect. You&rsquo;re looking for progress, not instant miracles.</p>
+  </div>
+
+  <!-- Section 4: Scope Boundary (Critical for Trust) -->
+  <div class="scope-boundary">
+    <h3>A quick note on expectations</h3>
+    <p>This free module focuses specifically on overnight feeds: knowing when to feed versus when to resettle.</p>
+    <p>Understanding feed timing is foundational, but it doesn&rsquo;t solve everything on its own.</p>
+    <p>If your baby is still waking hourly overnight, struggling with the 4-month regression, or unable to settle independently, you&rsquo;ll likely need a more complete plan. I&rsquo;ll explain your options inside the module and via email.</p>
+  </div>
+
+  <!-- Section 5: What Happens Next (Email Alignment) -->
+  <div class="next-steps-section">
+    <h2>What to expect over the next few days</h2>
+    <p>You&rsquo;ll receive a short email series over the next week that helps you:</p>
+    <ul>
+      <li>Apply the feed spacing strategy properly</li>
+      <li>Understand how feeds fit into the bigger sleep picture</li>
+      <li>Decide whether you need additional support</li>
+    </ul>
+  </div>
+
+  <!-- Section 6: Optional Next Steps (Soft, Secondary CTAs) -->
+  <div class="optional-next-steps">
+    <h2>Ready for more?</h2>
+    
+    <div class="upsell-option">
+      <a href="#" class="upsell-button">Unlock the Full 3-4 Month Sleep Course</a>
+      <p class="microcopy">A complete, step-by-step plan covering feeds, the 4-month regression, settling, schedules, and routines.</p>
+    </div>
+
+    <div class="upsell-option">
+      <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="upsell-button">Join Snooze for Full Access + Support</a>
+      <p class="microcopy">All courses, weekly guidance, and support as your baby changes.</p>
+    </div>
+  </div>
+
+  <!-- Section 7: Close with Reassurance -->
+  <div class="closing-reassurance">
+    <p>Start with the feeds. You&rsquo;ll know very quickly if it&rsquo;s enough or if you need the next layer.</p>
+  </div>
+
+</div>
