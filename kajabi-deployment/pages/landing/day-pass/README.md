@@ -1,5 +1,18 @@
 # Day Pass - Canonical Landing Page
 
+**Live as draft on Kajabi:** `https://www.joinsnooze.com/day-pass` (page id `2152089948`, theme id `2166436909`, created 2026-06-08 via MCP). Hero block is already populated with Day Pass copy and a CTA pointing to the cold-ads offer checkout (`/offers/ZvzAZKqz/checkout`). The form + script section needs an operator paste step.
+
+Builder URL: `https://app.kajabi.com/admin/themes/2166436909/settings/edit`
+Admin URL: `https://app.kajabi.com/admin/landing_pages/2152089948/edit`
+
+**Operator paste step (Louise):**
+
+1. Open the builder URL above.
+2. Add a **Custom Code** section below the existing Hero.
+3. Paste the `<form>` block plus the inline `<script>` from `index.html` into the Custom Code section. Refine hero copy in the builder if desired (the current hero is a Day Pass starter copy + CTA, not the full canonical hero from `index.html`).
+4. Fill the placeholders below (Pre-paste checklist).
+5. Publish from the Kajabi admin Pages tab once Sally approves.
+
 **Purpose:** The standard (non-paid-ads) Day Pass landing page. This is the page warm visitors hit after an event landing, partner channel, or organic referral. Maps to the 4 existing Day Pass offers in Kajabi (Snooze Village Day Pass `2151170163`, Snooze Day Pass `2151173175`, and siblings).
 
 **Source:** Canonical paste pack in `docs/projects/day-pass/09-landing-page-implementation.md` (this folder materialises sections 2 through 5 of that doc as a single paste-ready file).
