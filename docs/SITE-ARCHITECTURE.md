@@ -96,6 +96,16 @@ Home
 - Index: `/blog`
 - Posts: `/blog/[slug]` (preserve existing slugs where possible)
 
+### 7. Sleep & Parenting Glossary (`/sleep-glossary`)
+**Purpose:** SEO/AEO top-of-funnel hub. Defines the sleep and parenting terms parents search for, and earns AI-answer citations via `DefinedTermSet` structured data.
+**Status:** Built in repo (June 2026), pending Kajabi page creation
+**Structure:**
+- Single canonical page, ~40 curated terms grouped into 5 categories (Sleep Science, Patterns & Cycles, Methods & Techniques, Common Challenges, Feeding & Parenting)
+- Deep-linkable anchors per term (`/sleep-glossary#wake-windows`), related-term links, one contextual funnel link per term
+- DefinedTermSet + BreadcrumbList + FAQPage JSON-LD
+**Source:** `apps/snooze-website/glossary/terms.json` (single source of truth) generated via `glossary/build-glossary.mjs`. Wrapper `#glossary-page`.
+**Phase 2 (deferred):** promote head terms to full long-form guides linking back to glossary anchors.
+
 ---
 
 ## Content Taxonomy

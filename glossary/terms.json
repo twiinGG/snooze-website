@@ -1,0 +1,470 @@
+{
+  "$comment": "Source of truth for the Snooze Sleep & Parenting Glossary. Edit here, then run `node build-glossary.mjs` to regenerate the page HTML + JSON-LD. See README.md. Voice: AI-WRITING-RULES.md + SNOOZE-TONE-OF-VOICE-v1.2.md (no em dashes, no Oxford comma, plain and warm). shortDef is reused verbatim in schema, so it must read as a complete answer on its own.",
+  "meta": {
+    "pageTitle": "Sleep & Parenting Glossary",
+    "pageIntro": "Plain-language definitions for the sleep and parenting terms you keep running into. No jargon for the sake of it, just clear answers from the Snooze team.",
+    "pageUrl": "https://www.joinsnooze.com/sleep-glossary",
+    "termSetName": "Snooze Sleep & Parenting Glossary",
+    "publisherName": "Snooze by The Sleep Concierge"
+  },
+  "categories": [
+    { "id": "sleep-science", "name": "Sleep Science", "blurb": "How sleep actually works, from the body clock to the chemistry behind a good nap." },
+    { "id": "patterns-cycles", "name": "Patterns & Cycles", "blurb": "The rhythms, windows and wake-ups that shape your child's day and night." },
+    { "id": "methods-techniques", "name": "Methods & Techniques", "blurb": "The approaches parents use to help a child learn to settle and sleep." },
+    { "id": "common-challenges", "name": "Common Challenges", "blurb": "The bumps most families hit, and what is really going on underneath them." },
+    { "id": "feeding-parenting", "name": "Feeding & Parenting", "blurb": "Everyday feeding and care terms that affect how your baby sleeps." }
+  ],
+  "links": {
+    "method": { "url": "/snooze", "label": "Discover The Snooze Method" },
+    "library": { "url": "/snooze-library", "label": "Browse the Snooze Library" },
+    "blog": { "url": "/blog", "label": "Read more on the blog" },
+    "consult": { "url": "/one-on-one-sleep-consultations", "label": "Book a 1:1 consultation" },
+    "about": { "url": "/about-sally", "label": "Meet Sally" }
+  },
+  "terms": [
+    {
+      "slug": "circadian-rhythm",
+      "term": "Circadian Rhythm",
+      "category": "sleep-science",
+      "aliases": ["body clock", "internal clock"],
+      "shortDef": "The circadian rhythm is the roughly 24-hour internal clock that tells the body when to feel sleepy and when to feel alert. It runs on light, dark and routine.",
+      "context": "Babies are not born with a settled body clock. It develops over the first few months as melatonin production matures, which is why newborns muddle up day and night. Consistent morning light, daytime activity and a dark, calm evening all help this clock fall into place.",
+      "related": ["melatonin", "day-night-confusion", "early-morning-waking"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "sleep-cycle",
+      "term": "Sleep Cycle",
+      "category": "sleep-science",
+      "aliases": ["sleep stages"],
+      "shortDef": "A sleep cycle is one full pass through the stages of light sleep, deep sleep and dream (REM) sleep before the brain briefly surfaces again. In babies a cycle lasts around 40 to 50 minutes.",
+      "context": "At the end of each cycle everyone has a partial waking, adults included. We usually roll over and drift straight back. A baby who has not yet learned to link cycles will fully wake at this point, which is behind a lot of short naps and frequent night wakes.",
+      "related": ["catnap", "false-start", "resettling"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "sleep-pressure",
+      "term": "Sleep Pressure",
+      "category": "sleep-science",
+      "aliases": ["sleep drive", "homeostatic sleep drive"],
+      "shortDef": "Sleep pressure is the natural build-up of tiredness the longer your child is awake. Enough of it makes falling asleep easy, too little makes it a battle.",
+      "context": "Sleep pressure works alongside the body clock. If a nap runs too long or a wake window is too short, not enough pressure has built, so settling drags out. If it builds too far your child tips into being overtired. Balancing wake windows is really about managing this pressure.",
+      "related": ["wake-windows", "overtired", "undertired"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "melatonin",
+      "term": "Melatonin",
+      "category": "sleep-science",
+      "aliases": ["sleep hormone"],
+      "shortDef": "Melatonin is the hormone the body releases as it gets dark to signal that it is time to sleep. It helps trigger drowsiness and lower alertness.",
+      "context": "Newborns make very little of their own melatonin at first, which is one reason their sleep is so scattered. Bright screens and harsh light in the evening can suppress it, while dim, warm light supports it. This is why a darker room and a calm wind-down genuinely help.",
+      "related": ["circadian-rhythm", "sleep-onset"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "active-sleep",
+      "term": "Active Sleep",
+      "category": "sleep-science",
+      "aliases": ["quiet sleep", "newborn sleep states"],
+      "shortDef": "Active sleep is the light, twitchy, noisy sleep state newborns spend a lot of time in, with fluttering eyes, grunts and small movements. Quiet sleep is the still, deep state.",
+      "context": "In active sleep a baby can look almost awake and may fuss or squirm without actually surfacing. Picking them up too quickly can cut a sleep short. Giving a few minutes before responding lets many newborns move back into quiet sleep on their own.",
+      "related": ["sleep-cycle", "false-start", "the-pause"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "sleep-onset",
+      "term": "Sleep Onset",
+      "category": "sleep-science",
+      "aliases": ["falling asleep", "settling"],
+      "shortDef": "Sleep onset is the moment your child moves from awake to asleep, and the way they get there. Whatever conditions are present at onset, they tend to expect again at the next wake.",
+      "context": "If a baby falls asleep while feeding or being rocked, their brain logs that as the normal way to sleep. So when they surface between cycles, they look for the same thing to return. Changing what happens at sleep onset is the heart of most settling work.",
+      "related": ["sleep-association", "drowsy-but-awake", "self-settling"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "fourth-trimester",
+      "term": "Fourth Trimester",
+      "category": "sleep-science",
+      "aliases": ["first three months"],
+      "shortDef": "The fourth trimester is the first three months after birth, when a newborn is still adjusting to life outside the womb. Sleep is meant to be irregular during this time.",
+      "context": "In these early weeks babies need warmth, closeness, feeding and a lot of contact. Predictable schedules and self-settling are not the goal yet. The aim is responsive care and gentle rhythms, with real sleep shaping arriving later as the body clock matures.",
+      "related": ["contact-nap", "active-sleep", "cluster-feeding"],
+      "link": "library",
+      "faq": true
+    },
+
+    {
+      "slug": "wake-windows",
+      "term": "Wake Windows",
+      "category": "patterns-cycles",
+      "aliases": ["awake windows", "wake time"],
+      "shortDef": "A wake window is the length of time your child can comfortably stay awake between sleeps before they become overtired. Windows stretch longer as your baby grows.",
+      "context": "Get the window right and your child goes down calmly with little fuss. Too short and there is not enough sleep pressure, so they fight the nap. Too long and an overtired, wired baby is much harder to settle. Watching tired signs matters more than the clock, but age-based ranges give you a starting point.",
+      "related": ["sleep-pressure", "overtired", "nap-transition"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "catnap",
+      "term": "Catnap",
+      "category": "patterns-cycles",
+      "aliases": ["short nap", "30 minute nap", "45 minute nap"],
+      "shortDef": "A catnap is a short nap of around 30 to 45 minutes, usually a single sleep cycle. It is extremely common and often not a problem in young babies.",
+      "context": "Catnaps happen when a baby wakes at the end of one cycle and cannot yet bridge into the next. Under about five or six months they are developmentally normal. Beyond that, lengthening them usually comes down to the wake window before the nap and learning to resettle.",
+      "related": ["sleep-cycle", "bridging-nap", "resettling"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "false-start",
+      "term": "False Start",
+      "category": "patterns-cycles",
+      "aliases": ["false start bedtime"],
+      "shortDef": "A false start is when your baby goes down at bedtime but wakes fully 30 to 60 minutes later, as if the night never began. It usually traces back to timing or how they fell asleep.",
+      "context": "The most common causes are an overtired or undertired bedtime, or a strong sleep association at sleep onset. The first wake of the night lands at the end of that first cycle, and the same conditions are needed to get back over. Adjusting bedtime timing fixes a surprising number of these.",
+      "related": ["sleep-onset", "overtired", "sleep-association"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "split-night",
+      "term": "Split Night",
+      "category": "patterns-cycles",
+      "aliases": ["awake in the middle of the night"],
+      "shortDef": "A split night is when your child wakes in the small hours and stays happily awake for one to two hours before going back to sleep. They are not distressed, just wide awake.",
+      "context": "Split nights are usually a sign of too much sleep across the whole 24 hours, often from a bedtime that is too early or a daytime nap that runs too long. The fix is rarely about the night itself, it is about gently trimming total sleep so night-time pressure stays high.",
+      "related": ["sleep-pressure", "early-morning-waking", "nap-transition"],
+      "link": "consult",
+      "faq": true
+    },
+    {
+      "slug": "early-morning-waking",
+      "term": "Early Morning Waking",
+      "category": "patterns-cycles",
+      "aliases": ["early rising", "5am wake up"],
+      "shortDef": "Early morning waking is a consistent start to the day before around 6am, with your child up for good rather than briefly stirring. It is one of the most stubborn sleep issues to shift.",
+      "context": "Early rising is driven by a mix of factors: light creeping in, an early bedtime, too much day sleep, or too little, and the body clock being most awake in the pre-dawn hours. Because several things feed into it, lasting change usually means adjusting the whole day, not just the morning.",
+      "related": ["circadian-rhythm", "split-night", "wake-windows"],
+      "link": "consult",
+      "faq": true
+    },
+    {
+      "slug": "nap-transition",
+      "term": "Nap Transition",
+      "category": "patterns-cycles",
+      "aliases": ["dropping a nap", "3 to 2 nap transition", "2 to 1 nap transition"],
+      "shortDef": "A nap transition is the period when your child is ready to drop a nap and move to fewer sleeps a day. The change is gradual and often messy for a couple of weeks.",
+      "context": "Typical points are four to three naps, three to two, two to one, and finally dropping the last nap. The signs are similar each time: fighting a nap that used to work, early waking, or short naps appearing. Stretching wake windows slowly is what carries your child through.",
+      "related": ["wake-windows", "nap-strike", "catnap"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "overtired",
+      "term": "Overtired",
+      "category": "patterns-cycles",
+      "aliases": ["overtiredness", "second wind"],
+      "shortDef": "Overtired is the wired, harder-to-settle state a baby reaches when they have been awake too long and missed the easy window for sleep. Stress hormones make settling harder, not easier.",
+      "context": "When a wake window stretches too far the body releases cortisol and adrenaline to keep going. That second wind looks like alertness but it fights against sleep, causing crying at bedtime, frequent wakes and early mornings. Catching tired signs early is the simplest way to avoid it.",
+      "related": ["wake-windows", "sleep-pressure", "overstimulation"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "undertired",
+      "term": "Undertired",
+      "category": "patterns-cycles",
+      "aliases": ["not tired enough"],
+      "shortDef": "Undertired is when your child simply has not been awake long enough to build the sleep pressure they need to fall asleep. They are put down ready in your eyes but not in their body.",
+      "context": "An undertired baby will often play, babble or quietly protest in the cot rather than cry hard. It is easy to mistake for a sleep problem when the real answer is a slightly longer wake window. Lengthening the time awake before the next sleep usually settles it quickly.",
+      "related": ["sleep-pressure", "wake-windows", "split-night"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "day-night-confusion",
+      "term": "Day-Night Confusion",
+      "category": "patterns-cycles",
+      "aliases": ["mixed up days and nights"],
+      "shortDef": "Day-night confusion is when a newborn sleeps in long stretches during the day and is wide awake and active at night. It is normal in the early weeks and sorts itself out.",
+      "context": "Before the body clock matures, a newborn has no sense that night is for sleeping. You can gently nudge it along with bright, lively days and dark, quiet, low-key nights. Most babies start to flip the right way around by six to eight weeks.",
+      "related": ["circadian-rhythm", "fourth-trimester", "melatonin"],
+      "link": "library",
+      "faq": true
+    },
+
+    {
+      "slug": "self-settling",
+      "term": "Self-Settling",
+      "category": "methods-techniques",
+      "aliases": ["self soothing", "settling independently"],
+      "shortDef": "Self-settling is your child's ability to fall asleep and fall back to sleep without needing to be fed, rocked or held back over. It is a learned skill, not a personality trait.",
+      "context": "A child who can self-settle still wakes between cycles, they just put themselves back over without calling for help. Building this skill is the single biggest lever for longer naps and fewer night wakes. It can be taught gently and at a pace that suits your family.",
+      "related": ["drowsy-but-awake", "sleep-onset", "sleep-association"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "drowsy-but-awake",
+      "term": "Drowsy But Awake",
+      "category": "methods-techniques",
+      "aliases": ["sleepy but awake"],
+      "shortDef": "Drowsy but awake means putting your baby down calm and sleepy but still conscious, so they do the final step into sleep themselves. It is the classic first move toward self-settling.",
+      "context": "The idea is that the last thing your baby is aware of is their own cot, not your arms or a feed. In practice the right level of drowsy is a bit of an art, and it does not work for every baby straight away. For some, a slightly more awake starting point actually works better.",
+      "related": ["self-settling", "sleep-onset", "the-pause"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "extinction-burst",
+      "term": "Extinction Burst",
+      "category": "methods-techniques",
+      "aliases": ["it gets worse before it gets better"],
+      "shortDef": "An extinction burst is a short-lived increase in protest that can happen early in a settling change, just before things improve. The old habit ramps up before it fades.",
+      "context": "When a familiar routine like rocking to sleep is changed, a child often pushes harder for a night or two to bring it back. This burst is normal and usually brief. Knowing it can happen helps parents stay consistent through the wobble rather than abandoning a plan that is actually working.",
+      "related": ["self-settling", "cry-it-out", "gradual-withdrawal"],
+      "link": "consult",
+      "faq": true
+    },
+    {
+      "slug": "cry-it-out",
+      "term": "Cry It Out (Extinction)",
+      "category": "methods-techniques",
+      "aliases": ["CIO", "full extinction"],
+      "shortDef": "Cry it out, or full extinction, is a sleep-training approach where a child is put down awake and not returned to until morning or the next feed. It is the most hands-off method.",
+      "context": "It can work quickly for some families but it is not the only option, and it does not suit every child or parent. At Snooze we favour gentler, more gradual approaches that still build the same self-settling skill. The right method is the one you can stay consistent with.",
+      "related": ["gradual-withdrawal", "controlled-comforting", "extinction-burst"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "controlled-comforting",
+      "term": "Controlled Comforting",
+      "category": "methods-techniques",
+      "aliases": ["controlled crying", "checks", "timed checks"],
+      "shortDef": "Controlled comforting is settling your child with brief reassuring check-ins at increasing intervals, rather than staying the whole time or leaving completely. It sits between hands-on and hands-off methods.",
+      "context": "You respond on a timed basis, offering calm reassurance without fully resettling for them, so they keep doing the work of falling asleep. The intervals can be kept short and warm. It gives many parents a middle path they feel comfortable with.",
+      "related": ["cry-it-out", "gradual-withdrawal", "pick-up-put-down"],
+      "link": "consult",
+      "faq": true
+    },
+    {
+      "slug": "gradual-withdrawal",
+      "term": "Gradual Withdrawal",
+      "category": "methods-techniques",
+      "aliases": ["chair method", "camping out", "fading"],
+      "shortDef": "Gradual withdrawal is a gentle method where you stay close while your child falls asleep, then slowly reduce your help and presence over a week or two. It prioritises reassurance.",
+      "context": "You might start sitting beside the cot with a hand on your baby, then move to sitting nearby, then to the doorway, then out of the room. The pace is led by your child's comfort. It takes longer than hands-off methods but feels gentler to many families.",
+      "related": ["controlled-comforting", "self-settling", "separation-anxiety"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "pick-up-put-down",
+      "term": "Pick Up Put Down",
+      "category": "methods-techniques",
+      "aliases": ["PUPD"],
+      "shortDef": "Pick up put down is a hands-on settling method where you lift your baby to calm them when they cry, then put them back down drowsy but awake to fall asleep themselves. You repeat as needed.",
+      "context": "It offers a lot of reassurance while still letting your baby do the final step into sleep in the cot. It works best with younger babies and can become stimulating for older ones. Consistency and a calm, low-key manner are what make it click.",
+      "related": ["controlled-comforting", "drowsy-but-awake", "self-settling"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "bridging-nap",
+      "term": "Bridging a Nap",
+      "category": "methods-techniques",
+      "aliases": ["bridging naps", "extending a nap"],
+      "shortDef": "Bridging a nap is gently helping your child link one sleep cycle into the next so a short nap becomes a longer one. You step in just as they start to stir.",
+      "context": "As a catnap ends you might offer a hand, a shush, a pat or a brief feed to carry your baby over into another cycle. It is a helpful bridge while they learn to do it alone, and a useful tool on days when a longer nap really matters. Over time the goal is for them to bridge it themselves.",
+      "related": ["catnap", "sleep-cycle", "resettling"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "resettling",
+      "term": "Resettling",
+      "category": "methods-techniques",
+      "aliases": ["resettle", "settling back to sleep"],
+      "shortDef": "Resettling is helping your child go back to sleep after they wake mid-nap or overnight, ideally without a full feed or getting up for the day. It keeps a sleep going rather than ending it.",
+      "context": "Some wakes are genuine needs like hunger and some are just a partial waking between cycles. Pausing before you respond tells you which. When it is the latter, a calm low-stimulation resettle helps your child string sleep back together instead of starting the day at 5am.",
+      "related": ["the-pause", "bridging-nap", "early-morning-waking"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "the-pause",
+      "term": "The Pause",
+      "category": "methods-techniques",
+      "aliases": ["wait and see", "pause before responding"],
+      "shortDef": "The pause is waiting a short moment before responding to a stir or noise, to see whether your child is truly awake or just moving between sleep cycles. It prevents accidentally waking a sleeping baby.",
+      "context": "Babies are noisy sleepers, especially in active sleep, and a lot of grunts and cries settle on their own within a minute or two. Rushing in can pull a baby fully awake who would have drifted back over. The pause is one of the gentlest, simplest tools there is.",
+      "related": ["active-sleep", "resettling", "drowsy-but-awake"],
+      "link": "library",
+      "faq": true
+    },
+
+    {
+      "slug": "sleep-regression",
+      "term": "Sleep Regression",
+      "category": "common-challenges",
+      "aliases": ["4 month regression", "8 month regression", "sleep regression ages"],
+      "shortDef": "A sleep regression is a temporary stretch where a previously good sleeper starts waking more, fighting naps or settling poorly, usually tied to a developmental leap. It passes.",
+      "context": "Common points fall around 4 months, 8 to 10 months, 12 months and 18 months, lining up with big changes in the brain, movement or separation awareness. The 4 month one is different: it is a permanent change in how sleep is structured, so it is really a progression. Holding routines steady is what gets you through.",
+      "related": ["sleep-cycle", "separation-anxiety", "nap-transition"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "sleep-association",
+      "term": "Sleep Association",
+      "category": "common-challenges",
+      "aliases": ["sleep prop", "sleep crutch"],
+      "shortDef": "A sleep association is whatever your child connects with falling asleep and then needs again to get back to sleep. Some help them, some create work for you at every wake.",
+      "context": "Positive associations like a dark room, a sleeping bag or white noise are easy to recreate and stay constant all night. Associations that need you, such as feeding, rocking or holding to sleep, have to be repeated at every cycle. Shifting those is usually the key to longer stretches.",
+      "related": ["sleep-onset", "self-settling", "white-noise"],
+      "link": "method",
+      "faq": true
+    },
+    {
+      "slug": "witching-hour",
+      "term": "Witching Hour",
+      "category": "common-challenges",
+      "aliases": ["evening fussiness", "evening crying"],
+      "shortDef": "The witching hour is a stretch of unsettled crying and fussiness in the late afternoon or evening, most common in the early months. It often has little to do with hunger.",
+      "context": "By the end of the day a young baby is often overstimulated and short on sleep pressure balance, and the easy evening nap can be hard to catch. Dimming lights, reducing noise, contact and a calmer environment all help. It tends to peak around six weeks and ease by three to four months.",
+      "related": ["overstimulation", "overtired", "cluster-feeding"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "nap-strike",
+      "term": "Nap Strike",
+      "category": "common-challenges",
+      "aliases": ["nap refusal", "fighting naps"],
+      "shortDef": "A nap strike is a sudden refusal to nap from a child who usually naps fine. It is typically short-lived and tied to timing, a developmental leap or being ready to drop a nap.",
+      "context": "Before assuming a nap is gone for good, look at the wake window, any new skills your child is practising, and whether they are due a nap transition. Holding the routine and offering the nap calmly usually rides it out. Dropping a nap too early often backfires into overtiredness.",
+      "related": ["nap-transition", "wake-windows", "sleep-regression"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "separation-anxiety",
+      "term": "Separation Anxiety",
+      "category": "common-challenges",
+      "aliases": ["clinginess", "separation anxiety sleep"],
+      "shortDef": "Separation anxiety is the developmental stage where your child becomes upset when apart from you, including at sleep time. It is a healthy sign of attachment, not a setback.",
+      "context": "It often appears around 8 months and again around 18 months, and it can briefly disrupt sleep that was going well. Extra reassurance, a consistent calm goodnight and a predictable routine help your child feel secure. Gentle, gradual settling methods tend to suit this stage best.",
+      "related": ["sleep-regression", "gradual-withdrawal", "self-settling"],
+      "link": "consult",
+      "faq": true
+    },
+    {
+      "slug": "second-night-syndrome",
+      "term": "Second Night Syndrome",
+      "category": "common-challenges",
+      "aliases": ["night 2 newborn"],
+      "shortDef": "Second night syndrome is the very common pattern where a newborn who slept a lot on day one wakes and feeds almost constantly on the second night. It is normal and short-lived.",
+      "context": "After the sleepy first 24 hours your baby wakes up to the world and wants to be close and feed often, which helps bring in your milk. It can feel alarming for new parents but it is expected newborn behaviour. Skin to skin, frequent feeding and rest are all you need.",
+      "related": ["fourth-trimester", "cluster-feeding", "contact-nap"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "overstimulation",
+      "term": "Overstimulation",
+      "category": "common-challenges",
+      "aliases": ["overstimulated baby"],
+      "shortDef": "Overstimulation is when your baby has taken in more noise, light, activity or handling than they can process, which tips them into fussing and makes sleep hard. Their nervous system needs a reset.",
+      "context": "Young babies have a low threshold for stimulation, and a busy day, a loud room or lots of passing around can fill it quickly. The signs look a lot like overtiredness: crying, turning away, arching. A calm, dim, quiet space to wind down is the antidote.",
+      "related": ["overtired", "witching-hour", "white-noise"],
+      "link": "blog",
+      "faq": true
+    },
+
+    {
+      "slug": "dream-feed",
+      "term": "Dream Feed",
+      "category": "feeding-parenting",
+      "aliases": ["roll over feed", "late evening feed"],
+      "shortDef": "A dream feed is a feed you offer your baby while they are still mostly asleep, usually late in the evening before you go to bed. The aim is to top them up and buy a longer first stretch.",
+      "context": "You gently rouse your baby just enough to feed around 10 or 11pm, then settle them straight back without a full wake-up. It works well for some babies and makes no difference for others, and it can be dropped when it stops earning its keep. It is worth a try if night wakes feel hunger-driven.",
+      "related": ["cluster-feeding", "responsive-feeding", "split-night"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "cluster-feeding",
+      "term": "Cluster Feeding",
+      "category": "feeding-parenting",
+      "aliases": ["bunching feeds", "evening cluster feed"],
+      "shortDef": "Cluster feeding is when your baby wants lots of short feeds close together, often through the evening. It is normal newborn behaviour, not a sign of low supply.",
+      "context": "These bunched feeds help build your milk supply and tank your baby up before a longer sleep stretch. It commonly lines up with the witching hour and can feel relentless in the early weeks. It eases as feeding matures, so riding it out is usually the right call.",
+      "related": ["witching-hour", "dream-feed", "second-night-syndrome"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "contact-nap",
+      "term": "Contact Nap",
+      "category": "feeding-parenting",
+      "aliases": ["holding baby for naps", "naps on me"],
+      "shortDef": "A contact nap is a nap your baby takes while held by you or another caregiver, rather than in a cot or pram. It is a normal and often necessary part of the newborn months.",
+      "context": "In the early weeks contact naps are a tool, not a bad habit, and they can be lovely for both of you. They tend to be longer and calmer because your baby feels safe and warm. If you want to move some naps to the cot later, you can do it gradually when your baby is developmentally ready.",
+      "related": ["fourth-trimester", "sleep-association", "active-sleep"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "responsive-feeding",
+      "term": "Responsive Feeding",
+      "category": "feeding-parenting",
+      "aliases": ["on demand feeding", "feeding on cue"],
+      "shortDef": "Responsive feeding means feeding your baby in answer to their hunger cues rather than to a fixed clock. You follow their signals while keeping a loose rhythm to the day.",
+      "context": "Early feeding cues include rooting, hands to mouth and stirring, with crying being a late sign. Responsive feeding supports supply and growth, and it sits comfortably alongside a gentle daily routine. Full sleep shaping fits around it once feeding is well established.",
+      "related": ["cluster-feeding", "dream-feed", "fourth-trimester"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "swaddling",
+      "term": "Swaddling",
+      "category": "feeding-parenting",
+      "aliases": ["swaddle", "wrapping baby"],
+      "shortDef": "Swaddling is wrapping a newborn snugly in a light cloth to limit the startle reflex and help them feel secure. Done safely it can settle a young baby and lengthen sleep.",
+      "context": "A safe swaddle is firm across the chest and loose around the hips, using breathable fabric, with baby always placed on their back. You must stop swaddling the moment your baby shows signs of rolling, and move to a sleeping bag with arms free. Always follow safe sleep guidance.",
+      "related": ["active-sleep", "white-noise", "sleep-association"],
+      "link": "library",
+      "faq": true
+    },
+    {
+      "slug": "white-noise",
+      "term": "White Noise",
+      "category": "feeding-parenting",
+      "aliases": ["sleep sounds", "shushing"],
+      "shortDef": "White noise is a steady, consistent background sound that masks household noise and recreates the constant whoosh a baby heard in the womb. It can help babies settle and stay asleep.",
+      "context": "Played at a safe, moderate volume from across the room, it smooths over the sudden noises that cause partial wakes. It is a positive sleep association because it stays the same all night without any work from you. Keep it continuous rather than sound-activated for the steadiest effect.",
+      "related": ["sleep-association", "overstimulation", "swaddling"],
+      "link": "blog",
+      "faq": true
+    },
+    {
+      "slug": "growth-spurt",
+      "term": "Growth Spurt",
+      "category": "feeding-parenting",
+      "aliases": ["frequency days", "feeding spurt"],
+      "shortDef": "A growth spurt is a short phase where your baby feeds more often and may be fussier or sleepier than usual as they go through a burst of growth. It typically lasts a few days.",
+      "context": "Common windows fall around 2 to 3 weeks, 6 weeks and 3 months, though every baby is different. The extra feeding is your baby driving up your milk supply to meet their new needs. It can briefly unsettle sleep, then things usually return to normal on their own.",
+      "related": ["cluster-feeding", "responsive-feeding", "sleep-regression"],
+      "link": "library",
+      "faq": true
+    }
+  ]
+}
