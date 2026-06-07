@@ -11,17 +11,37 @@
   'use strict';
 
   // --- CONFIGURATION ---
+  // PRD reference: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §4.6, §4.7
   const CONFIG = {
     storageKey: 'snooze_currency_preference',
     defaultCurrency: 'USD',
     // MAP: 'USD_ID' : 'AUD_ID'
+    // Active offer mapping. Snooze Access uses a single offer with three
+    // variants; variant-level routing is handled by variantMapping below.
     offerMapping: {
-      '6iRarwak': 'bFxLg2uz', // Membership Launch
-      'igbTdRbk': 'SiiVEJuS'  // Consult Upsell
+      // Snooze Access (Core membership), PRD §4.5
+      '2150754998': '<NEW_AUD_ACCESS_OFFER_ID>',
+      // Camp Snooze, retained
+      '2150884129': '2150946767',
+      // Day Pass cold-ads dedicated, filled in Wave 0b
+      '<USD_DAYPASS_OFFER>': '<AUD_DAYPASS_OFFER>'
+    },
+    // Variant-aware checkout routing for Snooze Access (PRD §4.7).
+    // MAP: 'USD_VARIANT_ID' : 'AUD_VARIANT_ID'
+    variantMapping: {
+      '68112': '<AUD_MONTHLY_VARIANT>',   // monthly  ($79 USD to $119 AUD)
+      '37262': '<AUD_QUARTERLY_VARIANT>', // quarterly ($197 USD to $299 AUD)
+      '37263': '<AUD_YEARLY_VARIANT>'     // yearly    ($657 USD to $997 AUD)
     },
     // AUD Offer IDs for GTM tracking
-    audOfferIds: ['bFxLg2uz', 'SiiVEJuS']
+    audOfferIds: ['2150946767', '<NEW_AUD_ACCESS_OFFER_ID>', '<AUD_DAYPASS_OFFER>']
   };
+
+  // Legacy offer mapping (kept for historical campaign URL parity, PRD §4.6).
+  // These IDs map to slug-form Kajabi offers that are no longer the active
+  // membership but may still appear in old emails, ads, or backlinks.
+  //   '6iRarwak': 'bFxLg2uz', // Membership Launch (superseded by 2150754998)
+  //   'igbTdRbk': 'SiiVEJuS'  // Consult Upsell
 
   // --- UTILITY FUNCTIONS ---
   function safeLocalStorage() {
@@ -160,6 +180,57 @@
     }
   }
 
+  /**
+   * Rewrite a single checkout URL between USD and AUD (PRD §4.7).
+   * Handles both offer-id swaps and variant query-param rewrites.
+   * Exposed on the closure for unit testing via window.__snoozeCurrencyToggle__.
+   */
+  function rewriteCheckoutUrl(originalHref, currency) {
+    if (!originalHref) return originalHref;
+
+    let newLink = originalHref;
+    let changed = false;
+
+    // 1. Offer-id swap
+    for (const [usdId, audId] of Object.entries(CONFIG.offerMapping)) {
+      if (currency === 'AUD' && newLink.includes(usdId)) {
+        newLink = newLink.replace(usdId, audId);
+        changed = true;
+        break;
+      } else if (currency === 'USD' && newLink.includes(audId)) {
+        newLink = newLink.replace(audId, usdId);
+        changed = true;
+        break;
+      }
+    }
+
+    // 2. Variant query-param rewrite. Snooze Access uses ?variant=<id>
+    //    against a single offer. Toggle parses and swaps the variant id.
+    const variantMatch = newLink.match(/([?&]variant=)([^&#]+)/);
+    if (variantMatch) {
+      const currentVariant = variantMatch[2];
+      let targetVariant = null;
+      for (const [usdVar, audVar] of Object.entries(CONFIG.variantMapping)) {
+        if (currency === 'AUD' && currentVariant === usdVar) {
+          targetVariant = audVar;
+          break;
+        } else if (currency === 'USD' && currentVariant === audVar) {
+          targetVariant = usdVar;
+          break;
+        }
+      }
+      if (targetVariant && targetVariant !== currentVariant) {
+        newLink = newLink.replace(
+          /([?&]variant=)([^&#]+)/,
+          '$1' + targetVariant
+        );
+        changed = true;
+      }
+    }
+
+    return changed ? newLink : originalHref;
+  }
+
   function updateLinks(currency) {
     const buttons = document.querySelectorAll('.dynamic-cta, [data-checkout], .pricing-card a, .hero-cta');
     let updatedCount = 0;
@@ -175,26 +246,13 @@
             btn.setAttribute('data-original-href', originalHref);
           }
         }
-        
+
         if (!originalHref) {
           return;
         }
 
-        // Swap logic
-        let newLink = originalHref;
-        let linkChanged = false;
-        
-        for (const [usdId, audId] of Object.entries(CONFIG.offerMapping)) {
-          if (currency === 'AUD' && originalHref.includes(usdId)) {
-            newLink = originalHref.replace(usdId, audId);
-            linkChanged = true;
-            break;
-          } else if (currency === 'USD' && originalHref.includes(audId)) {
-            newLink = originalHref.replace(audId, usdId);
-            linkChanged = true;
-            break;
-          }
-        }
+        const newLink = rewriteCheckoutUrl(originalHref, currency);
+        const linkChanged = newLink !== originalHref;
 
         // Validate URL before updating
         if (linkChanged) {
@@ -403,6 +461,15 @@
         logError('Failed to handle checkout page', e);
       }
     }
+  }
+
+  // Test hook (PRD §4.7). Exposed only when window is present and the
+  // toggle is loaded outside a real Kajabi page (e.g. node test harness).
+  if (typeof window !== 'undefined') {
+    window.__snoozeCurrencyToggle__ = {
+      rewriteCheckoutUrl: rewriteCheckoutUrl,
+      CONFIG: CONFIG
+    };
   }
 
   // Start
