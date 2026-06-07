@@ -1,17 +1,21 @@
 # Day Pass - Canonical Landing Page
 
-**Live as draft on Kajabi:** `https://www.joinsnooze.com/day-pass` (page id `2152089948`, theme id `2166436909`, created 2026-06-08 via MCP). Hero block is already populated with Day Pass copy and a CTA pointing to the cold-ads offer checkout (`/offers/ZvzAZKqz/checkout`). The form + script section needs an operator paste step.
+**Live as draft on Kajabi:** `https://www.joinsnooze.com/day-pass` (page id `2152089948`, theme id `2166436909`). The full paste pack — hero, "What's inside your 24 hours", "How the Day Pass works", "About the event", trust elements, and the signup form + submit script — is embedded as an Encore `code` block on the page via `update_theme_content` on 2026-06-08. All six sections from the canonical pack are present.
 
 Builder URL: `https://app.kajabi.com/admin/themes/2166436909/settings/edit`
 Admin URL: `https://app.kajabi.com/admin/landing_pages/2152089948/edit`
 
-**Operator paste step (Louise):**
+**Before publish (Louise / Sally):**
 
-1. Open the builder URL above.
-2. Add a **Custom Code** section below the existing Hero.
-3. Paste the `<form>` block plus the inline `<script>` from `index.html` into the Custom Code section. Refine hero copy in the builder if desired (the current hero is a Day Pass starter copy + CTA, not the full canonical hero from `index.html`).
-4. Fill the placeholders below (Pre-paste checklist).
-5. Publish from the Kajabi admin Pages tab once Sally approves.
+1. Open the admin URL above.
+2. Fill these placeholders in the code block (use Find + Replace in the builder):
+   - `{{MEMORY_API_HOST}}` — `services/memory-api` base URL, no trailing slash
+   - `{{N8N_WEBHOOK_URL}}` — full webhook URL, e.g. `https://n8n.khorus.ai/webhook/day-pass-signup`
+   - `{{event_anchor_slug}}` — slug from section 6 of the canonical pack (e.g. `sally_bec_sleep_detectives`)
+   - `{{event_anchor_display_name}}`, `{{event_lead_name}}`, `{{event_date_local}}`, `{{event_description}}` — per-event variables
+   - `{{privacy_url}}`, `{{TESTIMONIAL_QUOTE}}`, `{{TESTIMONIAL_NAME}}`, `{{TESTIMONIAL_CHILD_AGE}}`
+3. Test the happy path, the existing-member path (redirect to `/already-a-member`), and the prior-free-pass path (redirect to `/day-pass/already-used`).
+4. Publish from the Kajabi admin Pages tab once Sally approves.
 
 **Purpose:** The standard (non-paid-ads) Day Pass landing page. This is the page warm visitors hit after an event landing, partner channel, or organic referral. Maps to the 4 existing Day Pass offers in Kajabi (Snooze Village Day Pass `2151170163`, Snooze Day Pass `2151173175`, and siblings).
 
