@@ -96,7 +96,7 @@ The design system (colors, buttons, fonts) is scoped to `#home-page`. New page w
 
 ### AI Writing Rules
 
-All content and code must follow `~/KhorusOS/system/AI-WRITING-RULES.md` (base layer) and `snooze-content/docs/reference/SNOOZE-TONE-OF-VOICE-v1.2.md` (brand voice). See root AGENTS.md section 7 for full details.
+All content and code must follow `~/KhorusOS/system/AI-WRITING-RULES.md` (base layer) and `docs/brand/SNOOZE-TONE-OF-VOICE-v1.2.md` (brand voice). See root AGENTS.md section 7 for full details.
 
 ### Free Module Bundle File Naming
 
