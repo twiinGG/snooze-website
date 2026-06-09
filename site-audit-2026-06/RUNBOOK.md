@@ -214,27 +214,28 @@ Track-11 events: `apps/ai-refactor/scripts/track-11-notion-testimonials.ts`
 
 ## Wave 4 — Cleanup / long tail (TODO)
 
+(Renumbered to avoid collision with Wave 3 item numbers.)
+
 | # | Item | Effort | Notes |
 |---|---|---|---|
-| 15 | Alt text on ~160 images (65 pages; worst: blog product reviews) | M | Accessibility + image SEO. See `images_missing_alt` in `page_value_ranking.csv`. |
-| 16 | CWV outliers: Cubo Ai blog post (~3s TTFB, top organic page) + `/about-sally` | S | Check Kajabi image weight / lazy-load. |
-| 17 | Triage ~40 draft Kajabi pages | M | Publish, delete (`-OLD`/`-ARCHIVED`), or leave. |
-| 18 | Homepage source reconciliation | S | Live home drifted from the only repo copy (`archive/website/home/...`); re-capture canonical source into `kajabi-deployment/`. |
-| 19 | Optional: prune stale 2025 apex-keyed rows from `page_scrape_data` | S | Low. |
+| 21 | Alt text on ~160 images (65 pages; worst: blog product reviews) | M | Accessibility + image SEO. See `images_missing_alt` in `analysis/page_value_ranking.csv` / `page_seo`. |
+| 22 | CWV outliers: Cubo Ai blog post (~3s TTFB, top organic page) + `/about-sally` (~1.7s) + slow checkout TTFB | S | Check Kajabi image weight / lazy-load. Full list in `AUDIT-REPORT.md` Core Web Vitals. |
+| 23 | Triage ~40 draft Kajabi pages | M | 27 published / 40 draft. Publish, delete (`-OLD`/`-ARCHIVED` 5-12mo guide drafts), or leave. |
+| 24 | Homepage source reconciliation | S | Live home drifted from the only repo copy (`archive/website/home/...`, match 0.0); re-capture canonical source into `kajabi-deployment/`. Also `/blog` index + `/3-4-month…terms` flagged drifted. |
+| 25 | Prune stale 2025 apex-keyed rows from `page_scrape_data` | S | Optional. The audit added `www.` rows; the 2025 `sleepconcierge.com.au` apex rows remain and can confuse downstream analytics. |
+| 26 | Reconcile `URL-REFERENCE.md` with the audit | S | Add redirects for `/privacy` (404) and `/snooze-village` (404); confirm `/snooze` status; mark the Camp Snooze Jan'26 checkout (`/offers/muRW6ug5`) login-gated/expired; `/get-great-baby-sleep` is 404 (see Wave 1 #1). |
+| 27 | Thin-content pages (<150 words) | S | `/links` (62w), `/newsletters/the-snooze-news` (127w), `/free-4-month-regression-masterclass-signup` (41w). Expand or noindex as appropriate. |
 
 ---
 
-## Immediate next steps (recommended order)
+## Immediate next steps
 
-1. ~~**Deploy Wave 1 #2 and #3** (schema)~~ DONE Jun 9.
-2. **Testimonial collection sprint** (Wave 3 #14–#17): Google reviews fresh pull,
-   Camp Drive transcript mining, DM screenshot ingest, dual-write Notion + Supabase.
-   See Claude Code prompt in runbook chat (Jun 9) or re-ask agent to regenerate.
-3. **Regenerate** `CURATED-SOCIAL-PROOF.md` + `injection-blocks.html` from expanded corpus.
-4. **Then** paste injection blocks (#18) on about-sally, age pages, contact.
-5. **Metadata worklist** (#4) for published pages (contact, library, legal, glossary).
-6. **Wave 2** internal-linking and nav/IA.
-7. Connect Google Search Console; backfill stale analytics facts.
+The canonical, current next-steps list is **`## Next steps (prioritised)`** near the top of
+this file (kept up to date). The earlier pre-sprint list here is superseded; key remaining
+threads in priority order: Sally consent pass (Wave 3) → reviews page + injection sign-off →
+SEO metadata fixes (Wave 1 #4 / `page_seo`) → Wave 2 AEO depth (FAQPage, llms.txt, internal
+linking, nav/IA) → Wave 4 cleanup. Also still open: connect Google Search Console and backfill
+stale analytics facts.
 
 ## Verification checklist (per deploy)
 - Schema: Google Rich Results Test + Schema.org validator pass; re-crawl
