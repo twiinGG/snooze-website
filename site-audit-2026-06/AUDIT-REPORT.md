@@ -103,4 +103,24 @@ The blog and several checkout pages have the slowest TTFB; the Cubo Ai review po
 
 - **Supabase:** `public.page_scrape_data`, 107 rows scraped June 9, 2026 (keyed by canonical `www.` URL; prior apex-keyed rows from the 2025 scrape are left intact).
 - **Google Sheet:** https://docs.google.com/spreadsheets/d/1qxF6PxisjEuFsE7T3gQNrZup9Rw-4geYya4dJmYmxW4 — tabs: Pages, Kajabi Metadata, Issues, Code Provenance, Summary.
-- **Repo:** `pages/<slug>.md` (one per page), `screenshots/<slug>.png`, `data/<slug>.json` (raw), `data/html/<slug>.html` (full rendered HTML), `PAGE-SOURCE-MANIFEST.csv`, `pages/_global-nav-header-footer.md`.
+- **Repo:** `pages/<slug>.md` (one per page), `data/<slug>.json` (raw), `PAGE-SOURCE-MANIFEST.csv`, `pages/_global-nav-header-footer.md`. Full rendered HTML (`data/html/`) and screenshots are kept out of git (hooks); screenshots live in `snooze-OS-media-library/snooze-product/site-audit-2026-06/screenshots/`.
+
+## Recommended next steps (prioritised)
+
+**P0 — high impact, low effort**
+1. **Add `Article`/`BlogPosting` JSON-LD to the blog template.** One template change fixes all 36 posts. Biggest AEO/GEO lever on the site. Include `headline`, `datePublished`, `author` (Sally Woods), `image`.
+2. **Add `Organization` + `WebSite` JSON-LD globally** (theme header). Feeds knowledge-panel and AI-answer attribution. Currently absent everywhere.
+3. **Decide the 3 built-but-404 pages:** deploy `/get-great-baby-sleep` (paid-cold-traffic destination — being 404 likely breaks ad spend), `/sleep-glossary` (or add `FAQPage` to the live `/baby-sleep-glossary`), and `/snooze-method` — or correct `URL-REFERENCE.md` if they are intentionally dark.
+
+**P1 — moderate effort**
+4. **Publish an `llms.txt`** at the site root pointing AI crawlers to the canonical content (glossary, courses, blog).
+5. **Add a social share image** to the 31 Kajabi pages missing one and SEO title/description to the 17/25 missing them (admin-side; see Kajabi Metadata tab). Empty `page_image` is why public OG-image checks fail.
+6. **Triage the 40 draft pages** — confirm which should publish, which to delete (e.g. the `-OLD`/`-ARCHIVED` 5-12 month guide drafts).
+
+**P2 — cleanup / hygiene**
+7. **Alt text on 160 images** (accessibility + image SEO); worst offenders are blog product reviews.
+8. **TTFB outliers:** the Cubo Ai review post (~3s) and `/about-sally` (~1.7s) are slowest — check Kajabi image weight / lazy-loading.
+9. **Reconcile `URL-REFERENCE.md`** with the audit addendum (redirects for `/privacy`, `/snooze-village`; status of `/snooze`).
+10. **Optional:** prune the stale 2025 apex-keyed rows from `page_scrape_data` if the dual-keying is confusing for downstream analytics.
+
+Methodology and reusable tooling: see `TECHNICAL-NOTES.md` and `RUN-MANIFEST.md`.

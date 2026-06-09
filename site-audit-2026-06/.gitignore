@@ -11,3 +11,4 @@ logs/
 # Session/auth scratch (no secrets committed)
 .auth/
 screenshots/
+scripts/__pycache__/
