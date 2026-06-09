@@ -2,7 +2,7 @@
 
 **Purpose:** Central reference for all URLs used in the Snooze website project.
 
-**Last Updated:** December 18, 2025  
+**Last Updated:** June 9, 2026 (Wave 4 audit reconciliation - see `site-audit-2026-06/analysis/url-reference-reconciliation.md`)  
 **Status:** Active Reference - Enhanced with Link Status Indicators
 
 > ## 🔎 Audit addendum — June 9, 2026 (observed live, canonical `www.joinsnooze.com`)
@@ -54,8 +54,8 @@
 
 - **URL:** `https://joinsnooze.com/snooze`
 - **Path:** `/snooze`
-- **Status:** ✅ Working
-- **Type:** Landing Page
+- **Status:** ❌ 404 live - **DRAFT** (Kajabi landing page id `2151633113`, "Snooze Main Landing", never published). The June 2026 audit confirmed 404; this entry previously read ✅ Working. Either publish the draft or stop treating `/snooze` as a live URL.
+- **Type:** Landing Page (draft)
 
 - **URL:** `https://joinsnooze.com/snooze-library`
 - **Path:** `/snooze-library`
@@ -410,7 +410,7 @@
 ### Camp Snooze Offers
 - **URL:** `https://joinsnooze.com/offers/muRW6ug5/checkout`
 - **Path:** `/offers/muRW6ug5/checkout`
-- **Status:** ✅ Working
+- **Status:** 🔒 Login-gated / expired - June 2026 audit found `/offers/muRW6ug5` now redirects anonymous visitors to `/login`. Camp Snooze Jan '26 is past, so this is no longer a public checkout. Do not use as a public CTA. Was previously ✅ Working.
 - **Offer Title (Public):** Camp Snooze Jan '26
 - **Internal Title:** `PUBCM01_Camp-Snooze-Jan-26`
 - **Code:** PUBCM01
@@ -470,8 +470,8 @@
 
 - **URL:** `https://joinsnooze.com/snooze-village`
 - **Path:** `/snooze-village`
-- **Status:** ❌ Broken (404) - **FIXED IN CODE** - Should redirect to `/products/communities/v2/snooze`
-- **Type:** Legacy URL
+- **Status:** ❌ Broken (404) - **DEAD URL, no Kajabi page exists.** June 2026 audit re-confirmed 404. "Fixed in code" only rewrote in-repo links; the live URL still 404s. Recommendation: either set a 301 to the live community at `/products/communities/v2/snooze` (member-gated, redirects anonymous users to `/login`), or remove `/snooze-village` references entirely. Do not advertise it as a public URL.
+- **Type:** Legacy URL (dead)
 
 ### Snooze Library
 - **URL:** `https://joinsnooze.com/products/communities/v2/snooze/library`
@@ -521,8 +521,8 @@
 ### Get Great Baby Sleep (Cold Traffic Landing Page)
 - **URL:** `https://joinsnooze.com/get-great-baby-sleep`
 - **Path:** `/get-great-baby-sleep`
-- **Status:** ✅ Active
-- **Type:** Cold Traffic Conversion Landing Page
+- **Status:** ❌ 404 live - **DRAFT** (Kajabi website page id `2156754778`, never published). Built in repo but not deployed. The June 2026 audit confirmed 404; this entry previously read ✅ Active. DEPRIORITISED (Wave 1 #1): no live ad runs to it, so no paid-spend leak. Deploy only when a campaign needs it.
+- **Type:** Cold Traffic Conversion Landing Page (draft)
 - **Purpose:** Primary destination for paid cold traffic ads (Meta, etc.)
 - **Description:** Emotion-first landing page designed for cold traffic conversion. Leads with identity, belief, and safety before introducing Snooze membership and pricing.
 - **SEO Title:** "Get Great Baby Sleep | Snooze Membership - Sleep Support & Coaching"
@@ -536,13 +536,13 @@
 ### Privacy Policy
 - **URL:** `https://joinsnooze.com/privacy-policy`
 - **Path:** `/privacy-policy`
-- **Status:** ✅ Working
+- **Status:** ✅ Working (LIVE - Kajabi website page id `2156730062`). This is the correct, canonical privacy URL; link to it everywhere.
 - **Type:** Legal/Policy Page
 - **Description:** Standalone Privacy Policy page with GDPR and CCPA compliance
 
 - **URL:** `https://joinsnooze.com/privacy`
 - **Path:** `/privacy`
-- **Status:** ❌ Broken (404) - **NEEDS REDIRECT** → `/privacy-policy`
+- **Status:** ❌ Broken (404) - **NEEDS 301 REDIRECT** → `/privacy-policy` (which is LIVE, id `2156730062`). June 2026 audit re-confirmed 404. Set a 301 from `/privacy` to `/privacy-policy` so inbound links and any "privacy" references resolve.
 - **Type:** Legacy URL
 
 ### Terms and Conditions
