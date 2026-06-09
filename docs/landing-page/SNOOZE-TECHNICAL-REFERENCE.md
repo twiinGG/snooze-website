@@ -45,7 +45,7 @@ This document contains technical specifications, SEO optimization strategies, an
 Image Snooze_Hero.png (mother + child)
 
 **Trust Badges:**
-"5.0 Google Reviews", "Host of Nap Trapped", "Certified Sleep Consultant & Paediatric Nurse"
+"5.0 Google Reviews", "Host of Nap Trapped", "Certified Sleep Consultant & Former Paediatric Nurse"
 
 #### Feature Grid
 

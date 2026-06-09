@@ -25,11 +25,11 @@ Drafted: June 9, 2026. Source of deficiencies: `analysis/seo-metadata.csv` + `pa
 | url | issue | old | new | new_len |
 |---|---|---|---|---|
 | /3-4-month-baby-sleep-course | title>60 | 3-4 Month Baby Sleep Course: Complete Guide for Sleep Changes \| Snooze (70) | 3-4 Month Baby Sleep Course \| Snooze | T 36 |
-| | | Beat the 4-month sleep regression with evidence-based strategies. Self-paced course... (234, over) | Self-paced 3-4 month baby sleep course from Snooze. Ease the 4-month regression, fix cat naps and hourly wakes, and build better sleep. Lifetime access. | D 152 |
+| | | Beat the 4-month sleep regression with evidence-based strategies. Self-paced course... (234, over) | Self-paced 3-4 month baby sleep course from Snooze. Ease the 4-month regression, fix cat naps and hourly wakes, and build better sleep. Access with the Snooze Membership. | D 162 |
 | /5-12-month-baby-sleep-course | title>60 | 5-12 Month Baby Sleep Course: Handle Every Tricky Moment \| Snooze (65) | 5-12 Month Baby Sleep Course \| Snooze | T 37 |
 | | | A self-paced course covering wake windows, nap transitions... (196, over) | Self-paced 5-12 month baby sleep course from Snooze. Wake windows, nap transitions and gentle steps to independent sleep. 23 lessons with downloads. | D 148 |
 | /one-on-one-sleep-consultations | title>60 | 1:1 Sleep Help with Sally \| Expert Sleep Support for Babies & Toddlers (70) | 1:1 Baby Sleep Consultations with Sally \| Snooze | T 48 |
-| | | Work one-on-one with Sally, a Registered Paediatric Nurse... (190, over) | Work one-on-one with Sally, a registered paediatric nurse and certified sleep consultant, on a tailored plan for your baby or toddler. Virtual worldwide. | D 153 |
+| | | Work one-on-one with Sally, a Registered Paediatric Nurse... (190, over) | Work one-on-one with Sally, a certified sleep consultant and former paediatric nurse, on a tailored plan for your baby or toddler. Virtual worldwide. | D 150 |
 | /camp-snooze-sleep-coaching | title>60 | Camp Snooze \| 2-Week Virtual Baby Sleep Training with Sally & Bec (65) | Camp Snooze \| 2-Week Baby Sleep Coaching | T 40 |
 | | | Join Camp Snooze for two weeks of intensive sleep training... (153, ok) | Camp Snooze is two weeks of guided baby sleep training with daily coaching and a personalised plan from Sally and Bec. Limited to six families per intake. | D 154 |
 | /toddler-toolkit | title>60 | Toddler Toolkit: Complete Sleep Course for 12+ Months \| Snooze (62) | Toddler Toolkit \| Sleep Course for 12+ Months \| Snooze | T 54 |
@@ -96,7 +96,7 @@ Drafted: June 9, 2026. Source of deficiencies: `analysis/seo-metadata.csv` + `pa
 | url | issue | old | new | new_len |
 |---|---|---|---|---|
 | /author/sally-woods | title>60 | Sally Woods - Founder, Sleep Expert and Owner of The Sleep Concierge (68) | Sally Woods \| Founder of The Sleep Concierge | T 44 |
-| | | (189, over) | Sally Woods is the founder of The Sleep Concierge and Snooze, a paediatric nurse and certified sleep consultant helping families get better sleep. | D 146 |
+| | | (189, over) | Sally Woods is the founder of The Sleep Concierge and Snooze, a certified sleep consultant and former paediatric nurse helping families get better sleep. | D 152 |
 | /links | title>60 | Snooze by The Sleep Concierge \| Essential Links for Better Baby Sleep (69) | Snooze Links \| Baby Sleep Resources | T 35 |
 | | | (211, over) | All the key Snooze baby sleep links in one place: guides, courses and personalised support to help your little one (and you) get the rest you need. | D 147 |
 | /snooze-social-terms-and-conditions | title>60 | Snooze Social Membership Terms and Conditions \| The Sleep Concierge (67) | Snooze Membership Terms and Conditions | T 38 |

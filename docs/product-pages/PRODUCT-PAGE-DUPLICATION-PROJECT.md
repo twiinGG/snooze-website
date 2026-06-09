@@ -216,14 +216,14 @@ Generate hero section copy for: [Course Name]
 REQUIREMENTS:
 - Hero Title: [Course Name] - Clear, benefit-focused
 - Subtitle: One sentence describing what the course covers (age-specific)
-- Stats: [X] modules, [Y] lessons, Downloadable resources, Lifetime access
+- Stats: [X] modules, [Y] lessons, Downloadable resources, On-demand access
 
 Follow tone of voice guidelines. Keep it concise and benefit-focused.
 
 EXAMPLE (from 3-4 Month Course):
 - Title: "3-4 Month Baby Sleep Course"
 - Subtitle: "A self-paced course covering sleep changes, nap consolidation, and building independent sleep skills for babies 3-4 months old."
-- Stats: "11 modules • 20+ lessons • Downloadable resources • Lifetime access"
+- Stats: "11 modules • 20+ lessons • Downloadable resources • On-demand access"
 ```
 
 **Estimated Time:** 30 minutes
@@ -254,7 +254,7 @@ Time Investment:
 - Estimated X hours total content
 - Can complete in one session or over weeks
 - Reference back anytime
-- Lifetime access to all updates
+- Free updates included
 ```
 
 **Estimated Time:** 30 minutes

@@ -153,7 +153,7 @@ Support for Every Age & Stage of Your Baby's Sleep
   - **Description:** Designed for the 'fourth trimester' to help you understand newborn sleep and create gentle routines.
 
 - **Feature 4 - Title:** Step-by-Step Guidance
-  - **Description:** From a paediatric nurse & certified sleep consultant. Build healthy sleep foundations for your whole family.
+  - **Description:** From a former paediatric nurse & certified sleep consultant. Build healthy sleep foundations for your whole family.
 
 ---
 
@@ -346,7 +346,7 @@ Snooze is on a mission to help families get the rest they deserve through scienc
 
 ### Bio Paragraph
 ```
-Created by Sally, The Sleep Concierge — paediatric nurse, certified sleep consultant, and mum of two — Snooze gives you practical tools and a calm, confident approach to your baby's sleep.
+Created by Sally, The Sleep Concierge — former paediatric nurse, certified sleep consultant, and mum of two — Snooze gives you practical tools and a calm, confident approach to your baby's sleep.
 ```
 
 ### CTA Button
@@ -368,7 +368,7 @@ Hi, I'm Sally!
 
 #### Card Description
 ```
-Paediatric nurse, mum of two, and founder of The Sleep Concierge & Snooze.
+Former paediatric nurse, mum of two, and founder of The Sleep Concierge & Snooze.
 ```
 
 #### Social Media Links
@@ -543,7 +543,7 @@ Who Snooze is for
 ### Bullets
 - Parents of babies 0–3 years who want calmer days and easier nights
 - Families who prefer gentle, practical strategies over rigid routines
-- Anyone who wants real-time help from a paediatric nurse & certified sleep consultant
+- Anyone who wants real-time help from a former paediatric nurse & certified sleep consultant
 
 ### Note
 ```
@@ -615,7 +615,7 @@ How is Snooze different from other sleep programs?
 
 #### Answer
 ```
-Snooze combines expert-led coaching, on-demand learning, and community support—created by a paediatric nurse and certified sleep consultant.
+Snooze combines expert-led coaching, on-demand learning, and community support—created by a former paediatric nurse and certified sleep consultant.
 ```
 
 ---

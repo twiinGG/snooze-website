@@ -11,7 +11,7 @@ Title: The Snooze Method
 
 Subtitle: A foundational self-paced course giving you the knowledge, confidence, and practical strategies to support your baby or toddler's sleep—whatever stage you're at.
 
-Stats: **4 modules** • **16 lessons** • **Downloadable resources** • **Lifetime access**
+Stats: **4 modules** • **16 lessons** • **Downloadable resources** • **On-demand access**
 
 ---
 
@@ -49,7 +49,7 @@ This foundational course gives you a complete framework for understanding and su
 - Approximately 2-3 hours total to work through all 16 lessons
 - Flexible completion—dip in and out as your schedule allows
 - Reference back anytime when new challenges arise or circumstances change
-- Lifetime access so you can revisit the content as your child grows
+- Full access so you can revisit the content as your child grows
 
 ---
 

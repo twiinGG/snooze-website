@@ -15,7 +15,7 @@ Snooze is a membership platform providing evidence-based sleep guidance for tire
 
 ### About Sally (The Sleep Concierge)
 - Certified Sleep Consultant
-- Pediatric Nurse
+- Former Paediatric Nurse
 - Mother of two
 - Host of "Nap Trapped" podcast
 - Creator of The Snooze Method

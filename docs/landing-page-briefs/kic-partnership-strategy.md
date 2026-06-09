@@ -26,7 +26,7 @@ Every parent quote in this document is sourced directly from the Camp Snooze Dia
 
 ### Sally Woods: Founder Profile
 
-Sally Woods is a Registered Paediatric Nurse with over 10 years of childcare experience and a certified sleep consultant. She is a mother of two, a leading voice on baby sleep across TikTok (30,000+ followers) and Instagram (5,000+ followers), and co-host of the "Nap Trapped" podcast (5.0/5 rating).
+Sally Woods is a certified sleep consultant and former Paediatric Nurse with over 10 years of childcare experience. She is a mother of two, a leading voice on baby sleep across TikTok (30,000+ followers) and Instagram (5,000+ followers), and co-host of the "Nap Trapped" podcast (5.0/5 rating).
 
 Sally's approach is distinctive because it combines clinical authority with genuine warmth. She looks at sleep "through a holistic lens," considering the whole picture: environment, feeding, developmental stage, emotional wellbeing, and parent confidence. She does not subscribe to the "gentle vs. harsh" debate. Instead, she provides structured, evidence-based guidance that is flexible enough for real life.
 
@@ -191,7 +191,7 @@ The gap: when these women become mothers and their biggest barrier to movement, 
 
 | Value | Kic | Snooze |
 |-------|-----|--------|
-| Evidence-based | Behavioural change frameworks, expert-reviewed programs | Registered nurse credentials, evidence-based methodology |
+| Evidence-based | Behavioural change frameworks, expert-reviewed programs | Former nurse credentials, evidence-based methodology |
 | Anti-perfection | "Wellness is a feeling, not an aesthetic" | "Progress, not perfection. First night might look messy." |
 | Sustainable habits | "Rituals for real life," habit formation | "The skills don't change just because the location does" |
 | Community-first | "Stronger together," Facebook groups, IRL events | "The Village" as a core pillar, group coaching model |
@@ -493,14 +493,14 @@ Sally
   - Annabel: "I had six hours straight. I haven't had that since pre-birth."
   - Tarni: "It was so nice to wake up before him... and not have to worry."
   - Caitlin on the village effect: "Seeing others push through motivated me."
-- Sally's credentials: Registered Paediatric Nurse, 10+ years, certified sleep consultant
+- Sally's credentials: certified sleep consultant, former Paediatric Nurse, 10+ years
 - Sleep and exercise link: Monash University 2025 study showing sleep timing predicts next-day physical activity
 
 **Anticipated Questions and Responses**
 
 *"How is this different from the sleep content already on the internet?"*
 
-Sally's approach is clinically grounded (she is a registered nurse, not an influencer) and it is structured as a system, not tips. The Camp Snooze results are from a complete methodology: personalised schedules, age-appropriate techniques, and daily expert support. Most sleep content online is generic. This is tailored, evidence-based, and results-tracked.
+Sally's approach is clinically grounded (she is a former registered nurse, not an influencer) and it is structured as a system, not tips. The Camp Snooze results are from a complete methodology: personalised schedules, age-appropriate techniques, and daily expert support. Most sleep content online is generic. This is tailored, evidence-based, and results-tracked.
 
 *"Is sleep training controversial? Will this create backlash?"*
 
@@ -551,7 +551,7 @@ Kic's terms explicitly frame the service as not providing personal medical advic
 - Clear referral pathways for red flags (postpartum mental health, infant medical concerns)
 - Aligned with Kic's "no perfection" and "kindness" positioning
 
-Sally's clinical credentials (Registered Paediatric Nurse) provide a strong foundation for credible, compliant content. Any content would need legal review from both sides.
+Sally's clinical credentials (former Paediatric Nurse) provide a strong foundation for credible, compliant content. Any content would need legal review from both sides.
 
 ### Suggested Next Steps
 

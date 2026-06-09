@@ -11,7 +11,7 @@
 
 **Subtitle:** A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap—designed for little ones 12 months and beyond.
 
-**Stats:** **7** modules • **25** lessons • Downloadable resources • Lifetime access
+**Stats:** **7** modules • **25** lessons • Downloadable resources • On-demand access
 
 ---
 
@@ -54,7 +54,7 @@ This course provides comprehensive guidance for navigating the unique sleep chal
 - Approximately 3-4 hours of content across 25 lessons
 - Flexible completion—dip in and out as challenges arise
 - Reference back anytime when new sleep hurdles pop up
-- Lifetime access so you can revisit as your toddler grows
+- Full access so you can revisit as your toddler grows
 
 ---
 

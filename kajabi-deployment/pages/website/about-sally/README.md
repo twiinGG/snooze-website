@@ -32,7 +32,7 @@ The About Sally page consists of 5 separate section files:
 2. Create a new Website Page (not Landing Page)
 3. Set URL to: `/about-sally`
 4. Set page title: "About Sally | Snooze"
-5. Set meta description: "Meet Sally Woods, certified sleep consultant and pediatric nurse behind Snooze. Learn about The Snooze Method and evidence-based sleep help for tired parents."
+5. Set meta description: "Meet Sally Woods, certified sleep consultant and former paediatric nurse behind Snooze. Learn about The Snooze Method and evidence-based sleep help for tired parents."
 
 ### Step 2: Add Navigation Component
 
