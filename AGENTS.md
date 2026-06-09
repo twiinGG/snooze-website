@@ -98,6 +98,8 @@ The design system (colors, buttons, fonts) is scoped to `#home-page`. New page w
 
 All content and code must follow `~/KhorusOS/system/AI-WRITING-RULES.md` (base layer) and `docs/brand/SNOOZE-TONE-OF-VOICE-v1.2.md` (brand voice). See root AGENTS.md section 7 for full details.
 
+**Sally positioning (factual-accuracy rule):** Sally is an "internationally certified sleep consultant and former paediatric nurse". NEVER frame her as a current, practising, or registered nurse; "former" is mandatory whenever the nursing background is mentioned. Use "Access with the Snooze Membership" not "Lifetime access" in marketing/SEO copy. Canonical doc: `docs/brand/SALLY-POSITIONING.md`.
+
 ### Free Module Bundle File Naming
 
 When working with Lead Magnet bundles in `course-free-modules-conversion/`:

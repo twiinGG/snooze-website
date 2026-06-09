@@ -20,15 +20,15 @@ in Supabase `page_seo.recommended_title` / `recommended_meta_description` (key o
 
 | Page (public URL) | page_id | Page Title (paste) | Meta Description (paste) |
 |---|---|---|---|
-| /3-4-month-baby-sleep-course | 2156731407 | `3-4 Month Baby Sleep Course \| Snooze` | `Self-paced 3-4 month baby sleep course from Snooze. Ease the 4-month regression, fix cat naps and hourly wakes, and build better sleep. Lifetime access.` |
+| /3-4-month-baby-sleep-course | 2156731407 | `3-4 Month Baby Sleep Course \| Snooze` | `Self-paced 3-4 month baby sleep course from Snooze. Ease the 4-month regression, fix cat naps and hourly wakes. Access with the Snooze Membership.` |
 | /5-12-month-baby-sleep-course | 2156732041 | `5-12 Month Baby Sleep Course \| Snooze` | `Self-paced 5-12 month baby sleep course from Snooze. Wake windows, nap transitions and gentle steps to independent sleep. 23 lessons with downloads.` |
 | /newborn-sleep-guide | 2156732061 | `Newborn Sleep Guide \| Fourth Trimester \| Snooze` | `Self-paced newborn sleep guide from Snooze. Understand the fourth trimester, build gentle sleep foundations, and settle your baby with confidence.` |
 | /toddler-toolkit | 2156732062 | `Toddler Toolkit \| Sleep Course for 12+ Months \| Snooze` | `Self-paced toddler sleep course from Snooze for 12 months and up. Handle bedtime battles, boundary-setting, early waking and the move to one nap.` |
-| /one-on-one-sleep-consultations | 2155283958 | `1:1 Baby Sleep Consultations with Sally \| Snooze` | `Work one-on-one with Sally, a registered paediatric nurse and certified sleep consultant, on a tailored plan for your baby or toddler. Virtual worldwide.` |
+| /one-on-one-sleep-consultations | 2155283958 | `1:1 Baby Sleep Consultations with Sally \| Snooze` | `Work one-on-one with Sally, an internationally certified sleep consultant and former paediatric nurse, on a tailored plan for your baby. Virtual worldwide.` |
 | /newborn-baby-sleep-help | 2155115786 | `Newborn Sleep Help \| 0-3 Month Babies \| Snooze` | `Wondering if your newborn's sleep is normal? Get gentle guidance for 0-3 month babies on wake windows, settling and the fourth trimester from Snooze.` |
 | /3-4-month-baby-sleep-help | 2155116031 | `3-4 Month Sleep Regression Help \| Snooze` | `Is your 3-4 month old waking more? Learn why the 4-month regression happens and gentle ways to help your baby sleep, plus when sleep training is ready.` |
 | /5-12-month-baby-sleep-help | 2155116068 | `5-12 Month Baby Sleep Help \| Snooze` | `Get help for 5-12 month babies. Fix 5am wake-ups, manage nap transitions and navigate sleep regressions with practical, gentle strategies from Snooze.` |
-| /author/sally-woods | 2155672758 | `Sally Woods \| Founder of The Sleep Concierge` | `Sally Woods is the founder of The Sleep Concierge and Snooze, a paediatric nurse and certified sleep consultant helping families get better sleep.` |
+| /author/sally-woods | 2155672758 | `Sally Woods \| Founder of The Sleep Concierge` | `Sally Woods founded The Sleep Concierge and Snooze. An internationally certified sleep consultant and former paediatric nurse helping families sleep.` |
 
 All titles <= 60 chars, descriptions 120-160. Verify after save: load the public URL and
 check `<title>` + `<meta name="description">`.
