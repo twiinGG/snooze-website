@@ -1,0 +1,281 @@
+{
+  "url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+  "path": "/blog/newborn-sleep-and-the-fourth-trimester",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "blog_post",
+  "slug": "blog_newborn_sleep_and_the_fourth_trimester",
+  "crawled_at": "2026-06-09T00:41:11.651609+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+    "title": "Newborn Sleep Tips for the Fourth Trimester: A Guide for New Parents",
+    "lang": "en",
+    "meta_description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+    "canonical": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+      "og:title": "Newborn Sleep Tips for the Fourth Trimester: A Guide for New Parents",
+      "og:description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/3e12feb-80b4-825-f563-f0150eaed7_newborn_sleep_fourth_trimester.webp"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Newborn Sleep Tips for the Fourth Trimester: A Guide for New Parents",
+      "twitter:description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/3e12feb-80b4-825-f563-f0150eaed7_newborn_sleep_fourth_trimester.webp"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+      "twitter:card": "summary_large_image",
+      "og:title": "Newborn Sleep Tips for the Fourth Trimester: A Guide for New Parents",
+      "twitter:title": "Newborn Sleep Tips for the Fourth Trimester: A Guide for New Parents",
+      "og:description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+      "twitter:description": "Discover essential tips for managing newborn sleep during the fourth trimester. Learn about routines, swaddling, white noise, and recognizing tired signs to help your baby adjust and thrive in their new world.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/3e12feb-80b4-825-f563-f0150eaed7_newborn_sleep_fourth_trimester.webp",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/3e12feb-80b4-825-f563-f0150eaed7_newborn_sleep_fourth_trimester.webp",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Newborn Sleep and the Fourth Trimester"
+    ],
+    "h2s": [
+      "Feed \u2013 Play \u2013 Sleep",
+      "Swaddle, swaddle, swaddle",
+      "White Noise",
+      "Tired signs of your baby",
+      "About the author"
+    ],
+    "h3s": [],
+    "word_count": 1103,
+    "links_total": 32,
+    "links_internal": 23,
+    "links_external": 9,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=fourth+trimester",
+        "text": "Fourth Trimester",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "You can book a call",
+        "internal": false
+      },
+      {
+        "href": "https://lovetodream.com.au/?utm_source=Google&utm_medium=CPC&utm_term=love%20to%20dream&gclid=Cj0KCQiA5NPjBRDDARIsAM9X1GJeqFiO6Poarc_7PB7XDKEVD2m45CH-wa8Yl1dvkbAKuxGgCA2hBTUaAlVhEALw_wcB",
+        "text": "Love To Dream",
+        "internal": false
+      },
+      {
+        "href": "https://ergobaby.com/sleep/swaddlers",
+        "text": "Ergobaby Swaddler",
+        "internal": false
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/blog/glow-dreaming-white-noise-review",
+        "text": "Why Pink Noise is a Must-Have in Your Nursery.",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5+month+to+2+years",
+        "text": "5 Month To 2 Years",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5-12+months",
+        "text": "5-12 Months",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=infants",
+        "text": "Infants",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=naps",
+        "text": "Naps",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=product+reviews",
+        "text": "Product Reviews",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+environment",
+        "text": "Sleep Environment",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+products",
+        "text": "Sleep Products",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+regressions",
+        "text": "Sleep Regressions",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+safety",
+        "text": "Sleep Safety",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=transitions",
+        "text": "Transitions",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/author/sally-woods",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "Tiktok",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      }
+    ],
+    "images_total": 4,
+    "images_missing_alt": 2,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/3e12feb-80b4-825-f563-f0150eaed7_newborn_sleep_fourth_trimester.webp",
+        "alt": "a newborn baby",
+        "w": 1400,
+        "h": 787,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/4568c0-8147-8b60-4ac1-2fe4e425b1ee_b0f1d5fd-e72d-4bfb-9442-56457c4cd25a.jpg",
+        "alt": null,
+        "w": 1440,
+        "h": 810,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 466670,
+  "screenshot": "screenshots/blog_newborn_sleep_and_the_fourth_trimester.png",
+  "vitals": {
+    "TTFB": "787.9ms",
+    "LCP": "852ms",
+    "CLS": "0",
+    "FCP": "852ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:2"
+  ]
+}

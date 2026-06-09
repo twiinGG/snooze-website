@@ -1,0 +1,483 @@
+{
+  "url": "https://www.joinsnooze.com/baby-sleep-glossary",
+  "path": "/baby-sleep-glossary",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "baby_sleep_glossary",
+  "crawled_at": "2026-06-09T00:40:33.018585+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/baby-sleep-glossary",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/baby-sleep-glossary",
+    "title": "Sleep & Parenting Glossary | Snooze",
+    "lang": "en",
+    "meta_description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant.",
+    "canonical": "https://www.joinsnooze.com/baby-sleep-glossary",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/baby-sleep-glossary",
+      "og:title": "Sleep & Parenting Glossary | Snooze",
+      "og:description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant."
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Sleep & Parenting Glossary | Snooze",
+      "twitter:description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant."
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/baby-sleep-glossary",
+      "twitter:card": "summary_large_image",
+      "og:title": "Sleep & Parenting Glossary | Snooze",
+      "twitter:title": "Sleep & Parenting Glossary | Snooze",
+      "og:description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant.",
+      "twitter:description": "Plain-language definitions for the baby sleep and parenting terms parents search for, from wake windows to sleep regressions to contact naps. Written by Sally Woods, paediatric nurse and certified sleep consultant.",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [
+      {
+        "types": [
+          "DefinedTermSet",
+          "BreadcrumbList"
+        ],
+        "raw_len": 17826
+      }
+    ],
+    "jsonld_types": [
+      "DefinedTermSet",
+      "BreadcrumbList"
+    ],
+    "h1s": [
+      "Sleep & Parenting Glossary"
+    ],
+    "h2s": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "M",
+      "N",
+      "O",
+      "P",
+      "R",
+      "S",
+      "U",
+      "W",
+      "When you need more than a definition"
+    ],
+    "h3s": [],
+    "word_count": 1659,
+    "links_total": 70,
+    "links_internal": 70,
+    "links_external": 0,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-a",
+        "text": "A",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-b",
+        "text": "B",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-c",
+        "text": "C",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-d",
+        "text": "D",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-e",
+        "text": "E",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-f",
+        "text": "F",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-g",
+        "text": "G",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-m",
+        "text": "M",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-n",
+        "text": "N",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-o",
+        "text": "O",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-p",
+        "text": "P",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-r",
+        "text": "R",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-s",
+        "text": "S",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-u",
+        "text": "U",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#letter-w",
+        "text": "W",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#sleep-cycle",
+        "text": "Sleep Cycle",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#false-start",
+        "text": "False Start",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#the-pause",
+        "text": "The Pause",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-baby-sleep-help",
+        "text": "Newborn sleep help (0 to 3 months)",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#catnap",
+        "text": "Catnap",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#resettling",
+        "text": "Resettling",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-help",
+        "text": "5 to 12 month sleep help",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#bridging-nap",
+        "text": "Bridging a Nap",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-help",
+        "text": "3 to 4 month sleep help",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#melatonin",
+        "text": "Melatonin",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#day-night-confusion",
+        "text": "Day-Night Confusion",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#early-morning-waking",
+        "text": "Early Morning Waking",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#witching-hour",
+        "text": "Witching Hour",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#dream-feed",
+        "text": "Dream Feed",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#second-night-syndrome",
+        "text": "Second Night Syndrome",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#fourth-trimester",
+        "text": "Fourth Trimester",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#sleep-association",
+        "text": "Sleep Association",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#active-sleep",
+        "text": "Active Sleep",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#cry-it-out",
+        "text": "Cry It Out (Extinction)",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#gradual-withdrawal",
+        "text": "Gradual Withdrawal",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#pick-up-put-down",
+        "text": "Pick Up Put Down",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#controlled-comforting",
+        "text": "Controlled Comforting",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#extinction-burst",
+        "text": "Extinction Burst",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#circadian-rhythm",
+        "text": "Circadian Rhythm",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#cluster-feeding",
+        "text": "Cluster Feeding",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#responsive-feeding",
+        "text": "Responsive Feeding",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#split-night",
+        "text": "Split Night",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#self-settling",
+        "text": "Self-Settling",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#sleep-onset",
+        "text": "Sleep Onset",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#wake-windows",
+        "text": "Wake Windows",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#overtired",
+        "text": "Overtired",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#contact-nap",
+        "text": "Contact Nap",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#separation-anxiety",
+        "text": "Separation Anxiety",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#sleep-regression",
+        "text": "Sleep Regression",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#nap-transition",
+        "text": "Nap Transition",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-sleep-help",
+        "text": "Toddler sleep help",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#nap-strike",
+        "text": "Nap Strike",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#white-noise",
+        "text": "White Noise",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#sleep-pressure",
+        "text": "Sleep Pressure",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#overstimulation",
+        "text": "Overstimulation",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#drowsy-but-awake",
+        "text": "Drowsy But Awake",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#undertired",
+        "text": "Undertired",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/baby-sleep-glossary#swaddling",
+        "text": "Swaddling",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/recommended-products",
+        "text": "See recommended products",
+        "internal": true
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/9f0c5ef7b0c7d99586e2b4ddea342dca.png",
+        "alt": "Header Logo",
+        "w": 956,
+        "h": 350,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Footer Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2166437919/assets/placeholder.png?1780917046980618",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/baby-sleep-glossary",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 185482,
+  "screenshot": "screenshots/baby_sleep_glossary.png",
+  "vitals": {
+    "TTFB": "360.1ms",
+    "LCP": "408ms",
+    "CLS": "0",
+    "FCP": "408ms"
+  },
+  "issues": [
+    "missing_org_schema",
+    "missing_og_image",
+    "images_missing_alt:1"
+  ]
+}

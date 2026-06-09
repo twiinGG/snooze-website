@@ -1,0 +1,144 @@
+{
+  "url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+  "path": "/offers/igbTdRbk/checkout",
+  "sources": [
+    "url-reference",
+    "registry"
+  ],
+  "requires_auth": false,
+  "expected_type": "checkout",
+  "slug": "offers_igbTdRbk_checkout",
+  "crawled_at": "2026-06-09T00:42:13.697894+00:00",
+  "curl_status_initial": "403",
+  "curl_status_final": "403",
+  "curl_final_url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+    "title": "Snooze | Sleep Help for the Modern Parent",
+    "lang": "en",
+    "meta_description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+    "canonical": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+    "robots": "noindex, nofollow",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+      "twitter:card": "summary_large_image",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "turbo-prefetch": "false",
+      "robots": "noindex, nofollow",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Member Consultation Packages"
+    ],
+    "h2s": [
+      "What's Included in Your 1:1 Signature Consult",
+      "Why Add a Consultation to Your Membership?"
+    ],
+    "h3s": [
+      "Member Consultation Pricing",
+      "What Happens After You Book",
+      "Why Members Choose Consultations"
+    ],
+    "word_count": 1032,
+    "links_total": 6,
+    "links_internal": 6,
+    "links_external": 0,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 2,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/site/2148291177/images/bd5223-b780-d47-da31-142fd4ab6e7c_Snooze_x_TSC_-_coral_2_.jpg",
+        "alt": "",
+        "w": 1920,
+        "h": 1080,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2164012404/assets/placeholder.png?17652352549829838",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 308786,
+  "screenshot": "screenshots/offers_igbTdRbk_checkout.png",
+  "vitals": {
+    "TTFB": "546.3ms",
+    "LCP": "652ms",
+    "CLS": "0",
+    "FCP": "652ms"
+  },
+  "issues": []
+}

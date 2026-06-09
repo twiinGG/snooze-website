@@ -1,0 +1,164 @@
+{
+  "url": "https://www.joinsnooze.com/offers/4zHPSRCs",
+  "path": "/offers/4zHPSRCs",
+  "sources": [
+    "url-reference"
+  ],
+  "requires_auth": false,
+  "expected_type": "checkout",
+  "slug": "offers_4zHPSRCs",
+  "crawled_at": "2026-06-09T00:41:53.061314+00:00",
+  "curl_status_initial": "302",
+  "curl_status_final": "403",
+  "curl_final_url": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+    "title": "Snooze | Sleep Help for the Modern Parent",
+    "lang": "en",
+    "meta_description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+    "canonical": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+    "robots": "noindex, nofollow",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+      "twitter:card": "summary_large_image",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "turbo-prefetch": "false",
+      "robots": "noindex, nofollow",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "1:1 Signature Sleep Consultation"
+    ],
+    "h2s": [],
+    "h3s": [
+      "Transform Your Baby's Sleep with The Sleep Concierge\n\nIf you're an ongoing client of The Sleep Concierge and looking to book a 45min follow-up consult you can book here."
+    ],
+    "word_count": 789,
+    "links_total": 8,
+    "links_internal": 6,
+    "links_external": 2,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/jRxWAnVo",
+        "text": "book here",
+        "internal": false
+      },
+      {
+        "href": "https://sleepconcierge.com.au/terms-conditions",
+        "text": "Terms & Conditions",
+        "internal": false
+      }
+    ],
+    "images_total": 5,
+    "images_missing_alt": 4,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2162910903/settings_images/a1fb27f-0b52-50b-64da-baea11bb5b41_23b8d358-dae4-4cb7-969d-943b2dee25b6.png",
+        "alt": "",
+        "w": 240,
+        "h": 240,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2162910903/settings_images/a1fb27f-0b52-50b-64da-baea11bb5b41_23b8d358-dae4-4cb7-969d-943b2dee25b6.png",
+        "alt": "",
+        "w": 240,
+        "h": 240,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/site/2148291177/images/5616274-131c-25a7-c2ad-8f6a58c02d05_Snooze_x_TSC_-_coral_2_.jpg",
+        "alt": "",
+        "w": 1920,
+        "h": 1080,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2162910903/assets/placeholder.png?1766746584239149",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/offers/4zHPSRCs/checkout",
+  "redirected": true,
+  "browser_status_initial": null,
+  "browser_status_final": 200,
+  "http_status_initial": "302",
+  "http_status_final": 200,
+  "html_len": 298508,
+  "screenshot": "screenshots/offers_4zHPSRCs.png",
+  "vitals": {
+    "TTFB": "618.3ms",
+    "LCP": "692ms",
+    "CLS": "0",
+    "FCP": "692ms"
+  },
+  "issues": [
+    "redirect_302"
+  ]
+}

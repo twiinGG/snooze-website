@@ -1,0 +1,84 @@
+{
+  "url": "https://www.joinsnooze.com/cdn-cgi/l/email-protection",
+  "path": "/cdn-cgi/l/email-protection",
+  "sources": [
+    "url-reference"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "cdn_cgi_l_email_protection",
+  "crawled_at": "2026-06-09T00:41:41.519264+00:00",
+  "curl_status_initial": "404",
+  "curl_status_final": "404",
+  "curl_final_url": "https://www.joinsnooze.com/cdn-cgi/l/email-protection",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/cdn-cgi/l/email-protection",
+    "title": "Email Protection | Cloudflare",
+    "lang": "en-US",
+    "meta_description": "",
+    "canonical": "",
+    "robots": "noindex, nofollow",
+    "og": {},
+    "twitter": {},
+    "all_meta": {
+      "robots": "noindex, nofollow",
+      "viewport": "width=device-width,initial-scale=1"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Email Protection"
+    ],
+    "h2s": [
+      "You are unable to access this email address joinsnooze.com"
+    ],
+    "h3s": [],
+    "word_count": 110,
+    "links_total": 4,
+    "links_internal": 0,
+    "links_external": 4,
+    "links": [
+      {
+        "href": "https://www.cloudflare.com/sign-up?utm_source=email_protection",
+        "text": "sign up for Cloudflare",
+        "internal": false
+      },
+      {
+        "href": "https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/",
+        "text": "How does Cloudflare protect email addresses on website from spammers?",
+        "internal": false
+      },
+      {
+        "href": "https://developers.cloudflare.com/fundamentals/setup/account/create-account/",
+        "text": "Can I sign up for Cloudflare?",
+        "internal": false
+      },
+      {
+        "href": "https://www.cloudflare.com/5xx-error-landing",
+        "text": "Cloudflare",
+        "internal": false
+      }
+    ],
+    "images_total": 0,
+    "images_missing_alt": 0,
+    "images": []
+  },
+  "final_url": "https://www.joinsnooze.com/cdn-cgi/l/email-protection",
+  "redirected": false,
+  "browser_status_initial": 404,
+  "browser_status_final": 404,
+  "http_status_initial": 404,
+  "http_status_final": 404,
+  "html_len": 4385,
+  "screenshot": "screenshots/cdn_cgi_l_email_protection.png",
+  "vitals": {
+    "TTFB": "21.5ms",
+    "LCP": "72ms",
+    "CLS": "0",
+    "FCP": "72ms"
+  },
+  "issues": [
+    "status_404",
+    "non_200_final_404"
+  ]
+}

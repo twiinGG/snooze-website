@@ -4,6 +4,23 @@
 **Total Pages:** 100  
 **Source:** `page_scrape_data` table in Supabase
 
+> **Refreshed June 9, 2026** by the full live-site audit in
+> `apps/snooze-website/site-audit-2026-06/`. Current figures from that run
+> (canonical host `https://www.joinsnooze.com`):
+>
+> - **107 URLs crawled** (real-browser render): 99 × 200, 8 × 404.
+> - **Page types:** 36 blog posts, 17 offer/checkout, 15 landing, 15 misc page,
+>   7 product-access, 5 legal, 4 download-access, 3 community, 3 account,
+>   1 homepage, 1 blog index.
+> - **Kajabi admin:** 67 pages catalogued (27 published, 40 draft).
+> - **Biggest gaps:** no `Article` schema on any of 36 blog posts; 61 pages with
+>   no JSON-LD; 3 pages built-in-repo-but-404 (`/get-great-baby-sleep`,
+>   `/sleep-glossary`, `/snooze-method`); 160 images missing alt text.
+> - Full findings: `site-audit-2026-06/AUDIT-REPORT.md`. Per-page records:
+>   `site-audit-2026-06/pages/`. Provenance: `PAGE-SOURCE-MANIFEST.csv`.
+>
+> The section below is the original December 2025 inventory, kept for history.
+
 ---
 
 ## Summary Statistics

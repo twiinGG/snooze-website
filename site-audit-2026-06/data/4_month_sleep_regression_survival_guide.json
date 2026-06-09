@@ -1,0 +1,163 @@
+{
+  "url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+  "path": "/4-month-sleep-regression-survival-guide",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "4_month_sleep_regression_survival_guide",
+  "crawled_at": "2026-06-09T00:40:12.820866+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+    "title": "FREE: Surviving the 4 Month Sleep Regression | The Sleep Concierge",
+    "lang": "en",
+    "meta_description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+    "canonical": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+      "og:title": "FREE: Surviving the 4 Month Sleep Regression | The Sleep Concierge",
+      "og:description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/cdb5cb5-f65-bbb3-0cd0-8bc46df85d4_086adff4-4a1c-4255-97e6-494d51ce9983.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "FREE: Surviving the 4 Month Sleep Regression | The Sleep Concierge",
+      "twitter:description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/cdb5cb5-f65-bbb3-0cd0-8bc46df85d4_086adff4-4a1c-4255-97e6-494d51ce9983.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+      "twitter:card": "summary_large_image",
+      "og:title": "FREE: Surviving the 4 Month Sleep Regression | The Sleep Concierge",
+      "twitter:title": "FREE: Surviving the 4 Month Sleep Regression | The Sleep Concierge",
+      "og:description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+      "twitter:description": "Get your free guide to surviving the 4 month sleep regression. Discover the science behind your baby's changing sleep patterns, sanity-saving tips, sample schedules, and more. Reclaim your sleep and thrive during this challenging stage with help from The Sleep Concierge.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/cdb5cb5-f65-bbb3-0cd0-8bc46df85d4_086adff4-4a1c-4255-97e6-494d51ce9983.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/cdb5cb5-f65-bbb3-0cd0-8bc46df85d4_086adff4-4a1c-4255-97e6-494d51ce9983.png",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "FREE 4-month sleep regressions guide"
+    ],
+    "h2s": [
+      "Attention Sleep-Deprived Parents!",
+      "Attention Sleep-Deprived Parents!",
+      "Hi, I'm Sally, certified paediatric sleep consultant and founder of The Sleep Concierge."
+    ],
+    "h3s": [
+      "What our clients are saying",
+      "Join countless other parents who have reclaimed their sleep.",
+      "Your journey to peaceful nights starts here.",
+      "Join countless other parents who have reclaimed their sleep.",
+      "Your journey to peaceful nights starts here.",
+      "Enter your details below and get your FREE\u00a04 month Sleep Regression Survival Guide"
+    ],
+    "word_count": 380,
+    "links_total": 6,
+    "links_internal": 2,
+    "links_external": 4,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide#two-step",
+        "text": "YES, I NEED SLEEP!",
+        "internal": true
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.pinterest.com.au/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      }
+    ],
+    "images_total": 5,
+    "images_missing_alt": 3,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156979075/settings_images/7afaec-7cfc-b65a-4fd8-342ca3ecf_212fd9e8-ee78-4eb0-bf3e-1b2551ec5685.png",
+        "alt": "Header Logo",
+        "w": 600,
+        "h": 195,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156979075/settings_images/64f58e-7030-6684-2336-221ad811e72_client_drafts_1_.png",
+        "alt": "",
+        "w": 687,
+        "h": 681,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156979075/settings_images/0fa2158-10b5-88db-2c70-14a0fe743085_client_drafts.png",
+        "alt": "",
+        "w": 659,
+        "h": 480,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156979075/settings_images/1d3bdd4-6a3f-7c84-64f0-021cfcebd58_b7577e22-11aa-471d-857a-1f57affe9c3d.png",
+        "alt": "Footer Logo",
+        "w": 250,
+        "h": 246,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156979075/settings_images/552fb6c-08c3-6e0-d022-3b2fd46632ff_client_drafts_8_.png",
+        "alt": "",
+        "w": 823,
+        "h": 463,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 166984,
+  "screenshot": "screenshots/4_month_sleep_regression_survival_guide.png",
+  "vitals": {
+    "TTFB": "326.6ms",
+    "LCP": "384ms",
+    "CLS": "0",
+    "FCP": "384ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:3"
+  ]
+}

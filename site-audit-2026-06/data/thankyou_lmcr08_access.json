@@ -1,0 +1,152 @@
+{
+  "url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+  "path": "/thankyou/lmcr08-access",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "thankyou_lmcr08_access",
+  "crawled_at": "2026-06-09T00:42:59.967711+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+    "title": "3-4 Month Feeds - Thank You",
+    "lang": "en",
+    "meta_description": "",
+    "canonical": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+      "og:title": "3-4 Month Feeds - Thank You"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "3-4 Month Feeds - Thank You"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+      "twitter:card": "summary_large_image",
+      "og:title": "3-4 Month Feeds - Thank You",
+      "twitter:title": "3-4 Month Feeds - Thank You",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "You\u2019re in \ud83c\udf89"
+    ],
+    "h2s": [
+      "Start here for best results",
+      "What to expect over the next few days",
+      "Ready for more?"
+    ],
+    "h3s": [
+      "A quick note on expectations"
+    ],
+    "word_count": 250,
+    "links_total": 9,
+    "links_internal": 9,
+    "links_external": 0,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/products/3-4-month-4hr-feeds-free-module/categories/2159312498/posts/2194391112",
+        "text": "\ud83d\udc49 Go to the Free 4hr Feeds Module",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/offers/EUEk3whL/checkout",
+        "text": "Unlock the Full 3-4 Month Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/offers/z63s9VaR/checkout",
+        "text": "Join Snooze for Full Access + Support",
+        "internal": true
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Footer Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2164663447/assets/placeholder.png?1770060161912408",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 102478,
+  "screenshot": "screenshots/thankyou_lmcr08_access.png",
+  "vitals": {
+    "TTFB": "330.6ms",
+    "LCP": "368ms",
+    "CLS": "0",
+    "FCP": "368ms"
+  },
+  "issues": [
+    "missing_meta_description",
+    "no_jsonld",
+    "missing_og_image",
+    "images_missing_alt:1"
+  ]
+}

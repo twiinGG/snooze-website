@@ -1,0 +1,127 @@
+{
+  "url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+  "path": "/3-4-month-baby-sleep-course-terms-and-conditions",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "legal",
+  "slug": "3_4_month_baby_sleep_course_terms_and_conditions",
+  "crawled_at": "2026-06-09T00:40:12.820201+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+    "title": "The 3-4 Month Baby Sleep Course Terms and Conditions",
+    "lang": "en",
+    "meta_description": "",
+    "canonical": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+      "og:title": "The 3-4 Month Baby Sleep Course Terms and Conditions "
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "The 3-4 Month Baby Sleep Course Terms and Conditions "
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+      "twitter:card": "summary_large_image",
+      "og:title": "The 3-4 Month Baby Sleep Course Terms and Conditions ",
+      "twitter:title": "The 3-4 Month Baby Sleep Course Terms and Conditions ",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [],
+    "h2s": [
+      "THE SLEEP CONCIERGE:\u00a0The 3-4 Month Baby Sleep Course Agreement"
+    ],
+    "h3s": [],
+    "word_count": 468,
+    "links_total": 5,
+    "links_internal": 1,
+    "links_external": 4,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.pinterest.com.au/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157399806/settings_images/2807c4-d556-badf-e887-3f22a4a7668_image.png",
+        "alt": "Footer Logo",
+        "w": 300,
+        "h": 300,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2157558285/assets/placeholder.png?176496970566539",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 92661,
+  "screenshot": "screenshots/3_4_month_baby_sleep_course_terms_and_conditions.png",
+  "vitals": {
+    "TTFB": "322.5ms",
+    "LCP": "360ms",
+    "CLS": "0",
+    "FCP": "360ms"
+  },
+  "issues": [
+    "missing_meta_description",
+    "missing_h1",
+    "no_jsonld",
+    "missing_og_image",
+    "images_missing_alt:1"
+  ]
+}

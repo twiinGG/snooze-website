@@ -1,0 +1,304 @@
+{
+  "url": "https://www.joinsnooze.com/recommended-products",
+  "path": "/recommended-products",
+  "sources": [
+    "sitemap",
+    "url-reference"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "recommended_products",
+  "crawled_at": "2026-06-09T00:42:38.062449+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/recommended-products",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/recommended-products",
+    "title": "Recommended Baby Sleep Products | The Sleep Concierge",
+    "lang": "en",
+    "meta_description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+    "canonical": "https://www.joinsnooze.com/recommended-products",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/recommended-products",
+      "og:title": "Recommended Baby Sleep Products | The Sleep Concierge",
+      "og:description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/db1581-4d55-d445-026b-8cfbb5437cf_glowdreaming.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Recommended Baby Sleep Products | The Sleep Concierge",
+      "twitter:description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/db1581-4d55-d445-026b-8cfbb5437cf_glowdreaming.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/recommended-products",
+      "twitter:card": "summary_large_image",
+      "og:title": "Recommended Baby Sleep Products | The Sleep Concierge",
+      "twitter:title": "Recommended Baby Sleep Products | The Sleep Concierge",
+      "og:description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+      "twitter:description": "Here are my recommended baby sleep products to give your baby the best environment to get a good night's sleep.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/db1581-4d55-d445-026b-8cfbb5437cf_glowdreaming.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/db1581-4d55-d445-026b-8cfbb5437cf_glowdreaming.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Recommended Products"
+    ],
+    "h2s": [],
+    "h3s": [
+      "Kippins Comforters",
+      "Cubo Ai Plus",
+      "Glow Dreaming White Noise Machine",
+      "Snoo Smart Bassinet \u2013 Happiest Baby On The Block",
+      "ECO by Naty Nappies",
+      "Ergobaby Carrier",
+      "Growbright Airnest Junior Pillow"
+    ],
+    "word_count": 735,
+    "links_total": 29,
+    "links_internal": 17,
+    "links_external": 12,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://kippins.co/",
+        "text": "Shop Kippins",
+        "internal": false
+      },
+      {
+        "href": "https://cuboai.com/",
+        "text": "Buy Now",
+        "internal": false
+      },
+      {
+        "href": "https://glowdreaming.com/",
+        "text": "Visit Glow Dreaming",
+        "internal": false
+      },
+      {
+        "href": "https://www.happiestbaby.com/products/snoo-smart-bassinet",
+        "text": "Shop Snoo",
+        "internal": false
+      },
+      {
+        "href": "https://naty.com/",
+        "text": "Shop Now",
+        "internal": false
+      },
+      {
+        "href": "https://www.ergobaby.com.au/",
+        "text": "Shop Now",
+        "internal": false
+      },
+      {
+        "href": "https://growbright.com.au/",
+        "text": "Buy Now",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "TikTok",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/thesleepconcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/snooze-library",
+        "text": "Library Access",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/products/communities/v2/snooze",
+        "text": "Snooze Village",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/account",
+        "text": "Your Account",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/terms-conditions",
+        "text": "Terms of Service",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/privacy-policy",
+        "text": "Privacy Policy",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 9,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/6564c8d-f6e6-b552-6bd6-a7d87b6b3628_kippins-comforter-affiliate.png",
+        "alt": "Kippins Comforters - Eco-friendly organic comforters",
+        "w": 750,
+        "h": 750,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/b5d5488-47f-27a5-1fce-a1f45f141b07_cubo-ai-sleep-concierge.jpeg",
+        "alt": "Cubo Ai Plus Baby Monitor",
+        "w": 1440,
+        "h": 1440,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/f236d67-df63-d84a-0d1f-2307eae5c680_SC-image-glow-dreaming.jpg",
+        "alt": "Glow Dreaming White Noise Machine",
+        "w": 1440,
+        "h": 1440,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/71f8f8d-dc73-e4de-5c6b-566031155ad_ProductShotPinkRoom_600x.jpg",
+        "alt": "Snoo Smart Bassinet by Happiest Baby",
+        "w": 600,
+        "h": 600,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/8df20bb-6256-f70-3348-336d1c80c5_ecobynaty.jpg",
+        "alt": "ECO by Naty Eco-friendly Nappies",
+        "w": 1080,
+        "h": 1080,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/fd4dd78-20ac-2166-3561-1a3e5bafb2c4_ergobaby-carrier.jpg",
+        "alt": "Ergobaby Omni360 Baby Carrier",
+        "w": 800,
+        "h": 800,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/3018f43-00f5-558a-087-6b52e2c75b3_pinkpillow.jpg",
+        "alt": "Growbright Airnest Junior Pillow",
+        "w": 800,
+        "h": 800,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/recommended-products",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 477920,
+  "screenshot": "screenshots/recommended_products.png",
+  "vitals": {
+    "TTFB": "324.2ms",
+    "LCP": "424ms",
+    "CLS": "0",
+    "FCP": "424ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

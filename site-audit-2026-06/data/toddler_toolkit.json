@@ -1,0 +1,297 @@
+{
+  "url": "https://www.joinsnooze.com/toddler-toolkit",
+  "path": "/toddler-toolkit",
+  "sources": [
+    "sitemap",
+    "url-reference"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "toddler_toolkit",
+  "crawled_at": "2026-06-09T00:43:37.356407+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/toddler-toolkit",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/toddler-toolkit",
+    "title": "Toddler Toolkit: Complete Sleep Course for 12+ Months | Snooze",
+    "lang": "en",
+    "meta_description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+    "canonical": "https://www.joinsnooze.com/toddler-toolkit",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/toddler-toolkit",
+      "og:title": "Toddler Toolkit: Complete Sleep Course for 12+ Months | Snooze",
+      "og:description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/a5d7db4-822a-b35c-585-a06320856e16_Toddler_Resources.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Toddler Toolkit: Complete Sleep Course for 12+ Months | Snooze",
+      "twitter:description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/a5d7db4-822a-b35c-585-a06320856e16_Toddler_Resources.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/toddler-toolkit",
+      "twitter:card": "summary_large_image",
+      "og:title": "Toddler Toolkit: Complete Sleep Course for 12+ Months | Snooze",
+      "twitter:title": "Toddler Toolkit: Complete Sleep Course for 12+ Months | Snooze",
+      "og:description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+      "twitter:description": "A self-paced course helping you navigate toddler sleep challenges, from boundary-setting and bedtime battles to early waking and the transition to one nap, designed for little ones 12 months and beyond.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/a5d7db4-822a-b35c-585-a06320856e16_Toddler_Resources.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/a5d7db4-822a-b35c-585-a06320856e16_Toddler_Resources.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Toddler Toolkit"
+    ],
+    "h2s": [
+      "Course Overview",
+      "Course Curriculum",
+      "Included Resources",
+      "How to Use This Course",
+      "Is This Course Right for You?",
+      "Success Stories",
+      "Choose how you want to access this course",
+      "What's in Snooze",
+      "Frequently Asked Questions",
+      "Your Sleep Coach",
+      "Related Resources"
+    ],
+    "h3s": [
+      "What You'll Learn",
+      "Course Format",
+      "Time Investment",
+      "Module 1: Understanding Toddler Sleep",
+      "Module 2: Age-Appropriate Schedules and Routines",
+      "Module 3: Nap Transitions",
+      "Module 4: Bedtime Battles and Resistance",
+      "Module 5: Early Rising and Night Wakings",
+      "Module 6: Big Transitions",
+      "Module 7: Troubleshooting and Advanced Strategies",
+      "Written Guides",
+      "Downloadable PDFs",
+      "Sample Schedules",
+      "Scripts & Language Guides",
+      "Troubleshooting Guides",
+      "Checklists",
+      "Toddler Toolkit",
+      "Snooze Access",
+      "This Course",
+      "All Age Guides",
+      "Complete Library",
+      "The Village",
+      "Live Coaching",
+      "Member Pricing",
+      "Hi, I'm Sally!"
+    ],
+    "word_count": 1663,
+    "links_total": 30,
+    "links_internal": 23,
+    "links_external": 7,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit#course-access",
+        "text": "View Course Details",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Month Course",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Month Course",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/offers/FktmJAvJ/checkout",
+        "text": "Purchase Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/offers/z63s9VaR",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://open.spotify.com/show/1LRXenhiADr7YzoGNbRwP2",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://joinsnooze.com/newborn-sleep-guide",
+        "text": "Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/products/communities/v2/snooze/library",
+        "text": "Sleep Library",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/thesleepconcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/snooze-library",
+        "text": "Library Access",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/products/communities/v2/snooze",
+        "text": "Snooze Village",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/account",
+        "text": "Your Account",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/terms-conditions",
+        "text": "Terms of Service",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/privacy-policy",
+        "text": "Privacy Policy",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2163331541/settings_images/d2fd0d-c6d4-0e1-01ad-1b846f205d8f_0d8c4d39-2879-4edf-a15a-152aea38e84f.png",
+        "alt": "Sally Woods, The Sleep Concierge",
+        "w": 994,
+        "h": 994,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/toddler-toolkit",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 511387,
+  "screenshot": "screenshots/toddler_toolkit.png",
+  "vitals": {
+    "TTFB": "329.8ms",
+    "LCP": "396ms",
+    "CLS": "0",
+    "FCP": "396ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

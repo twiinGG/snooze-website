@@ -1,0 +1,267 @@
+{
+  "url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+  "path": "/blog/why-am-i-the-sleep-concierge",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "blog_post",
+  "slug": "blog_why_am_i_the_sleep_concierge",
+  "crawled_at": "2026-06-09T00:41:34.013052+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+    "title": "Why am I The Sleep Concierge?",
+    "lang": "en",
+    "meta_description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+    "canonical": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+      "og:title": "Why am I The Sleep Concierge?",
+      "og:description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/416ade8-11da-62d7-2dbc-32d6ccc0eb_c233aa09-e384-4a48-a002-148338107ec5.webp"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Why am I The Sleep Concierge?",
+      "twitter:description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/416ade8-11da-62d7-2dbc-32d6ccc0eb_c233aa09-e384-4a48-a002-148338107ec5.webp"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+      "twitter:card": "summary_large_image",
+      "og:title": "Why am I The Sleep Concierge?",
+      "twitter:title": "Why am I The Sleep Concierge?",
+      "og:description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+      "twitter:description": "Discover personalized sleep guidance with The Sleep Concierge. I offer a holistic approach that considers diet, environment, and emotional well-being, with phone and online consultations to ensure you and your baby achieve restful sleep. Experience the ultimate support for a peaceful night\u2019s rest",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/416ade8-11da-62d7-2dbc-32d6ccc0eb_c233aa09-e384-4a48-a002-148338107ec5.webp",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/416ade8-11da-62d7-2dbc-32d6ccc0eb_c233aa09-e384-4a48-a002-148338107ec5.webp",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Why am I The Sleep Concierge?"
+    ],
+    "h2s": [
+      "About the author"
+    ],
+    "h3s": [],
+    "word_count": 395,
+    "links_total": 30,
+    "links_internal": 23,
+    "links_external": 7,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+environment",
+        "text": "Sleep Environment",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+safety",
+        "text": "Sleep Safety",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/store",
+        "text": "The Sleep guides",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5+month+to+2+years",
+        "text": "5 Month To 2 Years",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5-12+months",
+        "text": "5-12 Months",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=fourth+trimester",
+        "text": "Fourth Trimester",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=infants",
+        "text": "Infants",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=naps",
+        "text": "Naps",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=product+reviews",
+        "text": "Product Reviews",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+products",
+        "text": "Sleep Products",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+regressions",
+        "text": "Sleep Regressions",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=transitions",
+        "text": "Transitions",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/author/sally-woods",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "Tiktok",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 4,
+    "images_missing_alt": 2,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/ac0a48d-85f-a572-3c33-5635d5432c36_Sally_Woods_professional_Baby_Sleep_Consultant.webp",
+        "alt": "Sally Woods professional Baby Sleep Consultant",
+        "w": 1840,
+        "h": 1035,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/4568c0-8147-8b60-4ac1-2fe4e425b1ee_b0f1d5fd-e72d-4bfb-9442-56457c4cd25a.jpg",
+        "alt": null,
+        "w": 1440,
+        "h": 810,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 462373,
+  "screenshot": "screenshots/blog_why_am_i_the_sleep_concierge.png",
+  "vitals": {
+    "TTFB": "768.2ms",
+    "LCP": "1032ms",
+    "CLS": "0",
+    "FCP": "1032ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:2"
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "url": "https://www.joinsnooze.com/store",
+  "path": "/store",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "store",
+  "crawled_at": "2026-06-09T00:42:58.177420+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/store",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/store",
+    "title": "Snooze | Sleep Help for the Modern Parent",
+    "lang": "en",
+    "meta_description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+    "canonical": "https://www.joinsnooze.com/store",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/store",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/store",
+      "twitter:card": "summary_large_image",
+      "og:title": "Snooze | Sleep Help for the Modern Parent",
+      "twitter:title": "Snooze | Sleep Help for the Modern Parent",
+      "og:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "twitter:description": "Get clear, evidence-based sleep guidance for your baby. The Snooze Method helps tired parents reduce night wakes and extend naps. Join Snooze today.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Sleep Support for Every Stage"
+    ],
+    "h2s": [
+      "Snooze Access Membership",
+      "Common Questions",
+      "Individual Sleep Courses",
+      "1:1 Sleep Consultations",
+      "Camp Snooze",
+      "Recommended Products"
+    ],
+    "h3s": [
+      "Snooze Access",
+      "What Parents Are Saying",
+      "How Snooze Works",
+      "Is this cry-it-out?",
+      "What ages does Snooze work for?",
+      "How quickly will I see results?",
+      "What if I don't have time?",
+      "What if sleep gets worse before it gets better?",
+      "Our Approach",
+      "Signature Consult",
+      "45-Minute Follow-up",
+      "2-Week Package",
+      "Daily Group Coaching",
+      "Custom Sleep Plan",
+      "Private Forum Support"
+    ],
+    "word_count": 612,
+    "links_total": 23,
+    "links_internal": 20,
+    "links_external": 3,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/offers/6iRarwak/checkout",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/newborn-sleep-guide",
+        "text": "View Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "View 3-4 Month Course",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "View 5-12 Month Course",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/toddler-toolkit",
+        "text": "View Toddler Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "View Details",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/camp-snooze",
+        "text": "View Camp Snooze Details",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/recommended-products",
+        "text": "View Recommended Products",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 6,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/774dbd6-35da-e076-34fa-5d06bfe864f_Newborn_Guide_Summary_Thumb.webp",
+        "alt": "Newborn Sleep Guide summary",
+        "w": null,
+        "h": null,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/702c22e-4664-7bd3-7855-428fd80f0_3-4_Month_Course_Summary_Thumb.webp",
+        "alt": "3-4 Month Sleep Course summary",
+        "w": null,
+        "h": null,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/c7082ba-ecf4-371a-1275-f7e23b420a0_5-12_Month_Course_Summary_Thumb.webp",
+        "alt": "5-12 Month Sleep Course summary",
+        "w": null,
+        "h": null,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/35378e7-720-4374-f8e6-53287723ecf_Toddler_Toolkit_Summary_Thumb.webp",
+        "alt": "Toddler Toolkit summary",
+        "w": null,
+        "h": null,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/store",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 472852,
+  "screenshot": "screenshots/store.png",
+  "vitals": {
+    "TTFB": "317.9ms",
+    "LCP": "1196ms",
+    "CLS": "0",
+    "FCP": "376ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

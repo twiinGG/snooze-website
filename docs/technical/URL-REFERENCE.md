@@ -5,6 +5,26 @@
 **Last Updated:** December 18, 2025  
 **Status:** Active Reference - Enhanced with Link Status Indicators
 
+> ## 🔎 Audit addendum — June 9, 2026 (observed live, canonical `www.joinsnooze.com`)
+>
+> A full real-browser sweep (`apps/snooze-website/site-audit-2026-06/`) checked every URL.
+> Status flags below reflect intent; these are the **observed** deltas to action:
+>
+> - **`/get-great-baby-sleep` → 404 live** (this doc lists it ✅ Active). It is built in repo
+>   (`landing/cold-traffic-landing-page/`) but not deployed. Deploy it or correct this flag.
+> - **`/sleep-glossary` → 404** (built in repo, not in Kajabi — confirmed). The live glossary is
+>   **`/baby-sleep-glossary`** (200), which carries `DefinedTermSet`+`BreadcrumbList` but **no `FAQPage`**.
+> - **`/snooze-method` → 404** (landing not launched — confirmed).
+> - **`/about` → 302 → `/`** (the documented redirect is live as a 302).
+> - **`/privacy` and `/snooze-village` → 404** (redirects still not in place).
+> - **`/snooze` → 404** (listed ✅ Working in Core Pages; now 404 — verify/redirect).
+> - **Camp Snooze Jan'26 `/offers/muRW6ug5` → redirects to `/login`** (was public; camp is past).
+> - **Member offer checkouts** (e.g. `/offers/6iRarwak`, `muRW6ug5`) redirect anonymous users to `/login`;
+>   public course/guide checkouts (`W2PyqL2X`, `9DFJSwVD`, `FktmJAvJ`, `omMcVgAi`) render.
+> - **AEO gap:** no blog post has `Article` schema; 61 pages have no JSON-LD; no `llms.txt`.
+>
+> Full per-page status, metadata, drift and CWV: `site-audit-2026-06/AUDIT-REPORT.md` and the linked Google Sheet.
+
 **⚠️ CRITICAL:** Always use actual URLs from this document. Never use placeholder URLs during development.
 
 **Status Legend:**

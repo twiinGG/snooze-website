@@ -1,0 +1,13 @@
+# Full rendered HTML (~42MB, 107 files) — kept locally for re-analysis only.
+# The html_hash is stored in each data/<slug>.json and provenance is precomputed,
+# so the raw HTML is not needed in git.
+data/html/
+
+# Regenerable intermediates
+data/sql/
+data/shards/
+logs/
+
+# Session/auth scratch (no secrets committed)
+.auth/
+screenshots/
