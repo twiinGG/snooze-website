@@ -31,7 +31,7 @@ import re
 from collections import defaultdict
 from urllib.parse import urlsplit
 
-HERE = os.path.dirname(os.path.abspath(__file__))                 # site-uplift-2026-06/analysis
+HERE = os.path.dirname(os.path.abspath(__file__))                 # site-audit-2026-06/analysis
 WEBSITE = os.path.normpath(os.path.join(HERE, "..", ".."))        # apps/snooze-website
 DATA = os.path.join(WEBSITE, "site-audit-2026-06", "data")        # raw audit crawl data (read-only)
 HTML = os.path.join(DATA, "html")

@@ -12,3 +12,12 @@ logs/
 .auth/
 screenshots/
 scripts/__pycache__/
+
+# --- Wave 3 social proof: unconsented member data (added 2026-06-09) ---
+# Raw Camp transcripts, extraction tables, harvest manifests, and the curated quote
+# doc all contain member names / Internal (unconsented) quotes. Regenerable from
+# Notion + Drive. NOT committed: apps/snooze-website force-publishes to the external
+# VSP mirror, and this content must not leave until Sally approves consent.
+wave-3-social-proof/transcript-extractions/
+wave-3-social-proof/harvest/
+wave-3-social-proof/CURATED-SOCIAL-PROOF.md

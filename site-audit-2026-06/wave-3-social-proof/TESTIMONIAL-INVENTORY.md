@@ -7,6 +7,27 @@ Consent status matters: only sources marked CONSENTED-PUBLIC are cleared for new
 web placement. The CRM and consult records are private; do not lift names or
 results from them onto public pages without explicit per-client consent.
 
+## Current state after collection sprint (updated 2026-06-09)
+
+The "~18 usable quotes" framing below was the **web-published subset**. The canonical Notion
+**Member Feedback & Wins** store actually held 148 rows at sprint start and now holds **351**.
+Full before/after in `COLLECTION-AUDIT.md`.
+
+| Source | Rows | Permission | Notes |
+|---|---|---|---|
+| Google Review | 165 | Public | 137 existing (cleaned) + 28 new via Apify delta (after 2025-08-18) |
+| Camp Call (transcripts) | 166 | Internal | Strong verbatim quotes from 42 roll-call transcripts; Publish Approved=false (Sally consent) |
+| Screenshot (DM/community) | 9 | Internal | From Google Photos→Drive sync (`media_asset_catalog`); Asset URL set; Sally consent |
+| Review | 10 | (mixed) | Pre-existing consult-style reviews |
+| Community | 1 | — | Pre-existing |
+| **Total** | **351** | | Supabase `member_feedback_raw`: 340 synced (2 skipped empty) |
+
+- **Curated for site use:** `CURATED-SOCIAL-PROOF.md` (regenerated, 5 sets). Gate: human review before paste (RUNBOOK #18 ON HOLD).
+- **Country:** authoritative via CRM `👟 Sales CRM` relation (0 linked yet); review rows carry a `country_*` tag only on explicit place mention, else `country_unknown`.
+- **GBP owner API:** blocked at Google quota gate; delta harvested via Apify instead. See `COLLECTION-AUDIT.md`.
+
+The sections below are the original baseline index (web-published + consented sources), retained for provenance.
+
 ## A. Already published and consented (safe to reuse anywhere)
 
 ### Home page named quotes (coaching / membership)

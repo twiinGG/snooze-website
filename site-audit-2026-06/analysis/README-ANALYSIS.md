@@ -9,7 +9,7 @@ OpportunityGap = Priority ranking the plan calls for.
 
 | Source | Used for | Vintage |
 |---|---|---|
-| Audit per-page JSON + captured HTML (`../../site-audit-2026-06/data/`) | schema gaps, word count, links, vitals, on-page proof | 2026-06-09 (current) |
+| Audit per-page JSON + captured HTML (`../data/`) | schema gaps, word count, links, vitals, on-page proof | 2026-06-09 (current) |
 | GA4 property 401774815, live MCP | traffic, engagement, conversions, organic | pulled 2026-06-09 (current) |
 | Microsoft Clarity (`public.clarity_analytics`) | behaviour drop-off | UNUSABLE for per-page (see gaps) |
 

@@ -1,9 +1,18 @@
 # Reviews Page & Notion Automation Project
 
-**Status:** Planning  
-**Priority:** High  
-**Phase:** Build  
+**Status:** v1 BUILT (2026-06-09) — awaiting sign-off before Kajabi paste
+**Priority:** High
+**Phase:** Build
 **Created:** November 1, 2025
+
+> **v1 build (Wave 3 social-proof sprint):** `src/reviews-page.html` generated from the
+> Member Feedback & Wins corpus (164 Public reviews) by
+> `site-audit-2026-06/wave-3-social-proof/scripts/gen_reviews_page.py`. Pre-rendered cards
+> (SEO-crawlable, Option C), service sections, filters (service/age/rating/search), JSON-LD
+> Review schema. Styles live in the universal theme (`global/css/snooze-unified-theme.css`,
+> `#reviews-page` block), not a separate components.css. Reusable compact/mini components
+> (brief Phase 4) and product-page embeds (Phase 5) remain TODO. Re-run the generator to
+> refresh from Notion.
 
 ---
 

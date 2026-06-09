@@ -1,0 +1,228 @@
+# joinsnooze.com Uplift Runbook
+
+Working runbook for the high-ROI, no-redesign uplift of joinsnooze.com, following
+the June 2026 live-site audit. This is the authoritative plan-plus-status document:
+every item carries a status, the artifact it produced, and what to do next.
+
+- **Status key:** DONE (shipped to git working tree) · STAGED (in git, awaiting
+  manual Kajabi paste) · TODO · BLOCKED · DEPRIORITISED.
+- **Source of truth:** git. Kajabi is the paste/render target. Deploy is manual
+  paste into CMS custom-code blocks. Tag `website-vX.Y.Z` before deploy.
+- **Binding rules:** `apps/snooze-website/AGENTS.md` (CSS System Init, Kajabi HTML
+  patterns) and root `AGENTS.md` §5-7 (no em dashes, no hype, deploy validation).
+- **Data inputs:** raw audit in this folder (`data/`, `AUDIT-REPORT.md`); live GA4 (property
+  401774815); analysis engine at `analysis/build_uplift_analysis.py`.
+
+Orientation + file manifest: `README.md`.
+
+## Current status (last updated 2026-06-09)
+
+| Area | Status |
+|---|---|
+| Part A evidence engine | DONE |
+| Wave 1 #2–3 global schema | DONE (deployed to Kajabi Header Page Scripts) |
+| Wave 1 #5 non-www link hygiene | DONE (repo) |
+| Wave 1 #6 glossary URL ref | DONE |
+| Wave 3 testimonial **collection** | **DONE (2026-06-09)** — corpus 148→351 Notion rows; synced to Supabase; curated set regenerated. Awaiting Sally consent on Camp/DM rows |
+| Wave 3 #14/#18 site injection | **ON HOLD** — regenerate injection blocks from approved curated set; needs Sally/Kade sign-off |
+| Wave 3 #20 collated reviews page | BUILT — awaiting sign-off (not pasted to Kajabi) |
+| Project consolidation | DONE (2026-06-09) — `site-audit-2026-06` + `site-uplift-2026-06` merged into this folder |
+| Wave 1 #4 metadata, #5b CMS links, Wave 2 | TODO |
+
+**Changelog**
+- 2026-06-09 (consolidation): merged the two sibling folders into one. `site-uplift-2026-06/{analysis, wave-3-social-proof, RUNBOOK, README, PROGRESS}` moved into `site-audit-2026-06/`; old folder removed; references updated; analysis engine re-verified from the new location. Wave 3 member-data artifacts (raw transcripts, harvest manifests, `CURATED-SOCIAL-PROOF.md`) are now **gitignored** so they never reach the external VSP mirror (`publish-snooze-website.sh` force-publishes the whole `apps/snooze-website` prefix). Renamed Notion Product `Snooze Social` → `The Snooze Membership` (21 rows re-tagged). Rebuilt the reviews page as a proper site page (`kajabi-deployment/pages/website/reviews-page/src/reviews-page.html`, styles in the universal theme `#reviews-page` block) per the existing dev brief; verified Google review coverage complete (162/162 in Notion).
+- 2026-06-09 (collection sprint): Wave 3 corpus expanded 148→351 Notion rows. Audit → `wave-3-social-proof/COLLECTION-AUDIT.md` (existing corpus was 148, not ~18; 137 Google reviews already harvested but never synced). 137 reviews backfilled Permission=Public; 28 new reviews harvested via Apify (place `ChIJ909XQaRD1moRMeU0Gdc7_GU`, delta after 2025-08-18); 166 strong Camp transcript quotes extracted from 42 roll-call transcripts (Sonnet fan-out) → Notion (Camp Call, Internal, unapproved); 9 DM/community screenshots ingested from `media_asset_catalog` (Google Photos→Drive sync). First-ever Supabase sync 0→340 rows + `country` column (migration 003). `CURATED-SOCIAL-PROOF.md` regenerated. GBP owner API blocked at Google quota gate (see audit). Camp + DM rows await Sally consent before publish. **Camp routing corrected:** restriction is per-quote (a quote that *names* Camp can't prove other products as-is); universal sleep-win quotes flow anywhere, camp-naming quotes can be verbatim-trimmed (curated Set 1b). Added a collated **Reviews page** draft (`reviews-page.html`, #20) modelled on Taking Cara Babies — by product/service, TCB-style names + baby age, 164 verified reviews.
+- 2026-06-09 (pm): Schema #2 + #3 live. Blog script fix (`<script>` wrapper). Kajabi has no site-wide footer-scripts field; both blocks go in Header Page Scripts. Testimonial collection reprioritised ahead of `injection-blocks.html` paste.
+- 2026-06-09: Part A engine, non-www hygiene, Wave 3 inventory draft, project created.
+
+## Next steps (prioritised)
+
+1. **Sally consent pass** — review `wave-3-social-proof/transcript-extractions/_SUMMARY.md`
+   (166 strong Camp quotes) + the 9 DM/community screenshot rows in Notion; flip
+   `Publish Approved = true` on the approved subset only. Camp/DM stays Internal until then.
+2. **Sign-off on the reviews page (#20) + curated set** — once approved, paste
+   `reviews-page/src/reviews-page.html` into a new Kajabi `/reviews` page, link it from the
+   hero reviews badge. (Page is public-reviews-only, so it is not consent-blocked.)
+3. **Regenerate + paste injection blocks (#18)** — rebuild `injection-blocks.html` from the
+   approved curated set (incl. universal + trimmed-camp quotes) for about-sally, the 3
+   age-help pages, and contact; paste after sign-off.
+4. **Wave 1 #4 metadata** — work `analysis/METADATA-WORKLIST.csv` (admin SEO title/meta gaps,
+   ranked). **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
+5. **GBP live harvest** — finish the Google Business Profile API quota-increase approval in
+   `tsc-ga4-analysis`, add the SA `ga4-mcp@tsc-ga4-analysis…` as a location manager, then the
+   owner API can replace Apify. Until then, re-run Apify (subscription raised) to refresh
+   reviews, then `scripts/run_sync.py`.
+6. **Reviews components (brief Phases 4-5)** — reusable compact/mini cards + product-page and
+   checkout embeds + the testimonial carousel swap.
+7. **Country backfill** — link testimonials to CRM contacts (`👟 Sales CRM`) so
+   `member_feedback_raw.country` populates via the relation.
+8. **Notion tidy** — delete the now-empty `Snooze Social` Product option in the UI
+   (API can't remove an option; renamed-by-migration already done).
+
+---
+
+
+## Part A — Evidence engine (DONE)
+
+`analysis/build_uplift_analysis.py` joins the audit (107 pages, schema gaps,
+links, vitals, on-page proof) to live GA4 (traffic, conversions, organic) and
+computes `Priority = PageValue x OpportunityGap`. One run regenerates every CSV
+plus the two Wave 1 worklists. Methodology and findings: `analysis/README-ANALYSIS.md`.
+
+Run it:
+
+```
+cd apps/snooze-website/site-audit-2026-06/analysis
+python3 build_uplift_analysis.py
+```
+
+To refresh with new GA4 numbers, replace the `GA4_*` dicts at the top of the script
+(pulled 2026-06-09 via the GA4 MCP) and re-run.
+
+**Outputs (`analysis/`):** `page_value_ranking.csv` (master backlog),
+`conversion_paths.md`, `organic_pages.csv`, `social_proof_coverage.csv`,
+`link_graph_edges.csv`, `link_graph_summary.csv`, `link_hygiene_issues.csv`,
+`METADATA-WORKLIST.csv`, `CMS-HYGIENE-WORKLIST.csv`.
+
+**Findings that revised the plan:**
+1. The whole blog corpus is the internal-link gap, not just the glossary (most
+   posts have 0-2 inbound links, 25-30 outbound). The glossary orphan is real
+   (0 external inbound; 54 self-anchors).
+2. The 8 money pages already carry their own proof block; that is why they convert.
+3. Clarity per-page history in Supabase is unusable (9 URL rows, null/zero);
+   behaviour drop-off needs the live Clarity API.
+
+**Data gaps (close before relying on those reads):** Google Search Console not
+connected (organic query truth); analytics Supabase facts stale since ~Apr 26;
+email channel 60 sessions/yr is a tracking gap not real demand; GA4 90-day pull is
+the top ~55 pages, so `sessions_90d=0` with non-zero `sessions_365d` means below
+the 90-day cutoff, not literally zero.
+
+---
+
+## Wave 1 — Money leak + hygiene + global schema
+
+| # | Item | Status | Artifact / next action |
+|---|---|---|---|
+| 1 | `/get-great-baby-sleep` 404 | DEPRIORITISED | No live ad is running (confirmed Jun 9), so no paid-spend leak. The 566 sessions/12mo are organic/direct. When a campaign needs it: add a `#cold-traffic-landing-page` wrapper + System Init CSS block to the source, then deploy. Source: `kajabi-deployment/pages/landing/cold-traffic-landing-page/`. |
+| 2 | Global Organization + WebSite JSON-LD | DONE | Deployed Jun 9 to Header Page Scripts. Source: `kajabi-deployment/global/html/schema-organization.html`. Validate with validator.schema.org (Rich Results Test only shows enhanced types like Video). |
+| 3 | Blog `BlogPosting` JSON-LD (all 36 posts) | DONE | Deployed Jun 9 to Header Page Scripts. Paste from `kajabi-deployment/global/html/blog-schema-paste.html` (must include `<script>` wrapper). Self-gates to `/blog/<slug>`; DOMContentLoaded + DOM reads. |
+| 4 | SEO title/description/social-image hygiene | TODO (admin) | `analysis/METADATA-WORKLIST.csv`: 31 pages with gaps, sorted by PageValue (31 missing social image, 25 description, 17 title). The money pages already have full metadata. Edits are in Kajabi admin per page; record intended values back here. |
+| 5 | Internal-link domain hygiene | DONE (repo) + TODO (CMS) | 169 non-www `joinsnooze.com` links rewritten to `www.joinsnooze.com` across 34 repo `.html` files. The 202 old-domain links live in blog bodies / CMS (no repo source): `analysis/CMS-HYGIENE-WORKLIST.csv`. Legal-page contact emails on `sleepconcierge.com.au` deliberately excluded. |
+| 6 | Stale reference correction | DONE | `docs/technical/URL-REFERENCE.md` glossary entry now points to the live `/baby-sleep-glossary` (old `/sleep-glossary` is a 404; do not target it). |
+
+**Ship order for Wave 1:** 2 and 3 first (biggest compounding AEO lever, one paste
+each), then 4 (metadata, top PageValue first), then the CMS hygiene pass (5).
+
+---
+
+## Wave 2 — AEO depth + glossary leverage + nav/IA (TODO)
+
+| # | Item | Effort | Notes |
+|---|---|---|---|
+| 7 | FAQPage schema on live `/baby-sleep-glossary` | S | Repo build already carries FAQPage; regenerate via `glossary/terms.json` -> `build-glossary.mjs` and ship to the live slug. |
+| 8 | Publish `llms.txt` at site root | S | Point AI crawlers to glossary, courses, age pages, blog. Keep the file in `kajabi-deployment/global/`. |
+| 9 | Internal-linking ("topical authority") | M | Bigger than the glossary. Add contextual links INTO the glossary AND into high-value blog posts and age pages from related content. Use `analysis/link_graph_summary.csv` (orphans + low-inbound hubs) to target. |
+| 10 | Nav/IA: surface the glossary, clarify pathways | M | Glossary is in neither the 11-link header nor 13-link footer. Add it to the footer "Resources". Add age-page -> matching-course -> membership CTAs (today age pages push a generic membership, not the matching course). Keep the header lean. |
+| 11 | Decide `/snooze-method` (404 stub) | S | Recommend: leave dark for now, correct the reference; revisit after Waves 1-2. |
+
+---
+
+## Wave 3 — Social proof: collect -> curate -> place
+
+**Business goal:** increase Snooze **membership** purchases. Social proof on the site
+must skew toward membership, courses, and general Snooze outcomes. Camp Snooze
+quotes are valid but **Camp-only** (camp landing page and camp ads). Do not flood
+age pages, home, or membership CTAs with Camp wrap-up quotes.
+
+**Gate:** finish the collection pass (#12–#16) before pasting `injection-blocks.html`
+(#17). Site paste is labour-intensive; curate from a large, tagged corpus first.
+
+### Phase 3A — Collection and database (DONE 2026-06-09)
+
+Collection results in `wave-3-social-proof/COLLECTION-AUDIT.md`. Corpus 148→**351** Notion rows.
+
+| # | Item | Status | Artifact / next action |
+|---|---|---|---|
+| 12 | Source inventory | DONE | `wave-3-social-proof/TESTIMONIAL-INVENTORY.md` (refreshed). Baseline was 148 rows (not ~18); audit in `COLLECTION-AUDIT.md`. |
+| 13 | Curated set | DONE | `wave-3-social-proof/CURATED-SOCIAL-PROOF.md` regenerated from 351 rows (5 sets). For human review before paste. |
+| 14 | Fresh Google reviews harvest | DONE | 137 already in Notion (cleaned: Permission=Public). **GBP owner API blocked at Google quota gate** → harvested the delta via Apify `compass/Google-Maps-Reviews-Scraper` (place `ChIJ909XQaRD1moRMeU0Gdc7_GU`): 28 new reviews after 2025-08-18, deduped, ingested. `scripts/google_reviews_delta.py`. To resume GBP API: see audit (quota increase + SA as location manager + My Business v4). |
+| 15 | Camp Snooze Drive transcripts | DONE | 42 roll-call transcripts (Camps 3–7) downloaded via clip-engine Drive creds; Sonnet fan-out extracted 376 verbatim quotes → `transcript-extractions/` (per-file + `_SUMMARY.md`); 166 strong ingested to Notion (Source=Camp Call, Product=Camp Snooze, Internal, Publish Approved=false). |
+| 16 | DM + Snooze community screenshots | DONE | 9 screenshot testimonials ingested from `media_asset_catalog` (Google Photos→Drive sync) with `Content Type`=Screenshot + Asset URL; `scripts/ingest_screenshots.py`, inventory in `harvest/screenshot-inventory.md`. Internal until Sally consents. |
+| 17 | Dual-write to Notion + Supabase | DONE | First-ever sync: `member_feedback_raw` 0→340 rows + logged in `member_feedback_sync_log`. `country` column added (migration `003_member_feedback_country.sql`). Runner: `scripts/run_sync.py` (root .env + service key). |
+
+**Notion DB (canonical testimonial store):** Member Feedback & Wins  
+`24f33898-b6c2-817c-bfa3-cab91a68b9e9`
+
+Key fields (from `docs/AI-ready-refactor/INGEST-MANIFEST.md` Track 11): `Notes`
+(quote body), `Type`, `Source`, `Product`, `Content Theme`, `Content Type`,
+`Permission Level`, `Publish Approved`, `Rating`, `Google Display Name`,
+`Google Review ID`, `Asset URL`, `Feedback Date`, `Tags`, `👟 Sales CRM` relation.
+
+**Add via Tags or a new Country property:** ISO country or region (AU, US, UK, NZ,
+CA, etc.) for every row. Required for authentic global proof; never guess country.
+
+**Supabase sync:** `_legacy/workspaces/snooze-infrastructure/projects/memory-integration/scripts/sync_member_feedback_wins.py`  
+Schema: `apps/brand-content-consultant/scripts/migrations/002_member_feedback_tables.sql`  
+Track-11 events: `apps/ai-refactor/scripts/track-11-notion-testimonials.ts`
+
+**Consent guardrails**
+- **TSC CRM** (`25433898-b6c2-810e-96f2-000bbddd7244`): consult/contact records, no
+  consent field. Identify clients to ASK only; never publish without permission.
+- **Google reviews:** public by nature; still verify text matches GBP before embed.
+- **Camp transcripts / DMs:** default `Permission Level` = Internal until Sally
+  confirms Public or Anonymised. `Publish Approved` = false until confirmed.
+- **Never fabricate** names, countries, quotes, or paraphrase DMs into polished copy.
+
+**Product routing (when curating for web)**
+| Proof type | Use on |
+|---|---|
+| Membership / Snooze Social / course outcomes | Home, age pages, course landings, library, membership checkout path |
+| 1:1 consult / coaching (named) | about-sally, consultations, contact |
+| Universal sleep-win quote (no camp reference) | Anywhere — honest Snooze-client proof regardless of original source |
+| Quote that **names Camp / the camp model** | Camp page + camp ads as-is; for other products, verbatim-trim the camp reference first (curated Set 1b) |
+| Google reviews | Broad trust; prefer membership-relevant wording on money pages; collated on the Reviews page |
+| DM / community screenshots | Raw image blocks on high-traffic pages for authenticity (consent-gated) |
+
+### Phase 3B — Site placement (ON HOLD until 3A)
+
+| # | Item | Status | Artifact |
+|---|---|---|---|
+| 18 | Inject proof into high-traffic, low-proof pages | ON HOLD | `wave-3-social-proof/injection-blocks.html`. Regenerate from expanded `CURATED-SOCIAL-PROOF.md` (now incl. universal + trimmed-camp sets) after sign-off. Targets: about-sally, 3 age-help pages, contact. |
+| 19 | Screenshot embed pattern | TODO | Design a lightweight Kajabi-safe block for raw DM/community screenshots (no fake quote styling). |
+| 20 | Collated Reviews page | BUILT — awaiting sign-off | Proper site page at `kajabi-deployment/pages/website/reviews-page/src/reviews-page.html` (wrapper `#reviews-page`), generated by `wave-3-social-proof/scripts/gen_reviews_page.py` from 164 Public reviews. Styles added to the universal CSS (`global/css/snooze-unified-theme.css` `#reviews-page` block, reuses global `.review-card`). Sectioned by service (The Snooze Membership, Courses & Guides incl. Toddler Toolkit, 1:1 Consults & Coaching, Camp Snooze), star summary, filters (service/age/rating/search), JSON-LD review schema, SEO-oriented heading, names = first + initial + baby age. Aligns with `reviews-page/docs/REVIEWS-PAGE-DEVELOPMENT-BRIEF.md`. Re-run generator to refresh; paste into Kajabi after sign-off. |
+
+---
+
+## Wave 4 — Cleanup / long tail (TODO)
+
+| # | Item | Effort | Notes |
+|---|---|---|---|
+| 15 | Alt text on ~160 images (65 pages; worst: blog product reviews) | M | Accessibility + image SEO. See `images_missing_alt` in `page_value_ranking.csv`. |
+| 16 | CWV outliers: Cubo Ai blog post (~3s TTFB, top organic page) + `/about-sally` | S | Check Kajabi image weight / lazy-load. |
+| 17 | Triage ~40 draft Kajabi pages | M | Publish, delete (`-OLD`/`-ARCHIVED`), or leave. |
+| 18 | Homepage source reconciliation | S | Live home drifted from the only repo copy (`archive/website/home/...`); re-capture canonical source into `kajabi-deployment/`. |
+| 19 | Optional: prune stale 2025 apex-keyed rows from `page_scrape_data` | S | Low. |
+
+---
+
+## Immediate next steps (recommended order)
+
+1. ~~**Deploy Wave 1 #2 and #3** (schema)~~ DONE Jun 9.
+2. **Testimonial collection sprint** (Wave 3 #14–#17): Google reviews fresh pull,
+   Camp Drive transcript mining, DM screenshot ingest, dual-write Notion + Supabase.
+   See Claude Code prompt in runbook chat (Jun 9) or re-ask agent to regenerate.
+3. **Regenerate** `CURATED-SOCIAL-PROOF.md` + `injection-blocks.html` from expanded corpus.
+4. **Then** paste injection blocks (#18) on about-sally, age pages, contact.
+5. **Metadata worklist** (#4) for published pages (contact, library, legal, glossary).
+6. **Wave 2** internal-linking and nav/IA.
+7. Connect Google Search Console; backfill stale analytics facts.
+
+## Verification checklist (per deploy)
+- Schema: Google Rich Results Test + Schema.org validator pass; re-crawl
+  (`crawl_page.py --force`) shows the new `jsonld_types`.
+- Links: re-parse `links.list`; zero `sleepconcierge.com.au` / non-www internal links.
+- Social proof: each target renders the review block with existing CSS, no layout break.
+- Deploy discipline: run placeholder + env validators and `docs/DEPLOYMENT-CHECKLIST.md`;
+  commit; tag `website-vX.Y.Z`; publish via `scripts/publish-snooze-website.sh`.
+  Never bypass pre-commit hooks.

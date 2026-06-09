@@ -7,9 +7,9 @@ path,inbound_distinct_pages,out_degree,self_anchor_links,in_audit,note
 /login,98,13,1,yes,
 /offers/4zhpsrcs,89,8,0,yes,
 /5-12-month-baby-sleep-course,85,23,2,yes,
+/toddler-toolkit,85,23,2,yes,
 /3-4-month-baby-sleep-course,85,23,3,yes,
 /newborn-sleep-guide,85,23,2,yes,
-/toddler-toolkit,85,23,2,yes,
 /one-on-one-sleep-consultations,85,22,2,yes,
 /resource_redirect/offers/6irarwak,85,0,0,no,
 /author/sally-woods,36,21,0,yes,
@@ -27,17 +27,17 @@ path,inbound_distinct_pages,out_degree,self_anchor_links,in_audit,note
 /3-4-month-baby-sleep-help,5,27,2,yes,
 /5-12-month-baby-sleep-help,5,22,1,yes,
 /blog/glow-dreaming-white-noise-review,4,26,0,yes,
-/newborn-baby-sleep-help,4,22,1,yes,
 /toddler-sleep-help,4,22,1,yes,
+/newborn-baby-sleep-help,4,22,1,yes,
 /products/communities/v2/snooze/library,4,14,0,yes,
 /blog/stop-swaddle-time-for-your-baby,3,26,0,yes,
 /offers/4zhpsrcs/checkout,3,0,0,no,
 /blog/how-to-make-change-when-the-4-month-sleep-regressions-hits,2,30,0,yes,hub with few inbound links (link INTO it)
 /blog/navigating-childcare-and-your-childs-sleep-routine,2,29,0,yes,hub with few inbound links (link INTO it)
 /blog/7-tips-for-maintaining-you-babys-sleep-while-travelling,2,27,0,yes,hub with few inbound links (link INTO it)
+/blog/my-snoo-review,2,25,0,yes,hub with few inbound links (link INTO it)
 /blog/mystery-of-missing-third-nap-early-rising,2,25,0,yes,hub with few inbound links (link INTO it)
 /blog/my-honest-snoo-experience-and-review,2,25,0,yes,hub with few inbound links (link INTO it)
-/blog/my-snoo-review,2,25,0,yes,hub with few inbound links (link INTO it)
 /offers/6irarwak/checkout,2,14,0,yes,
 /offers/k3y6fekx/checkout,2,8,1,yes,
 /offers/ommcvgai/checkout,2,6,0,yes,
@@ -46,75 +46,75 @@ mailto:camp@joinsnooze.com,2,0,0,no,
 /product/catnapping-guide-free,2,0,0,no,
 /offers/z63s9var/checkout,2,0,0,no,
 /blog/baby-sleep-schedule-wake-windows-vs-clock-schedules,1,29,0,yes,hub with few inbound links (link INTO it)
-/blog/navigating-split-nights-a-guide-for-parents,1,28,0,yes,hub with few inbound links (link INTO it)
 /blog/4-month-regression-or-progression,1,28,0,yes,hub with few inbound links (link INTO it)
+/blog/navigating-split-nights-a-guide-for-parents,1,28,0,yes,hub with few inbound links (link INTO it)
 /blog/all-about-the-8-10-month-sleep-regression,1,27,0,yes,hub with few inbound links (link INTO it)
-/blog/stop-4-month-babies-sleep-regression-fear,1,27,0,yes,hub with few inbound links (link INTO it)
-/blog/cubo-ai-smart-baby-monitor-review-with-discount,1,27,0,yes,hub with few inbound links (link INTO it)
 /blog/dressing-baby-for-bedtime,1,27,0,yes,hub with few inbound links (link INTO it)
+/blog/cubo-ai-smart-baby-monitor-review-with-discount,1,27,0,yes,hub with few inbound links (link INTO it)
+/blog/stop-4-month-babies-sleep-regression-fear,1,27,0,yes,hub with few inbound links (link INTO it)
 /blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby,1,26,0,yes,hub with few inbound links (link INTO it)
 /blog/transitioning-your-baby-from-2-naps-to-1,1,26,0,yes,hub with few inbound links (link INTO it)
-/blog/how-to-do-skin-to-skin-without-breastfeeding,1,25,0,yes,hub with few inbound links (link INTO it)
-/blog/developing-positive-cot-association-with-your-baby,1,25,0,yes,hub with few inbound links (link INTO it)
 /blog/shifting-your-babys-bedtime-for-daylight-savings,1,25,0,yes,hub with few inbound links (link INTO it)
+/blog/developing-positive-cot-association-with-your-baby,1,25,0,yes,hub with few inbound links (link INTO it)
+/blog/how-to-do-skin-to-skin-without-breastfeeding,1,25,0,yes,hub with few inbound links (link INTO it)
 /blog/should-we-discourage-babys-thumb-and-finger-sucking,1,25,0,yes,hub with few inbound links (link INTO it)
-/store,1,21,0,yes,hub with few inbound links (link INTO it)
 /about,1,21,0,yes,hub with few inbound links (link INTO it)
+/store,1,21,0,yes,hub with few inbound links (link INTO it)
 /privacy,1,13,0,yes,
 /offers/w2pyql2x/checkout,1,7,0,yes,
-/offers/mwisia6a/checkout,1,7,0,yes,
 /offers/jrxwanvo/checkout,1,7,0,yes,
-/offers/fktmjavj/checkout,1,6,0,yes,
+/offers/mwisia6a/checkout,1,7,0,yes,
 /offers/9dfjswvd/checkout,1,6,0,yes,
-mailto:privacy@sleepconcierge.com.au,1,0,0,no,
-/offers/jrxwanvo,1,0,0,no,
+/offers/fktmjavj/checkout,1,6,0,yes,
 /products/3-4-month-4hr-feeds-free-module/categories/2159312498/posts/2194391112,1,0,0,no,
-/offers/euek3whl/checkout,1,0,0,no,
-/resource_redirect/offers/w2pyql2x,1,0,0,no,
-/offers/46bz9tk6,1,0,0,no,
 /camp-snooze,1,0,0,no,
+/offers/46bz9tk6,1,0,0,no,
+/resource_redirect/offers/w2pyql2x,1,0,0,no,
+/offers/euek3whl/checkout,1,0,0,no,
+/offers/jrxwanvo,1,0,0,no,
+mailto:privacy@sleepconcierge.com.au,1,0,0,no,
 /blog/baby-catnaps-tips-guide,0,28,0,yes,hub with few inbound links (link INTO it)
-/blog/when-to-lower-the-cot-mattress,0,27,0,yes,hub with few inbound links (link INTO it)
-/blog/what-are-assisted-sleep-associations,0,27,0,yes,hub with few inbound links (link INTO it)
 /blog/newborn-babys-and-naps,0,27,0,yes,hub with few inbound links (link INTO it)
+/blog/what-are-assisted-sleep-associations,0,27,0,yes,hub with few inbound links (link INTO it)
 /blog/create-meaningful-morning-rituals-for-baby,0,27,0,yes,hub with few inbound links (link INTO it)
-/blog/why-am-i-the-sleep-concierge,0,26,0,yes,hub with few inbound links (link INTO it)
-/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you,0,26,0,yes,hub with few inbound links (link INTO it)
-/blog/how-to-manage-your-babys-reflux-and-sleep,0,26,0,yes,hub with few inbound links (link INTO it)
-/blog/the-power-of-calm-but-awake-for-babies,0,26,0,yes,hub with few inbound links (link INTO it)
+/blog/when-to-lower-the-cot-mattress,0,27,0,yes,hub with few inbound links (link INTO it)
 /blog/newborn-sleep-and-the-fourth-trimester,0,26,0,yes,hub with few inbound links (link INTO it)
-/blog/supporting-parents-of-rainbow-babies,0,25,0,yes,hub with few inbound links (link INTO it)
-/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it,0,25,0,yes,hub with few inbound links (link INTO it)
+/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you,0,26,0,yes,hub with few inbound links (link INTO it)
+/blog/why-am-i-the-sleep-concierge,0,26,0,yes,hub with few inbound links (link INTO it)
+/blog/the-power-of-calm-but-awake-for-babies,0,26,0,yes,hub with few inbound links (link INTO it)
+/blog/how-to-manage-your-babys-reflux-and-sleep,0,26,0,yes,hub with few inbound links (link INTO it)
 /blog/sick-babies-and-sleep,0,25,0,yes,hub with few inbound links (link INTO it)
+/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it,0,25,0,yes,hub with few inbound links (link INTO it)
+/blog/supporting-parents-of-rainbow-babies,0,25,0,yes,hub with few inbound links (link INTO it)
 /baby-sleep-glossary,0,16,54,yes,orphan: no other page links here
-/offers/zaybidqh,0,14,0,yes,orphan: no other page links here
-/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies,0,14,0,yes,orphan: no other page links here
-/downloads/catnapping-guide,0,14,0,yes,orphan: no other page links here
-/offers/murw6ug5/checkout,0,14,0,yes,orphan: no other page links here
-/products/the-snooze-method-5-12-month-sleep,0,14,0,yes,orphan: no other page links here
-/offers/5xl3narf/checkout,0,14,0,yes,orphan: no other page links here
-/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0,0,14,0,yes,orphan: no other page links here
-/products/settling-techniques-module-from-snooze-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
-/products/3-4-month-baby-sleep-course-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
-/downloads/newborn-sleep-guide-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
 /products/toddler-toolkit,0,14,0,yes,orphan: no other page links here
+/products/the-snooze-method-5-12-month-sleep,0,14,0,yes,orphan: no other page links here
+/offers/murw6ug5,0,14,0,yes,orphan: no other page links here
 /products/5-12-month-sleep-training-course,0,14,0,yes,orphan: no other page links here
+/downloads/newborn-sleep-guide-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
+/offers/zaybidqh,0,14,0,yes,orphan: no other page links here
+/products/3-4-month-baby-sleep-course-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
+/products/newborn-sleep-guide,0,14,0,yes,orphan: no other page links here
+/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies,0,14,0,yes,orphan: no other page links here
 /products/the-snooze-method,0,14,0,yes,orphan: no other page links here
 /downloads/baby-sleep-guide-5-to-12-months,0,14,0,yes,orphan: no other page links here
-/products/newborn-sleep-guide,0,14,0,yes,orphan: no other page links here
-/offers/murw6ug5,0,14,0,yes,orphan: no other page links here
-/get-great-baby-sleep,0,13,0,yes,orphan: no other page links here
-/newsletters/the-snooze-news,0,13,0,yes,orphan: no other page links here
+/products/settling-techniques-module-from-snooze-by-the-sleep-concierge,0,14,0,yes,orphan: no other page links here
+/downloads/catnapping-guide,0,14,0,yes,orphan: no other page links here
+/offers/murw6ug5/checkout,0,14,0,yes,orphan: no other page links here
+/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0,0,14,0,yes,orphan: no other page links here
+/offers/5xl3narf/checkout,0,14,0,yes,orphan: no other page links here
 /snooze,0,13,0,yes,orphan: no other page links here
 /snooze-village,0,13,0,yes,orphan: no other page links here
-/snooze-method,0,13,0,yes,orphan: no other page links here
 /sleep-glossary,0,13,0,yes,orphan: no other page links here
+/snooze-method,0,13,0,yes,orphan: no other page links here
+/newsletters/the-snooze-news,0,13,0,yes,orphan: no other page links here
+/get-great-baby-sleep,0,13,0,yes,orphan: no other page links here
 /thankyou/lmcr08-access,0,9,0,yes,orphan: no other page links here
 /offers/uxwneffg/checkout,0,8,0,yes,orphan: no other page links here
 /offers/4hqjfjgc/checkout,0,7,0,yes,orphan: no other page links here
 /offers/igbtdrbk/checkout,0,6,0,yes,orphan: no other page links here
 /3-4-month-masterclass-replay,0,2,1,yes,orphan: no other page links here
 /snooze-social-terms-and-conditions,0,2,0,yes,orphan: no other page links here
+/free-4-month-regression-masterclass-signup,0,1,0,yes,orphan: no other page links here
 /3-4-month-baby-sleep-course-terms-and-conditions,0,1,0,yes,orphan: no other page links here
 /4-month-sleep-regression-survival-guide,0,1,1,yes,orphan: no other page links here
-/free-4-month-regression-masterclass-signup,0,1,0,yes,orphan: no other page links here
