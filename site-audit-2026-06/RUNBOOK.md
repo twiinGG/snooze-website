@@ -23,17 +23,20 @@ Orientation + file manifest: `README.md`.
 | Area | Status |
 |---|---|
 | Part A evidence engine | DONE |
-| Wave 1 #2–3 global schema | DONE-REPO + pasted to Header Page Scripts — **VERIFY LIVE** (validator.schema.org on a live blog post + homepage) |
+| Wave 1 #2–3 global schema | **LIVE (verified 2026-06-09 via agent-browser)** — Organization+WebSite `@graph` site-wide (home, courses, about, glossary, reviews); BlogPosting on blog posts |
 | Wave 1 #5 non-www link hygiene | DONE (repo) |
 | Wave 1 #6 glossary URL ref | DONE |
 | Wave 3 testimonial **collection** | **DONE (2026-06-09)** — corpus 148→351 Notion rows; synced to Supabase; curated set regenerated |
 | Wave 3 #14/#18 site injection | TODO — regenerate injection blocks from curated set, paste to target pages, verify live |
-| Wave 3 #20 collated reviews page | DONE-REPO, **NOT LIVE** — Kajabi page not created yet (needs SEO metadata, see deploy spec below) |
+| Wave 3 #20 collated reviews page | **LIVE (verified 2026-06-09)** at `/reviews` (page id 2157176254) — styled `#reviews-page`, 1200+ cards, `Review`+`AggregateRating` JSON-LD, SEO title/H1 per spec |
 | Project consolidation | DONE (2026-06-09) — `site-audit-2026-06` + `site-uplift-2026-06` merged into this folder |
-| Wave 1 #4 SEO metadata catalogue | DONE — `analysis/seo-metadata.csv` + Supabase `page_seo` (107 pages, current + recommended_*); fixes TODO |
+| Wave 1 #4 SEO metadata catalogue | **PARTIAL LIVE** — recommendations drafted for 32 titles + 34 descriptions in `page_seo`; `page_id`/`kajabi_page_type` backfilled (26/107). Pushed + live-verified on 5 **landing** pages. **9 website money pages + 16 blog posts admin-gated** (legacy theme, no MCP write). |
 | Wave 1 #4 metadata fixes, #5b CMS links, Wave 2 | TODO |
+| Dual-currency site rollout (`currency-toggle.js`) | TODO-REPO — built; deploy to website-theme Custom JS + pricing landings; checkout is single-currency (no toggle script) |
 
 **Changelog**
+- 2026-06-09 (MCP deploy + live re-audit): Re-verified live state with agent-browser; the RUNBOOK had drifted stale. **Confirmed already LIVE:** reviews page (#20 — styled, `Review`+`AggregateRating` JSON-LD, correct H1/SEO title), global `Organization`+`WebSite` JSON-LD (#2, site-wide), blog `BlogPosting` (#3). **Deployed + live-verified via Kajabi MCP:** `FAQPage` JSON-LD added to `/baby-sleep-glossary` (#7, additive — `DefinedTermSet`+`BreadcrumbList` preserved); SEO title/description pushed to 5 **landing** pages (camp-snooze-sleep-coaching, links, snooze-social-terms-and-conditions, + 2 thank-you descriptions). `page_seo`: `page_id` + `kajabi_page_type` backfilled (26/107 matched: 20 website, 6 landing; the other 81 are blog/newsletter/offer/checkout URLs not present in the Kajabi page lists). **Capability boundary discovered:** the live site theme `2156873377` is legacy **"Encore"** and is NOT MCP-editable (empty `available_section_types`). So all WEBSITE-page SEO + content, global Header Page Scripts, and global Custom CSS/JS remain **manual-admin-paste only** — the MCP write surface is landing pages (SEO + Nova `code`/`settings.js` blocks). **Admin-gated remainder:** website-page SEO (9 money pages: 3-4 & 5-12 courses + help pages, newborn guide/help, 1:1 consults, toddler-toolkit, author/sally-woods), 16 blog-post titles/descriptions (all recommendations stored in `page_seo` where `kajabi_page_type <> 'landing'`), injection blocks #18 (targets are website pages), dual-currency global JS/CSS + `data-usd`/`data-aud` markup (F; only pricing landing themes are MCP-reachable), and llms.txt #8 (Kajabi cannot serve a root `/llms.txt`; file staged in repo, needs a host/proxy).
+- 2026-06-09 (currency model): checkout pages are single-currency (one offer per currency); currency switch lives on marketing/landing pages only. Removed checkout toggle widgets from paste packs; removed `handleCheckoutPage()` from `currency-toggle.js`. Deploy target: website-theme Custom Javascript (with `home-page-v2.js`), not checkout themes.
 - 2026-06-09 (consolidation): merged the two sibling folders into one. `site-uplift-2026-06/{analysis, wave-3-social-proof, RUNBOOK, README, PROGRESS}` moved into `site-audit-2026-06/`; old folder removed; references updated; analysis engine re-verified from the new location. Wave 3 member-data artifacts (raw transcripts, harvest manifests, `CURATED-SOCIAL-PROOF.md`) are now **gitignored** so they never reach the external VSP mirror (`publish-snooze-website.sh` force-publishes the whole `apps/snooze-website` prefix). Renamed Notion Product `Snooze Social` → `The Snooze Membership` (21 rows re-tagged). Rebuilt the reviews page as a proper site page (`kajabi-deployment/pages/website/reviews-page/src/reviews-page.html`, styles in the universal theme `#reviews-page` block) per the existing dev brief; verified Google review coverage complete (162/162 in Notion).
 - 2026-06-09 (collection sprint): Wave 3 corpus expanded 148→351 Notion rows. Audit → `wave-3-social-proof/COLLECTION-AUDIT.md` (existing corpus was 148, not ~18; 137 Google reviews already harvested but never synced). 137 reviews backfilled Permission=Public; 28 new reviews harvested via Apify (place `ChIJ909XQaRD1moRMeU0Gdc7_GU`, delta after 2025-08-18); 166 strong Camp transcript quotes extracted from 42 roll-call transcripts (Sonnet fan-out) → Notion (Camp Call, Internal, unapproved); 9 DM/community screenshots ingested from `media_asset_catalog` (Google Photos→Drive sync). First-ever Supabase sync 0→340 rows + `country` column (migration 003). `CURATED-SOCIAL-PROOF.md` regenerated. GBP owner API blocked at Google quota gate (see audit). Camp + DM rows await Sally consent before publish. **Camp routing corrected:** restriction is per-quote (a quote that *names* Camp can't prove other products as-is); universal sleep-win quotes flow anywhere, camp-naming quotes can be verbatim-trimmed (curated Set 1b). Added a collated **Reviews page** draft (`reviews-page.html`, #20) modelled on Taking Cara Babies — by product/service, TCB-style names + baby age, 164 verified reviews.
 - 2026-06-09 (pm): Schema #2 + #3 live. Blog script fix (`<script>` wrapper). Kajabi has no site-wide footer-scripts field; both blocks go in Header Page Scripts. Testimonial collection reprioritised ahead of `injection-blocks.html` paste.
@@ -81,6 +84,120 @@ Orientation + file manifest: `README.md`.
 10. **External mirror sync (deferred)** — `scripts/publish-snooze-website.sh` was NOT run this
     session (ignored per request). Run it after merge/sign-off to push the website to the VSP
     mirror; member-PII artifacts are gitignored so they are excluded from the subtree split.
+11. **Dual-currency site rollout** — paste `currency-toggle-fouc.html` + `currency-toggle.js`
+    into **website-theme Custom Javascript** (after `home-page-v2.js`); merge toggle CSS into
+    `snooze-unified-theme.css`; add `data-usd`/`data-aud` on money pages; paste the same JS on
+    pricing landing themes that are not the main website theme (Day Pass cold-ads, founding
+    member, etc.). Camp keeps its standalone pilot. Checkout pages stay single-currency; no
+    toggle script on checkout. Blocked on AUD Snooze Access variant IDs. See dual-currency section.
+
+---
+
+## Kajabi code injection map
+
+Kajabi exposes **different custom-code slots** depending on page type. There is **no**
+site-wide Footer Page Scripts field (older docs that reference it are wrong).
+
+| Slot | Kajabi UI path | Repo source | What it runs on |
+|---|---|---|---|
+| **Header Page Scripts** | Settings → Site details → Page scripts → Header | `kajabi-deployment/global/js/snooze-globals.js` (GTM, checkout URLs, nav, tracking) | Every page on the Kajabi site (website, landing, checkout, blog, products) |
+| | | `kajabi-deployment/global/html/schema-organization.html` | Same (Wave 1 #2) |
+| | | `kajabi-deployment/global/html/blog-schema-paste.html` | Same (Wave 1 #3) |
+| | | `kajabi-deployment/global/html/currency-toggle-fouc.html` | Optional here if not pasted into website-theme Custom JS — **TODO deploy** |
+| **Website theme Custom CSS** | Website → Theme → Custom CSS | `kajabi-deployment/global/css/snooze-unified-theme.css` (+ merge `global/css/currency-toggle.css`) | All **Website**-type pages on theme `2156873377` (home, age pages, library, blog, product landings, etc.) |
+| **Website theme Custom Javascript** | Website → Theme → Custom Javascript | `docs/home-page-v2/assets/home-page-v2.js` | Same website theme. Home-only logic; scoped to `#home-page` and no-ops elsewhere. |
+| | | `global/html/currency-toggle-fouc.html` then `global/js/currency-toggle.js` | Same website theme — **TODO deploy**. Rewrites checkout links and `.dynamic-price` before navigation. |
+| **Landing-page theme Custom JS/CSS** | Each landing page's own theme settings | Camp: standalone pilot (`camp-snooze-v2-luxury.js`, theme `2164288957`) | That landing theme only |
+| | | Day Pass cold-ads, founding member, other pricing landings: paste `currency-toggle.js` (+ FOUC) when those pages show paid pricing | Per landing theme (not Camp while pilot is active) |
+| **Code-block inline `<script>`** | Page editor → Custom Code block | Per-page HTML under `kajabi-deployment/pages/website/` | That page only (age pages, library, glossary, reviews, store) |
+| **Checkout offer pages** | Kajabi embedded checkout (per-offer theme) | Custom HTML paste packs only; **no currency-toggle script** | Single-currency per offer. Optional static sibling-offer link in footer HTML. |
+
+**Do not confuse:** `snooze-globals.js` (Header Page Scripts; `getSnoozeCheckoutUrl()` reads
+preference) vs `home-page-v2.js` (website-theme Custom Javascript, home interactions) vs
+`currency-toggle.js` (website-theme Custom Javascript + pricing landing themes; link/price
+rewrite upstream of checkout).
+
+**Currency model:** one Kajabi offer (and checkout URL) per currency. The toggle on marketing
+pages sets `localStorage['snooze_currency_preference']` and rewrites checkout hrefs
+(`z63s9VaR` ↔ `bEsVXFXG`, etc.). User arrives on checkout already on the correct offer.
+Checkout pages do not load `currency-toggle.js`.
+
+---
+
+## Dual-currency site rollout
+
+**PRD:** `docs/projects/paid-media-and-dual-currency-v1/00-prd.md` (Stream B: AUD/USD across
+marketing surfaces, not Camp-only).
+
+### Currency model (authoritative)
+
+- **One offer per currency, one checkout per offer.** USD Snooze Access (`z63s9VaR`) and AUD
+  Snooze Access (`bEsVXFXG`) are separate Kajabi offers.
+- **The toggle lives on marketing/landing pages**, not on checkout. It sets
+  `localStorage['snooze_currency_preference']` and rewrites checkout links (and `.dynamic-price`
+  text) before the user navigates.
+- **Checkout pages are single-currency.** No `currency-toggle.js` on checkout themes. Optional
+  static HTML footer link to the sibling offer for direct-landing edge cases (see BAU checkout
+  paste pack).
+
+### Two implementations (do not merge on Camp)
+
+| Implementation | Scope | Status | Repo |
+|---|---|---|---|
+| **Camp Snooze standalone pilot** | Camp landing theme only | **LIVE** on theme `2164288957` | `pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js` + inline HTML toggle + camp CSS. See `docs/dynamic-currency/CAMP-SNOOZE-STANDALONE-IMPLEMENTATION.md`. |
+| **Global `currency-toggle.js`** | Website theme + pricing landing themes | **NOT LIVE** | `kajabi-deployment/global/js/currency-toggle.js` |
+
+Both share `localStorage` key `snooze_currency_preference`.
+
+### What is already live / wired in repo
+
+- `snooze-globals.js` — `getSnoozeCheckoutUrl()` reads `snooze_currency_preference` (Header
+  Page Scripts). Deployed.
+- `currency-toggle.js` — offer mapping, nav toggle injection, `.dynamic-price` swap, checkout
+  link rewrite via `updateLinks()`. `handleCheckoutPage()` removed (Jun 2026). Unit tests in
+  `global/js/__tests__/currency-toggle.test.js`.
+- Checkout paste packs — toggle widgets **removed** (Jun 2026). BAU membership footer has
+  optional static AUD checkout link only.
+
+### What is not live
+
+- `currency-toggle.js` and FOUC guard not in website-theme Custom Javascript (live theme
+  `2156873377` has `home-page-v2.js` only).
+- `currency-toggle.css` not merged into `snooze-unified-theme.css`.
+- Money pages lack `data-usd` / `data-aud` markup (see `docs/dynamic-currency/CONTENT-TEAM-GUIDE.md`).
+
+### Deploy target (when unblocked)
+
+**Website theme Custom Javascript** (Kajabi → Website → Theme → Custom Javascript), in order:
+
+1. Existing `home-page-v2.js` (unchanged).
+2. Contents of `global/html/currency-toggle-fouc.html` (inline `<style>` + early preference read).
+3. Contents of `global/js/currency-toggle.js`.
+
+**CSS:** merge `global/css/currency-toggle.css` into `snooze-unified-theme.css`.
+
+**Pricing landing themes** (not on website theme `2156873377`): paste the same FOUC + JS block
+into that landing page's theme Custom Javascript when the page shows paid pricing or membership
+CTAs:
+
+| Landing | Theme (approx.) | Notes |
+|---|---|---|
+| Day Pass cold-ads (`/day-pass/from-our-ads`) | `2166436909` family | Captures preference for downstream Snooze Access CTA (PRD §5.3) |
+| Day Pass canonical (`/day-pass`) | same | Rebrand pending; add when pricing copy appears |
+| Founding member, cold-traffic, other paid landings | per theme | Paste when those pages show checkout CTAs |
+| Camp Snooze | `2164288957` | **Keep standalone pilot** until migrated; do not double-load global script |
+
+**Markup:** add `data-usd` / `data-aud` on pricing elements; `class="dynamic-cta"` on checkout
+buttons (see CONTENT-TEAM-GUIDE).
+
+**Verify:** toggle on home/product page → click Join → lands on correct offer checkout URL;
+prices swap; `currency_change` hits dataLayer; no toggle on checkout page itself.
+
+### Blockers
+
+- AUD Snooze Access offer `2151212200` (`bEsVXFXG`) is draft; Sally must add quarterly and
+  yearly variants before `variantMapping` placeholders in `currency-toggle.js` can be filled.
+- Camp: do not paste global script onto Camp theme while standalone pilot is active.
 
 ---
 
@@ -143,7 +260,7 @@ each), then 4 (metadata, top PageValue first), then the CMS hygiene pass (5).
 
 | # | Item | Effort | Notes |
 |---|---|---|---|
-| 7 | FAQPage schema on live `/baby-sleep-glossary` | S | Repo build already carries FAQPage; regenerate via `glossary/terms.json` -> `build-glossary.mjs` and ship to the live slug. |
+| 7 | FAQPage schema on live `/baby-sleep-glossary` | **LIVE (2026-06-09)** | Added as an additive Nova `code` block (15 Q&A) on the glossary landing page (id 2152090144); `DefinedTermSet`+`BreadcrumbList` preserved. Live-verified: types now `[DefinedTermSet+BreadcrumbList, FAQPage]`. Correction: `build-glossary.mjs` does NOT emit FAQPage (only DefinedTermSet); the deployed block is `analysis/glossary-faqpage-jsonld.html`. |
 | 8 | Publish `llms.txt` at site root | S | Point AI crawlers to glossary, courses, age pages, blog. Keep the file in `kajabi-deployment/global/`. |
 | 9 | Internal-linking ("topical authority") | M | Bigger than the glossary. Add contextual links INTO the glossary AND into high-value blog posts and age pages from related content. Use `analysis/link_graph_summary.csv` (orphans + low-inbound hubs) to target. |
 | 10 | Nav/IA: surface the glossary, clarify pathways | M | Glossary is in neither the 11-link header nor 13-link footer. Add it to the footer "Resources". Add age-page -> matching-course -> membership CTAs (today age pages push a generic membership, not the matching course). Keep the header lean. |

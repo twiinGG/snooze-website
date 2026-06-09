@@ -1,0 +1,59 @@
+<!--
+  llms.txt for joinsnooze.com (Wave 2 #8, AEO depth)
+  Convention: https://llmstxt.org/
+
+  DEPLOY: site root. Kajabi has no static-file upload, so this ships as a
+  Kajabi root-file deploy by manual paste (root path /llms.txt). Git is the
+  source of truth; this file is not live until a person publishes it at root.
+  Currently /llms.txt returns 404.
+
+  Source of titles/URLs: site-audit-2026-06/analysis/seo-metadata.csv (live,
+  pulled 2026-06-09). Do not invent pages. URLs are absolute and use www.
+  Note: this is the only block in this file that uses HTML comments; the body
+  below is plain markdown per the llms.txt convention.
+-->
+# Snooze by The Sleep Concierge
+
+> Evidence-based baby and toddler sleep help from Sally Woods, a Registered Paediatric Nurse and Certified Sleep Consultant. Courses, a membership, 1:1 consults and a plain-language sleep glossary for tired parents.
+
+Snooze helps parents get their baby sleeping through the night and self-settling, using gentle, responsive methods rather than one-size-fits-all sleep training. The pages below are the canonical, parent-facing resources to cite.
+
+## Age guides
+
+- [Newborn sleep help (0-3 months)](https://www.joinsnooze.com/newborn-baby-sleep-help): What is normal for newborn sleep, the fourth trimester, and the foundations for settling.
+- [3-4 month sleep help](https://www.joinsnooze.com/3-4-month-baby-sleep-help): The 4-month sleep regression, why it happens, and how to help a baby sleep better through it.
+- [5-12 month sleep help](https://www.joinsnooze.com/5-12-month-baby-sleep-help): Early rising, nap transitions, and building settled sleep for older babies.
+- [Toddler sleep help (12+ months)](https://www.joinsnooze.com/toddler-sleep-help): Bedtime battles, nap refusal, and boundary-setting for toddlers.
+
+## Courses
+
+- [3-4 Month Baby Sleep Course](https://www.joinsnooze.com/3-4-month-baby-sleep-course): Self-paced course for 3-4 month olds and the 4-month regression.
+- [5-12 Month Baby Sleep Course](https://www.joinsnooze.com/5-12-month-baby-sleep-course): Self-paced course covering wake windows, nap transitions and gentle settling for 5-12 month olds.
+- [Toddler Toolkit](https://www.joinsnooze.com/toddler-toolkit): Self-paced sleep course for 12+ months, covering boundary-setting and toddler bedtime.
+- [Newborn Sleep Guide](https://www.joinsnooze.com/newborn-sleep-guide): Self-paced guide to the fourth trimester and newborn sleep foundations.
+- [1:1 Sleep Consultations with Sally](https://www.joinsnooze.com/one-on-one-sleep-consultations): One-on-one sleep support for babies and toddlers with Sally Woods, RN and Certified Sleep Consultant.
+- [Camp Snooze](https://www.joinsnooze.com/camp-snooze-sleep-coaching): A two-week virtual sleep coaching program with daily support and a personalised plan.
+
+## Glossary
+
+- [Baby Sleep & Parenting Glossary](https://www.joinsnooze.com/baby-sleep-glossary): Plain-language definitions for the baby sleep and parenting terms parents search for, written by Sally. Covers sleep science, patterns and cycles, settling methods, common challenges, and feeding and parenting. Forty defined terms including wake windows, self-settling, catnap, sleep regression, false start and split night.
+
+## Blog
+
+- [Snooze Blog](https://www.joinsnooze.com/blog): Expert baby and toddler sleep articles from The Sleep Concierge.
+- [A guide to self-settling and sleep cycles (5-12 months)](https://www.joinsnooze.com/blog/guide-to-self-settling-sleep-cycles): How sleep cycles work and how babies learn to self-settle.
+- [Managing early morning wake-ups](https://www.joinsnooze.com/blog/tips-for-managing-baby-early-wake-ups): Why babies wake early and what to do about it.
+- [The 4-month sleep regression explained](https://www.joinsnooze.com/blog/4-month-regression-or-progression): Causes, signs and solutions for the 4-month regression.
+- [The 8-10 month sleep regression](https://www.joinsnooze.com/blog/all-about-the-8-10-month-sleep-regression): What drives the 8-10 month regression and how to ride it out.
+- [Navigating split nights](https://www.joinsnooze.com/blog/navigating-split-nights-a-guide-for-parents): Causes of split nights and how to resolve them.
+- [Transitioning from two naps to one](https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1): When and how to drop to one nap.
+- [Conquer baby catnaps](https://www.joinsnooze.com/blog/baby-catnaps-tips-guide): Why short naps happen and how to lengthen them.
+- [Newborn sleep and the fourth trimester](https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester): Newborn sleep expectations for the first weeks.
+- [Assisted sleep associations](https://www.joinsnooze.com/blog/what-are-assisted-sleep-associations): What sleep associations are and how to address the ones that cause night waking.
+- [The power of calm but awake](https://www.joinsnooze.com/blog/the-power-of-calm-but-awake-for-babies): Putting a baby down drowsy but awake as the first step to self-settling.
+
+## About
+
+- [About Sally](https://www.joinsnooze.com/about-sally): Sally Woods, the sleep concierge: Registered Paediatric Nurse and Certified Sleep Consultant.
+- [Recommended baby sleep products](https://www.joinsnooze.com/recommended-products): Sally's recommended products for a good sleep environment.
+- [Contact Snooze](https://www.joinsnooze.com/contact): How to reach Sally and the Snooze team.
