@@ -51,19 +51,31 @@ Orientation + file manifest: `README.md`.
    one row per page: current title/desc/canonical/JSON-LD + length flags + Kajabi `page_id`
    + empty `recommended_*` columns) and Supabase `page_seo` (query via MCP, push via Kajabi
    API/MCP by `page_id`). Regenerate with `analysis/gen_seo_catalog.py`, reload with
-   `analysis/seo_catalog_to_supabase.py`. Next: fill `recommended_title` / `recommended_meta_description`
-   for the worst offenders (31 titles >60 chars, 11 missing descriptions; 103 pages no JSON-LD),
-   then push. **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
-5. **GBP live harvest** — finish the Google Business Profile API quota-increase approval in
+   `analysis/seo_catalog_to_supabase.py`. Follow-ups:
+   - [ ] **Backfill `page_id` for all 107 pages** via the Kajabi MCP (only 9 mapped now from
+     the partial admin export) so every page is API-pushable.
+   - [ ] **Draft `recommended_title` / `recommended_meta_description`** for the worst offenders
+     (31 titles >60 chars, 11 missing descriptions), then push via the Kajabi API/MCP.
+   - [ ] Add `Article` JSON-LD to the 36 blog posts and fill the 103 pages with no JSON-LD.
+   - [ ] (optional) Mirror the catalogue to an **"SEO" tab in the Snooze Operations Master
+     sheet** via PAL, for human copy-paste.
+   - **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
+5. **Build + deploy the `/reviews` Kajabi page (#20)** — after sign-off (item 2): create the
+   Kajabi page, paste `reviews-page/src/reviews-page.html`, set its SEO title/description from
+   the catalogue, link it from the hero reviews badge.
+6. **GBP live harvest** — finish the Google Business Profile API quota-increase approval in
    `tsc-ga4-analysis`, add the SA `ga4-mcp@tsc-ga4-analysis…` as a location manager, then the
    owner API can replace Apify. Until then, re-run Apify (subscription raised) to refresh
    reviews, then `scripts/run_sync.py`.
-6. **Reviews components (brief Phases 4-5)** — reusable compact/mini cards + product-page and
+7. **Reviews components (brief Phases 4-5)** — reusable compact/mini cards + product-page and
    checkout embeds + the testimonial carousel swap.
-7. **Country backfill** — link testimonials to CRM contacts (`👟 Sales CRM`) so
+8. **Country backfill** — link testimonials to CRM contacts (`👟 Sales CRM`) so
    `member_feedback_raw.country` populates via the relation.
-8. **Notion tidy** — delete the now-empty `Snooze Social` Product option in the UI
+9. **Notion tidy** — delete the now-empty `Snooze Social` Product option in the UI
    (API can't remove an option; renamed-by-migration already done).
+10. **External mirror sync (deferred)** — `scripts/publish-snooze-website.sh` was NOT run this
+    session (ignored per request). Run it after merge/sign-off to push the website to the VSP
+    mirror; member-PII artifacts are gitignored so they are excluded from the subtree split.
 
 ---
 
