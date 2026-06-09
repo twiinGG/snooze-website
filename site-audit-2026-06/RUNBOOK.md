@@ -4,10 +4,13 @@ Working runbook for the high-ROI, no-redesign uplift of joinsnooze.com, followin
 the June 2026 live-site audit. This is the authoritative plan-plus-status document:
 every item carries a status, the artifact it produced, and what to do next.
 
-- **Status key:** DONE (shipped to git working tree) · STAGED (in git, awaiting
-  manual Kajabi paste) · TODO · BLOCKED · DEPRIORITISED.
-- **Source of truth:** git. Kajabi is the paste/render target. Deploy is manual
-  paste into CMS custom-code blocks. Tag `website-vX.Y.Z` before deploy.
+- **Status key:** DONE-REPO (in git) · LIVE (verified on the live Kajabi site) · STAGED
+  (in git, awaiting manual Kajabi paste / draft->live) · TODO · BLOCKED · DEPRIORITISED.
+- **Git is not live.** Kajabi is the render target; deploy is manual paste into CMS
+  custom-code blocks and/or switching a page from draft to live. An item is only truly
+  done when **verified live** (load the real URL, confirm it renders / the schema is
+  present). Always verify after deploy; do not mark LIVE off a git commit alone.
+- **Source of truth:** git. Tag `website-vX.Y.Z` before deploy.
 - **Binding rules:** `apps/snooze-website/AGENTS.md` (CSS System Init, Kajabi HTML
   patterns) and root `AGENTS.md` §5-7 (no em dashes, no hype, deploy validation).
 - **Data inputs:** raw audit in this folder (`data/`, `AUDIT-REPORT.md`); live GA4 (property
@@ -20,12 +23,12 @@ Orientation + file manifest: `README.md`.
 | Area | Status |
 |---|---|
 | Part A evidence engine | DONE |
-| Wave 1 #2–3 global schema | DONE (deployed to Kajabi Header Page Scripts) |
+| Wave 1 #2–3 global schema | DONE-REPO + pasted to Header Page Scripts — **VERIFY LIVE** (validator.schema.org on a live blog post + homepage) |
 | Wave 1 #5 non-www link hygiene | DONE (repo) |
 | Wave 1 #6 glossary URL ref | DONE |
-| Wave 3 testimonial **collection** | **DONE (2026-06-09)** — corpus 148→351 Notion rows; synced to Supabase; curated set regenerated. Awaiting Sally consent on Camp/DM rows |
-| Wave 3 #14/#18 site injection | **ON HOLD** — regenerate injection blocks from approved curated set; needs Sally/Kade sign-off |
-| Wave 3 #20 collated reviews page | BUILT — awaiting sign-off (not pasted to Kajabi) |
+| Wave 3 testimonial **collection** | **DONE (2026-06-09)** — corpus 148→351 Notion rows; synced to Supabase; curated set regenerated |
+| Wave 3 #14/#18 site injection | TODO — regenerate injection blocks from curated set, paste to target pages, verify live |
+| Wave 3 #20 collated reviews page | DONE-REPO, **NOT LIVE** — Kajabi page not created yet (needs SEO metadata, see deploy spec below) |
 | Project consolidation | DONE (2026-06-09) — `site-audit-2026-06` + `site-uplift-2026-06` merged into this folder |
 | Wave 1 #4 SEO metadata catalogue | DONE — `analysis/seo-metadata.csv` + Supabase `page_seo` (107 pages, current + recommended_*); fixes TODO |
 | Wave 1 #4 metadata fixes, #5b CMS links, Wave 2 | TODO |
@@ -38,15 +41,18 @@ Orientation + file manifest: `README.md`.
 
 ## Next steps (prioritised)
 
-1. **Sally consent pass** — review `wave-3-social-proof/transcript-extractions/_SUMMARY.md`
-   (166 strong Camp quotes) + the 9 DM/community screenshot rows in Notion; flip
-   `Publish Approved = true` on the approved subset only. Camp/DM stays Internal until then.
-2. **Sign-off on the reviews page (#20) + curated set** — once approved, paste
-   `reviews-page/src/reviews-page.html` into a new Kajabi `/reviews` page, link it from the
-   hero reviews badge. (Page is public-reviews-only, so it is not consent-blocked.)
-3. **Regenerate + paste injection blocks (#18)** — rebuild `injection-blocks.html` from the
-   approved curated set (incl. universal + trimmed-camp quotes) for about-sally, the 3
-   age-help pages, and contact; paste after sign-off.
+1. **Create + publish the `/reviews` Kajabi page (#20)** — the page is built in the repo but
+   NOT live. Follow the "Reviews page deploy spec" below (SEO metadata included): make sure the
+   `#reviews-page` theme-CSS block is live, create the page at slug `reviews`, paste the HTML,
+   set the SEO title/description, publish, link it from the hero reviews badge, then **verify
+   live** at `https://www.joinsnooze.com/reviews`.
+2. **Mark up Camp/DM rows + regenerate + paste injection blocks (#18)** — flip
+   `Publish Approved = true` on the Camp/DM rows you want to use (`transcript-extractions/_SUMMARY.md`
+   + the 9 screenshot rows), regenerate `injection-blocks.html` from the curated set (universal +
+   trimmed-camp), paste to about-sally / 3 age-help pages / contact, then verify each live.
+3. **Verify the Wave 1 schema is actually live (#2/#3)** — load a live blog post + the homepage
+   and run validator.schema.org; confirm `BlogPosting` + `Organization`/`WebSite` JSON-LD are
+   present (DONE-REPO + pasted, not yet live-verified).
 4. **Wave 1 #4 metadata** — the SEO catalogue is built: `analysis/seo-metadata.csv` (git,
    one row per page: current title/desc/canonical/JSON-LD + length flags + Kajabi `page_id`
    + empty `recommended_*` columns) and Supabase `page_seo` (query via MCP, push via Kajabi
@@ -60,9 +66,8 @@ Orientation + file manifest: `README.md`.
    - [ ] (optional) Mirror the catalogue to an **"SEO" tab in the Snooze Operations Master
      sheet** via PAL, for human copy-paste.
    - **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
-5. **Build + deploy the `/reviews` Kajabi page (#20)** — after sign-off (item 2): create the
-   Kajabi page, paste `reviews-page/src/reviews-page.html`, set its SEO title/description from
-   the catalogue, link it from the hero reviews badge.
+5. **Connect Google Search Console** + backfill stale analytics facts (so SEO changes can be
+   measured: impressions, queries, CTR, indexing of the new `/reviews` page).
 6. **GBP live harvest** — finish the Google Business Profile API quota-increase approval in
    `tsc-ga4-analysis`, add the SA `ga4-mcp@tsc-ga4-analysis…` as a location manager, then the
    owner API can replace Apify. Until then, re-run Apify (subscription raised) to refresh
@@ -208,7 +213,34 @@ Track-11 events: `apps/ai-refactor/scripts/track-11-notion-testimonials.ts`
 |---|---|---|---|
 | 18 | Inject proof into high-traffic, low-proof pages | ON HOLD | `wave-3-social-proof/injection-blocks.html`. Regenerate from expanded `CURATED-SOCIAL-PROOF.md` (now incl. universal + trimmed-camp sets) after sign-off. Targets: about-sally, 3 age-help pages, contact. |
 | 19 | Screenshot embed pattern | TODO | Design a lightweight Kajabi-safe block for raw DM/community screenshots (no fake quote styling). |
-| 20 | Collated Reviews page | BUILT — awaiting sign-off | Proper site page at `kajabi-deployment/pages/website/reviews-page/src/reviews-page.html` (wrapper `#reviews-page`), generated by `wave-3-social-proof/scripts/gen_reviews_page.py` from 164 Public reviews. Styles added to the universal CSS (`global/css/snooze-unified-theme.css` `#reviews-page` block, reuses global `.review-card`). Sectioned by service (The Snooze Membership, Courses & Guides incl. Toddler Toolkit, 1:1 Consults & Coaching, Camp Snooze), star summary, filters (service/age/rating/search), JSON-LD review schema, SEO-oriented heading, names = first + initial + baby age. Aligns with `reviews-page/docs/REVIEWS-PAGE-DEVELOPMENT-BRIEF.md`. Re-run generator to refresh; paste into Kajabi after sign-off. |
+| 20 | Collated Reviews page | BUILT in repo — NOT live on Kajabi | Page HTML + theme CSS are in the repo; the Kajabi page does not exist yet. See "Reviews page deploy spec" below for the SEO metadata + steps to create and publish it, then verify live. |
+
+### Reviews page deploy spec (#20) — create + publish on Kajabi
+
+Source: `kajabi-deployment/pages/website/reviews-page/src/reviews-page.html` (wrapper
+`#reviews-page`), generated by `wave-3-social-proof/scripts/gen_reviews_page.py` from 164
+Public reviews. By service (The Snooze Membership, Courses & Guides incl. Toddler Toolkit,
+1:1 Consults & Coaching, Camp Snooze), star summary, filters, JSON-LD review schema.
+
+**SEO metadata to enter when creating the Kajabi page:**
+- **URL slug:** `reviews`  ->  `https://www.joinsnooze.com/reviews`
+- **Kajabi internal page name:** `Reviews`
+- **SEO page title (53 chars):** `Snooze Reviews | Real Baby Sleep Results from Parents`
+- **Meta description (158 chars):** `Verified reviews from parents who used Snooze to get their baby sleeping through the night and self-settling, across the membership, courses and 1:1 consults.`
+- **Social share image:** a 1200x630 branded "Snooze reviews" graphic (or the site default OG). Empty = public OG-image check fails.
+- **Canonical:** `https://www.joinsnooze.com/reviews`
+- **Page H1 (already in the HTML):** "Snooze reviews from real families"
+
+**Deploy steps (manual; git is not live):**
+1. Ensure the theme CSS is live: the `#reviews-page` block must be in Kajabi's
+   `snooze-unified-theme.css` (paste the block from the repo if not already there) or the
+   page renders unstyled.
+2. Create a new Kajabi **landing page** at slug `reviews`; paste the page HTML into a
+   custom-code block.
+3. Set the SEO fields above; add the social image.
+4. **Publish** the page (it will not be a draft) and confirm it is not login-gated.
+5. **Verify live:** load `https://www.joinsnooze.com/reviews` (real browser), confirm the
+   cards render styled, filters work, and the JSON-LD validates (validator.schema.org).
 
 ---
 
