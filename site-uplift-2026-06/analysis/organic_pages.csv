@@ -1,0 +1,43 @@
+path,organic_sessions_365d,in_audit,type,jsonld_types,word_count,issues
+/,2851,yes,home,VideoObject,2003,missing_org_schema;images_missing_alt:2
+/login,831,yes,system_legal,,56,thin_content(<250w)
+/blog/cubo-ai-smart-baby-monitor-review-with-discount,381,yes,blog,,955,"no_jsonld;images_missing_alt:5;cwv_outlier(TTFB=2969.7ms,LCP=3032ms)"
+/library,372,no,other,,,(no audit row)
+/the-snooze-social-membership,288,no,other,,,(no audit row)
+/one-on-one-sleep-consultations,240,yes,consultation,,1577,no_jsonld;images_missing_alt:1
+/blog/all-about-the-8-10-month-sleep-regression,169,yes,blog,,680,no_jsonld;images_missing_alt:2
+/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you,155,yes,blog,,1102,no_jsonld;images_missing_alt:9
+/camp-snooze-sleep-coaching,140,yes,camp,,1244,no_jsonld;images_missing_alt:1
+/author/sally-woods,138,yes,other,,187,no_jsonld;images_missing_alt:4;thin_content(<250w)
+/5-12-month-baby-sleep-help,121,yes,age_help,,764,no_jsonld;images_missing_alt:1
+/blog/mystery-of-missing-third-nap-early-rising,99,yes,blog,,662,no_jsonld;images_missing_alt:2
+/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby,98,yes,blog,,916,no_jsonld;images_missing_alt:2
+/blog/navigating-split-nights-a-guide-for-parents,80,yes,lead_magnet,,814,no_jsonld;images_missing_alt:2
+/offers/hbgyz97h/checkout,74,no,checkout,,,(no audit row)
+/5-12-month-baby-sleep-course,68,yes,course,,1580,no_jsonld;images_missing_alt:1
+/blog/my-honest-snoo-experience-and-review,60,yes,blog,,1018,no_jsonld;images_missing_alt:3
+/snooze-library,59,yes,other,,66,redirect_302;login_gated;thin_content(<250w)
+/4-month-sleep-regression-survival-guide,56,yes,age_help,,380,no_jsonld;images_missing_alt:3
+/store,56,yes,system_legal,,612,no_jsonld;images_missing_alt:1
+/downloads/baby-sleep-guide-5-to-12-months,51,yes,lead_magnet,,66,redirect_302;login_gated;thin_content(<250w)
+/downloadable-free-sleep-guides,49,no,lead_magnet,,,(no audit row)
+/offers/z63s9var/checkout,48,no,checkout,,,(no audit row)
+/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules,46,yes,blog,,1208,no_jsonld;images_missing_alt:2
+/blog/how-to-manage-your-babys-reflux-and-sleep,44,yes,blog,,917,no_jsonld;images_missing_alt:3
+/offers/4zhpsrcs/checkout,44,no,checkout,,,(no audit row)
+/blog/when-to-lower-the-cot-mattress,42,yes,blog,,397,no_jsonld;images_missing_alt:2
+/about-sally,39,yes,other,,609,"no_jsonld;images_missing_alt:1;cwv_outlier(TTFB=1701.7ms,LCP=1752ms)"
+/3-4-month-baby-sleep-help,35,yes,age_help,,1300,no_jsonld;images_missing_alt:1
+/snooze-social-terms-and-conditions,35,yes,system_legal,,624,no_jsonld;images_missing_alt:1
+/blog/transitioning-your-baby-from-2-naps-to-1,34,yes,blog,,529,no_jsonld;images_missing_alt:2
+/toddler-sleep-help,33,yes,age_help,,740,no_jsonld;images_missing_alt:1
+/blog/should-we-discourage-babys-thumb-and-finger-sucking,29,yes,blog,,482,no_jsonld;images_missing_alt:2
+/blog/navigating-childcare-and-your-childs-sleep-routine,28,yes,blog,,1235,no_jsonld;images_missing_alt:2
+/3-4-month-baby-sleep-course,27,yes,course,,1609,no_jsonld;images_missing_alt:1
+/toddler-toolkit,27,yes,age_help,,1663,no_jsonld;images_missing_alt:1
+/recommended-products,26,yes,other,,735,no_jsonld;images_missing_alt:1
+/products/5-12-month-sleep-training-course,24,yes,course,,66,redirect_302;login_gated;thin_content(<250w)
+/blog/the-power-of-calm-but-awake-for-babies,22,yes,blog,,762,no_jsonld;images_missing_alt:2
+/blog/guide-to-self-settling-sleep-cycles,18,yes,lead_magnet,,804,no_jsonld;images_missing_alt:2
+/newborn-baby-sleep-help,18,yes,age_help,,740,no_jsonld;images_missing_alt:1
+/blog/glow-dreaming-white-noise-review,17,yes,blog,,341,no_jsonld;images_missing_alt:3
