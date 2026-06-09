@@ -27,7 +27,8 @@ Orientation + file manifest: `README.md`.
 | Wave 3 #14/#18 site injection | **ON HOLD** — regenerate injection blocks from approved curated set; needs Sally/Kade sign-off |
 | Wave 3 #20 collated reviews page | BUILT — awaiting sign-off (not pasted to Kajabi) |
 | Project consolidation | DONE (2026-06-09) — `site-audit-2026-06` + `site-uplift-2026-06` merged into this folder |
-| Wave 1 #4 metadata, #5b CMS links, Wave 2 | TODO |
+| Wave 1 #4 SEO metadata catalogue | DONE — `analysis/seo-metadata.csv` + Supabase `page_seo` (107 pages, current + recommended_*); fixes TODO |
+| Wave 1 #4 metadata fixes, #5b CMS links, Wave 2 | TODO |
 
 **Changelog**
 - 2026-06-09 (consolidation): merged the two sibling folders into one. `site-uplift-2026-06/{analysis, wave-3-social-proof, RUNBOOK, README, PROGRESS}` moved into `site-audit-2026-06/`; old folder removed; references updated; analysis engine re-verified from the new location. Wave 3 member-data artifacts (raw transcripts, harvest manifests, `CURATED-SOCIAL-PROOF.md`) are now **gitignored** so they never reach the external VSP mirror (`publish-snooze-website.sh` force-publishes the whole `apps/snooze-website` prefix). Renamed Notion Product `Snooze Social` → `The Snooze Membership` (21 rows re-tagged). Rebuilt the reviews page as a proper site page (`kajabi-deployment/pages/website/reviews-page/src/reviews-page.html`, styles in the universal theme `#reviews-page` block) per the existing dev brief; verified Google review coverage complete (162/162 in Notion).
@@ -46,8 +47,13 @@ Orientation + file manifest: `README.md`.
 3. **Regenerate + paste injection blocks (#18)** — rebuild `injection-blocks.html` from the
    approved curated set (incl. universal + trimmed-camp quotes) for about-sally, the 3
    age-help pages, and contact; paste after sign-off.
-4. **Wave 1 #4 metadata** — work `analysis/METADATA-WORKLIST.csv` (admin SEO title/meta gaps,
-   ranked). **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
+4. **Wave 1 #4 metadata** — the SEO catalogue is built: `analysis/seo-metadata.csv` (git,
+   one row per page: current title/desc/canonical/JSON-LD + length flags + Kajabi `page_id`
+   + empty `recommended_*` columns) and Supabase `page_seo` (query via MCP, push via Kajabi
+   API/MCP by `page_id`). Regenerate with `analysis/gen_seo_catalog.py`, reload with
+   `analysis/seo_catalog_to_supabase.py`. Next: fill `recommended_title` / `recommended_meta_description`
+   for the worst offenders (31 titles >60 chars, 11 missing descriptions; 103 pages no JSON-LD),
+   then push. **#5b CMS hygiene** — `analysis/CMS-HYGIENE-WORKLIST.csv` (old-domain CMS links).
 5. **GBP live harvest** — finish the Google Business Profile API quota-increase approval in
    `tsc-ga4-analysis`, add the SA `ga4-mcp@tsc-ga4-analysis…` as a location manager, then the
    owner API can replace Apify. Until then, re-run Apify (subscription raised) to refresh

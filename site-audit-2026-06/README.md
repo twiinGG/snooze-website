@@ -33,6 +33,9 @@ site-audit-2026-06/
   analysis/                     the ranking engine + outputs (CSVs, worklists)
     build_uplift_analysis.py    reads ../data, writes the CSVs here
     README-ANALYSIS.md          methodology, findings, data gaps
+    seo-metadata.csv            per-page SEO catalogue (current + recommended_*), 107 pages
+    gen_seo_catalog.py          builds seo-metadata.csv from ../data HTML + the worklist
+    seo_catalog_to_supabase.py  upserts the catalogue into Supabase public.page_seo
   wave-3-social-proof/          testimonial corpus expansion (Wave 3)
     COLLECTION-AUDIT.md         before/after corpus audit
     TESTIMONIAL-INVENTORY.md    source index + current-state counts
