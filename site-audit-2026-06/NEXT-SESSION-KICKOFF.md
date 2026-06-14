@@ -11,8 +11,9 @@ You are continuing the joinsnooze.com audit + uplift in the Snooze OS monorepo, 
 feat/site-audit-2026-06. Work the open items in apps/snooze-website/site-audit-2026-06/.
 
 Read first (authoritative): site-audit-2026-06/RUNBOOK.md (status + "Next steps (prioritised)"
-+ the Reviews page deploy spec + Wave 1-4 tables), AUDIT-REPORT.md, analysis/README-ANALYSIS.md,
-and root AGENTS.md §1. The SEO catalogue is analysis/seo-metadata.csv + Supabase page_seo.
++ Kajabi code injection map + dual-currency section + Reviews page deploy spec + Wave 1-4
+tables), AUDIT-REPORT.md, analysis/README-ANALYSIS.md, and root AGENTS.md §1. The SEO
+catalogue is analysis/seo-metadata.csv + Supabase page_seo.
 
 Use a TEAM OF AGENTS, fanned out aggressively. Subagents CAN use MCP directly (Notion,
 Supabase, Kajabi, Apify) - do not route everything through main; give each agent the MCP work
@@ -33,6 +34,9 @@ Rules that actually matter:
   CURATED-SOCIAL-PROOF.md). Don't commit member PII under that prefix.
 - Writing: ~/KhorusOS/system/AI-WRITING-RULES.md (no em dashes, no hype). SEO titles <=60,
   meta descriptions 120-160.
+- Dual currency: one Kajabi offer per currency. Toggle + link rewrite on marketing/landing
+  pages only. Checkout pages are single-currency; do not paste currency-toggle.js on checkout
+  themes. See RUNBOOK "Dual-currency site rollout".
 
 Phase 1 - orchestrator preflight: re-read the RUNBOOK; confirm Notion/Supabase/Kajabi MCP +
 agent-browser; pull current page_seo + the Kajabi page list; agent-browser-check which "DONE"
@@ -51,6 +55,20 @@ Phase 2 - fan out parallel agents (each owns its MCP + verification):
      regenerate injection-blocks.html, paste to about-sally / 3 age pages / contact, verify live.
   E. Wave 4 cleanup: alt text for ~160 images, draft-page triage, homepage source recapture,
      URL-REFERENCE reconciliation (redirects for /privacy, /snooze-village; /snooze status).
+  F. Dual-currency deploy (RUNBOOK dual-currency section):
+     1. Merge global/css/currency-toggle.css into snooze-unified-theme.css; paste updated CSS to
+        Kajabi website theme Custom CSS.
+     2. Website theme Custom Javascript (theme 2156873377): keep home-page-v2.js; append
+        global/html/currency-toggle-fouc.html then global/js/currency-toggle.js (in that order).
+     3. Add data-usd / data-aud + class="dynamic-cta" on pricing/checkout CTAs on home, age
+        pages, and product landing HTML (CONTENT-TEAM-GUIDE.md); deploy HTML blocks.
+     4. Pricing landing themes (NOT Camp 2164288957): paste the same FOUC + currency-toggle.js
+        into theme Custom Javascript on Day Pass cold-ads, founding member, and any other
+        landing with paid checkout CTAs. Camp keeps its standalone pilot.
+     5. Verify live: toggle on homepage rewrites Join links (z63s9VaR vs bEsVXFXG); click through
+        to checkout lands on single-currency offer; no toggle widget on checkout page.
+     Blocked until Sally adds AUD quarterly/yearly variants on offer bEsVXFXG if testing
+     variant-level checkout URLs.
 
 Phase 3 - integrate + verify: after each deploy, agent-browser-verify the live URL; update the
 RUNBOOK status to LIVE only once verified, with the changelog; commit (scoped to
@@ -63,9 +81,12 @@ Scale the team to the work; spot-check every agent's output against the live pag
 ---
 
 ## Notes
-- The five streams (A reviews go-live, B SEO metadata, C AEO, D injection/social proof,
-  E cleanup) are independent and parallelise cleanly; subagents do their own MCP + browser
-  verification.
+- The six streams (A reviews go-live, B SEO metadata, C AEO, D injection/social proof,
+  E cleanup, F dual-currency) are independent and parallelise cleanly; subagents do their own
+  MCP + browser verification.
 - Correction from the prior version: MCP works fine in subagents, and there are no
   sign-off gates - the bottleneck is verifying things are genuinely live on Kajabi, not
   waiting for approval.
+- Dual-currency deploy targets **website-theme Custom Javascript** (same slot as
+  `home-page-v2.js`), plus pricing landing themes. Not checkout themes, not Header Page Scripts
+  (except optional FOUC-only if you split it). Full injection map in RUNBOOK.

@@ -3,7 +3,10 @@
  * Version 2.0 - Merged Implementation (Dec 30, 2025)
  * Combines automated approach with GTM integration
  * 
- * Location: Kajabi Settings > Site Details > Footer Page Scripts
+ * Location: Kajabi Website theme > Custom Javascript (append after home-page-v2.js).
+ * Also paste on pricing landing themes that are not the main website theme.
+ * Checkout pages do not load this script; one offer per currency, links rewritten upstream.
+ * FOUC guard: global/html/currency-toggle-fouc.html (Header Page Scripts or top of theme JS).
  */
 
 <script>
@@ -100,7 +103,6 @@
     setCurrency(pref, false); 
     
     injectToggles();
-    handleCheckoutPage();
   }
 
   // --- CORE FUNCTIONS ---
@@ -375,104 +377,6 @@
         logError('Failed to update toggle UI', e);
       }
     });
-  }
-
-  // --- CHECKOUT SPECIFIC ---
-  function handleCheckoutPage() {
-    if (!window.location.href.includes('/checkout')) return;
-
-    const currentUrl = window.location.href;
-    // Find if current page is a known offer
-    let currentOfferId = null;
-    let targetOfferId = null;
-    let targetCurrency = 'USD';
-
-    for (const [usdId, audId] of Object.entries(CONFIG.offerMapping)) {
-      if (currentUrl.includes(usdId)) {
-        currentOfferId = usdId; 
-        targetOfferId = audId; 
-        targetCurrency = 'AUD';
-        break;
-      } else if (currentUrl.includes(audId)) {
-        currentOfferId = audId; 
-        targetOfferId = usdId; 
-        targetCurrency = 'USD';
-        break;
-      }
-    }
-
-    if (targetOfferId) {
-      try {
-        // Inject Switch Link
-        const containerSelectors = [
-          '.checkout-panel-header',
-          '.panel-heading',
-          '.checkout-header',
-          '[class*="checkout-header"]'
-        ];
-        
-        let container = null;
-        for (let i = 0; i < containerSelectors.length; i++) {
-          container = document.querySelector(containerSelectors[i]);
-          if (container) break;
-        }
-        
-        if (!container) {
-          container = document.body;
-        }
-
-        const switchDiv = document.createElement('div');
-        switchDiv.className = 'checkout-currency-switch';
-        switchDiv.innerHTML = `Prefer to pay in ${targetCurrency}? <a href="#" id="currency-switch-link">Switch to ${targetCurrency}</a>`;
-        
-        if (container.nextSibling) {
-          container.parentNode.insertBefore(switchDiv, container.nextSibling);
-        } else {
-          container.appendChild(switchDiv);
-        }
-
-        const switchLink = document.getElementById('currency-switch-link');
-        if (switchLink) {
-          switchLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            try {
-              const storage = safeLocalStorage();
-              if (storage) {
-                storage.setItem(CONFIG.storageKey, targetCurrency);
-              }
-              window.location.href = currentUrl.replace(currentOfferId, targetOfferId);
-            } catch (err) {
-              logError('Failed to switch currency on checkout', err);
-            }
-          });
-        }
-
-        // Inject AUD Discount Warning
-        if (targetCurrency === 'USD') { // Means we are currently on AUD
-          const couponSelectors = [
-            '.checkout-coupon-panel',
-            '#coupon-panel',
-            '[class*="coupon"]',
-            '[id*="coupon"]'
-          ];
-          
-          let couponArea = null;
-          for (let i = 0; i < couponSelectors.length; i++) {
-            couponArea = document.querySelector(couponSelectors[i]);
-            if (couponArea) break;
-          }
-          
-          if (couponArea) {
-            const warning = document.createElement('div');
-            warning.className = 'aud-discount-warning';
-            warning.innerText = 'Note: Most discount codes are valid for USD pricing only.';
-            couponArea.parentNode.insertBefore(warning, couponArea);
-          }
-        }
-      } catch (e) {
-        logError('Failed to handle checkout page', e);
-      }
-    }
   }
 
   // Test hook (PRD §4.7). Exposed only when window is present and the
