@@ -1,0 +1,279 @@
+<!--
+  Snooze Access - Cold-Ads Sales / Results Page (funnel step 2)
+  Funnel: cold ad -> quiz/assessment (quiz/index.html) -> THIS results/sales page -> thank-you (thanks/index.html)
+  Source pattern: kajabi-deployment/pages/landing/day-pass-paidads/index.html (trust block, blockquote, as-seen-in row)
+  Adapted for: Snooze Access paid-ads funnel, AU market, AUD default.
+
+  Slug suggestion: /snooze-access-from-our-ads (the quiz redirects here, carrying ?first_name=&currency=&age=&struggle=).
+
+  Paste each section block into a separate Kajabi Custom Code section in the order shown.
+  Fill placeholders {{privacy_url}} and {{SNOOZE_ACCESS_CHECKOUT_URL}} before publishing.
+  Do NOT hardcode an offer ID; the registry copy is stale. Use the placeholder checkout URL.
+
+  Purchase / checkout tracking: handled by the existing global
+  kajabi-deployment/global/js/kajabi-checkout-tracking.js (pushes the purchase event to
+  GTM dataLayer and Meta Pixel with the correct currency on the Kajabi checkout page).
+  Do NOT add a duplicate pixel or purchase event here; this page only links to checkout.
+
+  Inline styles only; no theme CSS dependency; no <style> blocks (Kajabi strips them).
+-->
+
+<!-- ============================================================== -->
+<!-- SECTION 1: HERO (pain-led headline + Sally's reframe)           -->
+<!-- ============================================================== -->
+<section style="padding: 4rem 1.5rem 3rem; max-width: 760px; margin: 0 auto; text-align: center;">
+  <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #29563f; margin: 0 0 1rem;">
+    Your results &nbsp;&middot;&nbsp; Snooze Access
+  </p>
+  <h1 style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; font-weight: 700; color: #1f293b; margin: 0 0 1.25rem;">
+    <span id="sa-greeting"></span>Your baby&rsquo;s sleep is workable. You don&rsquo;t need more tips; you need a clear plan and someone in your corner.
+  </h1>
+  <p style="font-size: 1.125rem; line-height: 1.7; color: #374151; margin: 0 0 1.25rem;">
+    From your answers, the missing piece is usually the same thing: the right combination wasn&rsquo;t in place, not that your baby can&rsquo;t sleep well. That&rsquo;s very fixable at this age.
+  </p>
+  <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0 0 2rem;">
+    Snooze Access is structured sleep support. You get the full plan for your baby&rsquo;s age, plus direct access to me and my team as you work through it. Start with a 7-day free trial and see the change for yourself.
+  </p>
+  <a href="{{SNOOZE_ACCESS_CHECKOUT_URL}}" style="display: inline-block; padding: 1rem 2.25rem; background: #29563f; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 1.0625rem; font-weight: 600;">
+    Start my 7-day free trial
+  </a>
+  <p style="font-size: 0.8125rem; color: #6b7280; margin: 0.75rem 0 0;">
+    Seven days free. Cancel anytime in the trial and pay nothing.
+  </p>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 2: THE REFRAME                                           -->
+<!-- ============================================================== -->
+<section style="padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; background: #f9fafb; border-radius: 12px;">
+  <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.25rem;">
+    If the four-month change knocked you sideways
+  </h2>
+  <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0 0 1rem;">
+    I&rsquo;m here to rebrand the scary four-month regression as the perfect time to start getting better sleep. The change is permanent; your baby now has a more mature sleep cycle, like ours. So they wake at the end of each cycle and look to be resettled the way they were first put to sleep.
+  </p>
+  <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0;">
+    Once babies develop these new cycles, they can learn to link them on their own. That&rsquo;s the work. It needs a clear plan, not a wait-it-out. And you don&rsquo;t have to choose between suffering through it and crying it out; those are not your only two options.
+  </p>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 3: WHAT'S INSIDE SNOOZE ACCESS                           -->
+<!-- ============================================================== -->
+<section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto;">
+  <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.75rem;">
+    What&rsquo;s inside Snooze Access
+  </h2>
+  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">1</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">The full plan for your baby&rsquo;s age.</strong> Step-by-step support for nights first, then days. Clear timings, wake windows, and conditional logic for when things go a bit pear-shaped.
+      </p>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">2</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">Direct support from me and my team.</strong> Ask a question, get a real answer. You&rsquo;re not left guessing what to do when your baby doesn&rsquo;t read the script.
+      </p>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">3</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">Age-stage guidance that grows with your baby.</strong> When sleep shifts again, the next stage is already there. No starting from scratch every few months.
+      </p>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #f0f7f4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #29563f; font-size: 0.875rem;">4</span>
+      <p style="margin: 0; line-height: 1.7; color: #374151;">
+        <strong style="color: #1f293b;">An approach you stay in control of.</strong> You choose the settling style that feels right for your family. You&rsquo;ll always respond to your baby. This is not cry it out.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 4: HOW IT WORKS                                          -->
+<!-- ============================================================== -->
+<section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; background: #f9fafb; border-radius: 12px;">
+  <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.75rem;">
+    How it works
+  </h2>
+  <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #29563f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ffffff; font-size: 0.875rem;">1</span>
+      <div>
+        <p style="margin: 0 0 0.25rem; font-weight: 700; color: #1f293b;">Start your 7-day free trial</p>
+        <p style="margin: 0; line-height: 1.6; color: #374151;">Set up your account and open the plan for your baby&rsquo;s age. Nothing to pay for seven days.</p>
+      </div>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #29563f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ffffff; font-size: 0.875rem;">2</span>
+      <div>
+        <p style="margin: 0 0 0.25rem; font-weight: 700; color: #1f293b;">Sort nights first, then days</p>
+        <p style="margin: 0; line-height: 1.6; color: #374151;">Follow the plan, message us when you get stuck, and adjust as you go. Most families notice a shift within the first week.</p>
+      </div>
+    </li>
+    <li style="display: flex; gap: 1rem; align-items: flex-start;">
+      <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #29563f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ffffff; font-size: 0.875rem;">3</span>
+      <div>
+        <p style="margin: 0 0 0.25rem; font-weight: 700; color: #1f293b;">Decide what suits you</p>
+        <p style="margin: 0; line-height: 1.6; color: #374151;">Stay for as long as your season needs it. Pick monthly, quarterly, or annual when your trial ends. Cancel anytime.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 5: MONEY-BACK RESULTS GUARANTEE (featured)              -->
+<!-- ============================================================== -->
+<section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto;">
+  <div style="padding: 2rem 1.75rem; background: #f0f7f4; border: 2px solid #29563f; border-radius: 14px; text-align: center;">
+    <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #29563f; margin: 0 0 0.75rem;">
+      The results guarantee
+    </p>
+    <!-- PLACEHOLDER WORDING: final guarantee wording needs Sally's sign-off before publishing. -->
+    <h2 style="font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
+      Noticeably better sleep within 14 days, or your money back.
+    </h2>
+    <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0;">
+      Follow the plan for your baby&rsquo;s age and stay in touch with us. If you don&rsquo;t see noticeably better sleep within 14 days of starting, write to us and we&rsquo;ll refund you. I back the work because I&rsquo;ve seen it hold for thousands of families.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 6: TRUST ELEMENTS                                        -->
+<!-- ============================================================== -->
+<section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; border-top: 1px solid #e5e7eb;">
+
+  <blockquote style="margin: 0 0 2rem; padding: 1.5rem; background: #f9fafb; border-left: 3px solid #29563f; border-radius: 0 8px 8px 0;">
+    <p style="margin: 0 0 0.75rem; font-size: 1.0625rem; line-height: 1.7; color: #1f293b; font-style: italic;">
+      &ldquo;She was waking five times a night wanting feeds and I thought we&rsquo;d just gone backwards. Inside Snooze I finally had a plan and someone to ask when it got messy. By the end of the first week the nights had turned around. Calm, kind, and it actually worked.&rdquo;
+    </p>
+    <footer style="font-size: 0.875rem; color: #6b7280;">
+      Hannah, mum of a 5-month-old
+    </footer>
+  </blockquote>
+
+  <p style="font-size: 0.8125rem; color: #9ca3af; text-align: center; margin: 0 0 1rem; text-transform: uppercase; letter-spacing: 0.05em;">As seen in</p>
+  <p style="font-size: 0.875rem; color: #9ca3af; text-align: center; margin: 0 0 2rem;">
+    ABC &nbsp;|&nbsp; Mamamia &nbsp;|&nbsp; Kidspot &nbsp;|&nbsp; The Sleep Concierge podcast
+  </p>
+
+  <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+    <p style="line-height: 1.7; color: #374151; margin: 0; font-size: 0.9375rem;">
+      Hi, I&rsquo;m Sally. I run Snooze and the Sleep Concierge. I&rsquo;m a paediatric nurse, a certified sleep consultant, and a mum of two who has been in the thick of it. I built Snooze Access so families have the plan and the support in one place, for as long as their season needs it.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 7: PRICING (monthly / quarterly anchor / annual)        -->
+<!-- ============================================================== -->
+<section style="padding: 3rem 1.5rem; max-width: 760px; margin: 0 auto;">
+  <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 0.5rem; text-align: center;">
+    Choose what suits your season
+  </h2>
+  <p style="font-size: 0.9375rem; color: #6b7280; margin: 0 0 2rem; text-align: center;">
+    Every plan starts with the same 7-day free trial. Prices shown in <span id="sa-currency-label">AUD</span>. Cancel anytime.
+  </p>
+
+  <!-- PRICING PLACEHOLDER: confirm live prices against the Kajabi offers registry before publishing.
+       Do NOT hardcode offer IDs here; all three buttons link to {{SNOOZE_ACCESS_CHECKOUT_URL}}.
+       If the checkout differs per plan, split into three placeholders at publish time. -->
+  <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center;">
+
+    <!-- Monthly -->
+    <div style="flex: 1 1 200px; min-width: 200px; max-width: 240px; padding: 1.75rem 1.5rem; border: 1.5px solid #e5e7eb; border-radius: 12px; text-align: center;">
+      <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0 0 0.5rem;">Monthly</p>
+      <p style="font-size: 0.875rem; line-height: 1.6; color: #6b7280; margin: 0 0 1rem;">Month to month. Flexible if you just need a short season of support.</p>
+      <a href="{{SNOOZE_ACCESS_CHECKOUT_URL}}" style="display: inline-block; width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; background: #ffffff; color: #29563f; border: 1.5px solid #29563f; text-decoration: none; border-radius: 8px; font-size: 0.9375rem; font-weight: 600;">
+        Start free trial
+      </a>
+    </div>
+
+    <!-- Quarterly (default / anchor) -->
+    <div style="flex: 1 1 220px; min-width: 220px; max-width: 260px; padding: 1.75rem 1.5rem; border: 2px solid #29563f; border-radius: 12px; text-align: center; position: relative;">
+      <span style="position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: #29563f; color: #ffffff; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 999px;">Most popular</span>
+      <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0.5rem 0 0.5rem;">Quarterly</p>
+      <p style="font-size: 0.875rem; line-height: 1.6; color: #6b7280; margin: 0 0 1rem;">Three months of support. The realistic window to settle nights, then days, and make it stick.</p>
+      <a href="{{SNOOZE_ACCESS_CHECKOUT_URL}}" style="display: inline-block; width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; background: #29563f; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 0.9375rem; font-weight: 600;">
+        Start free trial
+      </a>
+    </div>
+
+    <!-- Annual (best value, cash upfront) -->
+    <div style="flex: 1 1 200px; min-width: 200px; max-width: 240px; padding: 1.75rem 1.5rem; border: 1.5px solid #e5e7eb; border-radius: 12px; text-align: center;">
+      <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0 0 0.5rem;">Annual <span style="color: #f43357;">&middot; best value</span></p>
+      <p style="font-size: 0.875rem; line-height: 1.6; color: #6b7280; margin: 0 0 1rem;">A full year, paid upfront, at the lowest rate. For families who want support through every stage ahead.</p>
+      <a href="{{SNOOZE_ACCESS_CHECKOUT_URL}}" style="display: inline-block; width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; background: #ffffff; color: #29563f; border: 1.5px solid #29563f; text-decoration: none; border-radius: 8px; font-size: 0.9375rem; font-weight: 600;">
+        Start free trial
+      </a>
+    </div>
+
+  </div>
+
+  <p style="font-size: 0.8125rem; line-height: 1.6; color: #6b7280; text-align: center; margin: 2rem 0 0;">
+    We only use your details to run your account and send the support emails. We don&rsquo;t sell your information. Full privacy notice at <a href="{{privacy_url}}" style="color: #29563f;">{{privacy_url}}</a>.
+  </p>
+</section>
+
+<!-- ============================================================== -->
+<!-- SECTION 8: FINAL CTA                                             -->
+<!-- ============================================================== -->
+<section style="padding: 2rem 1.5rem 4rem; max-width: 640px; margin: 0 auto; text-align: center;">
+  <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
+    Better sleep is very possible
+  </h2>
+  <p style="font-size: 1.0625rem; line-height: 1.7; color: #374151; margin: 0 0 1.75rem;">
+    Start the trial, follow the plan for your baby&rsquo;s age, and lean on us when it gets tricky. If you don&rsquo;t see noticeably better sleep within 14 days, your money back.
+  </p>
+  <a href="{{SNOOZE_ACCESS_CHECKOUT_URL}}" style="display: inline-block; padding: 1rem 2.25rem; background: #29563f; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 1.0625rem; font-weight: 600;">
+    Start my 7-day free trial
+  </a>
+  <p style="font-size: 0.8125rem; color: #6b7280; margin: 0.75rem 0 0;">
+    Seven days free. Cancel anytime in the trial and pay nothing.
+  </p>
+</section>
+
+<script>
+(function () {
+  // Personalise the greeting and currency label from the query string passed by the
+  // quiz redirect (?first_name=&currency=&age=&struggle=). No network calls here;
+  // checkout/purchase tracking is handled by the global kajabi-checkout-tracking.js
+  // on the Kajabi checkout page, not on this page.
+  function hydrateFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+
+      var firstName = (params.get('first_name') || '').trim();
+      var greetingEl = document.getElementById('sa-greeting');
+      if (greetingEl && firstName) {
+        greetingEl.textContent = firstName + ', ';
+      }
+
+      var currency = (params.get('currency') || '').toLowerCase();
+      var label = document.getElementById('sa-currency-label');
+      if (label && (currency === 'aud' || currency === 'usd')) {
+        label.textContent = currency.toUpperCase();
+      }
+
+      // Append the carried query params to all checkout links so currency
+      // preference and attribution travel through to the checkout page.
+      var qs = window.location.search;
+      if (qs && qs.length > 1) {
+        var links = document.querySelectorAll('a[href="{{SNOOZE_ACCESS_CHECKOUT_URL}}"]');
+        for (var i = 0; i < links.length; i++) {
+          var href = links[i].getAttribute('href');
+          links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? qs : '&' + qs.slice(1)));
+        }
+      }
+    } catch (e) {
+      // Silent fallback; the page reads fine without personalisation.
+    }
+  }
+
+  hydrateFromQuery();
+}());
+</script>

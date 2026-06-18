@@ -1,0 +1,92 @@
+# Snooze Access - Cold-Ads Funnel (3 pages)
+
+Cold-traffic paid-ads funnel selling Snooze Access, the baby-sleep membership by Sally Woods (The Sleep Concierge). AU market, AUD default.
+
+**Source pattern:** `apps/snooze-website/kajabi-deployment/pages/landing/day-pass-paidads/`. The quiz page mirrors the Day Pass `hydrateUtms()`, `detectCurrency()`, honeypot, hidden UTM fields, and the eligibility-check-then-webhook submit flow verbatim where sensible.
+
+**Surface rules:** landing pages, not course lessons or emails. Inline styles only; no theme CSS dependency; no `<style>` blocks (Kajabi strips them). No System Initialization block is required because no styles depend on `snooze-unified-theme.css` (per root AGENTS.md §5 and §6, and `apps/snooze-website/AGENTS.md`).
+
+## Funnel order
+
+1. **Quiz / assessment (lead capture):** `quiz/index.html`
+   Cold ad lands here. A short age-segmented assessment (four questions: child age range, biggest struggle, current settling approach, what they&rsquo;ve tried) plus email and first-name capture. On submit: eligibility check, then n8n webhook, then redirect to the results page carrying `?first_name=&currency=&age=&struggle=`.
+   `event_anchor = paid_ads_quiz`, `source = snooze_access_quiz`.
+   Suggested slug: `/snooze-access-from-our-ads/quiz`.
+
+2. **Results / sales page:** `index.html`
+   Pain-led hero with Sally&rsquo;s four-month reframe; what&rsquo;s inside Snooze Access; how it works; the money-back results guarantee featured; testimonial plus the &ldquo;As seen in&rdquo; trust row; pricing framed monthly / quarterly (anchor, &ldquo;Most popular&rdquo;) / annual (best value, cash upfront); primary CTA &ldquo;Start my 7-day free trial&rdquo;.
+   Suggested slug: `/snooze-access-from-our-ads`.
+
+3. **Thank-you / next-steps:** `thanks/index.html`
+   Shown after the trial starts. Confirms the trial is live, walks through what happens next, reinforces the guarantee, and points to the plan.
+   Suggested slug: `/snooze-access-from-our-ads/thanks`. Set this as the Kajabi post-purchase / trial-start redirect for the Snooze Access offer.
+
+## Placeholders to replace before Kajabi paste
+
+| Placeholder | File(s) | What to put there |
+|---|---|---|
+| `{{MEMORY_API_HOST}}` | `quiz/index.html` | Base URL of `services/memory-api`, no trailing slash |
+| `{{N8N_WEBHOOK_URL}}` | `quiz/index.html` | Full n8n webhook URL, e.g. `https://<n8n-host>/webhook/snooze-access-quiz` |
+| `{{SNOOZE_ACCESS_CHECKOUT_URL}}` | `index.html` (hero, three pricing buttons, final CTA) | Snooze Access trial checkout URL. Do NOT hardcode an offer ID; the registry copy is stale. If checkout differs per plan, split into three URLs at publish time. Confirm live prices against `docs/operations/KAJABI-OFFERS-REGISTRY.md` (or the Sheet via PAL) before publishing. |
+| `{{privacy_url}}` | `quiz/index.html`, `index.html` | URL of the Snooze privacy notice |
+| `{{first_name}}` | `thanks/index.html` | Kajabi merge tag, or carried via `?first_name=` on the redirect |
+| `{{access_url}}` | `thanks/index.html` | The member&rsquo;s Snooze Access dashboard URL; Kajabi merge tag or `?access_url=` |
+| `{{support_email}}` | `thanks/index.html` | Sally&rsquo;s support email |
+
+`currency_preference` is set automatically client-side from browser locale (AU to `aud`, everything else to `usd`); no operator action.
+
+## Sign-off and review notes
+
+- **Guarantee wording.** The money-back results guarantee on `index.html` and `thanks/index.html` uses placeholder wording (&ldquo;Noticeably better sleep within 14 days, or your money back&rdquo;), flagged with an HTML comment. Final wording needs Sally&rsquo;s sign-off before publishing.
+- **Testimonial.** The blockquote on `index.html` reuses the Day Pass structure and tone. Swap for a real, attributable Snooze Access testimonial before publishing if one is available.
+- **Pricing.** Plan tiers (monthly / quarterly / annual) carry no hardcoded prices or offer IDs. Confirm and add live AUD/USD prices at publish time per the registry.
+
+## Tracking
+
+Checkout and purchase tracking is handled by the existing global script `apps/snooze-website/kajabi-deployment/global/js/kajabi-checkout-tracking.js`, which fires the purchase event to the GTM dataLayer and Meta Pixel with the correct currency on the Kajabi checkout page. These three pages do NOT fire a duplicate purchase event; the sales page only links to checkout, and the thank-you page is a confirmation surface. UTM attribution is captured on the quiz page and travels through the webhook payload and the checkout-link query string.
+
+## Pre-deploy validation (root AGENTS.md §11)
+
+Run from the monorepo root before any Kajabi paste. BLOCK on findings.
+
+1. **Placeholder scanner** (expects to flag the uppercase deploy-time placeholders until they are filled):
+   ```
+   python _legacy/workspaces/snooze-infrastructure/src/validation/scan_placeholders.py \
+     --dir apps/snooze-website/kajabi-deployment/pages/landing/snooze-access-paidads
+   ```
+2. **Link checker:**
+   ```
+   bash _legacy/workspaces/snooze-infrastructure/src/validation/check_links.sh \
+     apps/snooze-website/kajabi-deployment/pages/landing/snooze-access-paidads
+   ```
+3. **Environment validator:**
+   ```
+   python _legacy/workspaces/snooze-infrastructure/src/validation/env_validator.py --check-only
+   ```
+4. **Full checklist:** `apps/snooze-website/docs/DEPLOYMENT-CHECKLIST.md`.
+
+## Paste structure
+
+Each page is split into numbered `<!-- SECTION N: ... -->` blocks so VSP can paste each section into a separate Kajabi Custom Code block, in order. The trailing `<script>` block on the quiz page and the results page goes into the page&rsquo;s code area (or a final Custom Code block at the bottom of the page).
+
+## QA
+
+1. Submit the quiz with a US-locale browser; confirm the webhook payload includes `currency_preference: "usd"` and the redirect carries `currency=usd`.
+2. Submit with an AU locale; confirm `currency_preference: "aud"` and the AUD label renders on the sales page.
+3. Submit with a UTM-tagged URL (`?utm_source=meta&utm_content=test_ad_id_123`); confirm all five UTM fields appear in the webhook payload and travel through to the checkout link.
+4. Submit with all four questions answered; confirm the redirect lands on the results page and the greeting resolves to the first name.
+5. Submit with a missing question; confirm the validation message blocks submit.
+6. Existing member email; confirm redirect to `/already-a-member`.
+7. Mobile viewport at 390px; confirm each page stacks cleanly, the pricing cards wrap, and CTAs are large enough to tap.
+8. Confirm the guarantee wording matches Sally&rsquo;s signed-off copy on both `index.html` and `thanks/index.html`.
+
+## Deploy path
+
+Per root AGENTS.md §9 and `apps/snooze-website/CLAUDE.md`:
+
+1. Commit to the working branch.
+2. Publish to the external mirror: `scripts/publish-snooze-website.sh`.
+3. VSP pastes each section into the matching Kajabi Custom Code block.
+4. Tag before deploy: `website-v{X.Y.Z}`.
+
+Round-trip rule: any operator-side Kajabi edit must come back to this folder before the next deploy.
