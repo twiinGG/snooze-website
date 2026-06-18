@@ -15,7 +15,7 @@
         <div class="snooze-comparison-header">
           <h3>Individual Course</h3>
           <div class="snooze-price">
-            <span class="snooze-price-amount" data-product-price="$117">$117</span>
+            <span class="snooze-price-amount" data-product-price="$117"><span class="dynamic-price" data-usd="117" data-aud="179">$117</span></span> <!-- AUD-OFFER-PENDING: product offer (slug set per host page) -->
             <span class="snooze-price-note">one-time</span>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="snooze-comparison-header">
           <h3>Snooze Membership</h3>
           <div class="snooze-price">
-            <span class="snooze-price-amount">$147</span>
+            <span class="snooze-price-amount"><span class="dynamic-price" data-usd="147" data-aud="222">$147</span></span>
             <span class="snooze-price-period">/quarter</span>
             <span class="snooze-price-note">Launch pricing</span>
           </div>
@@ -56,7 +56,7 @@
           <li><i class="fa-solid fa-check"></i> Member pricing on consultations</li>
         </ul>
         <div class="snooze-comparison-cta">
-          <a href="https://joinsnooze.com/offers/6iRarwak/checkout" class="snooze-btn-primary snooze-btn-large">
+          <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary snooze-btn-large dynamic-cta" data-checkout>
             Join Snooze
           </a>
           <p class="snooze-comparison-note">For just $30 more, you get everything</p>
@@ -320,7 +320,9 @@
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
     var priceElement = document.querySelector('[data-product-price]');
-    if (priceElement) {
+    // Only override when no dynamic-price span is present; the currency-toggle
+    // engine owns the dynamic-price node and must not be clobbered.
+    if (priceElement && !priceElement.querySelector('.dynamic-price')) {
       var price = priceElement.getAttribute('data-product-price');
       priceElement.textContent = price;
     }

@@ -127,6 +127,30 @@ const cases = [
     href: 'https://www.joinsnooze.com/offers/2150884129/checkout',
     target: 'AUD',
     expectIncludes: ['/offers/2150946767/']
+  },
+  {
+    name: 'Snooze Access USD to AUD (slug form z63s9VaR to bEsVXFXG)',
+    href: 'https://www.joinsnooze.com/offers/z63s9VaR/checkout',
+    target: 'AUD',
+    expectIncludes: ['/offers/bEsVXFXG/']
+  },
+  {
+    name: 'Snooze Access AUD to USD (slug form bEsVXFXG to z63s9VaR)',
+    href: 'https://www.joinsnooze.com/offers/bEsVXFXG/checkout',
+    target: 'USD',
+    expectIncludes: ['/offers/z63s9VaR/']
+  },
+  {
+    name: 'Camp Snooze USD to AUD (slug form K3Y6FEKX to 46Bz9tk6)',
+    href: 'https://www.joinsnooze.com/offers/K3Y6FEKX/checkout',
+    target: 'AUD',
+    expectIncludes: ['/offers/46Bz9tk6']
+  },
+  {
+    name: 'Camp Snooze AUD to USD (slug form 46Bz9tk6 to K3Y6FEKX)',
+    href: 'https://www.joinsnooze.com/offers/46Bz9tk6/checkout',
+    target: 'USD',
+    expectIncludes: ['/offers/K3Y6FEKX/']
   }
 ];
 
@@ -180,6 +204,42 @@ if (!Object.prototype.hasOwnProperty.call(CONFIG.offerMapping, '6iRarwak')) {
   failed += 1;
   console.log('FAIL  legacy 6iRarwak must be removed from active offerMapping');
 }
+
+// Retired membership slugs must NOT be in the active offerMapping. dRN7QR7k
+// (dead StoreV2 slug) and 6iRarwak (draft founding offer) were standardised to
+// z63s9VaR across all pages on 2026-06-19. A CTA still carrying one must be
+// left untouched (no AUD twin), never silently swapped.
+['6iRarwak', 'dRN7QR7k'].forEach(function (slug) {
+  const inMap = Object.prototype.hasOwnProperty.call(CONFIG.offerMapping, slug);
+  const url = 'https://www.joinsnooze.com/offers/' + slug + '/checkout';
+  const out = rewrite(url, 'AUD');
+  if (!inMap && out === url) {
+    passed += 1;
+    console.log('PASS  retired slug ' + slug + ' is not mapped and left unchanged');
+  } else {
+    failed += 1;
+    console.log('FAIL  retired slug ' + slug + ' must be absent from offerMapping and left unchanged, got: ' + out);
+  }
+});
+
+// Tier-2 product offers (courses, guides, consults) have NO AUD twin yet; their
+// AUD offers are created in Kajabi admin in a later wave. Until Phase 4 wires
+// them, their USD checkout URLs must round-trip unchanged so no AU buyer is
+// routed to a non-existent offer. When an AUD twin is created, add the
+// offerMapping entry AND move the slug out of this pending list with a real
+// swap test above.
+const tier2PendingSlugs = ['W2PyqL2X', '9DFJSwVD', 'omMcVgAi', 'FktmJAvJ', 'rVuLzkZa', 'Lzouupsm'];
+tier2PendingSlugs.forEach(function (slug) {
+  const url = 'https://www.joinsnooze.com/offers/' + slug + '/checkout';
+  const out = rewrite(url, 'AUD');
+  if (out === url) {
+    passed += 1;
+    console.log('PASS  Tier-2 pending offer ' + slug + ' round-trips unchanged (no AUD twin yet)');
+  } else {
+    failed += 1;
+    console.log('FAIL  Tier-2 pending offer ' + slug + ' must be unchanged until its AUD twin is wired, got: ' + out);
+  }
+});
 
 console.log('');
 console.log('Summary: ' + passed + ' passed, ' + failed + ' failed.');
