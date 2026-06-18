@@ -27,7 +27,7 @@ Cold-traffic paid-ads funnel selling Snooze Access, the baby-sleep membership by
 |---|---|---|
 | `{{MEMORY_API_HOST}}` | `quiz/index.html` | Base URL of `services/memory-api`, no trailing slash |
 | `{{N8N_WEBHOOK_URL}}` | `quiz/index.html` | Full n8n webhook URL, e.g. `https://<n8n-host>/webhook/snooze-access-quiz` |
-| `{{SNOOZE_ACCESS_CHECKOUT_URL}}` | `index.html` (hero, three pricing buttons, final CTA) | Snooze Access trial checkout URL. Do NOT hardcode an offer ID; the registry copy is stale. If checkout differs per plan, split into three URLs at publish time. Confirm live prices against `docs/operations/KAJABI-OFFERS-REGISTRY.md` (or the Sheet via PAL) before publishing. |
+| ~~`{{SNOOZE_ACCESS_CHECKOUT_URL}}`~~ WIRED Jun 19, 2026 | `index.html` | No longer a placeholder. Checkout CTAs carry `data-sa-checkout` and are resolved at runtime by the `SA_CHECKOUT` config in the page script: currency-aware (AUD vs USD) with verbatim UTM passthrough. USD is the live default (`/offers/z63s9VaR/checkout`, verified via Kajabi `get_offer` 2150754998). AUD (`/offers/bEsVXFXG/checkout`, offer 2151212200) is gated off (`SA_CHECKOUT.aud.live = false`) until the draft AUD offer is published; flip that one flag to go live in AUD. See `docs/strategy/paid-scaling/PHASE-3-OFFER-FUNNEL-PROPOSAL.md`. |
 | `{{privacy_url}}` | `quiz/index.html`, `index.html` | URL of the Snooze privacy notice |
 | `{{first_name}}` | `thanks/index.html` | Kajabi merge tag, or carried via `?first_name=` on the redirect |
 | `{{access_url}}` | `thanks/index.html` | The member&rsquo;s Snooze Access dashboard URL; Kajabi merge tag or `?access_url=` |

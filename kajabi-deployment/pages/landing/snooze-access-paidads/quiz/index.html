@@ -301,10 +301,20 @@
       // Pass first_name and currency_preference so the results page can personalise
       // and route the correctly-priced checkout. The results page is the funnel root:
       // /snooze-access-from-our-ads (Kajabi slug; adjust to the published slug).
+      // Also carry the five UTM keys VERBATIM so utm_content (== ad_name) survives to
+      // the checkout link; this matches the first-party capture POSTed above and keeps
+      // the creative attributable end to end (paid_media.lead_attribution_capture).
       var qs = '?first_name=' + encodeURIComponent(payload.first_name) +
                '&currency=' + encodeURIComponent(payload.currency_preference) +
                '&age=' + encodeURIComponent(payload.child_age) +
                '&struggle=' + encodeURIComponent(payload.biggest_struggle);
+      var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      for (var u = 0; u < utmKeys.length; u++) {
+        var uv = payload[utmKeys[u]];
+        if (uv) {
+          qs += '&' + utmKeys[u] + '=' + encodeURIComponent(uv);
+        }
+      }
       window.location.href = '/snooze-access-from-our-ads' + qs;
 
     } catch (err) {
