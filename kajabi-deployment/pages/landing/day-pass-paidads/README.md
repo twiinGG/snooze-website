@@ -6,6 +6,15 @@
 
 **Internal offer reference:** `LDDP01_Day-Pass-PaidAds`. Public title: "Snooze Day Pass" (per Decision 6 in `docs/projects/paid-media-and-dual-currency-v1/03-day-pass-open-decisions-proposals.md`).
 
+## Taste-tier copy (June 2026)
+
+The page now sells the taste tier accurately per `docs/projects/day-pass/DAY-PASS-TASTE-TIER-v1.md`:
+
+- Hero and "what's inside" name the actual grant: 4 courses (newborn, 3-4mo, 5-12mo, toddler), 2 guides (3-to-2 nap, catnapping), and the Snooze Lobby community.
+- A new "What the Day Pass includes, and what it doesn't" section gives an honest side-by-side: the Day Pass vs full membership. The upgrade hook is Live Sleep Detectives, the weekly Sally and Bec Q&A, which is members only and NOT in the Day Pass.
+- "Decide what's next" and the conversion route point to the **7-day trial**, not full Access directly.
+- Hidden fields, honeypot, UTM passthrough, `currency_preference` locale detection, eligibility check, and the n8n webhook POST are unchanged. `script.js` is unchanged and still mirrors the inline `<script>`.
+
 ## What's different from the canonical paste pack
 
 The canonical paste pack assumes a warm visitor arriving from an event landing or partner channel. Cold-ad clickers arrive with less context, so:
