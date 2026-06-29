@@ -14,9 +14,17 @@
       'K3Y6FEKX': '46Bz9tk6'
     },
     variantMapping: {
-      '68112': '<AUD_MONTHLY_VARIANT>',
-      '37262': '<AUD_QUARTERLY_VARIANT>',
-      '37263': '<AUD_YEARLY_VARIANT>'
+      // Core Snooze Membership variants (USD offer 2150754998 -> AUD offer 2151212200).
+      // FLAGGED 2026-06-29: the AUD core offer 2151212200 currently has zero pricing
+      // variants. Operator task is to add monthly/quarterly/yearly in the Kajabi admin
+      // Pricing tab; fill the placeholders below with the resulting AUD variant IDs.
+      '68112': '<AUD_MONTHLY_VARIANT>',   // USD core monthly $79
+      '37262': '<AUD_QUARTERLY_VARIANT>', // USD core quarterly $197
+      '37263': '<AUD_YEARLY_VARIANT>',    // USD core yearly $657
+      // 7-Day Trial variants (USD offer 2150887297 -> AUD offer 2151254578).
+      '160544': '160790', // monthly:   USD $79  -> AUD $119
+      '64815': '160791',  // quarterly: USD $197 -> AUD $299
+      '64816': '160792'   // yearly:    USD $657 -> AUD $997
     },
     audOfferIds: ['2150946767', '2151212200']
   };
