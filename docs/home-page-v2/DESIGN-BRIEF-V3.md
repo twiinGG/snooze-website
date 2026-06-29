@@ -713,7 +713,7 @@ Classes:
 
 **Hero Copy Hierarchy:**
 1. Tag: "ALL-ACCESS BABY SLEEP HELP" (yellow pill)
-2. Headline: "Join Your 24/7 Baby Sleep Lifeline" (large, bold)
+2. Headline: "Join Your Baby Sleep Support System" (large, bold)
 3. Subhead: "Get your baby sleeping..." (medium, muted)
 4. CTA: "Start Now" (prominent button)
 5. Feature list: Icons + short phrases (checkmarks, small text)

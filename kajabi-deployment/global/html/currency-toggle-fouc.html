@@ -1,10 +1,4 @@
-<!-- ============================================
-     SNOOZE CURRENCY TOGGLE - FOUC PREVENTION
-     Add this to: Kajabi Settings > Site Details > Header Page Scripts
-     ============================================ -->
-
 <style>
-/* FOUC Prevention: Hide prices until JS determines currency */
 .dynamic-price, .dynamic-cta {
   visibility: hidden; 
   opacity: 0;
@@ -19,19 +13,12 @@ body.currency-loaded .dynamic-cta {
 </style>
 
 <script>
-/**
- * SNOOZE CURRENCY TOGGLE - FOUC PREVENTION
- * Runs immediately in <head> before DOM ready
- * Prevents flash of wrong currency on page load
- */
 (function() {
   'use strict';
-  
+
   try {
-    // Check localStorage for currency preference
     var currency = localStorage.getItem('snooze_currency_preference');
-    
-    // Auto-detect if no preference saved
+
     if (!currency) {
       try {
         var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -40,17 +27,14 @@ body.currency-loaded .dynamic-cta {
         currency = 'USD';
       }
     }
-    
-    // Add class to document element immediately (before body exists)
+
     if (currency === 'AUD') {
       document.documentElement.classList.add('currency-aud-selected');
     }
-    
-    // Mark as loaded (will be applied to body when it exists)
+
     document.documentElement.classList.add('currency-loaded');
-    
+
   } catch (e) {
-    // If localStorage unavailable (Safari private mode), default to USD
     document.documentElement.classList.add('currency-loaded');
   }
 })();

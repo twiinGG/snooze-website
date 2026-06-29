@@ -36,7 +36,7 @@ This document contains technical specifications, SEO optimization strategies, an
 "Great Baby Sleep, For Life"
 
 **Subheading:**
-"Join Snooze and get everything you need to build healthy sustainable sleep habits for your baby. Get every one of The Sleep Concierge's guides and courses along with weekly live coaching with Sally, replays, and expert-moderated sleep forum."
+"Join Snooze and get everything you need to build healthy sustainable sleep habits for your baby. Get every one of The Sleep Concierge's guides and courses along with live sessions with Sally and Bec, and an expert-moderated sleep community."
 
 **Primary CTA:**
 "Get Started" → Offer checkout URL
@@ -52,7 +52,7 @@ Image Snooze_Hero.png (mother + child)
 | Icon | Heading | Description |
 |------|---------|-------------|
 | 📘 | Guides for Every Age | Step-by-step routines for naps, nights, and regressions — from newborn to toddler |
-| 🎥 | Weekly Coaching Calls | Join live Q&A sessions with Sally, or catch up anytime in the replay library |
+| 🎥 | Live Sessions | Join live Q&A sessions with Sally and Bec. Bring your questions and get guidance tailored to your baby. |
 | 💬 | Private Parent Community | Get calm, expert-moderated support from families on the same journey |
 | 🧩 | New Tools Each Month | Fresh guides, schedules, and updates to match your baby's changing needs |
 
@@ -61,8 +61,7 @@ Image Snooze_Hero.png (mother + child)
 | Included in Snooze | Value (USD) |
 |-------------------|-------------|
 | All Snooze guides & courses (0–3 years) | $180 |
-| Weekly live group coaching with Sally | $320 |
-| Access to replays & expert Q&A library | $180 |
+| Live sessions with Sally and Bec | $320 |
 | Community access & support thread | $90 |
 | Bonus seasonal workshops & guest experts | $130 |
 | **Member discounts:** | |

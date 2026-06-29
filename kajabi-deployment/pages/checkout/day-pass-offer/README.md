@@ -41,3 +41,27 @@ See `docs/SNOOZE-VILLAGE-DAY-PASS-AUTOMATIONS.md` for automation setup.
 
 **Last Updated:** December 2025
 
+---
+
+## Implementation Notes (relocated from inline code comments, June 29, 2026)
+
+These notes were moved out of `checkout-page.html` when deployable comments were stripped.
+
+### Service-model accuracy
+
+The Day Pass grants Snooze Village community access during its 24-hour window plus any live sessions with Sally and Bec that happen to be open during that window. It does NOT include the membership live-session schedule on a fixed cadence, and it does not include courses or Library resources. Page copy must not promise weekly or guaranteed live coaching. (The "community & coaching only" phrasing above predates this correction; treat "live sessions when open" as the accurate description.)
+
+### Checkout button URL (action required before deploy)
+
+The checkout button (`#checkout-button`) is a placeholder. Before deploy, set the real Kajabi checkout URL in the `<script>` block:
+
+- Pattern: `https://joinsnooze.com/offers/[YOUR_OFFER_ID]/checkout`
+- Replace the `alert(...)` placeholder handler with `window.location.href = '<real URL>';`
+- The placeholder scanner will BLOCK deploy while the `#` href and alert remain.
+
+### Currency toggle block
+
+The `.snooze-currency-toggle-block` (`data-currency-toggle="checkout"`) captures `currency_preference` for downstream Snooze Access conversion routing, since the Day Pass itself is free.
+
+- PRD reference: `docs/projects/paid-media-and-dual-currency-v1/00-prd.md` §4.8
+

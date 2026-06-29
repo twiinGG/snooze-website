@@ -241,3 +241,25 @@ All content uses straightforward, accessible language:
 ---
 
 **All files organized, numbered correctly, and aligned with learning design framework!**
+
+---
+
+## Maintenance Log
+
+### June 29, 2026 - Service-model copy sweep + comment strip
+
+**Deployable files in this folder:** `library-page.html`, `styles.css`. These are pasted into the Kajabi Website page wrapped in `<div id="library-page">`. Paste `styles.css` into Kajabi Custom CSS; it carries its own Font Awesome `@import`.
+
+**Metadata relocated from now-removed code comments:**
+
+- `library-page.html` was the consolidated single-file build (all sections merged from the separate `section-XX-*.html` files), originally dated December 2025.
+- `styles.css` is the unified stylesheet (originally Library Page Unified CSS v1.0, November 2025). It must be added to Kajabi Custom CSS in full and includes the Font Awesome 6.4.0 `@import` so icons render without a separate load.
+
+**Comment strip (mechanical):** removed all `<!-- ... -->` from `library-page.html` (33 comments: 1 header block + 32 section/card divider markers) and all `/* ... */` from `styles.css` (35 block comments). No structure, selectors, JS, or copy changed during the strip. The Font Awesome `@import` URL was preserved.
+
+**Service-model copy rewrites (membership accuracy):**
+
+- Hero description: "watch coaching replays" became "join live sessions with Sally and Bec" (removed the replay promise and the coaching framing).
+- Support section card heading "Live Coaching & Replays" became "Live Sessions"; its description "Access all past coaching sessions, Q&A calls, and workshop replays with Sally" became "Join Sally and Bec for live Q&A sessions, plus the recordings already inside the community." The card link points at a real community `.../coaching` access group, so a factual reference to the recordings that exist inside the community was kept; the guaranteed "replay vault/library" framing was dropped.
+
+**Deliberately left as-is:** the Snoozebot Coming-Soon card keeps "24/7" because it describes a future AI assistant, not an always-on membership support promise.

@@ -80,3 +80,51 @@ All styling comes from `../snooze-unified-theme.css` - no inline styles needed.
 ---
 
 **Last Updated:** December 04, 2025
+
+---
+
+## Relocated Code Notes (from inline comments, June 29, 2026)
+
+Inline comments were stripped from the four complete HTML files (deployable Kajabi custom code). Genuine notes are preserved here.
+
+### Deployment target (all four files)
+- Styling and Font Awesome icons come from `snooze-unified-theme.css`.
+- Deploy CSS to: Kajabi Settings -> Website -> Theme -> Custom CSS.
+
+### Toddler page only: required canonical inserts
+The toddler file carried two "IMPORTANT" build instructions that were section-marker comments:
+- **Navigation:** insert navigation code from the canonical file `kajabi-deployment/pages/navigation.html` (top of body, before the hero).
+- **Footer:** insert footer code from the canonical file `kajabi-deployment/pages/footer.html` (end of body).
+
+The other three pages already include a full hero and the clean footer markup inline.
+
+### AUD offer mapping + price/offer flags (Value Comparison section)
+Each page's "Individual Product" card shows a USD price with an `aud` data attribute, mapped to an AUD offer that is not yet created (price-display only, no live product CTA on the page):
+
+| Page | USD price | AUD (x1.51) | AUD offer token (pending) | Flag |
+|------|-----------|-------------|---------------------------|------|
+| Newborn Guide | $67 | A$99 | `omMcVgAi` | TIER 2 |
+| 3-4 Month Course | $117 | A$179 | `W2PyqL2X` | TIER 2 |
+| 5-12 Month (page shows $67) | $67 | A$99 | `9DFJSwVD` | TIER 2 + PRICE/OFFER MISMATCH |
+| Toddler Toolkit | $117 | A$179 | `FktmJAvJ` | TIER 2 |
+
+- **5-12 Month mismatch (HUMAN REVIEW):** page shows $67 (guide -> A$99) but mapped offer `9DFJSwVD` is the $117 5-12 Month COURSE (-> A$179). $67 may be the OLD guide price. Confirm whether this product is the $67 guide or the $117 course before wiring the AUD offer.
+
+### Non-canonical launch pricing (HUMAN REVIEW, all four files)
+- Membership price shown is **$147/quarter (Launch) -> A$222** (x1.51). This is NON-CANONICAL; canonical Access quarterly is **$197 / A$299**.
+- Membership differential ("for just $X more"): $80 (newborn, 5-12) / $30 (3-4 month, toddler); AUD A$121 / A$45 (x1.51). NON-CANONICAL launch figures.
+- Value-message range "$117-$129 each": $117 is the canonical course price (A$179); $129 is NON-CANONICAL launch (x1.51 -> A$195).
+
+### Hidden email-capture section (preserved, NOT deleted)
+Each file contains a large commented-out `course-sample-section` (free course sample / email capture), labelled "HIDDEN - See Notion project for implementation". This is disabled feature code, not a note, so it was left intact inside its `<!-- ... -->` wrapper rather than stripped. The 3-4 month file's hidden block also contains step-by-step Kajabi-form embed instructions (Marketing -> Forms -> create form -> paste embed). Revisit when the email-capture feature is implemented; the form handler is currently a placeholder `alert()`.
+
+### Service-model copy sweep (June 29, 2026)
+The "What's inside Snooze" benefit card and the membership feature lists were updated to remove false hard expectations about live coaching cadence:
+- Card heading "Live Coaching" -> "Live Sessions"; detail "Weekly Q&A with Sally..." -> "Live Q&A with Sally and Bec. Bring your questions and get guidance tailored to your baby."
+- Membership feature "Weekly live coaching with Sally" -> "Live sessions with Sally and Bec".
+- Individual-product negation "No live coaching" -> "No live sessions" (parity with renamed benefit).
+- CTA note "...Library, Village, and Coaching" -> "...Library, Village, and Live Sessions"; value message "...+ Coaching" -> "...+ Live Sessions".
+
+## Removed during comment strip (recoverable from git history)
+
+- A commented-out `course-sample-section` (disabled "Enjoy a free course sample" block) was present in each age page (newborn, 3-4 month, 5-12 month, toddler). It was removed with the comment strip. If the course-sample section is wanted live, recover it from git history and uncomment.

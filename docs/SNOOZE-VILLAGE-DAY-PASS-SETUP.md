@@ -18,18 +18,18 @@
 Get a taste of what makes Snooze special with a free day pass to our vibrant community. This is your chance to experience the support, connection, and expert guidance that thousands of parents rely on.
 
 **What's Included:**
-• Attend live group coaching calls with Sally
+• Join live sessions with Sally and Bec
 • Connect with other parents in Snooze Village
 • Get expert-moderated support from certified sleep consultants
-• 24 hours of full Village access (community & coaching)
+• 24 hours of full Village access (community & live sessions)
 
 **What's NOT Included:**
-This day pass gives you access to Snooze Village (community and coaching) but does not include courses or resources from the Library. Want full access? Upgrade to a Snooze Membership!
+This day pass gives you access to Snooze Village (community and live sessions) but does not include courses or resources from the Library. Want full access? Upgrade to a Snooze Membership!
 
 **Perfect For:**
 • Parents considering joining Snooze
 • Anyone curious about the community experience
-• Parents who want to attend a coaching call before committing
+• Parents who want to join a live session before committing
 • Those who want to feel the support of the Village
 
 No credit card required. Instant access. Start your 24-hour pass whenever you're ready.
@@ -150,7 +150,7 @@ All email templates, subject lines, and body copy are documented in the email te
 ✨ Free Day Pass to Snooze Village! ✨
 
 Want to see what all the fuss is about? Get a free 24-hour pass to experience:
-• Live coaching calls with Sally
+• Live sessions with Sally and Bec
 • Supportive parent community
 • Expert guidance when you need it
 
@@ -189,7 +189,7 @@ No credit card. No commitment. Just a taste of the Snooze experience.
 - This day pass is designed to be a low-friction way for prospects to experience Snooze Village
 - The "fun" checkout page helps create excitement and reduces friction
 - No payment means instant access, which improves user experience
-- 24-hour access gives enough time to attend a coaching call and explore the community
+- 24-hour access gives enough time to join a live session and explore the community
 - Excluding courses/Library creates a clear upgrade path to full membership
 
 ---

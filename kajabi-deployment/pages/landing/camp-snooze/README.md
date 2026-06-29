@@ -321,11 +321,52 @@ A complete redesign implementing a Luxury Escapes-inspired member-first pricing 
 ---
 
 **Last Updated:** January 7, 2026  
-**Status:** ✅ Complete & Deployed  
+**Status:** Complete & Deployed  
 **Supabase Sync:** 
-- ✅ Standalone offer registered in checkout_offer_map (PUBCM01, Offer ID: `muRW6ug5`)
-- ⚠️ Bundle offer SQL provided in `OFFER-DETAILS.md` - Execute in Supabase:
+- Standalone offer registered in checkout_offer_map (PUBCM01, Offer ID: `muRW6ug5`)
+- Bundle offer SQL provided in `OFFER-DETAILS.md` - Execute in Supabase:
   - **Internal Code:** PUBCM02 (PUB-CAMP-SNOOZE-BUNDLE)
   - **Offer ID:** `K3Y6FEKX`
   - **Checkout URL:** `https://www.joinsnooze.com/offers/K3Y6FEKX/checkout`
   - **Pricing:** From $587 USD (Quarterly) or $1,047 USD (Annual)
+
+---
+
+## Deployment Notes (relocated from source files)
+
+### camp-snooze-thank-you-page.html
+
+Matches other thank-you page formats for consistency.
+
+Deployment:
+1. Copy entire code block.
+2. Go to Kajabi: Sales > Offers > [Camp Snooze Jan '26 Offer] > Settings.
+3. Scroll to "Thank You Page" section.
+4. Select "Custom Thank You Page" or "Redirect to URL".
+5. Create a new page in Kajabi and paste this code.
+
+### camp-snooze-thank-you-page-brief.html
+
+Simple confirmation page for Snooze Membership + Camp Snooze Bundle.
+
+Deployment:
+1. Copy entire code block.
+2. Go to Kajabi: Sales > Offers > [Camp Snooze Bundle Offer] > Settings.
+3. Scroll to "Thank You Page" section.
+4. Select "Custom Thank You Page".
+5. Create a new page in Kajabi and paste this code.
+
+### camp-snooze-post-purchase-email.html
+
+**Purpose:** Email sent immediately after Snooze Membership + Camp Snooze Bundle purchase.  
+**Trigger:** Purchase of Camp Snooze Bundle offer.  
+**Send timing:** Immediately after purchase (automated).  
+**Status:** Ready for Kajabi; reusable for any camp session.  
+**Note:** Includes immediate Snooze access + Camp Snooze prep.
+
+**Email name:** Snooze + Camp Snooze Bundle Post-Purchase Email  
+**Subject line:** Welcome to Snooze + Camp Snooze! Here's what to do first (55 chars; over 50, consider shortening)  
+**Alternative subject:** Welcome to Snooze! Your access is ready (40 chars)  
+**Preview text:** You have immediate access to Snooze. Download the app and complete your Camp Snooze intake form.
+
+**Currency footer:** The footer paragraph ("Prices shown in USD. AUD pricing available at joinsnooze.com.") is present per PRD section 4.8.

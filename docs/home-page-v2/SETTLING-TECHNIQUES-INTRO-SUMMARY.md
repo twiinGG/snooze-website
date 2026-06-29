@@ -14,7 +14,7 @@ Both techniques are structured, responsive, and supportive. They're designed to 
 
 Whichever technique you choose, remember: consistency is everything. These methods work because they create a predictable pattern your baby can learn and trust. The first few nights might feel challenging, but that's normal. Your baby is learning a new skill, and like any skill, it takes practice.
 
-You've got this. Let's dive in.
+You've got this.
 
 ---
 
@@ -44,7 +44,7 @@ These techniques are part of a complete sleep system that addresses the full pic
 If you're finding these techniques helpful and want more support, **Snooze** is your ongoing resource for everything baby sleep. As a Snooze member, you get:
 
 - Full access to all sleep courses and guides (Newborn, 3-4 Month, 5-12 Month, Toddler Toolkit)
-- Weekly live group coaching with Sally Woods, where you can ask questions and get real-time guidance
+- Live sessions with Sally and Bec, where you can ask questions and get guidance tailored to your baby
 - Daily support in the Snooze community from expert-moderated forums
 - Age-based pathways that adapt as your baby grows
 - Tools for regressions, travel, routines, and every sleep challenge that comes up

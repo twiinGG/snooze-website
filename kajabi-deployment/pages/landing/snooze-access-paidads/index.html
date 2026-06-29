@@ -1,40 +1,4 @@
-<!--
-  Snooze Access - Cold-Ads Sales / Results Page (funnel step 2)
-  Funnel: cold ad -> quiz/assessment (quiz/index.html) -> THIS results/sales page -> thank-you (thanks/index.html)
-  Source pattern: kajabi-deployment/pages/landing/day-pass-paidads/index.html (trust block, blockquote, as-seen-in row)
-  Adapted for: Snooze Access paid-ads funnel, AU market, AUD default.
 
-  Slug suggestion: /snooze-access-from-our-ads (the quiz redirects here, carrying
-  ?first_name=&currency=&age=&struggle= plus the five utm_* keys for attribution passthrough).
-
-  Paste each section block into a separate Kajabi Custom Code section in the order shown.
-  Fill placeholder {{privacy_url}} before publishing.
-
-  CHECKOUT WIRING (done June 19, 2026, Phase 3 Offer and Funnel Readiness):
-  Checkout URLs are no longer a paste-time placeholder. They are resolved client-side
-  in the script at the bottom of this page from a single SA_CHECKOUT config object.
-  - USD (live default): https://www.joinsnooze.com/offers/z63s9VaR/checkout
-    (verified via Kajabi get_offer 2150754998, field checkout_url, June 19, 2026).
-  - AUD: offer 2151212200 is DRAFT and unpublished. Its checkout
-    (https://www.joinsnooze.com/offers/bEsVXFXG/checkout) will 404 until Sally/Louise
-    publish it. AUD is therefore GATED OFF below (SA_CHECKOUT.aud.live = false): AUD
-    visitors fall back to the USD checkout until the flag flips. Flip ONE constant
-    (SA_CHECKOUT.aud.live = true) on publish; the URL lives in exactly one place.
-  UTM passthrough: the script carries utm_content (== ad_name) and the other four UTM
-  keys verbatim from the page URL onto the checkout query string, matching the first-party
-  capture POSTed on the quiz page (paid_media.lead_attribution_capture, utm_content == ad_name).
-
-  Purchase / checkout tracking: handled by the existing global
-  kajabi-deployment/global/js/kajabi-checkout-tracking.js (pushes the purchase event to
-  GTM dataLayer and Meta Pixel with the correct currency on the Kajabi checkout page).
-  Do NOT add a duplicate pixel or purchase event here; this page only links to checkout.
-
-  Inline styles only; no theme CSS dependency; no <style> blocks (Kajabi strips them).
--->
-
-<!-- ============================================================== -->
-<!-- SECTION 1: HERO (pain-led headline + Sally's reframe)           -->
-<!-- ============================================================== -->
 <section style="padding: 4rem 1.5rem 3rem; max-width: 760px; margin: 0 auto; text-align: center;">
   <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #29563f; margin: 0 0 1rem;">
     Your results &nbsp;&middot;&nbsp; Snooze Access
@@ -56,9 +20,7 @@
   </p>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 2: THE REFRAME                                           -->
-<!-- ============================================================== -->
+
 <section style="padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; background: #f9fafb; border-radius: 12px;">
   <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.25rem;">
     If the four-month change knocked you sideways
@@ -71,9 +33,7 @@
   </p>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 3: WHAT'S INSIDE SNOOZE ACCESS                           -->
-<!-- ============================================================== -->
+
 <section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto;">
   <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.75rem;">
     What&rsquo;s inside Snooze Access
@@ -106,9 +66,7 @@
   </ul>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 4: HOW IT WORKS                                          -->
-<!-- ============================================================== -->
+
 <section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; background: #f9fafb; border-radius: 12px;">
   <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1.75rem;">
     How it works
@@ -138,15 +96,12 @@
   </ol>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 5: MONEY-BACK RESULTS GUARANTEE (featured)              -->
-<!-- ============================================================== -->
+
 <section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto;">
   <div style="padding: 2rem 1.75rem; background: #f0f7f4; border: 2px solid #29563f; border-radius: 14px; text-align: center;">
     <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #29563f; margin: 0 0 0.75rem;">
       The results guarantee
     </p>
-    <!-- PLACEHOLDER WORDING: final guarantee wording needs Sally's sign-off before publishing. -->
     <h2 style="font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
       Noticeably better sleep within 14 days, or your money back.
     </h2>
@@ -156,9 +111,7 @@
   </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 6: TRUST ELEMENTS                                        -->
-<!-- ============================================================== -->
+
 <section style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; border-top: 1px solid #e5e7eb;">
 
   <blockquote style="margin: 0 0 2rem; padding: 1.5rem; background: #f9fafb; border-left: 3px solid #29563f; border-radius: 0 8px 8px 0;">
@@ -182,9 +135,7 @@
   </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 7: PRICING (monthly / quarterly anchor / annual)        -->
-<!-- ============================================================== -->
+
 <section style="padding: 3rem 1.5rem; max-width: 760px; margin: 0 auto;">
   <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 0.5rem; text-align: center;">
     Choose what suits your season
@@ -193,16 +144,8 @@
     Every plan starts with the same 7-day free trial. Prices shown in <span id="sa-currency-label">AUD</span>. Cancel anytime.
   </p>
 
-  <!-- PRICING: confirm live prices against the Kajabi offers registry before publishing.
-       All three buttons carry data-sa-checkout and are wired at runtime by the script at the
-       bottom of this page (currency-aware, single SA_CHECKOUT source). The current Snooze Access
-       offer (USD 2150754998 / AUD 2151212200) uses one checkout per currency for all three plan
-       tiers; the buyer picks monthly/quarterly/annual on the Kajabi checkout page. If the offers
-       are ever split into one checkout per tier, give each button its own data-sa-checkout-plan
-       hook and extend resolveCheckout; do not reintroduce a paste-time URL placeholder. -->
   <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center;">
 
-    <!-- Monthly -->
     <div style="flex: 1 1 200px; min-width: 200px; max-width: 240px; padding: 1.75rem 1.5rem; border: 1.5px solid #e5e7eb; border-radius: 12px; text-align: center;">
       <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0 0 0.5rem;">Monthly</p>
       <p style="font-size: 0.875rem; line-height: 1.6; color: #6b7280; margin: 0 0 1rem;">Month to month. Flexible if you just need a short season of support.</p>
@@ -211,7 +154,6 @@
       </a>
     </div>
 
-    <!-- Quarterly (default / anchor) -->
     <div style="flex: 1 1 220px; min-width: 220px; max-width: 260px; padding: 1.75rem 1.5rem; border: 2px solid #29563f; border-radius: 12px; text-align: center; position: relative;">
       <span style="position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: #29563f; color: #ffffff; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 999px;">Most popular</span>
       <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0.5rem 0 0.5rem;">Quarterly</p>
@@ -221,7 +163,6 @@
       </a>
     </div>
 
-    <!-- Annual (best value, cash upfront) -->
     <div style="flex: 1 1 200px; min-width: 200px; max-width: 240px; padding: 1.75rem 1.5rem; border: 1.5px solid #e5e7eb; border-radius: 12px; text-align: center;">
       <p style="font-size: 0.9375rem; font-weight: 700; color: #1f293b; margin: 0 0 0.5rem;">Annual <span style="color: #f43357;">&middot; best value</span></p>
       <p style="font-size: 0.875rem; line-height: 1.6; color: #6b7280; margin: 0 0 1rem;">A full year, paid upfront, at the lowest rate. For families who want support through every stage ahead.</p>
@@ -237,9 +178,7 @@
   </p>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 8: FINAL CTA                                             -->
-<!-- ============================================================== -->
+
 <section style="padding: 2rem 1.5rem 4rem; max-width: 640px; margin: 0 auto; text-align: center;">
   <h2 style="font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
     Better sleep is very possible
@@ -257,22 +196,12 @@
 
 <script>
 (function () {
-  // ---------------------------------------------------------------------------
-  // Snooze Access checkout config (single source of truth for checkout URLs).
-  // Wired June 19, 2026 (Phase 3). USD verified live via Kajabi get_offer
-  // 2150754998 -> checkout_url. AUD offer 2151212200 is DRAFT/unpublished, so its
-  // checkout 404s; aud.live = false routes AU visitors to USD until publish.
-  // TO GO LIVE IN AUD: set SA_CHECKOUT.aud.live = true (one change, one place).
-  // ---------------------------------------------------------------------------
   var SA_CHECKOUT = {
     usd: { url: 'https://www.joinsnooze.com/offers/z63s9VaR/checkout', live: true },
     aud: { url: 'https://www.joinsnooze.com/offers/bEsVXFXG/checkout', live: false }
   };
 
-  // The five UTM keys carried through the funnel. utm_content == Meta ad_name and is
-  // the attribution join key (paid_media.lead_attribution_capture, harness §5). These
-  // travel verbatim onto the checkout URL so the creative survives to purchase.
-  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var UTM_KEYS =['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
   function resolveCheckout(currency, params) {
     var conf = (currency === 'aud' && SA_CHECKOUT.aud.live) ? SA_CHECKOUT.aud : SA_CHECKOUT.usd;
@@ -293,10 +222,6 @@
     return url;
   }
 
-  // Personalise the greeting and currency label from the query string passed by the
-  // quiz redirect (?first_name=&currency=&age=&struggle=&utm_*=). No network calls here;
-  // checkout/purchase tracking is handled by the global kajabi-checkout-tracking.js
-  // on the Kajabi checkout page, not on this page.
   function hydrateFromQuery() {
     var links, i;
     try {
@@ -314,14 +239,12 @@
         label.textContent = currency.toUpperCase();
       }
 
-      // Wire every checkout CTA to the resolved, currency-aware, UTM-carrying URL.
-      var checkoutUrl = resolveCheckout(currency, params);
+      var checkoutUrl =resolveCheckout(currency, params);
       links = document.querySelectorAll('a[data-sa-checkout]');
       for (i = 0; i < links.length; i++) {
         links[i].setAttribute('href', checkoutUrl);
       }
     } catch (e) {
-      // Silent fallback: hard-wire the USD checkout so CTAs never dead-link.
       try {
         links = document.querySelectorAll('a[data-sa-checkout]');
         for (i = 0; i < links.length; i++) {

@@ -1,27 +1,5 @@
-<!--
-  Snooze Day Pass - Cold-Ads Thank-You Page
-  Slug: /day-pass/from-our-ads/thanks
-  Source: docs/projects/day-pass/09-landing-page-implementation.md section 5a (thank-you header)
-  Related: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §5.3
-  Related folder: apps/snooze-website/kajabi-deployment/pages/landing/day-pass-paidads/
-
-  Wave 1 polish. V1 cold-ads redirects to /day-pass/thanks; flip the redirect
-  in day-pass-paidads/index.html (and script.js) to /day-pass/from-our-ads/thanks
-  once this page is published.
-
-  Section 5b (question-capture form) is intentionally omitted; cold-ad clickers
-  have no event context, so the question prompt makes no sense for this funnel.
-
-  Wrapper ID: #day-pass-thanks-page (self-contained inline styles; no theme CSS).
-  Pass first_name, access_url, expires_at_local via URL query parameters or
-  Kajabi merge tags before this page renders.
--->
-
 <div id="day-pass-thanks-page">
 
-<!-- ============================================================== -->
-<!-- SECTION 1: THANK-YOU HEADER                                      -->
-<!-- ============================================================== -->
 <section style="padding: 3.5rem 1.5rem 1.5rem; max-width: 640px; margin: 0 auto; text-align: center;">
   <div style="display: inline-block; padding: 0.5rem 1rem; background: #f0f7f4; border-radius: 999px; font-size: 0.8125rem; font-weight: 600; color: #29563f; margin-bottom: 1rem;">
     Access link sent to your inbox. Your library is ready when you want it.
@@ -37,9 +15,6 @@
   </p>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 2: ONBOARDING (replaces canonical question form)         -->
-<!-- ============================================================== -->
 <section style="padding: 1.5rem 1.5rem 1rem; max-width: 640px; margin: 0 auto;">
   <h2 style="font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
     Where to start
@@ -78,9 +53,6 @@
   </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 3: SUPPORT FOOTER                                        -->
-<!-- ============================================================== -->
 <section style="padding: 2rem 1.5rem 4rem; max-width: 640px; margin: 0 auto;">
   <div style="padding: 1.5rem; background: #f9fafb; border-radius: 12px; border-left: 3px solid #29563f;">
     <p style="line-height: 1.7; color: #374151; margin: 0 0 0.75rem; font-size: 0.9375rem;">
@@ -93,13 +65,9 @@
 </section>
 
 </div>
-<!-- end #day-pass-thanks-page -->
 
 <script>
 (function () {
-  // Read currency preference from URL or localStorage. V1 does not render
-  // currency-aware copy on this page (the Day Pass is free), but the value
-  // is stored for any future pricing teaser and for downstream attribution.
   function getCurrencyPreference() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -108,7 +76,6 @@
         try {
           window.localStorage.setItem('snooze_currency_preference', fromUrl);
         } catch (storageErr) {
-          // localStorage may be blocked; ignore.
         }
         return fromUrl;
       }
@@ -118,7 +85,6 @@
           return fromStorage;
         }
       } catch (storageErr) {
-        // localStorage may be blocked; ignore.
       }
       return '';
     } catch (e) {
@@ -126,9 +92,6 @@
     }
   }
 
-  // Hydrate the access URL and expiry from query params if Kajabi merge tags
-  // are not resolving. This is a fallback for the case where the redirect
-  // from the signup form carries the values as ?access_url=...&expires_at=...
   function hydrateFromQuery() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -157,11 +120,9 @@
         }
       }
     } catch (e) {
-      // Silent fallback; the Kajabi merge tags are the primary path.
     }
   }
 
-  // Store currency preference for downstream pages and run any fallback hydration.
   getCurrencyPreference();
   hydrateFromQuery();
 }());

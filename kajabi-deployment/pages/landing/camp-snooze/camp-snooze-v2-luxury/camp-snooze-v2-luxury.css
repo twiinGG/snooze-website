@@ -1,13 +1,4 @@
-/* ============================================
-   CAMP SNOOZE V2 - MEMBER-FIRST PRICING
-   Simplified Single-Price with Upsell Modals
-
-   Paste this into Kajabi: Settings → Website → Theme → Custom CSS
-   (Or into the page's custom CSS field)
-   ============================================ */
-
 :root {
-  /* Camp Snooze Palette - Nostalgic Summer Camp */
   --camp-forest: hsl(150, 35%, 25%);
   --camp-sage: hsl(140, 25%, 75%);
   --camp-cream: hsl(42, 33%, 96%);
@@ -19,12 +10,10 @@
   --foreground: hsl(150, 25%, 20%);
   --muted-foreground: hsl(150, 15%, 40%);
 
-  /* Typography */
   --font-display: 'Satisfy', cursive;
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'DM Sans', sans-serif;
 
-  /* Shadows */
   --shadow-soft: 0 4px 20px -4px hsl(150 25% 20% / 0.1);
   --shadow-polaroid: 0 8px 30px -8px hsl(150 25% 20% / 0.2);
   --shadow-badge: 0 2px 8px hsl(150 25% 20% / 0.15);
@@ -60,7 +49,6 @@ h6 {
   padding: 0 1rem;
 }
 
-/* Pine Tree Background Pattern */
 .pine-pattern {
   background-color: var(--background);
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='100' viewBox='0 0 80 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L48 25 L32 25 Z M40 20 L52 40 L28 40 Z M40 35 L55 58 L25 58 Z M37 58 L43 58 L43 72 L37 72 Z' fill='%23355E3B' fill-opacity='0.06'/%3E%3C/svg%3E");
@@ -68,7 +56,6 @@ h6 {
   background-size: 80px 100px;
 }
 
-/* Section Styles */
 .camp-section {
   padding: 5rem 0;
   position: relative;
@@ -78,7 +65,6 @@ h6 {
   background: white;
 }
 
-/* Typography */
 .font-display {
   font-family: var(--font-display);
 }
@@ -91,7 +77,6 @@ h6 {
   font-family: var(--font-body);
 }
 
-/* Section Divider */
 .section-divider {
   width: 96px;
   height: 4px;
@@ -100,7 +85,6 @@ h6 {
   background: linear-gradient(90deg, var(--camp-sage), var(--camp-gold));
 }
 
-/* Buttons */
 .btn-camp {
   display: inline-block;
   background: var(--camp-forest);
@@ -142,7 +126,6 @@ h6 {
   background: hsl(38, 70%, 60%);
 }
 
-/* Camp Badge */
 .camp-badge {
   display: inline-flex;
   align-items: center;
@@ -163,7 +146,6 @@ h6 {
   background-opacity: 0.3;
 }
 
-/* Polaroid Photo Effect */
 .polaroid {
   background: white;
   padding: 0.75rem;
@@ -185,7 +167,6 @@ h6 {
   transform: rotate(0deg) scale(1.02);
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -282,7 +263,6 @@ h6 {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Sticky Footer CTA */
 .sticky-cta {
   position: fixed;
   bottom: 0;
@@ -310,7 +290,6 @@ h6 {
   gap: 1rem;
 }
 
-/* Camp Scene Illustration */
 .camp-scene-illustration {
   margin-bottom: 2.5rem;
   position: relative;
@@ -334,10 +313,6 @@ h6 {
   opacity: 1;
   transform: scale(1.01);
 }
-
-/* ============================================
-   COUNTDOWN TIMER
-   ============================================ */
 
 .countdown-wrapper {
   margin-bottom: 2rem;
@@ -400,7 +375,6 @@ h6 {
   padding: 0 0.25rem;
 }
 
-/* Countdown expired state */
 .countdown-expired {
   text-align: center;
   padding: 1rem 1.5rem;
@@ -410,7 +384,6 @@ h6 {
   font-weight: 600;
 }
 
-/* Sticky CTA countdown (compact version) */
 .sticky-countdown {
   display: flex;
   align-items: center;
@@ -447,10 +420,6 @@ h6 {
     font-size: 0.8rem;
   }
 }
-
-/* ============================================
-   HERO PRICING - Single Prominent Price Box
-   ============================================ */
 
 .hero-price-container {
   max-width: 420px;
@@ -511,7 +480,6 @@ h6 {
   max-width: 280px;
 }
 
-/* Dark Pricing Card (for dark section) */
 .pricing-card-dark {
   max-width: 420px;
   margin: 0 auto;
@@ -523,7 +491,6 @@ h6 {
   text-align: center;
 }
 
-/* Waitlist section (replaces pricing when in waitlist mode) */
 #waitlist-section .waitlist-form-wrap {
   min-height: 120px;
 }
@@ -531,10 +498,6 @@ h6 {
 #waitlist-section .waitlist-form-wrap iframe {
   max-width: 100%;
 }
-
-/* ============================================
-   MODAL STYLES
-   ============================================ */
 
 .modal-overlay {
   position: fixed;
@@ -597,7 +560,6 @@ h6 {
   margin-bottom: 1.5rem;
 }
 
-/* Price Breakdown Styles */
 .breakdown-container {
   background: #f8fafc;
   border-radius: 1rem;
@@ -637,7 +599,6 @@ h6 {
   font-weight: 600;
 }
 
-/* Upsell Modal Specifics */
 .upsell-modal {
   max-width: 460px;
 }
@@ -734,7 +695,6 @@ h6 {
   margin-right: 4px;
 }
 
-/* Upgrade Button */
 .btn-upgrade {
   display: flex;
   flex-direction: column;
@@ -768,7 +728,6 @@ h6 {
   margin-top: 2px;
 }
 
-/* Non-member Option */
 .non-member-section {
   text-align: center;
   padding-top: 0.5rem;
@@ -785,10 +744,6 @@ h6 {
 .non-member-option:hover {
   color: #475569;
 }
-
-/* ============================================
-   RESPONSIVE STYLES
-   ============================================ */
 
 @media (max-width: 768px) {
   .camp-section {
@@ -853,19 +808,14 @@ h6 {
   }
 }
 
-/* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Body scroll lock when modal is open */
 body.modal-open {
   overflow: hidden;
 }
 
-/* ============================================
-   TESTIMONIAL CAROUSEL - Horizontal Scrolling
-   ============================================ */
 .testimonial-carousel-full {
   width: 100vw;
   position: relative;
@@ -954,11 +904,6 @@ body.modal-open {
   }
 }
 
-/* ============================================
-   CAMP SNOOZE CURRENCY TOGGLE (AUD/USD)
-   ============================================ */
-
-/* FOUC prevention: hide dynamic prices until currency loaded */
 body:not(.currency-loaded) .dynamic-price {
   visibility: hidden;
 }
@@ -967,7 +912,6 @@ body.currency-loaded .dynamic-price {
   visibility: visible;
 }
 
-/* Toggle container (pricing section) */
 .camp-currency-toggle-wrap {
   display: flex !important;
   justify-content: center !important;
@@ -1016,7 +960,6 @@ body.currency-loaded .dynamic-price {
   outline-offset: 2px;
 }
 
-/* Nav-injected toggle (desktop/mobile) */
 .camp-nav-currency-toggle {
   display: inline-flex !important;
   border: 1px solid hsl(150, 25%, 60%);
@@ -1052,7 +995,6 @@ body.currency-loaded .dynamic-price {
   outline-offset: 2px;
 }
 
-/* Sticky footer toggle */
 .sticky-currency-toggle {
   display: inline-flex !important;
 }
@@ -1084,11 +1026,11 @@ body.currency-loaded .dynamic-price {
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   .camp-nav-currency-toggle {
     margin-left: 0;
   }
-  
+
   .sticky-currency-toggle button {
     padding: 0.3rem 0.6rem;
     font-size: 0.75rem;

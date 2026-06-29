@@ -1,27 +1,12 @@
-<!--
-  CAMP SNOOZE V2 - STANDALONE CHECKOUT
-  For users who chose "No thanks, I'll pay the non-member price" from the upsell modal
-  Offer: muRW6ug5
 
-  DEPLOYMENT INSTRUCTIONS:
-  1. Create checkout page in Kajabi for offer muRW6ug5
-  2. Add this HTML to a Custom Code Block BELOW the Kajabi checkout form
-  3. Paste camp-snooze-v2-checkout.css into Custom CSS field
-  4. Paste camp-snooze-v2-checkout.js into Custom JavaScript field
-  5. Add Google Fonts to Header Tracking Code (optional - also loaded inline below):
-     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
--->
-
-<!-- Load Font Awesome and Google Fonts inline -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"> <!-- pragma: allowlist secret -->
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link
   href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Satisfy&display=swap"
   rel="stylesheet">
 
 <div id="snooze-custom-checkout" class="checkout-v2 checkout-standalone">
 
-  <!-- Order Summary Card -->
   <div class="order-summary-card">
     <h3>Your Order Summary</h3>
 
@@ -45,7 +30,6 @@
     </div>
   </div>
 
-  <!-- Member Upgrade Prompt -->
   <div class="upgrade-prompt">
     <div class="upgrade-icon">
       <i class="fa-solid fa-crown"></i>
@@ -60,12 +44,10 @@
     </div>
   </div>
 
-  <!-- What You're Getting -->
   <div class="whats-included-section">
     <h3>What You're Getting</h3>
 
     <div class="included-grid single-card">
-      <!-- Camp Snooze -->
       <div class="included-card">
         <div class="card-header">
           <span class="card-icon">🏕️</span>
@@ -83,7 +65,6 @@
     </div>
   </div>
 
-  <!-- Key Dates -->
   <div class="key-dates-section">
     <h3>Key Dates</h3>
     <div class="dates-grid">
@@ -118,7 +99,6 @@
     </div>
   </div>
 
-  <!-- Trust Indicators -->
   <div class="trust-section">
     <div class="trust-item">
       <i class="fa-solid fa-shield-check"></i>
@@ -134,12 +114,10 @@
     </div>
   </div>
 
-  <!-- Mobile CTA -->
   <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">
     Complete Checkout - <span class="dynamic-price" data-usd="690" data-aud="997">$690</span>
   </a>
 
-  <!-- Footer -->
   <div class="checkout-footer">
     <p>Questions? Email <a href="mailto:hello@joinsnooze.com">hello@joinsnooze.com</a></p>
     <p class="footer-note">Camp Snooze is a one-time program with 2 weeks of access to materials.</p>

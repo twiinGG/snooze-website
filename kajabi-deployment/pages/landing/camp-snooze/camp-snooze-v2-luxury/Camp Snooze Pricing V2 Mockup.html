@@ -30,7 +30,6 @@
             background: white;
         }
 
-        /* Prominent Price Box */
         .hero-price-container {
             max-width: 500px;
             margin: 2rem auto;
@@ -78,7 +77,6 @@
             display: inline-block;
         }
 
-        /* Modals */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -110,7 +108,6 @@
             cursor: pointer;
         }
 
-        /* Upsell Modal Specifics */
         .upsell-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -162,7 +159,6 @@
             cursor: pointer;
         }
 
-        /* Price Breakdown List */
         .breakdown-row {
             display: flex;
             justify-content: space-between;
@@ -184,7 +180,7 @@
 
 <section class="pricing-section">
     <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--camp-forest);">Your Sleep Transformation</h2>
-    
+
     <div class="hero-price-container">
         <div class="value-anchor">Total Value: $3,530</div>
         <p class="prominent-price">$390</p>
@@ -192,7 +188,7 @@
             <i class="fa-solid fa-crown"></i> Snooze Member Price
         </div>
         <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem;">Non-member price: $690</p>
-        
+
         <div class="price-details-link" onclick="toggleModal('details-modal', true)">
             View Price Details & Breakdown
         </div>
@@ -203,7 +199,6 @@
     </div>
 </section>
 
-<!-- Price Details Modal -->
 <div id="details-modal" class="modal-overlay" onclick="toggleModal('details-modal', false)">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="toggleModal('details-modal', false)">&times;</span>
@@ -231,7 +226,6 @@
     </div>
 </div>
 
-<!-- Upsell Interstitial Modal -->
 <div id="upsell-modal" class="modal-overlay">
     <div class="modal-content">
         <span class="modal-close" onclick="toggleModal('upsell-modal', false)">&times;</span>
@@ -268,7 +262,6 @@
         modal.style.display = show ? 'flex' : 'none';
     }
 
-    // Close on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');

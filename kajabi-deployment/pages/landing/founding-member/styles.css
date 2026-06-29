@@ -1,34 +1,7 @@
-/* ============================================
-   FOUNDING MEMBER OFFER LANDING PAGE CSS
-   Page-Specific Styles
-   
-   Version: 1.1
-   Date: December 2025
-   
-   This file contains all CSS needed for the 
-   founding-member landing page, including:
-   - Design System Variables
-   - Kajabi Overrides
-   - Base/Reset Styles
-   - Container Utilities
-   - Navigation Styles (snooze-nav-clean)
-   - Launch Banner Styles
-   - Footer Styles (snooze-footer-clean)
-   - Founding Member Component Styles
-   
-   Add this to the page's Custom CSS block in Kajabi
-   ============================================ */
-
-/* ============================================
-   0. IMPORTS
-   ============================================ */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/* ============================================
-   1. DESIGN SYSTEM VARIABLES (:root)
-   ============================================ */
 :root {
-  /* --- BRAND COLORS (Snooze Global) --- */
+
   --sn-coral: #F43357;
   --sn-coral-hover: #D62646;
   --sn-navy: #1F293B;
@@ -36,18 +9,15 @@
   --sn-white: #FFFFFF;
   --sn-text-dark: #161E2A;
   --sn-text-light: #94A3B8;
-  
-  /* --- TYPOGRAPHY --- */
+
   --sn-font-body: 'Poppins', sans-serif;
   --sn-font-heading: 'Playfair Display', serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Playfair Display', Georgia, serif;
 
-  /* --- DIMENSIONS --- */
   --sn-nav-height: 80px;
   --sn-max-width: 1200px;
 
-  /* --- EXTENDED COLOR PALETTE --- */
   --color-coral: #F43357;
   --color-navy: #1F293B;
   --color-cream: #FAF7F4;
@@ -58,43 +28,35 @@
   --color-dark: #161E2A;
   --color-yellow: #FFC107;
 
-  /* --- SPACING SCALE --- */
-  --spacing-xs: 0.5rem;    /* 8px */
-  --spacing-sm: 1rem;      /* 16px */
-  --spacing-md: 1.5rem;    /* 24px */
-  --spacing-lg: 2rem;      /* 32px */
-  --spacing-xl: 3rem;      /* 48px */
-  --spacing-2xl: 4rem;     /* 64px */
-  --spacing-3xl: 6rem;     /* 96px */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
 
-  /* --- BORDER RADIUS --- */
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 25px;
   --radius-xl: 30px;
   --radius-full: 9999px;
 
-  /* --- TRANSITIONS --- */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
 
-  /* --- SHADOWS --- */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
 
-  /* --- BREAKPOINTS --- */
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1200px;
 }
 
-/* ============================================
-   2. RESET & BASE STYLES
-   ============================================ */
 *,
 *::before,
 *::after {
@@ -116,11 +78,10 @@ body {
   background-color: var(--color-cream);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 0 !important; /* Reset fix */
+  padding-top: 0 !important;
   margin: 0;
 }
 
-/* --- TYPOGRAPHY --- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
@@ -162,7 +123,6 @@ strong {
   display: inline;
 }
 
-/* --- ICON FIXES (Font Awesome) --- */
 i, .fa {
   font-style: normal !important;
   font-variant: normal !important;
@@ -178,11 +138,6 @@ i.far, .far { font-family: "Font Awesome 6 Free", Arial, sans-serif !important; 
 i.fal, .fal { font-family: "Font Awesome 6 Free", Arial, sans-serif !important; font-weight: 300 !important; }
 i.fab, .fab, .fa-brands { font-family: "Font Awesome 6 Brands", Arial, sans-serif !important; font-weight: 400 !important; }
 
-/* ============================================
-   3. KAJABI OVERRIDES & HEADER HANDLING
-   ============================================ */
-
-/* Hide Kajabi header visually but keep in DOM for detection */
 header[class*="header"]:not(.snooze-nav-clean),
 nav[class*="nav"]:not(.snooze-nav-clean):not(.category-nav):not([class*="category-nav"]),
 .site-header:not(.snooze-nav-clean),
@@ -203,7 +158,6 @@ div[class*="SiteHeader"] {
   overflow: hidden !important;
 }
 
-/* Remove default Kajabi padding/margins to make sections flush */
 div[class*="section"]:not(.founding-member-section):not(.founding-member-hero),
 section[class*="section"]:not(.founding-member-section):not(.founding-member-hero) {
   padding-top: 0 !important;
@@ -212,7 +166,6 @@ section[class*="section"]:not(.founding-member-section):not(.founding-member-her
   margin-bottom: 0 !important;
 }
 
-/* Target Kajabi's block wrapper elements */
 div[class*="block"]:not(.founding-member-hero-content):not(.founding-member-pricing-container):not(.founding-member-benefits-grid):not(.founding-member-problem-grid):not(.founding-member-reviews-grid),
 div[class*="Block"]:not(.founding-member-hero-content):not(.founding-member-pricing-container):not(.founding-member-benefits-grid):not(.founding-member-problem-grid):not(.founding-member-reviews-grid),
 div[class*="code-block"],
@@ -223,7 +176,6 @@ div[class*="html-block"] {
   margin-bottom: 0 !important;
 }
 
-/* Remove spacing from Kajabi's page content wrapper divs */
 .kajabi-page-content > div > div,
 .kajabi-page-content > section > div,
 body > div[class*="page"] > div,
@@ -232,9 +184,6 @@ body > div[class*="Page"] > div {
   padding: 0 !important;
 }
 
-/* ============================================
-   4. CONTAINER UTILITY
-   ============================================ */
 .container {
   max-width: var(--sn-max-width, 1200px);
   margin: 0 auto;
@@ -248,9 +197,6 @@ body > div[class*="Page"] > div {
   }
 }
 
-/* ============================================
-   5. FOOTER STYLES
-   ============================================ */
 footer {
   background-color: var(--color-navy);
   color: var(--color-white);
@@ -258,60 +204,55 @@ footer {
   text-align: center;
 }
 
-footer, footer * { 
-  color: var(--color-white); 
+footer, footer * {
+  color: var(--color-white);
 }
 
-footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 { 
-  color: var(--color-white) !important; 
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  color: var(--color-white) !important;
 }
 
-footer .logo, 
-footer .footer-logo { 
-  color: var(--color-coral); 
-  font-size: 1.5rem; 
-  font-weight: 700; 
-  margin-bottom: var(--spacing-md); 
-  font-family: var(--font-heading); 
+footer .logo,
+footer .footer-logo {
+  color: var(--color-coral);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-heading);
 }
 
-footer .logo svg { 
-  max-width: 150px; 
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
+footer .logo svg {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-footer p, 
-footer .footer-text { 
-  color: var(--color-sage); 
-  font-size: 0.9rem; 
+footer p,
+footer .footer-text {
+  color: var(--color-sage);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
-footer a { 
-  color: var(--color-white); 
+footer a {
+  color: var(--color-white);
 }
 
-footer a:hover { 
-  color: var(--color-coral); 
+footer a:hover {
+  color: var(--color-coral);
 }
 
-footer i, 
-footer .fa { 
-  color: var(--color-white); 
+footer i,
+footer .fa {
+  color: var(--color-white);
 }
 
-footer a:hover i, 
-footer a:hover .fa { 
-  color: var(--color-coral); 
+footer a:hover i,
+footer a:hover .fa {
+  color: var(--color-coral);
 }
 
-/* ============================================
-   6. FOUNDING MEMBER OFFER LANDING PAGE
-   ============================================ */
-
-/* Urgency Bar */
 .founding-member-urgency-bar {
   background: var(--color-navy);
   color: var(--color-white);
@@ -325,7 +266,6 @@ footer a:hover .fa {
   color: var(--color-coral);
 }
 
-/* Hero Section */
 .founding-member-hero {
   background: linear-gradient(135deg, var(--color-coral) 0%, #D12A47 100%);
   color: var(--color-white);
@@ -438,7 +378,6 @@ footer a:hover .fa {
   color: var(--color-white);
 }
 
-/* Section Styles */
 .founding-member-section {
   padding: 60px 20px;
 }
@@ -464,7 +403,6 @@ footer a:hover .fa {
   line-height: 1.6;
 }
 
-/* Problem Section */
 .founding-member-problem-grid {
   display: grid;
   gap: 24px;
@@ -496,7 +434,6 @@ footer a:hover .fa {
   margin-bottom: 0;
 }
 
-/* Promise Section */
 .founding-member-promise-box {
   background: linear-gradient(135deg, var(--color-coral) 0%, #D12A47 100%);
   color: var(--color-white);
@@ -520,7 +457,6 @@ footer a:hover .fa {
   margin-bottom: 0;
 }
 
-/* Benefits Grid */
 .founding-member-benefits-grid {
   display: grid;
   gap: 20px;
@@ -548,7 +484,6 @@ footer a:hover .fa {
   margin-bottom: 0;
 }
 
-/* Pricing Section */
 .founding-member-pricing-container {
   max-width: 600px;
   margin: 0 auto;
@@ -645,7 +580,6 @@ footer a:hover .fa {
   font-size: 20px;
 }
 
-/* Social Proof - Compact Grid */
 .founding-member-reviews-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -676,7 +610,6 @@ footer a:hover .fa {
   font-weight: 500;
 }
 
-/* Guarantee */
 .founding-member-guarantee-box {
   background: #F5F5F5;
   padding: 32px 24px;
@@ -698,7 +631,6 @@ footer a:hover .fa {
   margin-bottom: 0;
 }
 
-/* FAQ */
 .founding-member-faq-item {
   background: var(--color-white);
   padding: 24px;
@@ -721,7 +653,6 @@ footer a:hover .fa {
   margin-bottom: 0;
 }
 
-/* Sticky CTA */
 .founding-member-sticky-cta {
   position: fixed;
   bottom: 0;
@@ -806,7 +737,6 @@ footer a:hover .fa {
   transform: translateY(-2px);
 }
 
-/* Desktop Styles */
 @media (min-width: 768px) {
   .founding-member-hero {
     padding: 80px 40px 100px;
@@ -877,9 +807,6 @@ footer a:hover .fa {
   }
 }
 
-/* ============================================
-   7. NAVIGATION STYLES (Custom Header)
-   ============================================ */
 .snooze-nav-clean {
   background: var(--sn-white);
   height: var(--sn-nav-height);
@@ -889,10 +816,9 @@ footer a:hover .fa {
   z-index: 9999;
   box-shadow: 0 2px 15px rgba(0,0,0,0.04);
   font-family: var(--sn-font-body);
-  isolation: isolate; /* Creates new stacking context */
+  isolation: isolate;
 }
 
-/* Adjust nav position when banner is visible */
 body.sn-banner-visible .snooze-nav-clean {
   top: 50px;
 }
@@ -907,7 +833,6 @@ body.sn-banner-visible .snooze-nav-clean {
   justify-content: space-between;
 }
 
-/* Logo */
 .sn-logo-text {
   font-family: var(--sn-font-heading);
   font-size: 28px;
@@ -944,9 +869,8 @@ body.sn-banner-visible .snooze-nav-clean {
   }
 }
 
-/* Desktop Menu */
-.sn-desktop-menu { 
-  display: none; 
+.sn-desktop-menu {
+  display: none;
 }
 
 @media (max-width: 991px) {
@@ -982,7 +906,6 @@ body.sn-banner-visible .snooze-nav-clean {
 
 .sn-link:hover { color: var(--sn-coral); }
 
-/* Actions (Right Side) */
 .sn-actions {
   display: flex;
   align-items: center;
@@ -1005,8 +928,8 @@ body.sn-banner-visible .snooze-nav-clean {
 }
 
 @media (max-width: 991px) {
-  .sn-login-link { 
-    display: none !important; 
+  .sn-login-link {
+    display: none !important;
   }
   .sn-btn-primary:not(.sn-mobile-btn) {
     display: none !important;
@@ -1031,7 +954,6 @@ body.sn-banner-visible .snooze-nav-clean {
   box-shadow: 0 4px 12px rgba(244, 51, 87, 0.25);
 }
 
-/* Mobile Toggle */
 .sn-mobile-toggle {
   display: none;
   flex-direction: column;
@@ -1061,12 +983,11 @@ body.sn-banner-visible .snooze-nav-clean {
 }
 
 @media (min-width: 992px) {
-  .sn-mobile-toggle { 
-    display: none !important; 
+  .sn-mobile-toggle {
+    display: none !important;
   }
 }
 
-/* Mobile Menu Overlay */
 .sn-mobile-menu {
   display: none;
   position: fixed;
@@ -1194,7 +1115,6 @@ body.sn-banner-visible .snooze-nav-clean {
 .snooze-nav-clean.is-open .sn-mobile-toggle span:nth-child(2) { opacity: 0; }
 .snooze-nav-clean.is-open .sn-mobile-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* Dropdown Menu Styles */
 .sn-dropdown {
   position: relative;
 }
@@ -1253,9 +1173,6 @@ body.sn-banner-visible .snooze-nav-clean {
   color: var(--sn-coral);
 }
 
-/* ============================================
-   8. LAUNCH OFFER BANNER
-   ============================================ */
 .sn-launch-banner {
   background: linear-gradient(135deg, var(--sn-coral) 0%, var(--sn-coral-hover) 100%);
   color: var(--sn-white);
@@ -1273,7 +1190,6 @@ body.sn-banner-visible .snooze-nav-clean {
   display: none;
 }
 
-/* Adjust body padding when banner is visible */
 body.sn-banner-visible {
   padding-top: calc(50px + var(--sn-nav-height)) !important;
 }
@@ -1351,21 +1267,20 @@ body.sn-banner-visible {
   font-size: 16px;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .sn-launch-banner-content {
     padding: 10px 16px;
     flex-wrap: wrap;
     gap: 12px;
   }
-  
+
   .sn-launch-banner-text {
     font-size: 12px;
     text-align: left;
     flex: 1 1 100%;
     order: 1;
   }
-  
+
   .sn-launch-banner-cta {
     padding: 7px 16px;
     font-size: 13px;
@@ -1373,7 +1288,7 @@ body.sn-banner-visible {
     flex: 1;
     justify-content: center;
   }
-  
+
   .sn-launch-banner-close {
     order: 3;
     padding: 4px;
@@ -1384,16 +1299,13 @@ body.sn-banner-visible {
   .sn-launch-banner-text {
     font-size: 11px;
   }
-  
+
   .sn-launch-banner-cta {
     font-size: 12px;
     padding: 6px 14px;
   }
 }
 
-/* ============================================
-   9. FOOTER STYLES (Snooze Footer Clean)
-   ============================================ */
 .snooze-footer-clean {
   background-color: var(--sn-navy);
   color: var(--sn-white);
@@ -1416,14 +1328,14 @@ body.sn-banner-visible {
 }
 
 @media (min-width: 768px) {
-  .sf-grid { 
-    grid-template-columns: 1.5fr 1fr 1fr 1fr; 
-    gap: 30px; 
+  .sf-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 30px;
   }
 }
 
-.sf-col { 
-  text-align: center; 
+.sf-col {
+  text-align: center;
 }
 
 .sf-brand-col {
@@ -1468,22 +1380,22 @@ body.sn-banner-visible {
   opacity: 1 !important;
 }
 
-.sf-logo-text { 
-  font-family: var(--sn-font-heading); 
-  font-size: 24px; 
-  color: var(--sn-white); 
-  display: block; 
-  margin-bottom: 16px; 
+.sf-logo-text {
+  font-family: var(--sn-font-heading);
+  font-size: 24px;
+  color: var(--sn-white);
+  display: block;
+  margin-bottom: 16px;
 }
 
-.sf-tagline { 
-  color: var(--sn-text-light); 
-  font-size: 14px; 
-  line-height: 1.6; 
-  margin-bottom: 24px; 
-  max-width: 100%; 
-  margin-left: auto; 
-  margin-right: auto; 
+.sf-tagline {
+  color: var(--sn-text-light);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
@@ -1495,10 +1407,10 @@ body.sn-banner-visible {
   }
 }
 
-.sf-socials { 
-  display: flex; 
-  gap: 16px; 
-  justify-content: center; 
+.sf-socials {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -1507,126 +1419,122 @@ body.sn-banner-visible {
   }
 }
 
-.sf-social-link { 
-  color: var(--sn-white); 
-  font-size: 13px; 
-  text-decoration: none; 
-  opacity: 0.8; 
-  transition: opacity 0.2s; 
+.sf-social-link {
+  color: var(--sn-white);
+  font-size: 13px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
-.sf-social-link:hover { 
-  opacity: 1; 
-  color: var(--sn-coral); 
+.sf-social-link:hover {
+  opacity: 1;
+  color: var(--sn-coral);
 }
 
-.sf-heading { 
-  color: #F43357 !important; 
-  font-size: 16px; 
-  font-weight: 600; 
-  margin: 0 0 20px 0; 
-  font-family: var(--sn-font-heading); 
+.sf-heading {
+  color: #F43357 !important;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  font-family: var(--sn-font-heading);
 }
 
-.sf-links { 
-  list-style: none; 
-  padding: 0; 
-  margin: 0; 
+.sf-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.sf-links li { 
-  margin-bottom: 12px; 
-  text-align: center; 
+.sf-links li {
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-.sf-links a { 
-  color: var(--sn-text-light); 
-  text-decoration: none; 
-  font-size: 14px; 
-  transition: color 0.2s; 
+.sf-links a {
+  color: var(--sn-text-light);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
 }
 
-.sf-links a:hover { 
-  color: var(--sn-coral); 
+.sf-links a:hover {
+  color: var(--sn-coral);
 }
 
-.sf-bottom { 
-  border-top: 1px solid rgba(255,255,255,0.1); 
-  padding-top: 30px; 
-  text-align: center; 
+.sf-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+  text-align: center;
 }
 
-.sf-bottom p { 
-  color: rgba(255,255,255,0.4); 
-  font-size: 12px; 
-  margin: 0; 
+.sf-bottom p {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  margin: 0;
 }
 
 @media (max-width: 767px) {
-  .snooze-footer-clean { 
-    padding: 40px 0 20px; 
+  .snooze-footer-clean {
+    padding: 40px 0 20px;
   }
-  
-  .sf-container { 
-    padding: 0 20px; 
+
+  .sf-container {
+    padding: 0 20px;
   }
-  
-  .sf-grid { 
-    gap: 24px; 
-    margin-bottom: 32px; 
+
+  .sf-grid {
+    gap: 24px;
+    margin-bottom: 32px;
   }
-  
+
   .sf-logo svg {
     max-height: 40px !important;
     width: 120px !important;
   }
-  
-  .sf-logo-text { 
-    font-size: 20px; 
-    margin-bottom: 12px; 
+
+  .sf-logo-text {
+    font-size: 20px;
+    margin-bottom: 12px;
   }
-  
-  .sf-tagline { 
-    font-size: 13px; 
-    margin-bottom: 16px; 
+
+  .sf-tagline {
+    font-size: 13px;
+    margin-bottom: 16px;
   }
-  
-  .sf-socials { 
-    gap: 12px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
+
+  .sf-socials {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  .sf-social-link { 
-    font-size: 12px; 
+
+  .sf-social-link {
+    font-size: 12px;
   }
-  
-  .sf-heading { 
-    font-size: 14px; 
-    margin-bottom: 12px; 
+
+  .sf-heading {
+    font-size: 14px;
+    margin-bottom: 12px;
   }
-  
-  .sf-links li { 
-    margin-bottom: 8px; 
+
+  .sf-links li {
+    margin-bottom: 8px;
   }
-  
-  .sf-links a { 
-    font-size: 13px; 
+
+  .sf-links a {
+    font-size: 13px;
   }
-  
-  .sf-bottom { 
-    padding-top: 20px; 
+
+  .sf-bottom {
+    padding-top: 20px;
   }
-  
-  .sf-bottom p { 
-    font-size: 11px; 
+
+  .sf-bottom p {
+    font-size: 11px;
   }
 }
 
-/* ============================================
-   GLOBAL CONTRAST ENFORCER (Footer)
-   Forces text to white on known dark backgrounds
-   ============================================ */
 footer {
   --heading-color-override: #ffffff;
   --text-color-override: rgba(255, 255, 255, 0.9);
@@ -1643,4 +1551,3 @@ footer p, footer li, footer a {
 footer a:hover {
   color: var(--color-coral) !important;
 }
-

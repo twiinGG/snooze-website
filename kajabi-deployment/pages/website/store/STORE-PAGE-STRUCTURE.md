@@ -14,7 +14,7 @@
 
 ┌─────────────────────────────────────────────────────────────┐
 │                      TRUST BAR                               │
-│   ⭐ 4.9/5   |   👥 2,500+ families   |   🕐 Support 24/7   │
+│   ⭐ 4.9/5   |   👥 2,500+ families   |   💬 Daily community support   │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -31,7 +31,7 @@
 │  │  └──────────────┘  └──────────────┘            │       │
 │  │                                                   │       │
 │  │  ✓ All courses                                   │       │
-│  │  ✓ Weekly live coaching                          │       │
+│  │  ✓ Live sessions with Sally and Bec              │       │
 │  │  ✓ Troubleshooting support                       │       │
 │  │  ✓ Snooze Village community                      │       │
 │  │  ✓ Member pricing                                │       │

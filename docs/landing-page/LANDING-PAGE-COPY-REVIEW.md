@@ -39,7 +39,7 @@ Because well-rested families thrive.
 
 ### Feature Checklist Items
 1. **Expert coaching for Babies 0-3 years old**
-2. **Live coaching & resource library**
+2. **Live sessions & resource library**
 3. **Effective, evidence-based sleep methods**
 4. **Real-time support from expert sleep consultants**
 
@@ -253,8 +253,8 @@ What’s inside Snooze
 - **Guided Courses**
   - Age-based video lessons and step-by-step guides you can follow in minutes.
 
-- **Live Coaching**
-  - Weekly Q&A with Sally. Get answers tailored to your baby and routine.
+- **Live Sessions**
+  - Live Q&A sessions with Sally and Bec. Get answers tailored to your baby and routine.
 
 - **Community Support**
   - Real parents, real results. Calm, expert-led help whenever you need it.
@@ -286,12 +286,12 @@ What You Get (+ what it would cost separately)
 - **Price:** $180
 
 #### Row 2
-- **Item:** Weekly live group coaching with Sally
+- **Item:** Live sessions with Sally and Bec
 - **Status:** ✓ (checkmark)
 - **Price:** $320
 
 #### Row 3
-- **Item:** Access to replays & expert Q&A library
+- **Item:** Expert-moderated community & Q&A support
 - **Status:** ✓ (checkmark)
 - **Price:** $180
 
@@ -486,7 +486,7 @@ $147 (Launch) / $197 (Normal)
 
 #### Feature List
 1. Full access to Snooze library
-2. Expert Q&A calls
+2. Live Q&A sessions with Sally and Bec
 3. Access to private community
 4. Cancel anytime
 
@@ -573,7 +573,7 @@ What's included in my Snooze membership?
 
 #### Answer
 ```
-Your membership gives you access to every Snooze course and guide (0–3 years), weekly group coaching, replays, and our supportive community.
+Your membership gives you access to every Snooze course and guide (0–3 years), live sessions with Sally and Bec, and our expert-moderated community.
 ```
 
 ---

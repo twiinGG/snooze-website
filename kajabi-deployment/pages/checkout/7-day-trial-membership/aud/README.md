@@ -1,4 +1,4 @@
-# AUD checkout — The Snooze Membership 7 Day Trial (PUBMS02_AUD)
+# AUD checkout - The Snooze Membership 7 Day Trial (PUBMS02_AUD)
 
 `checkout-blocks.html` is the customer-facing checkout HTML. It is intentionally
 **comment-free** (no header block, no section comments) so nothing instructional

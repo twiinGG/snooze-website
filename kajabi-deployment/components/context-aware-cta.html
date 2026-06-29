@@ -1,17 +1,12 @@
-<!-- ============================================
-     CONTEXT-AWARE CTA COMPONENT
-     Shows appropriate CTA based on user status
-     Falls back to signposting if detection fails
-     ============================================ -->
+
 
 <div class="snooze-context-cta" id="snooze-context-cta">
-  <!-- This will be populated by JavaScript -->
+  
   <div class="snooze-cta-loading">Loading...</div>
 </div>
 
 <script>
 (function() {
-  // Ensure globals are loaded
   if (typeof window.SNOOZE_CHECKOUT_URL === 'undefined') {
     window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
   }
@@ -19,23 +14,18 @@
     window.SNOOZE_LIBRARY_URL = '/snooze-library';
   }
   
-  // Get user status (with fallback to signposting)
   var userStatus = 'signposting'; // Default to signposting (safest approach)
   
-  // Try detection if available
   if (typeof window.SnoozeUserDetection !== 'undefined') {
     userStatus = window.SnoozeUserDetection.getUserStatus();
   }
   
-  // Get CTA container
   var ctaContainer = document.getElementById('snooze-context-cta');
   if (!ctaContainer) return;
   
-  // Generate appropriate CTA based on status
   var ctaHTML = '';
   
   if (userStatus === 'snooze-member') {
-    // Snooze Member: Show Library access
     ctaHTML = `
       <div class="snooze-cta-member">
         <a href="${window.SNOOZE_LIBRARY_URL}" class="snooze-btn-primary">
@@ -45,7 +35,6 @@
       </div>
     `;
   } else if (userStatus === 'logged-in-non-member') {
-    // Logged-in Non-Member: Show upgrade CTA
     ctaHTML = `
       <div class="snooze-cta-upgrade">
         <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
@@ -55,7 +44,6 @@
       </div>
     `;
   } else if (userStatus === 'new-visitor') {
-    // New Visitor: Show join CTA
     ctaHTML = `
       <div class="snooze-cta-join">
         <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
@@ -65,7 +53,6 @@
       </div>
     `;
   } else {
-    // Signposting: Show all options with clear labels
     ctaHTML = `
       <div class="snooze-cta-signposting">
         <div class="snooze-cta-options">
@@ -88,13 +75,12 @@
     `;
   }
   
-  // Insert CTA HTML
   ctaContainer.innerHTML = ctaHTML;
 })();
 </script>
 
 <style>
-/* Context-Aware CTA Styles */
+
 .snooze-context-cta {
   margin: 2rem 0;
   text-align: center;
@@ -146,7 +132,6 @@
   font-size: 0.95rem;
 }
 
-/* Signposting Styles */
 .snooze-cta-signposting {
   max-width: 500px;
   margin: 0 auto;
@@ -187,7 +172,6 @@
   text-decoration: underline;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .snooze-btn-primary,
   .snooze-btn-secondary {

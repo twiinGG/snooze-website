@@ -1,22 +1,9 @@
-/* ============================================
-   CAMP SNOOZE V2 - CHECKOUT PAGE JAVASCRIPT
-   Unified JS for both Member Bundle & Standalone checkouts
-
-   Paste this into Kajabi: Settings → Website → Custom JavaScript
-   (Or into the page's custom JavaScript field)
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ============================================
-  // ENSURE FONT AWESOME IS LOADED (Fallback)
-  // ============================================
   (function() {
-    // Check if Font Awesome stylesheet is already loaded
     const existingLink = document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]');
-    
+
     if (!existingLink) {
-      // Inject Font Awesome if not already loaded
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
@@ -27,20 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })();
 
-  // ============================================
-  // SCROLL TO CHECKOUT BUTTON
-  // ============================================
   const scrollButtons = document.querySelectorAll('.scroll-to-checkout');
 
   scrollButtons.forEach(button => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
 
-      // Try to find Kajabi's checkout form
       const checkoutForm = document.querySelector('.checkout-form, .kjb-checkout, form[action*="checkout"], .checkout-container, #checkout-form');
 
       if (checkoutForm) {
-        // Scroll to the form with offset for fixed headers
         const headerOffset = 100;
         const elementPosition = checkoutForm.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -50,13 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
           behavior: 'smooth'
         });
 
-        // Try to focus the first input field
         setTimeout(() => {
           const firstInput = checkoutForm.querySelector('input:not([type="hidden"])');
           if (firstInput) firstInput.focus();
         }, 500);
       } else {
-        // If no form found, scroll to top of page
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -65,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ============================================
-  // HIDE MOBILE CTA WHEN NEAR CHECKOUT FORM
-  // ============================================
   (function() {
     const mobileCTA = document.querySelector('.mobile-scroll-to-checkout');
     const checkoutForm = document.querySelector('.checkout-form, .kjb-checkout, form[action*="checkout"], .checkout-container');
@@ -88,16 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -100px 0px'
       });
 
-      // Add transition to mobileCTA
       mobileCTA.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
 
       observer.observe(checkoutForm);
     }
   })();
 
-  // ============================================
-  // ENHANCE TRUST INDICATORS
-  // ============================================
   (function() {
     const trustItems = document.querySelectorAll('#snooze-custom-checkout .trust-item');
 
@@ -113,9 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   })();
 
-  // ============================================
-  // ANIMATE ORDER SUMMARY ON LOAD
-  // ============================================
   (function() {
     const orderCard = document.querySelector('#snooze-custom-checkout .order-summary-card');
 
@@ -131,9 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })();
 
-  // ============================================
-  // UPGRADE LINK HOVER EFFECT (Standalone Page)
-  // ============================================
   const upgradeLink = document.querySelector('#snooze-custom-checkout .upgrade-link');
 
   if (upgradeLink) {

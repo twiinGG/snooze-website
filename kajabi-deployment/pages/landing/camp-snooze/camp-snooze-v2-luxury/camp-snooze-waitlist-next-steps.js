@@ -1,7 +1,3 @@
-/* ============================================
-   CAMP SNOOZE WAITLIST - NEXT STEPS
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.waitlist-card');
   cards.forEach((card, index) => {

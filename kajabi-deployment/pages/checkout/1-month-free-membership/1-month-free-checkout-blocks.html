@@ -1,42 +1,21 @@
-<!-- 
-  SNOOZE 1-MONTH FREE ACCESS CHECKOUT
-  HTML Blocks for Kajabi Custom Code Block
-  
-  DEPLOYMENT INSTRUCTIONS:
-  1. Paste this HTML into Kajabi's Custom Code Block (HTML only, no <style> or <script> tags)
-  2. Paste 1-month-free-checkout.css into Kajabi's Custom CSS field
-  3. Paste 1-month-free-checkout.js into Kajabi's Custom JavaScript field
-  4. Add Google Fonts link to Kajabi's Header Tracking Code:
-     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  NOTE: This offer is typically granted manually, not purchased. This checkout page is for reference
-  or if you want to allow direct signup. The offer grant email will kick off the automation flow.
--->
-
 <div id="snooze-custom-checkout" class="snooze-checkout-content">
 
-  <!-- Currency toggle widget. Reads localStorage['snooze_currency_preference'] via currency-toggle.js.
-       PRD: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §4.8 -->
   <div class="snooze-currency-toggle-block" data-currency-toggle="checkout">
     <button type="button" class="currency-toggle-btn" aria-label="Toggle currency">USD</button>
     <span class="currency-toggle-hint">Switch between USD and AUD pricing.</span>
   </div>
 
-  <!-- Hero Section -->
   <div class="snooze-checkout-hero">
     <h1>Your Free Month of Snooze</h1>
     <p class="subheadline">You've been granted 1 month of full access to explore everything Snooze has to offer. No commitment required.</p>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
-  
-  <!-- Free Access Highlight -->
+
   <div class="free-highlight">
     <h2>✨ 1 Month of Full Access</h2>
     <p>This is a free gift with no commitment. Explore everything Snooze has to offer for 30 days. After your free month ends, your access will expire unless you choose to upgrade to a paid membership.</p>
   </div>
   
-  <!-- What's Included Section -->
   <div class="whats-included">
     <h2>What's Included in Your Free Month</h2>
     <ul class="benefits-list">
@@ -50,15 +29,15 @@
       <li>
         <span class="check-icon">✓</span>
         <div>
-          <div class="benefit-text">Weekly live group coaching with Sally + replay vault</div>
-          <div class="benefit-detail">Never miss a session. Watch anytime</div>
+          <div class="benefit-text">Live sessions with Sally and Bec</div>
+          <div class="benefit-detail">Bring your questions to Sally and Bec live.</div>
         </div>
       </li>
       <li>
         <span class="check-icon">✓</span>
         <div>
           <div class="benefit-text">Daily support inside the Snooze community</div>
-          <div class="benefit-detail">Expert-moderated, 24/7 support</div>
+          <div class="benefit-detail">Expert-moderated, daily support</div>
         </div>
       </li>
       <li>
@@ -83,11 +62,9 @@
         </div>
       </li>
     </ul>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
-  
-  <!-- How It Works Section -->
+
   <div class="how-it-works">
     <h2>How Your Free Month Works</h2>
     <div class="steps">
@@ -102,7 +79,7 @@
         <div class="step-number">2</div>
         <div class="step-content">
           <h3>Explore Everything</h3>
-          <p>Get full access to all courses, guides, community, and coaching for 30 days.</p>
+          <p>Get full access to all courses, guides, community, and live sessions for 30 days.</p>
         </div>
       </div>
       <div class="step">
@@ -113,20 +90,16 @@
         </div>
       </div>
     </div>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
-  
-  <!-- Why Join Section -->
+
   <div class="why-join">
     <h2>Why parents join</h2>
     <p>Fast clarity. Practical steps. A village that understands the season you're in.</p>
     <p>Your membership provides one place for guidance, coaching, and ongoing support so you can make steady progress and rest easier.</p>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
-  
-  <!-- Footer Note -->
+
   <div class="checkout-footer-note">
     <p><strong>Please note:</strong> The Sleep Concierge helps parents all over the world. Prices show in USD by default. Use the currency toggle at the top of the page to switch to AUD.</p>
     <p>All products and services are covered by our <a href="/terms-conditions" target="_blank">Terms & Conditions</a>.</p>

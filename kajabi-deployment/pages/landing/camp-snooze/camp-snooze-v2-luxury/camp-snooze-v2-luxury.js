@@ -1,14 +1,3 @@
-/* ============================================
-   CAMP SNOOZE V2 - MEMBER-FIRST PRICING
-   Modal & Interactive JavaScript
-
-   Paste this into Kajabi: Settings → Website → Custom JavaScript
-   (Or into the page's custom JavaScript field)
-   ============================================ */
-
-// ============================================
-// CURRENCY TOGGLE (AUD/USD) - Camp Snooze only
-// ============================================
 const CAMP_CURRENCY_CONFIG = {
   storageKey: 'snooze_currency_preference',
   defaultCurrency: 'USD',
@@ -85,33 +74,31 @@ function campUpdateLinks(currency) {
 function campCreateToggle(className) {
   const wrap = document.createElement('div');
   wrap.className = className;
-  
-  // Inline styles as fallback if CSS not loaded
+
   const isPricingToggle = className.indexOf('camp-currency-toggle') === 0 && className.indexOf('nav') === -1;
   if (isPricingToggle) {
     wrap.style.cssText = 'display:inline-flex;border:2px solid hsl(140,25%,75%);border-radius:9999px;overflow:hidden;background:rgba(255,255,255,0.15);padding:4px;';
   }
-  
+
   const usdBtn = document.createElement('button');
   usdBtn.type = 'button';
   usdBtn.setAttribute('data-currency', 'USD');
   usdBtn.setAttribute('aria-label', 'US Dollar');
-  
+
   const audBtn = document.createElement('button');
   audBtn.type = 'button';
   audBtn.setAttribute('data-currency', 'AUD');
   audBtn.setAttribute('aria-label', 'Australian Dollar');
-  
-  // Inline button styles as fallback
+
   const btnStyle = isPricingToggle
     ? 'padding:0.6rem 1.25rem;border:none;background:transparent;color:hsl(42,33%,96%);font-family:DM Sans,sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;border-radius:9999px;display:inline-flex;align-items:center;gap:0.4rem;'
     : 'padding:0.4rem 0.75rem;border:none;background:transparent;color:hsl(150,35%,25%);font-family:DM Sans,sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;';
   usdBtn.style.cssText = btnStyle;
   audBtn.style.cssText = btnStyle;
-  
+
   usdBtn.innerHTML = '<span style="font-size:1.1em;">🇺🇸</span> USD';
   audBtn.innerHTML = '<span style="font-size:1.1em;">🇦🇺</span> AUD';
-  
+
   function onToggle(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -131,12 +118,11 @@ function campUpdateToggleUI(currency) {
     const isActive = c === currency;
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    
-    // Apply inline active styles as fallback
+
     const isNavBtn = btn.closest('.camp-nav-currency-toggle');
     const isStickyBtn = btn.closest('.sticky-currency-toggle');
     const isPricingBtn = btn.closest('.camp-currency-toggle') && !isNavBtn && !isStickyBtn;
-    
+
     if (isPricingBtn || isStickyBtn) {
       if (isActive) {
         btn.style.background = 'hsl(38,70%,55%)';
@@ -176,7 +162,6 @@ function campInitCurrency() {
 }
 
 function campInjectToggles() {
-  // Nav toggle (optional - only if nav actions element exists)
   const navSelectors = ['.navbar .sn-actions', '.navbar nav', '.sn-nav-actions', '[class*="nav-actions"]'];
   let navActions = null;
   for (let i = 0; i < navSelectors.length; i++) {
@@ -188,7 +173,6 @@ function campInjectToggles() {
     navActions.appendChild(toggle);
   }
 
-  // Mobile toggle (optional - only if mobile menu exists)
   const mobileSelectors = ['.sn-mobile-inner', '.mobile-menu', '[class*="mobile-menu"]'];
   let mobileMenu = null;
   for (let i = 0; i < mobileSelectors.length; i++) {
@@ -203,19 +187,11 @@ function campInjectToggles() {
     mobileMenu.appendChild(toggle);
   }
 
-  // Pricing section toggle is now in HTML - just update its UI state
   campUpdateToggleUI(document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD');
 }
 
-// ============================================
-// COUNTDOWN TIMER - Global Configuration
-// Deadline: 11:59pm Tuesday 10 March 2026 AEDT (applications close)
-// ============================================
 const COUNTDOWN_DEADLINE = new Date('2026-03-31T23:59:00+11:00').getTime();
 
-// ============================================
-// MODAL TOGGLE FUNCTION (Global)
-// ============================================
 function toggleModal(modalId, show) {
   const modal = document.getElementById(modalId);
   if (!modal) return;
@@ -223,7 +199,6 @@ function toggleModal(modalId, show) {
   if (show) {
     modal.style.display = 'flex';
     document.body.classList.add('modal-open');
-    // Focus trap for accessibility
     const firstFocusable = modal.querySelector('button, [href], input, select, textarea');
     if (firstFocusable) firstFocusable.focus();
   } else {
@@ -232,15 +207,11 @@ function toggleModal(modalId, show) {
   }
 }
 
-// ============================================
-// COUNTDOWN TIMER FUNCTION (Global)
-// ============================================
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = COUNTDOWN_DEADLINE - now;
 
   if (distance < 0) {
-    // Timer expired
     const heroCountdown = document.getElementById('hero-countdown');
 
     if (heroCountdown) {
@@ -249,13 +220,11 @@ function updateCountdown() {
     return false;
   }
 
-  // Calculate time units
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Update hero countdown
   const heroDays = document.getElementById('hero-days');
   const heroHours = document.getElementById('hero-hours');
   const heroMinutes = document.getElementById('hero-minutes');
@@ -271,12 +240,8 @@ function updateCountdown() {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ============================================
-  // MODAL OVERLAY CLICK TO CLOSE
-  // ============================================
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', function (e) {
-      // Only close if clicking on the overlay itself, not the content
       if (e.target === this) {
         this.style.display = 'none';
         document.body.classList.remove('modal-open');
@@ -284,9 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ============================================
-  // ESCAPE KEY TO CLOSE MODALS
-  // ============================================
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay').forEach(modal => {
@@ -296,9 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ============================================
-  // SMOOTH SCROLL FOR ANCHOR LINKS
-  // ============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -312,9 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ============================================
-  // FALLING LEAVES ANIMATION
-  // ============================================
   (function () {
     const containers = document.querySelectorAll('.falling-leaves');
     containers.forEach(container => {
@@ -339,17 +295,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
-  // ============================================
-  // WAITLIST vs CHECKOUT MODE (same JS, two HTML versions)
-  // Relies on window.CAMP_PAGE_MODE set by waitlist HTML so detection works in Kajabi
-  // ============================================
   const isWaitlistMode = window.CAMP_PAGE_MODE === 'waitlist' ||
     document.querySelector('[data-camp-mode="waitlist"]') ||
     document.getElementById('waitlist-section');
 
-  // ============================================
-  // STICKY CTA (checkout: price + CTA; waitlist: CTA only)
-  // ============================================
   (function () {
     const hero = document.querySelector('.camp-section');
     const stickyCTA = document.createElement('div');
@@ -401,14 +350,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
-  // ============================================
-  // CURRENCY TOGGLE INIT (after sticky CTA so it gets updated; waitlist may still have .dynamic-price in value breakdown)
-  // ============================================
   campInitCurrency();
 
-  // ============================================
-  // START COUNTDOWN TIMER (checkout only; applications close March 10)
-  // ============================================
   if (!isWaitlistMode) {
     (function () {
       updateCountdown();
@@ -421,9 +364,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })();
   }
 
-  // ============================================
-  // SCROLL ANIMATIONS
-  // ============================================
   (function () {
     const observerOptions = {
       threshold: 0.1,
@@ -446,23 +386,5 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(el);
     });
   })();
-
-  // ============================================
-  // TRACK MODAL OPENS (Optional Analytics)
-  // ============================================
-  // Uncomment and customize if you have analytics
-  /*
-  document.querySelectorAll('[onclick*="toggleModal"]').forEach(trigger => {
-    trigger.addEventListener('click', function() {
-      const modalId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-      // Track event
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'modal_open', {
-          'modal_name': modalId
-        });
-      }
-    });
-  });
-  */
 
 });

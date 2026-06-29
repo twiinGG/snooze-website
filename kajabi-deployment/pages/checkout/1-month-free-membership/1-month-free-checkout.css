@@ -1,8 +1,3 @@
-/* ============================================
-   SNOOZE 1-MONTH FREE ACCESS CHECKOUT
-   SCOPED CSS - Only affects #snooze-custom-checkout
-   ============================================ */
-
 #snooze-custom-checkout {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #1F293B;
@@ -11,7 +6,6 @@
   margin: 0 auto;
 }
 
-/* Hero Section */
 #snooze-custom-checkout .snooze-checkout-hero {
   margin-bottom: 2rem;
 }
@@ -31,7 +25,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Free Access Highlight */
 #snooze-custom-checkout .free-highlight {
   background: #FFE7EA;
   border-radius: 12px;
@@ -56,7 +49,6 @@
   margin: 0;
 }
 
-/* What's Included Section */
 #snooze-custom-checkout .whats-included {
   margin-bottom: 2rem;
   background: white;
@@ -111,7 +103,6 @@
   margin-top: 0.25rem;
 }
 
-/* How It Works Section */
 #snooze-custom-checkout .how-it-works {
   margin-bottom: 2rem;
   background: white;
@@ -170,7 +161,6 @@
   margin: 0;
 }
 
-/* Why Join Section */
 #snooze-custom-checkout .why-join {
   background: #F9F2F2;
   border-radius: 12px;
@@ -197,7 +187,6 @@
   margin-bottom: 0;
 }
 
-/* Footer Note */
 #snooze-custom-checkout .checkout-footer-note {
   margin-top: 2rem;
   padding-top: 1.5rem;
@@ -212,7 +201,6 @@
   text-decoration: underline;
 }
 
-/* Mobile Scroll to Checkout Button */
 #snooze-custom-checkout .mobile-scroll-to-checkout {
   display: none;
   width: 100%;
@@ -235,7 +223,6 @@
   box-shadow: 0 6px 16px rgba(244, 51, 87, 0.4);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #snooze-custom-checkout .snooze-checkout-hero h1 {
     font-size: 1.75rem;

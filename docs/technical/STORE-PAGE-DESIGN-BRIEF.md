@@ -101,13 +101,13 @@
 
 **Content:**
 - **Title:** "Snooze Access Membership"
-- **Description:** "Get access to all courses, weekly live coaching, troubleshooting support, and The Snooze Village community"
+- **Description:** "Get access to all courses, live sessions with Sally and Bec, troubleshooting support, and The Snooze Village community"
 - **Pricing:** 
   - Quarterly: $X/month
   - Annual: $X/month (save $X)
 - **Features List:** 
   - All courses included
-  - Weekly live coaching
+  - Live sessions with Sally and Bec
   - Troubleshooting support
   - The Snooze Village community
   - Member pricing on consultations
@@ -125,7 +125,7 @@
     <div class="store-featured-card">
       <div class="store-badge">BEST VALUE</div>
       <h3>Snooze Access</h3>
-      <p class="store-description">Get access to all courses, weekly live coaching, troubleshooting support, and The Snooze Village community</p>
+      <p class="store-description">Get access to all courses, live sessions with Sally and Bec, troubleshooting support, and The Snooze Village community</p>
       
       <div class="store-pricing">
         <div class="price-option">
@@ -141,7 +141,7 @@
       
       <ul class="store-features">
         <li><i class="fa-solid fa-circle-check"></i> All courses included</li>
-        <li><i class="fa-solid fa-circle-check"></i> Weekly live coaching</li>
+        <li><i class="fa-solid fa-circle-check"></i> Live sessions with Sally and Bec</li>
         <li><i class="fa-solid fa-circle-check"></i> Troubleshooting support</li>
         <li><i class="fa-solid fa-circle-check"></i> The Snooze Village community</li>
         <li><i class="fa-solid fa-circle-check"></i> Member pricing on consultations</li>

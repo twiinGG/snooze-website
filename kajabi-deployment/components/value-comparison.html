@@ -1,21 +1,14 @@
-<!-- ============================================
-     VALUE COMPARISON COMPONENT
-     Compares individual product vs Snooze membership
-     Reusable across product and age-specific pages
-     ============================================ -->
-
 <section class="snooze-value-comparison">
   <div class="snooze-container">
     <h2 class="snooze-section-title">Get This + Everything Else</h2>
     <p class="snooze-section-intro">For just a little more than a single course, you get access to everything in Snooze.</p>
     
     <div class="snooze-comparison-grid">
-      <!-- Individual Product -->
       <div class="snooze-comparison-card snooze-comparison-individual">
         <div class="snooze-comparison-header">
           <h3>Individual Course</h3>
           <div class="snooze-price">
-            <span class="snooze-price-amount" data-product-price="$117"><span class="dynamic-price" data-usd="117" data-aud="179">$117</span></span> <!-- AUD-OFFER-PENDING: product offer (slug set per host page) -->
+            <span class="snooze-price-amount" data-product-price="$117"><span class="dynamic-price" data-usd="117" data-aud="179">$117</span></span>
             <span class="snooze-price-note">one-time</span>
           </div>
         </div>
@@ -25,18 +18,16 @@
           <li><i class="fa-solid fa-xmark"></i> No access to other age guides</li>
           <li><i class="fa-solid fa-xmark"></i> No Library access</li>
           <li><i class="fa-solid fa-xmark"></i> No Village community</li>
-          <li><i class="fa-solid fa-xmark"></i> No live coaching</li>
+          <li><i class="fa-solid fa-xmark"></i> No live sessions</li>
         </ul>
       </div>
-      
-      <!-- VS Divider -->
+
       <div class="snooze-comparison-vs">
         <div class="snooze-vs-line"></div>
         <div class="snooze-vs-text">vs</div>
         <div class="snooze-vs-line"></div>
       </div>
-      
-      <!-- Snooze Membership -->
+
       <div class="snooze-comparison-card snooze-comparison-membership">
         <div class="snooze-comparison-badge">Best Value</div>
         <div class="snooze-comparison-header">
@@ -52,7 +43,7 @@
           <li><i class="fa-solid fa-check"></i> All age guides (newborn through toddler)</li>
           <li><i class="fa-solid fa-check"></i> Complete Library access</li>
           <li><i class="fa-solid fa-check"></i> The Village community</li>
-          <li><i class="fa-solid fa-check"></i> Weekly live coaching with Sally</li>
+          <li><i class="fa-solid fa-check"></i> Live sessions with Sally and Bec</li>
           <li><i class="fa-solid fa-check"></i> Member pricing on consultations</li>
         </ul>
         <div class="snooze-comparison-cta">
@@ -63,18 +54,16 @@
         </div>
       </div>
     </div>
-    
-    <!-- Value Message -->
+
     <div class="snooze-value-message">
       <p><strong>Individual courses:</strong> $117-$129 each</p>
-      <p><strong>Snooze Membership:</strong> $147/quarter (Launch) - Get all courses + Library + Village + Coaching</p>
+      <p><strong>Snooze Membership:</strong> $147/quarter (Launch) - Get all courses + Library + Village + Live Sessions</p>
       <p class="snooze-value-highlight">For just $30 more than a single course, you get everything.</p>
     </div>
   </div>
 </section>
 
 <style>
-/* Value Comparison Styles */
 .snooze-value-comparison {
   padding: 4rem 2rem;
   background-color: white;
@@ -274,7 +263,6 @@
   color: #f43357 !important;
 }
 
-/* Mobile Responsive */
 @media (max-width: 968px) {
   .snooze-comparison-grid {
     grid-template-columns: 1fr;
@@ -316,12 +304,9 @@
 </style>
 
 <script>
-// Update product price dynamically if data attribute is set
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
     var priceElement = document.querySelector('[data-product-price]');
-    // Only override when no dynamic-price span is present; the currency-toggle
-    // engine owns the dynamic-price node and must not be clobbered.
     if (priceElement && !priceElement.querySelector('.dynamic-price')) {
       var price = priceElement.getAttribute('data-product-price');
       priceElement.textContent = price;

@@ -104,7 +104,7 @@
 #### Three-Tier Support Model
 - [ ] Check: Does page explain the three-tier support structure?
   - Tier 1: Content Library (self-service)
-  - Tier 2: Community + Live Coaching (group support)
+  - Tier 2: Community + Live Sessions (group support)
   - Tier 3: Personal Consults (premium 1:1 support)
 - [ ] Check: Does it guide users to try lower tiers first?
 - [ ] Action: Add tiered support explanation if missing
@@ -195,7 +195,7 @@
 
 ### Section 4: Three-Tier Support Model
 - Tier 1: Content Library (self-service)
-- Tier 2: Community + Live Coaching (group support)
+- Tier 2: Community + Live Sessions (group support)
 - Tier 3: Personal Consults (premium 1:1) ← This page
 - Most members succeed with Tiers 1 & 2
 

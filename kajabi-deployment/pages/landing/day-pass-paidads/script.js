@@ -1,17 +1,4 @@
-/*
- * Snooze Day Pass - Cold-Ads Landing Page Submit Logic
- *
- * Standalone copy of the inline script in index.html. The version that
- * ships into Kajabi is the inline copy in index.html; this file exists
- * for code review, diffing across future updates, and unit-test
- * scaffolding. Do not load this file separately into the page.
- *
- * Source: docs/projects/day-pass/09-landing-page-implementation.md
- * Adapted for: PRD §5.3 cold-ads funnel.
- */
-
 (function () {
-  // --- Replace these two values before publishing ---
   var MEMORY_API_HOST = '{{MEMORY_API_HOST}}';
   var N8N_WEBHOOK_URL = '{{N8N_WEBHOOK_URL}}';
 

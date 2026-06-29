@@ -80,7 +80,7 @@ The checkout page is configured for:
 
 The page content reflects standard Snooze membership benefits:
 - All sleep courses and step-by-step guides
-- Weekly live coaching with Sally + replay library
+- Live sessions with Sally and Bec
 - Daily support inside the Snooze community
 - Tools for regressions, naps, nights, routines, and travel
 - Age-based pathways
@@ -117,3 +117,20 @@ Update pricing in the HTML where `$197` and `$657` appear, and ensure Kajabi off
 **Offer Title (Public):** Snooze Access  
 **Internal Title:** `MBMS03_Snooze-Access-BAU`  
 **Offer Code:** MBMS03
+
+---
+
+## Deployment Notes (relocated from HTML comments)
+
+These instructions previously lived as comments inside `bau-membership-checkout-blocks.html`. Comments were stripped from the deployable HTML; the genuine deployment instructions are preserved here.
+
+**Custom code block deployment:**
+1. Paste `bau-membership-checkout-blocks.html` into Kajabi's Custom Code Block (HTML only, no `<style>` or `<script>` tags).
+2. Paste `bau-membership-checkout.css` into Kajabi's Custom CSS field.
+3. Paste `bau-membership-checkout.js` into Kajabi's Custom JavaScript field.
+4. Add the Google Fonts link to Kajabi's Header Tracking Code:
+   `<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">`
+
+**Currency toggle widget:**
+- The currency toggle reads `localStorage['snooze_currency_preference']` via `currency-toggle.js`.
+- PRD reference: `docs/projects/paid-media-and-dual-currency-v1/00-prd.md` §4.8

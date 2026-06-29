@@ -35,6 +35,10 @@ Cold-traffic paid-ads funnel selling Snooze Access, the baby-sleep membership by
 
 `currency_preference` is set automatically client-side from browser locale (AU to `aud`, everything else to `usd`); no operator action.
 
+## Pricing section notes (index.html section 7)
+
+Confirm live AUD/USD prices against the Kajabi offers registry before publishing. All three plan-tier buttons (`Monthly`, `Quarterly`, `Annual`) carry `data-sa-checkout` and share one checkout URL per currency (the buyer selects the plan tier on the Kajabi checkout page). If offers are ever split into one checkout per tier, give each button its own `data-sa-checkout-plan` hook and extend `resolveCheckout()` in the page script; do not reintroduce a paste-time URL placeholder.
+
 ## Sign-off and review notes
 
 - **Guarantee wording.** The money-back results guarantee on `index.html` and `thanks/index.html` uses placeholder wording (&ldquo;Noticeably better sleep within 14 days, or your money back&rdquo;), flagged with an HTML comment. Final wording needs Sally&rsquo;s sign-off before publishing.

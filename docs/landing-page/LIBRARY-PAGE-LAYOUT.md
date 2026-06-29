@@ -40,7 +40,7 @@ This document provides the complete layout structure for the Snooze Library page
 ```
 Heading (H1): "Your Snooze Library"
 Subheading: "Everything you need for great baby sleep, all in one place."
-Description: "Find age-specific guides, watch coaching replays, access tools, and get answers to your questions. New resources added monthly."
+Description: "Find age-specific guides, access tools, and get answers to your questions. New resources added monthly."
 ```
 
 **Tone:** Warm, welcoming, practical (Sally's voice)
@@ -48,7 +48,7 @@ Description: "Find age-specific guides, watch coaching replays, access tools, an
 **Example Copy:**
 > "Your Snooze Library  
 > Everything you need for great baby sleep, all in one place.  
-> Find age-specific guides, watch coaching replays, access tools, and get answers to your questions. New resources added monthly."
+> Find age-specific guides, access tools, and get answers to your questions. New resources added monthly."
 
 ---
 
@@ -62,7 +62,7 @@ Description: "Find age-specific guides, watch coaching replays, access tools, an
 - **By Age** (Newborn, 3-4 Month, 5-12 Month, Toddler)
 - **Courses** (All courses)
 - **Tools** (Checklists, Scripts, Schedules)
-- **Coaching** (Live replays, Q&A library)
+- **Coaching** (Live sessions, Q&A)
 - **Community** (Snooze Village access)
 - **Podcast** (Nap Trapped episodes - future)
 - **Q&A** (Searchable database - future)
@@ -217,14 +217,14 @@ Duration: "30 MIN"
 
 ---
 
-### Section 8: Live Coaching & Replays
+### Section 8: Live Sessions
 **Kajabi Block:** Custom HTML Block (video grid)
 
-**Purpose:** Access to live coaching replays and Q&A sessions
+**Purpose:** Access to live session recordings and Q&A sessions
 
 **Layout:**
-- Section title: "Live Coaching & Replays"
-- Subtitle: "Watch past coaching sessions and Q&A calls with Sally"
+- Section title: "Live Sessions"
+- Subtitle: "Q&A sessions and live calls with Sally and Bec"
 - Grid: 3 columns (desktop), 1 column (mobile)
 
 **Video Cards:**
@@ -331,7 +331,7 @@ Description: "Connect with other parents, share wins, get encouragement, and acc
 - Category filters
 - Featured webinars
 
-**Note:** Similar structure to "Live Coaching & Replays" but for longer-form webinars.
+**Note:** Similar structure to "Live Sessions" but for longer-form webinars.
 
 ---
 
@@ -458,9 +458,9 @@ Only add custom CSS for:
 - Sample Schedules (multiple ages)
 - Quick Fix Guides (early rising, cat napping, etc.)
 
-### Live Coaching
-- Weekly Q&A replays (ongoing)
-- Thematic coaching sessions (monthly)
+### Live Sessions
+- Q&A session recordings (as available)
+- Thematic sessions with Sally and Bec
 
 ### Community
 - Snooze Village (Facebook group, transitioning to Kajabi community)
@@ -523,7 +523,7 @@ Only add custom CSS for:
 
 ### Page Metadata
 - **Title:** "Snooze Library - All Baby Sleep Resources in One Place"
-- **Description:** "Access all Snooze sleep resources: age-specific guides, courses, tools, coaching replays, and community support. Everything you need for great baby sleep."
+- **Description:** "Access all Snooze sleep resources: age-specific guides, courses, tools, live sessions with Sally and Bec, and community support. Everything you need for great baby sleep."
 - **H1:** "Your Snooze Library"
 
 ### Internal Linking

@@ -158,3 +158,17 @@ All content from the original page has been preserved:
 
 **Ready for Deployment!**
 
+---
+
+## Comment strip (June 29, 2026)
+
+Removed all HTML and JS comments from `recommended-products-complete.html` (18 comments total: header block, section dividers, 7 product card label comments, 2 JS inline comments, footer placeholder block, 2 deploy/styling notes, footer section divider, SVG source attribution, commented-out nav link, 2 footer column labels). No structure, selectors, JS logic, or copy changed.
+
+Genuine instructions relocated here:
+
+- File contains all sections merged. Deploy as a single Code Block in Kajabi.
+- Styling comes from `snooze-unified-theme.css`. Deploy CSS to: Kajabi Settings → Website → Theme → Custom CSS.
+- Navigation: if using global navigation, add the navigation Code Block separately above this block.
+- Footer: the file includes an inline footer (Snooze Clean Footer). If switching to a global footer block, remove the `<footer>` element from the bottom of this file.
+- "The Snooze Method" nav link in the footer Explore column is intentionally hidden from launch. The commented-out `<li><a href="/the-snooze-method">The Snooze Method</a></li>` has been removed; restore it manually when the page is ready to go live.
+

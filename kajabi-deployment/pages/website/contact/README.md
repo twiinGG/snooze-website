@@ -167,3 +167,16 @@ The page is fully responsive and includes:
 ---
 
 **Last Updated:** January 2025
+
+---
+
+## Comment strip (June 29, 2026)
+
+Removed all HTML comments from `contact-page-complete.html` (8 comments: header block with version/date metadata, nav/footer instruction block, 3 section dividers, 1 inline label). No structure, selectors, JS, or copy changed.
+
+Genuine instructions relocated here:
+
+- Version: 1.0. Date: January 2025.
+- Navigation: do NOT embed navigation code in this file. Insert the canonical navigation Code Block from `pages/navigation.html` separately above this block in Kajabi.
+- Footer: do NOT embed footer code in this file. Insert the canonical footer Code Block from `pages/footer.html` separately below this block in Kajabi.
+- Kajabi form embed: the form at `https://joinsnooze.com/forms/2148762495/embed.js` is included in Section 2. Replace this script src with the current form embed URL if the form ID changes.

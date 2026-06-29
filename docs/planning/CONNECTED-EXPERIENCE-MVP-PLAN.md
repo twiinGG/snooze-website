@@ -38,17 +38,17 @@ Create a unified navigation and CTA system that intelligently routes users based
 - Links to purchased individual products
 
 ### 3. Snooze Members (Active Membership)
-**Goal:** Quick access to Library, Village, resources, coaching  
+**Goal:** Quick access to Library, Village, resources, live sessions  
 **Access:**
 - All public pages
 - Full Snooze Library (all resources)
 - Snooze Village (community)
-- Live coaching
+- Live sessions with Sally and Bec
 - All age-based modules  
 **CTAs:**
 - "Go to Library" → Snooze Library page
 - "Join Village" → Snooze Village (community)
-- "Book Coaching" → Coaching booking
+- "Book a Consult" → 1:1 consult booking
 - Direct links to resources
 
 ---
@@ -67,7 +67,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 - **Navigation Links by Status:**
   - **New Visitor:** Home, The Snooze Method, About Sally, Blog, Join Snooze (CTA)
   - **Logged-In Non-Member:** Home, Library (teaser), Your Products, Upgrade to Snooze (CTA)
-  - **Snooze Member:** Home, Library (full), Village, Coaching, Your Account
+  - **Snooze Member:** Home, Library (full), Village, Live Sessions, Your Account
 - **Signposting Fallback:** Show all links with clear labels indicating who each is for
 
 **Task 1.2: Implement User Status Detection (With Fallback)**

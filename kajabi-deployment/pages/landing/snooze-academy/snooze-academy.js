@@ -1,16 +1,9 @@
-/* ============================================
-   SNOOZE ACADEMY - Page Interactions
-   Scroll animations for .fade-up elements
-   Scoped to #snooze-academy-page
-   ============================================ */
-
 (function () {
   'use strict';
 
   var page = document.getElementById('snooze-academy-page');
   if (!page) return;
 
-  /* ---- Scroll-triggered fade-up animations ---- */
   var fadeElements = page.querySelectorAll('.fade-up');
 
   if ('IntersectionObserver' in window && fadeElements.length > 0) {
@@ -30,7 +23,6 @@
       observer.observe(el);
     });
   } else {
-    /* Fallback: show all elements immediately */
     fadeElements.forEach(function (el) {
       el.classList.add('visible');
     });

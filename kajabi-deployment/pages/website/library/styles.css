@@ -1,22 +1,7 @@
-/* ============================================
-   SNOOZE LIBRARY PAGE - UNIFIED CSS
-   Version 1.0
-   Date: November 2025
-   
-   Complete stylesheet for all Library page sections.
-   Add this entire file to Kajabi Custom CSS.
-   ============================================ */
-
-/* ============================================
-   IMPORT FONT AWESOME (if not already loaded)
-   ============================================ */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/* ============================================
-   CSS CUSTOM PROPERTIES (Design Tokens)
-   ============================================ */
 :root {
-  /* Colors - Aligned with Snooze Design System */
+
   --color-coral: #F43357;
   --color-navy: #1F293B;
   --color-cream: #FAF7F4;
@@ -25,38 +10,30 @@
   --color-coral-tint: #FFE7EA;
   --color-white: #FFFFFF;
   --color-dark: #161E2A;
-  
-  /* Spacing Scale */
-  --spacing-xs: 0.5rem;    /* 8px */
-  --spacing-sm: 1rem;      /* 16px */
-  --spacing-md: 1.5rem;    /* 24px */
-  --spacing-lg: 2rem;      /* 32px */
-  --spacing-xl: 3rem;      /* 48px */
-  --spacing-2xl: 4rem;     /* 64px */
-  
-  /* Border Radius */
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 25px;
-  
-  /* Transitions */
+
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
-  /* Shadows */
+
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
-  
-  /* Typography */
+
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Playfair Display', Georgia, serif;
 }
 
-/* ============================================
-   SHARED CONTAINER & SECTION STYLES
-   ============================================ */
 .library-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -97,9 +74,6 @@
   margin-right: auto;
 }
 
-/* ============================================
-   SECTION 1: PAGE TITLE & INTRODUCTION
-   ============================================ */
 .library-hero {
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
   background-color: var(--color-cream);
@@ -139,9 +113,6 @@
   margin: 0 auto;
 }
 
-/* ============================================
-   SECTION 2: CATEGORY NAVIGATION
-   ============================================ */
 .library-category-nav {
   padding: var(--spacing-lg) 0;
   background-color: var(--color-cream);
@@ -297,14 +268,10 @@
   color: var(--color-coral);
 }
 
-/* ============================================
-   SECTION 3: ALL RESOURCES (Age-Organized)
-   ============================================ */
 .library-all-resources {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
 }
-
 
 .age-resources-section {
   margin-bottom: var(--spacing-2xl);
@@ -453,9 +420,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 4: FEATURED RESOURCES
-   ============================================ */
 .library-featured {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-cream);
@@ -558,9 +522,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 5: BROWSE BY AGE
-   ============================================ */
 .library-browse-age {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
@@ -670,9 +631,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 4: TOOLS & QUICK RESOURCES (STREAMLINED)
-   ============================================ */
 .library-tools-streamlined {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-cream);
@@ -814,9 +772,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 3: FOUNDATIONAL - THE SNOOZE METHOD
-   ============================================ */
 .library-foundational {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-cream);
@@ -907,9 +862,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 5: SLEEP TROUBLESHOOTING
-   ============================================ */
 .library-sleep-troubleshooting {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
@@ -1035,9 +987,6 @@
   margin-top: auto;
 }
 
-/* ============================================
-   SECTION 7: LIVE COACHING & REPLAYS
-   ============================================ */
 .library-coaching {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
@@ -1118,9 +1067,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 8: 1:1 CONSULT BOOKING
-   ============================================ */
 .library-consult {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
@@ -1301,9 +1247,6 @@
   margin: 0;
 }
 
-/* ============================================
-   SECTION 9: COMMUNITY ACCESS
-   ============================================ */
 .library-community {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-cream);
@@ -1384,9 +1327,6 @@
   transform: translateX(4px);
 }
 
-/* ============================================
-   SECTION 10: FUTURE RESOURCES (PLACEHOLDERS)
-   ============================================ */
 .library-future {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-white);
@@ -1465,13 +1405,6 @@
   border-radius: var(--radius-md);
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Mobile First - Base styles above are mobile */
-
-/* Tablet */
 @media (min-width: 768px) {
   .library-container {
     padding: 0 var(--spacing-lg);
@@ -1522,7 +1455,6 @@
   }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
   .library-category-nav {
     padding: var(--spacing-xl) 0;
@@ -1573,7 +1505,6 @@
   }
 }
 
-/* Mobile Specific Adjustments */
 @media (max-width: 767px) {
   .library-hero {
     padding: var(--spacing-xl) 0 var(--spacing-lg);
@@ -1687,9 +1618,6 @@
   }
 }
 
-/* ============================================
-   ACCESSIBILITY
-   ============================================ */
 .category-item:focus,
 .jump-back-card:focus,
 .resource-card:focus,
@@ -1704,7 +1632,6 @@
   outline: 2px solid var(--color-sage);
 }
 
-/* Screen reader only text */
 .sr-only {
   position: absolute;
   width: 1px;

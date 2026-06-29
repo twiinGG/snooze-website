@@ -40,7 +40,7 @@
 - All age guides
 - Complete Library
 - The Village
-- Live Coaching
+- Live Sessions
 - Member Pricing
 
 **Usage:**
@@ -229,3 +229,32 @@ Edit component files directly:
 **Last Updated:** January 2025  
 **Status:** Ready for deployment
 
+---
+
+## Maintenance Notes (Service-Model Sweep, June 2026)
+
+Inline code comments were stripped from `value-comparison.html`, `whats-in-snooze.html`, and `understanding-section.html` for clean Kajabi paste. The genuine notes those comments carried are relocated here:
+
+### value-comparison.html
+
+- **Product offer slug (AUD):** the individual-course price node (`[data-product-price]`) is a per-host-page product offer. The AUD offer is pending; the offer slug is set per host page, not in this component. (Was inline as `AUD-OFFER-PENDING`.)
+- **Currency-toggle ownership:** the inline price script only overrides the price text when no `.dynamic-price` span is present. The currency-toggle engine owns the `.dynamic-price` node and must not be clobbered. Do not change this guard.
+
+### Service-model copy
+
+Membership "Live Coaching" benefit was reframed to "Live Sessions" across these components. Live sessions with Sally and Bec are a real benefit, but are not promised on a fixed weekly cadence and there is no guaranteed replay archive. Do not reintroduce "weekly", "replay vault/library", or "24/7" language into membership copy.
+
+### Flag (out of scope, do not action here)
+
+- The "Updating Checkout URL" example above still references offer slug `6iRarwak`, which is a retired/draft slug. The canonical Snooze Access checkout slug is `z63s9VaR` (USD), as used in the live component CTAs. Update during a dedicated slug-reconciliation pass.
+
+
+## Component inventory (relocated from in-file header comments)
+
+- `messenger-chat-widget.html`: Custom pop-up chat widget that links to Messenger. JavaScript for this widget lives in `global/js/snooze-globals.js`.
+- `messenger-chat-widget-standalone.css`: Standalone CSS stylesheet for the messenger chat widget, designed for isolated landing pages without global theme CSS. Includes custom properties, trigger button styles, modal, header, body, footer, and responsive media queries. Comments stripped for Kajabi deployment (June 2026).
+- `age-cross-linking.html`: Shows links to other age-specific pages; demonstrates the comprehensiveness of Snooze.
+- `context-aware-cta.html`: Shows the appropriate CTA based on user status; falls back to signposting if detection fails (populated by JavaScript).
+- `hero-sections/hero-template-product.html`: Hero section template for product/course landing pages.
+- `hero-sections/hero-template-landing.html`: Hero section template for landing pages.
+- `hero-sections/hero-template-age-specific.html`: Hero section template for age-specific pages.

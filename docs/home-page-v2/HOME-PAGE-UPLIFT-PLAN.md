@@ -282,7 +282,7 @@ From `ADVERSARY-FRAMEWORKS-v1.md`, five themes express the same truth:
 - "Membership today: $X" comparison
 
 **Content:**
-- 24/7 sleep support (specify channel)
+- Daily, expert-moderated community support (specify channel)
 - Personalised plan (delivered when?)
 - Regressions playbooks (which ones?)
 - Nap/bedtime routines (templates)

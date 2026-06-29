@@ -64,8 +64,8 @@
 └─────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────┐
-│ SECTION 7: Live Coaching & Replays             │
-│ "Watch past coaching sessions with Sally"        │
+│ SECTION 7: Live Sessions                        │
+│ "Q&A sessions and live calls with Sally and Bec" │
 │ ┌──────┐ ┌──────┐ ┌──────┐                    │
 │ │Video1│ │Video2│ │Video3│                    │
 │ └──────┘ └──────┘ └──────┘                    │
@@ -206,7 +206,7 @@ Small: Metadata, durations (System font, 0.875rem)
 4. ✅ Featured Resources
 5. ✅ Browse by Age
 6. ✅ Tools & Quick Resources
-7. ✅ Live Coaching & Replays
+7. ✅ Live Sessions
 8. ✅ Community Access
 
 ### Phase 2 (Future)

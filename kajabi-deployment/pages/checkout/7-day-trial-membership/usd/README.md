@@ -1,4 +1,4 @@
-# USD checkout — The Snooze Membership 7 Day Trial (PUBMS02_USD)
+# USD checkout - The Snooze Membership 7 Day Trial (PUBMS02_USD)
 
 `checkout-blocks.html` is the customer-facing checkout HTML. It is intentionally
 **comment-free** (no header block, no section comments) so nothing instructional

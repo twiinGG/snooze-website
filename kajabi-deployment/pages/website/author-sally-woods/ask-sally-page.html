@@ -1,10 +1,8 @@
-<!-- PERFORMANCE: Resource Hints -->
 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 <link rel="dns-prefetch" href="https://kajabi-storefronts-production.kajabi-cdn.com" />
 
-<!-- FONTS: Optimized Loading -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
@@ -15,7 +13,6 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
 </noscript>
 
-<!-- ICONS: Defer Font Awesome -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
   onload="this.onload=null;this.rel='stylesheet'" />
 <noscript>
@@ -28,7 +25,6 @@
 
 <div id="ask-sally-page">
 
-  <!-- 1. HERO SECTION -->
   <section class="hero-wrap">
     <div class="snooze-container">
       <div class="hero-grid">
@@ -62,7 +58,6 @@
     </div>
   </section>
 
-  <!-- 2. EMAIL SUBSCRIBE BLOCK -->
   <section class="snooze-section bg-cream" id="newsletter">
     <div class="snooze-container max-800">
       <div class="text-center">
@@ -71,7 +66,6 @@
       </div>
 
       <div class="newsletter-form-card">
-        <!-- Replace with your Kajabi form embed code -->
         <form class="newsletter-form">
           <div class="form-field">
             <input type="text" placeholder="First name" class="form-input">
@@ -86,7 +80,6 @@
     </div>
   </section>
 
-  <!-- 3. FEATURED POST -->
   <section class="snooze-section bg-white">
     <div class="snooze-container max-800">
       <h2 class="text-center">Start here</h2>
@@ -103,7 +96,6 @@
     </div>
   </section>
 
-  <!-- 4. BROWSE BY TOPIC -->
   <section class="snooze-section bg-cream">
     <div class="snooze-container">
       <div class="text-center max-800">
@@ -150,7 +142,6 @@
     </div>
   </section>
 
-  <!-- 5. LATEST ANSWERS FEED -->
   <section class="snooze-section bg-white" id="latest">
     <div class="snooze-container max-800">
       <div class="text-center">
@@ -160,7 +151,6 @@
 
       <p class="post-format-note">Most answers include "What's going on", "What to do tonight", and "What to change this week".</p>
 
-      <!-- Post list - repeat this structure for each post -->
       <div class="post-list">
         <div class="post-card">
           <h3>Why your baby wakes every 2 hours at night</h3>
@@ -187,7 +177,6 @@
     </div>
   </section>
 
-  <!-- 6. SNOOZE CTA BRIDGE -->
   <section class="snooze-section bg-cream">
     <div class="snooze-container max-800 text-center">
       <h2>Want me in your corner?</h2>
@@ -204,7 +193,6 @@
     </div>
   </section>
 
-  <!-- 7. FAQ -->
   <section class="snooze-section bg-white">
     <div class="snooze-container max-800">
       <h2 class="text-center">Ask Sally FAQ</h2>
@@ -241,7 +229,6 @@
     </div>
   </section>
 
-  <!-- 8. QUESTION SUBMISSION BLOCK -->
   <section class="snooze-section bg-cream">
     <div class="snooze-container max-800">
       <div class="text-center">
@@ -250,7 +237,6 @@
       </div>
 
       <div class="question-form-card">
-        <!-- Replace with your Kajabi form embed code -->
         <form class="question-form">
           <div class="form-field">
             <label class="form-label">First name</label>
@@ -275,7 +261,6 @@
     </div>
   </section>
 
-  <!-- 9. FOOTER CREDIBILITY -->
   <section class="snooze-section bg-white">
     <div class="snooze-container text-center">
       <p class="credibility-statement">Evidence-based, judgement-free baby sleep support.</p>
@@ -288,7 +273,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="snooze-footer">
     <div class="snooze-container">
       <div class="foot-grid">
@@ -339,7 +323,6 @@
 </div>
 
 <script>
-// FAQ Toggle - scoped to Ask Sally page
 document.addEventListener('DOMContentLoaded', function() {
   const askSallyPage = document.getElementById('ask-sally-page');
   if (!askSallyPage) return;
@@ -352,12 +335,10 @@ document.addEventListener('DOMContentLoaded', function() {
     head.addEventListener('click', function() {
       const isActive = item.classList.contains('active');
 
-      // Close all FAQs
       faqItems.forEach(function(i) {
         i.classList.remove('active');
       });
 
-      // Open clicked FAQ if it wasn't active
       if (!isActive) {
         item.classList.add('active');
       }

@@ -35,7 +35,7 @@ Welcome to your Snooze Village Day Pass! We're so excited to have you experience
 
 **What you can do right now:**
 • Join Snooze Village and introduce yourself
-• Attend our next live coaching call (check the schedule below!)
+• Attend our next live session (check the schedule below!)
 • Ask questions and get support from our community
 • Experience the warmth and encouragement that makes Snooze special
 
@@ -44,9 +44,9 @@ Welcome to your Snooze Village Day Pass! We're so excited to have you experience
 2. Log in with your account (the one you just created)
 3. Start exploring!
 
-**Upcoming Coaching Calls:**
-[Insert next scheduled coaching call date/time]
-[Link to coaching schedule]
+**Upcoming Live Sessions:**
+[Insert next scheduled live session date/time]
+[Link to session schedule]
 
 **Your 24-hour access starts now. Make the most of it!**
 
@@ -85,9 +85,8 @@ You're halfway through your Snooze Village Day Pass! We wanted to check in and m
 
 **Still haven't explored? Here's what you can do:**
 • Join the conversation in Snooze Village
-• Check out past coaching call replays
 • Ask a question - our community is here to help
-• Attend the next live coaching call if there's one scheduled
+• Attend the next live session if there's one scheduled
 
 **What you've experienced so far:**
 [If Kajabi supports it, show engagement stats like "You've viewed X posts" or "You've asked Y questions"]
@@ -101,7 +100,7 @@ You're halfway through your Snooze Village Day Pass! We wanted to check in and m
 If you're loving the Village experience, upgrade to a Snooze Membership to get:
 • Full access to all courses
 • Complete resource library
-• Unlimited coaching calls
+• Live sessions with Sally and Bec
 • Ongoing community support
 
 [Upgrade to Snooze Membership Button/Link]
@@ -140,7 +139,7 @@ Your Snooze Village Day Pass expires in just 1 hour!
 We hope you've enjoyed experiencing the warmth and support of our community. If you've found value in the Village, imagine having:
 • Full access to all our courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, and more)
 • Complete resource library with downloadable guides
-• Unlimited access to live coaching calls
+• Live sessions with Sally and Bec
 • Ongoing community support whenever you need it
 
 **Upgrade now to keep your access:**
@@ -150,7 +149,7 @@ We hope you've enjoyed experiencing the warmth and support of our community. If 
 [If you have a special offer, mention it here - e.g., "Use code DAYPASS for 10% off your first month"]
 
 **What happens if you don't upgrade?**
-Your access to Snooze Village will expire in 1 hour. You'll still have your account, but you won't be able to access the community or coaching calls.
+Your access to Snooze Village will expire in 1 hour. You'll still have your account, but you won't be able to access the community or live sessions.
 
 **Questions about membership?**
 Just reply to this email - we're happy to help!
@@ -192,7 +191,7 @@ We hope you enjoyed your 24-hour experience in the Village. If you found value i
 **What you'll get as a Snooze Member:**
 • Full access to all courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, The Snooze Method, and more)
 • Complete resource library with downloadable guides and templates
-• Unlimited access to live coaching calls and replays
+• Live sessions with Sally and Bec
 • Ongoing community support whenever you need it
 • All future content and updates
 
@@ -238,7 +237,7 @@ Congratulations! You've upgraded to a full Snooze Membership.
 **You now have access to:**
 • All courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, The Snooze Method, and more)
 • Complete resource library with downloadable guides
-• Unlimited access to live coaching calls and replays
+• Live sessions with Sally and Bec
 • Ongoing community support in Snooze Village
 • All future content and updates
 
@@ -250,7 +249,7 @@ Congratulations! You've upgraded to a full Snooze Membership.
 **Next Steps:**
 • Introduce yourself in the Village
 • Bookmark your favorite resources
-• Attend the next live coaching call
+• Attend the next live session
 • Download any guides you need
 
 We're so excited to have you as a full member of the Snooze community!

@@ -1,8 +1,4 @@
-<!-- ============================================
-     AGE PAGE CROSS-LINKING COMPONENT
-     Shows links to other age-specific pages
-     Demonstrates comprehensiveness of Snooze
-     ============================================ -->
+
 
 <section class="snooze-age-crosslinks">
   <div class="snooze-container">
@@ -10,7 +6,7 @@
     <p class="snooze-section-intro">Snooze covers every stage from newborn through toddler. All guides are included in your membership.</p>
     
     <div class="snooze-age-grid">
-      <!-- Newborn (0-3 Months) -->
+      
       <div class="snooze-age-card" data-age="newborn">
         <div class="snooze-age-badge">0-3 Months</div>
         <h3>Newborn Sleep Help</h3>
@@ -19,8 +15,7 @@
           View Newborn Guide <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
-      
-      <!-- 3-4 Month -->
+
       <div class="snooze-age-card" data-age="3-4month">
         <div class="snooze-age-badge">3-4 Months</div>
         <h3>3-4 Month Sleep Help</h3>
@@ -29,8 +24,7 @@
           View 3-4 Month Guide <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
-      
-      <!-- 5-12 Month -->
+
       <div class="snooze-age-card" data-age="5-12month">
         <div class="snooze-age-badge">5-12 Months</div>
         <h3>5-12 Month Sleep Help</h3>
@@ -39,8 +33,7 @@
           View 5-12 Month Guide <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
-      
-      <!-- Toddler (12+ Months) -->
+
       <div class="snooze-age-card" data-age="toddler">
         <div class="snooze-age-badge">12+ Months</div>
         <h3>Toddler Sleep Help</h3>
@@ -50,8 +43,7 @@
         </a>
       </div>
     </div>
-    
-    <!-- Membership CTA -->
+
     <div class="snooze-age-cta">
       <p class="snooze-age-cta-text">All guides included in Snooze membership</p>
       <a href="https://joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary dynamic-cta" data-checkout>
@@ -62,7 +54,7 @@
 </section>
 
 <style>
-/* Age Cross-Linking Styles */
+
 .snooze-age-crosslinks {
   padding: 4rem 2rem;
   background-color: #faf9f7;
@@ -188,13 +180,11 @@
   color: white;
 }
 
-/* Hide current age card (optional - can be controlled via data attribute) */
 .snooze-age-card[data-current-age] {
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .snooze-age-crosslinks {
     padding: 3rem 1.5rem;
@@ -216,10 +206,8 @@
 </style>
 
 <script>
-// Optionally hide the current age card
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
-    // Get current page age from URL or data attribute
     var currentPath = window.location.pathname;
     var currentAge = '';
     
@@ -233,7 +221,6 @@
       currentAge = 'toddler';
     }
     
-    // Hide current age card if found
     if (currentAge) {
       var currentCard = document.querySelector('[data-age="' + currentAge + '"]');
       if (currentCard) {

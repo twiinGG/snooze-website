@@ -1,11 +1,5 @@
-/* ============================================
-   SNOOZE CURRENCY TOGGLE STYLES
-   Add to: Kajabi Settings > Theme > Custom CSS
-   ============================================ */
-
-/* 1. FOUC Prevention: Hide prices until JS determines currency */
 .dynamic-price, .dynamic-cta {
-  visibility: hidden; 
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -16,7 +10,6 @@ body.currency-loaded .dynamic-cta {
   opacity: 1;
 }
 
-/* 2. The Toggle Switch (Desktop & Mobile) */
 .currency-toggle-btn {
   background: transparent;
   border: 1px solid var(--sn-navy, #1F293B);
@@ -55,7 +48,6 @@ body.currency-loaded .dynamic-cta {
   display: inline-block;
 }
 
-/* Active State Styling (AUD Mode) */
 body.currency-mode-aud .currency-toggle-btn {
   background: rgba(0, 82, 204, 0.1);
   border-color: #0052cc;
@@ -66,7 +58,6 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   background: rgba(0, 82, 204, 0.15);
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .currency-toggle-btn {
     font-size: 12px;
@@ -81,7 +72,6 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   }
 }
 
-/* 3. Checkout Page Specifics */
 .checkout-currency-switch {
   display: block;
   text-align: center;
@@ -116,7 +106,6 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   line-height: 1.5;
 }
 
-/* 4. Price Element Transitions */
 .dynamic-price {
   transition: opacity 0.3s ease;
 }
@@ -125,14 +114,12 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   opacity: 0.5;
 }
 
-/* 5. Accessibility */
 .currency-toggle-btn[aria-pressed="true"] {
   background: rgba(0, 82, 204, 0.1);
   border-color: #0052cc;
   color: #0052cc;
 }
 
-/* Screen reader only text */
 .sr-only {
   position: absolute;
   width: 1px;

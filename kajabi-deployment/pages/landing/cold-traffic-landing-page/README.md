@@ -91,5 +91,31 @@ The page includes these sections (in order):
 
 ---
 
+## Deployment Notes (relocated from inline HTML comments)
+
+These notes were previously stored as comments inside `cold-traffic-landing-page-blocks.html`. They are kept here so the deployable HTML stays comment-free.
+
+### File type and globals
+- Built for the Kajabi **Website Page** type using the unified theme.
+- Global CSS: `../global/css/snooze-unified-theme.css`
+- Global JS: `../global/js/snooze-globals.js`
+- In the unified theme, plain `.navbar` is hidden unless it also has `.snooze-custom-navbar`.
+
+### Code block deployment
+- Copy each section of the blocks file into a separate Kajabi Code Block, in order.
+- Section order (top to bottom): Launch Offer Banner, Hero, Mirror Moment, Week One Roadmap, Why Snooze Exists (with Sally photo + scoped `<style>`), Social Proof, Age Stages, Pricing, Founding Member Hero, Sticky CTA Bar (with scoped `<script>`), FAQs, Final CTA.
+
+### Pricing flags (HUMAN REVIEW required)
+All on-page prices are **NON-CANONICAL founding/launch prices**. AUD is computed as USD x1.51. Reconcile against the canonical Snooze Access tiers before any reuse outside this launch:
+
+| Location | On-page price (USD / AUD) | Note |
+|----------|---------------------------|------|
+| Newborn Sleep Guide (separately) | $87 / A$131 | Not a canonical Snooze Access tier |
+| Quarterly Membership | $147 / A$222 | Canonical Access quarterly is $197 / A$299 |
+| Annual Membership | $490 / A$740 | Canonical Access yearly is $657 / A$997 |
+| Founding Member Hero (annual) | $490 / A$740 | Locked-in founding rate |
+
+---
+
 **Last Updated:** January 2025
 

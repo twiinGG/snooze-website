@@ -100,6 +100,8 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 
 3. **Day 4-5 Check-In** (Day 4)
    - Sent 4 days after signup
+   - Subject line: 3 days left in your trial
+   - Preview text: Your trial ends in 3 days. Here's what happens next and how to continue.
    - Reminds about trial ending soon
    - Explains conversion process
    - Reassures about cancellation option

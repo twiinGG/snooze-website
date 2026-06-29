@@ -1,26 +1,6 @@
-<!--
-  Snooze Access - Cold-Ads Thank-You / Next-Steps Page (funnel step 3)
-  Funnel: cold ad -> quiz/assessment -> Snooze Access results/sales page -> THIS thank-you page
-  Source pattern: kajabi-deployment/pages/landing/day-pass-paidads-thanks/index.html
-  Adapted for: Snooze Access paid-ads funnel, AU market, AUD default.
-
-  Slug suggestion: /snooze-access-from-our-ads/thanks
-  Set this page as the Kajabi post-purchase / trial-start redirect for the Snooze Access offer.
-
-  Purchase / checkout tracking fires on the Kajabi checkout page via the global
-  kajabi-deployment/global/js/kajabi-checkout-tracking.js. This page does NOT fire a
-  purchase event; it is a confirmation and onboarding page only.
-
-  Pass first_name, access_url, support_email via URL query parameters or Kajabi merge tags.
-  Fill placeholders {{first_name}}, {{access_url}}, {{support_email}} before publishing.
-  Inline styles only; no theme CSS dependency; no <style> blocks (Kajabi strips them).
--->
 
 <div id="snooze-access-thanks-page">
 
-<!-- ============================================================== -->
-<!-- SECTION 1: THANK-YOU HEADER                                      -->
-<!-- ============================================================== -->
 <section style="padding: 3.5rem 1.5rem 1.5rem; max-width: 640px; margin: 0 auto; text-align: center;">
   <div style="display: inline-block; padding: 0.5rem 1rem; background: #f0f7f4; border-radius: 999px; font-size: 0.8125rem; font-weight: 600; color: #29563f; margin-bottom: 1rem;">
     Your 7-day free trial is live. Welcome to Snooze Access.
@@ -36,9 +16,7 @@
   </p>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 2: WHAT HAPPENS NEXT                                     -->
-<!-- ============================================================== -->
+
 <section style="padding: 1.5rem 1.5rem 1rem; max-width: 640px; margin: 0 auto;">
   <h2 style="font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700; color: #1f293b; margin: 0 0 1rem;">
     What happens next
@@ -74,24 +52,19 @@
   </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 3: GUARANTEE REINFORCEMENT                              -->
-<!-- ============================================================== -->
+
 <section style="padding: 2rem 1.5rem 1rem; max-width: 640px; margin: 0 auto;">
   <div style="padding: 1.5rem 1.5rem; background: #f0f7f4; border: 2px solid #29563f; border-radius: 14px; text-align: center;">
     <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #29563f; margin: 0 0 0.5rem;">
       Your results guarantee stands
     </p>
-    <!-- PLACEHOLDER WORDING: final guarantee wording needs Sally's sign-off; keep aligned with the sales page. -->
     <p style="font-size: 1rem; line-height: 1.7; color: #374151; margin: 0;">
       Follow the plan for your baby&rsquo;s age and stay in touch with us. If you don&rsquo;t see noticeably better sleep within 14 days, write to us and we&rsquo;ll refund you. You&rsquo;ve got nothing to lose by giving it a real go.
     </p>
   </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- SECTION 4: SUPPORT FOOTER                                        -->
-<!-- ============================================================== -->
+
 <section style="padding: 2rem 1.5rem 4rem; max-width: 640px; margin: 0 auto;">
   <div style="padding: 1.5rem; background: #f9fafb; border-radius: 12px; border-left: 3px solid #29563f;">
     <p style="line-height: 1.7; color: #374151; margin: 0 0 0.75rem; font-size: 0.9375rem;">
@@ -104,13 +77,9 @@
 </section>
 
 </div>
-<!-- end #snooze-access-thanks-page -->
 
 <script>
 (function () {
-  // Hydrate first_name and access_url from query params if Kajabi merge tags are not
-  // resolving. Fallback only; merge tags are the primary path. No purchase event here;
-  // purchase tracking fires on the Kajabi checkout page via kajabi-checkout-tracking.js.
   function hydrateFromQuery() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -131,7 +100,6 @@
         }
       }
     } catch (e) {
-      // Silent fallback; the Kajabi merge tags are the primary path.
     }
   }
 

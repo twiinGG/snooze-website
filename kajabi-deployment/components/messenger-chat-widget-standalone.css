@@ -1,9 +1,3 @@
-/* ============================================
-   MESSENGER CHAT WIDGET - STANDALONE CSS
-   For isolated landing pages that don't have global theme CSS
-   ============================================ */
-
-/* CSS Variables (with fallbacks) */
 :root {
   --sn-coral: #F43357;
   --sn-coral-hover: #D62646;
@@ -19,7 +13,6 @@
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Floating Trigger Button */
 .snooze-messenger-trigger {
   position: fixed;
   bottom: 24px;
@@ -90,7 +83,6 @@
   }
 }
 
-/* Modal */
 .snooze-messenger-modal {
   position: fixed;
   top: 0;
@@ -143,7 +135,6 @@
   transform: translateY(0);
 }
 
-/* Modal Header */
 .messenger-modal-header {
   display: flex;
   align-items: center;
@@ -252,7 +243,6 @@
   height: 18px;
 }
 
-/* Modal Body */
 .messenger-modal-body {
   flex: 1;
   padding: 20px;
@@ -304,7 +294,6 @@
   line-height: 1.5;
 }
 
-/* Modal Footer */
 .messenger-modal-footer {
   padding: 20px;
   border-top: 1px solid #E5E7EB;
@@ -352,7 +341,6 @@
   flex-shrink: 0;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .snooze-messenger-trigger {
     bottom: 16px;

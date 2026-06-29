@@ -1,17 +1,3 @@
-/* ============================================
-   SNOOZE ACADEMY - STANDALONE STYLES
-   Landing page for sleep consultant training
-   Self-contained: includes System Init + page styles
-   Deploy this directory as Vercel root
-   ============================================ */
-
-/* ============================================
-   SYSTEM INITIALIZATION
-   (Design system variables, base typography,
-   layout utilities, buttons, hero, grid, full-bleed)
-   ============================================ */
-
-/* 1. Initialize Variables & Base Typography */
 #snooze-academy-page {
   --c-coral: #F43357;
   --c-coral-hover: #D62646;
@@ -48,7 +34,6 @@
 #snooze-academy-page img { max-width: 100%; height: auto; display: block; }
 #snooze-academy-page a { text-decoration: none; transition: 0.3s ease; }
 
-/* 2. Headings */
 #snooze-academy-page h1, #snooze-academy-page h2, #snooze-academy-page h3, #snooze-academy-page h4 {
   font-family: var(--font-head);
   color: var(--c-navy);
@@ -59,7 +44,6 @@
 #snooze-academy-page h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
 #snooze-academy-page h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
 
-/* 3. Layout Utilities */
 #snooze-academy-page .snooze-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -72,7 +56,6 @@
 #snooze-academy-page .text-center { text-align: center; }
 #snooze-academy-page .max-800 { max-width: 800px; margin: 0 auto; }
 
-/* 4. Buttons */
 #snooze-academy-page .btn {
   display: inline-flex;
   align-items: center;
@@ -104,7 +87,6 @@
   color: var(--c-coral);
 }
 
-/* 5. Hero Layout */
 #snooze-academy-page .hero-wrap {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -121,7 +103,6 @@
   #snooze-academy-page .hero-img { order: 2; }
 }
 
-/* 6. Steps Grid */
 #snooze-academy-page .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -139,17 +120,11 @@
 }
 #snooze-academy-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
   #snooze-academy-page .snooze-section { padding: 56px 0; }
   #snooze-academy-page .btn { width: 100%; }
 }
 
-/* ============================================
-   PAGE-SPECIFIC STYLES
-   ============================================ */
-
-/* ---- Hero Section ---- */
 #snooze-academy-page .academy-hero {
   background: linear-gradient(135deg, #1F293B 0%, #2d3a50 100%);
   padding: 80px 0 72px;
@@ -214,7 +189,6 @@
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* ---- Section Headers ---- */
 #snooze-academy-page .section-eyebrow {
   display: inline-block;
   font-size: 0.8rem;
@@ -233,7 +207,6 @@
   margin: 0 auto 2.5rem;
 }
 
-/* ---- Value Props (Why Snooze Academy) ---- */
 #snooze-academy-page .value-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -283,7 +256,6 @@
   line-height: 1.6;
 }
 
-/* ---- Curriculum Timeline ---- */
 #snooze-academy-page .curriculum-blocks {
   max-width: 800px;
   margin: 40px auto 0;
@@ -400,7 +372,6 @@
   flex-shrink: 0;
 }
 
-/* Curriculum accordion expand */
 #snooze-academy-page .curriculum-block input[type="checkbox"]:checked + .curriculum-header {
   background: rgba(244, 51, 87, 0.03);
 }
@@ -414,7 +385,6 @@
   opacity: 1;
 }
 
-/* ---- Who Is This For ---- */
 #snooze-academy-page .persona-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -464,7 +434,6 @@
   line-height: 1.6;
 }
 
-/* ---- Trainer Profiles ---- */
 #snooze-academy-page .trainers-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -527,7 +496,6 @@
   line-height: 1.6;
 }
 
-/* ---- Outcomes Grid ---- */
 #snooze-academy-page .outcomes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -577,7 +545,6 @@
   margin: 0;
 }
 
-/* ---- Stats Section ---- */
 #snooze-academy-page .stats-section {
   background: var(--c-navy);
   padding: 56px 0;
@@ -605,7 +572,6 @@
   font-weight: 500;
 }
 
-/* ---- Testimonials ---- */
 #snooze-academy-page .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -651,7 +617,6 @@
   font-size: 0.82rem;
 }
 
-/* ---- FAQ Section ---- */
 #snooze-academy-page .faq-container {
   max-width: 800px;
   margin: 40px auto 0;
@@ -726,7 +691,6 @@
   opacity: 1;
 }
 
-/* ---- Final CTA Section ---- */
 #snooze-academy-page .cta-section {
   background: linear-gradient(135deg, #1F293B 0%, #2d3a50 100%);
   padding: 80px 0;
@@ -784,7 +748,6 @@
   margin-top: 12px;
 }
 
-/* ---- Scroll Animations ---- */
 #snooze-academy-page .fade-up {
   opacity: 0;
   transform: translateY(24px);
@@ -796,7 +759,6 @@
   transform: translateY(0);
 }
 
-/* ---- Mobile Responsive ---- */
 @media (max-width: 768px) {
   #snooze-academy-page .academy-hero {
     padding: 56px 0 48px;

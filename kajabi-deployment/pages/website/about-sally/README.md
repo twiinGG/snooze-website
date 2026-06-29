@@ -175,3 +175,22 @@ These are managed in `snooze-globals.js` and can be updated site-wide by changin
 **Last Updated:** January 2025  
 **Status:** Ready for Deployment
 
+---
+
+## Maintenance Log
+
+### June 29, 2026: Service-model copy sweep + comment strip
+
+- **Copy rewrite (CTA section):** "live coaching with me" rewritten to "live sessions with me and Bec". The membership is self-serve first plus a coaching model; live sessions with Sally and Bec are real, but live coaching with Sally as an on-demand included benefit is not.
+- **Copy rewrite (signposting CTA JS string):** upgrade note "Unlock full access to Library, Village, and Coaching" rewritten to "...Library, Village, and live sessions".
+- **Comments stripped:** all HTML comments and inline JS `//` comments removed from `about-sally.html` per the Kajabi deployable-code convention (custom-code blocks should ship comment-free). The metadata those comments carried is captured here.
+
+### Metadata relocated from stripped in-file comments
+
+- File was internally labelled "About Sally Page, Version 3.0 (Consolidated)", originally dated January 2025. Hero section was "Version 3.0 (Trust Section Style)" matching the home page trust/founder section layout. Sections 2 to 5 were "Version 2.0 (New Style)".
+- Section 5 CTA is context-aware: a `<script>` populates `#about-sally-cta-location` based on `window.SnoozeUserDetection.getUserStatus()` (states: snooze-member, logged-in-non-member, new-visitor, signposting fallback).
+
+### Checkout URL note (supersedes Links Reference above)
+
+The in-file CTA script hardcodes a checkout fallback of `https://joinsnooze.com/offers/z63s9VaR/checkout` (canonical Snooze Access USD offer). The "Links Reference" section above still cites the retired `6iRarwak` slug; treat the in-file `z63s9VaR` value as current.
+

@@ -64,7 +64,7 @@ This 1-month free access offer provides full access to the Snooze membership for
 1. **Welcome Email** (Day 0 - Immediate)
    - Sent immediately when access is granted
    - Introduces free month and next steps
-   - Links to Library, Village, and Coaching
+   - Links to Library, Village, and live sessions
    - Includes upgrade option
 
 2. **Day 7 Check-In** (Day 7)
@@ -177,6 +177,32 @@ If you have questions about setup or need help customizing any of the content, r
 - `KAJABI-OFFER-SETUP.md` for detailed setup instructions
 - Existing membership checkout pages for styling reference
 - Kajabi documentation for platform-specific questions
+
+---
+
+## Deployment Notes (relocated from HTML comments)
+
+### Checkout page (`1-month-free-checkout-blocks.html`)
+
+1. Paste the HTML into Kajabi's Custom Code Block (HTML only, no `<style>` or `<script>` tags).
+2. Paste `1-month-free-checkout.css` into Kajabi's Custom CSS field.
+3. Paste `1-month-free-checkout.js` into Kajabi's Custom JavaScript field.
+4. Add the Google Fonts link to Kajabi's Header Tracking Code:
+   `<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">`
+
+This offer is typically granted manually, not purchased. The checkout page is for reference or if you want to allow direct signup. The offer grant email kicks off the automation flow.
+
+The currency toggle widget reads `localStorage['snooze_currency_preference']` via `currency-toggle.js`. PRD: `docs/projects/paid-media-and-dual-currency-v1/00-prd.md` §4.8.
+
+### Thank you page (`1-month-free-thank-you-page.html`)
+
+1. Copy the entire code block.
+2. Go to Kajabi → Sales → Offers → [1 Month Free Offer] → Settings.
+3. Scroll to the "Thank You Page" section.
+4. Select "Custom Thank You Page" or "Redirect to URL".
+5. Create a new page in Kajabi and paste this code.
+
+The inline script reads the currency preference for any `.dynamic-price` spans (PRD §4.8). It is display-only with no checkout impact.
 
 ---
 

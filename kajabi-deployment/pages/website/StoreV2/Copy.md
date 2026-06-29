@@ -30,7 +30,7 @@ Instead of piecing together advice from Google, social media, and conflicting sl
 **Included with Snooze:**
 
 * Age-appropriate baby sleep education (newborn to toddler)
-* Weekly live group coaching and Q&A
+* Live Q&A sessions with Sally and Bec
 * Private support community
 * Support for naps, nights, feeding, early mornings, and regressions
 * Ongoing access while you need support
@@ -137,7 +137,7 @@ This comes **before** product listings.
 Self-paced baby sleep guides to help you understand routines, naps, and expectations.
 
 **Ongoing Sleep Support**
-All-access guidance combining education, live coaching, and community support as your baby grows.
+All-access guidance combining education, live sessions, and community support as your baby grows.
 
 **Intensive Coaching**
 Short-term, high-touch coaching for parents who want focused support and faster results.

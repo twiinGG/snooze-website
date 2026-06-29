@@ -5,15 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get Your Snooze Village Day Pass | Free Access Today</title>
   
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
-    /* ============================================
-       SNOOZE VILLAGE DAY PASS CHECKOUT
-       Fun & Engaging Design
-       ============================================ */
-    
     :root {
       --color-primary: #F43357;
       --color-navy: #1F293B;
@@ -62,7 +56,6 @@
       }
     }
     
-    /* Header Section */
     .checkout-header {
       text-align: center;
       margin-bottom: 3rem;
@@ -107,7 +100,6 @@
       margin: 0 auto;
     }
     
-    /* Main Content Card */
     .checkout-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
@@ -143,7 +135,6 @@
       letter-spacing: 1px;
     }
     
-    /* Benefits Section */
     .benefits-section {
       padding: 2.5rem;
     }
@@ -192,7 +183,6 @@
       font-size: 0.95rem;
     }
     
-    /* What's Included Section */
     .includes-section {
       padding: 2.5rem;
       background: var(--color-beige);
@@ -238,7 +228,6 @@
       color: var(--color-sage);
     }
     
-    /* CTA Section */
     .cta-section {
       padding: 2.5rem;
       text-align: center;
@@ -286,7 +275,6 @@
       transform: translateY(-1px);
     }
     
-    /* Fun Elements */
     .sparkle {
       display: inline-block;
       animation: sparkle 2s infinite;
@@ -303,7 +291,6 @@
       }
     }
     
-    /* Trust Badge */
     .trust-badges {
       display: flex;
       justify-content: center;
@@ -324,7 +311,6 @@
       color: var(--color-primary);
     }
     
-    /* Footer Note */
     .footer-note {
       text-align: center;
       padding: 2rem;
@@ -341,7 +327,6 @@
       text-decoration: underline;
     }
     
-    /* Responsive */
     @media (max-width: 768px) {
       .checkout-header {
         padding: 1rem;
@@ -368,7 +353,6 @@
       }
     }
     
-    /* Kajabi Checkout Integration */
     .kajabi-checkout-wrapper {
       margin-top: 2rem;
     }
@@ -377,42 +361,35 @@
 <body>
   <div class="checkout-container">
 
-    <!-- Currency toggle widget. Day Pass is free, so this captures currency_preference
-         for downstream Snooze Access conversion routing.
-         PRD: docs/projects/paid-media-and-dual-currency-v1/00-prd.md §4.8 -->
     <div class="snooze-currency-toggle-block" data-currency-toggle="checkout" style="text-align: center; margin-bottom: 1.5rem;">
       <button type="button" class="currency-toggle-btn" aria-label="Toggle currency">USD</button>
       <span class="currency-toggle-hint">Set your currency preference for any Snooze upgrades.</span>
     </div>
 
-    <!-- Header -->
     <div class="checkout-header">
       <div class="pass-badge">
         <i class="fas fa-ticket-alt"></i> Limited Time Pass
       </div>
       <h1>Your Snooze Village Day Pass</h1>
-      <p class="subtitle">Experience the support, community, and expert coaching that makes Snooze special. All yours for a day, on us!</p>
+      <p class="subtitle">Experience the support, community, and live sessions that make Snooze special. All yours for a day, on us!</p>
     </div>
     
-    <!-- Main Card -->
     <div class="checkout-card">
-      
-      <!-- Card Header with Price -->
+
       <div class="checkout-card-header">
         <h2>Get Your Free Day Pass</h2>
         <div class="price">FREE</div>
         <div class="price-label">No credit card required</div>
       </div>
       
-      <!-- Benefits Section -->
       <div class="benefits-section">
         <h3 style="font-size: 1.5rem; color: var(--color-navy); margin-bottom: 1rem;">What You'll Get Today:</h3>
         <ul class="benefits-list">
           <li>
             <i class="fas fa-video"></i>
             <div class="benefit-text">
-              <div class="benefit-title">Attend Live Coaching Calls</div>
-              <div class="benefit-desc">Join our weekly group coaching sessions with Sally and get real-time answers to your sleep questions</div>
+              <div class="benefit-title">Join Live Sessions</div>
+              <div class="benefit-desc">If a live session with Sally and Bec is on while your pass is open, you can join in and bring your sleep questions</div>
             </div>
           </li>
           <li>
@@ -426,7 +403,7 @@
             <i class="fas fa-comments"></i>
             <div class="benefit-text">
               <div class="benefit-title">Expert-Moderated Support</div>
-              <div class="benefit-desc">Get guidance from certified sleep consultants right when you need it</div>
+              <div class="benefit-desc">Get guidance from certified sleep consultants through daily, expert-moderated community support</div>
             </div>
           </li>
           <li>
@@ -439,14 +416,13 @@
         </ul>
       </div>
       
-      <!-- What's Included -->
       <div class="includes-section">
         <h3><i class="fas fa-check-circle sparkle"></i> What's Included</h3>
         <div class="includes-grid">
           <div class="include-item">
             <i class="fas fa-video"></i>
-            <h4>Live Coaching</h4>
-            <p>Attend scheduled calls</p>
+            <h4>Live Sessions</h4>
+            <p>Join when one is open</p>
           </div>
           <div class="include-item">
             <i class="fas fa-comments"></i>
@@ -466,13 +442,10 @@
         </div>
       </div>
       
-      <!-- CTA Section -->
       <div class="cta-section">
         <h3>Ready to Experience Snooze Village? <span class="sparkle">✨</span></h3>
         <p>Claim your free day pass and see what it feels like to have a village supporting your sleep journey.</p>
         
-        <!-- Kajabi Checkout Button -->
-        <!-- Replace [YOUR_CHECKOUT_URL] with your actual Kajabi checkout URL -->
         <a href="#" class="cta-button" id="checkout-button">
           Get My Free Day Pass <i class="fas fa-arrow-right"></i>
         </a>
@@ -495,33 +468,22 @@
       
     </div>
     
-    <!-- Footer Note -->
     <div class="footer-note">
       <p>
-        <i class="fas fa-info-circle"></i> This day pass gives you access to Snooze Village (community and coaching) but does not include courses or resources from the Library. Want full access? <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="dynamic-cta" data-checkout>Become a Snooze Member</a>
+        <i class="fas fa-info-circle"></i> This day pass gives you access to Snooze Village (community and any live sessions open during your pass) but does not include courses or resources from the Library. Want full access? <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="dynamic-cta" data-checkout>Become a Snooze Member</a>
       </p>
     </div>
     
   </div>
   
   <script>
-    // Update checkout button URL with your actual Kajabi checkout URL
-    // Replace this with your day pass offer checkout URL
     const checkoutButton = document.getElementById('checkout-button');
-    
-    // You'll need to replace this with your actual Kajabi checkout URL
-    // It should look like: https://joinsnooze.com/offers/[YOUR_OFFER_ID]/checkout
+
     checkoutButton.addEventListener('click', function(e) {
-      // Uncomment and update this line with your actual checkout URL:
-      // window.location.href = 'https://joinsnooze.com/offers/[YOUR_OFFER_ID]/checkout';
-      
-      // For now, this prevents the default link behavior
-      // Remove this once you've added the actual URL above
       e.preventDefault();
       alert('Please update the checkout URL in the script section with your actual Kajabi checkout URL!');
     });
-    
-    // Smooth scroll animation on load
+
     window.addEventListener('load', function() {
       document.body.style.opacity = '0';
       setTimeout(function() {
