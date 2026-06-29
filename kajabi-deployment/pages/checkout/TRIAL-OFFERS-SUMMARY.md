@@ -1,39 +1,45 @@
 # Trial & Free Access Offers - Implementation Summary
 
-**Date:** January 2026  
+**Date:** January 2026 (codes updated June 2026)  
 **Status:** Complete & Ready for Deployment  
 **Purpose:** Documentation of 7-day trial and 1-month free access offers created
+
+**Authoritative naming:** `docs/operations/SNOOZE-NAMING-CONVENTIONS.md` (v2). Core membership public title: **The Snooze Membership**.
 
 ---
 
 ## Overview
 
-Two new membership offers have been created to drive conversions:
+Two membership offers drive conversions:
 
-1. **7-Day Full Access Trial** (MBMS04) - Trial that auto-converts to paid membership
-2. **1-Month Free Access** (MBMS05) - Free grant with no commitment, expires after 30 days
+1. **7-Day Full Access Trial** (`PUBMS02_USD`) - Trial that auto-converts to paid membership
+2. **1-Month Free Access** (`PUBMS03_USD`) - Free grant with no commitment, expires after 30 days
 
 Both offers include complete checkout pages, thank you pages, and email sequences.
 
 ---
 
-## 1. 7-Day Full Access Trial (MBMS04)
+## 1. 7-Day Full Access Trial (PUBMS02, USD + AUD)
 
 ### Offer Details
-- **Offer Title (Public):** Snooze Access - 7 Day Trial
-- **Internal Title:** `MBMS04_Snooze-Access-Trial-7day`
-- **Internal Code:** MBMS04
-- **Type:** Trial with auto-conversion
+- **Offer Title (Public):** The Snooze Membership - 7 Day Trial
+- **Type:** Trial with auto-conversion (card-upfront)
 - **Duration:** 7 days
-- **Payment:** No payment required to start
-- **Conversion:** Auto-converts to paid membership after 7 days (or cancel anytime)
+- **Payment:** Card on file at signup; $0 charged for the first 7 days
+- **Conversion:** Selected plan bills on day 8 (or cancel anytime in the trial)
 
-### Files Created
-- `7-day-trial-checkout-blocks.html` - Checkout page HTML
-- `7-day-trial-checkout.css` - Checkout page CSS
-- `7-day-trial-checkout.js` - Checkout page JavaScript
-- `7-day-trial-thank-you-page.html` - Post-purchase thank you page
-- `KAJABI-OFFER-SETUP.md` - Complete setup instructions
+| Currency | Code | Offer ID | Slug |
+|----------|------|----------|------|
+| USD | PUBMS02_USD | `2150887297` | `mqQikDM7` |
+| AUD | PUBMS02_AUD | `2151254578` | `Sr6KzShx` |
+
+### Files (folder `7-day-trial-membership/`)
+- `usd/checkout-blocks.html` - USD checkout HTML (links to AUD)
+- `aud/checkout-blocks.html` - AUD checkout HTML (links to USD)
+- `shared/checkout.css` - Self-contained checkout CSS (both currencies)
+- `shared/checkout.js` - Scroll-to-checkout JS (both currencies)
+- `thank-you-page.html` - Post-purchase thank you page (currency-neutral)
+- `KAJABI-OFFER-SETUP.md` - Complete setup + currency wiring
 - `README.md` - Overview and quick reference
 
 ### Email Sequence
@@ -51,12 +57,12 @@ Both offers include complete checkout pages, thank you pages, and email sequence
 
 ---
 
-## 2. 1-Month Free Access (MBMS05)
+## 2. 1-Month Free Access (PUBMS03_USD)
 
 ### Offer Details
-- **Offer Title (Public):** Snooze Access - 1 Month Free
-- **Internal Title:** `MBMS05_Snooze-Access-1Month-Free`
-- **Internal Code:** MBMS05
+- **Offer Title (Public):** The Snooze Membership - 1 Month Free
+- **Internal Title:** `PUBMS03_USD_1-Month-Free`
+- **Internal Code:** PUBMS03_USD
 - **Type:** Free promotional grant
 - **Duration:** 30 days
 - **Payment:** No payment required
@@ -87,110 +93,29 @@ Both offers include complete checkout pages, thank you pages, and email sequence
 
 ---
 
-## Email Template Standard
+## Naming Convention Standard (v2)
 
-A new standard has been established for all email templates:
+**Format:** `[Audience][Product][NN]_[Currency]_{Kebab-Slug}`
 
-**Location:** `projects/snooze-website/kajabi-deployment/EMAIL-TEMPLATE-STANDARD.md`
+| Code | Public title | Internal title |
+|------|--------------|----------------|
+| PUBMS01_USD | The Snooze Membership | `PUBMS01_USD_The-Snooze-Membership` |
+| PUBMS01_AUD | The Snooze Membership | `PUBMS01_AUD_The-Snooze-Membership` |
+| PUBMS02_USD | The Snooze Membership - 7 Day Trial | `PUBMS02_USD_7-Day-Trial` |
+| PUBMS02_AUD | The Snooze Membership - 7 Day Trial | `PUBMS02_AUD_7-Day-Trial` |
+| PUBMS03_USD | The Snooze Membership - 1 Month Free | `PUBMS03_USD_1-Month-Free` |
 
-**Key Requirements:**
-- All emails must include subject line and preview text in HTML comments
-- Standard header format with purpose, trigger, delay, status
-- Automation setup details documented
-- Subject lines under 50 characters
-- Preview text under 100 characters
-
-**Approach:**
-- Automation sends welcome email + subscribes to campaign
-- Email campaign sequence handles all follow-up emails
-- Cleaner setup, easier management, better tracking
-
----
-
-## Updated Documentation
-
-### Registry Updates
-- `projects/snooze-website/docs/technical/URL-REFERENCE.md` - Added both new offers with proper naming convention
-
-### Offer URL Documentation
-- `projects/snooze-launch-december-2025/docs/KAJABI-OFFER-URLS.md` - Updated all offers to show public title and internal title format
-
-### Existing Offer Updates
-- Updated Camp Snooze offers to use new naming convention
-- Updated BAU membership offer to use new naming convention
-- All offers now follow: `CODE_Team-Readable-Name` format
-
----
-
-## Naming Convention Standard
-
-All offers now follow consistent naming:
-
-**Format:**
-- **Offer Title (Public):** Public-facing title (e.g., "Snooze Access - 7 Day Trial")
-- **Internal Title:** `CODE_Team-Readable-Name` (e.g., `MBMS04_Snooze-Access-Trial-7day`)
-- **Internal Code:** Sequential code (e.g., MBMS04, MBMS05)
-
-**Examples:**
-- MBMS01: Public: "Snooze Founding Member" | Internal: `MBMS01_Snooze-Founding-Member`
-- MBMS02: Public: "Snooze Social Member Special" | Internal: `MBMS02_Snooze-Social-Member-Special`
-- MBMS03: Public: "Snooze Access" | Internal: `MBMS03_Snooze-Access-BAU`
-- MBMS04: Public: "Snooze Access - 7 Day Trial" | Internal: `MBMS04_Snooze-Access-Trial-7day`
-- MBMS05: Public: "Snooze Access - 1 Month Free" | Internal: `MBMS05_Snooze-Access-1Month-Free`
-
----
-
-## Project Rules Updated
-
-**AGENTS.md** has been updated to include:
-- Email Template Standard section
-- Requirements for subject lines and preview text
-- Reference to EMAIL-TEMPLATE-STANDARD.md
+Legacy v1 codes (`MBMS04`, `MBMS05`, `MBMS03`) map to the rows above. Do not use `MBMS` or "Snooze Access" on new checkouts.
 
 ---
 
 ## Next Steps
 
-1. **Deploy 7-Day Trial Offer:**
-   - Create offer in Kajabi with MBMS04 code
-   - Set up checkout page
-   - Configure 7-day trial period
-   - Set up automation and email campaign
-
-2. **Deploy 1-Month Free Offer:**
-   - Create offer in Kajabi with MBMS05 code
-   - Set up checkout page
-   - Configure 30-day access period
-   - Set up automation and email campaign
-
-3. **Test Both Flows:**
-   - Test complete purchase/grant flow
-   - Verify email sequences
-   - Test upgrade paths
-   - Verify tags and tracking
+1. **Deploy 7-Day Trial Offer:** Create/update in Kajabi with `PUBMS02_USD`; configure trial period and email campaign.
+2. **Deploy 1-Month Free Offer:** Create/update in Kajabi with `PUBMS03_USD`; configure 30-day access and email campaign.
+3. **Test both flows:** Purchase/grant, email sequences, upgrade paths, tags and tracking.
 
 ---
 
-## Files Created/Modified
-
-### New Directories
-- `projects/snooze-website/kajabi-deployment/pages/7-day-trial-membership/`
-- `projects/snooze-website/kajabi-deployment/pages/1-month-free-membership/`
-
-### New Files
-- Email template standard documentation
-- Complete checkout pages (HTML, CSS, JS) for both offers
-- Thank you pages for both offers
-- Setup documentation for both offers
-- Email sequences (6 emails for 1-month, 4 emails for 7-day trial)
-
-### Modified Files
-- `AGENTS.md` - Added email template standard
-- `URL-REFERENCE.md` - Added new offers to registry
-- `KAJABI-OFFER-URLS.md` - Updated naming convention
-- Various offer documentation files - Updated to new naming convention
-
----
-
-**Last Updated:** January 2026  
-**Status:** ✅ Complete & Ready for Deployment
+**Last Updated:** June 28, 2026  
+**Status:** Complete & Ready for Deployment

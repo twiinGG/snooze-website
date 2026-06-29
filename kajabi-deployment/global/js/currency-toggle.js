@@ -24,6 +24,11 @@
       '2150754998': '2151212200',
       // Also map by checkout slug, so canonical customer URLs route correctly
       'z63s9VaR': 'bEsVXFXG',
+      // Snooze Membership 7-Day Trial (card-upfront, 7-day free trial).
+      // USD offer 2150887297 (variants 160544/64815/64816) to AUD offer 2151254578
+      // (both published). AUD variant IDs still to be added to variantMapping below.
+      '2150887297': '2151254578',
+      'mqQikDM7': 'Sr6KzShx',
       // Camp Snooze, retained
       '2150884129': '2150946767',
       // Camp Snooze slug pair (canonical customer URL form)

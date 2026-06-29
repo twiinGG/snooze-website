@@ -100,22 +100,29 @@ You have two options for how the trial converts:
 
 ## Step 6: Checkout Page Setup
 
-1. Go to **Offer Settings → Checkout Page**
-2. Select **"Custom Checkout Page"** or **"Use Custom HTML"**
-3. Create a new Website Page in Kajabi:
-   - Go to **Website → Pages**
-   - Click **"New Page"**
-   - Name: "7-Day Trial Checkout"
-   - Page Type: Custom HTML or Code Block
-4. Paste the checkout code:
-   - HTML: Copy from `7-day-trial-checkout-blocks.html`
-   - CSS: Copy from `7-day-trial-checkout.css` (paste into Custom CSS field)
-   - JS: Copy from `7-day-trial-checkout.js` (paste into Custom JavaScript field)
-5. Add Google Fonts to Header Tracking Code:
+> **Kajabi checkout CSS/JS is per-offer, not site-wide.** Each offer's checkout
+> page carries its own custom HTML, CSS and JS in that offer's checkout
+> settings. Although the styles are scoped to `#snooze-custom-checkout`, they are
+> NOT shared with other checkouts — paste the full set into this offer only.
+> (Verified against deployed snapshots: the BAU and Camp checkouts each contain
+> only their own styles, with no overlap.)
+
+Repeat for BOTH currency offers (USD `2150887297`, AUD `2151254578`). The HTML
+differs per currency; the CSS and JS are identical and shared.
+
+1. Go to **Offer Settings → Checkout Page** and enable the custom checkout HTML.
+2. **HTML:** paste the matching `usd/checkout-blocks.html` (USD offer) or
+   `aud/checkout-blocks.html` (AUD offer) into that offer's checkout HTML / Custom
+   Code Block (HTML only, no `<style>` / `<script>` tags).
+3. **CSS:** paste the **entire** `shared/checkout.css` into the offer's checkout
+   Custom CSS. It is self-contained (BAU base + trial-specific sections). The
+   trial-highlight and how-it-works sections will be unstyled without it.
+4. **JS:** paste `shared/checkout.js` into the offer's checkout Custom JavaScript
+   (standard scroll-to-checkout handler, same as the BAU checkout).
+5. **Google Fonts:** add to Header Tracking Code if not already present:
    ```html
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
    ```
-6. Link the page to your offer's checkout settings
 
 ---
 
@@ -128,7 +135,7 @@ You have two options for how the trial converts:
    - Click **"New Page"**
    - Name: "7-Day Trial Thank You"
    - Page Type: Custom HTML or Code Block
-4. Paste the HTML from `7-day-trial-thank-you-page.html`
+4. Paste the HTML from `thank-you-page.html` (currency-neutral; use for both offers)
 5. Link the page to your offer's thank you page settings
 
 ---
@@ -259,11 +266,40 @@ Replace `[OFFER-ID]` with your actual Kajabi offer ID.
 ## Key Settings Summary
 
 - **Trial Duration:** 7 days
-- **Payment Required:** No (free trial, converts to paid)
-- **Auto-Conversion:** Yes (after 7 days)
-- **Cancellation:** Anytime during trial (no charges)
+- **Payment Required:** Card on file at signup; $0 charged for the first 7 days (card-upfront model)
+- **Auto-Conversion:** Yes (selected plan bills on day 8)
+- **Cancellation:** Anytime during the trial (no charges)
 - **Access Level:** Full membership access during trial
 - **Products Included:** Same as core membership offer
+
+---
+
+## Currency (USD / AUD)
+
+Kajabi checkout prices are server-rendered and fixed per offer, so a checkout page
+**cannot** toggle currency. We switch by linking to the opposite-currency twin
+offer. The landing-page currency widget was removed from the checkout HTML.
+
+| Currency | Code | Offer ID | Slug | Checkout URL | Status |
+|----------|------|----------|------|--------------|--------|
+| USD | PUBMS02_USD | `2150887297` | `mqQikDM7` | https://www.joinsnooze.com/offers/mqQikDM7/checkout | published, 3 variants ($79/$197/$657, 7-day trial) |
+| AUD | PUBMS02_AUD | `2151254578` | `Sr6KzShx` | https://www.joinsnooze.com/offers/Sr6KzShx/checkout | published; variants ($119/$299/$997, 7-day trial) |
+
+Both currency checkout pages are in this bundle: `usd/checkout-blocks.html` and
+`aud/checkout-blocks.html`, each with a reciprocal cross-currency link.
+
+Two switch mechanisms are wired:
+1. **Static link (minimum):** a subtle cross-currency link in each checkout footer
+   note (USD page → "View AUD pricing"; AUD page → "View USD pricing").
+2. **Geo-routing (elegant):** `global/js/currency-toggle.js` `offerMapping` maps
+   `2150887297`↔`2151254578` and `mqQikDM7`↔`Sr6KzShx`. It geo-detects (timezone
+   `Australia` → AUD), rewrites CTAs to the right-currency offer, and injects its
+   own switch link on the checkout.
+
+### Remaining operator tasks
+- [ ] Confirm the AUD variant IDs and add them to `variantMapping` in `currency-toggle.js` so tier-level routing swaps (right now only the offer-level swap is mapped; the static cross-links and offer-level geo-routing already work).
+- [ ] Set the AUD offer internal title to `PUBMS02_AUD_Snooze_7-Day-Trial` (MCP create_offer cannot set internal_title).
+- [ ] Paste `aud/checkout-blocks.html` + `shared/checkout.css` + `shared/checkout.js` into the AUD offer's checkout (Step 6).
 
 ---
 

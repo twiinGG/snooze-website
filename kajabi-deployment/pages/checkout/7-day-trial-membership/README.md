@@ -1,24 +1,42 @@
-# Snooze 7-Day Full Access Trial
+# The Snooze Membership - 7 Day Trial (USD + AUD)
 
-**Location:** `kajabi-deployment/pages/7-day-trial-membership/`  
-**Purpose:** Complete setup for 7-day full access trial offer of Snooze membership  
-**Status:** Ready for Implementation
+**Location:** `kajabi-deployment/pages/checkout/7-day-trial-membership/`
+**Purpose:** Complete setup for the 7-day full access trial of The Snooze Membership, in both currencies
+**Status:** Live (USD + AUD offers published)
 
 ---
 
+## Dual-currency offer pair
+
+| Currency | Code | Offer ID | Checkout slug | Checkout URL |
+|----------|------|----------|---------------|--------------|
+| USD | PUBMS02_USD | `2150887297` | `mqQikDM7` | https://www.joinsnooze.com/offers/mqQikDM7/checkout |
+| AUD | PUBMS02_AUD | `2151254578` | `Sr6KzShx` | https://www.joinsnooze.com/offers/Sr6KzShx/checkout |
+
+Each currency is a separate Kajabi offer with its own checkout. Currency switching
+is by cross-link (Kajabi checkout prices are server-rendered per offer and cannot
+toggle); see `KAJABI-OFFER-SETUP.md` → Currency.
+
 ## Files in This Directory
 
-### Checkout Page Files
-- **`7-day-trial-checkout-blocks.html`** - HTML content for checkout page (paste into Kajabi Code Block)
-- **`7-day-trial-checkout.css`** - CSS styling for checkout page (paste into Kajabi Custom CSS)
-- **`7-day-trial-checkout.js`** - JavaScript for checkout page (paste into Kajabi Custom JavaScript)
+```
+7-day-trial-membership/
+  shared/
+    checkout.css      Self-contained stylesheet (BAU base + trial sections). Identical for both currencies.
+    checkout.js       Scroll-to-checkout handler (same as BAU). Identical for both currencies.
+  usd/
+    checkout-blocks.html   USD checkout HTML (PUBMS02_USD), links to AUD.
+  aud/
+    checkout-blocks.html   AUD checkout HTML (PUBMS02_AUD), links to USD.
+  thank-you-page.html      Post-purchase page (currency-neutral; set on both offers).
+  emails/                  Trial email sequence (currency-neutral).
+  KAJABI-OFFER-SETUP.md    Full Kajabi configuration + currency + operator tasks.
+  README.md                This file.
+```
 
-### Thank You Page
-- **`7-day-trial-thank-you-page.html`** - Complete thank you page HTML (paste into Kajabi page)
-
-### Setup Documentation
-- **`KAJABI-OFFER-SETUP.md`** - Complete setup instructions for Kajabi offer configuration
-- **`README.md`** - This file (overview)
+> Kajabi checkout CSS/JS is **per-offer**, not site-wide. For each offer, paste its
+> own `<currency>/checkout-blocks.html` as the HTML, and the SAME `shared/checkout.css`
+> + `shared/checkout.js` into that offer's Custom CSS / JS. See `KAJABI-OFFER-SETUP.md` Step 6.
 
 ### Email Templates
 - **`emails/welcome-email.html`** - Welcome email (send immediately after trial signup)
@@ -33,14 +51,14 @@
 This 7-day trial offer provides full access to the Snooze membership for 7 days. After the trial period, it automatically converts to a paid membership, or users can cancel anytime during the trial with no charges.
 
 **Offer Information:**
-- **Offer Title (Public):** Snooze Access - 7 Day Trial
-- **Internal Title:** `MBMS04_Snooze-Access-Trial-7day`
-- **Internal Code:** MBMS04
+- **Offer Title (Public):** The Snooze Membership - 7 Day Trial
+- **Internal Title:** `PUBMS02_USD_7-Day-Trial`
+- **Internal Code:** PUBMS02_USD
 
 **Key Features:**
 - 7-day full access trial
-- No payment required to start
-- Automatic conversion to paid membership after 7 days
+- Card on file at signup; $0 charged for the first 7 days (card-upfront model)
+- Selected plan bills on day 8 unless cancelled
 - Cancel anytime during trial (no charges)
 - Full membership access during trial (same as paid members)
 
@@ -60,8 +78,8 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 ## Offer Configuration Summary
 
 - **Trial Duration:** 7 days
-- **Payment Required:** No (free trial, converts to paid)
-- **Auto-Conversion:** Yes (after 7 days)
+- **Payment Required:** Card on file at signup; $0 charged for the first 7 days
+- **Auto-Conversion:** Yes (selected plan bills on day 8)
 - **Cancellation:** Anytime during trial (no charges)
 - **Access Level:** Full membership access during trial
 - **Products Included:** Same as core membership offer
