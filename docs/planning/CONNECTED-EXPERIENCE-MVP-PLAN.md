@@ -43,7 +43,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 - All public pages
 - Full Snooze Library (all resources)
 - Snooze Village (community)
-- Live sessions with Sally and Bec
+- Live sessions with the Snooze Specialists
 - All age-based modules  
 **CTAs:**
 - "Go to Library" → Snooze Library page

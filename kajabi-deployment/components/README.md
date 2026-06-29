@@ -242,7 +242,7 @@ Inline code comments were stripped from `value-comparison.html`, `whats-in-snooz
 
 ### Service-model copy
 
-Membership "Live Coaching" benefit was reframed to "Live Sessions" across these components. Live sessions with Sally and Bec are a real benefit, but are not promised on a fixed weekly cadence and there is no guaranteed replay archive. Do not reintroduce "weekly", "replay vault/library", or "24/7" language into membership copy.
+Membership "Live Coaching" benefit was reframed to "Live Sessions" across these components. Live sessions with the Snooze Specialists are a real benefit, but are not promised on a fixed weekly cadence and there is no guaranteed replay archive. Do not reintroduce "weekly", "replay vault/library", or "24/7" language into membership copy. Membership live-session copy uses "the Snooze Specialists", not individual names; "Sally and Bec" was corrected to "the Snooze Specialists" in the June 2026 over-naming fix. Bec is named only in Camp Snooze, Nap Trapped, and her paid 1:1 consults.
 
 ### Flag (out of scope, do not action here)
 

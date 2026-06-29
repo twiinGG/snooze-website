@@ -49,7 +49,7 @@ These notes were moved out of `checkout-page.html` when deployable comments were
 
 ### Service-model accuracy
 
-The Day Pass grants Snooze Village community access during its 24-hour window plus any live sessions with Sally and Bec that happen to be open during that window. It does NOT include the membership live-session schedule on a fixed cadence, and it does not include courses or Library resources. Page copy must not promise weekly or guaranteed live coaching. (The "community & coaching only" phrasing above predates this correction; treat "live sessions when open" as the accurate description.)
+The Day Pass grants Snooze Village community access during its 24-hour window plus any live sessions with the Snooze Specialists that happen to be open during that window. It does NOT include the membership live-session schedule on a fixed cadence, and it does not include courses or Library resources. Page copy must not promise weekly or guaranteed live coaching. (The "community & coaching only" phrasing above predates this correction; treat "live sessions when open" as the accurate description.)
 
 ### Checkout button URL (action required before deploy)
 

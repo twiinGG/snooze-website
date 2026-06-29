@@ -20,7 +20,7 @@ Deployable Kajabi website page. Wrapper ID: `#snooze-method-page`.
 
 ## Service-model language
 
-Membership benefit copy must not promise weekly cadence, replay archives, 24/7 support, or included 1:1 coaching. Live sessions with Sally and Bec plus a daily expert-moderated community are the genuine benefits. See `docs/brand/SNOOZE-TONE-OF-VOICE-v1.2.md` and the service-model rewrite spec.
+Membership benefit copy must not promise weekly cadence, replay archives, 24/7 support, or included 1:1 coaching. Live sessions with the Snooze Specialists plus a daily expert-moderated community are the genuine benefits. See `docs/brand/SNOOZE-TONE-OF-VOICE-v1.2.md` and the service-model rewrite spec.
 
 ## Comment strip (June 29, 2026)
 

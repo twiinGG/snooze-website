@@ -22,7 +22,7 @@ Deployable Kajabi custom-code page for the Snooze Store.
 
 ## Service-model copy
 
-Membership benefits describe live sessions with Sally and Bec, not weekly/live coaching and not a replay archive. Camp Snooze daily coaching and the paid 1:1 consults are genuine and stay as written. Keep membership copy off fixed-cadence and replay promises.
+Membership benefits describe live sessions with the Snooze Specialists, not weekly/live coaching and not a replay archive. Camp Snooze daily coaching and the paid 1:1 consults are genuine and stay as written. Keep membership copy off fixed-cadence and replay promises.
 
 ## Related docs in this folder
 

@@ -117,7 +117,7 @@ This plan addresses the entire Snooze website holistically, focusing on the core
 **Content Structure:**
 - This resource is included in Snooze
 - Plus all other age guides
-- Plus Library, Village, live sessions with Sally and Bec
+- Plus Library, Village, live sessions with the Snooze Specialists
 - Price comparison: Individual vs Membership
 
 **Design:**
@@ -244,7 +244,7 @@ This plan addresses the entire Snooze website holistically, focusing on the core
 - [ ] Paste into Code Block
 - [ ] Verify displays correctly:
   - [ ] Shows "This guide is included in Snooze"
-  - [ ] Lists all age guides, Library, Village, live sessions with Sally and Bec
+  - [ ] Lists all age guides, Library, Village, live sessions with the Snooze Specialists
   - [ ] Premium card design displays correctly
 - [ ] Check mobile responsiveness
 
@@ -686,7 +686,7 @@ This plan addresses the entire Snooze website holistically, focusing on the core
 - [ ] Copy contents from `components/whats-in-snooze.html`
 - [ ] **Customize messaging:**
   - [ ] Emphasize: "This course is included in Snooze membership"
-  - [ ] Show: This course + all other age guides + Library + Village + live sessions with Sally and Bec
+  - [ ] Show: This course + all other age guides + Library + Village + live sessions with the Snooze Specialists
 - [ ] Verify displays correctly
 
 **Step 6: Context-Aware CTAs**

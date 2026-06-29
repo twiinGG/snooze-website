@@ -360,7 +360,7 @@ Google prioritizes sitelinks based on site structure:
 
 #### 1. Snooze Membership (Featured)
 - **Title:** "Snooze Access Membership"
-- **Description:** "Get access to all courses, live sessions with Sally and Bec, troubleshooting support, and The Snooze Village community"
+- **Description:** "Get access to all courses, live sessions with the Snooze Specialists, troubleshooting support, and The Snooze Village community"
 - **Pricing:** Starting at $X/month (Quarterly/Annual options)
 - **CTA:** "Join Snooze" → `/offers/6iRarwak/checkout`
 - **Features:** List key benefits

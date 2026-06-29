@@ -44,7 +44,7 @@ These techniques are part of a complete sleep system that addresses the full pic
 If you're finding these techniques helpful and want more support, **Snooze** is your ongoing resource for everything baby sleep. As a Snooze member, you get:
 
 - Full access to all sleep courses and guides (Newborn, 3-4 Month, 5-12 Month, Toddler Toolkit)
-- Live sessions with Sally and Bec, where you can ask questions and get guidance tailored to your baby
+- Live sessions with the Snooze Specialists, where you can ask questions and get guidance tailored to your baby
 - Daily support in the Snooze community from expert-moderated forums
 - Age-based pathways that adapt as your baby grows
 - Tools for regressions, travel, routines, and every sleep challenge that comes up

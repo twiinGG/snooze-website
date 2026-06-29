@@ -61,7 +61,7 @@ The pricing section uses a two-card comparison layout:
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> This course included</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Every other course</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Troubleshooting support</li>
-            <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Live sessions with Sally and Bec</li>
+            <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Live sessions with the Snooze Specialists</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> The Snooze Village</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Member pricing on consultations and Camp Snooze</li>
           </ul>
@@ -92,7 +92,7 @@ The pricing section uses a two-card comparison layout:
 ### Snooze Access Card Features (Standardized)
 - ✅ All courses and resources included
 - ✅ Support from Newborn to 3 Years Old
-- ✅ Live sessions with Sally and Bec
+- ✅ Live sessions with the Snooze Specialists
 - ✅ The Snooze Village
 - ✅ Member pricing on consultations and Camp Snooze
 

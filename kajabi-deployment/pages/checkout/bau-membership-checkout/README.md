@@ -80,7 +80,7 @@ The checkout page is configured for:
 
 The page content reflects standard Snooze membership benefits:
 - All sleep courses and step-by-step guides
-- Live sessions with Sally and Bec
+- Live sessions with the Snooze Specialists
 - Daily support inside the Snooze community
 - Tools for regressions, naps, nights, routines, and travel
 - Age-based pathways

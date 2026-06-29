@@ -62,7 +62,7 @@ This brief combines conversion optimization recommendations with Snooze's brand 
 **B. Add Unified Value Proposition**
 ```html
 <p style="font-size: 1.125rem; line-height: 1.7; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
-  Get courses, live sessions with Sally and Bec, and expert support — all in one membership that grows with your child.
+  Get courses, live sessions with the Snooze Specialists, and expert support — all in one membership that grows with your child.
 </p>
 ```
 
@@ -97,14 +97,14 @@ This brief combines conversion optimization recommendations with Snooze's brand 
 **B. Rewrite Feature List to Benefit-First**
 **Current:**
 - "All courses included"
-- "Live sessions with Sally and Bec"
+- "Live sessions with the Snooze Specialists"
 - "Troubleshooting support"
 
 **Updated:**
 ```html
 <ul class="store-features" style="margin: 25px 0; list-style: none; padding: 0;">
   <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> All courses included — age-specific guidance for every stage</li>
-  <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> Live sessions with Sally and Bec — get real-time answers when sleep changes</li>
+  <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> Live sessions with the Snooze Specialists — get real-time answers when sleep changes</li>
   <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> Troubleshooting support — expert help when things don't go to plan</li>
   <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> The Snooze Village community — connect with other parents</li>
   <li><i class="fa-solid fa-circle-check" style="color: var(--sn-coral); margin-right: 10px;"></i> Member pricing on consultations — save on 1:1 support</li>
@@ -124,7 +124,7 @@ This brief combines conversion optimization recommendations with Snooze's brand 
     <div>
       <div style="font-size: 2rem; color: var(--sn-coral); margin-bottom: 10px;">2</div>
       <h4 style="margin-bottom: 10px;">Live Sessions Help You Apply It</h4>
-      <p style="font-size: 0.95rem; color: var(--sn-text-light);">Sally and Bec answer your questions and help you adjust your plan</p>
+      <p style="font-size: 0.95rem; color: var(--sn-text-light);">The Snooze Specialists answer your questions and help you adjust your plan</p>
     </div>
     <div>
       <div style="font-size: 2rem; color: var(--sn-coral); margin-bottom: 10px;">3</div>
@@ -194,17 +194,17 @@ Add this above each course image:
     
     <div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 20px;">
       <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--sn-navy);">How quickly will I see results?</h3>
-      <p style="color: var(--sn-text-light); line-height: 1.7;">Most families see improvements within the first week, though every baby is different. The live sessions with Sally and Bec and troubleshooting support help you adjust your approach as needed, because sleep changes as your baby grows.</p>
+      <p style="color: var(--sn-text-light); line-height: 1.7;">Most families see improvements within the first week, though every baby is different. The live sessions with the Snooze Specialists and troubleshooting support help you adjust your approach as needed, because sleep changes as your baby grows.</p>
     </div>
     
     <div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 20px;">
       <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--sn-navy);">What if I don't have time?</h3>
-      <p style="color: var(--sn-text-light); line-height: 1.7;">The courses are self-paced, so you can work through them when it fits your schedule. The live sessions with Sally and Bec are optional; join when you have questions or need support. There's no pressure to keep up with a schedule.</p>
+      <p style="color: var(--sn-text-light); line-height: 1.7;">The courses are self-paced, so you can work through them when it fits your schedule. The live sessions with the Snooze Specialists are optional; join when you have questions or need support. There's no pressure to keep up with a schedule.</p>
     </div>
     
     <div style="background: white; padding: 30px; border-radius: 12px;">
       <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--sn-navy);">What if my baby's sleep gets worse before it gets better?</h3>
-      <p style="color: var(--sn-text-light); line-height: 1.7;">This is normal, and you're not doing anything wrong. The troubleshooting support and live sessions with Sally and Bec are there to help you navigate these changes. You're not alone; we help you adjust your plan as needed.</p>
+      <p style="color: var(--sn-text-light); line-height: 1.7;">This is normal, and you're not doing anything wrong. The troubleshooting support and live sessions with the Snooze Specialists are there to help you navigate these changes. You're not alone; we help you adjust your plan as needed.</p>
     </div>
   </div>
 </section>
@@ -328,7 +328,7 @@ Make member pricing more prominent in each card:
   <h3 style="font-size: 1.25rem; margin-bottom: 20px; text-align: center;">Everything Included With Snooze Access</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; font-size: 0.95rem;">
     <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> All baby & toddler sleep courses</div>
-    <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> Live sessions with Sally and Bec</div>
+    <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> Live sessions with the Snooze Specialists</div>
     <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> Troubleshooting support</div>
     <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> Snooze Village community</div>
     <div><i class="fa-solid fa-check" style="color: var(--sn-coral); margin-right: 8px;"></i> Member-only consultation pricing</div>

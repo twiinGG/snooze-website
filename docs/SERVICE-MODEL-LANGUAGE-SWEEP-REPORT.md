@@ -4,7 +4,7 @@ Branch: `chore/service-model-language-sweep`. Companion to `SERVICE-MODEL-LANGUA
 
 ## Ruling applied (from Kade, this pass)
 
-Live sessions with Sally and Bec are real (Live Sleep Detectives Q&A + masterclasses) and stay as a genuine benefit. Removed the false **hard expectations**: no "weekly" cadence, no "24/7"/"around the clock", no "replay vault/library" (no guaranteed replay archive), no "never miss a session". Reframed toward a self-serve + coaching model, not on-demand consulting (paid 1:1 consults remain the consulting path). Canonical replacement: "Weekly live coaching with Sally + replay vault" then becomes "Live sessions with Sally and Bec"; "24/7 community support" becomes "Daily support inside the Snooze community".
+Live sessions with the Snooze Specialists are real (Live Sleep Detectives Q&A + masterclasses) and stay as a genuine benefit. Removed the false **hard expectations**: no "weekly" cadence, no "24/7"/"around the clock", no "replay vault/library" (no guaranteed replay archive), no "never miss a session". Reframed toward a self-serve + coaching model, not on-demand consulting (paid 1:1 consults remain the consulting path). Canonical replacement: "Weekly live coaching with Sally + replay vault" then becomes "Live sessions with the Snooze Specialists"; "24/7 community support" becomes "Daily support inside the Snooze community". Note: Bec is named only in Camp Snooze (co-lead), Nap Trapped (co-host), and her paid 1:1 consults; membership benefit copy uses "the Snooze Specialists" instead.
 
 ## What changed (120 files modified, 30 new READMEs)
 

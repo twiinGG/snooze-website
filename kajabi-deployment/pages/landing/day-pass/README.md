@@ -53,7 +53,7 @@ Before pasting `index.html` into Kajabi, fill these placeholders:
 | `{{N8N_WEBHOOK_URL}}` | Signup form script | Full n8n webhook URL: `https://<n8n-host>/webhook/day-pass-signup` |
 | `{{event_anchor_slug}}` | Hidden `event_anchor` form field | Slug from section 6 of the canonical pack (e.g. `sally_bec_sleep_detectives`) |
 | `{{event_anchor_display_name}}` | Hero, About the event | Public name of the event |
-| `{{event_lead_name}}` | Hero, bullets, About the event | Who runs the session (e.g. "Sally and Bec") |
+| `{{event_lead_name}}` | Hero, bullets, About the event | Who runs the session (e.g. "the Snooze Specialists" for membership events, or name the individual for Sally-specific masterclasses) |
 | `{{event_date_local}}` | Hero, About the event | Date and time in AEST or AEDT |
 | `{{event_description}}` | About the event | Paste the matching variant snippet from section 2d of the canonical pack |
 | `{{privacy_url}}` | Trust elements | URL of the Snooze privacy notice |

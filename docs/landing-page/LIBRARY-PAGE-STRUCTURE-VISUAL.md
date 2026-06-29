@@ -65,7 +65,7 @@
 
 ┌─────────────────────────────────────────────────┐
 │ SECTION 7: Live Sessions                        │
-│ "Q&A sessions and live calls with Sally and Bec" │
+│ "Q&A sessions and live calls with the Snooze Specialists" │
 │ ┌──────┐ ┌──────┐ ┌──────┐                    │
 │ │Video1│ │Video2│ │Video3│                    │
 │ └──────┘ └──────┘ └──────┘                    │

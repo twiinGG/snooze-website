@@ -30,7 +30,7 @@ Instead of piecing together advice from Google, social media, and conflicting sl
 **Included with Snooze:**
 
 * Age-appropriate baby sleep education (newborn to toddler)
-* Live Q&A sessions with Sally and Bec
+* Live Q&A sessions with the Snooze Specialists
 * Private support community
 * Support for naps, nights, feeding, early mornings, and regressions
 * Ongoing access while you need support

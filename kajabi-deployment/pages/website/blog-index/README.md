@@ -32,5 +32,5 @@ The placeholder scanner will BLOCK deployment until these are replaced; that is 
 
 ### June 29, 2026: Service-model copy sweep + comment strip
 
-- **Copy rewrite (CTA section):** "live coaching" rewritten to "live sessions" in the "Want More Support?" block. Live sessions with Sally and Bec are a real membership benefit; "live coaching" as an included benefit is not.
+- **Copy rewrite (CTA section):** "live coaching" rewritten to "live sessions" in the "Want More Support?" block. Live sessions with the Snooze Specialists are a real membership benefit; "live coaching" as an included benefit is not.
 - **Comments stripped:** all HTML comments removed from `blog-index.html` per the Kajabi deployable-code convention. The header/version metadata and the dynamic-generation build notes those comments carried are captured above.

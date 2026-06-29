@@ -224,7 +224,7 @@ Duration: "30 MIN"
 
 **Layout:**
 - Section title: "Live Sessions"
-- Subtitle: "Q&A sessions and live calls with Sally and Bec"
+- Subtitle: "Q&A sessions and live calls with the Snooze Specialists"
 - Grid: 3 columns (desktop), 1 column (mobile)
 
 **Video Cards:**
@@ -460,7 +460,7 @@ Only add custom CSS for:
 
 ### Live Sessions
 - Q&A session recordings (as available)
-- Thematic sessions with Sally and Bec
+- Thematic sessions with the Snooze Specialists
 
 ### Community
 - Snooze Village (Facebook group, transitioning to Kajabi community)
@@ -523,7 +523,7 @@ Only add custom CSS for:
 
 ### Page Metadata
 - **Title:** "Snooze Library - All Baby Sleep Resources in One Place"
-- **Description:** "Access all Snooze sleep resources: age-specific guides, courses, tools, live sessions with Sally and Bec, and community support. Everything you need for great baby sleep."
+- **Description:** "Access all Snooze sleep resources: age-specific guides, courses, tools, live sessions with the Snooze Specialists, and community support. Everything you need for great baby sleep."
 - **H1:** "Your Snooze Library"
 
 ### Internal Linking

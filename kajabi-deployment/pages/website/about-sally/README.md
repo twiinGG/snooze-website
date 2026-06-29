@@ -181,7 +181,7 @@ These are managed in `snooze-globals.js` and can be updated site-wide by changin
 
 ### June 29, 2026: Service-model copy sweep + comment strip
 
-- **Copy rewrite (CTA section):** "live coaching with me" rewritten to "live sessions with me and Bec". The membership is self-serve first plus a coaching model; live sessions with Sally and Bec are real, but live coaching with Sally as an on-demand included benefit is not.
+- **Copy rewrite (CTA section):** "live coaching with me" rewritten to "live sessions with me and the Snooze Specialists". The membership is self-serve first plus a coaching model; live sessions with the Snooze Specialists are real, but live coaching with Sally as an on-demand included benefit is not.
 - **Copy rewrite (signposting CTA JS string):** upgrade note "Unlock full access to Library, Village, and Coaching" rewritten to "...Library, Village, and live sessions".
 - **Comments stripped:** all HTML comments and inline JS `//` comments removed from `about-sally.html` per the Kajabi deployable-code convention (custom-code blocks should ship comment-free). The metadata those comments carried is captured here.
 

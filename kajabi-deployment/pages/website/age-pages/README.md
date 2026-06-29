@@ -120,8 +120,8 @@ Each file contains a large commented-out `course-sample-section` (free course sa
 
 ### Service-model copy sweep (June 29, 2026)
 The "What's inside Snooze" benefit card and the membership feature lists were updated to remove false hard expectations about live coaching cadence:
-- Card heading "Live Coaching" -> "Live Sessions"; detail "Weekly Q&A with Sally..." -> "Live Q&A with Sally and Bec. Bring your questions and get guidance tailored to your baby."
-- Membership feature "Weekly live coaching with Sally" -> "Live sessions with Sally and Bec".
+- Card heading "Live Coaching" -> "Live Sessions"; detail "Weekly Q&A with Sally..." -> "Live Q&A with the Snooze Specialists. Bring your questions and get guidance tailored to your baby."
+- Membership feature "Weekly live coaching with Sally" -> "Live sessions with the Snooze Specialists".
 - Individual-product negation "No live coaching" -> "No live sessions" (parity with renamed benefit).
 - CTA note "...Library, Village, and Coaching" -> "...Library, Village, and Live Sessions"; value message "...+ Coaching" -> "...+ Live Sessions".
 

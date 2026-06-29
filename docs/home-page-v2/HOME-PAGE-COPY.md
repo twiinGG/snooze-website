@@ -58,7 +58,7 @@ From overwhelmed to confident in three steps
 
 ### Step 2
 **Title:** Get Your Personalised Guidance  
-**Description:** Access age-specific courses and guides tailored to your baby's stage. Ask questions in the community or at live sessions with Sally and Bec.
+**Description:** Access age-specific courses and guides tailored to your baby's stage. Ask questions in the community or at live sessions with the Snooze Specialists.
 
 ### Step 3
 **Title:** Implement with Support  
@@ -120,7 +120,7 @@ The difference between families who struggle for months and families who solve s
 | What You've Tried | What's Missing | Snooze Difference |
 |-------------------|----------------|-------------------|
 | **Sleep Apps** (Huckleberry, etc.) | Generalised advice that doesn't work for your baby. No one checking in. | Personalised guidance from a certified sleep consultant who knows your situation. |
-| **Self-Serve Courses** | You're on your own at 2am. No accountability. Easy to give up. | Live sessions with Sally and Bec + daily troubleshooting. Someone asks "did you try the 4-hourly feeds yet?" |
+| **Self-Serve Courses** | You're on your own at 2am. No accountability. Easy to give up. | Live sessions with the Snooze Specialists + daily troubleshooting. Someone asks "did you try the 4-hourly feeds yet?" |
 | **One-Time Consult** | Expensive ($500+). No ongoing support when things change. | Ongoing access to coaching, community, and troubleshooting for a fraction of the cost. |
 
 ### Key Message (Support Gap - use sparingly)
@@ -157,7 +157,7 @@ What's inside Snooze
 ### Card 4
 **Icon:** Comments  
 **Title:** Live Sessions  
-**Description:** Live Q&A with Sally and Bec. Bring your questions and get guidance tailored to your baby.
+**Description:** Live Q&A with the Snooze Specialists. Bring your questions and get guidance tailored to your baby.
 
 ### Card 5
 **Icon:** People group  
@@ -220,8 +220,8 @@ When you're stuck at 3am, you need help that responds.
 
 ### Support Channel 3
 **Icon:** Video  
-**Title:** Live Sessions with Sally and Bec  
-**Description:** Join Sally and Bec for live sessions inside the community. Bring your questions and get answers tailored to your baby.
+**Title:** Live Sessions with the Snooze Specialists  
+**Description:** Join our Snooze Specialists for live sessions inside the community. Bring your questions and get answers tailored to your baby.
 
 ### Response Time
 **Within hours** — so you're not waiting days for help.
@@ -237,7 +237,7 @@ When you're stuck at 3am, you need help that responds.
 Support for Every Age & Stage of Your Baby's Sleep
 
 ### Subtitle
-I've created comprehensive guides and courses for each stage. All included in your Snooze membership, plus live sessions with Sally and Bec, community support, and troubleshooting resources.
+I've created comprehensive guides and courses for each stage. All included in your Snooze membership, plus live sessions with the Snooze Specialists, community support, and troubleshooting resources.
 
 ### Age Toggle Options
 - 0-3 Months
@@ -253,7 +253,7 @@ I've created comprehensive guides and courses for each stage. All included in yo
 - Learn to read your baby's sleep pressure and hunger cues
 - Gentle settling methods with step-by-step guidance
 - Contact naps and when to transition away
-- Plus: Live sessions with Sally and Bec, troubleshooting guides, and community support in Snooze
+- Plus: Live sessions with the Snooze Specialists, troubleshooting guides, and community support in Snooze
 
 ### 3-4 Months
 **Course:** 3-4 Month Sleep Course — Included in Snooze (or $117 individually)  
@@ -263,7 +263,7 @@ I've created comprehensive guides and courses for each stage. All included in yo
 - Extend short naps and improve overnight sleep with gentle strategies
 - Reduce early wake-ups and frequent night wakings
 - Practice new settling skills as your baby becomes more socially aware
-- Plus: Live sessions with Sally and Bec, troubleshooting guides, and community support in Snooze
+- Plus: Live sessions with the Snooze Specialists, troubleshooting guides, and community support in Snooze
 
 ### 5-12 Months
 **Course:** 5-12 Month Sleep Guide — Included in Snooze (or $117 individually)  
@@ -273,7 +273,7 @@ I've created comprehensive guides and courses for each stage. All included in yo
 - Fix early rising and 5am wake-ups with proven techniques
 - Understand how physical development and starting solids influence sleep
 - Build age-appropriate routines that work for your whole family
-- Plus: Live sessions with Sally and Bec, troubleshooting guides, and community support in Snooze
+- Plus: Live sessions with the Snooze Specialists, troubleshooting guides, and community support in Snooze
 
 ### Toddler (12+ Months)
 **Course:** Toddler Toolkit — Included in Snooze (or $117 individually, plus member pricing on 1:1 consults)  
@@ -283,7 +283,7 @@ I've created comprehensive guides and courses for each stage. All included in yo
 - Handle bedtime resistance with loving limits that reduce conflict
 - Address early rising by balancing total sleep over 24 hours
 - Age-appropriate routines to help your toddler feel secure enough to sleep well
-- Plus: Live sessions with Sally and Bec, troubleshooting guides, community support, and member pricing on 1:1 consults in Snooze
+- Plus: Live sessions with the Snooze Specialists, troubleshooting guides, community support, and member pricing on 1:1 consults in Snooze
 
 ### CTA
 Join Snooze to Access All Guides
@@ -300,7 +300,7 @@ What You Get (+ what it would cost separately)
 | The Snooze Method (Foundational Course) | ✓ | $117 |
 | Age-Based Courses (Newborn, 3-4 Month, 5-12 Month, Toddler) | ✓ | $468 |
 | Mini Modules & Troubleshooting Guides | ✓ | $108+ |
-| Live sessions with Sally and Bec | ✓ | $320 |
+| Live sessions with the Snooze Specialists | ✓ | $320 |
 | Expert Q&A community access | ✓ | $180 |
 | Community access & support thread | ✓ | $90 |
 | Bonus seasonal workshops & guest experts | ✓ | $130 |
@@ -483,7 +483,7 @@ You want to know you'll always have support when you need it. Regressions, trans
 Common Questions
 
 ### Q1: What's included in my Snooze membership?
-**A:** Your membership gives you access to every Snooze course and guide (0–3 years), live sessions with Sally and Bec, and our supportive community.
+**A:** Your membership gives you access to every Snooze course and guide (0–3 years), live sessions with the Snooze Specialists, and our supportive community.
 
 ### Q2: Can I cancel anytime?
 **A:** Yes. You can cancel any time from your account settings. Your membership will stay active for the remainder of your billing period.

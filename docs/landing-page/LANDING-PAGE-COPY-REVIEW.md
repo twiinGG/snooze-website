@@ -254,7 +254,7 @@ What’s inside Snooze
   - Age-based video lessons and step-by-step guides you can follow in minutes.
 
 - **Live Sessions**
-  - Live Q&A sessions with Sally and Bec. Get answers tailored to your baby and routine.
+  - Live Q&A sessions with the Snooze Specialists. Get answers tailored to your baby and routine.
 
 - **Community Support**
   - Real parents, real results. Calm, expert-led help whenever you need it.
@@ -286,7 +286,7 @@ What You Get (+ what it would cost separately)
 - **Price:** $180
 
 #### Row 2
-- **Item:** Live sessions with Sally and Bec
+- **Item:** Live sessions with the Snooze Specialists
 - **Status:** ✓ (checkmark)
 - **Price:** $320
 
@@ -486,7 +486,7 @@ $147 (Launch) / $197 (Normal)
 
 #### Feature List
 1. Full access to Snooze library
-2. Live Q&A sessions with Sally and Bec
+2. Live Q&A sessions with the Snooze Specialists
 3. Access to private community
 4. Cancel anytime
 
@@ -573,7 +573,7 @@ What's included in my Snooze membership?
 
 #### Answer
 ```
-Your membership gives you access to every Snooze course and guide (0–3 years), live sessions with Sally and Bec, and our expert-moderated community.
+Your membership gives you access to every Snooze course and guide (0–3 years), live sessions with the Snooze Specialists, and our expert-moderated community.
 ```
 
 ---

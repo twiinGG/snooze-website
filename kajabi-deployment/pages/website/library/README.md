@@ -259,7 +259,7 @@ All content uses straightforward, accessible language:
 
 **Service-model copy rewrites (membership accuracy):**
 
-- Hero description: "watch coaching replays" became "join live sessions with Sally and Bec" (removed the replay promise and the coaching framing).
-- Support section card heading "Live Coaching & Replays" became "Live Sessions"; its description "Access all past coaching sessions, Q&A calls, and workshop replays with Sally" became "Join Sally and Bec for live Q&A sessions, plus the recordings already inside the community." The card link points at a real community `.../coaching` access group, so a factual reference to the recordings that exist inside the community was kept; the guaranteed "replay vault/library" framing was dropped.
+- Hero description: "watch coaching replays" became "join live sessions with the Snooze Specialists" (removed the replay promise and the coaching framing).
+- Support section card heading "Live Coaching & Replays" became "Live Sessions"; its description "Access all past coaching sessions, Q&A calls, and workshop replays with Sally" became "Join the Snooze Specialists for live Q&A sessions, plus the recordings already inside the community." The card link points at a real community `.../coaching` access group, so a factual reference to the recordings that exist inside the community was kept; the guaranteed "replay vault/library" framing was dropped.
 
 **Deliberately left as-is:** the Snoozebot Coming-Soon card keeps "24/7" because it describes a future AI assistant, not an always-on membership support promise.

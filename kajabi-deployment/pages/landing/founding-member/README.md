@@ -37,4 +37,4 @@ Canonical reference figures present on the page:
 
 ## Service-model copy
 
-Membership benefits were rewritten to remove false hard expectations (weekly cadence, replay library/vault). Live sessions are framed as "Live sessions with Sally and Bec" (no fixed weekly cadence; no guaranteed replay archive). One testimonial referencing "weekly coaching calls" was left as authentic member wording and is flagged for human review.
+Membership benefits were rewritten to remove false hard expectations (weekly cadence, replay library/vault). Live sessions are framed as "Live sessions with the Snooze Specialists" (no fixed weekly cadence; no guaranteed replay archive). One testimonial referencing "weekly coaching calls" was left as authentic member wording and is flagged for human review.

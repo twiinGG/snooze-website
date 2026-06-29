@@ -31,7 +31,7 @@
 │  │  └──────────────┘  └──────────────┘            │       │
 │  │                                                   │       │
 │  │  ✓ All courses                                   │       │
-│  │  ✓ Live sessions with Sally and Bec              │       │
+│  │  ✓ Live sessions with the Snooze Specialists              │       │
 │  │  ✓ Troubleshooting support                       │       │
 │  │  ✓ Snooze Village community                      │       │
 │  │  ✓ Member pricing                                │       │

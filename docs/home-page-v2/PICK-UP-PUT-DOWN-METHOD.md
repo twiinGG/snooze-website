@@ -207,7 +207,7 @@ You'll know it's working when:
 - **The Vanishing Chair:** Gradual retreat, staying in the room
 
 **Snooze Membership:**
-- Live sessions with Sally and Bec
+- Live sessions with the Snooze Specialists
 - Expert-moderated community forums
 - Age-based pathways and troubleshooting guides
 

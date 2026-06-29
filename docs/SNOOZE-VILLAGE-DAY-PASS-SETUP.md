@@ -18,7 +18,7 @@
 Get a taste of what makes Snooze special with a free day pass to our vibrant community. This is your chance to experience the support, connection, and expert guidance that thousands of parents rely on.
 
 **What's Included:**
-• Join live sessions with Sally and Bec
+• Join live sessions with the Snooze Specialists
 • Connect with other parents in Snooze Village
 • Get expert-moderated support from certified sleep consultants
 • 24 hours of full Village access (community & live sessions)
@@ -150,7 +150,7 @@ All email templates, subject lines, and body copy are documented in the email te
 ✨ Free Day Pass to Snooze Village! ✨
 
 Want to see what all the fuss is about? Get a free 24-hour pass to experience:
-• Live sessions with Sally and Bec
+• Live sessions with the Snooze Specialists
 • Supportive parent community
 • Expert guidance when you need it
 

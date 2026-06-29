@@ -100,7 +100,7 @@ You're halfway through your Snooze Village Day Pass! We wanted to check in and m
 If you're loving the Village experience, upgrade to a Snooze Membership to get:
 • Full access to all courses
 • Complete resource library
-• Live sessions with Sally and Bec
+• Live sessions with the Snooze Specialists
 • Ongoing community support
 
 [Upgrade to Snooze Membership Button/Link]
@@ -139,7 +139,7 @@ Your Snooze Village Day Pass expires in just 1 hour!
 We hope you've enjoyed experiencing the warmth and support of our community. If you've found value in the Village, imagine having:
 • Full access to all our courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, and more)
 • Complete resource library with downloadable guides
-• Live sessions with Sally and Bec
+• Live sessions with the Snooze Specialists
 • Ongoing community support whenever you need it
 
 **Upgrade now to keep your access:**
@@ -191,7 +191,7 @@ We hope you enjoyed your 24-hour experience in the Village. If you found value i
 **What you'll get as a Snooze Member:**
 • Full access to all courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, The Snooze Method, and more)
 • Complete resource library with downloadable guides and templates
-• Live sessions with Sally and Bec
+• Live sessions with the Snooze Specialists
 • Ongoing community support whenever you need it
 • All future content and updates
 
@@ -237,7 +237,7 @@ Congratulations! You've upgraded to a full Snooze Membership.
 **You now have access to:**
 • All courses (Newborn Guide, 3-4 Month Course, Toddler Toolkit, The Snooze Method, and more)
 • Complete resource library with downloadable guides
-• Live sessions with Sally and Bec
+• Live sessions with the Snooze Specialists
 • Ongoing community support in Snooze Village
 • All future content and updates
 
