@@ -55,7 +55,7 @@ Site: **2148291177** (joinsnooze.com). Single site.
 | Course upsell | LMCR04_OFR_5-12M-Course-Upsell | 2150914639 | **grants 2149308933 ⚠** | `Ktxk9mvE` | $117 USD | published |
 | Canonical full course | PUBCR02_5-12 Course | 2150844344 | 2149258846 | — | $117 USD | published |
 | Membership (USD) | PUBMS01_USD_The-Snooze-Membership | 2150754998 | (9 products) | `z63s9VaR` | $79mo / $197q / $657yr | published |
-| Membership (AUD twin) | Snooze Access (AUD) | 2151212200 | — | `bEsVXFXG` | A$119mo (q/yr not created) | published |
+| Membership (AUD twin) | Snooze Access (AUD) | 2151256977 | — | `vYgCNgJz` | A$119mo / A$299q / A$997yr | published (updated 2026-06-30; replaced deleted `bEsVXFXG`/2151212200) |
 | Retired founding offer | (do not use) | 2150812784 | — | `6iRarwak` | $147q / $650yr | **draft — retire** |
 | Nurture sequence (live) | EMLM04_5-12m Schedule LM Flow | seq 2148765283 | — | — | 4 emails D0/2/4/6 | live |
 | Overlapping sequence | EMLM04_Course-Sample-Conversion | seq 2148762811 | — | — | 4 emails | ⚠ possible duplicate |
@@ -74,7 +74,7 @@ Sequence emails (EMLM04_5-12m Schedule LM Flow): Day 0 `2150965669` · Day 2 `21
 2. **Banned "live coaching" language on the membership thank-you** (offer 2150754998 post-purchase body: "weekly live coaching… replay vault… 24/7"). This is the funnel's destination and violates the no-live-coaching service-model rule. Repo/site were swept; Kajabi + ManyChat copy were not.
 
 ### 🟠 P1 — Leaks & missing segments
-3. **No AUD path in the funnel.** Free offer, $117 upsell, and both in-course CTAs are USD-only. AUD membership (2151212200) and draft AUD course offers are never surfaced. Emails are USD-only with a generic "AUD available at joinsnooze.com" footer.
+3. **No AUD path in the funnel.** Free offer, $117 upsell, and both in-course CTAs are USD-only. AUD membership (2151212200 — _since deleted; now `vYgCNgJz`/2151256977_) and draft AUD course offers are never surfaced. Emails are USD-only with a generic "AUD available at joinsnooze.com" footer. _(Resolved 2026-06-30; see CHANGELOG-AND-DEPLOY doc.)_
 4. **Two competing nurture sequences** (2148765283 live + 2148762811 EMLM04_Course-Sample-Conversion). Risk of double-emailing free-module signups — confirm only one triggers off `LM_512_schedule`.
 5. **Offer's own thank-you body dead-ends at `/login`** with no paid CTA. Real CTA work is on the separate thank-you page (2151810974) + in-course. If the offer body renders instead, it's a leak — consolidate.
 

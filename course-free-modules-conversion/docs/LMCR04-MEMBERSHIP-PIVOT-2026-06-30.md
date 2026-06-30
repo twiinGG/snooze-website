@@ -49,12 +49,35 @@ The `Ktxk9mvE` upsell offer (2150914639) is correctly wired: it grants product 2
 
 ## 4. Open / staged (next session)
 
+> **⚠ SUPERSEDED (2026-06-30 session 2).** The §4 plan below (paywall-offer swap + trim) was NOT pursued. Kade chose the **offer-ladder** approach instead: keep the freebie as-is, $117 stays the in-course paywall upgrade, sell the membership around it. Current truth lives in **[LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md](./LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md)** (decisions + runbook) and **[LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md](./LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md)** (what's live vs staged). Items below are kept for history.
+
 1. **Paywall offer swap (the cornerstone of the pivot, NOT yet done).** Change the free-module course (2149308933) paywall offer from `Ktxk9mvE` to the **membership**. Needs the admin UI + a sandbox buy-test. Gotcha: membership grants the *canonical* course 2149258846, not 2149308933 — so confirm a member who joins at the paywall actually unlocks the full course (they get it via the canonical product). Likely cleanest end state: trim 2149308933 to the free Schedules + paywall→membership and let the membership serve the full course via 2149258846.
-2. **P1-3 AUD path.** Email CTAs route to `/snooze` (currency-handled by the site), so emails are AUD-safe now. Still pending: Sally to create AUD membership q/yr variants on `bEsVXFXG` (only A$119/mo exists); the AUD course offers (2151254357 etc.) are draft.
+2. **P1-3 AUD path.** Email CTAs route to `/snooze` (currency-handled by the site), so emails are AUD-safe now. ~~Still pending: Sally to create AUD membership q/yr variants on `bEsVXFXG`~~ **RESOLVED 2026-06-30:** complete AUD core offer `vYgCNgJz`/2151256977 (A$119/A$299/A$997) created; old `bEsVXFXG`/2151212200 deleted; currency engine repointed. AUD course offers (2151254357 etc.) remain draft (out of scope; $117 one-off paywall stays USD).
 3. **P2-7 form FMLM01 (2149418596):** wired as an OR-trigger on AUTLM01; keep as backup entry or archive (low stakes).
 4. **Course-product de-duplication** (2149308933 vs 2149258846) per §3 — decide and execute once the paywall swap is in.
 5. **Trim the empty draft "Paywall Wrapper" module** (2159220235) in course 2149308933 — harmless clutter.
 6. **Measure.** Add UTMs so membership conversions from the funnel are attributable; watch membership joins from the 512 cohort vs the old ~0 course-upsell rate.
+
+## 4b. Session update (2026-06-30, second pass)
+
+**Verified the full offer/product graph via MCP (the gotcha is real and confirmed):**
+- Membership `z63s9VaR`/2150754998 grants the **canonical** course **2149258846** (+ Toddler Toolkit, 3-4mo, Newborn, guides, Village access-group, etc.). It does **NOT** grant the free-module product 2149308933.
+- Free-module course 2149308933 is granted only by `Ktxk9mvE`. The free offer `2x92uaLF`/2150914364 grants a **CourseAccessLevel** sub-product (2149309110 = the "Limited" tier). Standard Kajabi paywall split.
+- **`Ktxk9mvE` has 0 lifetime purchases** (confirmed via list_offer_purchases). So trimming the duplicated full-course content from 2149308933 harms **no paying customer**.
+- Course 2149308933 structure: free = `Welcome` module (Hi/About + `Sleep Schedules` submodule incl. the `What's Next?` bridge lesson 2194028428) → draft `Paywall Wrapper` divider (2159220235) → **Part 1 / Part 2 / Wrap-Up = a full duplicate of canonical 2149258846** (all `published`, i.e. visible-but-locked to the 344 free members).
+
+**Consequence for the paywall swap:** Kajabi unlocks a course's gated lessons only when the purchased offer grants *that same product*. The membership grants 2149258846, not 2149308933, so pointing the paywall at the membership will **not** unlock 2149308933's gated lessons. The coherent end state (Option A, = the doc's "likely end state") is: repoint the paywall CTA → membership, **unpublish** the Part 1/2/Wrap-Up duplicate in 2149308933, and let members get the full course via canonical 2149258846 in their Library. This also resolves the de-dup (task 2): 2149308933 = lean free magnet; 2149258846 = the real full course.
+
+**Done this pass (live + repo):**
+- Added UTMs to all membership CTAs: Day-2/4/6 emails (live themes 2164549714/2164549778/2164549911) + bridge lesson 2194028428 (live) + all repo source files. Scheme: `?utm_source=512funnel&utm_medium={email|course|landing}&utm_campaign=snooze_membership&utm_content={day2|day4|day6|bridge|thankyou_page}`.
+- Reconciled the **stale repo thank-you file** (`LMCR04-thank-you-access.html`): removed the off-pivot `$117 Ktxk9mvE` "Unlock the Full Course" button. (The **live** thank-you page was already membership-only → `/snooze`; only the repo had drifted.)
+- **Deferred:** UTM on the live thank-you page (one 155KB custom-code blob; lowest-value surface, shown pre-nurture). Repo carries it for next redeploy.
+
+**AUD routing (task 3) — RESOLVED 2026-06-30:** `currency-toggle.js` now pairs `z63s9VaR`→`vYgCNgJz` (offer 2151256977) with real variant IDs 161174/161175/161176 (A$119/A$299/A$997); TZ geo-detect (`Australia/*`→AUD). The old `bEsVXFXG`/2151212200 (monthly-only) was deleted by Kade and replaced; engine repointed and 20/20 tests pass. **Note: the engine is staged in repo, not yet pasted to Kajabi Footer Page Scripts — no currency switching is live until that deploy.** (7-day-trial AUD `Sr6KzShx` variants already mapped.)
+
+**FMLM01 form (2149418596) decision:** **0 submissions in ~5 months**, name+email only, redundant with the offer opt-in entry. Recommend archive (remove from any embed; the never-firing AUTLM01 OR-trigger is harmless). Low stakes.
+
+**Still blocked on Kade (one-time interactive 2FA + a sandbox purchase):** the paywall-CTA swap in the admin UI + the sandbox buy-test. The content trim is MCP-doable and awaits green-light (it changes 344 members' course view, so confirm-first).
 
 ## 5. Capability + process notes (for future sessions)
 
@@ -65,4 +88,4 @@ The `Ktxk9mvE` upsell offer (2150914639) is correctly wired: it grants product 2
 
 ## 6. Key IDs (this funnel)
 
-Free offer 2150914364 (`2x92uaLF`) · free-module course 2149308933 (paywall after Schedules) · upsell `Ktxk9mvE` 2150914639 (course full-access, leave wired) · canonical course PUBCR02 2150844344 / product 2149258846 · membership USD `z63s9VaR` 2150754998 · membership AUD `bEsVXFXG` 2151212200 · live sequence 2148765283 (emails 2150965669/2150967901/2150967914/2150967944) · enrolment automation AUTLM01 wf 436114 · exit automation wf 443852 · tag LM_512_schedule 2149991548 · Notion 512 row 38c33898b6c281aabde4fcc767ef5404.
+Free offer 2150914364 (`2x92uaLF`) · free-module course 2149308933 (paywall after Schedules) · upsell `Ktxk9mvE` 2150914639 (course full-access, leave wired) · canonical course PUBCR02 2150844344 / product 2149258846 · membership USD `z63s9VaR` 2150754998 · membership AUD `vYgCNgJz` 2151256977 (complete A$119/A$299/A$997; replaced deleted `bEsVXFXG`/2151212200 on 2026-06-30) · live sequence 2148765283 (emails 2150965669/2150967901/2150967914/2150967944) · enrolment automation AUTLM01 wf 436114 · exit automation wf 443852 · tag LM_512_schedule 2149991548 · Notion 512 row 38c33898b6c281aabde4fcc767ef5404.

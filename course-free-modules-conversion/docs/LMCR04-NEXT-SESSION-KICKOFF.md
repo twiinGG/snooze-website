@@ -1,5 +1,7 @@
 # LMCR04 Funnel — Next-Session Kickoff Prompt
 
+> **⚠ HISTORICAL (2026-06-30).** This kickoff was for the original remediation, which is now complete. The funnel was pivoted to sell the membership and built out as an offer ladder. For current state, decisions, and the remaining runbook, read **[LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md](./LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md)** and **[LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md](./LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md)**. The IDs below are still valid except the AUD membership (now `vYgCNgJz`/2151256977; the listed `bEsVXFXG`/2151212200 was deleted).
+
 Paste the block below into a new Claude Code session in the Snooze OS repo to resume this work. It assumes the audit + plan docs already exist in the repo.
 
 ---
@@ -61,7 +63,7 @@ sync with any offer/product changes.
 | Course upsell offer (MISLABELED) | 2150914639 | `Ktxk9mvE` | $117; grants 2149308933 not the canonical course |
 | Canonical course offer/product | 2150844344 / 2149258846 | — | the "real" standalone 5-12 course |
 | Membership USD | 2150754998 | `z63s9VaR` | live-coaching copy to strip |
-| Membership AUD | 2151212200 | `bEsVXFXG` | q/yr variants not yet created |
+| Membership AUD | 2151256977 | `vYgCNgJz` | complete A$119/A$299/A$997 (vars 161174/161175/161176); replaced deleted `bEsVXFXG`/2151212200 on 2026-06-30 |
 | Live sequence (keep) | 2148765283 | — | EMLM04_5-12m Schedule LM Flow |
 | Duplicate sequence (retire) | 2148762811 | — | EMLM04_Course-Sample-Conversion |
 | Tag | 2149991548 | — | LM_512_schedule (341 contacts) |

@@ -41,8 +41,8 @@ Reusable note saved to memory: `kajabi-automations-email-bodies-not-in-api` (onl
 ## P1 — Leaks & missing segments
 
 ### P1-3 · No AUD path in the funnel
-- **Problem:** Free offer, $117 upsell, and both in-course CTAs are USD-only. AUD membership (2151212200) and AUD course offers never surfaced; emails are USD with a generic "AUD available" footer. AUD quarterly/yearly membership variants still not created (pending Sally admin step).
-- **Action:** (a) Sally creates the AUD membership q/yr variants on `bEsVXFXG`; (b) add geo/currency branching on the in-course CTA + thank-you page (USD → z63s9VaR / Ktxk9mvE, AUD → bEsVXFXG / AUD course offer); (c) decide whether to fork the email sequence by currency or keep the footer.
+- **Problem:** Free offer, $117 upsell, and both in-course CTAs are USD-only. AUD membership and AUD course offers never surfaced; emails are USD with a generic "AUD available" footer.
+- **RESOLVED 2026-06-30:** AUD membership now complete — `vYgCNgJz`/2151256977 (A$119/A$299/A$997, vars 161174/161175/161176); old monthly-only `bEsVXFXG`/2151212200 deleted. Membership CTAs route through `/snooze` (currency-aware), so the engine swaps USD↔AUD at runtime. Currency engine repointed + 20/20 tests (staged in repo; needs paste to Kajabi Footer Scripts to go live). $117 one-off paywall stays USD by decision (secondary rung). Emails keep the USD-copy + `/snooze` link pattern.
 - **Surface:** Kajabi offers + landing/course theme; possibly a currency-switch like the existing site one. **Verify:** load funnel as AU visitor.
 
 ### P1-4 · Two competing nurture sequences (double-send risk)
@@ -107,7 +107,7 @@ Branch `chore/service-model-language-sweep`. Step 0 capture done via one-time in
 | **P2-8** (ManyChat) | ✅ DONE | Spec already existed (`docs/operations/automations/manychat/lmcr04-comment-to-dm-flow.md`); verified + annotated with the live AUTLM01 linkage. DM copy swept CLEAN. Live ManyChat instance has no API here → new-follower sequence still needs a human banned-language check (flag #5). |
 | **P2-9** (stale CTAs + QA) | ✅ DONE | Both `CONNECTED-EXPERIENCE-MVP-PLAN.md` copies: `6iRarwak` → `z63s9VaR` (8 each) + dated correction note. LMCR04 live-verification block appended to `KAJABI-BUILD-CHECKLIST.md`. |
 | **P0-1** (course-product model) | ⏸ DECISION | Unchanged — needs your decision (paywall-wrapper-in-free-module vs standalone 2149258846). Capture surfaced extra evidence: the Day-2/4/6 emails point at three different destinations (`Ktxk9mvE` checkout, a product page, `/snooze`), and a separate `UPCR04_5-12M-SCHEDULES-UPSELL` offer exists in the unsubscribe trigger. |
-| **P1-3** (AUD path) | ⏸ DECISION | Needs Sally to create AUD membership q/yr variants on `bEsVXFXG` first. |
+| **P1-3** (AUD path) | ✅ DONE 2026-06-30 | AUD membership complete (`vYgCNgJz`/2151256977); `bEsVXFXG`/2151212200 deleted; currency engine repointed (20/20 tests, staged for paste). |
 
 **Minor leak found (new):** the exit automation `EMLM04 - Unsubscribe Trigger` (wf 443852) unsubscribes on purchase of `UPCR04_5-12M-SCHEDULES-UPSELL` + Camp bundles, but **not** on purchase of the `Ktxk9mvE` $117 upsell or membership `z63s9VaR` — so buyers via those two paths keep receiving the nurture upsell emails. Recommend adding those two offers to the trigger (needs go-ahead).
 
