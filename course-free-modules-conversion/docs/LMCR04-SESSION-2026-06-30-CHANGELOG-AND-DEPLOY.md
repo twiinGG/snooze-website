@@ -70,40 +70,49 @@
 
 ---
 
-## 4. RUNBOOK — everything still outstanding
+## 4. RUNBOOK — deploy status as of 2026-06-30 pre-flight pass
 
-### A. Manual deploys to Kajabi (the gap Kade flagged — none of this is live yet)
+> **Pre-flight completed 2026-06-30.** Tests 20/20 + 20/20. `SA_CHECKOUT.aud.live` flipped to `true`.
+> Live site theme scanned: 0 hits for `bEsVXFXG`/`2151212200` — theme is clean.
+> Branch `feat/graphify-knowledge-graph` merged to `main` and pushed. Ready for manual Kajabi paste.
 
-1. **[PRIORITY] Deploy the dual-currency bundle.** Paste, per `apps/snooze-website/kajabi-deployment/global/js/README.md`:
-   - `currency-toggle.js` → Settings → Site Details → **Footer** Page Scripts
-   - `snooze-globals.js` → **Header** Scripts
-   - `currency-toggle-fouc.html` (anti-FOUC) + `currency-toggle.css` → Header / CSS
-   Without this, the site has no currency switching at all.
-2. **Paid-ads landing** (`snooze-access-paidads/index.html`) → paste to that page; decide whether to flip `SA_CHECKOUT.aud.live` to `true` (AUD offer is now complete).
-3. **1-month-free AUD emails** (4) → **verify whether this sequence is live**; if so its upgrade button is a 404 right now — repaste with `vYgCNgJz`. (If the emails are new-builder, they can be fixed via MCP instead of paste — quick win, flag for next session.)
-4. **LMCR04 thank-you page** → repaste to pick up the UTM (low priority; live page is functionally correct already).
+### A. Manual deploys to Kajabi — PENDING (paste in this order)
 
-### B. Automations / admin-UI (offers + grants)
+1. **[PRIORITY] Deploy the dual-currency bundle** — nothing currency-related is live until this:
+   - `global/js/snooze-globals.js` → Settings → Site Details → **Header** Scripts
+   - `global/html/currency-toggle-fouc.html` → **Header** Scripts (append after globals)
+   - `global/css/currency-toggle.css` → Theme → Custom CSS
+   - `global/js/currency-toggle.js` → **Footer** Page Scripts
+2. **Paid-ads landing** (`pages/landing/snooze-access-paidads/index.html`) → paste to that page. `SA_CHECKOUT.aud.live` already flipped to `true` in repo — AU visitors now route to `vYgCNgJz` directly.
+3. **1-month-free AUD emails** (4 files in `pages/checkout/1-month-free-membership/emails-aud/`) → **check first**: in Kajabi admin open the AUD 1-month-free sequence and inspect the upgrade button URL. If it shows `bEsVXFXG`, repaste all 4 emails immediately (offer deleted = 404). Repo files already point to `vYgCNgJz`. Sequences MCP unavailable to verify remotely.
+4. **LMCR04 thank-you page** → low priority; live page is functionally correct. Paste picks up the UTM only.
 
-5. **A1 cleanup automation:** membership purchased (`z63s9VaR` OR `vYgCNgJz`) → revoke the standalone $117 grant (`Ktxk9mvE` / product 2149308933) if held, so members don't get a duplicate course tile.
-6. **A2 (optional):** `Ktxk9mvE` purchased → tag + light membership-upgrade follow-up.
-7. **Confirm exit trigger wf 443852** behaves as intended for $117 buyers (keeping them in the membership-led nurture is fine and intended).
+### B. Automations / admin-UI — PENDING (Kajabi Automations = drag-drop only, not MCP/REST)
 
-### C. Native checkout features (optional, admin-UI)
+5. **A1 cleanup automation (P0):**
+   - Trigger: Offer is purchased → `z63s9VaR` **OR** `vYgCNgJz`
+   - Action: Revoke grant for product **2149308933** (standalone $117 course) from contact
+   - Why: members would otherwise get a duplicate course tile for the same content
+6. **A2 upgrade tag (optional):**
+   - Trigger: Offer is purchased → `Ktxk9mvE`
+   - Action: Tag contact `lmcr04-117-buyer` for future membership-upgrade sequence
+7. **Confirm exit trigger wf 443852** behaves as intended for $117 buyers.
 
-8. Order bump and/or native 1-click post-purchase upsell on the `Ktxk9mvE` checkout, if you want more than the description link + thank-you message. (Native upsells are single-currency.)
+### C. Native checkout features — optional, admin-UI
+
+8. Order bump / 1-click post-purchase upsell on `Ktxk9mvE` checkout (native upsells are single-currency).
 
 ### D. Cleanups
 
-9. **Archive FMLM01 form** (2149418596) — 0 submissions in ~5 months, redundant with the offer opt-in.
-10. **(Optional)** empty draft "Paywall Wrapper" module (2159220235) in course 2149308933 — harmless leftover; leave unless confirmed not the paywall boundary.
-11. **Done:** `bEsVXFXG`/2151212200 retired (Kade deleted it).
+9. **Archive FMLM01 form** (2149418596) — confirmed 0 submissions, redundant with the offer opt-in.
+10. **(Optional)** empty draft "Paywall Wrapper" module (2159220235) in course 2149308933 — harmless leftover.
+11. **Done:** `bEsVXFXG`/2151212200 retired (Kade deleted it in Kajabi admin).
 
 ### E. Verify after deploy
 
-12. After the engine is live: set an AU timezone (or `localStorage.snooze_currency_preference='AUD'`) and confirm `/snooze` + membership CTAs route to `vYgCNgJz`, the 3 AUD tiers render, and USD↔AUD toggle round-trips.
-13. Preview the `Ktxk9mvE` post-purchase message + description in the Kajabi admin (no test purchase needed).
-14. **Measure:** in GA4, watch `utm_campaign=snooze_membership` (sources `512funnel`, mediums `email`/`course`/`landing`/`post_purchase`/`checkout`) for membership joins originating in the funnel; baseline against the old ~0 course-upsell rate. UTMs are live on the MCP surfaces now; the remaining ones (thank-you page, paid-ads) land on deploy.
+12. Set `localStorage.snooze_currency_preference='AUD'` and reload `/snooze` — CTAs must route to `vYgCNgJz`; three AUD tiers must render with variant IDs 161174/161175/161176; USD↔AUD toggle must round-trip.
+13. Preview `Ktxk9mvE` post-purchase message + description in Kajabi admin (no test purchase needed).
+14. **Measure:** watch `utm_campaign=snooze_membership` in GA4 across sources `512funnel`/mediums `email`/`course`/`landing`/`post_purchase`/`checkout`. UTMs are live on MCP surfaces now; paid-ads + thank-you land on paste.
 
 ### Repo doc reconciliation (done 2026-06-30)
 
