@@ -86,5 +86,40 @@ Reusable note saved to memory: `kajabi-automations-email-bodies-not-in-api` (onl
 
 ## Open decisions for Sally/Kade
 - **Course-product model:** paywall-wrapper-in-free-module vs standalone product 2149258846 (drives P0-1).
-- **Orphaned form FMLM01:** wire in or archive.
+- **Orphaned form FMLM01:** wire in or archive. **UPDATE 2026-06-29:** form is NOT orphaned — it is a live OR-trigger on automation AUTLM01 (436114), so submitting it tags + enrols the same as the $0 checkout. It just has 0 submissions because the funnel runs through the checkout. Decision reframed to "keep as a backup entry point vs archive."
 - **AUD email handling:** fork sequence by currency vs keep footer.
+
+---
+
+## Execution log (2026-06-29)
+
+Branch `chore/service-model-language-sweep`. Step 0 capture done via one-time interactive Kajabi login in agent-browser's persistent stealth profile (cleared Cloudflare; auth saved to scratchpad, not repo).
+
+| Item | Status | What was done |
+|---|---|---|
+| **Step 0 capture** | ✅ DONE | All 4 MCP gaps closed. Enrolment automation = **AUTLM01_Course-Sample-Conversion (wf 436114)**: offer 2150914364 purchased OR form FMLM01 submitted → tag `LM_512_schedule` + subscribe to **live** sequence 2148765283. Both sequences' bodies/CTAs captured. Appended to LIVE-KAJABI-CAPTURE doc. |
+| **P0-2** (membership thank-you) | ✅ DONE | Offer **2150754998** `thank_you_body` Step 5 rewritten ("Join the Live Sessions" / "live sessions with the Snooze Specialists" / "daily support inside the Snooze Village community"); removed "weekly live coaching / replays / replay vault". Description "member coaching" → "live sessions with the Snooze Specialists". Verified via MCP echo. |
+| **P0-2 extension** | ⏸ BLOCKED | Trial offer **2150887297** (USD, `mqQikDM7`) + AUD twin carry the *identical* banned Step 5 + "and coaching" description (sweep flag #1). MCP write **denied by the auto-mode safety classifier** (offer not named in original plan). **Needs your go-ahead.** |
+| **P1-4** (double-send) | ✅ DONE | **No active double-send** — AUTLM01 subscribes ONLY to live 2148765283; duplicate **2148762811** has 0 subscribers + 0 subscribe/unsubscribe triggers. Renamed it `[RETIRED 2026-06-29 dupe-of-2148765283]` via agent-browser (reversible; emails still draftable). |
+| **P1-5** (/login dead-end) | ✅ RESOLVED | Free offer 2150914364 `post_purchase.preference` = **landing_page** → renders rich thank-you page **2151810974** (CTAs: membership `z63s9VaR`, course `Ktxk9mvE`, free-module product page), NOT the dormant `/login` custom_message body. No leak. One residual: live thank-you page has microcopy "All courses, **weekly** guidance, and support" — one-word cadence fix staged in scratchpad (`ty_code_orig.html`); **needs go-ahead** (large theme-block write). |
+| **P2-6** (Notion row) | ✅ DONE | Row `38c33898b6c281aabde4fcc767ef5404`: Category → **Lead Magnet**; **Campaigns** relation → LMCR04; **Products** relation → 5-12 Month Sleep Course; **Automations** text documents AUTLM01/wiring. **Nightly sync (wf fLvZOIwgHwN4z2vB) confirmed safe** — its PATCH only writes Kajabi-mirror fields (Offer ID, slug, Live Title/Internal/Price, Checkout/Admin URL, Last Synced); Category/relations/Automations are write-once-on-create, never overwritten. (Cosmetic: row's `Kajabi Status` reads "draft" but offer is published — sync doesn't currently mirror that field.) |
+| **P2-7** (form) | ✅ RESOLVED-ish | Form 2149418596 is wired (OR-trigger on AUTLM01). Keep as backup entry vs archive = your call (low stakes). |
+| **P2-8** (ManyChat) | ✅ DONE | Spec already existed (`docs/operations/automations/manychat/lmcr04-comment-to-dm-flow.md`); verified + annotated with the live AUTLM01 linkage. DM copy swept CLEAN. Live ManyChat instance has no API here → new-follower sequence still needs a human banned-language check (flag #5). |
+| **P2-9** (stale CTAs + QA) | ✅ DONE | Both `CONNECTED-EXPERIENCE-MVP-PLAN.md` copies: `6iRarwak` → `z63s9VaR` (8 each) + dated correction note. LMCR04 live-verification block appended to `KAJABI-BUILD-CHECKLIST.md`. |
+| **P0-1** (course-product model) | ⏸ DECISION | Unchanged — needs your decision (paywall-wrapper-in-free-module vs standalone 2149258846). Capture surfaced extra evidence: the Day-2/4/6 emails point at three different destinations (`Ktxk9mvE` checkout, a product page, `/snooze`), and a separate `UPCR04_5-12M-SCHEDULES-UPSELL` offer exists in the unsubscribe trigger. |
+| **P1-3** (AUD path) | ⏸ DECISION | Needs Sally to create AUD membership q/yr variants on `bEsVXFXG` first. |
+
+**Minor leak found (new):** the exit automation `EMLM04 - Unsubscribe Trigger` (wf 443852) unsubscribes on purchase of `UPCR04_5-12M-SCHEDULES-UPSELL` + Camp bundles, but **not** on purchase of the `Ktxk9mvE` $117 upsell or membership `z63s9VaR` — so buyers via those two paths keep receiving the nurture upsell emails. Recommend adding those two offers to the trigger (needs go-ahead).
+
+---
+
+## Execution log addendum — 2026-06-30 (approved follow-ups)
+
+Kade approved (AskUserQuestion): fix the trial offers, fix the thank-you microcopy, add the two offers to the exit trigger; and clarified P0-1 (the `Ktxk9mvE` upsell is a deliberate paywall-picker offer, asked to verify the linkage).
+
+| Item | Status | Detail |
+|---|---|---|
+| **P0-2 trial offers** | ✅ DONE | USD `2150887297` (`mqQikDM7`): Step-5 thank-you body + description rewritten (verified). AUD twin `2151254578` (`Sr6KzShx`, `PUBMS02_AUD_Snooze_7-Day-Trial`): thank-you is `disabled` (nothing to strip); **description** "weekly live coaching with Sally" → "live sessions with the Snooze Specialists" (verified). |
+| **P1-5 thank-you microcopy** | ✅ DONE | Landing page `2151810974` theme `2164551197`, block `1768959076279_0`: "All courses, **weekly** guidance, and support" → "All courses, **ongoing** guidance, and support". Pushed via `update_theme_content`; re-fetched and confirmed **byte-for-byte** match (9962 chars, zero "weekly"). |
+| **P0-1 linkage verdict** | ✅ VERIFIED CORRECT | The `Ktxk9mvE` upsell (offer 2150914639) grants product **2149308933**, which holds the **full** 5-12 curriculum. That course has exactly 2 attached offers: the **free** offer (2150914364) = **Limited access** (Welcome + Sleep Schedules submodule, above the paywall) and `Ktxk9mvE` $117 = **full access** (unlocks Part 1 / Part 2 / Wrap Up below the paywall). The **Paywall divider is correctly positioned** right after the free Schedules submodule. So Kade's purpose-made upsell offer is wired correctly — buying it unlocks the complete course. **Two notes (no fix made):** (1) the empty **draft "Paywall Wrapper" module (2159220235)** is harmless leftover clutter (0 lessons, not shown) — optional to delete; (2) this course (2149308933) is a **separate product** from the canonical `5-12 Month Sleep Training Course` (2149258846) the membership grants — same content lives in two places → split progress/reporting + double content maintenance. Functionally fine; flag as tech debt, not a funnel bug. |
+| **Exit-trigger fix (wf 443852)** | ⚠ MANUAL HANDOFF | Could NOT be done programmatically: Kajabi's Automations editor is a drag-and-drop canvas with no offer-picker reachable via agent-browser refs, and there is no MCP/REST automations API. Automation left **untouched** (Save stayed disabled throughout; nothing staged). **Manual path:** `app.kajabi.com/admin/workflows/443852/edit` → on the trigger group, "Add trigger" → Offer → "is purchased" → select **`5-12 Month Baby Sleep Training Course` (Ktxk9mvE, 2150914639)** → Save. Repeat for **`The Snooze Membership` (z63s9VaR, 2150754998)**. Result: 5 OR-triggers, so buyers via the upsell or membership are unsubscribed from the nurture sequence. |

@@ -65,3 +65,20 @@ Use this checklist to set up a new Free Module variant in Kajabi.
 - [ ] **Access Check:** Verify the orientation lesson and the specific unlocked module are visible.
 - [ ] **Paywall Check:** Verify native paywall appears after the unlocked module.
 - [ ] **Email Check:** Confirm Day 0 email arrives immediately with correct framing.
+
+---
+
+## LMCR04 (5–12M Schedules) — Live verification status (2026-06-29)
+
+The checklist above is the reusable template for all 12 variants. This block records the **verified-live** state of the LMCR04 build specifically (MCP + admin-UI capture, see `docs/LMCR04-LIVE-KAJABI-CAPTURE-2026-06-29.md`). All items confirmed LIVE:
+
+- [x] **Free offer published** — `LMCR04_5-12M-SCHEDULES`, offer 2150914364, slug `2x92uaLF`, $0 USD, published.
+- [x] **Free Module product granted** — CourseAccessLevel 2149309110 on product 2149308933 (342 members).
+- [x] **Enrolment automation live** — `AUTLM01_Course-Sample-Conversion` (workflow 436114): trigger = offer 2150914364 purchased OR form FMLM01 (2149418596) submitted → Add tag `LM_512_schedule` → Subscribe to sequence 2148765283.
+- [x] **Tag firing** — `LM_512_schedule` (tag 2149991548), 341 contacts ≈ 342 members.
+- [x] **Nurture sequence live** — `EMLM04_5-12m Schedule LM Flow` (2148765283), 4 emails D0/2/4/6 all published, 281 lifetime subscribers, last_sent 2026-06-29. Email bodies verified clean of banned live-coaching language (CTAs: D0 `/library`, D2 `/offers/Ktxk9mvE`, D4 product page, D6 `/snooze`).
+- [x] **Duplicate sequence retired** — `EMLM04_Course-Sample-Conversion` (2148762811) renamed `[RETIRED 2026-06-29 dupe-of-2148765283]`; 0 subscribers, 0 subscribe/unsubscribe triggers (no double-send).
+- [x] **In-course bridge lesson present** — "What's Next?" lesson 2194028428, dual CTA (course + membership).
+- [x] **Exit rule (partial)** — `EMLM04 - Unsubscribe Trigger` (workflow 443852) unsubscribes from 2148765283 on purchase of `UPCR04_5-12M-SCHEDULES-UPSELL` + Camp bundles. ⚠ Does NOT cover the `Ktxk9mvE` $117 upsell or membership `z63s9VaR` — see remediation plan (minor post-purchase leak).
+- [ ] **Offer thank-you body** — free offer 2150914364 post-purchase still dead-ends at `/login` (P1-5, pending).
+- [ ] **Course-product model** — paywall-wrapper-in-free-module vs standalone product 2149258846 unresolved (P0-1 decision).

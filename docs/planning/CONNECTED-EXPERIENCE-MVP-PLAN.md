@@ -9,6 +9,8 @@
 
 For all related plans, see: `PLANS-INDEX.md`
 
+> **Correction 2026-06-29 (LMCR04 funnel remediation, P2-9):** all checkout CTAs in this plan were updated from the retired draft offer slug `6iRarwak` to the canonical USD membership slug `z63s9VaR` (offer 2150754998). `6iRarwak` (offer 2150812784) is a retired/draft founding offer; do not use. AUD twin is `bEsVXFXG` (offer 2151212200). See `course-free-modules-conversion/docs/LMCR04-FUNNEL-REMEDIATION-PLAN.md`.
+
 ---
 
 ## Overview
@@ -24,7 +26,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 ### 1. New Visitors (Not Logged In)
 **Goal:** Drive to Snooze Founding Member Offer checkout  
 **Access:** Public pages only (age-specific pages, landing pages, blog)  
-**CTAs:** "Join Snooze" → `/offers/6iRarwak/checkout`
+**CTAs:** "Join Snooze" → `/offers/z63s9VaR/checkout`
 
 ### 2. Logged-In Non-Members (Have Account, No Snooze Membership)
 **Goal:** Access purchased products + nudge to Snooze membership  
@@ -34,7 +36,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 - Individual products they purchased (via Kajabi system Library)  
 **CTAs:**
 - "Access Your Library" → Kajabi system Library
-- "Upgrade to Snooze" → `/offers/6iRarwak/checkout`
+- "Upgrade to Snooze" → `/offers/z63s9VaR/checkout`
 - Links to purchased individual products
 
 ### 3. Snooze Members (Active Membership)
@@ -112,7 +114,7 @@ Create a unified navigation and CTA system that intelligently routes users based
     - Age-based modules (Newborn, 3-4 Month, 5-12 Month, Toddler Toolkit)
     - Sleep troubleshooting guides
   - Add section linking to Library preview
-  - Ensure all CTAs point to `/offers/6iRarwak/checkout`
+  - Ensure all CTAs point to `/offers/z63s9VaR/checkout`
   - Premium design and messaging throughout
 
 **Task 2.2: Add Library Preview Section**
@@ -140,8 +142,8 @@ Create a unified navigation and CTA system that intelligently routes users based
 - **Updates:**
   - Add universal navigation header
   - Add context-aware CTAs with fallback signposting:
-    - **New Visitor:** "Join Snooze to Access Full Guide" → `/offers/6iRarwak/checkout`
-    - **Logged-In Non-Member:** "Upgrade to Snooze" → `/offers/6iRarwak/checkout`
+    - **New Visitor:** "Join Snooze to Access Full Guide" → `/offers/z63s9VaR/checkout`
+    - **Logged-In Non-Member:** "Upgrade to Snooze" → `/offers/z63s9VaR/checkout`
     - **Snooze Member:** "Go to Library" → Snooze Library page
     - **If Detection Fails:** Show all options with clear prompts
   - Add "What's in Snooze" section showing:
@@ -245,7 +247,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 ### Phase 8: Checkout URL Standardization
 
 **Task 8.1: Update All CTAs to Snooze Founding Member Offer**
-- **Checkout URL:** `https://joinsnooze.com/offers/6iRarwak/checkout`
+- **Checkout URL:** `https://joinsnooze.com/offers/z63s9VaR/checkout`
 - **Reference:** See `docs/technical/URL-REFERENCE.md` for complete URL list
 - **Files to update:**
   - Landing page HTML blocks
@@ -256,7 +258,7 @@ Create a unified navigation and CTA system that intelligently routes users based
   - Navigation component
 - **Method:** Use JavaScript variable for easy updates
   ```javascript
-  window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/6iRarwak/checkout';
+  window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
   ```
 - **⚠️ CRITICAL:** Always use actual URLs from URL-REFERENCE.md. Never use placeholder URLs.
 
@@ -331,7 +333,7 @@ Create a unified navigation and CTA system that intelligently routes users based
 3. **Snooze members** can easily access Library, Village, and resources
 4. **All pages** have consistent navigation and branding
 5. **Landing page** harmonizes with Library, Method, and Toolkit resources
-6. **All CTAs** point to correct checkout URL (`/offers/6iRarwak/checkout`)
+6. **All CTAs** point to correct checkout URL (`/offers/z63s9VaR/checkout`)
 7. **User experience** feels connected and intentional across all pages
 8. **Premium experience** throughout - polished, clear, professional
 9. **Clear signposting** if user detection fails - users always know their next step
