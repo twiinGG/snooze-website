@@ -6,9 +6,15 @@
 
 ---
 
-## snooze-globals.js
+## snooze-globals.js + currency-toggle.js — consolidated paste
 
-**Kajabi deployment location:** Settings > Site Details > Header Scripts (or per-page Header Scripts for landing pages).
+**Kajabi deployment location:** Settings → Website → Custom JavaScript (one field, site-wide, applies to all website pages including the landing page which was migrated to Website Page type).
+
+**How to paste:** Copy the full contents of `snooze-globals.js`, then append the full contents of `currency-toggle.js` into the same Custom JavaScript field. The two files form one logical bundle — `snooze-globals.js` defines `window.SNOOZE_CHECKOUT_URL` which `currency-toggle.js` reads on init. Order matters: globals first.
+
+**FOUC prevention (`currency-toggle-fouc.html`):** This script runs before DOM ready and must be in `<head>`. Paste it separately into Settings → Site Details → Header Page Scripts (a distinct Kajabi field from Custom JavaScript). See `global/html/README.md`.
+
+**Authoritative deployment guide:** `kajabi-deployment/DEPLOYMENT-GUIDE.md` (single source of truth). The "Header Scripts" / "Footer Page Scripts" split described in earlier versions of this README was incorrect — Kajabi does not expose separate header and footer script fields for global JS.
 
 Implements two systems injected before page content:
 
@@ -56,7 +62,7 @@ Analytics tracking value defaults: monthly = 147, annual = 490 (update to match 
 
 ## currency-toggle.js
 
-**Kajabi deployment location:** Settings > Site Details > Footer Page Scripts
+**Kajabi deployment location:** Appended after `snooze-globals.js` in Settings → Website → Custom JavaScript (see consolidated paste note above).
 
 **Version:** 2.0 - Merged Implementation (Dec 30, 2025)
 
