@@ -25,4 +25,4 @@ Checkout URL pattern: `https://joinsnooze.com/offers/<slug>/checkout`
 
 ## Member pricing cross-sell
 
-The Snooze Membership checkout link used on this page is `z63s9VaR` (USD). Ensure the AUD equivalent (`bEsVXFXG`) is wired once currency toggle is active on this page.
+The Snooze Membership checkout link used on this page is `z63s9VaR` (USD). The AUD equivalent is `vYgCNgJz` (offer 2151256977; updated 2026-06-30 from the deleted `bEsVXFXG`/2151212200) and is swapped automatically by the site-wide currency engine once it is deployed — no per-page wiring needed.

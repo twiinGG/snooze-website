@@ -9,7 +9,7 @@
 
 For all related plans, see: `PLANS-INDEX.md`
 
-> **Correction 2026-06-29 (LMCR04 funnel remediation, P2-9):** all checkout CTAs in this plan were updated from the retired draft offer slug `6iRarwak` to the canonical USD membership slug `z63s9VaR` (offer 2150754998). `6iRarwak` (offer 2150812784) is a retired/draft founding offer; do not use. AUD twin is `bEsVXFXG` (offer 2151212200). See `course-free-modules-conversion/docs/LMCR04-FUNNEL-REMEDIATION-PLAN.md`.
+> **Correction 2026-06-29 (LMCR04 funnel remediation, P2-9):** all checkout CTAs in this plan were updated from the retired draft offer slug `6iRarwak` to the canonical USD membership slug `z63s9VaR` (offer 2150754998). `6iRarwak` (offer 2150812784) is a retired/draft founding offer; do not use. AUD twin is `vYgCNgJz` (offer 2151256977; updated 2026-06-30 from the deleted `bEsVXFXG`/2151212200). See `course-free-modules-conversion/docs/LMCR04-FUNNEL-REMEDIATION-PLAN.md`.
 
 ---
 

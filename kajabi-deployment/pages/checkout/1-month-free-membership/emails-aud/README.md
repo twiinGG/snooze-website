@@ -9,7 +9,7 @@ When the free offer is granted:
 - Send: Post-Purchase email (welcome-email.html)
 - Subscribe: email campaign sequence (Day 7, 14, 21, 25, 30+ emails)
 
-Upgrade offer link used across the sequence: `https://www.joinsnooze.com/offers/bEsVXFXG/checkout` (canonical AUD Snooze Access offer).
+Upgrade offer link used across the sequence: `https://www.joinsnooze.com/offers/vYgCNgJz/checkout` (canonical AUD Snooze Access offer 2151256977; updated 2026-06-30 from the deleted bEsVXFXG/2151212200).
 
 ## Emails in this folder
 

@@ -28,7 +28,7 @@ Currency-aware checkout URL function (`window.getSnoozeCheckoutUrl`) and backwar
 | Currency | Offer ID (numeric) | Slug |
 |----------|-------------------|------|
 | USD | 2150754998 | `z63s9VaR` |
-| AUD | 2151212200 | `bEsVXFXG` (draft as of 2026-06-08) |
+| AUD | 2151256977 | `vYgCNgJz` (complete A$119/A$299/A$997; replaced deleted bEsVXFXG/2151212200 on 2026-06-30) |
 
 Reads `localStorage['snooze_currency_preference']` set by `currency-toggle.js`. Falls back to timezone-based geo detection (`Intl.DateTimeFormat` - Australia/* → AUD, else USD).
 
@@ -66,7 +66,7 @@ Analytics tracking value defaults: monthly = 147, annual = 490 (update to match 
 
 | Offer | USD ID / Slug | AUD ID / Slug | Notes |
 |-------|--------------|--------------|-------|
-| Snooze Access (core membership) | `2150754998` / `z63s9VaR` | `2151212200` / `bEsVXFXG` | AUD variants pending Sally's adds |
+| Snooze Access (core membership) | `2150754998` / `z63s9VaR` | `2151256977` / `vYgCNgJz` | Complete (A$119/A$299/A$997). Replaced deleted bEsVXFXG/2151212200 on 2026-06-30. |
 | Snooze 7-Day Trial | `2150887297` / `mqQikDM7` | `2151254578` / `Sr6KzShx` | AUD variant IDs still to add to variantMapping |
 | Camp Snooze | `2150884129` / `K3Y6FEKX` | `2150946767` / `46Bz9tk6` | Active |
 | Day Pass cold-ads | `2151212201` / `ZvzAZKqz` | - | Single free offer, no currency twin. Currency preference captured on day_pass_grant row for downstream CTA routing. PRD §5.3. |
@@ -75,15 +75,15 @@ Analytics tracking value defaults: monthly = 147, annual = 490 (update to match 
 
 | Tier | USD Variant ID | AUD Variant ID | Price |
 |------|---------------|---------------|-------|
-| Monthly | `68112` | `<AUD_MONTHLY_VARIANT>` | $79 USD / $119 AUD |
-| Quarterly | `37262` | `<AUD_QUARTERLY_VARIANT>` | $197 USD / $299 AUD |
-| Yearly | `37263` | `<AUD_YEARLY_VARIANT>` | $657 USD / $997 AUD |
+| Monthly | `68112` | `161174` | $79 USD / $119 AUD |
+| Quarterly | `37262` | `161175` | $197 USD / $299 AUD |
+| Yearly | `37263` | `161176` | $657 USD / $997 AUD |
 
-AUD variant IDs are placeholders until Sally adds quarterly and yearly variants to offer `2151212200` in the Kajabi admin UI. The MCP `create_offer` call only creates the primary (monthly) tier.
+AUD variant IDs resolved 2026-06-30: the complete AUD core offer `vYgCNgJz`/2151256977 carries all three tiers (variants 161174/161175/161176). This replaced the deleted monthly-only bEsVXFXG/2151212200.
 
 ### AUD Offer IDs for GTM tracking
 
-`['2150946767', '2151212200']` - Day Pass cold-ads is currency-neutral (free) so not listed.
+`['2150946767', '2151256977', '2151254578']` - Day Pass cold-ads is currency-neutral (free) so not listed.
 
 ### Legacy offer mapping (kept for historical URL parity, PRD §4.6)
 
@@ -147,7 +147,7 @@ This file is NOT pasted into Kajabi. It contains two Custom JavaScript Variable 
 - **Name:** `CJS - User Currency Preference`
 - **Description:** Detects user's currency preference from localStorage or URL
 - Detection order: (1) AUD offer ID in pathname, (2) `localStorage['snooze_currency_preference']`, (3) fallback `'USD'`
-- **Note:** AUD offer IDs array in this variable (`['bFxLg2uz', 'SiiVEJuS']`) reflects legacy offer slugs and should be updated to current AUD offer IDs (`bEsVXFXG`, `Sr6KzShx`, `46Bz9tk6`) when GTM is next updated.
+- **Note:** AUD offer IDs array in this variable (`['bFxLg2uz', 'SiiVEJuS']`) reflects legacy offer slugs and should be updated to current AUD offer IDs (`vYgCNgJz`, `Sr6KzShx`, `46Bz9tk6`) when GTM is next updated.
 
 ### Variable 2: CJS - Dynamic Click Value
 

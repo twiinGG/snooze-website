@@ -96,29 +96,29 @@ const cases = [
     name: 'Snooze Access monthly USD to AUD (variant 68112)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=68112',
     target: 'AUD',
-    expectIncludes: ['2151212200', 'variant=<AUD_MONTHLY_VARIANT>']
+    expectIncludes: ['2151256977', 'variant=161174']
   },
   {
     name: 'Snooze Access quarterly USD to AUD (variant 37262)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=37262',
     target: 'AUD',
-    expectIncludes: ['2151212200', 'variant=<AUD_QUARTERLY_VARIANT>']
+    expectIncludes: ['2151256977', 'variant=161175']
   },
   {
     name: 'Snooze Access yearly USD to AUD (variant 37263)',
     href: 'https://www.joinsnooze.com/offers/2150754998/checkout?variant=37263',
     target: 'AUD',
-    expectIncludes: ['2151212200', 'variant=<AUD_YEARLY_VARIANT>']
+    expectIncludes: ['2151256977', 'variant=161176']
   },
   {
     name: 'Snooze Access monthly AUD to USD (round trip)',
-    href: 'https://www.joinsnooze.com/offers/2151212200/checkout?variant=<AUD_MONTHLY_VARIANT>',
+    href: 'https://www.joinsnooze.com/offers/2151256977/checkout?variant=161174',
     target: 'USD',
     expectIncludes: ['/offers/2150754998/', 'variant=68112']
   },
   {
     name: 'Snooze Access quarterly AUD to USD with extra query',
-    href: 'https://www.joinsnooze.com/offers/2151212200/checkout?variant=<AUD_QUARTERLY_VARIANT>&utm_source=meta',
+    href: 'https://www.joinsnooze.com/offers/2151256977/checkout?variant=161175&utm_source=meta',
     target: 'USD',
     expectIncludes: ['/offers/2150754998/', 'variant=37262', 'utm_source=meta']
   },
@@ -129,14 +129,14 @@ const cases = [
     expectIncludes: ['/offers/2150946767/']
   },
   {
-    name: 'Snooze Access USD to AUD (slug form z63s9VaR to bEsVXFXG)',
+    name: 'Snooze Access USD to AUD (slug form z63s9VaR to vYgCNgJz)',
     href: 'https://www.joinsnooze.com/offers/z63s9VaR/checkout',
     target: 'AUD',
-    expectIncludes: ['/offers/bEsVXFXG/']
+    expectIncludes: ['/offers/vYgCNgJz/']
   },
   {
-    name: 'Snooze Access AUD to USD (slug form bEsVXFXG to z63s9VaR)',
-    href: 'https://www.joinsnooze.com/offers/bEsVXFXG/checkout',
+    name: 'Snooze Access AUD to USD (slug form vYgCNgJz to z63s9VaR)',
+    href: 'https://www.joinsnooze.com/offers/vYgCNgJz/checkout',
     target: 'USD',
     expectIncludes: ['/offers/z63s9VaR/']
   },

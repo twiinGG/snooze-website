@@ -34,7 +34,7 @@
 <script>
 (function() {
   var USD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
-  var AUD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/bEsVXFXG/checkout';
+  var AUD_ACCESS_OFFER_URL = 'https://joinsnooze.com/offers/vYgCNgJz/checkout';
 
   function readCurrencyPreference() {
     try {

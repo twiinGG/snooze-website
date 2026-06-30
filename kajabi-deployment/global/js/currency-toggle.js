@@ -6,27 +6,29 @@
     storageKey: 'snooze_currency_preference',
     defaultCurrency: 'USD',
     offerMapping: {
-      '2150754998': '2151212200',
-      'z63s9VaR': 'bEsVXFXG',
+      // Core Snooze Membership (USD offer 2150754998 / z63s9VaR -> AUD offer 2151256977 / vYgCNgJz).
+      // UPDATED 2026-06-30: repointed from the old monthly-only bEsVXFXG/2151212200 to the
+      // complete AUD core offer vYgCNgJz/2151256977 (A$119/A$299/A$997). bEsVXFXG/2151212200 is
+      // SUPERSEDED and should be retired/unpublished in the admin UI.
+      '2150754998': '2151256977',
+      'z63s9VaR': 'vYgCNgJz',
       '2150887297': '2151254578',
       'mqQikDM7': 'Sr6KzShx',
       '2150884129': '2150946767',
       'K3Y6FEKX': '46Bz9tk6'
     },
     variantMapping: {
-      // Core Snooze Membership variants (USD offer 2150754998 -> AUD offer 2151212200).
-      // FLAGGED 2026-06-29: the AUD core offer 2151212200 currently has zero pricing
-      // variants. Operator task is to add monthly/quarterly/yearly in the Kajabi admin
-      // Pricing tab; fill the placeholders below with the resulting AUD variant IDs.
-      '68112': '<AUD_MONTHLY_VARIANT>',   // USD core monthly $79
-      '37262': '<AUD_QUARTERLY_VARIANT>', // USD core quarterly $197
-      '37263': '<AUD_YEARLY_VARIANT>',    // USD core yearly $657
-      // 7-Day Trial variants (USD offer 2150887297 -> AUD offer 2151254578).
+      // Core Snooze Membership variants (USD offer 2150754998 -> AUD offer 2151256977 / vYgCNgJz).
+      // RESOLVED 2026-06-30: AUD core offer created with all three tiers; placeholders filled.
+      '68112': '161174', // monthly:   USD $79  -> AUD $119
+      '37262': '161175', // quarterly: USD $197 -> AUD $299
+      '37263': '161176', // yearly:    USD $657 -> AUD $997
+      // 7-Day Trial variants (USD offer 2150887297 -> AUD offer 2151254578 / Sr6KzShx).
       '160544': '160790', // monthly:   USD $79  -> AUD $119
       '64815': '160791',  // quarterly: USD $197 -> AUD $299
       '64816': '160792'   // yearly:    USD $657 -> AUD $997
     },
-    audOfferIds: ['2150946767', '2151212200']
+    audOfferIds: ['2150946767', '2151256977', '2151254578']
   };
 
   function safeLocalStorage() {
