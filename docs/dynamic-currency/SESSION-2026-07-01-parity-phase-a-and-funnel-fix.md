@@ -1,6 +1,9 @@
-# LMCR04 + Dual-Currency — Currency-Parity + Funnel-Fix Session (2026-07-01, Session B)
+# Site-Wide Dual-Currency — Parity Phase A + LMCR04 Funnel-Fix Session (2026-07-01)
 
-**Predecessor:** [LMCR04-DEPLOY-SESSION-2026-07-01.md](./LMCR04-DEPLOY-SESSION-2026-07-01.md) (the session that took the dual-currency engine LIVE and built A1/A2 + the paid-ads page as drafts).
+> **Home:** this is the **site-wide dual-currency** work log, kept in `docs/dynamic-currency/` alongside `Currency-Toggle-Technical-Brief.md`, `DEPLOYMENT-GUIDE.md`, `IMPROVEMENT-PLAN.md`, `CAMP-SNOOZE-STANDALONE-IMPLEMENTATION.md`. The `/snooze` funnel-fix portion is LMCR04-specific and is cross-referenced from `course-free-modules-conversion/docs/`.
+
+**Predecessor (the LMCR04 deploy that took the engine LIVE):** [../../course-free-modules-conversion/docs/LMCR04-DEPLOY-SESSION-2026-07-01.md](../../course-free-modules-conversion/docs/LMCR04-DEPLOY-SESSION-2026-07-01.md).
+**Next-session kickoff:** [NEXT-SESSION-KICKOFF.md](./NEXT-SESSION-KICKOFF.md).
 **Access method:** headed `agent-browser` (Chromium, stealth args) into `app.kajabi.com` with Kade logged in, plus Kajabi MCP.
 
 > This session: published the two draft automations and the paid-ads page, fixed the broken `/snooze` funnel destination across the highest-value live surfaces + all repo source, and **built + tested Phase A of the dual-currency front-end parity build** (engine toggle enhancement). Phase A is NOT yet deployed live; Phase B not started. This is a mid-build checkpoint.
