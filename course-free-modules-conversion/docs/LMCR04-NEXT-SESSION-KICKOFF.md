@@ -1,75 +1,52 @@
-# LMCR04 Funnel — Next-Session Kickoff Prompt
+# LMCR04 + Dual-Currency — Next-Session Kickoff
 
-> **⚠ HISTORICAL (2026-06-30).** This kickoff was for the original remediation, which is now complete. The funnel was pivoted to sell the membership and built out as an offer ladder. For current state, decisions, and the remaining runbook, read **[LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md](./LMCR04-OFFER-LADDER-AND-UPSELL-ARCHITECTURE.md)** and **[LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md](./LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md)**. The IDs below are still valid except the AUD membership (now `vYgCNgJz`/2151256977; the listed `bEsVXFXG`/2151212200 was deleted).
+> **CURRENT as of 2026-07-01.** The dual-currency engine is now **LIVE**; A1/A2 automations and the paid-ads page are **built but Draft**. This kickoff covers what remains. Full record: **[LMCR04-DEPLOY-SESSION-2026-07-01.md](./LMCR04-DEPLOY-SESSION-2026-07-01.md)**. Earlier: [LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md](./LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md).
 
-Paste the block below into a new Claude Code session in the Snooze OS repo to resume this work. It assumes the audit + plan docs already exist in the repo.
+Paste the block below into a new Claude Code session in the Snooze OS repo to resume.
 
 ---
 
 ```
-We're continuing the LMCR04 "5–12 Month Sleep Schedules (Free Module)" funnel remediation.
-Read these first, they hold all context, IDs, and the work list:
-- apps/snooze-website/course-free-modules-conversion/docs/LMCR04-FUNNEL-AUDIT-2026-06-29.md
-- apps/snooze-website/course-free-modules-conversion/docs/LMCR04-FUNNEL-REMEDIATION-PLAN.md
-- apps/snooze-website/course-free-modules-conversion/docs/LMCR04-LIVE-KAJABI-CAPTURE-2026-06-29.md
-Also recall memory: kajabi-automations-email-bodies-not-in-api (Automations + email bodies
-are ONLY readable via agent-browser admin UI, not MCP/REST).
+Continuing the LMCR04 + dual-currency deploy. READ FIRST (authoritative state):
+  apps/snooze-website/course-free-modules-conversion/docs/LMCR04-DEPLOY-SESSION-2026-07-01.md
+Recall memory: dual-currency-slug-reconciliation, lmcr04-membership-pivot.
 
-STEP 0 — finish the admin capture (was blocked at Kajabi 2FA last session):
-I will do a ONE-TIME interactive login. Tell me exactly how to log into Kajabi inside
-agent-browser's OWN managed browser profile (so the session persists), and I'll complete
-the 2FA + tick "remember this device." Use the joinsnooze Cloudflare stealth flags
-(real Chrome UA + --disable-blink-features=AutomationControlled). Once I'm logged in,
-save the auth state to scratchpad (never the repo) and run the READ-ONLY capture:
-  • Sequence 2148765283 — 4 email bodies, every CTA label+URL, currency, exact quotes of
-    any "live coaching/weekly/replay/24-7/group coaching" language.
-  • Sequence 2148762811 — bodies + enrolment trigger.
-  • Automations (app.kajabi.com/admin/automations) — what tags LM_512_schedule on purchase
-    of offer 2150914364, and what enrols contacts into sequence 2148765283 and/or 2148762811
-    (the double-send deciding fact).
-  • Form FMLM01_5-12M-Schedules (2149418596) — post-submit trigger + embed.
-Append to the LIVE-KAJABI-CAPTURE doc.
+ALREADY LIVE (do not redo): dual-currency engine (Header Page Scripts merge + theme Custom CSS);
+verified AUD→vYgCNgJz on the homepage checkout CTA.
 
-THEN execute the remediation plan in order, pausing for the 3 open decisions where flagged:
-  P0-1 mislabeled course upsell (needs course-product-model decision),
-  P0-2 strip "live coaching" copy from membership thank-you (offer 2150754998, via
-       get_theme_content/update_theme_content) + sweep the live emails if Step 0 finds it,
-  P1-4 kill the duplicate sequence (retire 2148762811, keep 2148765283),
-  P1-3 AUD path (needs Sally to create AUD membership q/yr variants on bEsVXFXG first),
-  P1-5 consolidate the /login dead-end thank-you,
-  P2-6 reconnect the Notion Offer OS 512 row (row 38c33898b6c281aabde4fcc767ef5404:
-       Category→Lead Magnet, wire Campaign relation to LMCR04 38c33898b6c28136a29cc3674485839c,
-       add Products relation), check the nightly sync won't clobber it,
-  P2-7 decide form FMLM01 (wire or archive),
-  P2-8 write the ManyChat "comment 512" spec + sweep its DM copy for banned language,
-  P2-9 fix stale 6iRarwak CTAs in CONNECTED-EXPERIENCE-MVP-PLAN (both copies) → z63s9VaR,
-       tick the LMCR04 QA items confirmed live.
+BUILT AS DRAFTS (need publish decision, both in Kajabi Marketing→Automations = /admin/sites/2148291177/workflows):
+  • A1 = workflow 804108: (z63s9VaR OR vYgCNgJz purchased) → revoke LMCR04_5-12M-SCHEDULES + LMCR04_OFR_5-12M-Course-Upsell
+  • A2 = workflow 804922: LMCR04_OFR_5-12M-Course-Upsell purchased → tag lmcr04-117-buyer
+  • Paid-ads results page = landing 2152134250 / theme 2166700952, slug snooze-access (joinsnooze.com/snooze-access), full HTML in code block, DRAFT.
 
-Use the Kajabi MCP for offers/products/themes/tags/forms (it CAN write themes). Use
-agent-browser only for the admin-UI-only items. Verify each fix (re-read theme, buy-test
-as a sandbox contact where relevant). Keep the Kajabi Registry sheet + Notion Offer OS in
-sync with any offer/product changes.
+ACCESS: use the headed agent-browser (Chromium, stealth args) into app.kajabi.com; I (Kade) will log in first.
+Kajabi automation dark buttons need TRUSTED mouse events (agent-browser mouse down/up), not synthetic click.
+The browser may have other tabs — check `agent-browser tab` and switch to the Kajabi tab (tN) before driving.
+
+REMAINING WORK — confirm each with me before acting on live/customer-facing surfaces:
+  1. Publish A1 + A2 (review the revoke targets / tag first). One click each in Workflows (Draft→Published).
+  2. Publish the paid-ads page /snooze-access when the ad campaign is ready (also decide whether to build
+     the quiz + thanks funnel steps from pages/landing/snooze-access-paidads/{quiz,thanks}/).
+  3. /snooze CTA fix (P1 — funnel is broken for customers): the membership CTAs (day-2/4/6 emails,
+     bridge lesson 2194028428, thank-you page) point to joinsnooze.com/snooze which 404s for the public.
+     DECISION NEEDED: repoint them to the homepage `/` (or /offers/z63s9VaR/checkout), OR refresh+publish
+     the /snooze draft (landing 2151633113 / theme 2163331541) — it's a full membership sales page but STALE:
+     checkout var → legacy 6iRarwak (not z63s9VaR), no currency instrumentation, "24/7" banned language.
+     If repointing: MCP can edit the email themes + lesson; confirm the destination first.
+  4. Legacy 6iRarwak cleanup: homepage "Join Snooze" button still → /resource_redirect/offers/6iRarwak.
+     Sweep 6iRarwak (and any dRN7QR7k / bEsVXFXG) → z63s9VaR across live surfaces + repo.
+  5. (Optional) AUD 1-month-free sequence: locate the live flow (not found among 36 active sequences);
+     repo emails-aud/ already point to vYgCNgJz. Repaste only if a live flow still links bEsVXFXG.
+
+Verify after any CTA change: load the surface logged-out, confirm the link resolves 200 (not the /snooze 404),
+and that AU visitors reach vYgCNgJz.
 ```
 
 ---
 
-## Quick reference (key IDs)
-
-| Role | ID | Slug | Note |
-|---|---|---|---|
-| Site | 2148291177 | — | joinsnooze.com |
-| Free offer | 2150914364 | `2x92uaLF` | $0 entry |
-| Free-module course product | 2149308933 | — | 342 members; holds full curriculum behind paywall wrapper 2159220235 (draft) |
-| Course upsell offer (MISLABELED) | 2150914639 | `Ktxk9mvE` | $117; grants 2149308933 not the canonical course |
-| Canonical course offer/product | 2150844344 / 2149258846 | — | the "real" standalone 5-12 course |
-| Membership USD | 2150754998 | `z63s9VaR` | live-coaching copy to strip |
-| Membership AUD | 2151256977 | `vYgCNgJz` | complete A$119/A$299/A$997 (vars 161174/161175/161176); replaced deleted `bEsVXFXG`/2151212200 on 2026-06-30 |
-| Live sequence (keep) | 2148765283 | — | EMLM04_5-12m Schedule LM Flow |
-| Duplicate sequence (retire) | 2148762811 | — | EMLM04_Course-Sample-Conversion |
-| Tag | 2149991548 | — | LM_512_schedule (341 contacts) |
-| Thank-you page | 2151810974 | `/thankyou/2x92uaLF` | — |
-| In-course bridge lesson | 2194028428 | — | dual CTA |
-| Orphaned form | 2149418596 | — | FMLM01_5-12M-Schedules, 0 submissions |
-| Notion 512 offer row | 38c33898b6c281aabde4fcc767ef5404 | — | reconnect relations |
-| Notion LMCR04 campaign row | 38c33898b6c28136a29cc3674485839c | — | — |
-| Registry sheet | 1-pDIlV7CFQ_RlI0e9uFBAwdZwZaaQaLKaKpUhZNmzjg | — | Google Sheet |
+## Canonical IDs (verified live 2026-06-30/07-01)
+- Membership: `z63s9VaR` (USD 2150754998) ↔ `vYgCNgJz` (AUD 2151256977; A$119/A$299/A$997 vars 161174/161175/161176)
+- 7-day trial: `mqQikDM7` (USD) ↔ `Sr6KzShx` (AUD)
+- Free-module course product: **2149308933** (granted by free `LMCR04_5-12M-SCHEDULES`/2x92uaLF + $117 `LMCR04_OFR_5-12M-Course-Upsell`/Ktxk9mvE)
+- Live website theme: **2156873377**; homepage is the live membership page (`/`)
+- `bEsVXFXG`/2151212200 = DELETED (404); `6iRarwak` = legacy draft offer to retire

@@ -1,5 +1,7 @@
 # Snooze Access - Cold-Ads Funnel (3 pages)
 
+> **DEPLOY STATUS (2026-07-01):** the **results/sales page (`index.html`) is live-in-Kajabi as a DRAFT** — landing page id `2152134250`, theme `2166700952`, slug **`snooze-access`** (`joinsnooze.com/snooze-access`, NOT the suggested `snooze-access-from-our-ads`). Full HTML is in an Encore `code` block; `{{privacy_url}}`→`/privacy-policy` at paste time; `SA_CHECKOUT.aud.live=true` (AUD→`vYgCNgJz`). **Publish in the Kajabi UI when the ad campaign is ready.** The `quiz/` and `thanks/` funnel steps are NOT yet built in Kajabi. Record: `course-free-modules-conversion/docs/LMCR04-DEPLOY-SESSION-2026-07-01.md`.
+
 Cold-traffic paid-ads funnel selling Snooze Access, the baby-sleep membership by Sally Woods (The Sleep Concierge). AU market, AUD default.
 
 **Source pattern:** `apps/snooze-website/kajabi-deployment/pages/landing/day-pass-paidads/`. The quiz page mirrors the Day Pass `hydrateUtms()`, `detectCurrency()`, honeypot, hidden UTM fields, and the eligibility-check-then-webhook submit flow verbatim where sensible.
