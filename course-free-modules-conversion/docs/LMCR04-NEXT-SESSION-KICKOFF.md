@@ -23,6 +23,26 @@ ACCESS: use the headed agent-browser (Chromium, stealth args) into app.kajabi.co
 Kajabi automation dark buttons need TRUSTED mouse events (agent-browser mouse down/up), not synthetic click.
 The browser may have other tabs — check `agent-browser tab` and switch to the Kajabi tab (tN) before driving.
 
+PRIMARY OBJECTIVE — dual-currency FRONT-END parity (not yet done; the JS engine is live but the
+customer-facing price-switching UX is missing on the membership + main offers):
+  Bring the Snooze Membership sales surface AND the other main offers (7-day trial, 5-12 & 3-4 courses,
+  newborn/nap guides, toddler toolkit, consults) to the SAME dual-currency experience Camp Snooze already has:
+  location-based default (AU→AUD) + a VISIBLE user toggle + prices that switch (A$ vs $) live.
+  Reference (working pilot): apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/
+  (CURRENCY-TOGGLE.md, camp-snooze-v2-luxury.js, camp-snooze-landing-page-blocks.html).
+  The site-wide engine (currency-toggle.js, already LIVE in Header Page Scripts) already: updates .dynamic-price
+  from data-usd/data-aud, rewrites .dynamic-cta/.pricing-card/[data-checkout] links, and injects a toggle
+  into nav (.sn-actions) + mobile menu. GAP per page = add data-usd/data-aud on every price, class CTAs as
+  .dynamic-cta, and place the toggle where Camp does (nav + INLINE in pricing section + sticky footer — the
+  engine only does nav/mobile today, so either extend injectToggles() or add inline toggle mounts per page).
+  Many repo pages already carry data-usd/data-aud (age-pages, product-pages, consultations, store, cold-traffic,
+  founding-member, value-comparison) — AUDIT which are deployed + current, then fill gaps. DEPENDENCY: the
+  tier-2 catalog (courses/guides/consults) needs its AUD twin offers created in Kajabi admin first (membership,
+  7-day trial, Camp already have AUD twins; tier-2 pending per currency-toggle.js tier2PendingSlugs).
+  Suggested sequence: (a) inventory live pages + which have price instrumentation/toggle; (b) decide toggle
+  placement standard (match Camp); (c) build membership surface first (see /snooze decision in item 4), then
+  each main-offer page; (d) create missing tier-2 AUD offers; (e) verify each live logged-out for AU + US.
+
 REMAINING WORK — confirm each with me before acting on live/customer-facing surfaces:
   1. Publish A1 + A2 (review the revoke targets / tag first). One click each in Workflows (Draft→Published).
   2. Publish the paid-ads page /snooze-access when the ad campaign is ready (also decide whether to build
