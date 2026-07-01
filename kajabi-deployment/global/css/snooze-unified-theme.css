@@ -11455,3 +11455,277 @@
   #snooze-academy-page .snooze-section { padding: 56px 0; }
   #snooze-academy-page .btn { width: 100%; }
 }
+
+/* ============================================
+   GLOSSARY PAGE - SYSTEM INITIALIZATION
+   (Connects Sleep & Parenting Glossary to Home V2 Design System)
+   Page wrapper ID: #glossary-page
+   Added: June 2026
+   ============================================ */
+
+/* 1. Initialize Variables & Base Typography */
+#glossary-page {
+  /* Copying variables from Home Page V2 scope */
+  --c-coral: #F43357;
+  --c-coral-hover: #D62646;
+  --c-navy: #1F293B;
+  --c-cream: #FAF7F4;
+  --c-beige: #F2EDEA;
+  --c-white: #FFFFFF;
+  --c-sage: #7C8A98;
+  --c-yellow: #FFC107;
+  --c-text: #161E2A;
+  --c-muted: #64748B;
+
+  --font-body: 'Poppins', sans-serif;
+  --font-head: 'Playfair Display', serif;
+
+  --radius: 20px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
+  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);
+
+  /* Base Settings */
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--c-text);
+  line-height: 1.6;
+  background: var(--c-cream);
+  isolation: isolate;
+}
+
+#glossary-page *,
+#glossary-page *::before,
+#glossary-page *::after { box-sizing: border-box; }
+#glossary-page img { max-width: 100%; height: auto; display: block; }
+#glossary-page a { text-decoration: none; transition: 0.3s ease; }
+
+/* 2. Headings */
+#glossary-page h1, #glossary-page h2, #glossary-page h3, #glossary-page h4 {
+  font-family: var(--font-head);
+  color: var(--c-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+#glossary-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+#glossary-page h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+#glossary-page h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+
+/* 3. Layout Utilities */
+#glossary-page .snooze-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+#glossary-page .snooze-section { padding: 72px 0; }
+#glossary-page .bg-white { background: var(--c-white); }
+#glossary-page .bg-cream { background: var(--c-cream); }
+#glossary-page .text-center { text-align: center; }
+#glossary-page .max-800 { max-width: 800px; margin: 0 auto; }
+
+/* 4. Buttons */
+#glossary-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: var(--c-coral);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  min-height: 48px;
+  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);
+  letter-spacing: 0.1px;
+}
+#glossary-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }
+#glossary-page .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(244, 51, 87, 0.45);
+  color: var(--c-coral);
+  box-shadow: none;
+}
+#glossary-page .btn-outline:hover {
+  background: rgba(244, 51, 87, 0.08);
+  border-color: rgba(244, 51, 87, 0.7);
+  color: var(--c-coral);
+}
+
+/* Full-bleed fix */
+#glossary-page .snooze-section,
+#glossary-page .snooze-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* ============================================
+   GLOSSARY PAGE - PAGE-SPECIFIC STYLES
+   ============================================ */
+
+/* Hero */
+#glossary-page .gl-hero {
+  background: linear-gradient(180deg, var(--c-white) 0%, var(--c-cream) 100%);
+  text-align: center;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+#glossary-page .gl-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  margin-bottom: 18px;
+}
+#glossary-page .gl-breadcrumb a { color: var(--c-coral); }
+#glossary-page .gl-breadcrumb span[aria-hidden] { margin: 0 6px; color: var(--c-sage); }
+#glossary-page .gl-intro {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  font-size: 1.1rem;
+  color: var(--c-muted);
+}
+
+/* On-page search */
+#glossary-page .gl-search { max-width: 520px; margin: 0 auto 24px; }
+#glossary-page .gl-search-input {
+  width: 100%;
+  padding: 14px 20px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-text);
+  background: var(--c-white);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 50px;
+  box-shadow: var(--shadow-soft);
+}
+#glossary-page .gl-search-input:focus {
+  outline: none;
+  border-color: var(--c-coral);
+  box-shadow: var(--ring);
+}
+#glossary-page .gl-search-empty {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--c-muted);
+}
+
+/* Category jump nav */
+#glossary-page .gl-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+#glossary-page .gl-nav-pill {
+  display: inline-block;
+  padding: 9px 18px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--c-navy);
+  background: var(--c-white);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 50px;
+  box-shadow: var(--shadow-soft);
+}
+#glossary-page .gl-nav-pill:hover {
+  border-color: var(--c-coral);
+  color: var(--c-coral);
+  transform: translateY(-1px);
+}
+
+/* Body wrapper */
+#glossary-page .gl-body {
+  max-width: 820px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/* Category block */
+#glossary-page .gl-cat {
+  padding: 40px 0 8px;
+  scroll-margin-top: 90px;
+}
+#glossary-page .gl-cat-head { margin-bottom: 24px; }
+#glossary-page .gl-cat-title {
+  margin-bottom: 6px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(244, 51, 87, 0.18);
+}
+#glossary-page .gl-cat-blurb { color: var(--c-muted); margin: 0; }
+
+/* Term list + entries */
+#glossary-page .gl-term-list { display: flex; flex-direction: column; gap: 18px; }
+#glossary-page .gl-term {
+  background: var(--c-white);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-left: 4px solid var(--c-coral);
+  border-radius: 14px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow-soft);
+  scroll-margin-top: 90px;
+}
+#glossary-page .gl-term-title { margin-bottom: 10px; }
+#glossary-page .gl-term-def {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--c-text);
+  margin-bottom: 12px;
+}
+#glossary-page .gl-term-context {
+  color: var(--c-muted);
+  margin-bottom: 18px;
+}
+#glossary-page .gl-term-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+#glossary-page .gl-related {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+#glossary-page .gl-related-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-sage);
+}
+#glossary-page .gl-chip {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--c-coral-hover);
+  background: rgba(244, 51, 87, 0.08);
+  border-radius: 50px;
+}
+#glossary-page .gl-chip:hover { background: rgba(244, 51, 87, 0.16); }
+#glossary-page .gl-term-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-coral);
+  white-space: nowrap;
+}
+#glossary-page .gl-term-link i { font-size: 0.8rem; margin-left: 4px; }
+#glossary-page .gl-term-link:hover { color: var(--c-coral-hover); }
+
+/* CTA */
+#glossary-page .gl-cta { background: var(--c-beige); }
+#glossary-page .gl-cta p { color: var(--c-muted); margin-bottom: 28px; }
+#glossary-page .gl-cta-slot { display: flex; justify-content: center; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  #glossary-page .snooze-section { padding: 48px 0; }
+  #glossary-page .gl-term { padding: 22px 20px; }
+  #glossary-page .gl-term-foot { flex-direction: column; align-items: flex-start; }
+  #glossary-page .btn { width: 100%; }
+}

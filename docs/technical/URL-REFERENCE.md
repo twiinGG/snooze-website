@@ -43,6 +43,12 @@
 - **Type:** Public Library URL
 - **Description:** Public-facing library page URL (available via website)
 
+- **URL:** `https://joinsnooze.com/sleep-glossary`
+- **Path:** `/sleep-glossary`
+- **Status:** ⚠️ Missing (built in repo, not yet created in Kajabi)
+- **Type:** Website Page (SEO/AEO glossary)
+- **Description:** Sleep & Parenting Glossary. Wrapper `#glossary-page`. Source `apps/snooze-website/glossary/terms.json`, generated to `kajabi-deployment/pages/website/glossary/sleep-glossary.html`. Carries DefinedTermSet + FAQPage JSON-LD.
+
 ### Account & Access
 - **URL:** `https://joinsnooze.com/login`
 - **Path:** `/login`
