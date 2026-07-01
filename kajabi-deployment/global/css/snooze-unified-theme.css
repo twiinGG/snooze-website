@@ -11729,3 +11729,41 @@
   #glossary-page .gl-term-foot { flex-direction: column; align-items: flex-start; }
   #glossary-page .btn { width: 100%; }
 }
+
+/* ============================================
+   REVIEWS PAGE STYLES (#reviews-page)
+   Page wrapper ID: #reviews-page
+   Added: June 2026 (Wave 3 social proof)
+   Reuses the global .reviews-grid / .review-card / .review-quote pattern; adds the
+   hero, star summary, filter bar, service sections and tag pills scoped to this page.
+   Uses global design tokens (--color-*, --spacing-*, --font-*), so it matches the
+   rest of the site. Page HTML generated from the Member Feedback and Wins corpus.
+   ============================================ */
+#reviews-page { font-family: var(--font-body); color: var(--color-dark); background: var(--color-white); }
+#reviews-page .reviews-wrap { max-width: 1200px; margin: 0 auto; padding: var(--spacing-2xl) var(--spacing-lg); }
+#reviews-page .reviews-hero { text-align: center; margin-bottom: var(--spacing-lg); }
+#reviews-page .reviews-hero h1 { font-family: var(--font-heading); font-size: 2.6rem; line-height: 1.1; margin: 0 0 var(--spacing-sm); color: var(--color-navy); }
+#reviews-page .reviews-lede { font-size: 1.125rem; color: var(--color-sage); max-width: 720px; margin: 0 auto; line-height: 1.6; }
+#reviews-page .reviews-summary { display: flex; align-items: center; justify-content: center; gap: 12px; margin: var(--spacing-md) 0 0; flex-wrap: wrap; }
+#reviews-page .reviews-summary .rs-stars { color: var(--color-yellow); font-size: 1.5rem; letter-spacing: 2px; }
+#reviews-page .reviews-summary .rs-score { font-size: 1.6rem; font-weight: 700; color: var(--color-navy); }
+#reviews-page .reviews-summary .rs-count { color: var(--color-sage); font-size: 0.95rem; }
+#reviews-page .reviews-filterbar { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); justify-content: center; align-items: center; margin: var(--spacing-lg) 0; padding: var(--spacing-md); background: var(--color-cream); border-radius: var(--radius-md); }
+#reviews-page .reviews-filterbar select, #reviews-page .reviews-filterbar input { font-family: var(--font-body); font-size: 0.95rem; padding: 10px 14px; border: 1px solid var(--color-beige); border-radius: var(--radius-full); background: var(--color-white); color: var(--color-dark); }
+#reviews-page .reviews-filterbar input { min-width: 220px; }
+#reviews-page .reviews-clear { border: none; background: var(--color-navy); color: var(--color-white); border-radius: var(--radius-full); padding: 10px 18px; font-weight: 600; cursor: pointer; }
+#reviews-page .reviews-resultcount { text-align: center; color: var(--color-sage); font-size: 0.9rem; margin-bottom: var(--spacing-lg); }
+#reviews-page .reviews-service-section { margin: var(--spacing-xl) 0; }
+#reviews-page .reviews-service-section > h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-navy); text-align: center; margin: 0 0 4px; }
+#reviews-page .reviews-service-section > .rss-blurb { text-align: center; color: var(--color-sage); margin: 0 0 var(--spacing-lg); }
+#reviews-page .reviews-grid { gap: var(--spacing-lg); align-items: start; }
+#reviews-page .review-card { background: var(--color-cream); border: 1px solid var(--color-beige); border-radius: var(--radius-md); padding: var(--spacing-lg); box-shadow: var(--shadow-sm); cursor: default; }
+#reviews-page .review-quote { font-size: 0.95rem; line-height: 1.6; }
+#reviews-page .review-meta { text-align: center; color: var(--color-sage); font-size: 0.8rem; margin-top: var(--spacing-xs); }
+#reviews-page .review-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: var(--spacing-sm); }
+#reviews-page .review-tag { font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: var(--radius-full); background: var(--color-coral-tint); color: var(--color-coral); }
+#reviews-page .review-card[hidden], #reviews-page .reviews-service-section[hidden] { display: none; }
+@media (max-width: 768px) {
+  #reviews-page .reviews-hero h1 { font-size: 2rem; }
+  #reviews-page .reviews-filterbar input { min-width: 0; flex: 1 1 100%; }
+}

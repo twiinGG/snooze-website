@@ -1,0 +1,991 @@
+[
+  {
+    "url": "https://www.joinsnooze.com/",
+    "path": "/",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "homepage"
+  },
+  {
+    "url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+    "path": "/3-4-month-baby-sleep-course",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions",
+    "path": "/3-4-month-baby-sleep-course-terms-and-conditions",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "legal"
+  },
+  {
+    "url": "https://www.joinsnooze.com/3-4-month-baby-sleep-help",
+    "path": "/3-4-month-baby-sleep-help",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+    "path": "/3-4-month-masterclass-replay",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/4-month-sleep-regression-survival-guide",
+    "path": "/4-month-sleep-regression-survival-guide",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+    "path": "/5-12-month-baby-sleep-course",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/5-12-month-baby-sleep-help",
+    "path": "/5-12-month-baby-sleep-help",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/about",
+    "path": "/about",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/about-sally",
+    "path": "/about-sally",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/account",
+    "path": "/account",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "account"
+  },
+  {
+    "url": "https://www.joinsnooze.com/author/sally-woods",
+    "path": "/author/sally-woods",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/baby-sleep-glossary",
+    "path": "/baby-sleep-glossary",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog",
+    "path": "/blog",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_index"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/4-month-regression-or-progression",
+    "path": "/blog/4-month-regression-or-progression",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling",
+    "path": "/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/all-about-the-8-10-month-sleep-regression",
+    "path": "/blog/all-about-the-8-10-month-sleep-regression",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/baby-catnaps-tips-guide",
+    "path": "/blog/baby-catnaps-tips-guide",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules",
+    "path": "/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you",
+    "path": "/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/create-meaningful-morning-rituals-for-baby",
+    "path": "/blog/create-meaningful-morning-rituals-for-baby",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/cubo-ai-smart-baby-monitor-review-with-discount",
+    "path": "/blog/cubo-ai-smart-baby-monitor-review-with-discount",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/developing-positive-cot-association-with-your-baby",
+    "path": "/blog/developing-positive-cot-association-with-your-baby",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby",
+    "path": "/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/dressing-baby-for-bedtime",
+    "path": "/blog/dressing-baby-for-bedtime",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/glow-dreaming-white-noise-review",
+    "path": "/blog/glow-dreaming-white-noise-review",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/guide-to-self-settling-sleep-cycles",
+    "path": "/blog/guide-to-self-settling-sleep-cycles",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/how-to-do-skin-to-skin-without-breastfeeding",
+    "path": "/blog/how-to-do-skin-to-skin-without-breastfeeding",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits",
+    "path": "/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/how-to-manage-your-babys-reflux-and-sleep",
+    "path": "/blog/how-to-manage-your-babys-reflux-and-sleep",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/my-honest-snoo-experience-and-review",
+    "path": "/blog/my-honest-snoo-experience-and-review",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/my-snoo-review",
+    "path": "/blog/my-snoo-review",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/mystery-of-missing-third-nap-early-rising",
+    "path": "/blog/mystery-of-missing-third-nap-early-rising",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/navigating-childcare-and-your-childs-sleep-routine",
+    "path": "/blog/navigating-childcare-and-your-childs-sleep-routine",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/navigating-split-nights-a-guide-for-parents",
+    "path": "/blog/navigating-split-nights-a-guide-for-parents",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/newborn-babys-and-naps",
+    "path": "/blog/newborn-babys-and-naps",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester",
+    "path": "/blog/newborn-sleep-and-the-fourth-trimester",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/shifting-your-babys-bedtime-for-daylight-savings",
+    "path": "/blog/shifting-your-babys-bedtime-for-daylight-savings",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/should-we-discourage-babys-thumb-and-finger-sucking",
+    "path": "/blog/should-we-discourage-babys-thumb-and-finger-sucking",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/sick-babies-and-sleep",
+    "path": "/blog/sick-babies-and-sleep",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/stop-4-month-babies-sleep-regression-fear",
+    "path": "/blog/stop-4-month-babies-sleep-regression-fear",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/stop-swaddle-time-for-your-baby",
+    "path": "/blog/stop-swaddle-time-for-your-baby",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/supporting-parents-of-rainbow-babies",
+    "path": "/blog/supporting-parents-of-rainbow-babies",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/the-power-of-calm-but-awake-for-babies",
+    "path": "/blog/the-power-of-calm-but-awake-for-babies",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/tips-for-managing-baby-early-wake-ups",
+    "path": "/blog/tips-for-managing-baby-early-wake-ups",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+    "path": "/blog/transitioning-your-baby-from-2-naps-to-1",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/what-are-assisted-sleep-associations",
+    "path": "/blog/what-are-assisted-sleep-associations",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/when-to-lower-the-cot-mattress",
+    "path": "/blog/when-to-lower-the-cot-mattress",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge",
+    "path": "/blog/why-am-i-the-sleep-concierge",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it",
+    "path": "/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "blog_post"
+  },
+  {
+    "url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+    "path": "/camp-snooze-sleep-coaching",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/cdn-cgi/l/email-protection",
+    "path": "/cdn-cgi/l/email-protection",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/contact",
+    "path": "/contact",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/downloads/baby-sleep-guide-5-to-12-months",
+    "path": "/downloads/baby-sleep-guide-5-to-12-months",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "download_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/downloads/catnapping-guide",
+    "path": "/downloads/catnapping-guide",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "download_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/downloads/newborn-sleep-guide-by-the-sleep-concierge",
+    "path": "/downloads/newborn-sleep-guide-by-the-sleep-concierge",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "download_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies",
+    "path": "/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "download_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+    "path": "/free-4-month-regression-masterclass-signup",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/get-great-baby-sleep",
+    "path": "/get-great-baby-sleep",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/links",
+    "path": "/links",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/login",
+    "path": "/login",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "account"
+  },
+  {
+    "url": "https://www.joinsnooze.com/newborn-baby-sleep-help",
+    "path": "/newborn-baby-sleep-help",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/newborn-sleep-guide",
+    "path": "/newborn-sleep-guide",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+    "path": "/newsletters/the-snooze-news",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/4HQjFJGC/checkout",
+    "path": "/offers/4HQjFJGC/checkout",
+    "sources": [
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/4zHPSRCs",
+    "path": "/offers/4zHPSRCs",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/5xL3NaRf/checkout",
+    "path": "/offers/5xL3NaRf/checkout",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/6iRarwak/checkout",
+    "path": "/offers/6iRarwak/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/9DFJSwVD/checkout",
+    "path": "/offers/9DFJSwVD/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/FktmJAvJ/checkout",
+    "path": "/offers/FktmJAvJ/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/K3Y6FEKX/checkout",
+    "path": "/offers/K3Y6FEKX/checkout",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/W2PyqL2X/checkout",
+    "path": "/offers/W2PyqL2X/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/igbTdRbk/checkout",
+    "path": "/offers/igbTdRbk/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/jRxWAnVo/checkout",
+    "path": "/offers/jRxWAnVo/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/muRW6ug5",
+    "path": "/offers/muRW6ug5",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/muRW6ug5/checkout",
+    "path": "/offers/muRW6ug5/checkout",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/mwiSia6A/checkout",
+    "path": "/offers/mwiSia6A/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/omMcVgAi/checkout",
+    "path": "/offers/omMcVgAi/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/uxWnEfFg/checkout",
+    "path": "/offers/uxWnEfFg/checkout",
+    "sources": [
+      "url-reference",
+      "registry"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/z63s9VaR",
+    "path": "/offers/z63s9VaR",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/offers/zAybiDqh",
+    "path": "/offers/zAybiDqh",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "checkout"
+  },
+  {
+    "url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+    "path": "/one-on-one-sleep-consultations",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/password/new",
+    "path": "/password/new",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "account"
+  },
+  {
+    "url": "https://www.joinsnooze.com/privacy",
+    "path": "/privacy",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "legal"
+  },
+  {
+    "url": "https://www.joinsnooze.com/privacy-policy",
+    "path": "/privacy-policy",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "legal"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge",
+    "path": "/products/3-4-month-baby-sleep-course-by-the-sleep-concierge",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/5-12-month-sleep-training-course",
+    "path": "/products/5-12-month-sleep-training-course",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/communities/v2/snooze",
+    "path": "/products/communities/v2/snooze",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "community"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/communities/v2/snooze/library",
+    "path": "/products/communities/v2/snooze/library",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "community"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0",
+    "path": "/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "community"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/newborn-sleep-guide",
+    "path": "/products/newborn-sleep-guide",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/settling-techniques-module-from-snooze-by-the-sleep-concierge",
+    "path": "/products/settling-techniques-module-from-snooze-by-the-sleep-concierge",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/the-snooze-method",
+    "path": "/products/the-snooze-method",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/the-snooze-method-5-12-month-sleep",
+    "path": "/products/the-snooze-method-5-12-month-sleep",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/products/toddler-toolkit",
+    "path": "/products/toddler-toolkit",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": true,
+    "expected_type": "product_access"
+  },
+  {
+    "url": "https://www.joinsnooze.com/recommended-products",
+    "path": "/recommended-products",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/sleep-glossary",
+    "path": "/sleep-glossary",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/snooze",
+    "path": "/snooze",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/snooze-library",
+    "path": "/snooze-library",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/snooze-method",
+    "path": "/snooze-method",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+    "path": "/snooze-social-terms-and-conditions",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "legal"
+  },
+  {
+    "url": "https://www.joinsnooze.com/snooze-village",
+    "path": "/snooze-village",
+    "sources": [
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/store",
+    "path": "/store",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/terms-conditions",
+    "path": "/terms-conditions",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "legal"
+  },
+  {
+    "url": "https://www.joinsnooze.com/thankyou/lmcr08-access",
+    "path": "/thankyou/lmcr08-access",
+    "sources": [
+      "sitemap"
+    ],
+    "requires_auth": false,
+    "expected_type": "page"
+  },
+  {
+    "url": "https://www.joinsnooze.com/toddler-sleep-help",
+    "path": "/toddler-sleep-help",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  },
+  {
+    "url": "https://www.joinsnooze.com/toddler-toolkit",
+    "path": "/toddler-toolkit",
+    "sources": [
+      "sitemap",
+      "url-reference"
+    ],
+    "requires_auth": false,
+    "expected_type": "landing"
+  }
+]

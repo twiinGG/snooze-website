@@ -1,0 +1,276 @@
+{
+  "url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+  "path": "/one-on-one-sleep-consultations",
+  "sources": [
+    "sitemap",
+    "url-reference"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "one_on_one_sleep_consultations",
+  "crawled_at": "2026-06-09T00:42:28.847927+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+    "title": "1:1 Sleep Help with Sally | Expert Sleep Support for Babies & Toddlers",
+    "lang": "en",
+    "meta_description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+    "canonical": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+      "og:title": "1:1 Sleep Help with Sally | Expert Sleep Support for Babies & Toddlers",
+      "og:description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/6b7e8b7-dfae-84ae-646c-4f722f1fcca_d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "1:1 Sleep Help with Sally | Expert Sleep Support for Babies & Toddlers",
+      "twitter:description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/6b7e8b7-dfae-84ae-646c-4f722f1fcca_d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+      "twitter:card": "summary_large_image",
+      "og:title": "1:1 Sleep Help with Sally | Expert Sleep Support for Babies & Toddlers",
+      "twitter:title": "1:1 Sleep Help with Sally | Expert Sleep Support for Babies & Toddlers",
+      "og:description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+      "twitter:description": "Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/6b7e8b7-dfae-84ae-646c-4f722f1fcca_d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/6b7e8b7-dfae-84ae-646c-4f722f1fcca_d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Personalised Sleep Consultation Packages"
+    ],
+    "h2s": [
+      "Is Your Baby Struggling with Sleep?",
+      "Choose Your Preferred Consultation",
+      "What to Expect",
+      "My Qualifications",
+      "What Parents Are Saying",
+      "Unlock Member Pricing",
+      "What if I'm Having Problems That Have Nothing to Do with Sleep?",
+      "Frequently Asked Questions",
+      "Ready to Transform Your Baby's Sleep?"
+    ],
+    "h3s": [
+      "What You'll Get",
+      "How It Works",
+      "Who This Is For",
+      "1:1 Signature Sleep Consultation",
+      "45-Minute Follow-Up Consultation",
+      "2-Week Baby Sleep Transformation",
+      "Clinical Background",
+      "My Approach",
+      "What I Can Help With",
+      "Standard Pricing",
+      "Member Pricing",
+      "Paediatrician",
+      "Lactation Consultant",
+      "Nutritionist",
+      "Women's Health Physio",
+      "What age range do your sleep consultations cover?",
+      "What is included in the 60-minute personal sleep consultation?",
+      "Can I book the 45-minute follow-up consultation without an initial consultation?",
+      "Do you offer in-person consultations?",
+      "What if I need help beyond sleep-related issues?",
+      "How do I book a consultation?",
+      "What if my baby doesn't respond to the sleep plan?",
+      "Do Snooze Members get a discount on consultations?"
+    ],
+    "word_count": 1577,
+    "links_total": 28,
+    "links_internal": 22,
+    "links_external": 6,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations#consult-packages",
+        "text": "View Consultation Packages",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/offers/4zHPSRCs/checkout",
+        "text": "Book Your Consultation",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/offers/z63s9VaR",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/offers/jRxWAnVo/checkout",
+        "text": "Book Follow-Up",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/offers/mwiSia6A/checkout",
+        "text": "Book Your 2-Week Package",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/products/communities/v2/snooze",
+        "text": "Tell Me About Your Village",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "TikTok",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/thesleepconcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/snooze-library",
+        "text": "Library Access",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/products/communities/v2/snooze",
+        "text": "Snooze Village",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/account",
+        "text": "Your Account",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/terms-conditions",
+        "text": "Terms of Service",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/privacy-policy",
+        "text": "Privacy Policy",
+        "internal": true
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 2,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 506581,
+  "screenshot": "screenshots/one_on_one_sleep_consultations.png",
+  "vitals": {
+    "TTFB": "342.1ms",
+    "LCP": "400ms",
+    "CLS": "0",
+    "FCP": "400ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

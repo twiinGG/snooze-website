@@ -73,7 +73,7 @@ Home
 ### 5. About Sally (`/about-sally`)
 **Purpose:** Build credibility and trust  
 **Content:**
-- Background (pediatric nurse, certified sleep consultant)
+- Background (former paediatric nurse, certified sleep consultant)
 - Philosophy and approach
 - Why she created Snooze
 - Credentials and certifications

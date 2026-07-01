@@ -123,7 +123,7 @@ COURSE INFORMATION:
 - Total Modules: [X]
 - Total Lessons: [Y]
 - Has Downloadable Resources: Yes/No
-- Access: Lifetime
+- Access: On-demand
 
 OUTPUT REQUIREMENTS:
 Generate the following elements:
@@ -141,7 +141,7 @@ Generate the following elements:
 3. **Hero Stats:**
    - Format: Short phrases with bold numbers
    - Include: Module count, lesson count, resource type, access type
-   - Example: "11 modules • 20+ lessons • Downloadable resources • Lifetime access"
+   - Example: "11 modules • 20+ lessons • Downloadable resources • On-demand access"
 
 OUTPUT FORMAT:
 Title: [Title]
@@ -202,7 +202,7 @@ OUTPUT REQUIREMENTS:
 
 4. **Time Investment (5 bullet points):**
    - Standard format across all courses
-   - Include: Self-paced learning, Estimated hours, Flexible completion, Reference back anytime, Lifetime access
+   - Include: Self-paced learning, Estimated hours, Flexible completion, Reference back anytime, On-demand access
 
 Generate all four sections for [Course Name].
 ```

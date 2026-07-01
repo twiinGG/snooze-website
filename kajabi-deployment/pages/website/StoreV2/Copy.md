@@ -120,7 +120,7 @@ This consistency massively helps SEO and AI comprehension.
 Choose the level of baby sleep support that fits your family, from self-paced guidance to hands-on coaching.
 
 Optional micro-line under this:
-Evidence-based, practical support led by a qualified paediatric nurse and sleep consultant.
+Evidence-based, practical support led by a former paediatric nurse and sleep consultant.
 
 ---
 

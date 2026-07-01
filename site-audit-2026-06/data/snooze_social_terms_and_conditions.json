@@ -1,0 +1,140 @@
+{
+  "url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+  "path": "/snooze-social-terms-and-conditions",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "legal",
+  "slug": "snooze_social_terms_and_conditions",
+  "crawled_at": "2026-06-09T00:43:28.693519+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+    "title": "Snooze Social Membership Terms and Conditions | The Sleep Concierge",
+    "lang": "en",
+    "meta_description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+    "canonical": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+      "og:title": "Snooze Social Membership Terms and Conditions | The Sleep Concierge",
+      "og:description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/52765d-5601-a-c8e6-dd3c45e046_fac415cd-9911-4dee-9b8f-60b83fa7b9f6.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Snooze Social Membership Terms and Conditions | The Sleep Concierge",
+      "twitter:description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/52765d-5601-a-c8e6-dd3c45e046_fac415cd-9911-4dee-9b8f-60b83fa7b9f6.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+      "twitter:card": "summary_large_image",
+      "og:title": "Snooze Social Membership Terms and Conditions | The Sleep Concierge",
+      "twitter:title": "Snooze Social Membership Terms and Conditions | The Sleep Concierge",
+      "og:description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+      "twitter:description": "Read the terms and conditions for joining the Snooze Social membership by The Sleep Concierge. Learn about the services, payment, refunds, intellectual property, and limitation of liability. By signing up, you agree to these terms.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/52765d-5601-a-c8e6-dd3c45e046_fac415cd-9911-4dee-9b8f-60b83fa7b9f6.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/52765d-5601-a-c8e6-dd3c45e046_fac415cd-9911-4dee-9b8f-60b83fa7b9f6.png",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "SNOOZE SOCIAL MEMBERSHIP TERMS AND CONDITIONS FOR THE SLEEP CONCIERGE"
+    ],
+    "h2s": [
+      "Acceptance of these Terms"
+    ],
+    "h3s": [],
+    "word_count": 624,
+    "links_total": 6,
+    "links_internal": 1,
+    "links_external": 5,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "mailto:sally@sleepconcierge.com.au",
+        "text": "sally@sleepconcierge.com.au.",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.pinterest.com.au/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157399806/settings_images/fc18dc-d38-eddb-4c55-b0e1d0adf7e6_576baf07-7c43-4e9d-a579-9699f96659ba.png",
+        "alt": "Footer Logo",
+        "w": 120,
+        "h": 120,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2157399806/assets/placeholder.png?1764971170654761",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/snooze-social-terms-and-conditions",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 93993,
+  "screenshot": "screenshots/snooze_social_terms_and_conditions.png",
+  "vitals": {
+    "TTFB": "336ms",
+    "LCP": "376ms",
+    "CLS": "0",
+    "FCP": "376ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

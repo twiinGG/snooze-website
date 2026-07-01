@@ -1,0 +1,269 @@
+{
+  "url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+  "path": "/blog/transitioning-your-baby-from-2-naps-to-1",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "blog_post",
+  "slug": "blog_transitioning_your_baby_from_2_naps_to_1",
+  "crawled_at": "2026-06-09T00:41:30.167641+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+    "title": "Making the Switch from Two Naps to One for Your Baby's Health",
+    "lang": "en",
+    "meta_description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+    "canonical": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+      "og:title": "Making the Switch from Two Naps to One for Your Baby's Health",
+      "og:description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/2b4ddb-c605-d2f-ad8-b3acf2f68b52_2-1-nap-transition.webp"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Making the Switch from Two Naps to One for Your Baby's Health",
+      "twitter:description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/2b4ddb-c605-d2f-ad8-b3acf2f68b52_2-1-nap-transition.webp"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+      "twitter:card": "summary_large_image",
+      "og:title": "Making the Switch from Two Naps to One for Your Baby's Health",
+      "twitter:title": "Making the Switch from Two Naps to One for Your Baby's Health",
+      "og:description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+      "twitter:description": "Find out how to help your baby transition from two naps to one, with tips on timing and creating a smoother sleep routine.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/2b4ddb-c605-d2f-ad8-b3acf2f68b52_2-1-nap-transition.webp",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/2b4ddb-c605-d2f-ad8-b3acf2f68b52_2-1-nap-transition.webp",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Transitioning your baby from 2 naps to 1"
+    ],
+    "h2s": [
+      "How Parents Benefit from Making the 2\u20131 Nap Transition",
+      "How to Transition Your Baby From Two Naps Down to One",
+      "About the author"
+    ],
+    "h3s": [],
+    "word_count": 529,
+    "links_total": 30,
+    "links_internal": 23,
+    "links_external": 7,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5+month+to+2+years",
+        "text": "5 Month To 2 Years",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/5-12-month-baby-sleep-help",
+        "text": "12 to 24 months of baby sleep help",
+        "internal": false
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "give me a call to help your baby",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=5-12+months",
+        "text": "5-12 Months",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=fourth+trimester",
+        "text": "Fourth Trimester",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=infants",
+        "text": "Infants",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=naps",
+        "text": "Naps",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=product+reviews",
+        "text": "Product Reviews",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+environment",
+        "text": "Sleep Environment",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+products",
+        "text": "Sleep Products",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+regressions",
+        "text": "Sleep Regressions",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=sleep+safety",
+        "text": "Sleep Safety",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog?tag=transitions",
+        "text": "Transitions",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/author/sally-woods",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "Instagram",
+        "internal": false
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "Facebook",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "Tiktok",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      }
+    ],
+    "images_total": 4,
+    "images_missing_alt": 2,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147772521/images/2b4ddb-c605-d2f-ad8-b3acf2f68b52_2-1-nap-transition.webp",
+        "alt": "A baby is standing on a ground of flowers",
+        "w": 1400,
+        "h": 787,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/4568c0-8147-8b60-4ac1-2fe4e425b1ee_b0f1d5fd-e72d-4bfb-9442-56457c4cd25a.jpg",
+        "alt": null,
+        "w": 1440,
+        "h": 810,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 462958,
+  "screenshot": "screenshots/blog_transitioning_your_baby_from_2_naps_to_1.png",
+  "vitals": {
+    "TTFB": "1477.2ms",
+    "LCP": "2412ms",
+    "CLS": "0",
+    "FCP": "2412ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:2"
+  ]
+}

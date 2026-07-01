@@ -227,7 +227,7 @@ When you're stuck at 3am, you need help that responds.
 **Within hours** — so you're not waiting days for help.
 
 ### Who's Answering
-**Sally Woods** — Certified Sleep Consultant, Paediatric Nurse, and Host of Nap Trapped Podcast. Plus the Snooze Specialist team.
+**Sally Woods** — Certified Sleep Consultant, Former Paediatric Nurse, and Host of Nap Trapped Podcast. Plus the Snooze Specialist team.
 
 ---
 
@@ -323,7 +323,7 @@ Who Snooze is for
 ### List
 - Parents of babies 0–3 years who want calmer days and easier nights
 - Families who prefer gentle, practical strategies over rigid routines
-- Anyone who wants real-time help from a paediatric nurse & certified sleep consultant
+- Anyone who wants real-time help from a former paediatric nurse & certified sleep consultant
 - Parents who've tried apps or courses that didn't work
 - Mums who are exhausted and need someone in their corner
 
@@ -347,15 +347,15 @@ Welcome to Better Sleep for the Whole Family
 Snooze is on a mission to help families get the rest they deserve through science-based guidance, community, and care.
 
 ### Bio
-Created by **Sally, The Sleep Concierge** — paediatric nurse, certified sleep consultant, and mum of two — Snooze gives you practical tools and a calm, confident approach to your baby's sleep.
+Created by **Sally, The Sleep Concierge** — former paediatric nurse, certified sleep consultant, and mum of two — Snooze gives you practical tools and a calm, confident approach to your baby's sleep.
 
 ### Expert Card
 **Name:** Hi, I'm Sally!  
-**Description:** Paediatric nurse, mum of two, and founder of The Sleep Concierge & Snooze.
+**Description:** Former paediatric nurse, mum of two, and founder of The Sleep Concierge & Snooze.
 
 ### Credentials
 - Certified Sleep Consultant
-- Paediatric Nurse
+- Former Paediatric Nurse
 - Host of Nap Trapped Podcast
 - Thousands of families helped worldwide
 
@@ -492,7 +492,7 @@ Common Questions
 **A:** If Snooze isn't the right fit, you can request a refund within 14 days.
 
 ### Q4: How is Snooze different from other sleep programs?
-**A:** Snooze combines expert-led coaching, on-demand learning, and community support — created by a paediatric nurse and certified sleep consultant. You're not doing this alone.
+**A:** Snooze combines expert-led coaching, on-demand learning, and community support — created by a former paediatric nurse and certified sleep consultant. You're not doing this alone.
 
 ### Q5: Do I need to follow a strict routine?
 **A:** Not at all. Snooze helps you understand sleep patterns so you can adapt routines to your baby's needs and your lifestyle — not the other way around.

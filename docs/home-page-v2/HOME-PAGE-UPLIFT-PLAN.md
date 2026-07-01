@@ -559,7 +559,7 @@ From `ADVERSARY-FRAMEWORKS-v1.md`, five themes express the same truth:
 **Credentials & legitimacy:**
 - **Source: `about-sally` page**
 - Certified Sleep Consultant
-- Pediatric Nurse
+- Former Paediatric Nurse
 - Host of Nap Trapped Podcast
 - Thousands of families helped
 - Media mentions (if applicable)
@@ -861,7 +861,7 @@ From `ADVERSARY-FRAMEWORKS-v1.md`, five themes express the same truth:
 **Before Starting:**
 - ✅ Support channels: Email + Realtime in Snooze Village
 - ✅ Response time: Within hours
-- ✅ Credentials: From about-sally page (Certified Sleep Consultant, Pediatric Nurse, Host of Nap Trapped Podcast, Thousands of families helped)
+- ✅ Credentials: From about-sally page (Certified Sleep Consultant, Former Paediatric Nurse, Host of Nap Trapped Podcast, Thousands of families helped)
 - What is the personalisation process?
 - What sample deliverables can be shown?
 

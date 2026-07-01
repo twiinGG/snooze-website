@@ -11,7 +11,7 @@
 
 **Subtitle:** A self-paced course helping you understand your newborn's sleep, build healthy foundations, and navigate the fourth trimester with confidence and calm.
 
-**Stats:** **9 modules** • Downloadable resources • **Lifetime access**
+**Stats:** **9 modules** • Downloadable resources • **On-demand access**
 
 ---
 
@@ -55,7 +55,7 @@ This guide is your companion through the fourth trimester—those first twelve w
 - Approximately 2-3 hours of content in total
 - Designed to be consumed in short bursts between feeds and naps
 - Reference back to specific sections whenever you need a refresher
-- Lifetime access so you can revisit as your baby grows and things change
+- Full access so you can revisit as your baby grows and things change
 
 ---
 

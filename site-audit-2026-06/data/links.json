@@ -1,0 +1,189 @@
+{
+  "url": "https://www.joinsnooze.com/links",
+  "path": "/links",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "links",
+  "crawled_at": "2026-06-09T00:41:44.877127+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/links",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/links",
+    "title": "Snooze by The Sleep Concierge | Essential Links for Better Baby Sleep",
+    "lang": "en",
+    "meta_description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+    "canonical": "https://www.joinsnooze.com/links",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/links",
+      "og:title": "Snooze by The Sleep Concierge | Essential Links for Better Baby Sleep",
+      "og:description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/e3a6c0d-0b20-562b-87d2-8aea75e865b2_e22b7394-3787-4ebf-b611-400efa33f109.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Snooze by The Sleep Concierge | Essential Links for Better Baby Sleep",
+      "twitter:description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/e3a6c0d-0b20-562b-87d2-8aea75e865b2_e22b7394-3787-4ebf-b611-400efa33f109.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/links",
+      "twitter:card": "summary_large_image",
+      "og:title": "Snooze by The Sleep Concierge | Essential Links for Better Baby Sleep",
+      "twitter:title": "Snooze by The Sleep Concierge | Essential Links for Better Baby Sleep",
+      "og:description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+      "twitter:description": "Get expert baby sleep resources from Snooze by The Sleep Concierge. Find guides, courses, and personalised support to help your little one (and you!) get the rest you need. Access all our key links in one place.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/e3a6c0d-0b20-562b-87d2-8aea75e865b2_e22b7394-3787-4ebf-b611-400efa33f109.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/e3a6c0d-0b20-562b-87d2-8aea75e865b2_e22b7394-3787-4ebf-b611-400efa33f109.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "Simple sleep support"
+    ],
+    "h2s": [],
+    "h3s": [],
+    "word_count": 62,
+    "links_total": 16,
+    "links_internal": 11,
+    "links_external": 5,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-2m",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4m",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12m",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "1-2y",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book Sally For Your Family\n1:1 consults tailored to your family.\n\u2192",
+        "internal": true
+      },
+      {
+        "href": "https://naptrappedpodcast.com/",
+        "text": "Nap Trapped Podcast\nReal talk and practical sleep advice.\n\u2192",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://open.spotify.com/show/1LRXenhiADr7YzoGNbRwP2?si=f94b9aa27afa434e",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.youtube.com/channel/UCA8i9SiI0JJOBbjfMs5rnmA",
+        "text": "",
+        "internal": false
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Header Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Footer Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2164471690/assets/placeholder.png?17684592349050171",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/links",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 110644,
+  "screenshot": "screenshots/links.png",
+  "vitals": {
+    "TTFB": "345.7ms",
+    "LCP": "388ms",
+    "CLS": "0",
+    "FCP": "388ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "thin_content",
+    "images_missing_alt:1"
+  ]
+}

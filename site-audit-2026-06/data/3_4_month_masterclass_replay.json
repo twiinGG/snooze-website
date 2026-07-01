@@ -1,0 +1,202 @@
+{
+  "url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+  "path": "/3-4-month-masterclass-replay",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "3_4_month_masterclass_replay",
+  "crawled_at": "2026-06-09T00:40:12.819970+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+    "title": "3-4 Month Baby Sleep Training Masterclass | Stop 4-Month Regression",
+    "lang": "en",
+    "meta_description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+    "canonical": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+      "og:title": "3-4 Month Baby Sleep Training Masterclass | Stop 4-Month Regression",
+      "og:description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "3-4 Month Baby Sleep Training Masterclass | Stop 4-Month Regression",
+      "twitter:description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+      "twitter:card": "summary_large_image",
+      "og:title": "3-4 Month Baby Sleep Training Masterclass | Stop 4-Month Regression",
+      "twitter:title": "3-4 Month Baby Sleep Training Masterclass | Stop 4-Month Regression",
+      "og:description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+      "twitter:description": "Get a proven plan for better baby sleep with The 3-4 Month Baby Sleep Training Masterclass by The Sleep Concierge. This free masterclass offers an introduction to sleep training for your baby and links to expert support to help beat the 4-month regression and cut night wakes.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [
+      {
+        "types": [
+          "VideoObject"
+        ],
+        "raw_len": 825
+      }
+    ],
+    "jsonld_types": [
+      "VideoObject"
+    ],
+    "h1s": [
+      "Sleep Training Masterclass"
+    ],
+    "h2s": [
+      "Your Blueprint to Longer Sleep for\n3-4 Month Olds",
+      "Why this age is different",
+      "What's in the course?",
+      "$117",
+      "See Progress\u00a0In\u00a0Days"
+    ],
+    "h3s": [
+      "Meet Your\u00a0Instructor",
+      "Is this the course for you?",
+      "What you will learn:",
+      "How it works",
+      "Questions about the\u00a03-4 Sleep Course?"
+    ],
+    "word_count": 982,
+    "links_total": 9,
+    "links_internal": 3,
+    "links_external": 6,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-masterclass-replay#section-1747798693756",
+        "text": "ENROL IN THE 3\u20114\u202fMONTH SLEEP COURSE \u2192",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/W2PyqL2X",
+        "text": "Count me in!",
+        "internal": true
+      },
+      {
+        "href": "https://www.facebook.com/TheSleepConcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.pinterest.com.au/thesleepconcierge/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.linkedin.com/in/sally-woods-070290198/",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://open.spotify.com/show/1LRXenhiADr7YzoGNbRwP2?si=c68f20bf56254f3a",
+        "text": "",
+        "internal": false
+      }
+    ],
+    "images_total": 7,
+    "images_missing_alt": 4,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157019801/settings_images/41cbc-7b14-1c7f-1e0a-50730d00a3b7_TSC_Logo_Peach_V2.png",
+        "alt": "Header Logo",
+        "w": 1000,
+        "h": 357,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161384400/settings_images/4f745b-b4c5-6b1e-1a50-cae7c2a5c22_3-4_Month_Masterclass_Thumbnail.png",
+        "alt": "Video Thumbnail",
+        "w": 1280,
+        "h": 720,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161384400/settings_images/a24648-6bbb-44e-4682-0c580d110ab_pexels-polina-tankilevitch-3875220.jpg",
+        "alt": "",
+        "w": 960,
+        "h": 1440,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157019801/settings_images/fa82e6-b4f4-3a66-1c1-5cb72d7cf7fb_a13faebd-3ae0-4927-ae5b-756cdbdabb80.jpg",
+        "alt": "",
+        "w": 1080,
+        "h": 1440,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161384400/settings_images/acedfd-bbeb-a761-daca-a52e60edc33_3-4_Month_Course_Mockup.png",
+        "alt": null,
+        "w": 1067,
+        "h": 639,
+        "has_alt": false
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157019801/settings_images/3a3ad8-6ad-dda4-ac0c-1bb5bf503ce_62d9445a-debe-4c9a-86cb-951723728819.png",
+        "alt": "Footer Logo",
+        "w": 364,
+        "h": 392,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2161384400/assets/placeholder.png?17505353172843788",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/3-4-month-masterclass-replay",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 241407,
+  "screenshot": "screenshots/3_4_month_masterclass_replay.png",
+  "vitals": {
+    "TTFB": "329.3ms",
+    "LCP": "488ms",
+    "CLS": "0",
+    "FCP": "412ms"
+  },
+  "issues": [
+    "missing_org_schema",
+    "images_missing_alt:4"
+  ]
+}

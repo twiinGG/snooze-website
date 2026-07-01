@@ -1,0 +1,32 @@
+---
+url: "https://www.joinsnooze.com/privacy"
+slug: "privacy"
+path: "/privacy"
+expected_type: "legal"
+sources: ["url-reference"]
+http_status_initial: 404
+http_status_final: 404
+final_url: "https://www.joinsnooze.com/privacy"
+redirected: false
+title: "Not Found (404)"
+meta_description: ""
+canonical: "https://www.joinsnooze.com/privacy"
+lang: "en"
+robots: ""
+jsonld_types: []
+word_count: 56
+links_internal: 12
+links_external: 3
+images_total: 1
+images_missing_alt: 0
+og_image: null
+vitals: {"TTFB": "566.5ms", "LCP": "616ms", "CLS": "0", "FCP": "616ms"}
+issues: ["status_404", "non_200_final_404"]
+crawled_at: "2026-06-09T00:42:19.839450+00:00"
+screenshot: "screenshots/privacy.png"
+---
+
+# Not Found (404)
+
+## H1
+- PAGE NOT FOUND

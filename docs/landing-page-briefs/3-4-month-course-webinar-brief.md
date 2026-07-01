@@ -6,7 +6,7 @@
 🎥 Sleep Training Masterclass Replay — Watch Instantly 
 
 From Hourly Wakes to 12‑Hour Nights: My Personal PREP + PLAN to Conquer the 4‑Month Sleep Regression.
-“I went from post‑natal depression and a baby who cried all night to a 15‑week‑old who slept 12 hours straight.” – Sally Woods, Paediatric Nurse & Mum of Two
+“I went from post‑natal depression and a baby who cried all night to a 15‑week‑old who slept 12 hours straight.” – Sally Woods, Former Paediatric Nurse & Mum of Two
 (video thumbnail copy)
 In 21 action‑packed minutes you’ll discover:
 • Why the 4‑month regression hits (and why it’s not your fault).
@@ -26,7 +26,7 @@ Call‑to‑Action [ COUNT ME IN ]
 
 
 🌟 Vision & Founder
-FOR EXHAUSTED BUT DETERMINED PARENTS READY TO CLAIM THEIR NIGHTS BACK I’m Sally Woods — certified sleep consultant, paediatric nurse, and coffee‑fuelled mum of two. My firstborn slept like a dream; my second arrived mid‑pandemic with a fractured collarbone and a more vocal temperament. I also struggled with post‑natal depression after my second baby. The PREP + PLAN framework inside this course is the exact process that pulled me out of the fog and has since helped 1,000+ families reclaim their evenings.
+FOR EXHAUSTED BUT DETERMINED PARENTS READY TO CLAIM THEIR NIGHTS BACK I’m Sally Woods — certified sleep consultant, former paediatric nurse, and coffee‑fuelled mum of two. My firstborn slept like a dream; my second arrived mid‑pandemic with a fractured collarbone and a more vocal temperament. I also struggled with post‑natal depression after my second baby. The PREP + PLAN framework inside this course is the exact process that pulled me out of the fog and has since helped 1,000+ families reclaim their evenings.
 
 
 
@@ -107,7 +107,7 @@ How long before we see results? Most parents report longer night stretches withi
 
 Do I have to follow a strict schedule? No – you’ll get both short‑nap and long‑nap day maps plus flexible wake‑window guidance.
 
-Will I get future updates? Yes! Buy once, enjoy lifetime access to all video and PDF upgrades.
+Will I get future updates? Yes! Buy once, and free updates to all video and PDF upgrades are included.
 
 
 🛌 Get started today

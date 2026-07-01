@@ -40,7 +40,7 @@ The pricing section uses a two-card comparison layout:
 
         <div style="background:#FAF7F4; padding:10px; font-size:0.8rem; border-radius:5px; margin-bottom:20px;">
           <ul style="text-align:left; margin:0; padding-left:20px; list-style:none;">
-            <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Lifetime course access</li>
+            <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Full course access</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-check" style="color:#7C8A98; margin-right:8px;"></i> Future updates</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-xmark" style="color:#64748B; margin-right:8px;"></i> No sleep coaching support</li>
             <li style="margin-bottom:10px;"><i class="fa-solid fa-xmark" style="color:#64748B; margin-right:8px;"></i> No troubleshooting access</li>
@@ -84,7 +84,7 @@ The pricing section uses a two-card comparison layout:
 ## Copy Guidelines
 
 ### Course Card Features (Standardized)
-- ✅ Lifetime course access
+- ✅ Full course access
 - ✅ Future updates
 - ❌ No sleep coaching support
 - ❌ No troubleshooting access

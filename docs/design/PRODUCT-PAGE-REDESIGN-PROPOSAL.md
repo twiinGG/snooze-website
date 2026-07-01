@@ -58,7 +58,7 @@
 
 A self-paced course covering sleep changes, nap consolidation, and building independent sleep skills for babies 3-4 months old.
 
-11 modules • 20+ lessons • Downloadable resources • Lifetime access
+11 modules • 20+ lessons • Downloadable resources • On-demand access
 ```
 
 **Design Notes:**
@@ -191,7 +191,7 @@ Module 2: Creating Optimal Sleep Environment
 
 **Content:**
 - Individual course price ($117)
-- What's included (lifetime access, updates, etc.)
+- What's included (on-demand access, updates, etc.)
 - Purchase button (clear but not oversized)
 - Optional: "Also available in Snooze Membership" (subtle link, not full section)
 
@@ -299,7 +299,7 @@ Module 2: Creating Optimal Sleep Environment
 ### To Resource Language:
 - "Covers sleep changes at 3-4 months"
 - "Self-paced learning"
-- "Created by paediatric nurse"
+- "Created by former paediatric nurse"
 - "Includes X resources"
 - "Access the course"
 

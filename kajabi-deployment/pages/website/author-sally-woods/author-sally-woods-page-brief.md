@@ -20,7 +20,7 @@ A searchable home for your advice content and newsletter, with a clear pathway i
 Ask Sally, Baby Sleep Answers by Sally Woods | Snooze
 
 **Meta description**
-Ask Sally your baby sleep questions. Practical, evidence-based answers from paediatric nurse and sleep consultant Sally Woods. Read the latest advice and get the newsletter.
+Ask Sally your baby sleep questions. Practical, evidence-based answers from former paediatric nurse and sleep consultant Sally Woods. Read the latest advice and get the newsletter.
 
 **OG title**
 Ask Sally | Snooze
@@ -38,7 +38,7 @@ Clear baby sleep answers from Sally Woods. Read, search, and subscribe.
 Ask Sally
 
 **Subheading**
-Practical baby sleep answers, from a paediatric nurse who gets it.
+Practical baby sleep answers, from a former paediatric nurse who gets it.
 
 **Body**
 If you’re googling at 2am, you don’t need more noise. You need a clear next step.
@@ -53,7 +53,7 @@ Browse the latest questions
 
 **Right-side card (small bio)**
 **Hi, I’m Sally.**
-Paediatric nurse, sleep consultant, mum of two, and founder of Snooze.
+Former paediatric nurse, sleep consultant, mum of two, and founder of Snooze.
 
 **Link**
 Read my story → /about-sally

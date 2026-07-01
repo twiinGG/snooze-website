@@ -11,7 +11,7 @@
 
 **Subtitle:** A self-paced course covering wake windows, nap transitions, and gentle strategies for building independent sleep skills during this rapidly changing stage.
 
-**Hero Stats:** **6** modules • **23** lessons • Downloadable resources • Lifetime access
+**Hero Stats:** **6** modules • **23** lessons • Downloadable resources • On-demand access
 
 ---
 
@@ -55,7 +55,7 @@ This course walks you through everything you need to know about your baby's slee
 - Estimated 2-3 hours to complete all lessons, though you don't have to do it all at once
 - Flexible completion—dip in and out based on what you're dealing with right now
 - Reference back anytime when new challenges pop up or you need a refresher
-- Lifetime access so you can revisit the content as your baby grows and sleep needs change
+- Full access so you can revisit the content as your baby grows and sleep needs change
 
 ---
 

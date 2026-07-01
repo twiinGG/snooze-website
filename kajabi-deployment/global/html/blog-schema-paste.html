@@ -1,0 +1,71 @@
+<!--
+  BlogPosting JSON-LD injector (site-audit-2026-06, Wave 1 item 3)
+
+  DEPLOY: Kajabi Settings > Site details > Page scripts > Header Page Scripts.
+  Append BELOW the Organization JSON-LD block. Copy this entire file (comment +
+  script block). The <script> wrapper is required; without it Kajabi renders the
+  code as plain text and nothing runs.
+
+  Validate: https://validator.schema.org/ on a blog post URL (Rich Results Test
+  often shows "No items" for BlogPosting; that is normal).
+-->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  const path = location.pathname.replace(/\/+$/, '');
+  if (path.indexOf('/blog/') !== 0 || path === '/blog') return;
+  if (document.querySelector('script[data-snooze-schema="blogposting"]')) return;
+
+  const metaContent = (sel) => {
+    const el = document.querySelector(sel);
+    return el ? (el.getAttribute('content') || '').trim() : '';
+  };
+  const text = (sel) => {
+    const el = document.querySelector(sel);
+    return el ? (el.textContent || '').trim() : '';
+  };
+  const isoDate = (s) => {
+    if (!s) return '';
+    const d = new Date(s);
+    if (Number.isNaN(d.getTime())) return '';
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}-${mm}-${dd}`;
+  };
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const url = canonical ? canonical.href : location.href;
+  const title = text('.blog-post-body__title') || metaContent('meta[property="og:title"]') || document.title;
+  const image = metaContent('meta[property="og:image"]');
+  const description = metaContent('meta[name="description"]') || metaContent('meta[property="og:description"]');
+  const published = isoDate(text('.blog-post-body__date'));
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    headline: title,
+    url,
+    author: {
+      '@type': 'Person',
+      '@id': 'https://www.joinsnooze.com/author/sally-woods#person',
+      name: 'Sally Woods',
+      url: 'https://www.joinsnooze.com/about-sally'
+    },
+    publisher: { '@id': 'https://www.joinsnooze.com/#organization' }
+  };
+  if (description) data.description = description;
+  if (image) data.image = image;
+  if (published) {
+    data.datePublished = published;
+    data.dateModified = published;
+  }
+
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.setAttribute('data-snooze-schema', 'blogposting');
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+});
+</script>

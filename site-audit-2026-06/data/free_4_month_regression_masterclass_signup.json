@@ -1,0 +1,113 @@
+{
+  "url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+  "path": "/free-4-month-regression-masterclass-signup",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "free_4_month_regression_masterclass_signup",
+  "crawled_at": "2026-06-09T00:41:47.483783+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+    "title": "Free 4-Month Sleep Regression Masterclass",
+    "lang": "en",
+    "meta_description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+    "canonical": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+      "og:title": "Free 4-Month Sleep Regression Masterclass",
+      "og:description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Free 4-Month Sleep Regression Masterclass",
+      "twitter:description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+      "twitter:card": "summary_large_image",
+      "og:title": "Free 4-Month Sleep Regression Masterclass",
+      "twitter:title": "Free 4-Month Sleep Regression Masterclass",
+      "og:description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+      "twitter:description": "Is your 3\u20134 month-old suddenly waking every hour? Sign up for Sally Woods\u2019 free 20-minute masterclass and learn gentle, evidence-based steps to dodge the 4-month regression and set up 12-hour nights\u2014plus get a limited-time discount on the 3-4 Month Sleep Course. ",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/d83ca6-385f-1752-4d88-a620da1cb1d_Sleep_TRAINING_Masterclass_Thumb.jpg",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [],
+    "h2s": [],
+    "h3s": [],
+    "word_count": 41,
+    "links_total": 1,
+    "links_internal": 1,
+    "links_external": 0,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      }
+    ],
+    "images_total": 3,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157019801/settings_images/41cbc-7b14-1c7f-1e0a-50730d00a3b7_TSC_Logo_Peach_V2.png",
+        "alt": "Header Logo",
+        "w": 1000,
+        "h": 357,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157019801/settings_images/3a3ad8-6ad-dda4-ac0c-1bb5bf503ce_62d9445a-debe-4c9a-86cb-951723728819.png",
+        "alt": "Footer Logo",
+        "w": 364,
+        "h": 392,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2161718999/assets/placeholder.png?17504968415269141",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/free-4-month-regression-masterclass-signup",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 95133,
+  "screenshot": "screenshots/free_4_month_regression_masterclass_signup.png",
+  "vitals": {
+    "TTFB": "331.8ms",
+    "LCP": "376ms",
+    "CLS": "0",
+    "FCP": "376ms"
+  },
+  "issues": [
+    "missing_h1",
+    "no_jsonld",
+    "thin_content",
+    "images_missing_alt:1"
+  ]
+}

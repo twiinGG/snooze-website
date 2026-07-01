@@ -45,7 +45,7 @@
 
 **Headline:** Meet Sally Woods
 
-**Subheadline:** Registered Paediatric Nurse. Certified Sleep Consultant. Mother of two.
+**Subheadline:** Certified Sleep Consultant. Former Paediatric Nurse. Mother of two.
 
 **Ecosystem stats (display as metric cards):**
 
@@ -99,7 +99,7 @@
 
 | Value | Kic Says | Snooze Says |
 |-------|----------|-------------|
-| Evidence-based | Behavioural change frameworks, expert-reviewed programs | Registered nurse credentials, evidence-based methodology, tracked outcomes |
+| Evidence-based | Behavioural change frameworks, expert-reviewed programs | Former nurse credentials, evidence-based methodology, tracked outcomes |
 | Anti-perfection | "Wellness is a feeling, not an aesthetic" | "Progress, not perfection. First night might look messy." |
 | Community-first | "Stronger together," Facebook groups, IRL events | "The Village" as a core pillar, group coaching model |
 | Real life | "Rituals for real life" | "The skills dont change just because the location does" |

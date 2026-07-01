@@ -1,0 +1,195 @@
+{
+  "url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+  "path": "/camp-snooze-sleep-coaching",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "landing",
+  "slug": "camp_snooze_sleep_coaching",
+  "crawled_at": "2026-06-09T00:41:37.059315+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+    "title": "Camp Snooze | 2-Week Virtual Baby Sleep Training with Sally & Bec",
+    "lang": "en",
+    "meta_description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+    "canonical": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+      "og:title": "Camp Snooze | 2-Week Virtual Baby Sleep Training with Sally & Bec",
+      "og:description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/8e8ed31-ae0-7bd5-cf14-bb74a454155c_85917313-bc0c-408a-9f23-a5429d5ada5f.png"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Camp Snooze | 2-Week Virtual Baby Sleep Training with Sally & Bec",
+      "twitter:description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/8e8ed31-ae0-7bd5-cf14-bb74a454155c_85917313-bc0c-408a-9f23-a5429d5ada5f.png"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+      "twitter:card": "summary_large_image",
+      "og:title": "Camp Snooze | 2-Week Virtual Baby Sleep Training with Sally & Bec",
+      "twitter:title": "Camp Snooze | 2-Week Virtual Baby Sleep Training with Sally & Bec",
+      "og:description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+      "twitter:description": "Join Camp Snooze for two weeks of intensive sleep training with daily coaching, personalized plans, and expert support. Limited to 6 families per intake.",
+      "og:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/8e8ed31-ae0-7bd5-cf14-bb74a454155c_85917313-bc0c-408a-9f23-a5429d5ada5f.png",
+      "twitter:image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/8e8ed31-ae0-7bd5-cf14-bb74a454155c_85917313-bc0c-408a-9f23-a5429d5ada5f.png",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [
+      "CAMP SNOOZE"
+    ],
+    "h2s": [
+      "Your Camp Inclusions",
+      "Who It's For",
+      "How It Works",
+      "Camp Counsellors",
+      "Key Dates",
+      "Why Camp Costs Less",
+      "Your Sleep Transformation",
+      "Questions?",
+      "See You at Roll Call"
+    ],
+    "h3s": [
+      "Secure your spot",
+      "Get your packing list",
+      "Join daily roll call",
+      "Week 2: Stabilise",
+      "What ages is this for?",
+      "What if my baby cries?",
+      "Do I have to attend live calls?",
+      "What if I've tried sleep training before?",
+      "Is this only for nights?",
+      "What's included and what does it cost?"
+    ],
+    "word_count": 1244,
+    "links_total": 9,
+    "links_internal": 9,
+    "links_external": 0,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching#pricing-section",
+        "text": "Join Camp Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/offers/46Bz9tk6",
+        "text": "Join Camp Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/products/communities/v2/snooze",
+        "text": "Snooze Village",
+        "internal": true
+      },
+      {
+        "href": "https://joinsnooze.com/",
+        "text": "join snooze",
+        "internal": true
+      },
+      {
+        "href": "mailto:camp@joinsnooze.com?subject=Question%20about%20Camp%20Snooze",
+        "text": "Email us",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      }
+    ],
+    "images_total": 6,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/b7225d-1a61-e6-1a7c-d25546bce633_Snooze_x_TSC_-_white_web.png",
+        "alt": "Header Logo",
+        "w": 823,
+        "h": 291,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/2e73b0-d688-ef8d-308c-cfdf7385108_Camp_Background_V2.webp",
+        "alt": "Camp Snooze campfire scene with mountains, lake, and campers",
+        "w": 1600,
+        "h": 977,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/f702b6a-ea62-2788-5b0-313783348b3_Camp_Snooze_Sally.webp",
+        "alt": "Sally Woods, Camp Snooze counsellor",
+        "w": 688,
+        "h": 384,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/3ea4276-026f-1eff-af-6c65224d2ae_Camp_Snooze_Bec.webp",
+        "alt": "Bec Maher, Camp Snooze counsellor",
+        "w": 688,
+        "h": 384,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+        "alt": "Footer Logo",
+        "w": 640,
+        "h": 640,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2164288957/assets/placeholder.png?1779794325902358",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 190757,
+  "screenshot": "screenshots/camp_snooze_sleep_coaching.png",
+  "vitals": {
+    "TTFB": "340.1ms",
+    "LCP": "404ms",
+    "CLS": "0",
+    "FCP": "404ms"
+  },
+  "issues": [
+    "no_jsonld",
+    "images_missing_alt:1"
+  ]
+}

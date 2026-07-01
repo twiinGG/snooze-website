@@ -1,0 +1,187 @@
+{
+  "url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+  "path": "/newsletters/the-snooze-news",
+  "sources": [
+    "sitemap"
+  ],
+  "requires_auth": false,
+  "expected_type": "page",
+  "slug": "newsletters_the_snooze_news",
+  "crawled_at": "2026-06-09T00:41:56.725460+00:00",
+  "curl_status_initial": "200",
+  "curl_status_final": "200",
+  "curl_final_url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+  "rendered": {
+    "final_url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+    "title": "The Snooze News",
+    "lang": "en",
+    "meta_description": "",
+    "canonical": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+    "robots": "",
+    "og": {
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+      "og:title": "The Snooze News"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "The Snooze News"
+    },
+    "all_meta": {
+      "csrf-param": "[redacted-csrf]",
+      "csrf-token": "[redacted-csrf]",
+      "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+      "og:type": "website",
+      "og:url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+      "twitter:card": "summary_large_image",
+      "og:title": "The Snooze News",
+      "twitter:title": "The Snooze News",
+      "turbo-prefetch": "false",
+      "site_locale": "en"
+    },
+    "jsonld": [],
+    "jsonld_types": [],
+    "h1s": [],
+    "h2s": [],
+    "h3s": [
+      "The Snooze News",
+      "The Snooze News"
+    ],
+    "word_count": 127,
+    "links_total": 18,
+    "links_internal": 12,
+    "links_external": 6,
+    "links": [
+      {
+        "href": "https://www.joinsnooze.com/",
+        "text": "",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/newborn-sleep-guide",
+        "text": "0-3 Months - Newborn Sleep Guide",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/3-4-month-baby-sleep-course",
+        "text": "3-4 Months - Baby Sleep Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/5-12-month-baby-sleep-course",
+        "text": "5-12 Months - Sleep Training Course",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/toddler-toolkit",
+        "text": "12+ Months - Toddler Sleep Toolkit",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/one-on-one-sleep-consultations",
+        "text": "Book a Consultation with Sally",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
+        "text": "Camp Snooze \ud83c\udfd5\ufe0f",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/blog",
+        "text": "Blog",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/about-sally",
+        "text": "About",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/login",
+        "text": "Log In",
+        "internal": true
+      },
+      {
+        "href": "https://www.joinsnooze.com/resource_redirect/offers/6iRarwak",
+        "text": "Join Snooze",
+        "internal": true
+      },
+      {
+        "href": "https://www.facebook.com/kajabi",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.twitter.com/kajabi",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/kajabi",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.instagram.com/thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.tiktok.com/@thesleepconcierge",
+        "text": "",
+        "internal": false
+      },
+      {
+        "href": "https://www.joinsnooze.com/contact",
+        "text": "Contact Us",
+        "internal": true
+      },
+      {
+        "href": "https://www.sleepconcierge.com.au/offers/4zHPSRCs",
+        "text": "Book a Consultation",
+        "internal": false
+      }
+    ],
+    "images_total": 2,
+    "images_missing_alt": 1,
+    "images": [
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+        "alt": "Snooze Logo",
+        "w": 600,
+        "h": 239,
+        "has_alt": true
+      },
+      {
+        "src": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2156873377/assets/placeholder.png?17690444763007739",
+        "alt": "",
+        "w": 2560,
+        "h": 1440,
+        "has_alt": false
+      }
+    ]
+  },
+  "final_url": "https://www.joinsnooze.com/newsletters/the-snooze-news",
+  "redirected": false,
+  "browser_status_initial": 200,
+  "browser_status_final": 200,
+  "http_status_initial": 200,
+  "http_status_final": 200,
+  "html_len": 458137,
+  "screenshot": "screenshots/newsletters_the_snooze_news.png",
+  "vitals": {
+    "TTFB": "361.7ms",
+    "LCP": "420ms",
+    "CLS": "0",
+    "FCP": "420ms"
+  },
+  "issues": [
+    "missing_meta_description",
+    "missing_h1",
+    "no_jsonld",
+    "thin_content",
+    "missing_og_image",
+    "images_missing_alt:1"
+  ]
+}
