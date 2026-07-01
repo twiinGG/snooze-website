@@ -131,3 +131,38 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Inline toggle: mounted into a .sn-currency-inline placeholder inside a
+   pricing section. Larger, centered, no left margin. */
+.sn-currency-inline {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+.inline-currency-toggle {
+  margin-left: 0;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 24px;
+}
+
+/* Sticky toggle: mounted into a .sn-currency-sticky placeholder. The page
+   positions the placeholder (e.g. fixed footer bar); this styles the button. */
+.sticky-currency-toggle {
+  margin-left: 0;
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+/* Optional ready-made sticky bar. Pages can use <div class="sn-currency-sticky sn-currency-sticky-bar"> */
+.sn-currency-sticky-bar {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9990;
+  background: var(--sn-white, #ffffff);
+  border-radius: 28px;
+  box-shadow: 0 4px 16px rgba(31, 41, 59, 0.18);
+  padding: 4px;
+}

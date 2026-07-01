@@ -1,72 +1,92 @@
 # LMCR04 + Dual-Currency — Next-Session Kickoff
 
-> **CURRENT as of 2026-07-01.** The dual-currency engine is now **LIVE**; A1/A2 automations and the paid-ads page are **built but Draft**. This kickoff covers what remains. Full record: **[LMCR04-DEPLOY-SESSION-2026-07-01.md](./LMCR04-DEPLOY-SESSION-2026-07-01.md)**. Earlier: [LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md](./LMCR04-SESSION-2026-06-30-CHANGELOG-AND-DEPLOY.md).
+> **CURRENT as of 2026-07-01 (Session B).** Full record: **[LMCR04-CURRENCY-PARITY-SESSION-2026-07-01-B.md](./LMCR04-CURRENCY-PARITY-SESSION-2026-07-01-B.md)**. Prior: [LMCR04-DEPLOY-SESSION-2026-07-01.md](./LMCR04-DEPLOY-SESSION-2026-07-01.md).
+>
+> **State:** A1/A2 automations + paid-ads page are PUBLISHED. `/snooze` funnel fix is DONE on the bridge lesson + thank-you page + all repo source; **3 live drip emails remain**. Dual-currency front-end parity **Phase A (engine toggle enhancement) is built + tested in repo but NOT deployed live.** Phase B not started.
 
 Paste the block below into a new Claude Code session in the Snooze OS repo to resume.
 
 ---
 
 ```
-Continuing the LMCR04 + dual-currency deploy. READ FIRST (authoritative state):
-  apps/snooze-website/course-free-modules-conversion/docs/LMCR04-DEPLOY-SESSION-2026-07-01.md
-Recall memory: dual-currency-slug-reconciliation, lmcr04-membership-pivot.
+Continuing the Snooze dual-currency FRONT-END PARITY build (Phase A deploy + Phase B). READ FIRST:
+  apps/snooze-website/course-free-modules-conversion/docs/LMCR04-CURRENCY-PARITY-SESSION-2026-07-01-B.md
+Recall memory: dual-currency-slug-reconciliation, lmcr04-membership-pivot,
+  kajabi-admin-ui-deploy-mechanics, service-model-language-no-live-coaching, sally-positioning-standard.
 
-ALREADY LIVE (do not redo): dual-currency engine (Header Page Scripts merge + theme Custom CSS);
-verified AUD→vYgCNgJz on the homepage checkout CTA.
+ACCESS: headed agent-browser (Chromium + stealth) into app.kajabi.com; I (Kade) log in first.
+  Kajabi admin site 2148291177. Dark buttons/menu items need TRUSTED mouse events (agent-browser
+  mouse move/down/up), not synthetic click. Switch to the Kajabi tab first (agent-browser tab).
+  Workflow publish persists ONLY from the LIST-row status dropdown, NOT the in-editor one.
+  MCP toolsets cap at 3 active; enable_toolset as needed (pages/courses/navbars/themes/emails).
 
-BUILT AS DRAFTS (need publish decision, both in Kajabi Marketing→Automations = /admin/sites/2148291177/workflows):
-  • A1 = workflow 804108: (z63s9VaR OR vYgCNgJz purchased) → revoke LMCR04_5-12M-SCHEDULES + LMCR04_OFR_5-12M-Course-Upsell
-  • A2 = workflow 804922: LMCR04_OFR_5-12M-Course-Upsell purchased → tag lmcr04-117-buyer
-  • Paid-ads results page = landing 2152134250 / theme 2166700952, slug snooze-access (joinsnooze.com/snooze-access), full HTML in code block, DRAFT.
+ALREADY DONE — DO NOT REDO:
+  • Dual-currency JS engine LIVE (Header Page Scripts merge + theme CSS). AUD→vYgCNgJz verified on homepage.
+  • A1 (804108) + A2 (804922) automations PUBLISHED. Paid-ads /snooze-access (2152134250) PUBLISHED.
+  • /snooze CTA fix: bridge lesson 2194028428 (live) + thank-you page thankyou/2x92uaLF (live) +
+    7 repo email/html source files. Currency engine Phase A code (inline+sticky mounts) built + 20/20 tests pass.
 
-ACCESS: use the headed agent-browser (Chromium, stealth args) into app.kajabi.com; I (Kade) will log in first.
-Kajabi automation dark buttons need TRUSTED mouse events (agent-browser mouse down/up), not synthetic click.
-The browser may have other tabs — check `agent-browser tab` and switch to the Kajabi tab (tN) before driving.
+PRIMARY OBJECTIVE THIS SESSION — Phase A live deploy, then Phase B, then CHECKPOINT with me.
 
-PRIMARY OBJECTIVE — dual-currency FRONT-END parity (not yet done; the JS engine is live but the
-customer-facing price-switching UX is missing on the membership + main offers):
-  Bring the Snooze Membership sales surface AND the other main offers (7-day trial, 5-12 & 3-4 courses,
-  newborn/nap guides, toddler toolkit, consults) to the SAME dual-currency experience Camp Snooze already has:
-  location-based default (AU→AUD) + a VISIBLE user toggle + prices that switch (A$ vs $) live.
-  Reference (working pilot): apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/
-  (CURRENCY-TOGGLE.md, camp-snooze-v2-luxury.js, camp-snooze-landing-page-blocks.html).
-  The site-wide engine (currency-toggle.js, already LIVE in Header Page Scripts) already: updates .dynamic-price
-  from data-usd/data-aud, rewrites .dynamic-cta/.pricing-card/[data-checkout] links, and injects a toggle
-  into nav (.sn-actions) + mobile menu. GAP per page = add data-usd/data-aud on every price, class CTAs as
-  .dynamic-cta, and place the toggle where Camp does (nav + INLINE in pricing section + sticky footer — the
-  engine only does nav/mobile today, so either extend injectToggles() or add inline toggle mounts per page).
-  Many repo pages already carry data-usd/data-aud (age-pages, product-pages, consultations, store, cold-traffic,
-  founding-member, value-comparison) — AUDIT which are deployed + current, then fill gaps. DEPENDENCY: the
-  tier-2 catalog (courses/guides/consults) needs its AUD twin offers created in Kajabi admin first (membership,
-  7-day trial, Camp already have AUD twins; tier-2 pending per currency-toggle.js tier2PendingSlugs).
-  Suggested sequence: (a) inventory live pages + which have price instrumentation/toggle; (b) decide toggle
-  placement standard (match Camp); (c) build membership surface first (see /snooze decision in item 4), then
-  each main-offer page; (d) create missing tier-2 AUD offers; (e) verify each live logged-out for AU + US.
+  PHASE A DEPLOY (delicate; do first): the repo now has an updated currency-toggle.js that adds
+  placeholder-driven INLINE (.sn-currency-inline) + STICKY (.sn-currency-sticky) toggle mounts
+  (change is PURELY ADDITIVE — 34 lines, no existing lines modified). Deploy it:
+    1. Find the working Site Details settings URL (last session's
+       /admin/sites/2148291177/settings/site_details/edit 404'd). The field is
+       textarea#site_page_scripts_header ("Header Page Scripts").
+    2. Read the live field (~57K chars). It DRIFTS from repo (live-only schema.org + pixels) — MERGE,
+       never overwrite. Splice: replace the OLD currency-toggle.js <script>...</script> block (== git
+       HEAD version at deploy time) with the NEW one. Verify single occurrence, <script> tag balance,
+       and a sane length delta (+~1KB) BEFORE saving. Save via native setter + input/change + form Save.
+    3. Update theme Custom Code CSS (theme 2156873377, Ace settings-css-input) with the new
+       .sn-currency-inline / .inline-currency-toggle / .sticky-currency-toggle / .sn-currency-sticky-bar rules.
+    4. Verify: on an already-instrumented page (e.g. an age-page), drop a <div class="sn-currency-inline">
+       and confirm a visible toggle appears + flips prices/CTAs logged-out (AU + US).
 
-REMAINING WORK — confirm each with me before acting on live/customer-facing surfaces:
-  1. Publish A1 + A2 (review the revoke targets / tag first). One click each in Workflows (Draft→Published).
-  2. Publish the paid-ads page /snooze-access when the ad campaign is ready (also decide whether to build
-     the quiz + thanks funnel steps from pages/landing/snooze-access-paidads/{quiz,thanks}/).
-  3. /snooze CTA fix (P1 — funnel is broken for customers): the membership CTAs (day-2/4/6 emails,
-     bridge lesson 2194028428, thank-you page) point to joinsnooze.com/snooze which 404s for the public.
-     DECISION NEEDED: repoint them to the homepage `/` (or /offers/z63s9VaR/checkout), OR refresh+publish
-     the /snooze draft (landing 2151633113 / theme 2163331541) — it's a full membership sales page but STALE:
-     checkout var → legacy 6iRarwak (not z63s9VaR), no currency instrumentation, "24/7" banned language.
-     If repointing: MCP can edit the email themes + lesson; confirm the destination first.
-  4. Legacy 6iRarwak cleanup: homepage "Join Snooze" button still → /resource_redirect/offers/6iRarwak.
-     Sweep 6iRarwak (and any dRN7QR7k / bEsVXFXG) → z63s9VaR across live surfaces + repo.
-  5. (Optional) AUD 1-month-free sequence: locate the live flow (not found among 36 active sequences);
-     repo emails-aud/ already point to vYgCNgJz. Repaste only if a live flow still links bEsVXFXG.
+  PHASE B (membership surface, then checkpoint):
+    • Homepage (live theme 2156873377): instrument membership prices with data-usd/data-aud, add a
+      .sn-currency-inline placeholder in the pricing area, and fix the secondary "Join Snooze" button
+      (/resource_redirect/offers/6iRarwak → z63s9VaR). Identify the button's section from the live DOM,
+      then section_filter that section (140+ shared sections; do NOT full-dump the theme).
+    • /snooze rebuild (landing 2151633113, theme 2163331541): 6iRarwak → z63s9VaR, add currency
+      instrumentation + inline toggle, STRIP "24/7" (banned), publish. Then optionally repoint the
+      membership CTAs (currently → /) back to /snooze.
+    • STOP and checkpoint with me before Phase C/D/E.
 
-Verify after any CTA change: load the surface logged-out, confirm the link resolves 200 (not the /snooze 404),
-and that AU visitors reach vYgCNgJz.
+  ALSO fold in (confirm destinations with me):
+    • 3 live drip emails in sequence EMLM04_5-12m Schedule LM Flow (2148765283) still link bare /snooze:
+      Day 2 2150967901, Day 4 2150967914, Day 6 2150967944. Editor: admin/email_sequence_emails/<id>/edit
+      → Edit content → click the "Explore the Snooze Membership" button → URL joinsnooze.com/snooze?...
+      → joinsnooze.com/?... (keep utm) → Save. NOTE: classic Froala editor is NOT reliably automatable
+      (Save serializes its internal model, not the DOM) — do these with me manually or via the Froala
+      link-popup UI.
+    • bEsVXFXG (deleted) in 4 AUD 1-month-free upgrade emails — locate the live AUD sequence (not among
+      the 36 active sequences); if live, repoint upgrade button → vYgCNgJz.
+    • Bridge lesson 2194028428 claims "Live Q&A sessions with the Snooze Specialists" — check against the
+      no-live-coaching rule; rewrite only with Sally's sign-off on what's actually offered.
+
+  LATER (after checkpoint):
+    • Phase C: add .sn-currency-inline placeholder to already-instrumented main-offer pages (4 age, 5
+      product, consultations, StoreV2, cold-traffic) + verify.
+    • Phase D: create AUD twin offers for tier-2 pending slugs W2PyqL2X, 9DFJSwVD, omMcVgAi, FktmJAvJ,
+      rVuLzkZa, Lzouupsm in Kajabi admin (NEEDS my pricing sign-off; first map each slug → product),
+      then wire into currency-toggle.js offerMapping + move out of tier2PendingSlugs (update the test).
+    • Phase E: verify every surface logged-out, AU + US, toggle round-trips, checkout resolves correctly.
+    • Set /snooze-access to noindex (paid-ads-only page).
+
+  founding-member page = DEAD, ignore (do not sweep its 6iRarwak).
+
+VERIFY after any change: load LOGGED-OUT, links resolve 200 (not /snooze 404), AU sees AUD + vYgCNgJz,
+US sees USD + z63s9VaR, toggle round-trips.
 ```
 
 ---
 
 ## Canonical IDs (verified live 2026-06-30/07-01)
 - Membership: `z63s9VaR` (USD 2150754998) ↔ `vYgCNgJz` (AUD 2151256977; A$119/A$299/A$997 vars 161174/161175/161176)
-- 7-day trial: `mqQikDM7` (USD) ↔ `Sr6KzShx` (AUD)
-- Free-module course product: **2149308933** (granted by free `LMCR04_5-12M-SCHEDULES`/2x92uaLF + $117 `LMCR04_OFR_5-12M-Course-Upsell`/Ktxk9mvE)
-- Live website theme: **2156873377**; homepage is the live membership page (`/`)
-- `bEsVXFXG`/2151212200 = DELETED (404); `6iRarwak` = legacy draft offer to retire
+- 7-day trial: `mqQikDM7` (USD) ↔ `Sr6KzShx` (AUD); Camp `K3Y6FEKX` ↔ `46Bz9tk6`
+- Free-module course product **2149308933**; live website theme **2156873377**; site **2148291177**
+- Nurture sequence `EMLM04_5-12m Schedule LM Flow` = **2148765283** (Day 2 2150967901 / Day 4 2150967914 / Day 6 2150967944)
+- Thank-you 2151810974 (theme 2164551197); bridge lesson 2194028428; `/snooze` draft 2151633113 (theme 2163331541)
+- `bEsVXFXG`/2151212200 = DELETED; `6iRarwak` = legacy draft to retire
+- Tier-2 pending AUD twins: `W2PyqL2X, 9DFJSwVD, omMcVgAi, FktmJAvJ, rVuLzkZa, Lzouupsm`

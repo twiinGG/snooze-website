@@ -290,6 +290,40 @@
         logError('Failed to inject mobile toggle', e);
       }
     }
+
+    // Inline toggles: opt-in per page. Any element with class .sn-currency-inline
+    // gets a toggle mounted inside it (e.g. inside a pricing section). Idempotent.
+    const inlineMounts = document.querySelectorAll('.sn-currency-inline');
+    inlineMounts.forEach(mount => {
+      if (mount.querySelector('.currency-toggle-btn')) return;
+      try {
+        mount.appendChild(createToggleButton('inline-currency-toggle'));
+      } catch (e) {
+        logError('Failed to inject inline toggle', e);
+      }
+    });
+
+    // Sticky toggle: opt-in per page via .sn-currency-sticky placeholder.
+    // The page controls positioning via CSS; the engine only mounts the button.
+    const stickyMounts = document.querySelectorAll('.sn-currency-sticky');
+    stickyMounts.forEach(mount => {
+      if (mount.querySelector('.currency-toggle-btn')) return;
+      try {
+        mount.appendChild(createToggleButton('sticky-currency-toggle'));
+      } catch (e) {
+        logError('Failed to inject sticky toggle', e);
+      }
+    });
+
+    // Label every freshly-injected toggle immediately (initCurrency runs
+    // setCurrency before injectToggles, so toggles would otherwise be blank
+    // until the first click).
+    try {
+      const current = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+      updateToggleUI(current);
+    } catch (e) {
+      logError('Failed to label injected toggles', e);
+    }
   }
 
   function createToggleButton(className) {
