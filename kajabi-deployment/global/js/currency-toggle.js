@@ -217,7 +217,11 @@
         }
 
         const newLink = rewriteCheckoutUrl(originalHref, currency);
-        const linkChanged = newLink !== originalHref;
+        // Compare against the CURRENT href, not the stored original. newLink is always
+        // the correct target for `currency` (derived from the immutable original href),
+        // so writing it whenever it differs from what's on the element makes the toggle
+        // round-trip: switching back to USD restores the USD href even after an AUD switch.
+        const linkChanged = newLink !== btn.getAttribute('href');
 
         if (linkChanged) {
           try {

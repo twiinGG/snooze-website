@@ -241,6 +241,77 @@ tier2PendingSlugs.forEach(function (slug) {
   }
 });
 
+// DOM round-trip regression (updateLinks). rewriteCheckoutUrl is pure and
+// always returns the correct target, but updateLinks decides whether to WRITE
+// the href. A prior bug compared the target against the stored original href
+// instead of the current href, so switching back to USD after an AUD switch
+// left the AUD href stranded on the element. This drives window.setCurrency
+// through USD -> AUD -> USD -> AUD against a mutable button and asserts the
+// href round-trips both directions.
+(function domRoundTripTest() {
+  const noop = function () {};
+  const clsSet = {};
+  const bodyClassList = {
+    add: function (c) { clsSet[c] = true; },
+    remove: function () { for (let i = 0; i < arguments.length; i++) delete clsSet[arguments[i]]; },
+    contains: function (c) { return !!clsSet[c]; }
+  };
+
+  const attrs = { href: 'https://www.joinsnooze.com/offers/z63s9VaR/checkout' };
+  const button = {
+    getAttribute: function (k) { return Object.prototype.hasOwnProperty.call(attrs, k) ? attrs[k] : null; },
+    setAttribute: function (k, v) { attrs[k] = v; },
+    classList: { add: noop, remove: noop, contains: () => false }
+  };
+
+  const fakeDoc = {
+    readyState: 'loading',
+    body: { classList: bodyClassList, appendChild: noop },
+    addEventListener: noop,
+    querySelector: () => null,
+    querySelectorAll: function (sel) {
+      return sel.indexOf('dynamic-cta') !== -1 ? [button] : [];
+    },
+    createElement: () => ({ classList: { add: noop }, setAttribute: noop, appendChild: noop, style: {} }),
+    getElementById: () => null
+  };
+  const sandbox = {
+    window: {}, document: fakeDoc, console: console,
+    localStorage: { getItem: () => null, setItem: noop },
+    Intl: Intl, setTimeout: setTimeout, clearTimeout: clearTimeout
+  };
+  sandbox.window.document = sandbox.document;
+  sandbox.window.localStorage = sandbox.localStorage;
+  sandbox.window.location = { href: 'https://www.joinsnooze.com/' };
+  vm.createContext(sandbox);
+  const src = fs.readFileSync(TOGGLE_PATH, 'utf8')
+    .replace(/^\s*<script>\s*$/m, '')
+    .replace(/^\s*<\/script>\s*$/m, '');
+  vm.runInContext(src, sandbox, { filename: 'currency-toggle.js' });
+
+  const setCurrency = sandbox.window.setCurrency;
+  const seq = [
+    ['AUD', 'vYgCNgJz'],
+    ['USD', 'z63s9VaR'],
+    ['AUD', 'vYgCNgJz'],
+    ['USD', 'z63s9VaR']
+  ];
+  let ok = true;
+  seq.forEach(function (step) {
+    setCurrency(step[0], true);
+    if (attrs.href.indexOf('/offers/' + step[1] + '/') === -1) {
+      ok = false;
+      console.log('FAIL  updateLinks round-trip: after ' + step[0] + ' expected ' + step[1] + ', got ' + attrs.href);
+    }
+  });
+  if (ok) {
+    passed += 1;
+    console.log('PASS  updateLinks round-trips USD<->AUD on repeated toggles');
+  } else {
+    failed += 1;
+  }
+})();
+
 console.log('');
 console.log('Summary: ' + passed + ' passed, ' + failed + ' failed.');
 process.exit(failed === 0 ? 0 : 1);

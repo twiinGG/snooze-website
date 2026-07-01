@@ -1,0 +1,76 @@
+<script>
+/* Snooze homepage membership-pricing currency enhancement.
+   The homepage pricing lives in a single Encore custom-code block whose
+   Ace editor will not persist programmatic edits, so this enhancement tags
+   the price elements at runtime and lets the site-wide currency engine drive
+   them. Homepage-scoped (guards on #pricing .price-grid); idempotent. */
+(function () {
+  'use strict';
+  function enhance() {
+    var grid = document.querySelector('#pricing .price-grid');
+    if (!grid || grid.getAttribute('data-sn-enhanced')) return;
+    grid.setAttribute('data-sn-enhanced', '1');
+
+    // Monthly / Quarterly / Annual -> [USD, AUD, period label]
+    var map = [
+      ['79', '119', 'per month'],
+      ['197', '299', 'per 3 months'],
+      ['657', '997', 'per year']
+    ];
+    var cards = grid.querySelectorAll('.price-card');
+    for (var i = 0; i < cards.length; i++) {
+      var m = map[i];
+      if (!m) continue;
+      var big = cards[i].querySelector('.price-big');
+      if (big) {
+        big.classList.add('dynamic-price');
+        big.setAttribute('data-usd', m[0]);
+        big.setAttribute('data-aud', m[1]);
+      }
+      var sub = cards[i].querySelector('.price-sub');
+      if (sub) sub.textContent = m[2];
+      var micro = cards[i].querySelector('.price-microcopy');
+      if (micro && /\/day/.test(micro.textContent)) {
+        micro.innerHTML = 'Less than <span class="dynamic-price" data-usd="2.20/day" data-aud="3.30/day"></span>';
+      }
+      // Tier CTA: the engine rewrites .dynamic-cta, but these buttons are
+      // .price-card a (not the engine's .pricing-card a selector), so tag them
+      // to keep the AU checkout currency-correct (z63s9VaR -> vYgCNgJz in AUD).
+      var cta = cards[i].querySelector('a');
+      if (cta) cta.classList.add('dynamic-cta');
+    }
+
+    // Inline currency toggle above the grid (engine's injectToggles has already
+    // run, so mount the button here the same way the engine does).
+    if (!document.querySelector('#pricing .sn-currency-inline')) {
+      var ph = document.createElement('div');
+      ph.className = 'sn-currency-inline';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'currency-toggle-btn inline-currency-toggle';
+      btn.setAttribute('aria-label', 'Toggle currency');
+      btn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!window.setCurrency) return;
+        var cur = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+        window.setCurrency(cur === 'AUD' ? 'USD' : 'AUD', true);
+      };
+      ph.appendChild(btn);
+      grid.parentNode.insertBefore(ph, grid);
+    }
+
+    // Re-run the engine so the freshly-tagged prices + toggle reflect the
+    // current currency (initCurrency already ran before these existed).
+    if (window.setCurrency) {
+      var current = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+      window.setCurrency(current, false);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enhance);
+  } else {
+    enhance();
+  }
+})();
+</script>
