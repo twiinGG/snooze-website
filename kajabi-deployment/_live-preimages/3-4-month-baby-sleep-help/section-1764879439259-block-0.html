@@ -1,0 +1,98 @@
+<!-- ============================================
+     SECTION 3: CONTEXT-AWARE CTA
+     ============================================ -->
+<!-- ============================================
+     CONTEXT-AWARE CTA COMPONENT
+     Shows appropriate CTA based on user status
+     Falls back to signposting if detection fails
+     ============================================ -->
+
+<div class="snooze-context-cta" id="snooze-context-cta">
+  <!-- This will be populated by JavaScript -->
+  <div class="snooze-cta-loading">Loading...</div>
+</div>
+
+<script>
+(function() {
+  // Ensure globals are loaded
+  if (typeof window.SNOOZE_CHECKOUT_URL === 'undefined') {
+    window.SNOOZE_CHECKOUT_URL = 'https://www.sleepconcierge.com.au/offers/6iRarwak/checkout';
+  }
+  if (typeof window.SNOOZE_LIBRARY_URL === 'undefined') {
+    window.SNOOZE_LIBRARY_URL = '/snooze-library';
+  }
+
+  // Get user status (with fallback to signposting)
+  var userStatus = 'signposting'; // Default to signposting (safest approach)
+
+  // Try detection if available
+  if (typeof window.SnoozeUserDetection !== 'undefined') {
+    userStatus = window.SnoozeUserDetection.getUserStatus();
+  }
+
+  // Get CTA container
+  var ctaContainer = document.getElementById('snooze-context-cta');
+  if (!ctaContainer) return;
+
+  // Generate appropriate CTA based on status
+  var ctaHTML = '';
+
+  if (userStatus === 'snooze-member') {
+    // Snooze Member: Show Library access
+    ctaHTML = `
+      <div class="snooze-cta-member">
+        <a href="${window.SNOOZE_LIBRARY_URL}" class="snooze-btn-primary">
+          Go to Library
+        </a>
+        <p class="snooze-cta-note">Access all your Snooze resources</p>
+      </div>
+    `;
+  } else if (userStatus === 'logged-in-non-member') {
+    // Logged-in Non-Member: Show upgrade CTA
+    ctaHTML = `
+      <div class="snooze-cta-upgrade">
+        <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
+          Upgrade to Snooze
+        </a>
+        <p class="snooze-cta-note">Unlock full access to Library, Village, and Coaching</p>
+      </div>
+    `;
+  } else if (userStatus === 'new-visitor') {
+    // New Visitor: Show join CTA
+    ctaHTML = `
+      <div class="snooze-cta-join">
+        <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
+          Join Snooze
+        </a>
+        <p class="snooze-cta-note">Get access to all sleep resources and support</p>
+      </div>
+    `;
+  } else {
+    // Signposting: Show all options with clear labels
+    ctaHTML = `
+      <div class="snooze-cta-signposting">
+        <div class="snooze-cta-options">
+          <div class="snooze-cta-option">
+            <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
+              Join Snooze
+            </a>
+            <p class="snooze-cta-label">New to Snooze? Start here</p>
+          </div>
+          <div class="snooze-cta-divider">or</div>
+          <div class="snooze-cta-option">
+            <a href="${window.SNOOZE_LIBRARY_URL}" class="snooze-btn-secondary">
+              Go to Library
+            </a>
+            <p class="snooze-cta-label">Already a member? Access your resources</p>
+          </div>
+        </div>
+        <p class="snooze-cta-help">Not sure? <a href="${window.SNOOZE_LOGIN_URL || '/login'}">Log in</a> to check your access</p>
+      </div>
+    `;
+  }
+
+  // Insert CTA HTML
+  ctaContainer.innerHTML = ctaHTML;
+})();
+</script>
+
