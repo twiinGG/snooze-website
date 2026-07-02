@@ -34,6 +34,10 @@ drip-fed content, you get it all) without the perpetuity promise.
 
 *Alternate wording, if "Full access" reads flat to you: "On-demand access to this course."*
 
+Note: this line describes the standalone one-off purchase, so it is the same call as Decision 4.
+If you pick Option A there (one-off purchases keep "lifetime"), reject this one too; the two
+answers need to match.
+
 ---
 
 ### 2. Homepage H1: "Join Your 24/7 Baby Sleep Lifeline"
