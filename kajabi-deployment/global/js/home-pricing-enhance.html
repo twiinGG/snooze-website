@@ -40,24 +40,22 @@
       if (cta) cta.classList.add('dynamic-cta');
     }
 
-    // Inline currency toggle above the grid (engine's injectToggles has already
-    // run, so mount the button here the same way the engine does).
+    // Inline currency toggle above the grid. The engine's injectToggles has
+    // already run, so mount the v2 two-segment switch via the engine's own
+    // exposed builder (never hand-roll v1 markup: v2 updateToggleUI only
+    // drives role=radio segments, so a bare button renders empty/invisible).
     if (!document.querySelector('#pricing .sn-currency-inline')) {
-      var ph = document.createElement('div');
-      ph.className = 'sn-currency-inline';
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'currency-toggle-btn inline-currency-toggle';
-      btn.setAttribute('aria-label', 'Toggle currency');
-      btn.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!window.setCurrency) return;
-        var cur = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
-        window.setCurrency(cur === 'AUD' ? 'USD' : 'AUD', true);
-      };
-      ph.appendChild(btn);
-      grid.parentNode.insertBefore(ph, grid);
+      var api = window.__snoozeCurrencyToggle__;
+      if (api && api.createToggleButton) {
+        var ph = document.createElement('div');
+        ph.className = 'sn-currency-inline';
+        var eyebrow = document.createElement('span');
+        eyebrow.className = 'sn-currency-inline-label';
+        eyebrow.textContent = 'Prices in';
+        ph.appendChild(eyebrow);
+        ph.appendChild(api.createToggleButton('inline-currency-toggle'));
+        grid.parentNode.insertBefore(ph, grid);
+      }
     }
 
     // Re-run the engine so the freshly-tagged prices + toggle reflect the

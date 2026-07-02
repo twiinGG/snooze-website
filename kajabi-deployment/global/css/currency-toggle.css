@@ -155,7 +155,19 @@ body.currency-loaded .dynamic-cta {
 .sn-currency-inline {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 20px;
+}
+
+/* "Prices in" eyebrow-microcopy next to the inline switch (discoverability
+   affordance per TOGGLE-UX-SPEC 2.1; quiet, never a section header). */
+.sn-currency-inline-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sn-text-light, #94A3B8);
 }
 
 .inline-currency-toggle {
