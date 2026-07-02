@@ -4,6 +4,18 @@
 >
 > Method: four parallel read-only passes (site-theme website pages split two ways, landing pages + Consultations, checkout offer themes), each using Kajabi MCP (`get_website_page` / `get_landing_page` / `get_offer` / `get_theme_content` with `section_filter`) as the primary tool, cross-referenced against repo source files and the 2026-07-02 logged-out live sweep. Several pages could not be located in the theme's 142-section index within this pass's budget — these are marked UNKNOWN below rather than guessed, and are the top priority for a follow-up pass (see §4).
 
+## 0. WRITE-PATH UPDATE (2026-07-02, evening session) — customizer block Ace DOES persist
+
+The July 1 "customizer block Ace does NOT persist" blocker is OVERTURNED. Proven on the
+homepage 50KB block (site theme 2156873377, section 1768118757163): load content into the
+block's Ace editor (`ace.edit("settings-sections-<sid>-blocks-<bid>-settings-code-input")
+.setValue()` via chunked base64 from disk), then a REAL DIRTY KEYSTROKE (`ed.insert(" ");
+ed.remove("left")`), then a TRUSTED click on the enabled Save button (agent-browser click
+@ref, not JS .click()). MCP re-read byte-matched all 51,132 bytes. This gives the page wave
+a zero-transcription disk-to-browser write path for ANY site-theme section block, and the
+customizer's page dropdown enumerates every website page's sections (solves the census
+follow-up lookups too). The July 1 failure lacked the dirty-keystroke step.
+
 ## 1. Summary table
 
 | Page | Surface | Method proven to write it | Status |
