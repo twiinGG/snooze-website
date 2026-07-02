@@ -1,5 +1,15 @@
 # AUD Twin Offers: Publish Checklist (Kade, admin UI)
 
+> **COMPLETE 2026-07-02.** All 8 published (Kade set internal titles in admin; Claude set
+> post-purchase messages and publish state via MCP `update_offer` — publish IS possible via
+> API, contrary to the note below). Checkouts smoke-checked logged-out: all Cloudflare 403,
+> zero 404. Registry updated in `docs/operations/KAJABI-OFFERS-REGISTRY.md`; Notion Offer OS
+> picks the offers up via the nightly 2am Kajabi->Notion sync (wf fLvZOIwgHwN4z2vB).
+>
+> **Follow-up for Kade:** DELETE the duplicate June 28 AUD draft set in admin (offer IDs
+> 2151254356 to 2151254363, same PUB*_AUD internal titles plus MEMCS01_AUD/UPCS01_AUD/
+> PUBGD01_AUD extras). They are unwired and now shadow the canonical July 02 set.
+
 Created 2026-07-02 via MCP `create_offer`. All 8 are DRAFT. Products are attached,
 prices and descriptions are set. Your job per offer: paste the internal title, check
 the price, publish. About 2 minutes each.
