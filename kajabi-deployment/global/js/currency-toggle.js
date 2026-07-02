@@ -15,7 +15,26 @@
       '2150887297': '2151254578',
       'mqQikDM7': 'Sr6KzShx',
       '2150884129': '2150946767',
-      'K3Y6FEKX': '46Bz9tk6'
+      'K3Y6FEKX': '46Bz9tk6',
+      // Tier-2 AUD twins (created via MCP 2026-07-02, USD x1.51 charm-rounded).
+      // DO NOT deploy this block to Kajabi until the AUD twins are PUBLISHED in admin,
+      // or AUD mode will link to draft (404) checkouts.
+      '2149475268': '2151262009', // PUBCR01 3-4 Month Course  $117 -> A$179
+      'W2PyqL2X': 'FkZfbT25',
+      '2150844344': '2151262011', // PUBCR02 5-12 Course       $117 -> A$179
+      '9DFJSwVD': '8SL8r5sC',
+      '2150844378': '2151262012', // PUBCR03 Toddler Toolkit   $117 -> A$179
+      'FktmJAvJ': 'azdqxZuK',
+      '2149725799': '2151262013', // PUBGD02 Newborn Guide     $67  -> A$99
+      'omMcVgAi': 'JfeoXoKn',
+      '2150311631': '2151262014', // Nap Transition Guide      $27  -> A$39
+      '32DbWDyP': 'xGVQ2zfC',
+      '2149700088': '2151262016', // PUBCS01 Signature Consult $650 -> A$975
+      '4zHPSRCs': 'wgqokagt',
+      '2149700039': '2151262017', // PUBCS02 45min Follow-up   $390 -> A$590
+      'jRxWAnVo': 'd5HsPDpJ',
+      '2149839927': '2151262018', // PUBCS03 2-Week Transform  $3,500 -> A$5,250
+      'mwiSia6A': 'ZYWF7eY8'
     },
     variantMapping: {
       // Core Snooze Membership variants (USD offer 2150754998 -> AUD offer 2151256977 / vYgCNgJz).
@@ -28,7 +47,10 @@
       '64815': '160791',  // quarterly: USD $197 -> AUD $299
       '64816': '160792'   // yearly:    USD $657 -> AUD $997
     },
-    audOfferIds: ['2150946767', '2151256977', '2151254578']
+    audOfferIds: ['2150946767', '2151256977', '2151254578',
+      // Tier-2 AUD twins (2026-07-02):
+      '2151262009', '2151262011', '2151262012', '2151262013',
+      '2151262014', '2151262016', '2151262017', '2151262018']
   };
 
   function safeLocalStorage() {
@@ -330,33 +352,83 @@
     }
   }
 
-  function createToggleButton(className) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = `currency-toggle-btn ${className}`;
-    btn.setAttribute('aria-label', 'Toggle currency');
-    btn.onclick = function(e) {
+  function handleRadiogroupKeydown(e, group) {
+    const segments = group.querySelectorAll('button[role="radio"]');
+    if (segments.length !== 2) return;
+
+    const currentIndex = Array.prototype.findIndex.call(segments, function(seg) {
+      return seg.getAttribute('aria-checked') === 'true';
+    });
+    const focusedIndex = Array.prototype.indexOf.call(segments, document.activeElement);
+
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
       e.preventDefault();
-      e.stopPropagation();
-      try {
-        const current = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
-        setCurrency(current === 'AUD' ? 'USD' : 'AUD', true);
-      } catch (e) {
-        logError('Toggle click failed', e);
-      }
-    };
-    return btn;
+      const nextIndex = e.key === 'ArrowRight'
+        ? (currentIndex + 1) % 2
+        : (currentIndex - 1 + 2) % 2;
+      const nextCurrency = segments[nextIndex].getAttribute('data-currency');
+      setCurrency(nextCurrency, true);
+      segments[nextIndex].focus();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      if (focusedIndex === -1) return;
+      e.preventDefault();
+      const focusedCurrency = segments[focusedIndex].getAttribute('data-currency');
+      setCurrency(focusedCurrency, true);
+    }
+  }
+
+  function createToggleButton(className) {
+    const group = document.createElement('div');
+    group.className = 'currency-toggle-btn ' + className;
+    group.setAttribute('role', 'radiogroup');
+    group.setAttribute('aria-label', 'Price currency');
+
+    ['USD', 'AUD'].forEach(function(currency) {
+      const segment = document.createElement('button');
+      segment.type = 'button';
+      segment.setAttribute('role', 'radio');
+      segment.setAttribute('aria-checked', 'false');
+      segment.setAttribute('tabindex', '-1');
+      segment.setAttribute('data-currency', currency);
+      segment.textContent = currency;
+
+      segment.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          setCurrency(currency, true);
+        } catch (err) {
+          logError('Toggle click failed', err);
+        }
+      });
+
+      group.appendChild(segment);
+    });
+
+    group.addEventListener('keydown', function(e) {
+      handleRadiogroupKeydown(e, group);
+    });
+
+    return group;
   }
 
   function updateToggleUI(currency) {
     const toggles = document.querySelectorAll('.currency-toggle-btn');
-    const flag = currency === 'AUD' ? '🇦🇺' : '🇺🇸';
-    const label = currency === 'AUD' ? 'AUD' : 'USD';
 
-    toggles.forEach(t => {
+    toggles.forEach(function(t) {
       try {
-        t.innerHTML = `<span class="currency-flag">${flag}</span> ${label}`;
-        t.setAttribute('aria-pressed', currency === 'AUD' ? 'true' : 'false');
+        const segments = t.querySelectorAll('button[role="radio"]');
+        segments.forEach(function(seg) {
+          const segCurrency = seg.getAttribute('data-currency');
+          const isActive = segCurrency === currency;
+          seg.setAttribute('aria-checked', isActive ? 'true' : 'false');
+          seg.setAttribute('tabindex', isActive ? '0' : '-1');
+          if (isActive) {
+            seg.classList.add('is-active');
+          } else {
+            seg.classList.remove('is-active');
+          }
+        });
       } catch (e) {
         logError('Failed to update toggle UI', e);
       }
@@ -460,7 +532,9 @@
   if (typeof window !== 'undefined') {
     window.__snoozeCurrencyToggle__ = {
       rewriteCheckoutUrl: rewriteCheckoutUrl,
-      CONFIG: CONFIG
+      CONFIG: CONFIG,
+      createToggleButton: createToggleButton,
+      updateToggleUI: updateToggleUI
     };
   }
 

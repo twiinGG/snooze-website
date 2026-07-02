@@ -222,13 +222,38 @@ if (!Object.prototype.hasOwnProperty.call(CONFIG.offerMapping, '6iRarwak')) {
   }
 });
 
-// Tier-2 product offers (courses, guides, consults) have NO AUD twin yet; their
-// AUD offers are created in Kajabi admin in a later wave. Until Phase 4 wires
-// them, their USD checkout URLs must round-trip unchanged so no AU buyer is
-// routed to a non-existent offer. When an AUD twin is created, add the
-// offerMapping entry AND move the slug out of this pending list with a real
-// swap test above.
-const tier2PendingSlugs = ['W2PyqL2X', '9DFJSwVD', 'omMcVgAi', 'FktmJAvJ', 'rVuLzkZa', 'Lzouupsm'];
+// Tier-2 AUD twins created via MCP 2026-07-02 (drafts; publish in admin before
+// deploying this engine block). Each USD checkout URL must rewrite to its AUD
+// twin and round-trip back.
+const tier2WiredSlugs = {
+  'W2PyqL2X': 'FkZfbT25',  // PUBCR01 3-4 Month Course  $117 -> A$179
+  '9DFJSwVD': '8SL8r5sC',  // PUBCR02 5-12 Course       $117 -> A$179
+  'FktmJAvJ': 'azdqxZuK',  // PUBCR03 Toddler Toolkit   $117 -> A$179
+  'omMcVgAi': 'JfeoXoKn',  // PUBGD02 Newborn Guide     $67  -> A$99
+  '32DbWDyP': 'xGVQ2zfC',  // Nap Transition Guide      $27  -> A$39
+  '4zHPSRCs': 'wgqokagt',  // PUBCS01 Signature Consult $650 -> A$975
+  'jRxWAnVo': 'd5HsPDpJ',  // PUBCS02 45min Follow-up   $390 -> A$590
+  'mwiSia6A': 'ZYWF7eY8'   // PUBCS03 2-Week Transform  $3,500 -> A$5,250
+};
+Object.keys(tier2WiredSlugs).forEach(function (slug) {
+  const url = 'https://www.joinsnooze.com/offers/' + slug + '/checkout';
+  const expected = 'https://www.joinsnooze.com/offers/' + tier2WiredSlugs[slug] + '/checkout';
+  const out = rewrite(url, 'AUD');
+  const back = rewrite(out, 'USD');
+  if (out === expected && back === url) {
+    passed += 1;
+    console.log('PASS  Tier-2 wired offer ' + slug + ' swaps to AUD twin and round-trips');
+  } else {
+    failed += 1;
+    console.log('FAIL  Tier-2 wired offer ' + slug + ' expected ' + expected + ' got: ' + out + ' (back: ' + back + ')');
+  }
+});
+
+// Remaining tier-2 offers with NO AUD twin (Camp Multiples standalone Lzouupsm;
+// rVuLzkZa is referenced only in docs). Their USD checkout URLs must round-trip
+// unchanged so no AU buyer is routed to a non-existent offer. When an AUD twin
+// is created, add the offerMapping entry AND move the slug into tier2WiredSlugs.
+const tier2PendingSlugs = ['rVuLzkZa', 'Lzouupsm'];
 tier2PendingSlugs.forEach(function (slug) {
   const url = 'https://www.joinsnooze.com/offers/' + slug + '/checkout';
   const out = rewrite(url, 'AUD');
@@ -310,6 +335,231 @@ tier2PendingSlugs.forEach(function (slug) {
   } else {
     failed += 1;
   }
+})();
+
+// Segmented switch UI tests (createToggleButton + updateToggleUI).
+(function toggleUiTests() {
+  const noop = function () {};
+
+  function createMockElement(tag) {
+    const attrs = {};
+    const listeners = {};
+    const children = [];
+    const el = {
+      tagName: tag.toUpperCase(),
+      type: '',
+      className: '',
+      classList: {
+        _set: {},
+        add: function (c) { el.classList._set[c] = true; },
+        remove: function (c) { delete el.classList._set[c]; },
+        contains: function (c) { return !!el.classList._set[c]; }
+      },
+      style: {},
+      textContent: '',
+      innerHTML: '',
+      children: children,
+      parentNode: null,
+      setAttribute: function (k, v) { attrs[k] = String(v); },
+      getAttribute: function (k) {
+        return Object.prototype.hasOwnProperty.call(attrs, k) ? attrs[k] : null;
+      },
+      appendChild: function (child) {
+        child.parentNode = el;
+        children.push(child);
+        return child;
+      },
+      addEventListener: function (type, fn) {
+        if (!listeners[type]) listeners[type] = [];
+        listeners[type].push(fn);
+      },
+      dispatchEvent: function (type) {
+        const evt = {
+          type: type,
+          key: type,
+          preventDefault: function () {},
+          stopPropagation: function () {}
+        };
+        (listeners[type] || []).forEach(function (fn) {
+          fn(evt);
+        });
+      },
+      querySelector: function (sel) {
+        if (sel === 'button[role="radio"]') {
+          return children.filter(function (c) {
+            return c.getAttribute('role') === 'radio';
+          })[0] || null;
+        }
+        return null;
+      },
+      querySelectorAll: function (sel) {
+        if (sel === '.currency-toggle-btn') {
+          return documentBody._toggles.slice();
+        }
+        if (sel === 'button[role="radio"]') {
+          return children.filter(function (c) {
+            return c.getAttribute('role') === 'radio';
+          });
+        }
+        if (sel.indexOf('dynamic-cta') !== -1) return [];
+        if (sel.indexOf('dynamic-price') !== -1) return [];
+        return [];
+      },
+      focus: function () {
+        documentBody._activeElement = el;
+      }
+    };
+    return el;
+  }
+
+  const documentBody = {
+    classList: {
+      _set: {},
+      add: function (c) { documentBody.classList._set[c] = true; },
+      remove: function (c) { delete documentBody.classList._set[c]; },
+      contains: function (c) { return !!documentBody.classList._set[c]; }
+    },
+    appendChild: noop,
+    _toggles: [],
+    _activeElement: null
+  };
+
+  let setCurrencyCalls = [];
+
+  const fakeDoc = {
+    readyState: 'loading',
+    body: documentBody,
+    addEventListener: noop,
+    querySelector: function () { return null; },
+    querySelectorAll: function (sel) {
+      if (sel === '.currency-toggle-btn') return documentBody._toggles.slice();
+      return [];
+    },
+    createElement: function (tag) {
+      return createMockElement(tag);
+    },
+    getElementById: function () { return null; },
+    get activeElement() {
+      return documentBody._activeElement;
+    }
+  };
+
+  const sandbox = {
+    window: {},
+    document: fakeDoc,
+    console: console,
+    localStorage: { getItem: function () { return null; }, setItem: noop },
+    Intl: Intl,
+    setTimeout: setTimeout,
+    clearTimeout: clearTimeout
+  };
+  sandbox.window.document = sandbox.document;
+  sandbox.window.localStorage = sandbox.localStorage;
+  sandbox.window.location = { href: 'https://www.joinsnooze.com/' };
+  sandbox.window.dataLayer = [];
+  sandbox.window.setCurrency = null;
+
+  vm.createContext(sandbox);
+  const src = fs.readFileSync(TOGGLE_PATH, 'utf8')
+    .replace(/^\s*<script>\s*$/m, '')
+    .replace(/^\s*<\/script>\s*$/m, '');
+  vm.runInContext(src, sandbox, { filename: 'currency-toggle.js' });
+  sandbox.setCurrency = sandbox.window.setCurrency;
+
+  const api = sandbox.window.__snoozeCurrencyToggle__;
+  const createToggleButton = api.createToggleButton;
+  const updateToggleUI = api.updateToggleUI;
+  const originalSetCurrency = sandbox.window.setCurrency;
+
+  sandbox.window.setCurrency = function (currency, save) {
+    setCurrencyCalls.push({ currency: currency, save: save });
+    return originalSetCurrency(currency, save);
+  };
+  sandbox.setCurrency = sandbox.window.setCurrency;
+
+  function getSegments(toggle) {
+    return toggle.children.filter(function (c) {
+      return c.getAttribute('role') === 'radio';
+    });
+  }
+
+  function assert(name, condition, detail) {
+    if (condition) {
+      passed += 1;
+      console.log('PASS  ' + name);
+    } else {
+      failed += 1;
+      console.log('FAIL  ' + name + (detail ? ': ' + detail : ''));
+    }
+  }
+
+  const toggle = createToggleButton('inline-currency-toggle');
+  documentBody._toggles.push(toggle);
+
+  assert(
+    'createToggleButton renders radiogroup with two radio segments',
+    toggle.getAttribute('role') === 'radiogroup' &&
+      toggle.getAttribute('aria-label') === 'Price currency' &&
+      getSegments(toggle).length === 2,
+    'expected radiogroup with 2 segments'
+  );
+
+  updateToggleUI('AUD');
+  const audSegments = getSegments(toggle);
+  assert(
+    'updateToggleUI sets aria-checked and roving tabindex for AUD',
+    audSegments[0].getAttribute('aria-checked') === 'false' &&
+      audSegments[0].getAttribute('tabindex') === '-1' &&
+      audSegments[1].getAttribute('aria-checked') === 'true' &&
+      audSegments[1].getAttribute('tabindex') === '0',
+  null
+  );
+
+  updateToggleUI('USD');
+  const usdSegments = getSegments(toggle);
+  assert(
+    'updateToggleUI sets aria-checked and roving tabindex for USD',
+    usdSegments[0].getAttribute('aria-checked') === 'true' &&
+      usdSegments[0].getAttribute('tabindex') === '0' &&
+      usdSegments[1].getAttribute('aria-checked') === 'false' &&
+      usdSegments[1].getAttribute('tabindex') === '-1',
+    null
+  );
+
+  setCurrencyCalls = [];
+  getSegments(toggle)[1].dispatchEvent('click');
+  assert(
+    'clicking AUD segment calls setCurrency(AUD) unconditionally',
+    setCurrencyCalls.length === 1 && setCurrencyCalls[0].currency === 'AUD',
+    JSON.stringify(setCurrencyCalls)
+  );
+
+  setCurrencyCalls = [];
+  getSegments(toggle)[0].dispatchEvent('click');
+  assert(
+    'clicking USD segment calls setCurrency(USD) unconditionally',
+    setCurrencyCalls.length === 1 && setCurrencyCalls[0].currency === 'USD',
+    JSON.stringify(setCurrencyCalls)
+  );
+
+  // DOM round-trip: AUD -> USD -> same aria-checked state as start.
+  updateToggleUI('USD');
+  const startUsd = getSegments(toggle).map(function (s) {
+    return s.getAttribute('aria-checked') + ':' + s.getAttribute('tabindex');
+  });
+
+  sandbox.window.setCurrency('AUD', false);
+  sandbox.window.setCurrency('USD', false);
+
+  const endUsd = getSegments(toggle).map(function (s) {
+    return s.getAttribute('aria-checked') + ':' + s.getAttribute('tabindex');
+  });
+
+  assert(
+    'toggle UI round-trips USD after AUD switch (no stranded aria-checked)',
+    startUsd[0] === endUsd[0] && startUsd[1] === endUsd[1],
+    'start=' + startUsd.join('|') + ' end=' + endUsd.join('|')
+  );
 })();
 
 console.log('');

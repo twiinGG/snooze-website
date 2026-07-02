@@ -11,64 +11,87 @@ body.currency-loaded .dynamic-cta {
 }
 
 .currency-toggle-btn {
+  --sn-switch-height-desktop: 32px;
+  --sn-switch-height-mobile: 40px;
+  --sn-switch-radius: var(--radius-full, 9999px);
+  --sn-switch-border: rgba(148, 163, 184, 0.35);
+  --sn-switch-active-bg: var(--sn-navy, #1F293B);
+  --sn-switch-active-fg: var(--sn-cream, #FAF7F4);
+  --sn-switch-inactive-fg: var(--sn-text-light, #94A3B8);
+  --sn-switch-hover-bg: var(--sn-cream, #FAF7F4);
+  --sn-switch-focus-ring: var(--sn-coral, #F43357);
+
+  display: inline-flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  min-width: 120px;
+  height: var(--sn-switch-height-desktop);
+  margin-left: 12px;
+  padding: 0;
+  border: 1px solid var(--sn-switch-border);
+  border-radius: var(--sn-switch-radius);
   background: transparent;
-  border: 1px solid var(--sn-navy, #1F293B);
-  color: var(--sn-navy, #1F293B);
-  padding: 6px 12px;
-  border-radius: 20px;
+  font-family: var(--sn-font-body, var(--font-body, sans-serif));
+  overflow: hidden;
+}
+
+.currency-toggle-btn button[role="radio"] {
+  flex: 1 1 50%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 12px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--sn-switch-inactive-fg);
   font-size: 13px;
   font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  margin-left: 12px;
-  font-family: var(--sn-font-body, var(--font-body, sans-serif));
-  line-height: 1.4;
-}
-
-.currency-toggle-btn:hover {
-  background: var(--sn-cream, var(--color-beige, #F2EDEA));
-  border-color: var(--sn-coral, #F43357);
-}
-
-.currency-toggle-btn:focus {
-  outline: 2px solid var(--sn-coral, #F43357);
-  outline-offset: 2px;
-}
-
-.currency-toggle-btn:active {
-  transform: scale(0.98);
-}
-
-.currency-flag {
-  font-size: 14px;
   line-height: 1;
-  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
-body.currency-mode-aud .currency-toggle-btn {
-  background: rgba(0, 82, 204, 0.1);
-  border-color: #0052cc;
-  color: #0052cc;
+.currency-toggle-btn button[role="radio"]:first-child {
+  border-radius: var(--sn-switch-radius) 0 0 var(--sn-switch-radius);
 }
 
-body.currency-mode-aud .currency-toggle-btn:hover {
-  background: rgba(0, 82, 204, 0.15);
+.currency-toggle-btn button[role="radio"]:last-child {
+  border-radius: 0 var(--sn-switch-radius) var(--sn-switch-radius) 0;
+}
+
+.currency-toggle-btn button[aria-checked="true"] {
+  background: var(--sn-switch-active-bg);
+  color: var(--sn-switch-active-fg);
+}
+
+.currency-toggle-btn button:hover:not([aria-checked="true"]) {
+  background: rgba(250, 247, 244, 0.4);
+}
+
+.currency-toggle-btn button:focus-visible {
+  outline: 2px solid var(--sn-switch-focus-ring);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+.currency-toggle-btn button:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 768px) {
   .currency-toggle-btn {
-    font-size: 12px;
-    padding: 5px 10px;
+    height: var(--sn-switch-height-mobile);
     margin-left: 8px;
   }
-  
+
   .mobile-currency-toggle {
     margin-left: 0 !important;
     width: 100% !important;
     justify-content: center !important;
+    min-height: 44px;
+    padding: 6px 0;
+    height: auto;
   }
 }
 
@@ -107,17 +130,12 @@ body.currency-mode-aud .currency-toggle-btn:hover {
 }
 
 .dynamic-price {
-  transition: opacity 0.3s ease;
+  font-variant-numeric: tabular-nums;
+  transition: opacity 0.15s ease;
 }
 
 .dynamic-price.updating {
   opacity: 0.5;
-}
-
-.currency-toggle-btn[aria-pressed="true"] {
-  background: rgba(0, 82, 204, 0.1);
-  border-color: #0052cc;
-  color: #0052cc;
 }
 
 .sr-only {
@@ -142,17 +160,16 @@ body.currency-mode-aud .currency-toggle-btn:hover {
 
 .inline-currency-toggle {
   margin-left: 0;
-  padding: 8px 18px;
-  font-size: 14px;
-  border-radius: 24px;
+  min-width: 128px;
+  height: 36px;
 }
 
 /* Sticky toggle: mounted into a .sn-currency-sticky placeholder. The page
    positions the placeholder (e.g. fixed footer bar); this styles the button. */
 .sticky-currency-toggle {
   margin-left: 0;
-  padding: 7px 14px;
-  font-size: 13px;
+  min-width: 120px;
+  height: 32px;
 }
 
 /* Optional ready-made sticky bar. Pages can use <div class="sn-currency-sticky sn-currency-sticky-bar"> */
@@ -165,4 +182,14 @@ body.currency-mode-aud .currency-toggle-btn:hover {
   border-radius: 28px;
   box-shadow: 0 4px 16px rgba(31, 41, 59, 0.18);
   padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .inline-currency-toggle {
+    height: 40px;
+  }
+
+  .sticky-currency-toggle {
+    height: 36px;
+  }
 }
