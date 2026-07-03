@@ -248,7 +248,7 @@
           window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
         }
         if (typeof window.SNOOZE_LIBRARY_URL === 'undefined') {
-          window.SNOOZE_LIBRARY_URL = 'https://joinsnooze.com/products/communities/v2/snooze/library';
+          window.SNOOZE_LIBRARY_URL = '/snooze-library';
         }
         
         // Get user status (with fallback to signposting)
@@ -283,7 +283,7 @@
               <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
                 Upgrade to Snooze
               </a>
-              <p class="snooze-cta-note">Unlock full access to Library, Village, and Coaching</p>
+              <p class="snooze-cta-note">Get full access to Library, Village, and Coaching</p>
             </div>
           `;
         } else if (userStatus === 'new-visitor') {

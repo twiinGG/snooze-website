@@ -28,3 +28,8 @@ Checkout URL pattern: `https://joinsnooze.com/offers/<slug>/checkout`
 ## Member pricing cross-sell
 
 The Snooze Membership checkout link used on this page is `z63s9VaR` (USD). The AUD equivalent is `vYgCNgJz` (offer 2151256977; updated 2026-06-30 from the deleted `bEsVXFXG`/2151212200) and is swapped automatically by the site-wide currency engine once it is deployed — no per-page wiring needed.
+
+## Session 3 (2026-07-04, CU-001): banned-phrase fix
+
+- Removed "unlock"/"Unlock" (§7 banned LLM-fingerprint word), 4 spots: "to unlock preferred rates" → "for preferred rates" (x2), "Unlock Member Pricing" heading → "Member Pricing", "to unlock member pricing" → "for member pricing". Meaning preserved. Page was not yet pasted, so this prevented shipping a fresh violation.
+- Member 2-Week offer now exists as drafts: MEMCS02 USD $2,800 (2151265178) / AUD $3,970 (2151265179), product 2148761857 — Kade publishes. Page displays $2,800/A$3,970 via `data-usd`/`data-aud`.

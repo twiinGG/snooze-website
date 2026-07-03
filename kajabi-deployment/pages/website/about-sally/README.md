@@ -210,3 +210,10 @@ Applied to `about-sally.html` (repo only; NOT yet pasted to Kajabi):
 - P6 bridge form on the credentials card ("the methods in Snooze"); CTA rewritten to the age-based + Snooze Specialists form (no Method, no solo-Sally coaching claim).
 - P18 "specialised training"; all 6 em dashes replaced with sentence breaks/commas.
 - Verified: tag balance unchanged, JSON-LD parses, zero kill-list residue ("gentle vs. harsh debate" is category contrast, permitted).
+
+## Session 3 (2026-07-04, CU-001): library JS-global + banned-phrase fix — RE-PASTE NEEDED
+
+This page is already LIVE; the two fixes below require a re-paste in the next paste session.
+
+- `SNOOZE_LIBRARY_URL` JS global was hard-set to the community library (`.../v2/snooze/library`), the only page deviating from the site-wide default in `snooze-globals.js`. Repointed to `/snooze-library` per the ratified two-surface model.
+- Removed "Unlock" (§7 banned): CTA note "Unlock full access to Library, Village, and Coaching" → "Get full access...".

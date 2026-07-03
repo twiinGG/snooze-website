@@ -51,3 +51,8 @@ Applied to `the-snooze-method.html` (repo only; NOT yet pasted to Kajabi):
 - H1 and section headings moved to the whitelisted bridge form "The Snooze Methodology" (the named-product ban stands; page fate/URL is still OQ4 and unchanged).
 - P18: "schedule optimisation".
 - Verified: tag balance OK, zero kill-list residue.
+
+## Session 3 (2026-07-04, CU-001): library link fix
+
+- Tier CTAs repointed `/library` → `/snooze-library` (both cards: "Explore the Age-Based Courses", "Browse Troubleshooting Guides") per the ratified two-surface library model (public marketing → curated `/snooze-library`). Grep-verified: zero bare `/library` hrefs remain.
+- Re-confirmed paste-ready: self-contained landing page, H1 "The Snooze Methodology", two tiers, `dynamic-cta`→z63s9VaR, no #pricing, no em dashes/banned phrases.
