@@ -263,3 +263,20 @@ All content uses straightforward, accessible language:
 - Support section card heading "Live Coaching & Replays" became "Live Sessions"; its description "Access all past coaching sessions, Q&A calls, and workshop replays with Sally" became "Join the Snooze Specialists for live Q&A sessions, plus the recordings already inside the community." The card link points at a real community `.../coaching` access group, so a factual reference to the recordings that exist inside the community was kept; the guaranteed "replay vault/library" framing was dropped.
 
 **Deliberately left as-is:** the Snoozebot Coming-Soon card keeps "24/7" because it describes a future AI assistant, not an always-on membership support promise.
+
+
+---
+
+## Copy-uplift session 2 change log (2026-07-03, CU-001 Batch 1)
+
+Applied to `library-page.html` (repo only; NOT yet pasted to Kajabi):
+
+- D-48/P17: "Age-Based Modules" heading and section note renamed to courses-and-guides forms.
+- D-58: Live Sessions card now "Join the Snooze Specialists for live masterclasses and coaching sessions, plus the recordings already inside the community".
+- D-60 FINAL (Sally's amended wording): the 1:1 card is retitled "One-on-One Support" with her sentence ("Work one-on-one with Sally or her Snooze Specialists... ask a question in the forum about applying the methods from the Snooze guides and courses"); Bec no longer named; "personalized" fixed with it.
+- Brief 9 IA fix: the "On-Demand Webinars" Coming Soon card deleted (it contradicted the live recordings the same page sells; Sally's T62).
+- D-61 guard: Snooze Bot card untouched, stays Coming Soon (its 24/7 is the permitted AI/content carve-out).
+- Nap Trapped caps perk block untouched.
+- Verified: tag balance unchanged, zero kill-list residue.
+
+Note: `library-page-complete.html` (alternate build) also received the deterministic sweeps (three-tiered learning path line, spellings, credential "former").

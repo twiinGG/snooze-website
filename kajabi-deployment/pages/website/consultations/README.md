@@ -9,7 +9,9 @@
 ## SEO metadata (add in Kajabi page settings, not in code)
 
 - **SEO Title:** Personalised Sleep Consultations with Sally | 1:1 Sleep Support for Babies and Toddlers
-- **SEO Description:** Work one-on-one with Sally, a Registered Paediatric Nurse and Certified Sleep Consultant, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.
+- **SEO Description:** Work one-on-one with Sally, an internationally certified sleep consultant and former registered paediatric nurse, to create a tailored sleep plan for your baby or toddler. Virtual consultations available worldwide.
+
+> Copy-uplift session 2 (2026-07-03): "7 days email support" removed from all packages per Sally's decision 17; credentials corrected to the former/non-practising standard incl. the ACU degree. NOTE: the LIVE Kajabi surfaces still carry the old copy until repasted, and the MEMCS01 (`igbTdRbk`) per-offer checkout custom code plus any consult email sequences in Kajabi admin still promise 7-day email support — Kade to fix those in the admin UI (no repo source exists for them).
 
 ## AUD offer IDs (pending)
 

@@ -117,7 +117,7 @@ Final Member Price                   $390
 2. Member benefits list:
    - Weekly Live Coaching with Sally & Bec
    - Access to all Sleep Courses & Guides
-   - Priority 24/7 Troubleshooting Support
+   - Priority Troubleshooting Support
    - Community of parents on the same journey
 3. Membership pricing: **$197/quarter** (BAU pricing - updated Jan 7) (cancel anytime)
 4. **Primary CTA:** "Upgrade & Save $300" → Bundle checkout ($587) [UPDATED Jan 7]

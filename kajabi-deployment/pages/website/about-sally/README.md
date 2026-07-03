@@ -194,3 +194,19 @@ These are managed in `snooze-globals.js` and can be updated site-wide by changin
 
 The in-file CTA script hardcodes a checkout fallback of `https://joinsnooze.com/offers/z63s9VaR/checkout` (canonical Snooze Access USD offer). The "Links Reference" section above still cites the retired `6iRarwak` slug; treat the in-file `z63s9VaR` value as current.
 
+
+
+---
+
+## Copy-uplift session 2 change log (2026-07-03, CU-001 Batch 1)
+
+Applied to `about-sally.html` (repo only; NOT yet pasted to Kajabi):
+
+- D-43: philosophy card rewritten to Sally's approved positive framing (sustainable, staggered changes); "leaving them to cry" denial removed, em dash removed.
+- D-44: nurse FAQ answer updated to "former registered paediatric nurse... currently on a non-practising registration"; NEW FAQ item "What are Sally's qualifications?" with the FINAL credential standard including the Bachelor of Nursing from Australian Catholic University. Both mirrored in the FAQPage JSON-LD.
+- D-44: help-with answer drops "gentle" and "The Snooze Method" ("using evidence-based methods through the Snooze membership"), visible + schema.
+- Person JSON-LD: hasCredential now an array adding the Bachelor of Nursing (Australian Catholic University) alongside the sleep-consultant certification (GEO item 1a).
+- D-42 exception preserved: the "Why I Created Snooze" Method-as-philosophy passage is untouched by design.
+- P6 bridge form on the credentials card ("the methods in Snooze"); CTA rewritten to the age-based + Snooze Specialists form (no Method, no solo-Sally coaching claim).
+- P18 "specialised training"; all 6 em dashes replaced with sentence breaks/commas.
+- Verified: tag balance unchanged, JSON-LD parses, zero kill-list residue ("gentle vs. harsh debate" is category contrast, permitted).
