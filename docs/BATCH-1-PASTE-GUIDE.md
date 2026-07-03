@@ -7,7 +7,7 @@ Deploy runbook for the copy-uplift Batch 1. Every stage links the repo file (cli
 **Recurring admin entry points:**
 - Website pages list: <https://app.kajabi.com/admin/sites/2148291177/website_pages>
 - Theme customizer (content blocks live here): <https://app.kajabi.com/admin/sites/2148291177/themes> → active site theme 2156873377 → **Customize** → pick the page in the top page dropdown. Deep links into the customizer 404; always enter via this route.
-- Offers list: <https://app.kajabi.com/admin/offers>
+- Offers list: <https://app.kajabi.com/admin/sites/2148291177/offers>
 - Header Page Scripts (site-wide JS): <https://app.kajabi.com/admin/sites/2148291177/edit/site-details>
 
 ---
@@ -16,7 +16,7 @@ Deploy runbook for the copy-uplift Batch 1. Every stage links the repo file (cli
 
 - [x] **Publish the camp AUD member offer.** DONE (published by Kade). Offer: [Camp Snooze (Member Discount) AUD](https://app.kajabi.com/admin/offers/2151264520/edit) · 2151264520 · $878 AUD · checkout `ENhg45mj` · internal title `P_CM02_AUD`.
 - [x] **Registry Sheet rows** — DONE (Claude, 2026-07-03, via the khorus-spellbook service account + gog-adjacent Sheets API). In the [registry workbook](https://docs.google.com/spreadsheets/d/1-pDIlV7CFQ_RlI0e9uFBAwdZwZaaQaLKaKpUhZNmzjg/edit) OFFERS tab: row 20 corrected to the USD member offer P_CM02 ($611, offer 2150947919; it had been mislabelled AUD with the dead `rVuLzkZa` slug); new row P_CM02_AUD ($878 AUD, offer 2151264520) appended; AUD membership row un-marked from "pending publish". The USD membership row already carried all three cadences ($79/$197/$657). Repo markdown [KAJABI-OFFERS-REGISTRY.md](../../../docs/operations/KAJABI-OFFERS-REGISTRY.md) matches.
-- [ ] **Create the member 2-Week consult offer at $2,800 USD** (decision 3 = Option B): [new offer](https://app.kajabi.com/admin/offers) against the 2-week consult product, single payment $2,800 USD (AUD twin A$4,228 when created), internal title suggestion `MEMCS02_2-Week-Member`. The consultations and store pages already quote $2,800/A$4,228.
+- [ ] **Create the member 2-Week consult offer at $2,800 USD** (decision 3 = Option B): [new offer](https://app.kajabi.com/admin/offers) against the 2-week consult product, single payment $2,800 USD (NOTE: have made the executive decision to reduce the AUD twin to  A$3,970 so it qualifies under the $4k klarna cap and accounts for the lack of timezone difficulty for international consults), internal title suggestion `MEMCS02_2-Week-Member`. The consultations and store pages now quote $2,800/A$3,970 in repo (data-aud updated to match the Klarna-cap decision).
 - [ ] **Delete the unwired June-28 AUD draft offers** (ids 2151254356 to 2151254363) in the [offers list](https://app.kajabi.com/admin/offers) so nobody wires a stale twin. The July-02 twin set is canonical.
 
 ---
@@ -36,15 +36,15 @@ Deploy runbook for the copy-uplift Batch 1. Every stage links the repo file (cli
 3. Re-read via MCP `get_theme_content` and byte-compare against the repo file. Mismatch = re-paste; never hand-fix in the editor.
 
 **Post-paste, same session:**
-- [ ] [Header Page Scripts](https://app.kajabi.com/admin/sites/2148291177/edit/site-details) still carries the runtime pricing enhancer ([home-pricing-enhance.html](../kajabi-deployment/global/js/home-pricing-enhance.html)). The pasted source is already instrumented; keep the enhancer's toggle-mount + "Prices in" label, retire its price-tagging if the pricing section double-renders.
-- [ ] Logged-out incognito on <https://www.joinsnooze.com>: hero "Join Your Baby Sleep Lifeline" (no 24/7); no "Weekly Live Coaching"; camp card $611 (save $79) / $690 incl. bonus month + the 50%-for-life line + "a small group of families per intake" (no number); toggle flips to A$119/A$299/A$997/A$878/A$997 and round-trips; CTAs resolve (z63s9VaR ↔ vYgCNgJz); zero console errors.
-- [ ] Link checker + placeholder scan per [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md).
+- [x] [Header Page Scripts](https://app.kajabi.com/admin/sites/2148291177/edit/site-details) still carries the runtime pricing enhancer ([home-pricing-enhance.html](../kajabi-deployment/global/js/home-pricing-enhance.html)). The pasted source is already instrumented; keep the enhancer's toggle-mount + "Prices in" label, retire its price-tagging if the pricing section double-renders.
+- [x] Logged-out incognito on <https://www.joinsnooze.com>: hero "Join Your Baby Sleep Lifeline" (no 24/7); no "Weekly Live Coaching"; camp card $611 (save $79) / $690 incl. bonus month + the 50%-for-life line + "a small group of families per intake" (no number); toggle flips to A$119/A$299/A$997/A$878/A$997 and round-trips; CTAs resolve (z63s9VaR ↔ vYgCNgJz); zero console errors.
+- [x] Link checker + placeholder scan per [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md).
 
 ---
 
 ## Stage 2: About Sally, Snooze Method explainer, Library (locate block, then paste)
 
-Use the Stage-1 write path (or MCP `update_theme_content` deep-merge of `blocks.<id>_0.settings.code`, which persists cleanly for site-theme sections). The census could not confirm About Sally's live section (candidate cluster `1764848792000`–`014` is mostly hidden; its code block is 2.5KB, too small for the page) — confirm which block renders live by matching an H1 before pasting, and record the real section id in [KAJABI-CODE-SURFACE-MAP.md](./dynamic-currency/KAJABI-CODE-SURFACE-MAP.md).
+Use the Stage-1 write path (or MCP `update_theme_content` deep-merge of `blocks.<id>_0.settings.code`, which persists cleanly for site-theme sections). The census could not confirm About Sally's live section (candidate cluster `1764848792000`–`014` is mostly hidden; its code block is 2.5KB, too small for the page) — confirm which block renders live by matching an H1 before pasting, and record the real section id in [KAJABI-CODE-SURFACE-MAP.md](./dynamic-currency/KAJABI-CODE-SURFACE-MAP.md). 
 
 ### 2a. About Sally
 | | |
@@ -54,20 +54,21 @@ Use the Stage-1 write path (or MCP `update_theme_content` deep-merge of `blocks.
 | Page settings | <https://app.kajabi.com/admin/website_pages/2154679198/edit> |
 | Content block | [customizer](https://app.kajabi.com/admin/sites/2148291177/themes) → page dropdown "About" → locate the rendering block (candidate `1764848792000` cluster, UNCONFIRMED) |
 
-- [ ] Verify after paste: opener reads "Structure first, then the flexibility and support to hold it when life gets messy"; TWO FAQs only ("Is Sally a registered nurse?" + merged "What are Sally's qualifications?" with the ACU degree); no "leaving them to cry"; both JSON-LD blocks parse; no em dashes.
+- [x] Verify after paste: opener reads "Structure first, then the flexibility and support to hold it when life gets messy"; TWO FAQs only ("Is Sally a registered nurse?" + merged "What are Sally's qualifications?" with the ACU degree); no "leaving them to cry"; both JSON-LD blocks parse; no em dashes.
 
-### 2b. Snooze Method explainer — NOTE: this website page is currently DRAFT in Kajabi
+### 2b. Snooze Method explainer — LANDING PAGE, now fully self-contained
 | | |
 |---|---|
 | Repo file | [the-snooze-method.html](../kajabi-deployment/pages/website/snooze-method/the-snooze-method.html) · change log: [README](../kajabi-deployment/pages/website/snooze-method/README.md) |
 | Live URL (draft, admins only) | <https://www.joinsnooze.com/the-snooze-method> |
-| Page settings | <https://app.kajabi.com/admin/website_pages/2156725968/edit> |
-| Content block | [customizer](https://app.kajabi.com/admin/sites/2148291177/themes) → page dropdown "The Snooze Method" |
+| Landing pages list | <https://app.kajabi.com/admin/sites/2148291177/landing_pages> (a same-slug DRAFT website page also exists at [2156725968](https://app.kajabi.com/admin/website_pages/2156725968/edit); deploy to ONE surface and leave the other draft/deleted so the slug is unambiguous) |
 
-- [ ] Decision 8 = repurpose in place: paste the cleaned page, then PUBLISH it from page settings (it is the philosophy/approach pillar; keep the URL, never 404 it).
-- [ ] Verify after paste: H1 "The Snooze Methodology"; no Foundational tier; two cards render; closing CTA names age-based courses; "sleep training wars" line present.
+The page is a landing page, so it does NOT load `snooze-unified-theme.css`. The repo file is now SELF-CONTAINED: its own font/icon links plus a scoped `<style>` block (brand tokens, cream hero, card grids, navy CTA band, responsive). No page JS needed; site-wide Header Page Scripts still run on landing pages and drive the checkout CTA (`dynamic-cta` → z63s9VaR ↔ vYgCNgJz; the old dead `#pricing` anchor is gone).
 
-### 2c. Library
+- [ ] Paste the whole file into the landing page's custom code block, then PUBLISH (decision 8: philosophy/approach pillar; keep the URL, never 404 it).
+- [ ] Verify logged-out: styled cream hero, three-card row, two tier cards side by side (stacked on mobile), navy closing band; H1 "The Snooze Methodology"; no Foundational tier; "sleep training wars" line present; Join Snooze CTA opens the membership checkout and flips currency with the toggle; Font Awesome icons render.
+
+### 2c. Library 
 | | |
 |---|---|
 | Repo file | [library-page.html](../kajabi-deployment/pages/website/library/library-page.html) · change log: [README](../kajabi-deployment/pages/website/library/README.md) |

@@ -1,11 +1,13 @@
-# The Snooze Method Page
+# The Snooze Methodology Page
 
-Deployable Kajabi website page. Wrapper ID: `#snooze-method-page`.
+Deployable Kajabi LANDING PAGE. Wrapper ID: `#snooze-method-page`.
 
-## Deployment
+## Deployment (updated 2026-07-03: landing page, self-contained)
 
-- Paste `the-snooze-method.html` into the Kajabi website page custom code block for The Snooze Method page.
-- Styling is provided by the `#snooze-method-page` initialization block in `kajabi-deployment/global/css/snooze-unified-theme.css`. The HTML carries no inline `<style>`.
+- This is a landing page, so it does NOT load `snooze-unified-theme.css` (that stylesheet lives on the site theme; landing pages carry their own theme).
+- `the-snooze-method.html` is therefore SELF-CONTAINED: it ships its own Google Fonts + Font Awesome links and a scoped `<style>` block (all rules scoped to `#snooze-method-page`, brand tokens copied from the unified theme). Paste the whole file into the landing page's custom code block; nothing else is needed.
+- No page JS. The site-wide Header Page Scripts (currency engine v2) run on landing pages and drive the closing CTA (`dynamic-cta` + `data-checkout`, z63s9VaR ↔ vYgCNgJz). The old `#pricing` anchor (a dead link on a standalone page) was replaced with the membership checkout URL.
+- A same-slug DRAFT website page also exists (id 2156725968); deploy to one surface only.
 
 ## Files
 
