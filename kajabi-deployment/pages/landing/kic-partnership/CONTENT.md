@@ -116,7 +116,7 @@
 Sally creates 3 to 5 short sleep coaching videos for Kic channels. Test audience response across app, social, email. Low lift, fast to execute, generates real data.
 
 ### Path 2: Expand - Sally as Kics Sleep Expert
-Sally provides ongoing sleep content for the Mindset and Rituals sections. Regular podcast appearances (KICPod, KICBump), live Q and As, community events. Kics resident family sleep expert.
+Sally provides ongoing sleep content for the Mindset and Rituals sections. Regular podcast appearances (KICPod, KICBump), live audience Q&A sessions, community events. Kics resident family sleep expert.
 
 ### Path 3: Go Deep - Co-Created Sleep Pathway
 "Bump to Toddler" sleep program, analogous to KICRun or KICBump. Combines gentle Kic movement with Sallys sleep methodology. Community challenge format mirrors Kics existing architecture.

@@ -8,7 +8,7 @@
 
 Welcome to Snooze! These Terms and Conditions (the "Terms") are provided by The Sleep Concierge Pty Ltd (ABN 787 548 648 09) and govern your access to and use of the Snooze website (the "Website") and our products and services, including but not limited to, our Library, Village, Coaching sessions, Courses, Guides, and other offerings (collectively, the "Services"). Snooze is operated by The Sleep Concierge Pty Ltd, doing business as Snooze ("Snooze," "we," "us," "our").
 
-These Services provide you with access to a variety of resources related to sleep, parenting, and related well-being topics. This includes access to digital content (Library), community engagement (Village), personalized coaching sessions, structured courses, and helpful guides.
+These Services provide you with access to a variety of resources related to sleep, parenting, and related well-being topics. This includes access to digital content (Library), community engagement (Village), personalised coaching sessions, structured courses, and helpful guides.
 
 ---
 
@@ -88,7 +88,7 @@ As a User of our Website and Services, you agree to:
 
 You agree not to:
 
-- Use the Services for any illegal or unauthorized purpose.
+- Use the Services for any illegal or unauthorised purpose.
 - Provide false information, including false names, addresses, or contact details.
 - Use the Website unlawfully or in a manner that violates any applicable laws.
 - Attempt to hack into any part of the Website or Services.

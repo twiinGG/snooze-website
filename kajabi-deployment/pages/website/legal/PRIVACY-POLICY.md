@@ -36,11 +36,11 @@ We collect information in a variety of ways, including:
 
 We use your information for various purposes, including:
 
-- **Providing and Improving Services:** To deliver our Services, personalize your experience, troubleshoot technical issues, and improve our website, products, and consultations.
+- **Providing and Improving Services:** To deliver our Services, personalise your experience, troubleshoot technical issues, and improve our website, products, and consultations.
 - **Communication:** To respond to your inquiries, provide customer support, and send you important updates, newsletters, and promotional materials (subject to your preferences).
 - **Payment Processing:** To process your payments, issue refunds, and prevent fraudulent transactions.
 - **Analytics:** To analyze trends, track usage patterns, and gather demographic information to improve our Services and marketing efforts.
-- **Marketing:** To send you targeted advertisements, promotions, and personalized content based on your interests and preferences (subject to your consent where required).
+- **Marketing:** To send you targeted advertisements, promotions, and personalised content based on your interests and preferences (subject to your consent where required).
 - **Legal Compliance:** To comply with applicable laws, regulations, and legal processes.
 - **AI Chatbot:** To assist with customer service and provide the best results from your Snooze experience.
 
@@ -95,7 +95,7 @@ We may share your information with:
 
 ## 6. Data Security
 
-We implement reasonable technical and organizational measures to protect your information from unauthorized access, use, or disclosure. These measures include:
+We implement reasonable technical and organisational measures to protect your information from unauthorised access, use, or disclosure. These measures include:
 
 - Encryption of sensitive data (e.g., payment information).
 - Access controls to limit access to personal information.
@@ -148,7 +148,7 @@ We use cookies for various purposes, including:
 
 - **Essential Cookies:** These cookies are necessary for the operation of our website and cannot be disabled.
 - **Analytics Cookies:** These cookies allow us to analyze website traffic and usage patterns to improve our Services.
-- **Marketing Cookies:** These cookies are used to track your browsing activity across different websites to show you personalized advertisements.
+- **Marketing Cookies:** These cookies are used to track your browsing activity across different websites to show you personalised advertisements.
 
 You can control cookies through your browser settings. You can choose to disable all cookies or only certain types of cookies. However, disabling cookies may affect the functionality of our website.
 

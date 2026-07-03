@@ -35,3 +35,7 @@ The JS field can also be set site-wide at Settings > Website > Custom JavaScript
 - `camp-snooze-checkout-blocks.html` targets offer ID `muRW6ug5` (standalone non-member Camp Snooze). The "Switch to Member Pricing" upgrade link points to offer `K3Y6FEKX` checkout.
 - `camp-snooze-multiples-checkout-blocks.html` targets the Multiples standalone offer (ID `Lzouupsm`). The AUD variant of this offer was pending at time of last edit; verify the AUD offer ID is live before deploying to an AUD audience. The upgrade link also uses `Lzouupsm` for the member-pricing path; confirm a separate member-rate Multiples offer exists if needed.
 - Multiples pricing: $1,035 USD / $1,563 AUD (1.5x the standard rate). Member saving shown as $450 USD / $680 AUD; member price shown as $585 USD / $883 AUD.
+
+### Change log
+
+- **2026-07-04 (CU-001 session 3 execution):** single-camp checkout repriced off the dead `$390` member price to the ratified §1.7 figures: non-member `$690 / A$997`, member `$611 / A$878`, member saving `$79 / A$119` (the bonus first month a member does not need). Applied to `camp-snooze-member-checkout-blocks.html` and `camp-snooze-checkout-blocks.html`. **Bundle, multiples and feb9 blocks were NOT repriced** (composite totals + unratified multiples price have no §1.7 basis); see `docs/projects/copy-uplift/10-decision-additions.md` item A for the open pricing questions. Spelling/em-dash HARD fixes applied to all blocks.
