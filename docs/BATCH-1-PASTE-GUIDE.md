@@ -68,34 +68,35 @@ The page is a landing page, so it does NOT load `snooze-unified-theme.css`. The 
 - [ ] Paste the whole file into the landing page's custom code block, then PUBLISH (decision 8: philosophy/approach pillar; keep the URL, never 404 it).
 - [ ] Verify logged-out: styled cream hero, three-card row, two tier cards side by side (stacked on mobile), navy closing band; H1 "The Snooze Methodology"; no Foundational tier; "sleep training wars" line present; Join Snooze CTA opens the membership checkout and flips currency with the toggle; Font Awesome icons render.
 
-### 2c. Library 
+### 2c. Library — BLOCKED on a two-surface architecture decision (Kade's deploy note, 2026-07-03)
+
+Finding from the deploy attempt: **/library (the system member-area page) is the only surface that automatically shows Kajabi's automated product blocks**, while **/snooze-library (published website page) allows the much more curated experience the repo file delivers**. The paste cannot proceed until the two-surface model is decided. Queued as the first task in the next session's kickoff ([KICKOFF-DEPLOY-COMPLETION.md](./KICKOFF-DEPLOY-COMPLETION.md)); recommended shape there: curated `/snooze-library` becomes the canonical "Snooze Library" destination (paste target for [library-page.html](../kajabi-deployment/pages/website/library/library-page.html)), the system `/library` stays as the auto-product utility surface, and every nav/copy/post-purchase link that says "Snooze Library" is audited to point at the curated page.
+
 | | |
 |---|---|
 | Repo file | [library-page.html](../kajabi-deployment/pages/website/library/library-page.html) · change log: [README](../kajabi-deployment/pages/website/library/README.md) |
-| Live candidates | <https://www.joinsnooze.com/snooze-library> (published website page) · <https://www.joinsnooze.com/library> (system member-area page) |
-| Page settings | [snooze-library](https://app.kajabi.com/admin/website_pages/2156716053/edit) · [library (system)](https://app.kajabi.com/admin/website_pages/2154679192/edit) |
-| Content block | [customizer](https://app.kajabi.com/admin/sites/2148291177/themes) → page dropdown → whichever of the two pages carries the current library layout (compare live H1 "Your Snooze Library") |
+| Curated candidate | <https://www.joinsnooze.com/snooze-library> · [page settings](https://app.kajabi.com/admin/website_pages/2156716053/edit) |
+| System auto-products page | <https://www.joinsnooze.com/library> · [page settings](https://app.kajabi.com/admin/website_pages/2154679192/edit) |
 
+- [ ] Resolve the two-surface model (next session), then paste into the chosen surface.
 - [ ] Verify after paste: "Age-Based Courses and Guides" heading; Live Sessions card says masterclasses and coaching; "One-on-One Support" card; NO "On-Demand Webinars" coming-soon card; Snooze Bot still Coming Soon; caps perk intact.
 
 ---
 
-## Stage 3: Consultations page (MCP block edits, not a single paste)
+## Stage 3: Consultations page (single-block paste; the census misread this page)
+
+**Corrected by Kade's deploy inspection (2026-07-03): the live page is ONE custom code block for the whole page, plus two custom code blocks for the header and footer.** The June census's "native offer blocks + Content 2 text block" read was wrong (or described a since-replaced build). That makes this a normal Stage-1-style paste, and it means the currency JS CAN drive the page's prices (the repo file is fully dynamic-price instrumented).
 
 | | |
 |---|---|
-| Repo reference file | [one-on-one-consultations-page.html](../kajabi-deployment/pages/website/consultations/one-on-one-consultations-page.html) · [README](../kajabi-deployment/pages/website/consultations/README.md) |
+| Repo file (paste wholesale) | [one-on-one-consultations-page.html](../kajabi-deployment/pages/website/consultations/one-on-one-consultations-page.html) · [README](../kajabi-deployment/pages/website/consultations/README.md) |
 | Live page | <https://www.joinsnooze.com/one-on-one-sleep-consultations> |
 | Page settings (SEO) | <https://app.kajabi.com/admin/website_pages/2155283958/edit> |
+| Content block | [customizer](https://app.kajabi.com/admin/sites/2148291177/themes) → page dropdown "1:1 Baby Sleep Consultations" → the single whole-page custom code block (leave the header/footer blocks alone) |
 
-The live page is section-built (pricing = native offer blocks, invisible to the currency JS; credential text = native TEXT block). Land the repo wording into the live blocks:
-
-- [ ] **Credential fix:** site-theme section `1765189457512` ("Content 2", My Qualifications) via MCP `update_theme_content` → "I'm an internationally certified sleep consultant and a former registered paediatric nurse with over 10 years of childcare experience. I hold a Bachelor of Nursing from Australian Catholic University and I'm currently on a non-practising registration."
-- [ ] **7-days email support:** remove every live instance (the repo file previously carried 7: signature feature list, two What to Expect cards, two comparison lists, two FAQ answers). The repo file is the corrected reference.
-- [ ] **Member 2-week price:** once the $2,800 offer exists (Stage 0), confirm the live FAQ/comparison copy matches $2,800 (repo already does).
-- [ ] **Strip the hidden dead header block** `1765189457505` (dead 6iRarwak CTAs).
+- [ ] Paste the repo file into the whole-page block (Stage-1 write path). The file already carries: credential standard incl. the ACU degree, zero email-support promises, member 2-week $2,800/A$3,970, camp/consult prices per registry.
 - [ ] **Page settings SEO description** → the wording in [README](../kajabi-deployment/pages/website/consultations/README.md) ("internationally certified sleep consultant and former registered paediatric nurse").
-- [ ] Verify logged-out on the [live page](https://www.joinsnooze.com/one-on-one-sleep-consultations): zero "email support" hits (Cmd-F), credential correct, prices render from offers.
+- [ ] Verify logged-out on the [live page](https://www.joinsnooze.com/one-on-one-sleep-consultations): zero "email support" hits (Cmd-F); "My Qualifications" reads former registered paediatric nurse + Bachelor of Nursing (ACU) + non-practising; prices flip with the currency toggle; member 2-week shows $2,800.
 
 ---
 
@@ -110,7 +111,7 @@ Ruling: Store V2 deploys by REPLACING [/store](https://www.joinsnooze.com/store)
 
 ## Stage 5: admin-only fixes (no repo source exists)
 
-- [ ] **MEMCS01 checkout (`igbTdRbk`):** [offer edit](https://app.kajabi.com/admin/offers) → search `igbTdRbk` / MEMCS01 → Checkout → custom code. Still promises "7 days of email support" twice (benefit card "After your consultation, you'll have 7 days of email support..." and "Implementation Support: Use your 7 days of email support..."). Remove; replace with nothing. Exact live strings captured in [offers_igbTdRbk_checkout.html](../site-audit-2026-06/data/html/offers_igbTdRbk_checkout.html).
+- [x] **MEMCS01 checkout (`igbTdRbk`): RESOLVED, nothing to do.** Kade inspected 2026-07-03: the checkout carries NO custom code today. The June site-audit capture (which showed two "7 days of email support" promises) is stale; the code has since been removed. No action.
 - [ ] **Consult email sequences** (bodies unreadable via API): [email sequences](https://app.kajabi.com/admin/email_sequences) → consultation confirmation/follow-up sequences → remove any "7 days email support" promise.
 - [ ] **Nap Trapped caps 10% perk** into the community side column (product brief 7): [community admin](https://www.joinsnooze.com/products/communities/v2/snooze) → settings → side column block matching the [library perk](../kajabi-deployment/pages/website/library/library-page.html) (search "NAPTRAPPEDFRIENDS").
 
