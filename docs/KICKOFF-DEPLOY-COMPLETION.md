@@ -2,6 +2,23 @@
 
 You are continuing CU-001 in the Snooze OS repo. Work through this prompt top to bottom; it is self-contained. The runbook you execute against is `apps/snooze-website/docs/BATCH-1-PASTE-GUIDE.md` (live links, admin links, repo-file links per stage; keep its checkboxes current as you go). Git is the source of truth; every fix lands in the repo first, then pastes to Kajabi. Kade will be present for headed-browser pastes (agent-browser, him logged in); use MCP `update_theme_content` where the guide says it persists. Tag `website-v1.2.x` before any new paste wave and run `scripts/publish-snooze-website.sh` after commits.
 
+## Execution model (mandatory): team of agents; the main agent coordinates and QAs only
+
+The main agent is the chief of staff: task decomposition, agent coordination, QC gates, the actual paste actions with Kade, repo writes and the closing report. It does NOT do large context-heavy reads, sweeps, audits or long verification passes itself; those are delegated to agents launched via the Agent tool with explicit `model` overrides, in parallel wherever no dependency exists.
+
+**Model tiering, per task not per phase:**
+- **Haiku (speed, zero creativity):** grep inventories, link audits (every href/CTA matching a pattern across the tree), file listings, hit counts, live-page string checks via fetched HTML, byte-diff summaries.
+- **Sonnet (structured multi-step, moderate judgment):** reading a full page or theme section and reporting its block structure, pre-paste vs live diffs, MCP census reads (`get_theme_content` per section), post-paste verification passes against a supplied checklist, README/change-log drafting, the library link-audit classification (which context points where).
+- **Opus/top tier (creativity, member-facing consequence):** ONLY for any new member-facing wording that arises mid-deploy, and it goes through the orchestrator's QA gate before landing.
+- **Orchestrator (main agent):** everything Kade-facing, the headed-browser paste steps, byte-verification sign-off, QC on every agent deliverable (grep-verify quoted strings against sources; a quote that does not grep = fabrication, discard), the final residue/invariant checks, commits, tags, publishes.
+
+**Fleet discipline (session-2 lessons, binding):**
+1. Agents are read-only; they return material (markdown, exact OLD→NEW pairs, structured reports). The orchestrator applies every repo edit itself with phrase-anchored replacement.
+2. Launch independent agents in ONE message so they run concurrently; every prompt is self-contained (exact paths, verbatim excerpts, the rule set, a strict output contract).
+3. **Hard deadline: if an agent has not returned within ~10 minutes, proceed without it and do that slice directly.** Session 2's whole fleet stalled silently; the orchestrator finishing the work itself is always the fallback, but only for the stalled slice, never as the default posture.
+4. Persist every agent deliverable to the session scratchpad on receipt.
+5. Never trust an agent's "done": the orchestrator re-runs the residue greps and structural checks itself before any commit or paste.
+
 ## State you inherit (2026-07-03 close)
 
 DEPLOYED AND VERIFIED LIVE: home page (full Batch-1 copy, currency round-trips, camp card with alumni perk) and About Sally (merged qualifications FAQ with the ACU degree; Kade removed the separate registered-nurse FAQ by hand; schema synced). DONE: registry Sheet + markdown synced; camp AUD member offer 2151264520 published; all ten round-2 decisions applied in repo (09-decision-doc-session-3.md carries the record).
