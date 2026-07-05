@@ -2,7 +2,9 @@
 
 **Version:** 2.0 (Learning Design Aligned)  
 **Date:** November 2025  
-**Status:** Ready for Implementation
+**Status:** SUPERSEDED - see note below
+
+> **Superseded (2026-07-05):** this guide describes the November 2025 ten-section build (`section-01` through `section-10`), which no longer exists on disk; the live deployable file is the consolidated `library-page.html` in this folder (see its Maintenance Log in `README.md`). The "Set page URL: `/library`" instruction below is also stale: the confirmed two-surface architecture (`apps/snooze-website/docs/KICKOFF-DEPLOY-COMPLETION.md`, "Task 1: resolve the library two-surface architecture") makes `/snooze-library` the paste target for this curated page; `/library` is the separate system member-area surface that auto-renders Kajabi's product blocks and must not be relabelled as the Snooze Library. Kept for historical section-numbering reference only.
 
 ---
 

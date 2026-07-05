@@ -5,6 +5,17 @@
   section 1744906803654, block 1767316681231). HTML only, no <style>/<script>.
   Currency switch = static twin link in the footer note (server-rendered price;
   no JS toggle on checkout pages), same pattern as the 7-day-trial pair.
+
+  APPROVAL STATUS: draft, awaiting Sally sign-off through the approval queue.
+  Change owner: PRD-LADDER (BM-001) section 5(a), 2026-07-05.
+  Change: added the monthly/quarterly/annual plan-tiers framing block below the
+  hero. Quarterly is the honest-middle "try the full season" step; annual is
+  "lock in the year". Variant IDs are pulled from currency-toggle.js
+  CONFIG.variantMapping (AUD offer 2151256977: monthly 161174, quarterly 161175,
+  yearly 161176) and carried as data-variant only. No dollar figures appear here;
+  the native Kajabi variant selector renders the prices, and the annual saving is
+  stated as a registry-derived proportion (~30% vs paying monthly across 12
+  months). CU-001 principles P1/P3/P6/P7/P8 apply. No prices changed.
 -->
 
 <div id="snooze-custom-checkout" class="snooze-checkout-content">
@@ -15,6 +26,40 @@
     <p class="subheadline">A calm, structured path to better sleep. Expert guidance, a supportive community, and clear steps you can use straight away.</p>
     <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
+  </div>
+
+  <!-- Plan Tiers: monthly / quarterly / annual.
+       Variant IDs from currency-toggle.js CONFIG.variantMapping (AUD offer 2151256977):
+       monthly 161174, quarterly 161175, yearly 161176. Carried as data-variant only;
+       the native Kajabi checkout selector renders the actual prices. -->
+  <div class="plan-tiers-wrap">
+    <h2>Choose the plan that fits your season</h2>
+    <p class="plan-tiers-intro">Every plan gives you the full Snooze membership. The only difference is how you pay and how much you save.</p>
+    <div class="plan-tiers">
+
+      <div class="plan-tier" data-variant="161174">
+        <div class="plan-tier-name">Monthly</div>
+        <div class="plan-tier-frame">Stay flexible</div>
+        <p class="plan-tier-detail">Pay month to month and cancel anytime. Best if you want to start now with no lock-in.</p>
+        <a href="#" class="plan-tier-cta scroll-to-checkout">Choose monthly below</a>
+      </div>
+
+      <div class="plan-tier" data-variant="161175">
+        <div class="plan-tier-name">Quarterly</div>
+        <div class="plan-tier-frame">Try the full season</div>
+        <p class="plan-tier-detail">Give yourself a full season to settle new routines. Sleep change takes more than a few weeks, and a season gives you room to see it through at a lower monthly rate.</p>
+        <a href="#" class="plan-tier-cta scroll-to-checkout">Choose quarterly below</a>
+      </div>
+
+      <div class="plan-tier featured" data-variant="161176">
+        <div class="plan-tier-badge">Best value</div>
+        <div class="plan-tier-name">Annual</div>
+        <div class="plan-tier-frame">Lock in the year</div>
+        <p class="plan-tier-detail">Commit to a full year and save around 30% compared with paying monthly. Best once you know sleep is a season you want to see all the way through.</p>
+        <a href="#" class="plan-tier-cta scroll-to-checkout">Choose annual below</a>
+      </div>
+
+    </div>
   </div>
 
   <!-- What's Included Section -->

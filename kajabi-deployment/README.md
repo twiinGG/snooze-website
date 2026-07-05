@@ -17,29 +17,11 @@ kajabi-deployment/
 │   ├── navigation.html                  # Navigation Code Block
 │   ├── footer.html                      # Footer Code Block
 │   ├── landing-page-blocks.html         # Landing page HTML sections
-│   ├── library-page/                     # Library page sections
-│   │   ├── section-01-title.html
-│   │   ├── section-02-category-navigation.html
-│   │   ├── [sections 03-10]
-│   │   ├── styles.css
-│   │   └── README.md
-│   ├── age-pages/                        # Complete age-specific pages
-│   │   ├── newborn-page-complete.html     # Complete newborn page (43KB)
-│   │   ├── 3-4-month-page-complete.html  # Complete 3-4 month page (46KB)
-│   │   ├── 5-12-month-page-complete.html  # Complete 5-12 month page (44KB)
-│   │   ├── toddler-page-complete.html    # Complete toddler page (44KB)
-│   │   └── README.md                     # Age pages documentation
-│   ├── reviews-page/                      # Reviews page (in development)
-│   │   ├── README.md
-│   │   └── docs/
-│   ├── about-sally.html                  # About Sally page
-│   ├── the-snooze-method.html            # The Snooze Method page
-│   ├── blog-index.html                   # Blog index page
-│   ├── library-page-complete.html        # Library page complete
-│   ├── snooze-method-page-complete.html  # Snooze Method page complete
-│   └── archive/                          # Archived files
-│       ├── old-versions/                 # Old landing page versions
-│       └── templates/                    # Old template files
+│   └── website/library/                  # Library page (current path)
+│       ├── library-page.html             # Deployable file, paste target /snooze-library
+│       ├── styles.css
+│       └── README.md
+├── age-pages/                             # Complete age-specific pages (see pages/website/)
 ├── components/                            # Reusable components
 │   ├── context-aware-cta.html
 │   ├── value-comparison.html
@@ -49,14 +31,10 @@ kajabi-deployment/
 │   └── hero-sections/                    # Hero section templates
 ├── courses/                               # ⚠️ MOVED: Now at projects/kajabi-courses/courses/
 │                                          # Course content has been moved to its own subproject
-└── archive/                               # Archived files
-    ├── landing-page-migration/            # Old landing page CSS/JS/HTML (merged)
-    │   ├── kajabi-custom-css.css          # Merged into global CSS
-    │   ├── kajabi-custom-javascript.js    # Merged into global JS
-    │   └── kajabi-html-blocks.html        # Moved to pages/landing-page-blocks.html
-    ├── landing-page-old/                  # Old landing-page directory (outdated)
-    └── phase1-files/                      # Phase 1 deployment files
+└── _retired/                              # Retired build surfaces, see _retired/README.md
 ```
+
+> **Note (2026-07-05):** the tree above was updated to match the current on-disk layout. Library page files live at `pages/website/library/` (not `pages/library-page/`); the standalone `library-page-complete.html` was archived to `_retired/library-page-complete/` (see `_retired/README.md`). Retired/archived files across this deployment now live under the single `_retired/` folder at the `kajabi-deployment/` root, not the separate `pages/archive/` and root `archive/` folders this doc previously described (those did not exist on disk).
 
 ### ⭐ Essential Files
 
@@ -71,9 +49,9 @@ kajabi-deployment/
 2. **Note:** CSS and JavaScript are now in global theme files (no separate files needed)
 
 **For Library Page:**
-1. **Library Page HTML:** `pages/library-page/` → Code Blocks (sections 01-10)
-2. **Library Page CSS:** `pages/library-page/styles.css` → Add to Kajabi Custom CSS
-3. **See:** `pages/library-page/DEPLOYMENT-GUIDE.md` for complete instructions
+1. **Library Page HTML:** `pages/website/library/library-page.html` → paste target `/snooze-library` (curated surface; `/library` is the separate system member-area page, see `pages/website/library/README.md` and `docs/KICKOFF-DEPLOY-COMPLETION.md`)
+2. **Library Page CSS:** `pages/website/library/styles.css` → Add to Kajabi Custom CSS
+3. **See:** `pages/website/library/README.md` for current deployment notes (the folder's `DEPLOYMENT-GUIDE.md` and `INDEX.md` describe a superseded ten-section build)
 
 **For Age-Specific Pages:**
 1. **Age Pages:** `pages/age-pages/` → Complete HTML files ready for deployment
@@ -115,7 +93,7 @@ All content should be generated using `scripts/generate_website_content.py` to e
 
 ### Page Components
 - **Landing Page:** `pages/landing-page-blocks.html`
-- **Library Page:** `pages/library-page/` (sections 01-10)
+- **Library Page:** `pages/website/library/library-page.html` (paste target `/snooze-library`)
 - **Age Pages:** `pages/age-pages/` (complete pages for each age range)
 - **Navigation:** `pages/navigation.html`
 - **Footer:** `pages/footer.html`

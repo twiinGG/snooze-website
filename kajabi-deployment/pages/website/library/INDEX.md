@@ -4,6 +4,8 @@
 **Version:** 2.0 (Learning Design Aligned)  
 **Date:** November 2025
 
+> **Superseded (2026-07-05):** the section-01 through section-10 files this index describes no longer exist; the live deployable file is the consolidated `library-page.html` in the current folder (`pages/website/library/`), paste target `/snooze-library` per the two-surface decision in `apps/snooze-website/docs/KICKOFF-DEPLOY-COMPLETION.md`. Kept for historical section-numbering reference only.
+
 ---
 
 ## 📁 File Structure

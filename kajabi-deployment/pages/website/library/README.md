@@ -279,4 +279,4 @@ Applied to `library-page.html` (repo only; NOT yet pasted to Kajabi):
 - Nap Trapped caps perk block untouched.
 - Verified: tag balance unchanged, zero kill-list residue.
 
-Note: `library-page-complete.html` (alternate build) also received the deterministic sweeps (three-tiered learning path line, spellings, credential "former").
+Note: `library-page-complete.html` (alternate build) also received the deterministic sweeps (three-tiered learning path line, spellings, credential "former"). Archived 2026-07-05 to `apps/snooze-website/kajabi-deployment/_retired/library-page-complete/` (PRD-CLOSEOUT hygiene tail); `library-page.html` is the sole deployable file for this page, paste target `/snooze-library`.

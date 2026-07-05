@@ -76,7 +76,7 @@ The page is a landing page, so it does NOT load `snooze-unified-theme.css`. The 
 
 **About Sally re-paste needed:** the JS-global fix (+ two banned-word `unlock`→`get`/`member` fixes found in the same file) change the already-live About Sally page; it needs a re-paste in the next paste session. Product-page and email edits paste whenever those surfaces next deploy (not Batch-1 stages).
 
-**Open (Kade call):** confirm `library-page-complete.html` (alternate/old build alongside canonical `library-page.html`) can be archived so it isn't pasted by mistake; stale docs (`library/DEPLOYMENT-GUIDE.md` still says set URL `/library`; kajabi-deployment `README`/`HEADER-REMOVAL-SUMMARY` reference the old `pages/library-page/` path) — doc cleanup, non-blocking.
+**Resolved (PRD-CLOSEOUT hygiene tail, 2026-07-05):** `library-page-complete.html` archived to `kajabi-deployment/_retired/library-page-complete/` (grep-confirmed no live surface referenced it). `library/DEPLOYMENT-GUIDE.md` and `INDEX.md` marked superseded with a correction pointing to the ratified `/snooze-library` target; `kajabi-deployment/README.md` tree and paths updated to the current `pages/website/library/` layout. `HEADER-REMOVAL-SUMMARY.md` left as-is: it is a dated historical changelog of a completed Dec 2025 action, not a live spec, so its old paths were left intact rather than rewritten.
 
 | | |
 |---|---|

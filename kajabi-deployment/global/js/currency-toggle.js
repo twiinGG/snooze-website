@@ -7,9 +7,8 @@
     defaultCurrency: 'USD',
     offerMapping: {
       // Core Snooze Membership (USD offer 2150754998 / z63s9VaR -> AUD offer 2151256977 / vYgCNgJz).
-      // UPDATED 2026-06-30: repointed from the old monthly-only bEsVXFXG/2151212200 to the
-      // complete AUD core offer vYgCNgJz/2151256977 (A$119/A$299/A$997). bEsVXFXG/2151212200 is
-      // SUPERSEDED and should be retired/unpublished in the admin UI.
+      // UPDATED 2026-06-30: repointed from the old monthly-only AUD draft offer (now DELETED) to the
+      // complete AUD core offer vYgCNgJz/2151256977 (A$119/A$299/A$997).
       '2150754998': '2151256977',
       'z63s9VaR': 'vYgCNgJz',
       '2150887297': '2151254578',

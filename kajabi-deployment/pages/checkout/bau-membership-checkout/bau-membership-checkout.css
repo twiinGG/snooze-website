@@ -141,24 +141,129 @@
   box-shadow: 0 6px 16px rgba(244, 51, 87, 0.4);
 }
 
+/* Plan tiers (PRD-LADDER section 5a): monthly / quarterly / annual framing.
+   Prices are rendered by the native Kajabi variant selector, not here. */
+#snooze-custom-checkout .plan-tiers-wrap {
+  margin-bottom: 2rem;
+}
+
+#snooze-custom-checkout .plan-tiers-wrap h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F293B;
+  margin-bottom: 0.5rem;
+}
+
+#snooze-custom-checkout .plan-tiers-intro {
+  color: #7C8A98;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+#snooze-custom-checkout .plan-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+#snooze-custom-checkout .plan-tier {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #F2EDEA;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#snooze-custom-checkout .plan-tier.featured {
+  border: 2px solid #F43357;
+  box-shadow: 0 6px 16px rgba(244, 51, 87, 0.15);
+}
+
+#snooze-custom-checkout .plan-tier-badge {
+  align-self: flex-start;
+  background: #F43357;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+#snooze-custom-checkout .plan-tier-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F293B;
+}
+
+#snooze-custom-checkout .plan-tier-frame {
+  color: #F43357;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+#snooze-custom-checkout .plan-tier-detail {
+  flex: 1;
+  color: #7C8A98;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+#snooze-custom-checkout .plan-tier-cta {
+  display: block;
+  text-align: center;
+  background: #FFE7EA;
+  color: #F43357;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#snooze-custom-checkout .plan-tier.featured .plan-tier-cta {
+  background: #F43357;
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 51, 87, 0.3);
+}
+
+#snooze-custom-checkout .plan-tier-cta:hover {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   #snooze-custom-checkout .snooze-checkout-hero h1 {
     font-size: 1.75rem;
   }
-  
+
   #snooze-custom-checkout .snooze-checkout-hero .subheadline {
     font-size: 1rem;
   }
-  
+
   #snooze-custom-checkout .whats-included {
     padding: 1.5rem;
   }
-  
+
   #snooze-custom-checkout .whats-included h2,
-  #snooze-custom-checkout .why-join h2 {
+  #snooze-custom-checkout .why-join h2,
+  #snooze-custom-checkout .plan-tiers-wrap h2 {
     font-size: 1.5rem;
   }
-  
+
+  #snooze-custom-checkout .plan-tiers {
+    grid-template-columns: 1fr;
+  }
+
   #snooze-custom-checkout .mobile-scroll-to-checkout {
     display: block;
   }
