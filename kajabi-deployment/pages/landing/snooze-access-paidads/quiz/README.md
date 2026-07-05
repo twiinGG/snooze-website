@@ -26,7 +26,7 @@ Paste each `SECTION N` block into a separate Kajabi Custom Code section in the o
 | Placeholder | What to put there |
 |---|---|
 | `{{MEMORY_API_HOST}}` | Base URL of `services/memory-api`, no trailing slash |
-| `{{N8N_WEBHOOK_URL}}` | Full n8n webhook URL, e.g. `https://<n8n-host>/webhook/snooze-access-quiz` |
+| `{{N8N_WEBHOOK_URL}}` | `https://n8n.khorus.ai/webhook/snooze-access-quiz` (live, built + verified 2026-07-05; see `workflows/n8n/utm-attribution-capture/`) |
 | `{{privacy_url}}` | URL of the Snooze privacy notice |
 
 `currency_preference` is set automatically from browser locale (AU locale maps to `aud`; everything else maps to `usd`). No operator action required.
