@@ -25,6 +25,8 @@ DEPLOYED AND VERIFIED LIVE: home page (full Batch-1 copy, currency round-trips, 
 
 ## Task 1: resolve the library two-surface architecture (blocks 2c)
 
+**2026-07-05 default ruling - revert by saying so: CONFIRMED.** The recommended shape below (numbered 1-4) is adopted as written; proceed without further sign-off.
+
 Kade's deploy finding: `/library` (system member-area page) is the ONLY surface that automatically renders Kajabi's automated product blocks; `/snooze-library` (published website page) supports the curated experience that the remediated `kajabi-deployment/pages/website/library/library-page.html` delivers. Resolve the model, recommended shape:
 
 1. `/snooze-library` = the canonical curated "Snooze Library" (paste target for the repo file). It already matches the ratified naming ("the Snooze Library" is the confirmed content-surface name).
