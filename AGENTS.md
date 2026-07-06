@@ -41,6 +41,10 @@ The design system (colors, buttons, fonts) is scoped to `#home-page`. New page w
 
 **DO NOT create page-specific styles without the system initialization block first.**
 
+### Kajabi Surface Types (read BEFORE any paste)
+
+Website pages, landing pages, checkout pages, thank-you pages and course lessons store code DIFFERENTLY (shared website theme vs own theme per landing page vs per-offer checkout field vs stripped lesson bodies). The canonical per-surface rulebook - including where the one-file/one-block consolidation rulings (Kade 2026-07-06, K2) apply and where they do not - is `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`. Do not paste to any surface without matching its row in that doc's decision table.
+
 ### Kajabi HTML Patterns
 
 **Course Lessons (NOT landing pages or emails):**
