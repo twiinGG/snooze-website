@@ -99,6 +99,8 @@ Orientation + file manifest: `README.md`.
 Kajabi exposes **different custom-code slots** depending on page type. There is **no**
 site-wide Footer Page Scripts field (older docs that reference it are wrong).
 
+> **SUPERSEDED for paste sources (Kade one-file ruling 2026-07-06):** the three global slots below now paste from ONE canonical file each — Header Page Scripts ← `kajabi-deployment/global/html/site-header-page-scripts.html`, theme Custom CSS ← `global/css/theme-custom-code.css`, theme Custom JS ← `global/js/theme-custom-code.js` (byte-exact 2026-07-06 live captures; whole-field overwrite, edits happen in the repo file first). The per-fragment mapping below stays as the HISTORICAL composition of those fields and for tracking still-undeployed TODO items, which are now implemented by editing the canonical file, not pasting a fragment. See `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`.
+
 | Slot | Kajabi UI path | Repo source | What it runs on |
 |---|---|---|---|
 | **Header Page Scripts** | Settings → Site details → Page scripts → Header | `kajabi-deployment/global/js/snooze-globals.js` (GTM, checkout URLs, nav, tracking) | Every page on the Kajabi site (website, landing, checkout, blog, products) |
