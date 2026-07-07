@@ -305,7 +305,7 @@ Key fields (from `docs/AI-ready-refactor/INGEST-MANIFEST.md` Track 11): `Notes`
 **Add via Tags or a new Country property:** ISO country or region (AU, US, UK, NZ,
 CA, etc.) for every row. Required for authentic global proof; never guess country.
 
-**Supabase sync:** `_legacy/workspaces/snooze-infrastructure/projects/memory-integration/scripts/sync_member_feedback_wins.py`  
+**Supabase sync:** `hub/mcp-servers/memory-integration/scripts/sync_member_feedback_wins.py`  
 Schema: `apps/brand-content-consultant/scripts/migrations/002_member_feedback_tables.sql`  
 Track-11 events: `apps/ai-refactor/scripts/track-11-notion-testimonials.ts`
 

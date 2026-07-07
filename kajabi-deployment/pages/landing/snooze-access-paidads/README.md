@@ -57,17 +57,17 @@ Run from the monorepo root before any Kajabi paste. BLOCK on findings.
 
 1. **Placeholder scanner** (expects to flag the uppercase deploy-time placeholders until they are filled):
    ```
-   python _legacy/workspaces/snooze-infrastructure/src/validation/scan_placeholders.py \
+   python scripts/validation/scan_placeholders.py \
      --dir apps/snooze-website/kajabi-deployment/pages/landing/snooze-access-paidads
    ```
 2. **Link checker:**
    ```
-   bash _legacy/workspaces/snooze-infrastructure/src/validation/check_links.sh \
+   bash scripts/validation/check_links.sh \
      apps/snooze-website/kajabi-deployment/pages/landing/snooze-access-paidads
    ```
 3. **Environment validator:**
    ```
-   python _legacy/workspaces/snooze-infrastructure/src/validation/env_validator.py --check-only
+   python scripts/validation/env_validator.py --check-only
    ```
 4. **Full checklist:** `apps/snooze-website/docs/DEPLOYMENT-CHECKLIST.md`.
 

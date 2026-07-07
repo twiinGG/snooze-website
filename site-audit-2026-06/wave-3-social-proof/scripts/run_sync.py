@@ -30,6 +30,6 @@ svc = os.getenv("SUPABASE_SERVICE_KEY") or os.getenv("SUPABASE_SERVICE_ROLE_KEY"
 if svc:
     os.environ["SUPABASE_ANON_KEY"] = svc  # backend sync → service role, bypass RLS
 
-SYNC = ROOT / "_legacy/workspaces/snooze-infrastructure/projects/memory-integration/scripts/sync_member_feedback_wins.py"
+SYNC = ROOT / "hub/mcp-servers/memory-integration/scripts/sync_member_feedback_wins.py"
 sys.argv = [str(SYNC)] + sys.argv[1:]
 runpy.run_path(str(SYNC), run_name="__main__")
