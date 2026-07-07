@@ -1,0 +1,871 @@
+<!-- Camp Snooze - WAITLIST mode. Form: https://www.joinsnooze.com/forms/2149246740. Use camp-snooze-v2-luxury.css and camp-snooze-v2-luxury.js -->
+<script>window.CAMP_PAGE_MODE = 'waitlist';</script>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- pragma: allowlist secret -->
+
+<!-- ============================================
+     SECTION 1: HERO
+     ============================================ -->
+<section class="camp-section pine-pattern" data-camp-mode="waitlist" style="padding: 4rem 0; overflow: hidden; position: relative;">
+  <!-- Falling Leaves Animation -->
+  <div class="falling-leaves" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;">
+  </div>
+
+  <!-- Decorative Pine Trees -->
+  <div style="position: absolute; top: 5rem; left: 1rem; width: 4rem; opacity: 0.2; z-index: 1;">
+    <svg viewBox="0 0 40 60" fill="currentColor"
+      style="color: var(--camp-forest); animation: sway 4s ease-in-out infinite;">
+      <rect x="17" y="45" width="6" height="15" opacity="0.8" />
+      <path d="M20 5 L35 25 L5 25 Z" />
+      <path d="M20 18 L38 40 L2 40 Z" />
+      <path d="M20 32 L40 55 L0 55 Z" />
+    </svg>
+  </div>
+
+  <div class="camp-container" style="position: relative; z-index: 2;">
+    <div style="text-align: center; max-width: 56rem; margin: 0 auto;">
+
+      <!-- Waving Flags -->
+      <div class="waving-flags"
+        style="margin-bottom: 2rem; height: 3rem; display: flex; justify-content: center; align-items: flex-end; gap: 0;">
+        <div style="width: 2px; height: 3rem; background: hsl(150, 35%, 25% / 0.4);"></div>
+        <svg width="300" height="48" viewBox="0 0 300 48" style="overflow: visible;">
+          <path d="M0 8 Q75 20 150 8 Q225 -4 300 8" fill="none" stroke="hsl(150, 35%, 25%)" stroke-width="1.5"
+            opacity="0.4" />
+        </svg>
+        <div style="width: 2px; height: 3rem; background: hsl(150, 35%, 25% / 0.4);"></div>
+      </div>
+
+      <!-- Welcome Script -->
+      <p class="font-display fade-in-up" style="font-size: 2.5rem; color: var(--camp-gold); margin-bottom: 0.5rem;">
+        Welcome to
+      </p>
+
+      <!-- Main Title -->
+      <h1 class="font-heading fade-in-up"
+        style="font-size: 3.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.1;">
+        CAMP SNOOZE
+      </h1>
+
+      <!-- Decorative Line with Campfire -->
+      <div class="fade-in-up"
+        style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="height: 2px; width: 4rem; background: var(--camp-gold);"></div>
+        <svg viewBox="0 0 40 40" style="width: 2rem; height: 2rem; color: var(--camp-gold);">
+          <path d="M5 35 L18 30 L25 35" stroke="hsl(150, 35%, 25%)" stroke-width="3" fill="none" />
+          <path d="M15 35 L28 30 L35 35" stroke="hsl(150, 35%, 25%)" stroke-width="3" fill="none" />
+          <path d="M20 28 Q15 20 20 10 Q25 20 20 28" fill="hsl(38, 70%, 55%)" />
+        </svg>
+        <div style="height: 2px; width: 4rem; background: var(--camp-gold);"></div>
+      </div>
+
+      <!-- Tagline -->
+      <p class="font-heading fade-in-up"
+        style="font-size: 1.125rem; color: hsl(150, 25%, 20% / 0.8); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+        Two-Week Baby-Sleep Transformation
+      </p>
+      <p class="font-heading fade-in-up"
+        style="font-size: 1rem; color: hsl(150, 25%, 20% / 0.6); letter-spacing: 0.05em; margin-bottom: 1.5rem;">
+        Runs bi-monthly - July Camps SOLD OUT
+      </p>
+
+      <!-- Hero CTA - Waitlist -->
+      <div class="fade-in-up" style="margin-bottom: 1.5rem;">
+        <p style="color: var(--camp-forest); font-size: 1rem; margin-bottom: 1rem;">
+          Want early access to August dates?
+        </p>
+        <a href="#waitlist-section" class="btn-camp btn-camp-cta btn-hero-cta" style="text-decoration: none; display: inline-block; width: 100%; max-width: 280px;">
+          Join the Waitlist
+        </a>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div id="hero-testimonials" class="fade-in-up" style="margin: 0 auto 3rem;">
+        <p class="font-display"
+          style="font-size: 1.75rem; color: var(--camp-gold); margin-bottom: 1.5rem; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          Real experiences from Camp participants
+        </p>
+
+        <div class="testimonial-carousel-full">
+          <div class="carousel-track-full">
+            <div class="carousel-inner-full">
+
+              <!-- Quote 1 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I feel better already, trust me. We've been looking forward to this."</p>
+              </div>
+
+              <!-- Quote 2 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I actually want to cry. I know too. I want to get my life back together."</p>
+              </div>
+
+              <!-- Quote 3 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"All the sleepless nights I've had for nearly almost a year is like… I've come so far."</p>
+              </div>
+
+              <!-- Quote 4 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"Its life‑changing. It's really, it's kind of almost sometimes shocking. It's like, hang on, this is
+                  what it could be."</p>
+              </div>
+
+              <!-- Quote 5 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I could be like on my way to getting my life back a little bit."</p>
+              </div>
+
+              <!-- Quote 6 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He slept from 7.45 till 4.30 in the morning… and he fell straight to sleep back till 6 o'clock."</p>
+              </div>
+
+              <!-- Quote 7 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He slept through the whole night."</p>
+              </div>
+
+              <!-- Quote 8 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He just went to sleep by himself for his nap one. No rocking, no patting, nothing."</p>
+              </div>
+
+              <!-- Quote 9 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"It took 25 minutes but he went down, he's fast asleep."</p>
+              </div>
+
+              <!-- Quote 10 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"You could see it last night, how quick he went down, from two hours to what was it, 20… 14 minutes."
+                </p>
+              </div>
+
+              <!-- Quote 11 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I was able to do things… I was able to do normal things."</p>
+              </div>
+
+              <!-- Quote 12 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I had my coffee before he was up. Like, it was amazing."</p>
+              </div>
+
+              <!-- Quote 13 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"To have like a couple of hours to myself in the morning… I just haven't done that in so long."</p>
+              </div>
+
+              <!-- Quote 14 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"Now I'm like, today is gonna be a great day."</p>
+              </div>
+
+              <!-- Quote 15 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"It gives me more confidence to know that, oh, they can do it when they're teething, it's okay."</p>
+              </div>
+
+              <!-- Duplicate set for seamless loop -->
+              <!-- Quote 1 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I feel better already, trust me. We've been looking forward to this."</p>
+              </div>
+
+              <!-- Quote 2 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I actually want to cry. I know too. I want to get my life back together."</p>
+              </div>
+
+              <!-- Quote 3 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"All the sleepless nights I've had for nearly almost a year is like… I've come so far."</p>
+              </div>
+
+              <!-- Quote 4 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"Its life‑changing. It's really, it's kind of almost sometimes shocking. It's like, hang on, this is
+                  what it could be."</p>
+              </div>
+
+              <!-- Quote 5 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I could be like on my way to getting my life back a little bit."</p>
+              </div>
+
+              <!-- Quote 6 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He slept from 7.45 till 4.30 in the morning… and he fell straight to sleep back till 6 o'clock."</p>
+              </div>
+
+              <!-- Quote 7 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He slept through the whole night."</p>
+              </div>
+
+              <!-- Quote 8 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"He just went to sleep by himself for his nap one. No rocking, no patting, nothing."</p>
+              </div>
+
+              <!-- Quote 9 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"It took 25 minutes but he went down, he's fast asleep."</p>
+              </div>
+
+              <!-- Quote 10 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"You could see it last night, how quick he went down, from two hours to what was it, 20… 14 minutes."
+                </p>
+              </div>
+
+              <!-- Quote 11 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I was able to do things… I was able to do normal things."</p>
+              </div>
+
+              <!-- Quote 12 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"I had my coffee before he was up. Like, it was amazing."</p>
+              </div>
+
+              <!-- Quote 13 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"To have like a couple of hours to myself in the morning… I just haven't done that in so long."</p>
+              </div>
+
+              <!-- Quote 14 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"Now I'm like, today is gonna be a great day."</p>
+              </div>
+
+              <!-- Quote 15 -->
+              <div class="review-card-full camp-testimonial-card">
+                <p>"It gives me more confidence to know that, oh, they can do it when they're teething, it's okay."</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camp Scene Illustration -->
+      <div class="camp-scene-illustration fade-in-up">
+        <img
+          src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/2e73b0-d688-ef8d-308c-cfdf7385108_Camp_Background_V2.webp"
+          alt="Camp Snooze campfire scene with mountains, lake, and campers" class="camp-scene-image" />
+      </div>
+
+      <!-- Description -->
+      <p class="fade-in-up"
+        style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 42rem; margin: 0 auto 2rem; line-height: 1.75;">
+        A 2-week virtual sleep training experience with Sally & Bec.
+        Get a custom sleep plan, daily morning roll call, troubleshooting support,
+        and a village of parents tackling sleep together.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 2: WHAT YOU'LL GET (MEMBER INCLUSIONS)
+     ============================================ -->
+<section class="camp-section camp-section-alt">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Your Camp Inclusions
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3); transition: box-shadow 0.3s;">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            A comprehensive intake so we understand your baby, your goals, and what's happening now
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            A personalised plan you can implement on day one of camp
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            Daily guidance for bedtime, overnight, and naps
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            Kick-off group call to lock in the approach and remove the guesswork
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            Daily roll call group coaching to review the last 24 hours and adjust the plan
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            Daily troubleshooting support in the forum for curveballs and "what do I do now?" moments
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="display: flex; align-items: flex-start; gap: 1rem; background: var(--camp-cream); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p style="color: var(--foreground); line-height: 1.75; flex: 1;">
+            Two leading sleep consultants in your corner across the full two weeks
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
+        </a>
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">6 spots per intake</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 3: WHO IT'S FOR
+     ============================================ -->
+<section class="camp-section pine-pattern">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Who It's For
+      </h2>
+      <div class="section-divider" style="margin-bottom: 2rem;"></div>
+    </div>
+
+    <p class="fade-in-up"
+      style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 42rem; margin: 0 auto 2.5rem; text-align: center;">
+      Camp Snooze is built for parents who need support addressing the big sleep challenges:
+    </p>
+
+    <div class="fade-in-up"
+      style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 42rem; margin: 0 auto 2.5rem;">
+      <span class="camp-badge">Frequent night wakes</span>
+      <span class="camp-badge">Long settling at bedtime</span>
+      <span class="camp-badge">Early mornings</span>
+      <span class="camp-badge">Short naps or nap resistance</span>
+    </div>
+
+    <div class="fade-in-up"
+      style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-radius: 1rem; padding: 2rem; max-width: 42rem; margin: 0 auto; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+      <p style="color: var(--muted-foreground); line-height: 1.75; text-align: center;">
+        If sleep training has felt overwhelming, or you've tried to DIY only to be stuck wondering
+        if you're doing it "right," this is for you. Camp Snooze is built so you're supported daily,
+        and you're not doing it alone.
+      </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 4: HOW IT WORKS
+     ============================================ -->
+<section class="camp-section camp-section-alt">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        How It Works
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <!-- Step 1 -->
+        <div class="fade-in-up" style="display: flex; gap: 1.5rem;">
+          <div style="flex-shrink: 0;">
+            <div
+              style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--camp-forest); color: var(--camp-cream); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">
+              1
+            </div>
+            <div style="width: 2px; height: 4rem; background: var(--camp-sage); margin: 0.5rem auto;"></div>
+          </div>
+          <div style="padding-top: 0.5rem;">
+            <h3 class="font-heading"
+              style="font-size: 1.25rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+              Secure your spot
+            </h3>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">
+              Complete a quick intake form so we understand your baby, your goals, and what's been happening.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="fade-in-up" style="display: flex; gap: 1.5rem;">
+          <div style="flex-shrink: 0;">
+            <div
+              style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--camp-forest); color: var(--camp-cream); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">
+              2
+            </div>
+            <div style="width: 2px; height: 4rem; background: var(--camp-sage); margin: 0.5rem auto;"></div>
+          </div>
+          <div style="padding-top: 0.5rem;">
+            <h3 class="font-heading"
+              style="font-size: 1.25rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+              Get your packing list
+            </h3>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">
+              You'll receive a packing list (simple things to prep before Day 1), your Camp schedule, and your Snooze login details on Friday before camp starts. Snooze access begins that same Friday.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="fade-in-up" style="display: flex; gap: 1.5rem;">
+          <div style="flex-shrink: 0;">
+            <div
+              style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--camp-forest); color: var(--camp-cream); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">
+              3
+            </div>
+            <div style="width: 2px; height: 4rem; background: var(--camp-sage); margin: 0.5rem auto;"></div>
+          </div>
+          <div style="padding-top: 0.5rem;">
+            <h3 class="font-heading"
+              style="font-size: 1.25rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+              Join daily roll call
+            </h3>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">
+              Live group check-in each morning to review the last 24 hours, adjust the plan, and keep momentum.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="fade-in-up" style="display: flex; gap: 1.5rem;">
+          <div style="flex-shrink: 0;">
+            <div
+              style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--camp-forest); color: var(--camp-cream); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">
+              4
+            </div>
+          </div>
+          <div style="padding-top: 0.5rem;">
+            <h3 class="font-heading"
+              style="font-size: 1.25rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+              Week 2: Stabilise
+            </h3>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">
+              Consolidate wins, tackle nap transitions, and prepare for long-term success.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 5: MEET YOUR COUNSELLORS
+     ============================================ -->
+<section class="camp-section pine-pattern">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <p class="font-display fade-in-up" style="font-size: 1.5rem; color: var(--camp-gold); margin-bottom: 0.5rem;">
+        Meet Your
+      </p>
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Camp Counsellors
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 56rem; margin: 0 auto;">
+      <div class="fade-in-up"
+        style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 2.5rem;">
+        <!-- Sally -->
+        <div class="polaroid">
+          <img
+            src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/f702b6a-ea62-2788-5b0-313783348b3_Camp_Snooze_Sally.webp"
+            alt="Sally Woods, Camp Snooze counsellor"
+            style="width: 16rem; height: 12rem; object-fit: cover; border-radius: 0.25rem;" />
+          <p class="font-display"
+            style="font-size: 1.25rem; color: var(--camp-forest); margin-top: 0.75rem; text-align: center;">Sally Woods
+          </p>
+        </div>
+
+        <!-- Bec -->
+        <div class="polaroid rotate-3">
+          <img
+            src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164288957/settings_images/3ea4276-026f-1eff-af-6c65224d2ae_Camp_Snooze_Bec.webp"
+            alt="Bec Maher, Camp Snooze counsellor"
+            style="width: 16rem; height: 12rem; object-fit: cover; border-radius: 0.25rem;" />
+          <p class="font-display"
+            style="font-size: 1.25rem; color: var(--camp-forest); margin-top: 0.75rem; text-align: center;">Bec Maher
+          </p>
+        </div>
+      </div>
+
+      <div class="fade-in-up"
+        style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-radius: 1rem; padding: 2rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft); text-align: center;">
+        <p style="color: var(--muted-foreground); line-height: 1.75; max-width: 42rem; margin: 0 auto;">
+          Camp Snooze is led by two of the industry's most trusted baby sleep experts,
+          Sally Woods and Bec Maher, who combine their backgrounds in paediatric nursing,
+          advanced infant sleep care, and thousands of hours of hands-on case work with
+          families around the world.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 6: KEY DATES
+     ============================================ -->
+<section class="camp-section camp-section-alt">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Camp Routine
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="fade-in-up"
+      style="max-width: 32rem; margin: 0 auto; background: var(--camp-cream); border-radius: 1rem; padding: 2rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid hsl(140, 25%, 75% / 0.3);">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(0, 60%, 50% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-rust);">
+            <i class="fa-solid fa-circle-xmark" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 600; color: var(--camp-rust);">1 Week Prior:</span>
+            <span style="color: var(--muted-foreground); margin-left: 0.5rem;">Applications Close</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-key" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 600; color: var(--camp-forest);">Friday Before Kick-off:</span>
+            <span style="color: var(--muted-foreground); margin-left: 0.5rem;">Snooze Access Opens</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem; background: hsl(38, 70%, 55% / 0.15); border-radius: 0.5rem; padding: 0.75rem 1rem; border: 1px solid hsl(38, 70%, 55% / 0.3);">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: var(--camp-gold); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-video" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 700; color: var(--camp-forest);">Monday Morning: First Roll Call!</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-calendar-days" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 600; color: var(--camp-forest);">Friday (fortnight later):</span>
+            <span style="color: var(--muted-foreground); margin-left: 0.5rem;">Final Day</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(150, 35%, 25% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-forest);">
+            <i class="fa-solid fa-clock" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 600; color: var(--camp-forest);">Daily group call:</span>
+            <span style="color: var(--muted-foreground); margin-left: 0.5rem;">10-11am AEDT</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid hsl(140, 25%, 75% / 0.3);">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div
+            style="width: 2rem; height: 2rem; border-radius: 50%; background: hsl(38, 60%, 45% / 0.1); display: flex; align-items: center; justify-content: center; color: var(--camp-rust);">
+            <i class="fa-solid fa-users" style="font-size: 0.875rem;"></i>
+          </div>
+          <div>
+            <span style="font-weight: 500; color: var(--camp-rust);">Capacity: maximum 8 families only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     VALUE BREAKDOWN (Camp vs 1:1)
+     ============================================ -->
+<section class="camp-section pine-pattern">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Why Camp Costs Less
+      </h2>
+      <p class="fade-in-up" style="font-size: 1rem; color: var(--muted-foreground); max-width: 36rem; margin: 0 auto;">
+        The same two-week transformation, delivered in a small group. Here's how the value breaks down.
+      </p>
+      <div class="section-divider" style="margin-top: 1rem;"></div>
+    </div>
+
+    <div class="fade-in-up breakdown-container" style="max-width: 28rem; margin: 0 auto;">
+      <div class="breakdown-row">
+        <span>2-Week 1:1 Sleep Transformation</span>
+        <span class="dynamic-price" data-usd="3500" data-aud="5250">$3,500</span>
+      </div>
+      <div class="breakdown-row">
+        <span>1 Month Snooze Access (included)</span>
+        <span class="dynamic-price" data-usd="79" data-aud="119">$79</span>
+      </div>
+      <div class="breakdown-row discount">
+        <span>Group Camp Discount</span>
+        <span class="dynamic-price discount-text" data-usd="-2889" data-aud="-4372">-$2,989</span>
+      </div>
+      <div class="breakdown-row total">
+        <span>Camper Price</span>
+        <span class="dynamic-price" data-usd="690" data-aud="997">$690</span>
+      </div>
+    </div>
+
+    <p class="fade-in-up" style="text-align: center; font-size: 0.9rem; color: var(--muted-foreground); margin-top: 1rem;">
+      Snooze members use checkout link inside Snooze Village for your discount.
+    </p>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
+        Join the Waitlist
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     WAITLIST SECTION (replaces Pricing when in waitlist mode)
+     ============================================ -->
+<section id="waitlist-section" class="camp-section" data-camp-mode="waitlist"
+  style="background: var(--camp-forest); color: var(--camp-cream); padding: 5rem 0;">
+  <div class="camp-container">
+    <div style="max-width: 36rem; margin: 0 auto; text-align: center;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-cream); margin-bottom: 1rem;">
+        Get Notified When the Next Intake Opens
+      </h2>
+      <p class="fade-in-up" style="font-size: 1rem; color: var(--camp-sage); margin-bottom: 2rem;">
+        Join the waitlist and we'll email you first when applications open. Limited to 8 families per intake.
+      </p>
+
+      <div class="fade-in-up pricing-card-dark waitlist-form-wrap" style="padding: 2.5rem 2rem;">
+        <script src="https://www.joinsnooze.com/forms/2149246740/embed.js"></script>
+      </div>
+
+      <p class="fade-in-up" style="color: var(--camp-sage); font-size: 0.875rem; margin-top: 1.5rem;">
+        Can't wait? <a href="https://www.joinsnooze.com/offers/z63s9VaR" style="color: var(--camp-gold); text-decoration: underline;">Join Snooze</a> and get weekly support now.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 8: FAQs
+     ============================================ -->
+<section class="camp-section pine-pattern">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Questions?
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            What ages is this for?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            Most families join when their baby is older than 6 months and ready to implement a plan. <a href="mailto:camp@joinsnooze.com?subject=Question%20about%20Camp%20Snooze" style="color: var(--camp-forest); text-decoration: underline;">Email us</a> and we will help make sure it is right for you.
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            What if my baby cries?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            We'll guide you through a plan that matches your baby and your comfort level, then coach you through the
+            tricky moments.
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            Do I have to attend live calls?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            Live is best for real-time support. Replays are available, and you'll still need to implement the same day.
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            What if I've tried sleep training before?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            Many parents have. Camp Snooze gives you daily coaching and troubleshooting so you don't get stuck when
+            things wobble.
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            Is this only for nights?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            We work on nights and naps. We'll prioritise what moves the needle fastest for your family.
+          </p>
+        </div>
+
+        <div class="fade-in-up"
+          style="background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid hsl(140, 25%, 75% / 0.3); box-shadow: var(--shadow-soft);">
+          <h3 class="font-heading"
+            style="font-size: 1.125rem; font-weight: 600; color: var(--camp-forest); margin-bottom: 0.5rem;">
+            What's included and what does it cost?
+          </h3>
+          <p style="color: var(--muted-foreground); line-height: 1.75;">
+            Along with the two-week intensive Camp experience you will gain access to Snooze, the all-access baby sleep support from The Sleep Concierge.
+            <p style="color: var(--muted-foreground); line-height: 1.75;">Your investment is $690 USD with monthly Snooze access or get two weeks free with quarterly access.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 9: FINAL CTA
+     ============================================ -->
+<section class="camp-section camp-section-alt" style="position: relative; overflow: hidden;">
+  <!-- Subtle falling leaves -->
+  <div class="falling-leaves"
+    style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0.5;"></div>
+
+  <div class="camp-container" style="position: relative; z-index: 2;">
+    <div style="text-align: center;">
+      <!-- Campfire -->
+      <div class="fade-in-up" style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+        <svg viewBox="0 0 40 40" style="width: 4rem; height: 4rem; color: var(--camp-gold);">
+          <path d="M5 35 L18 30 L25 35" stroke="hsl(150, 35%, 25%)" stroke-width="3" fill="none" />
+          <path d="M15 35 L28 30 L35 35" stroke="hsl(150, 35%, 25%)" stroke-width="3" fill="none" />
+          <path d="M20 28 Q15 20 20 10 Q25 20 20 28" fill="hsl(38, 70%, 55%)" />
+        </svg>
+      </div>
+
+      <p class="font-display fade-in-up" style="font-size: 1.875rem; color: var(--camp-gold); margin-bottom: 1rem;">
+        Ready?
+      </p>
+      <h2 class="font-heading fade-in-up"
+        style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1.5rem;">
+        See You at Roll Call
+      </h2>
+      <p class="fade-in-up" style="color: var(--muted-foreground); max-width: 36rem; margin: 0 auto 2.5rem;">
+        We'll email you when the next intake opens so you can secure your spot.
+      </p>
+      <div class="fade-in-up">
+        <a href="#waitlist-section" class="btn-camp btn-camp-xl" style="text-decoration: none; display: inline-block;">
+          Join the Waitlist
+        </a>
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">8 spots per intake</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Note: CSS goes in camp-snooze-v2-luxury.css -->
+<!-- Note: JavaScript goes in camp-snooze-v2-luxury.js -->
