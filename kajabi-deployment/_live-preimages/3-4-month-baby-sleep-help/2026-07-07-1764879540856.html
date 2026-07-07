@@ -1,0 +1,93 @@
+<!-- ============================================
+     SECTION 5: VALUE COMPARISON SECTION
+     ============================================ -->
+<!-- ============================================
+     VALUE COMPARISON COMPONENT
+     Compares individual product vs Snooze membership
+     Reusable across product and age-specific pages
+     ============================================ -->
+
+<section class="snooze-value-comparison">
+  <div class="snooze-container">
+    <h2 class="snooze-section-title">Get This + Everything Else</h2>
+    <p class="snooze-section-intro">For just a little more than a single course, you get access to everything in Snooze.</p>
+
+    <div class="snooze-comparison-grid">
+      <!-- Individual Product -->
+      <div class="snooze-comparison-card snooze-comparison-individual">
+        <div class="snooze-comparison-header">
+          <h3>3-4 Month Sleep Course Only</h3>
+          <div class="snooze-price">
+            <span class="snooze-price-amount" data-product-price="$117">$117</span>
+            <span class="snooze-price-note">one-time</span>
+          </div>
+        </div>
+        <ul class="snooze-comparison-features">
+          <li><i class="fa-solid fa-check"></i> This course only</li>
+          <li><i class="fa-solid fa-check"></i> Lifetime access to this course</li>
+          <li><i class="fa-solid fa-xmark"></i> No access to other age guides</li>
+          <li><i class="fa-solid fa-xmark"></i> No Library access</li>
+          <li><i class="fa-solid fa-xmark"></i> No Village community</li>
+          <li><i class="fa-solid fa-xmark"></i> No live coaching</li>
+        </ul>
+      </div>
+
+      <!-- VS Divider -->
+      <div class="snooze-comparison-vs">
+        <div class="snooze-vs-line"></div>
+        <div class="snooze-vs-text">vs</div>
+        <div class="snooze-vs-line"></div>
+      </div>
+
+      <!-- Snooze Membership -->
+      <div class="snooze-comparison-card snooze-comparison-membership">
+        <div class="snooze-comparison-badge">Best Value</div>
+        <div class="snooze-comparison-header">
+          <h3>Snooze Membership</h3>
+          <div class="snooze-price">
+            <span class="snooze-price-amount">$197</span>
+            <span class="snooze-price-period">/quarter</span>
+            <span class="snooze-price-note">Launch pricing</span>
+          </div>
+        </div>
+        <ul class="snooze-comparison-features">
+          <li><i class="fa-solid fa-check"></i> This course included</li>
+          <li><i class="fa-solid fa-check"></i> All age guides (newborn through toddler)</li>
+          <li><i class="fa-solid fa-check"></i> Complete Library access</li>
+          <li><i class="fa-solid fa-check"></i> Snooze Village community</li>
+          <li><i class="fa-solid fa-check"></i> Weekly live coaching with Sally</li>
+          <li><i class="fa-solid fa-check"></i> Member pricing on consultations</li>
+        </ul>
+        <div class="snooze-comparison-cta">
+          <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary snooze-btn-large">
+            Join Snooze
+          </a>
+          <p class="snooze-comparison-note">For just $80 more, you get everything</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Value Message -->
+    <div class="snooze-value-message">
+      <p><strong>Individual courses:</strong> $117-$129 each</p>
+      <p><strong>Snooze Membership:</strong> $197/quarter (Launch) - Get all courses + Library + Village + Coaching</p>
+      <p class="snooze-value-highlight">For just $80 more than a single course, you get everything.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+// Update product price dynamically if data attribute is set
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var priceElement = document.querySelector('[data-product-price]');
+    if (priceElement) {
+      var price = priceElement.getAttribute('data-product-price');
+      priceElement.textContent = price;
+    }
+  });
+})();
+</script>
+

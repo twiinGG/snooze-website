@@ -1,0 +1,96 @@
+<!-- ============================================
+     SECTION 6: AGE CROSS-LINKING SECTION
+     ============================================ -->
+<!-- ============================================
+     AGE PAGE CROSS-LINKING COMPONENT
+     Shows links to other age-specific pages
+     Demonstrates comprehensiveness of Snooze
+     ============================================ -->
+
+<section class="snooze-age-crosslinks">
+  <div class="snooze-container">
+    <h2 class="snooze-section-title">All Age Guides Available</h2>
+    <p class="snooze-section-intro">Snooze covers every stage from newborn through toddler. All guides are included in your membership.</p>
+
+    <div class="snooze-age-grid">
+      <!-- Newborn (0-3 Months) -->
+      <div class="snooze-age-card" data-age="newborn">
+        <div class="snooze-age-badge">0-3 Months</div>
+        <h3>Newborn Sleep Help</h3>
+        <p>Foundation, safe sleep, and establishing routines for your newborn.</p>
+        <a href="https://www.joinsnooze.com/newborn-baby-sleep-help" class="snooze-age-link">
+          View Newborn Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- 3-4 Month -->
+      <div class="snooze-age-card" data-age="3-4month" data-current-age="true">
+        <div class="snooze-age-badge">3-4 Months</div>
+        <h3>3-4 Month Sleep Help</h3>
+        <p>Fourth-trimester sleep, developmental changes, and nap consolidation.</p>
+        <a href="https://www.joinsnooze.com/3-4-month-baby-sleep-help" class="snooze-age-link">
+          View 3-4 Month Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- 5-12 Month -->
+      <div class="snooze-age-card" data-age="5-12month">
+        <div class="snooze-age-badge">5-12 Months</div>
+        <h3>5-12 Month Sleep Help</h3>
+        <p>Sleep training, night weaning, and schedule optimisation.</p>
+        <a href="https://www.joinsnooze.com/5-12-month-baby-sleep-help" class="snooze-age-link">
+          View 5-12 Month Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Toddler (12+ Months) -->
+      <div class="snooze-age-card" data-age="toddler">
+        <div class="snooze-age-badge">12+ Months</div>
+        <h3>Toddler Sleep Help</h3>
+        <p>Nap transitions, bedtime battles, and regressions.</p>
+        <a href="https://www.joinsnooze.com/toddler-sleep-help" class="snooze-age-link">
+          View Toddler Guide <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Membership CTA -->
+    <div class="snooze-age-cta">
+      <p class="snooze-age-cta-text">All guides included in Snooze membership</p>
+      <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary">
+        Join Snooze to Access All Guides
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+// Optionally hide the current age card
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get current page age from URL or data attribute
+    var currentPath = window.location.pathname;
+    var currentAge = '';
+
+    if (currentPath.indexOf('newborn') !== -1) {
+      currentAge = 'newborn';
+    } else if (currentPath.indexOf('3-4-month') !== -1) {
+      currentAge = '3-4month';
+    } else if (currentPath.indexOf('5-12-month') !== -1) {
+      currentAge = '5-12month';
+    } else if (currentPath.indexOf('toddler') !== -1) {
+      currentAge = 'toddler';
+    }
+
+    // Hide current age card if found
+    if (currentAge) {
+      var currentCard = document.querySelector('[data-age="' + currentAge + '"]');
+      if (currentCard) {
+        currentCard.setAttribute('data-current-age', 'true');
+      }
+    }
+  });
+})();
+</script>
