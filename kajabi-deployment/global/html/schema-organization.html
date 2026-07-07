@@ -1,16 +1,15 @@
 <!--
-  Global Organization + WebSite JSON-LD  (site-audit-2026-06, Wave 1 item 2)
+  Global Organization + WebSite JSON-LD.
 
   DEPLOY: Kajabi Settings > Site details > Page scripts > Header Page Scripts.
-  Append below existing header code (do not replace). Kajabi has no site-wide
-  footer-scripts field. Static JSON-LD; does not depend on
-  the page. Validate after paste with Google Rich Results Test and the Schema.org
-  validator, then re-crawl a sample (crawl_page.py --force) and confirm
-  jsonld_types includes Organization and WebSite.
+  Paste this block before schema-person-sally.html and blog-schema-paste.html.
+  Static JSON-LD; does not depend on the page. Validate after paste with
+  Google Rich Results Test and the Schema.org validator, then re-crawl a
+  sample page and confirm jsonld_types includes Organization and WebSite.
 
   Source of truth is this file in git. Kajabi is the paste target only.
-  Logo, social profiles and brand name verified against the live theme on
-  2026-06-09. Update here first, then re-paste.
+  Logo, social profiles and brand name were verified against the live theme
+  on 2026-06-09. Update here first, then re-paste.
 -->
 <script type="application/ld+json">
 {
@@ -29,11 +28,7 @@
       "image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
       "description": "Evidence-based baby and toddler sleep guidance for modern parents. Snooze helps tired families reduce night wakes and build settled sleep, through courses, memberships and one-on-one consultations.",
       "founder": {
-        "@type": "Person",
-        "@id": "https://www.joinsnooze.com/author/sally-woods#person",
-        "name": "Sally Woods",
-        "jobTitle": "Paediatric Sleep Consultant",
-        "url": "https://www.joinsnooze.com/about-sally"
+        "@id": "https://www.joinsnooze.com/author/sally-woods#person"
       },
       "areaServed": "AU",
       "sameAs": [

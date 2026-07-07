@@ -1,0 +1,67 @@
+<!--
+  Global Sally Woods Person JSON-LD.
+
+  DEPLOY: Kajabi Settings > Site details > Page scripts > Header Page Scripts.
+  Paste after schema-organization.html and before blog-schema-paste.html.
+  Keep @id stable because BlogPosting.author and Organization.founder reference it.
+
+  Canonical credential wording:
+  "internationally certified sleep consultant and former paediatric nurse."
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.joinsnooze.com/author/sally-woods#person",
+  "name": "Sally Woods",
+  "url": "https://www.joinsnooze.com/about-sally",
+  "mainEntityOfPage": "https://www.joinsnooze.com/about-sally",
+  "jobTitle": "Internationally certified sleep consultant",
+  "description": "Internationally certified sleep consultant and former paediatric nurse. Founder of Snooze by The Sleep Concierge.",
+  "worksFor": {
+    "@id": "https://www.joinsnooze.com/#organization"
+  },
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Nap Trapped",
+      "url": "https://www.naptrapped.com/"
+    }
+  ],
+  "knowsAbout": [
+    "baby sleep",
+    "toddler sleep",
+    "sleep training",
+    "early rising",
+    "sleep regressions",
+    "nap transitions"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certification",
+      "name": "Certified Sleep Consultant",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "International Maternity & Parenting Institute"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Bachelor of Nursing",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Australian Catholic University"
+      }
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/thesleepconcierge/",
+    "https://www.facebook.com/thesleepconcierge",
+    "https://www.tiktok.com/@thesleepconcierge",
+    "https://www.naptrapped.com/",
+    "https://www.joinsnooze.com/about-sally"
+  ]
+}
+</script>
