@@ -43,8 +43,8 @@ Complete these checks BEFORE pasting code to Kajabi.
 
 - [ ] Run placeholder scanner on all files to be deployed
   ```bash
-  python snooze-infrastructure/src/validation/scan_placeholders.py \
-    --dir snooze-product/projects/snooze-website/kajabi-deployment/pages/[page-directory]/
+  python scripts/validation/scan_placeholders.py \
+    --dir apps/snooze-website/kajabi-deployment/pages/[page-directory]/
   ```
 - [ ] **BLOCK if placeholders detected**
   - Fix unreplaced variables ({{VAR}}, ${VAR}, [YOUR_VAR], %VAR%)
@@ -54,8 +54,8 @@ Complete these checks BEFORE pasting code to Kajabi.
 
 - [ ] Run link checker on deployment files
   ```bash
-  bash snooze-infrastructure/src/validation/check_links.sh \
-    snooze-product/projects/snooze-website/kajabi-deployment/pages/[page-directory]/
+  bash scripts/validation/check_links.sh \
+    apps/snooze-website/kajabi-deployment/pages/[page-directory]/
   ```
 - [ ] **BLOCK if broken links detected**
   - Fix broken internal links
@@ -66,7 +66,7 @@ Complete these checks BEFORE pasting code to Kajabi.
 
 - [ ] Run environment validator
   ```bash
-  python snooze-infrastructure/src/validation/env_validator.py --check-only
+  python scripts/validation/env_validator.py --check-only
   ```
 - [ ] **BLOCK if required env vars missing**
   - Add missing variables to root `.env`
