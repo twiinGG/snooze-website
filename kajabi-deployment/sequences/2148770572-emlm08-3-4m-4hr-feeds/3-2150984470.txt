@@ -1,0 +1,60 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{first_name}},
+
+
+
+Just a quick check-in from me.
+
+
+
+How are the feeds going? Have you managed to stretch those intervals? Is your baby taking bigger, more satisfying feeds now?
+
+
+
+I’d love to hear. Hit reply and let me know (I read every message, promise).
+
+
+
+If you’re feeling good with where things are, keep going. Trust yourself.
+
+
+
+If you’re finding that other pieces of the puzzle need attention, like the 4-month regression or self-settling, here’s where to go next:
+
+The 3-4 Month Sleep Course - Everything for navigating this tricky, transformative age.
+The Snooze Membership - All courses, community, and ongoing support.
+
+Get the 3-4 Month Course →
+
+Join Snooze →
+
+You’re doing such a good job. Taking the time to understand your baby’s feeds tells me everything about what kind of parent you are.
+
+
+
+Better sleep is possible. I’m here when you’re ready.
+
+
+
+All my love,
+
+
+
+Sally 🌟
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

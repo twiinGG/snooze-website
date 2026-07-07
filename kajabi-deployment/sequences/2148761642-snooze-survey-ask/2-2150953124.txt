@@ -1,0 +1,42 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+Quick reminder in case you meant to do this and then got pulled in 12 directions.
+
+
+
+If you can spare 5 minutes, your feedback helps us make Snooze simpler, clearer, and more useful for you (and every mum joining next).
+
+
+
+Share feedback →
+
+Optional bonus at the end
+If you choose to submit a short video testimonial, I’ll gift you a 45-minute 1:1 consult as a thank you.
+
+
+
+Thanks so much,
+Sally
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

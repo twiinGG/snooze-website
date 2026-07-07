@@ -1,0 +1,68 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+Final reminder. You have until December 31 to upgrade to full Snooze at your special Snooze Social member rate.
+
+
+
+Your Snooze Social membership ends December 31, 2025.
+
+
+
+After that, your Snooze Social access ends. But you can upgrade to full Snooze right now at your exclusive rate ($435/year) and that price is locked in forever, even if you cancel and come back later.
+
+
+
+Your Special Snooze Social Member Pricing (Ends Dec 31):
+
+
+
+Annual: $435/year (normally $657). Save $222/year forever.
+Quarterly: $130/quarter (normally $197). Save $67/quarter forever.
+
+
+
+Plus, the rest of 2025 is FREE. Join now, membership starts January 1, 2026, but you get full access immediately.
+
+
+
+Don't forget: You can also book a $290 consult before January 1 and bank it for 2026, you can purchase now and schedule later.
+
+
+
+Upgrade to Full Snooze Membership →
+
+
+
+Book $290 Consult (bank for 2026) →
+
+
+
+This is your last chance to lock in this rate.
+
+
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

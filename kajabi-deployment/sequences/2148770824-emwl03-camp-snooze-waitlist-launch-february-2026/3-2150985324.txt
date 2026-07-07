@@ -1,0 +1,59 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+	FINAL REMINDER
+ 
+ 
+
+
+
+Camp Snooze
+
+Final call for the waitlist window
+
+Hi {{ first_name }},
+
+This is the final reminder to sign up for next week's cohort. Enrollment for Camp Snooze closes February 6, 2026.
+
+
+
+
+If you are ready to join this cohort, now is the moment.
+
+I know you're ready.
+
+Once enrollment closes, the doors will not reopen until the next intake.
+
+
+
+
+"He slept through the whole night."
+
+(The kind of outcome we work toward together)
+
+Join Camp Snooze
+
+Need help deciding? Reply and we will guide you.
+
+
+
+
+Warmly,
+
+x Sally
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

@@ -1,0 +1,86 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }}!
+
+ 
+
+I’m so glad you’re here. I know how draining it feels when a once-predictable sleeper suddenly wakes every hour and catnaps all day. It’s not your fault, and you’re not alone.
+
+ 
+
+Your Masterclass Replay
+
+If you didn't watch it immediately when you signed up, you can access the masterclass anytime here 👇 
+
+	
+
+
+
+	
+The Sleep Regression Masterclass
+	
+
+
+
+
+	
+
+ In this quick, 21-minute video you’ll discover:
+
+ 
+
+1. Why the 4-month regression happens (spoiler: it’s a permanent brain upgrade, not a random phase).
+
+ 
+
+2. The first three adjustments you can make tonight to reduce those hourly wake-ups.
+
+ 
+
+3. How to build healthy sleep pressure and support your baby’s natural circadian rhythm.
+
+ 
+
+This works.
+
+ 
+
+I’m Sally Woods, Paediatric Nurse, Certified Sleep Consultant, and founder of The Sleep Concierge.
+
+ 
+
+Over the past eight years I’ve helped more than 700 families move from chaos to consistent, restorative sleep.
+
+ 
+
+You’re in expert hands.
+
+ 
+
+Drag this email into your 'inbox'. I'll follow up tomorrow with an email busting the biggest myth about this stage and sharing a quick win you can test at the very next nap.
+
+ 
+
+Warmly,
+
+ 
+
+Sally Woods
+
+Founder, The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

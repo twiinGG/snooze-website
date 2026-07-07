@@ -1,0 +1,83 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+Quick follow-up on Snooze. I wanted to make sure you know about one of the most valuable parts.
+
+
+
+You get access to ALL my courses. Not just the one you purchased.
+
+
+
+Right now, you have one course or guide. As a Snooze member, you get everything I've created, and everything I create in the future. As your baby grows and reaches new stages, you have what you need without buying another course.
+
+
+
+What's included:
+
+
+
+All age-specific courses (0-3 months, 3-6 months, 5-12 months, 12-18 months, and beyond)
+All specialised guides (nap training, night weaning, regressions)
+New courses as I create them (automatically added)
+Updated versions of existing courses (you always have the latest)
+
+
+
+Why this matters:
+
+
+
+Your baby's sleep needs change. A lot. With Snooze, you don't need to figure out which course to buy next. You have everything in one place, organised by age and stage.
+
+
+
+Founding Member Pricing with Your $67 Credit:
+
+
+
+Annual: $423/year (normally $657). Save $234 every year, forever.
+Quarterly: $80/quarter (normally $197). Save $117 every quarter, forever.
+
+
+
+Plus, you get the rest of 2025 free. Join now and your membership starts January 1, 2026, but you get full access immediately.
+
+
+
+Founding Member pricing ends December 31\. After that, membership goes up to $657/year.
+
+
+
+Upgrade to Snooze Founding Member →
+
+
+
+One more email coming before the deadline.
+
+
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

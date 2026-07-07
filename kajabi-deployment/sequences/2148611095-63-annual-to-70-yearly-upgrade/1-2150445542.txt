@@ -1,0 +1,80 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+Wow, time flies when you're having fun (and great sleep)!  Your year at Snooze Social is coming to an end, but your membership doesn't have to stop here.
+
+ 
+
+I've hoped you have loved connecting with the other parents in our wonderful community. From sharing sleep stories to engaging with fellow snooze enthusiasts, they're helping make Snooze Social the warm and inviting place it is today. 
+
+ 
+
+We'd love for you to continue being a part of Snooze Social!
+Renew for $70 USD/yearly you'll continue to get:
+
+All of your baby and toddler questions answered with personalised advice 
+Support from a group of like-minded parents who are in the thick of it too.
+Expert baby sleep masterclasses and an ever growing library of sleep resources 
+And so much more! 
+
+ 
+
+To continue your Snooze Social adventure, simply click the button below and choose the membership plan that suits you best. 
+
+ 
+
+	
+
+
+
+	
+$7 per month
+	
+
+
+
+
+
+
+
+	
+$70 per year (annual payment)
+	
+
+
+
+
+	
+
+If you need any assistance or have questions, our friendly support team is always here to help. 
+
+ 
+
+If you decide to snooze on this opportunity for now, no worries! You're always welcome back whenever you're ready or in need of support. Thank you for being a part of Snooze Social during your trial period. 
+
+ 
+
+Sweet dreams and see you soon! 
+
+ 
+
+The Snooze Social Team  
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

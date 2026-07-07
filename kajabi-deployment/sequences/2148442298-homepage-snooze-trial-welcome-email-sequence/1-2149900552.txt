@@ -1,0 +1,24 @@
+Dear {{ first_name }},
+
+Thank you for joining The Sleep Concierge community! We're thrilled to have you here.
+
+Whether you've started your 7-day free trial of Snooze Social or you're just exploring your options, we're here to support you on your journey to better sleep for your little one.
+
+Here's what you can expect from us:
+
+💫 Expert sleep tips and strategies
+
+💫 Exclusive content to help you navigate common sleep challenges
+
+💫 A supportive community of parents just like you
+
+If you haven't started your free trial yet, there's still time! Just click here to begin your 7-day access to Snooze Social.
+
+Sweet dreams,
+
+Sally
+
+The Sleep Concierge 
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

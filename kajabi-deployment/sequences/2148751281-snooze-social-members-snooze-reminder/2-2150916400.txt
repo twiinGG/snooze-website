@@ -1,0 +1,78 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+We're down to the final days. Your Snooze Social membership ends December 31, and Founding Member pricing disappears then too.
+
+
+
+Here's what you get in full Snooze:
+
+
+
+✅ Access to ALL courses (not just the limited selection)
+✅ Weekly live coaching sessions with me
+✅ Expert-moderated community for daily questions
+✅ Full replay library of every session
+✅ Member pricing on consultations ($445 vs. $650)
+✅ New content added monthly as your baby grows
+✅ Founding Member pricing locked in forever
+
+
+
+Your Special Snooze Social Member Pricing (Ends Dec 31):
+
+
+
+Annual: $435/year (normally $657). Save $222/year forever.
+Quarterly: $130/quarter (normally $197). Save $67/quarter forever.
+
+
+
+Plus, the rest of 2025 is FREE. Join now, membership starts January 1, 2026, but you get full access immediately.
+
+
+
+Your Snooze Social membership ends December 31.
+
+
+
+After that, your access ends. But you can upgrade right now at this special rate and it gets locked in forever—even if you cancel and come back later.
+
+
+
+Upgrade to Full Snooze Membership →
+
+
+
+Book $290 Consult (bank for 2026) →
+
+
+
+One final reminder before the deadline.
+
+
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

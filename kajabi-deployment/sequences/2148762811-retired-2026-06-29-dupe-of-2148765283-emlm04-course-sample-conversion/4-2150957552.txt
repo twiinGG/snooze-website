@@ -1,0 +1,56 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+I’m checking in one last time on the Schedules module.
+
+
+
+I hope having a routine on paper has helped you see where the day might have been going off track. Sometimes just knowing the "ideal" makes the reality easier to manage.
+
+
+
+From here, you have a choice. You can keep going on your own with what you’ve learned, or you can choose a path that gives you more clarity:
+
+
+
+The Full Course: Get the complete, canonical plan for this age stage.
+Snooze: Get the course PLUS ongoing coaching and support as your baby grows.
+
+No pressure, just real help. You know where we are when you’re ready.
+
+
+
+Choose My Path →
+
+Talk soon,
+Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

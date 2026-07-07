@@ -1,0 +1,26 @@
+Dear {{ first_name }},
+
+It's Sally here, checking in on your sleep journey. Whether you've been exploring our resources or actively participating in the Snooze Social trial, I hope you're finding valuable insights for your family's sleep.
+
+Our community is more than just sleep tips - it's a supportive network of parents who understand exactly what you're going through. Here's what one mum experienced:
+
+"I was at my wit's end with my 4-month-old's constant catnapping. She would never sleep longer than 40 minutes, leaving us both overtired and cranky. Sally's Free Catnapping Guide was a game-changer. The explanations helped me understand what was happening, and the strategies were easy to implement. Within a week, we started seeing longer naps. This guide gave me the knowledge and confidence I needed to help my baby sleep better!"
+
+Remember, as part of our community, you have access to:
+
+💫 Daily support from fellow parents and sleep experts
+
+💫 Regular Q&A sessions with me
+
+💫 A wealth of resources for every age and sleep challenge
+
+However you engage with us, know that we're here to support you in creating restful nights for your whole family. 
+
+Sally
+
+The Sleep Concierge 
+
+ps. Don't forget to follow along on socials where I post daily sleep tips and stories of encouragement:
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,0 +1,99 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+I noticed you haven't enrolled in the 3-4 Month Baby Sleep Course yet, and I wanted to check in. What's your biggest question or concern about the course?
+
+ 
+
+I'm here to help! Here are a few of the most common queries I've received:
+
+ 
+
+Q: Will this work for my baby?
+
+A: The strategies taught in the 3-4 Month Baby Sleep Course are based on proven sleep science and have helped thousands of babies aged 3 - 4 months and beyond. While every child is unique, these techniques can be customised to fit your family's needs and parenting philosophy.
+
+ 
+
+Q: What if I can't complete the course in time?
+
+A: Don't worry! You'll have lifetime access to all course content, so you can go at your own pace and revisit lessons whenever you need a refresher. We'll be here to support you every step of the way.
+
+ 
+
+Q: My baby is still feeding overnight at this age. Will this course help us drop night feeds?
+
+A: The 3-4 Month Baby Sleep Course absolutely covers night feedings and how to gently navigate this transition in a way that respects your baby's nutritional needs and your family's unique circumstances.
+
+ 
+
+At this age, some babies are ready to consolidate their feeds and sleep for longer stretches overnight, while others still require 1-2 night feeds for proper growth and development. The course will guide you in assessing your baby's readiness and provide strategies for gradually reducing night feeds when appropriate.
+
+	
+
+
+
+	
+SIGN ME UP!
+	
+
+
+
+
+	
+
+Still not sure if The Sleep Concierge is right for you? Here's what other parents are saying:
+
+ 
+
+“I consulted with Sally when my baby was 14wks old. She was refusing naps, wouldn’t settle without being rocked/held and would sleep max 20 - 40 minutes. Within a day of my consultation with Sally, we were having 2hr naps and settling completely independently for naps and at bed time. I have felt so supported by Sally throughout the entire sleep journey so far and I cannot thank/recommend Sally enough. She is a true sleep wizard!!” - Jessica
+
+ 
+
+"Our little 4 month old is now finally napping 2-3 times during the day (he wouldn’t nap longer than 10 - 20 mins) and just waking once overnight. He is such a happy baby now that he’s finally getting some quality sleep. Highly recommend Sally, was absolutely worth the (very reasonably priced) investment!" - Georgie
+
+ 
+
+Enrol now and let the 3-4 Month Baby Sleep Course be your turning point. Better sleep is waiting!
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+	
+
+P.S. Remember, when you sign up today, you'll also get these exclusive bonuses:
+
+3 months' free access to our private Snooze Social support community
+As a founding member you’ll also get access to future exclusive bonuses and discounts! 
+	
+
+
+
+	
+TELL ME MORE
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

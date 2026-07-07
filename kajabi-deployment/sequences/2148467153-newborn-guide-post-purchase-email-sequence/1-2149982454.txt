@@ -1,0 +1,86 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Dear {{ first_name }},
+
+ 
+
+Congratulations on purchasing the Newborn Sleep Guide by the Sleep Concierge.
+
+ 
+
+The fourth trimester can feel overwhelming at times. That's why I've poured all my experience as a paediatric nurse, sleep consultant, and mum into creating this easy to follow guide to help navigate your newborn's sleep with confidence.
+
+ 
+
+Here's what to do next: 
+
+1. Log in to your library dashboard using the username and password you created during purchase. 
+
+	
+
+
+
+	
+LOG IN HERE
+	
+
+
+
+
+	
+
+2. Click on "Newborn Sleep Guide" and download your guide
+
+ 
+
+3.  Take your time (grab a coffee!) to sit down and read through the guide. It's designed to give you the approach and then practical steps to help your little one get a good night's sleep.
+
+This is a time for nurturing and bonding with your precious newborn.
+
+
+The guide will help you:
+
+💫 Understand their cues
+
+💫 Create gentle routines, and
+
+💫 Set up a safe sleep environment
+
+All while honouring the unique needs of the fourth trimester.
+
+
+
+If you have any questions or need support, I'm here for you through my Snooze Social Community. There's no such thing as a silly question when it comes to caring for your newborn!
+ 
+
+I'm so excited to support you during this special time.
+
+
+
+Here's to understanding your little one better and finding your rhythm together.
+
+ 
+
+Sweet dreams,
+
+ 
+
+Sally
+
+The Sleep Concierge 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

@@ -1,0 +1,47 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+I know it can feel impossible to imagine your baby ever sleeping soundly again, especially when you're in the thick of the 4 month regression. But I want to share a success story from one of my clients to give you a little hope!
+
+ 
+
+Meet Georgie and her 4 month old son Baby ‘A’. When Georgie reached out to me, she was utterly exhausted and at her wit's end. A had never been an amazing sleeper, but at 4 months he was only taking 2 x 20 minute naps for the day and needing to be rocked to sleep, which was becoming less and less effective. Not only that, but A was cranky and crying for much of the day. Naps were a nightmare, bedtime was a fight, and Georgie was really struggling.
+
+ 
+
+After working with me to implement the strategies in The 4 Month Sleep Regression Survival Guide, Georgie saw a dramatic change in A’s sleep. With a schedule, a self settling plan, consistency and support, A learned to fall asleep independently at bedtime, settle himself back to sleep during night wakings, and take predictable, restorative naps. Within two weeks, he was sleeping a solid 11-12 hours overnight with just one brief feeding as well as taking 3 long naps in his cot and falling asleep for everything completely independently. Georgie discovered that she didn’t just have a low sleep total baby and her whole family is now getting the sleep they desperately need.
+
+ 
+
+I share Georgie's story to reassure you that there IS light at the end of the 4 month sleep regression tunnel. With the right tools and support, you too can help your baby develop the skills to sleep soundly. Speaking of…
+
+ 
+
+I've got a real goodie coming to your inbox tomorrow... Look out for a brand new online sleep workshop where I'll walk you through sleep training and share evidence-based strategies to improve your baby's sleep in a way that feels right for your family. Keep an eye on your inbox for your official invite!
+
+ 
+
+Sweet dreams,
+
+Sally
+
+ 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

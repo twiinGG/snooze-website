@@ -1,0 +1,52 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+I’m checking in one last time on your Schedules module.
+
+
+
+I really hope having the day mapped out on paper has helped you see where things might have been slipping. Sometimes just knowing the “ideal” makes the real, messy version so much easier to manage.
+
+
+
+If you’d like a next step, the simplest one isn’t another single course. It’s having everything in one place as your baby grows: every course and guide, the Snooze Village community, and live Q&A support where you can bring me your specific situation. You can cancel anytime, and you’ll always have me or one of my Snooze team in your corner.
+
+
+
+No pressure at all. You know where we are whenever you’re ready.
+
+
+
+Join the Snooze Membership →
+
+x Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

@@ -1,0 +1,64 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }}
+
+Thanks for grabbing the Settling Techniques module from Snooze. I'm glad you're here! Your access link is at the bottom.
+
+If you just listened to the Nap Trapped episode about advice we're afraid to give, you'll know Bec and I talked a lot about crying thresholds and choosing techniques that actually work for your baby's temperament. This module is the practical follow-up to all of that.
+
+Here's what to do next:
+
+1. Watch the video module (3 minutes) I walk you through how to choose a technique, when to stay consistent, and when to pivot. 
+
+2. Download the technique guides You've got access to:
+
+Cot-side settling
+Soothe and support
+Pick up put down
+Le Pause
+Temperament matching guide
+
+Pick one. Read it start to finish. Get your partner to read it too. Consistency matters more than which one you choose.
+
+3. Listen to the cry samples This is the part parents tell me changes everything. You'll hear:
+
+Emotional crying
+Protesting
+Tired squeals
+Genuine distress
+
+Once you know what you're listening for, your confidence skyrockets. That 4 out of 10 that feels like a 10? You'll start hearing the difference.
+
+One more thing: Give your chosen technique three full nights before you decide if it's working. Three nights. That's the minimum for your baby to figure out what's happening. If you bail after one rough night, you're just resetting the clock.
+
+You've got this. And you've got the tools now.
+
+Sally
+
+P.S. If you're thinking "I need more than just one module" - keep an eye on your inbox. I've got something coming that might be exactly what you need.
+
+	
+
+
+
+	
+Find Your Module Here
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

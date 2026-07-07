@@ -1,0 +1,25 @@
+Hey {{ first_name }},
+
+Every family's sleep journey is unique. If you're still considering joining our exclusive baby sleep community, I'm excited to offer you a FREE 7-day trial of Snooze Social!
+
+For the week, you'll get:
+
+✨ Direct access to my expertise as a certified sleep consultant
+
+✨ A supportive community of parents
+
+✨ Exclusive sleep content and resources just for the community
+ 
+
+After your trial, continue for just $7/month - that's continuous sleep support for less than a (fancy) coffee!
+
+Start My 7 Day Trial!
+
+Sweet dreams,
+
+Sally
+
+P.S. No commitment required - try Snooze Social risk-free and see how it transforms your family's sleep!
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

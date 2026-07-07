@@ -1,0 +1,74 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+ 
+
+Your waitlist spot is live. Enrollment opens to the public in 18 hours.
+
+	WAITLIST FIRST ACCESS
+ 
+ 
+
+
+
+Camp Snooze
+
+Camp Snooze is open. You get first access.
+
+Hi {{ first_name }},
+
+Enrollment for the next Camp Snooze cohort is officially open, and because you are on the waitlist, you get first access. The public will not see this until tomorrow night.
+
+This is a 14-day group sleep coaching program. You get a tailored sleep plan for your baby, daily live coaching calls, and a small group of parents going through the process with you.
+
+The January cohort just wrapped. Here is what six families achieved together in 14 days:
+
+
+
+
+JANUARY COHORT RESULTS
+
+Night wakings went from an average of 4 to 5 per night down to 0 or 1
+Night feeds went from 2 to 3 per night down to zero
+Settling time went from 45+ minutes with assistance to under 10 minutes, independently
+
+
+
+These were real families dealing with contact napping, hourly wakes, and total reliance on rocking or feeding to sleep.
+
+There are only 6 spots for this cohort. Camp starts Monday 23 February.
+
+
+
+
+"I had six hours of straight sleep. I have not had that since before she was born."
+
+(A Camp Snooze mum, Day 8)
+
+Claim your spot
+
+Enrollment closes Tuesday, February 17. Only 6 spots available.
+
+
+
+
+If you have any questions, reply to this email and I will help.
+
+x Sally
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

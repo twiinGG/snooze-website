@@ -1,0 +1,114 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey there, {{ first_name }},
+
+ 
+
+Drum roll, please... I'm thrilled to announce that the doors for my 3-4 Month Baby Sleep Course are open! 
+
+ 
+
+I've poured my heart and expertise into creating this course to help exhausted parents like you navigate this tricky stage and lay the groundwork for healthy sleep habits.
+
+ 
+
+In this game-changing course, you'll learn:
+
+The science behind your baby's changing sleep patterns (hello 4 month sleep regression)
+Proven strategies for creating a sleep-friendly environment and routine
+Gentle, effective settling techniques to support your baby in self-settling (and how to choose one that feels right)
+Age-appropriate feeding and sleeping schedules
+And so much more!
+
+ 
+
+Now, you might be wondering, "If I'm this exhausted, wouldn't a 1:1 consultation and a personalised plan be better than an online course?" Here's the thing: while 1:1 support can be incredibly valuable, the 3-4 Month Baby Sleep Course offers a comprehensive, self-paced solution that empowers you with the knowledge and tools to make lasting changes.
+
+ 
+
+With the course, you'll have:
+
+Lifetime access to the content, so you can learn at your own pace and revisit the material whenever you need a refresher
+A clear, step-by-step roadmap that breaks down complex sleep concepts into easy-to-follow lessons
+The flexibility to implement strategies on your own schedule, without the need for appointments or travel
+The ability to share the course with your partner and other caregivers, ensuring everyone is on the same page and working together towards better sleep
+The option to listen to the course content like a podcast, perfect for multitasking parents who need to make the most of their limited time
+Engaging video content that walks you through exactly what to do, so you can see the strategies in action and feel confident implementing them yourself
+A cost-effective investment in your family's sleep that you can refer back to for years to come, making it an unbeatable value for the price
+
+ 
+
+PLUS, as an exclusive bonus, you'll 1 month of FREE access to the Snooze Social, our private membership community where you can:
+
+Connect with other parents in the trenches and get personalised support from yours truly
+Ask your burning sleep questions and get expert answers within 24-48 hours
+Celebrate your wins, commiserate over challenges, and find solidarity in a community of caregivers who get it
+
+ 
+
+The Snooze Social is like having a sleep expert and a cheer squad in your pocket - it's an invaluable resource that will keep you motivated, accountable, and supported throughout your sleep journey and beyond.
+
+ 
+
+As a special thank you for being part of my journey, I'm offering a $20 USD discount for the next 48 hours. Just use the code SLEEP20 at checkout. Don't miss this chance to get expert guidance and an incredible support community at an unbeatable value!
+
+	
+
+
+
+	
+SIGN ME UP!
+	
+
+
+
+
+	
+
+Imagine having a step-by-step roadmap to guide you through the 4 month regression and beyond. Imagine feeling confident in your ability to read your baby's cues and meet their sleep needs.
+
+ 
+
+Imagine your whole family getting the rest you desperately need - in as little as 2-4 weeks. That's the typical time frame my clients see significant improvements when they implement the strategies taught in this course. Better sleep is within reach, and the 3-4 Month Baby Sleep Course will show you the way.
+
+ 
+
+I'll be back with more details soon, but if you're ready to start your journey to better sleep, enrol now with code SLEEP20. This offer ends in 48 hours, so don't wait!
+
+ 
+
+Sweet dreams, 
+
+ 
+
+Sally 
+
+The Sleep Concierge
+
+	
+
+
+
+	
+TELL ME MORE
+	
+
+
+
+
+	
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

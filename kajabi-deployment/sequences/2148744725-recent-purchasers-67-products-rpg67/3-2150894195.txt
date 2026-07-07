@@ -1,0 +1,90 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+This is my last email about Snooze before Founding Member pricing ends on December 31.
+
+
+
+I want to tell you about the weekly live coaching sessions. This is what makes Snooze different from just having courses.
+
+
+
+Weekly live coaching with me.
+
+
+
+When you have a course, you have the information. But when you hit a challenge or have a question about your specific baby, you're on your own. In Snooze, you get weekly live sessions where you can ask me directly, get guidance on your situation, and have ongoing support as your baby grows.
+
+
+
+It's like having access to me, not just the course materials.
+
+
+
+What you get as a Founding Member:
+
+
+
+Access to ALL courses (current and future)
+Weekly live coaching sessions with me
+Expert-moderated community for daily questions
+Full replay library of every session
+Member pricing on consultations ($445 vs. $650)
+Your $67 credit applied
+This pricing locked in forever
+
+
+
+Founding Member Pricing with Your $67 Credit (Ends Dec 31):
+
+
+
+Annual: $423/year ($67 off $490, normally $657). Save $234/year forever.
+Quarterly: $80/quarter ($67 off $147, normally $197). Save $117/quarter forever.
+
+
+
+Plus, you get the rest of 2025 free. Join now and your membership starts January 1, 2026, but you get full access immediately.
+
+
+
+This offer ends December 31, 2025. After that, membership goes up to $657/year and you'll have missed the chance to lock in Founding Member pricing.
+
+
+
+You've already invested in better sleep for your family. This gives you everything you need to keep building on that.
+
+
+
+Upgrade to Snooze Founding Member →
+
+
+
+Questions? Just reply. I'm here.
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

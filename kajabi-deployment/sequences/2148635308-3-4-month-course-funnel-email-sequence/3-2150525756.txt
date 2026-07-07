@@ -1,0 +1,70 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }},
+
+ 
+
+Just popping in with your next step toward peaceful nights.
+
+ 
+
+In just a few days you could move from hourly wake-ups and 30-minute catnaps to a predictable routine that lets everyone in your home breathe again.
+
+ 
+
+My 3–4 Month Baby Sleep Course gives you: 
+
+1. Clear daily schedules that respect your baby’s biology
+
+2. Troubleshooting guides for early wakes, split nights, and nap refusals
+
+3. A flexible, gentle plan you can adapt as your baby grows
+
+ 
+
+The complete 3–4 Month Baby Sleep Course - including daily schedules, troubleshooting guides, and a flexible plan you can adapt as your baby grows - is available for $117.
+
+This is the most accessible way to get the same foundational plan my one-on-one clients pay nearly a thousand dollars for:
+
+	
+
+
+
+	
+👉 Get the Course for $117
+	
+
+
+
+
+	
+
+Let’s trade exhaustion for confidence, together.
+
+ 
+
+Warmly,
+
+Sally Woods
+
+Founder, The Sleep Concierge
+
+ 
+
+P.S. Worried it won’t fit your baby? The course is intentionally flexible and follows the effective, responsive approach I’ve used with over 700 families. If you’re ready for longer stretches of sleep, now’s the moment to act!
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

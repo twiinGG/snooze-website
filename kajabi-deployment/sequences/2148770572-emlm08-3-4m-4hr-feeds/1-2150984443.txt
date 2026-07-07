@@ -1,0 +1,70 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+How are you going with the 4-Hour Feeds Module?
+
+
+
+If you’ve started stretching those feed intervals, you might already be noticing something shifting. Maybe your baby is actually hungry at feed time now. Maybe they’re taking fuller feeds. Maybe you’ve had a slightly longer stretch overnight.
+
+
+
+That’s the magic of anchored feeds.
+
+
+
+But here’s what I want you to know: at this age, feeds are just one piece of a much bigger puzzle.
+
+
+
+Around 3-4 months, your baby’s sleep is going through a massive biological shift:
+
+Their sleep cycles are maturing (this is the “4-month regression”)
+They’re becoming more alert and aware during wake windows
+Sleep associations are starting to hardwire
+What worked in the newborn days often stops working
+
+Getting feeds right is a huge win. But when you also understand what’s happening to their sleep cycles and how to teach gentle self-settling, that’s when the real transformation happens.
+
+
+
+Continue Your Free Module →
+
+
+
+If you’re curious about the complete picture, my 3-4 Month Sleep Course covers everything. The regression, self-settling techniques, schedules, and troubleshooting for this specific age.
+
+
+
+But no pressure. Nail those feeds first.
+
+
+
+Chat soon,
+Sally 🌙
+
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

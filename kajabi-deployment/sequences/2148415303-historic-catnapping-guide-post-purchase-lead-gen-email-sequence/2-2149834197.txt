@@ -1,0 +1,26 @@
+Hey {{ first_name }},
+
+How's your sleep journey going? Every baby is unique, which is why personalised advice can be so valuable.
+
+In our Snooze Social community, parents are getting answers to questions like:
+
+"How can I extend my baby's 30-minute naps?"
+
+"We're about to go on family holiday, how do I keep up our good sleep habits?!?"
+
+"So... about this 4 month regression..."
+
+For just $7 USD a month, you can ask your specific questions and get tailored advice from me and our supportive community.
+
+Ready to solve your baby sleep puzzle?
+
+Join Snooze Social Now
+
+Sweet dreams,
+
+Sally
+
+The Sleep Concierge
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,0 +1,60 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }},
+
+ 
+
+You may have missed the reminder inviting you to continue your membership to Snooze Social. If so, this is your final day to register!
+
+If not, we hope you have enjoyed your trial and we hope to see you back in the community whenever you would like some extra support and celebration for all your sleep needs. 
+
+Remember, Snooze Social is the place you can have your quick sleep questions answered for only $7USD/month.
+
+If you want to continue your Snooze Social adventure, simply click the button below and choose the membership plan that suits you best. 
+
+ 
+
+	
+
+
+
+	
+$7 per month
+	
+
+
+
+
+
+
+
+	
+$70 per year (annual payment)
+	
+
+
+
+
+	
+
+Sweet dreams and see you soon! 
+
+ 
+
+The Snooze Social Team  
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

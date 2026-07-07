@@ -1,0 +1,94 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+It's Sally here, and I want to share a personal story that I think might resonate with you…
+
+ 
+
+When my first baby was born, she was the dream sleeper. Self-settled from day one, rarely cried, never took a catnap, and slept 12 hours straight at just 12 weeks old. My "system" was simple: feed, play, sleep. I thought I had it all figured out.
+
+ 
+
+...Then my darling second baby came along and gave me a real run for my money when it came to sleep. I had a traumatic birth, little to no support due to the pandemic, and to top it off, my sweet boy had a fractured collarbone that went undiagnosed for 6 weeks. Understandably, he had zero interest in settling off to sleep on his own. Oh, and did I mention I had a toddler in tow?
+
+ 
+
+Suddenly, I found myself living the reality (or a version of it) that my clients often face. At 3 - 4 months, I was smack in the middle of what I call the "no-man's land" of baby sleep - when they're not quite newborns, but not quite ready for more ‘active’ sleep training.
+
+ 
+
+Like my clients, I didn't feel like I could just wait it out. And honestly, should we have to? The answer is no.
+
+ 
+
+The 3 - 4 month stage is actually a wonderful time to start laying the foundations of self-settling (which, in my experience, is the secret sauce to great baby sleep) and getting on a consistent schedule. While every day might not look the same, working towards independent sleep in a dedicated way was exactly what my baby and I needed.
+
+ 
+
+So, I followed the very strategies and techniques I've now compiled into this course...and guess what? My son slept 12 hours straight at 15 weeks and I would have to wake him from long naps. Now, at 2.5 years old, he's still an amazing sleeper.
+
+ 
+
+The moral of the story? You don't have to just suffer through this challenging stage. With the right tools and support, you can help your baby develop the healthy sleep habits that will benefit your whole family.
+
+ 
+
+{{ first_name }}, if any part of my journey resonates with you, I want you to know that you're not alone, and there IS a way forward. If you're ready to take that first step towards the rest you and your baby deserve, now is the time. I'll be right there with you, every step of the way.
+
+	
+
+
+
+	
+SIGN UP HERE!
+	
+
+
+
+
+	
+
+Join now and let's transform your family's sleep story together!
+
+ 
+
+To better days ahead,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+ 
+
+P.S. Don't forget, when you enrol now, you get 3 FREE months exclusive access to Snooze Social; my private sleep membership. But hurry - time is running out! 
+
+	
+
+
+
+	
+TELL ME MORE
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

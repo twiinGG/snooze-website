@@ -1,0 +1,81 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+Third email about Snooze. This one's about the community.
+
+
+
+When you're working on sleep, questions come up constantly. Is this normal? Should I adjust the schedule? What's going on with this regression?
+
+
+
+In Snooze, you have a community of parents who are all actively working on sleep. Plus expert moderation from my team to make sure you get accurate, evidence-based answers.
+
+
+
+It's like having a support group of parents who get it, plus access to me and my team when you need guidance. No judgment, just practical help.
+
+
+
+What you get as a Founding Member:
+
+
+
+Access to ALL courses (current and future)
+Weekly live coaching sessions with me
+Expert-moderated community for daily questions
+Full replay library of every session
+Member pricing on consultations ($445 vs. $650)
+Lifetime pricing locked in forever
+
+
+
+Founding Member Pricing (ends Dec 31):
+
+
+
+Annual: $490/year (normally $657). Save $167/year forever.
+Quarterly: $147/quarter (normally $197). Save $50/quarter forever.
+
+
+
+Plus, the rest of 2025 is free. Join now and your membership starts January 1, 2026, but you get full access immediately.
+
+
+
+This offer ends December 31, 2025. After that, membership goes up to $657/year and you'll have missed the chance to lock in Founding Member pricing.
+
+
+
+One final reminder coming before the deadline.
+
+
+
+Join Snooze as a Founding Member →
+
+
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

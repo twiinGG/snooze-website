@@ -1,0 +1,62 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+Are those middle-of-the-night wakings giving you the creeps? 🧟‍♀️
+
+I know those dark hours can feel extra spooky when you're exhausted, which is why I'm treating my wonderful email subscribers to something special this Halloween...
+
+For 4 days only, I'm offering a spine-tingling 50% off ALL guides and courses by The Sleep Concierge! 🎃
+
+	
+
+
+
+	
+Shop your guide or course here!
+	
+
+
+
+
+	
+
+That's right - my Fourth Trimester Guide, the popular 3-4 Month Sleep Course and my best-selling 5-12 Month Sleep Guide at HALF PRICE. Simply by using code SPOOKY50 at checkout.
+
+(Note: This offer excludes 1:1 consultations, support packages and Snooze Social memberships)
+
+The sale runs from: 28th October - 31st October 2024 Ends midnight on Halloween! 🦇
+
+Don't let another sleepless night haunt you - my evidence-based sleep solutions have helped thousands of families get better sleep. And with 50% off, there's never been a better time to invest in your family's rest.
+
+Ready to banish those bedtime battles?
+
+👉 Shop today and use code SPOOKY50 at checkout
+
+ 
+
+Sweet dreams, Sally x
+
+ 
+
+P.S. Remember, this scary-good offer is only available for 4 days! Don't wait until the clock strikes midnight on Halloween... 🕐
+
+ 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

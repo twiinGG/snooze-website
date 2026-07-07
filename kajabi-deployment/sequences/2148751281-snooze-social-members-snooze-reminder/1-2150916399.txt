@@ -1,0 +1,101 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+I wanted to reach out personally because you're a Snooze Social member.
+
+
+
+I posted about this transition in Snooze Social earlier this month, but I'm emailing you directly in case you missed it.
+
+
+
+I've built the full Snooze platform. Snooze Social was always a preview of what was coming, and now it's ready.
+
+
+
+Here's what full Snooze gives you (beyond Snooze Social):
+
+
+
+✅ Access to ALL courses and guides (not just the limited selection)
+✅ Weekly live coaching sessions with me (new!)
+✅ Expert-moderated community for daily questions (new!)
+✅ Full replay library of every coaching session
+✅ Member pricing on consultations
+✅ New content added monthly as your baby grows
+
+
+
+Your Snooze Social membership ends December 31, 2025.
+
+
+
+As a thank you for being part of the early Snooze community, you get an exclusive discount on Founding Member pricing, even better than the standard Founding Member rate.
+
+
+
+You can upgrade to full Snooze at this special rate, and it gets locked in forever, even if you cancel and come back later.
+
+
+
+Plus, you get the rest of 2025 FREE.
+
+
+
+Join today and your membership officially starts January 1, 2026, but you get full access right now. December is on me.
+
+
+
+Your Special Snooze Social Member Pricing (locked in forever):
+
+
+
+Annual: $435/year (normally $657). Save $222 every year.
+Quarterly: $130/quarter (normally $197). Save $67 every quarter.
+
+
+
+You also get access to our special 1:1 consult price of $290 (normally $650) if you book before January 1. You can bank it for use in the new year, just purchase now and schedule later.
+
+
+
+I'll send you two more emails before December 31 to make sure you don't miss this.
+
+
+
+Upgrade to Full Snooze Membership →
+
+
+
+Book $290 Consult (bank for 2026) →
+
+
+
+Questions? Just reply. I'm here.
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

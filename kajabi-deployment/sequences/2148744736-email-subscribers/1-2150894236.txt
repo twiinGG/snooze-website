@@ -1,0 +1,85 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+I wanted to reach out personally because I've just launched something I think you'll want to know about.
+
+
+
+It's called Snooze. It's a membership that gives you access to all my courses, weekly live coaching with me, and a community of parents who are actively working on sleep.
+
+
+
+Here's what you get:
+
+
+
+Access to ALL courses and guides (current and future)
+Weekly live coaching sessions with me
+Expert-moderated community for daily questions
+Full replay library of every coaching session
+Member pricing on consultations ($445 instead of $650)
+New content added monthly as your baby grows
+
+
+
+Because you're on my email list, you have access to Founding Member pricing. This is the lowest price Snooze will ever be.
+
+
+
+Plus, you get the rest of 2025 free.
+
+
+
+Join today and your membership officially starts January 1, 2026, but you get full access right now. December is on me.
+
+
+
+Founding Member Pricing (locked in forever):
+
+
+
+Annual: $490/year (normally $657). Save $167 every year, forever.
+Quarterly: $147/quarter (normally $197). Save $50 every quarter, forever.
+
+
+
+Once you're in at this rate, it never increases. Even if you cancel and come back later.
+
+
+
+I'll send you three more emails before December 31 to make sure you don't miss this.
+
+
+
+Join Snooze as a Founding Member →
+
+
+
+Questions? Just reply to this email.
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

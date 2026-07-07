@@ -1,0 +1,84 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi again {{ first_name }}!
+
+Quick question: How did you go with the Settling Techniques module?
+
+I'm asking because if you found it helpful, you're probably the exact person who should be on the Snooze waitlist.
+
+	
+
+
+
+	
+	
+
+
+
+
+	
+
+Here's what Snooze is:
+
+The complete sleep Snooze Library I've been building for the past year. Every age. Every scenario. Every technique. The thing I wish existed when I started sleep consulting.
+
+It includes:
+
+All my age-based courses and guides covering newborn to toddler sleep
+Downloadable schedules, technique guides, and troubleshooting plans
+Real parent case studies with exactly what we did and why
+Sleep plan templates you can customise for your baby
+Access to everything!
+
+The free module you just watched? That's one piece. Snooze is the whole system.
+
+Why I'm telling you now:
+
+Snooze launches in the next few weeks. But the waitlist gets founder pricing - a significant discount that disappears once we go live. I'm talking hundreds of dollars difference.
+
+And honestly, the waitlist is filling up fast. We're capping founder pricing at a certain number of spots because I want to be able to support everyone who comes in at that rate properly.
+
+If any of this sounds like you:
+
+You're tired of piecing together advice from Instagram and blogs
+You've tried one approach but need backup plans for when it doesn't work
+You want the confidence that comes from having the full picture
+You're ready to invest in actually fixing sleep, not just surviving it
+	
+
+
+
+	
+Join The Waitlist Now
+	
+
+
+
+
+	
+
+No pressure. The free module is yours regardless. But if you've been thinking "I need more support than a podcast can give me," this is your chance to get in early.
+
+ 
+
+Sally - The Sleep Concierge
+
+ 
+
+P.S. Waitlist members also get first access to the Snooze community when it launches. That's hundreds of parents going through the same thing, all working from the same evidence-based system. Game-changer.
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

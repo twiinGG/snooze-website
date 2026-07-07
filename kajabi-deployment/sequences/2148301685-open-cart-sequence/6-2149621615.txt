@@ -1,0 +1,88 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }},
+
+ 
+
+This is it – your final opportunity to enrol in the 3-4 Month Baby Sleep Course WITH the exclusive bonus of 3 FREE months in the Snooze Social membership community!
+
+ 
+
+When you join the course before the timer runs out, you'll not only get a step-by-step roadmap for navigating the unique challenges of the 3-4 month stage, but you’ll get: 3 FREE months in the Snooze Social, where you'll find a community of support, encouragement, and additional resources to help you succeed.
+
+ 
+
+Let me tell you more about the incredible value you'll get with your FREE 3-month Snooze Social membership (normally priced at $7USD/month):
+
+ 
+
+Personalised sleep advice: Got a question about your baby's specific sleep challenge? I'm here to help! As a member, you'll have direct access to my expertise and can expect a detailed, tailored response within 24-48 hours.
+
+Exclusive resources: Gain access to an ever growing library of sleep guides and checklists  
+
+Exclusive Q&A sessions and masterclasses 
+
+Community support: Connect with a tight-knit group of sleep-seeking parents who understand your struggles and celebrate your wins. Share stories, swap tips, and find encouragement whenever you need it.
+
+ 
+
+The Snooze Social is more than just a bonus – it's your lifeline to a well-rested family. With the personalised support, expert guidance, and community encouragement you'll receive, you'll have everything you need to succeed on your sleep journey.
+
+ 
+
+I know you're exhausted and overwhelmed. I know you've tried everything and feel like nothing works. But I promise you, better sleep is possible. The 3-4 Month Baby Sleep Course + Snooze Social bonus is your key to unlocking a well-rested family.
+
+ 
+
+The doors are about to close on this incredible offer. Don't let exhaustion win – choose sleep instead! Enrol now and let's start this life-changing journey together.
+
+	
+
+
+
+	
+Join the course and claim your 3 FREE months of Snooze Social before it's too late!
+	
+
+
+
+
+	
+
+To better sleep and brighter days,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+ 
+
+P.S. Have a last-minute question? Hit reply and let me know! I'm here to help you make the best decision for your family.
+
+	
+
+
+
+	
+TELL ME MORE
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

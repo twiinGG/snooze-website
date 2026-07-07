@@ -1,0 +1,78 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Dear {{ first_name }},
+
+ 
+
+Congratulations on taking this monumental step towards better sleep for your family! I'm thrilled to welcome you to The 3-4 Month Baby Sleep Course by the Sleep Concierge, your comprehensive roadmap to navigating the 3-4 month stage with confidence and laying the groundwork for healthy sleep habits.
+
+ 
+
+As a certified sleep consultant, paediatric nurse, and mum who's been in your shoes, I know firsthand how overwhelming and exhausting this stage can be. That's why I've poured my heart, expertise, and years of experience into creating this course - to provide you with the knowledge, tools, and support you need to not just survive, but thrive.
+
+ 
+
+Here's what to do next:
+
+ 
+
+1. Log in to your course dashboard using the username and password you created during enrollment. 
+
+	
+
+
+
+	
+LOG IN HERE
+	
+
+
+
+
+	
+
+2. Start with the "Introduction" module to get a lay of the land and set yourself up for success.
+
+ 
+
+3. Dive into Module 1 to learn the science behind your baby's sleep and start implementing the foundational strategies.
+
+ 
+
+Remember, this course is entirely self-paced, so you can go through the material in a way that works for your schedule. Whether you binge all the lessons in a weekend or space them out over a few weeks, the goal is to make consistent progress and start seeing real improvements in your baby's sleep.
+
+ 
+
+I'm here to support you every step of the way. If you get stuck, have a question, or just need some encouragement, don't hesitate to reach out via the course community or email. Your success and well-being are my top priorities!
+
+ 
+
+I'm so honoured to be part of your sleep journey and can't wait to celebrate your breakthroughs in the weeks to come. Here's to more restful nights and joyful days ahead!
+
+ 
+
+Sweet dreams,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+ 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

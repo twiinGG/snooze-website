@@ -1,0 +1,57 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+I’ve just added the 5-12 Month Schedules Free Module to your library. You can log in and start right here:
+
+
+
+Access My Free Module →
+
+This module is a real, high-value section from our full 5-12 Month Sleep Course. I’m giving it to you because I know how frantic it feels when you're constantly guessing wake windows and trying to do nap math in your head.
+
+
+
+Schedules at this age aren't just about times on a clock. They're about sync-ing your baby's body clock (circadian rhythm) with the world, so sleep pressure builds naturally when you need it to.
+
+
+
+Take your time with the lessons. Use the downloads. See how it feels to have a plan instead of a guess.
+
+
+
+I’ll check in again in a couple of days to see how things are going.
+
+
+
+Talk soon,
+Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

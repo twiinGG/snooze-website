@@ -1,0 +1,24 @@
+Hi {{ first_name }},
+
+I'm Sally, the founder of The Sleep Concierge and your guide on this journey to better sleep. As a pediatric nurse and certified sleep consultant, I've helped thousands of families overcome their sleep challenges.
+
+I wanted to share a bit about my philosophy:
+
+Every baby is unique - there's no one-size-fits-all solution
+Gentle, evidence-based methods are key to sustainable sleep habits
+Supporting parents is just as important as supporting babies
+
+Did you know? Inside our Snooze Social community, you get direct access to me through regular Q&A sessions. It's like having a sleep consultant in your pocket!
+
+Whether you're in your free trial or still considering it, I'm here to support you. Feel free to reply with any questions - I'd love to hear from you!
+
+Sweet dreams,
+
+Sally
+
+The Sleep Concierge 
+
+Start Your Snooze Social Trial
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,0 +1,80 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+Second email about Snooze. I wanted to break down what you actually get.
+
+
+
+Weekly live coaching with me.
+
+
+
+Every week, I host live sessions where you can ask questions about whatever's happening with your baby's sleep right now. Attend live or watch the replays. Either way, you get ongoing support as your baby grows and things change.
+
+
+
+Expert-moderated community.
+
+
+
+When questions come up between sessions (and they will), you can ask in the community and get answers from other parents plus expert moderation from my team. No judgment, just practical help.
+
+
+
+All courses and guides.
+
+
+
+Every age-specific course, every specialised guide, and everything new I create. It's all included.
+
+
+
+Founding Member Pricing (ends Dec 31):
+
+
+
+Annual: $490/year (normally $657). Save $167 every year, forever.
+Quarterly: $147/quarter (normally $197). Save $50 every quarter, forever.
+
+
+
+Plus, the rest of 2025 is free. Join now and your membership starts January 1, 2026, but you get full access immediately.
+
+
+
+After December 31, membership goes up to $657/year.
+
+
+
+Join Snooze as a Founding Member →
+
+
+
+Two more emails coming before the deadline.
+
+
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

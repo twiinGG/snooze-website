@@ -1,0 +1,62 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+I wanted to share something I’ve learned after working with thousands of families.
+
+
+
+Usually, a parent comes to me because of one specific thing, like a crazy schedule or early wakings. We fix that. They breathe a sigh of relief.
+
+
+
+But babies be babies. Just as you nail the 3-nap schedule, they're ready for 2 naps. Or teething hits. Or you travel. The schedule is never "done", it evolves.
+
+
+
+That’s why I created Snooze.
+
+
+
+The course is fantastic for solving the specific stage you’re in right now. But Snooze is structured sleep support designed to guide you through the next stages, too.
+
+
+
+It’s about continuity. Knowing you have an expert in your pocket when things go a bit pear-shaped.
+
+
+
+Join Snooze (includes the full course) →
+
+Or just grab the full course here
+
+x Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

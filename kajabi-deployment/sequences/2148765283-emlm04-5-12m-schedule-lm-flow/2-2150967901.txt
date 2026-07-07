@@ -1,0 +1,62 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+How are you finding the schedules?
+
+
+
+I hope they’ve given you some much-needed structure and clarity. A good routine is often half the battle.
+
+
+
+I wanted to share a quick thought while you settle in. So many parents tell me that once the rhythm of the day clicks into place, they start to notice other things bubbling up. Overnight wakings. Short naps (the dreaded 30-minute catnap). A baby who fights being put down.
+
+
+
+That’s completely normal, and it’s because sleep is never just one thing. The schedule, the environment, the settling, the feeds: they’re all connected, and a change in one nudges the others.
+
+
+
+The schedule you have now is one really important piece of the puzzle. Everything that helps you bring the rest of the pieces together lives in one place inside the Snooze Membership: every one of my courses and guides, the Snooze Village community, and live Q&A sessions where you can bring me your specific situation.
+
+
+
+Have a look whenever you’re ready:
+
+
+
+See what’s inside the membership →
+
+
+
+x Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

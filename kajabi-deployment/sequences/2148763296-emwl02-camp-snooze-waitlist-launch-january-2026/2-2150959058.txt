@@ -1,0 +1,55 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+ 
+
+	COHORT DETAILS
+ 
+ 
+
+
+
+Camp Snooze
+
+A quick look inside Camp Snooze
+
+Hi {{ first_name }},
+
+Here's a preview of the daily support you can expect as you create fantastic sleep for your baby across the two weeks:
+
+
+
+
+
+
+"Its life-changing. It's really, it's kind of almost sometimes shocking. It's like, hang on, this is what it could be."
+
+(Even small shifts can feel like everything)
+
+View enrollment details
+
+Enrollment closes January 23, 2026.
+
+
+
+
+If you are on the fence, reply with your biggest question and I will answer it.
+
+x Sally
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

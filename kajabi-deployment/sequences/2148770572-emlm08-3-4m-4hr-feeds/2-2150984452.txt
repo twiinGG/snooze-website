@@ -1,0 +1,59 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{first_name}},
+
+
+
+By now you’ve got the 4-hour feed rhythm under your belt. Maybe you’ve already seen feeds become more satisfying. Maybe overnight is showing early signs of improvement.
+
+
+
+That’s a real win. Feeds are foundational.
+
+
+
+Now here’s the choice in front of you:
+
+
+
+Option 1: Keep going as you are.
+You’ve got the feed spacing sorted. If that’s enough and things are improving, beautiful. Run with it.
+
+
+
+Option 2: Tackle the whole 4-month puzzle.
+If you’re realising that feed spacing helped but there’s still more going on, like hourly wakes, catnapping, or impossible settling, my full 3-4 Month Sleep Course covers everything. Regression explained. Self-settling techniques. Schedules that work. The complete plan.
+
+
+
+Option 3: Get ongoing support.
+The Snooze Membership gives you access to all my courses (Newborn through Toddler), plus community support and expert Q&A. Your baby will grow out of this stage. Snooze grows with you.
+
+
+
+Get the 3-4 Month Course →
+
+Join the Snooze Membership →
+
+There’s no wrong answer here. You know your baby. I’m just here to tell you that if you want more, it’s ready when you are.
+
+
+
+Thinking of you,
+Sally 💛
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

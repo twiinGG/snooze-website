@@ -1,0 +1,65 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+
+	
+	WAITLIST FIRST ACCESS
+ 
+ 
+
+
+
+Camp Snooze
+
+Your Camp Snooze spot is open!
+
+Hi {{ first_name }},
+
+Enrollment is officially live for the next Camp Snooze cohort. Because you are on the waitlist, your spot is open first.
+
+
+
+
+WHAT YOU WILL GET INSIDE CAMP SNOOZE
+
+Step by step sleep plan tailored to your family
+Daily guidance and accountability during the two weeks
+Dedicated support from Sally and Bec
+
+
+
+"I had my coffee before he was up. Like, it was amazing."
+
+(We're only 4 days into this cohort and seeing amazing results)
+
+Claim your spot
+
+Enrollment closes January 23, 2026.
+
+
+
+
+If you have any questions, reply to this email and we will help.
+
+x Sally
+
+ps. If you aren't available for this intake, simply let me know and I'll remove you from any reminders for this cohort.
+
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

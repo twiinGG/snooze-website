@@ -1,0 +1,26 @@
+Hey {{ first_name }},
+
+Your copy of The Sleep Concierge's Catnapping Guide using is ready! 
+
+Grab it here in your Member Library 👇
+
+Access Your Guide
+
+Quick Win: While you're reading the guide, try this today:
+
+Darken your baby's room for the next nap. I mean really dark. If you can see your hand in front of your face, it's too bright!
+
+This simple change helps many babies extend their naps immediately.
+
+I'll share more practical tips over the next few days alongside your guide to help you tackle those short naps.
+
+Sweet Dreams,
+
+Sally
+
+The Sleep Concierge 
+
+P.S. Been struggling with catnaps for a while? Reply to this email and let me know your biggest challenge. I read every response!
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

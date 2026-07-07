@@ -1,0 +1,64 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+This is your last call! The $20 USD early bird discount for the 3-4 Month Baby Sleep Course expires in just a few hours.
+
+ 
+
+I've been blown away by the response so far - so many incredible parents are ready to take control of their family's sleep. If you've been thinking about joining us, now is the time to jump in and save!
+
+ 
+
+Simply use the code LAUNCH20 at checkout to claim your discount. But hurry, this offer disappears at midnight tonight!
+
+	
+
+
+
+	
+SIGN ME UP!
+	
+
+
+
+
+	
+
+If you're ready to stop just surviving the 3-4 month stage and start thriving, the 3-4 Month Baby Sleep Course is your ticket. Don't miss out on this special launch price!
+
+ 
+
+See you in the course,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+
+	
+TELL ME MORE
+	
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

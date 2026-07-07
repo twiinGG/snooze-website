@@ -1,0 +1,59 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+Over the last decade, testing, tweaking and listening to hundreds of families like yours, there’s one thing I’ve learned for certain: sleep is never “done”.
+
+
+
+Just as you nail the three-nap day, they’re ready to drop to two. Then teething arrives. Then you travel. The schedule that worked beautifully last month needs a little tweak this month. That’s not you doing anything wrong, it’s just babies growing.
+
+
+
+So when families ask me whether to buy one course or join the membership, here’s how I put it. A single course is $117 and covers one stage. The Snooze Membership is $79 a month and covers every stage, with the support to actually use it:
+
+
+
+Every course and guide I’ve made, newborn through toddler
+The Snooze Village community for the day-to-day questions
+Live Q&A sessions with me and the Snooze team
+Member pricing on a 1:1 consult, if you ever want one
+
+It’s the difference between a map for today and having someone in your corner as your baby grows. Rest assured, you don’t have to piece it together on your own.
+
+
+
+Explore the Snooze Membership →
+
+x Sally
+
+Prices shown in USD. AUD pricing available at joinsnooze.com.
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

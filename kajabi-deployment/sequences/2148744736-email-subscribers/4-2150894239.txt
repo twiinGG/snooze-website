@@ -1,0 +1,77 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+Final email about Snooze before the Founding Member offer ends on December 31.
+
+
+
+This is your last chance to lock in Founding Member pricing.
+
+
+
+After December 31, Snooze membership goes up to $657/year. Right now, you can join at $490/year and that price is locked in forever. Even if you cancel and come back later.
+
+
+
+What you get:
+
+
+
+Access to ALL courses (current and future)
+Weekly live coaching sessions with me
+Expert-moderated community for daily questions
+Full replay library of every session
+Member pricing on consultations ($445 vs. $650)
+Plus, the rest of 2025 free
+
+
+
+Founding Member Pricing (ends Dec 31):
+
+
+
+Annual: $490/year (normally $657). Save $167/year forever.
+Quarterly: $147/quarter (normally $197). Save $50/quarter forever.
+
+
+
+Join now and your membership starts January 1, 2026, but you get full access immediately.
+
+
+
+This offer ends December 31, 2025.
+
+
+
+Join Snooze as a Founding Member →
+
+
+
+Questions? Just reply to this email.
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

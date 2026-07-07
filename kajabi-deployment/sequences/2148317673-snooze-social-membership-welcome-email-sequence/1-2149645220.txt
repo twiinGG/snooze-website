@@ -1,0 +1,87 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey there, {{first_name}}!
+
+ 
+
+Welcome to Snooze Social - your new go-to spot for all things baby sleep! I'm thrilled to have you as part of this incredible community of parents and sleep experts.
+
+ 
+
+As a member, you now have access to:
+
+24/7 support and personalised advice from certified sleep consultant (that's me!)
+A private community filled with like-minded parents who get the ups and downs of baby sleep
+An ever-growing library of sleep resources, guides, and exclusive content
+Live Q&A sessions and virtual meet-ups with me and the Snooze Squad
+
+ 
+
+To get started, just follow these quick steps:
+
+1. Join the private Snooze Social Community by logging in here:
+
+	
+
+
+
+	
+Join us here.
+	
+
+
+
+
+	
+
+Go ahead and introduce yourself in the "Community" group and share your current sleep situation or a recent win!
+
+ 
+
+2. Check out the "Resources" section of the group for a library of sleep resources - the "4 Month Sleep Regression Survival Guide" is a great place to start!
+
+ 
+
+3. Keep an eye on the "Announcements" section for upcoming live Q&As, expert interviews, and new content drops
+
+ 
+
+4. Post your most pressing baby sleep question in the group and get expert guidance from yours truly (I'm in there every day!)
+
+ 
+
+5. Connect with your fellow Snooze Squad members, offer support, and celebrate each other's progress - we're all in this together!
+
+ 
+
+If you have any issues accessing the Community or your membership benefits, just reply to this email. My team and I are always here to help!
+
+ 
+
+I'm honoured to be part of your baby sleep journey and can't wait to celebrate your successes in the Snooze Social Membership. Remember, better sleep is possible - and you don't have to do it alone!
+
+ 
+
+To better sleep and brighter days,
+
+ 
+
+Sally
+
+ 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

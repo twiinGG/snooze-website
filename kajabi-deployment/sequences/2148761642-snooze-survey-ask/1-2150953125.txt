@@ -1,0 +1,47 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+I’d love your honest feedback on Snooze.
+
+
+
+I’ve made a quick survey (around 5 minutes) so you can tell us:
+
+what’s been most helpful
+what’s felt confusing or clunky
+what you want more support with next
+
+Take the 5-minute survey →
+
+Thank you for taking the time, this genuinely shapes what we build next.
+
+
+
+Optional bonus at the end
+You’ll be asked if you’d like to submit a short video testimonial. If you do, I’ll gift you a 45-minute 1:1 consult as a thank you.
+
+
+
+Sally
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

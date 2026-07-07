@@ -1,0 +1,73 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Dear {{ first_name }},
+
+ 
+
+Congratulations on buying the 5-12 Month Baby Sleep Guide by the Sleep Concierge. It has helped literally hundreds of parents like you get better sleep for their whole family.
+
+ 
+
+I've put all my experience, love and care into this gudie and have designed it to be as easy to follow and implements as possible - we all know what sleep deprivation can do to our brains! 
+
+ 
+
+Here's what to do next: 
+
+1. Log in to your library dashboard using the username and password you created during purchase. 
+
+	
+
+
+
+	
+LOG IN HERE
+	
+
+
+
+
+	
+
+2. Click on "Baby Sleep Guide – 5 To 12 Months" and download your guide
+
+ 
+
+3.  Take your time (grab a coffee!) to sit down and read through the guide. It's designed to give you the approach and then practical steps to help your little one get a good night's sleep.
+
+	
+	
+
+ 
+
+I'm here to support you every step of the way. If you get stuck, have a question, or just need some encouragement, don't hesitate to reach out via my Snooze Social community or email. Your success and well-being are my top priorities!
+
+ 
+
+I'm so honoured to be part of your sleep journey and can't wait to celebrate your breakthroughs in the weeks to come. Here's to more restful nights and joyful days ahead!
+
+ 
+
+Sweet dreams,
+
+ 
+
+Sally
+
+The Sleep Concierge 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

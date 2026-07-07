@@ -1,0 +1,104 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+You made it to the final email in our 4 Month Sleep Regression Survival Series. By now, I hope you're feeling armed with knowledge and a renewed sense of hope that you CAN help your baby sleep better.
+
+ 
+
+And if you're ready to take your sleep support to the next level, I've got just the thing...
+
+ 
+
+I'm thrilled to officially invite you to the Sleep Training Masterclass. In this totally free, jam-packed webinar, you'll learn:
+
+ 
+
+What sleep training really is (and what it's not)
+
+Common myths and misconceptions about sleep training
+
+The scientific evidence behind responsive sleep training approaches
+
+How to choose a sleep training method that aligns with your family's needs
+
+Answers to the most pressing sleep training questions
+
+	
+
+
+
+	
+GET INSTANT ACCESS!
+	
+
+
+
+
+	
+
+ How Long: Workshop will run approximately 20 minutes (length of a nap sleep cycle!)
+
+Cost: Absolutely FREE for you, my Sleep Concierge VIPs!
+
+ 
+
+This workshop is an absolute MUST for any parent who is ready to put the exhausting days (and nights) of sleep deprivation behind them. And don't just take it from me, here's what a recent client had to say:
+
+ 
+
+"I consulted with Sally when my baby was 14wks old. She was refusing naps, wouldn’t settle without being rocked/held and would sleep max 20-40minutes. Within a day of my consultation with Sally, we were having 2hr naps and settling completely independently for naps and at bed time. I have felt so supported by Sally throughout the entire sleep journey so far and I cannot thank/recommend Sally enough. She is a true sleep wizard!!" - Jessica  
+
+ 
+
+Are you ready to cut through the noise, get reliable information, and start seeing real improvements in your baby's sleep?  Awesome, join us below!
+
+	
+
+
+
+	
+WATCH WEBINAR NOW!
+	
+
+
+
+
+
+
+
+	
+
+ 
+
+Cheering you on,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+ 
+
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

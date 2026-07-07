@@ -1,0 +1,40 @@
+Hey {{ first_name }},
+
+I'm getting in touch with those parents who have downloaded The Sleep Concierge's Catnapping Guide with a way to access ongoing sleep support and solidarity - read on 👇  
+
+You've taken the first step towards more restful days for you and your little one! 
+
+But, like all things baby sleep, it is a complex journey and there are often many more questions that come up along the way.
+
+Having worked with thousands of families worldwide, I'm passionate about empowering parents with the knowledge and tools to navigate these tricky sleep stages with confidence. I’m a internationally certified sleep consultant and former paediatric nurse with over 10 years of childcare experience. My passion for sleep is supported by evidence around the importance of sleep and wellbeing for babies, children and families.
+
+My approach to sleep is holistic and nurturing with an emphasis on consistency and support.
+
+Every baby is unique, and you might find yourself with questions specific to your situation.
+
+That's why I'd love to invite you to join our Snooze Social community. For just $7 USD a month, you can:
+
+✨ Ask me any questions about catnapping or other sleep issues
+
+✨ Get support from a community of parents facing similar challenges
+
+✨ Get ongoing support from me and my Snooze team
+
+✨ Enjoy a judgement-free zone dedicated to helping babies (and parents!) sleep better
+
+If this sounds like the kind of ongoing support that would work for you, sign up now via this link. 
+
+If you do end up signing up, I'd love to know: what's your biggest catnapping challenge or burning question right now?
+
+Ready to get your questions answered? Join Snooze Social now and get personalised support within 24 hours!
+
+Sally
+
+The Sleep Concierge 
+
+P.S. Remember, in Snooze Social, no question is too small or too silly. We're here to help you navigate every sleep challenge, starting with those pesky catnaps!
+
+Join The Snooze Social Community
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

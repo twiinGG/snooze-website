@@ -1,0 +1,65 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+ 
+
+Final Call for Camp Snooze. Enrollment closes Tuesday, February 17.
+
+	FINAL REMINDER
+ 
+ 
+
+
+
+Camp Snooze
+
+Final call for Camp Snooze
+
+Hi {{ first_name }},
+
+This is your final reminder. Enrollment for Camp Snooze closes Tuesday, February 17.
+
+
+
+
+The February cohort starts Monday 23 February. Only 6 families per cohort. Once enrollment closes, the next intake will not open for several weeks.
+
+
+
+
+The goal is not perfect sleep every single night. It is the confidence to handle the imperfect nights without panicking. That is what these families walked away with.
+
+
+
+
+"I just put him down. He was like, yep, put me to bed, and off he went."
+
+(A Camp Snooze mum, after her baby started sleeping through the night)
+
+Join Camp Snooze
+
+Need help deciding? Reply and I will help.
+
+
+
+
+Warmly,
+
+x Sally
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

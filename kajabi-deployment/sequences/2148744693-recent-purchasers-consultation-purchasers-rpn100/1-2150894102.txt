@@ -1,0 +1,80 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{ first_name }},
+
+
+
+I wanted to reach out personally because we worked together recently, and I've built something I think you'll want to know about.
+
+
+
+It's called Snooze. It's a baby sleep learning and coaching platform, and it's designed for parents like you who are actively working on sleep.
+
+
+
+Here's what you get:
+
+Weekly live coaching sessions with me and the Snooze team.
+Expert-moderated community for daily questions
+Access to all my courses and guides (incl. An updated version of my best selling 5-12 month sleep guide AND a new toddler toolkit)
+Full replay library of every coaching session
+Member pricing on consultations ($445 instead of $650)
+New content added monthly as your baby grows
+
+
+
+Because you've already invested in a consultation with me, I'm giving you $100 off your membership.
+
+
+
+Plus, you get the rest of 2025 free.
+
+
+
+Join now and your membership officially starts January 1, 2026, but you get full access immediately. December is on me.
+
+
+
+Founding Member Pricing with Your $100 Credit (locked in forever):
+
+Annual: $390/year ($100 off $490, normally $657). That's $267 saved every year.
+Quarterly: $47/quarter ($100 off $147, normally $197). You save $150 every quarter.
+
+
+This is the lowest price Snooze will ever be. Once you're in at this rate, it never increases, even if you cancel and come back later.
+
+
+
+I'll send you two more emails before December 31 to make sure you don't miss the Founding Member window.
+
+
+
+Upgrade to Snooze Founding Member →
+
+
+
+Questions? Just reply. I'm here.
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

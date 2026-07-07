@@ -1,0 +1,45 @@
+Hey {{ first_name }},
+
+Quick question - does this sound familiar?
+
+❌ Your baby wakes after exactly 30-45 minutes
+
+❌ Resettling seems impossible
+
+❌ You're both overtired and cranky
+
+❌ Nothing you've tried seems to work
+
+Here's what many parents don't realize: At 5-6 months, your baby's sleep cycles mature.
+
+What worked for newborn sleep won't cut it anymore.
+
+Ready to make lasting changes? My 5-12 Month Sleep Guide shows you:
+
+✨ How to extend naps to 1-2 hours
+
+✨ The science behind sleep cycles at this age
+
+✨ Step-by-step settling techniques that work
+
+✨ How to create predictable daily routines
+
+Every day of better sleep means:
+
+A happier, more rested baby
+More time for you to recharge
+Predictable windows for getting things done
+Quality time together when you're both at your best
+
+Join 1000's of well-rested parents:
+
+Get Your Sleep Back
+
+Sweet dreams,
+
+Sally
+
+The Sleep Concierge
+
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,0 +1,80 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }},
+
+ 
+
+When my first baby arrived, she was the unicorn sleeper: self-settled from day one and clocked 12-hour nights by 12 weeks.
+
+ 
+
+I thought I’d cracked the code.
+
+ 
+
+Then my second baby arrived in the middle of a pandemic with an undiagnosed fractured collarbone. Cue hourly wakes, catnaps, and a mum running on vapour while juggling a toddler.
+
+ 
+
+At three months I hit the no-man’s-land of baby sleep - too old for newborn rhythms, not quite ready for active “sleep training.”
+
+ 
+
+Everyone told me to wait it out. Here’s the truth I discovered (and what I taught in your Masterclass):
+
+MYTH: “It’s just a phase—ride it out.”
+REALITY: The 4-month regression is a permanent brain upgrade. Waiting often locks in tough habits.
+
+
+A 2-minute tweak you can try today
+
+Boost sleep pressure by extending your baby’s first wake window by 15 minutes. That tiny shift often deepens the morning nap and sets a calmer tone for the rest of the day.
+
+ 
+
+It worked for my son. He reached 12-hour nights at 15 weeks (and still sleeps like a champ at 3½). It’s the same tweak that helped my client Emma cut night wakes from eight to two in under a week.
+
+ 
+
+If you haven’t watched the replay yet, you’ll find the full blueprint - and a direct link to the complete 3–4 Month Baby Sleep Course (just $117) - right below the video.
+
+ 
+
+	
+
+
+
+	
+Watch the masterclass + claim your $117 course
+	
+
+
+
+
+	
+
+ 
+
+You don’t have to wait (or cry) this phase out. I’m right here with you.
+
+ 
+
+Warmly,
+Sally Woods
+Paediatric Nurse & Founder, The Sleep Concierge
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

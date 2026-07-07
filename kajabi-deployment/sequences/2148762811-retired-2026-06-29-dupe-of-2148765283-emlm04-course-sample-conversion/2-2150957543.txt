@@ -1,0 +1,59 @@
+
+
+	
+View in Web Browser
+	
+
+
+
+
+	
+
+Hi {{first_name}},
+
+
+
+Hope you've had a chance to try the schedules?
+
+
+
+Parents feedback to me that once they "bookend" their day (starting and finishing at consistent times) they can start to feel a little more settled.
+
+
+
+But you might also notice that as the day calms down, other things pop up. Maybe overnight feeds are still tricky, or naps are still short (the dreaded 30-minute catnap).
+
+
+
+That's because sleep is a system. A schedule change affects overnight feeds. Nap training depends on the right wake windows.
+
+It's all connected.
+
+
+If you’re feeling like you’re ready for the full roadmap, you don’t have to piece it together yourself. The full 5-12 Month Sleep Course covers the whole 24-hour cycle including nights, naps, feeds, and environment.
+
+
+
+Continue with the full course →
+
+
+
+x Sally
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

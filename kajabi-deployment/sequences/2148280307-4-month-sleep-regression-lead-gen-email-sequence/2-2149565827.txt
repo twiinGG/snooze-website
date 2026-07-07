@@ -1,0 +1,68 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hey {{ first_name }},
+
+ 
+
+I know the 4 month sleep regression has you feeling exhausted, so I want to let you in on a little secret…
+
+ 
+
+Lean in close…
+
+ 
+
+The key to surviving this phase is SELF SETTLING!
+
+	
+	
+
+I know, probably not the mind-blowing revelation you were hoping for. But honestly, teaching your baby to self settle and being consistent with your baby's sleep routine even when it feels like nothing is working is the most important thing you can do to get through the regression.
+
+ 
+
+That means:
+
+Sticking to a predictable sleep schedule with age-appropriate wake windows and feeding times
+
+Implementing a soothing wind-down routine before every nap and bedtime
+
+Putting your baby down calm but awake to practise self-settling and using a technique to help teach them this skill
+
+Avoiding over tiredness by watching for sleepy cues
+
+Optimising your baby's sleep environment with darkness, white noise, and a safe space
+
+ 
+
+I dive deep into all these strategies (and so many more!) in the survival guide, so be sure to check it out. And remember, your consistency WILL pay off, even if it feels like an uphill battle right now.
+
+ 
+
+You've got this!
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+ 
+
+ 
+
+	
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+

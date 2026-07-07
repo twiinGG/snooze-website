@@ -1,0 +1,84 @@
+
+
+	
+View in Web Browser
+	
+
+
+	
+
+Hi {{ first_name }},
+
+ 
+
+I've been blown away by the response to the 3-4 Month Baby Sleep Course launch! So many parents are ready to take control of their little one's sleep and create a more rested, happy household.
+
+ 
+
+If you've been considering joining us, I want to make sure you don't miss out on the incredible bonus I'm offering for a limited time.
+
+ 
+
+When you enrol in the 3-4 Month Baby Sleep Course, you'll also receive  1 month of FREE access to the Snooze Social, my exclusive membership community where you can:
+
+ 
+
+Connect with other sleep-seeking parents who understand your struggles
+
+Get personalised support and guidance from yours truly
+
+Access a wealth of additional resources, live Q&As, and expert interviews
+
+Celebrate your wins and find encouragement every step of the way
+
+ 
+
+The Snooze Social is the perfect complement to the course, providing you with ongoing support and connection as you implement the strategies and transform your baby's sleep.
+
+ 
+
+But here's the thing: this bonus is only available for a short time. To claim your 1 month of FREE access to Snooze Social, you need to enrol in the 3-4 Month Baby Sleep Course before the timer runs out.
+
+ 
+
+Don't wait – your well-rested future is waiting!
+
+	
+
+
+
+	
+Join the course and unlock your bonus now!
+	
+
+
+
+
+	
+
+To better sleep and brighter days,
+
+ 
+
+Sally
+
+The Sleep Concierge
+
+	
+
+
+
+	
+TELL ME MORE!
+	
+
+
+
+
+
+
+	
+Unsubscribe | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
+	
+
