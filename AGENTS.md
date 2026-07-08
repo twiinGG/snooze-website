@@ -146,3 +146,25 @@ Core workflow:
 2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
 3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
 4. Re-snapshot after page changes
+
+### Token-safe scripted paste (MANDATORY for Kajabi code pastes)
+
+Never carry file contents through model context (no Read-then-retype into a tool argument, no giant MCP string arguments). A hand-transcribed paste of production code is banned (Kade ruling, July 8, 2026): one dropped character ships to the live site with no diff safety net, and the tokens are wasted.
+
+Use the helper `scripts/emit_paste_js.py`. File bytes flow disk -> python -> shell substitution -> browser editor; the model only handles the file PATH:
+
+```bash
+# Ace editor (theme Custom Code, page custom-code blocks; --index N when several):
+agent-browser --session <name> eval "$(python3 apps/snooze-website/scripts/emit_paste_js.py <file> --target ace)"
+
+# Plain textarea (site Header Page Scripts field, TinyMCE source-code modal):
+agent-browser --session <name> eval "$(python3 apps/snooze-website/scripts/emit_paste_js.py <file> --target textarea --selector '<css-selector>')"
+```
+
+The eval returns `{ok, length, expected, sha256prefix}`: verify by length/hash, never by reading content back into context. The helper performs the dirty-keystroke so Kajabi enables Save; you still click Save (trusted click) and then verify.
+
+**Verification standard (post-write, deterministic, run in Bash):** curl the public URL with a cache-buster and desktop UA, whitespace-normalize both sides, assert every non-blank line of the repo file appears in the live HTML (0 missing). Pre-images are captured the same way (curl to `_live-preimages/<page>/`), never hand-transcribed.
+
+**Subagent context caps:** paste/browser subagents are capped at roughly 3-4 surfaces per spawn. On reaching the cap: write a handoff file (surfaces shipped + ids + pre-image paths + verification status, working mechanics, remaining queue), report, stop. Successors spawn fresh from the handoff file.
+
+Full write-path decision table and mechanics: `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`.

@@ -1,6 +1,6 @@
 # Snooze Terms and Conditions
 
-**Last Updated:** December 2025
+**Last Updated:** July 8, 2026
 
 ---
 
@@ -49,6 +49,7 @@ These terms apply to the Snooze membership, which provides access to our Library
 
 - **Membership Benefits:** The Snooze membership provides access to a library of sleep-related content (Library), community engagement through our online forum (Village), and discounted access to coaching sessions. Specific details of membership benefits can be found on the relevant product pages on our Website.
 - **Membership Rules:** All members are expected to adhere to our community guidelines and treat other users with respect. We reserve the right to suspend or terminate memberships for violations of these guidelines.
+- **Money-Back Guarantee and Cancellation:** The Snooze membership comes with a 7 day money-back guarantee. If you request a refund within 7 days of first joining the membership, you will receive a full refund. After that window, you may cancel at any time to stop future charges. Fees already paid are not refunded and no pro-rated refunds are issued for partial periods. Your access continues until the next billing date.
 - **Modifications to Membership Program:** Snooze reserves the right to modify or discontinue the Snooze Membership program with reasonable notice.
 - **Termination of Membership:** Snooze reserves the right to terminate your membership in its sole discretion, in which the user will be refunded a pro-rated portion of the membership fees.
 
@@ -59,7 +60,8 @@ These terms apply to the Snooze membership, which provides access to our Library
 These terms apply to standalone courses, such as the 3-4 Month Baby Sleep Course.
 
 - **Course Description:** Each course will have a detailed description of the content, objectives, and learning outcomes available on the course's product page.
-- **Refund Policy (Course-Specific):** Due to the digital nature of our courses, refund policies vary. Specifically, for the 3-4 Month Baby Sleep Course, refunds are not offered once course content has been accessed. Please check the course description for the specific refund policy for any course you are considering.
+- **Refund Policy (Course-Specific):** Courses and guides come with a 7 day money-back guarantee. If you request a refund within 7 days of your purchase, you will receive a full refund.
+- **Camp Snooze Refunds:** Camp Snooze is a live cohort program and the 7 day money-back guarantee above does not apply to it. You may cancel for a full refund up to 72 hours before camp begins. Camp begins on a Monday, so the cancellation deadline is the preceding Friday. No refunds are available after that point.
 - **Intellectual Property:** All course materials, including videos, handouts, and resources, are the intellectual property of Snooze and may not be shared or reproduced without permission. See Section 9 for further details.
 - **Course Access:** Access to course materials is typically granted for a specified period, as outlined in the course description. Snooze reserves the right to change the duration of course access.
 - **Disclaimer of Guarantee:** While our courses are designed to provide valuable information and support, Snooze does not guarantee specific results. Individual outcomes may vary.
@@ -74,7 +76,7 @@ These terms apply to the Snooze Social membership for a migration period.
 - **User Content:** Any content you share within Snooze Social is subject to our User Content terms, as outlined in Section 7.
 - **Limitation of Liability (Community):** Snooze is not responsible for the actions or opinions of other members within the Snooze Social community. See Section 10 for general limitation of liability terms.
 - **Subscription Terms:** Snooze Social memberships are offered on a recurring subscription basis (monthly or annual), as selected at the time of purchase. You authorize Snooze to charge your payment method automatically at the beginning of each billing cycle.
-- **Cancellation Policy:** You may cancel your Snooze Social membership at any time to prevent future charges, but fees already paid are non-refundable and no pro-rated refunds will be issued for partial months or years. After your membership cancellation, you will maintain access to all membership content until your next billing date.
+- **Cancellation Policy:** The Snooze Social membership comes with a 7 day money-back guarantee. If you request a refund within 7 days of first joining, you will receive a full refund. After that window, you may cancel at any time to prevent future charges. Fees already paid are not refunded and no pro-rated refunds are issued for partial months or years. After cancellation, you will maintain access to all membership content until your next billing date.
 
 ---
 
@@ -167,5 +169,5 @@ For more information on data privacy, please visit our [Privacy Policy](/privacy
 ---
 
 **Source:** Live site version (`projects/terms-privacy-unification/docs/drafts/unified-terms-conditions.html`)  
-**Synced:** December 06, 2025
+**Synced:** July 8, 2026
 

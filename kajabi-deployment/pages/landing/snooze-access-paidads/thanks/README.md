@@ -28,7 +28,7 @@ The inline script hydrates `{{first_name}}` and `{{access_url}}` from query para
 
 ## Sign-off required before publishing
 
-The guarantee wording (section 3) uses placeholder copy: "Noticeably better sleep within 14 days, or your money back." Final wording must match Sally's signed-off copy on the results page (`../index.html`). Get Sally's sign-off before publishing.
+The guarantee wording (section 3) uses placeholder copy: "Noticeably better sleep within 7 days, or your money back." Final wording must match Sally's signed-off copy on the results page (`../index.html`). Get Sally's sign-off before publishing.
 
 ## Tracking
 

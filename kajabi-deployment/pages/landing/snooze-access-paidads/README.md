@@ -43,7 +43,7 @@ Confirm live AUD/USD prices against the Kajabi offers registry before publishing
 
 ## Sign-off and review notes
 
-- **Guarantee wording.** The money-back results guarantee on `index.html` and `thanks/index.html` uses placeholder wording (&ldquo;Noticeably better sleep within 14 days, or your money back&rdquo;), flagged with an HTML comment. Final wording needs Sally&rsquo;s sign-off before publishing.
+- **Guarantee wording.** The money-back results guarantee on `index.html` and `thanks/index.html` uses placeholder wording (&ldquo;Noticeably better sleep within 7 days, or your money back&rdquo;), flagged with an HTML comment. Final wording needs Sally&rsquo;s sign-off before publishing.
 - **Testimonial.** The blockquote on `index.html` reuses the Day Pass structure and tone. Swap for a real, attributable Snooze Access testimonial before publishing if one is available.
 - **Pricing.** Plan tiers (monthly / quarterly / annual) carry no hardcoded prices or offer IDs. Confirm and add live AUD/USD prices at publish time per the registry.
 
