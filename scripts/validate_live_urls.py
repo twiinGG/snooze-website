@@ -19,6 +19,12 @@ from typing import Any
 DEFAULT_URL_FILE = Path(__file__).with_name("live-urls-phase5.txt")
 TIMEOUT_SECONDS = 20
 RETRIES = 2
+DEFAULT_LOGIN_GATED_PREFIXES = (
+    "/offers/",
+    "/account",
+    "/products/communities/",
+    "/login",
+)
 DESKTOP_UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -215,6 +221,11 @@ def final_path_has_double_slash(final_url: str) -> bool:
     return "//" in urllib.parse.urlsplit(final_url).path
 
 
+def is_login_gated_path(url: str, prefixes: tuple[str, ...]) -> bool:
+    path = urllib.parse.urlsplit(url).path
+    return any(path.startswith(prefix) for prefix in prefixes)
+
+
 def iter_jsonld_nodes(value: Any) -> list[dict[str, Any]]:
     nodes: list[dict[str, Any]] = []
     if isinstance(value, list):
@@ -326,8 +337,13 @@ def validate_jsonld_block(
     return errors
 
 
-def validate_url(url: str, fetcher: Fetcher) -> dict[str, Any]:
+def validate_url(
+    url: str,
+    fetcher: Fetcher,
+    login_gated_prefixes: tuple[str, ...] = DEFAULT_LOGIN_GATED_PREFIXES,
+) -> dict[str, Any]:
     reasons: list[str] = []
+    warnings: list[str] = []
     page_result = fetcher.get(url)
     if page_result["status"] != 200:
         reasons.append(f"page returned HTTP {page_result['status']}")
@@ -357,8 +373,18 @@ def validate_url(url: str, fetcher: Fetcher) -> dict[str, Any]:
                     "error": result["error"],
                 }
             )
-            if result["status"] == 404:
-                reasons.append(f"internal link returned 404: {link}")
+            if (
+                result["status"] in (403, 404)
+                and is_login_gated_path(link, login_gated_prefixes)
+            ):
+                warnings.append(
+                    "bot-blocked or login-gated, browser-verify: "
+                    f"{link} ({result['status']})"
+                )
+            elif result["status"] < 200 or result["status"] >= 300:
+                reasons.append(
+                    f"internal link returned {result['status']}: {link}"
+                )
         for index, block in enumerate(parser.jsonld_blocks, start=1):
             jsonld_errors.extend(validate_jsonld_block(block, index, fetcher))
         reasons.extend(jsonld_errors)
@@ -369,6 +395,7 @@ def validate_url(url: str, fetcher: Fetcher) -> dict[str, Any]:
         "final_url": page_result["final_url"],
         "passed": not reasons,
         "reasons": reasons,
+        "warnings": warnings,
         "internal_links": internal_links,
         "jsonld_errors": jsonld_errors,
     }
@@ -385,6 +412,9 @@ def print_report(results: list[dict[str, Any]]) -> None:
                 print(f"  - {reason}")
         else:
             print("  - no issues found")
+        if result.get("warnings"):
+            for warning in result["warnings"]:
+                print(f"  WARN {warning}")
 
 
 def write_json_report(path: Path, results: list[dict[str, Any]]) -> None:
@@ -395,8 +425,15 @@ def write_json_report(path: Path, results: list[dict[str, Any]]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def run_validation(urls: list[str], fetcher: Fetcher) -> list[dict[str, Any]]:
-    return [validate_url(url, fetcher) for url in urls]
+def run_validation(
+    urls: list[str],
+    fetcher: Fetcher,
+    login_gated_prefixes: tuple[str, ...] = DEFAULT_LOGIN_GATED_PREFIXES,
+) -> list[dict[str, Any]]:
+    return [
+        validate_url(url, fetcher, login_gated_prefixes=login_gated_prefixes)
+        for url in urls
+    ]
 
 
 def run_self_test() -> int:
@@ -409,6 +446,8 @@ def run_self_test() -> int:
             """
             <html><body>
             <a href="/linked">Linked</a>
+            <a href="/offers/z63s9VaR">Membership</a>
+            <a href="/account">Account</a>
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
@@ -428,6 +467,16 @@ def run_self_test() -> int:
             """,
         ),
         "https://www.joinsnooze.com/linked": (200, "https://www.joinsnooze.com/linked", ""),
+        "https://www.joinsnooze.com/offers/z63s9VaR": (
+            403,
+            "https://www.joinsnooze.com/offers/z63s9VaR",
+            "",
+        ),
+        "https://www.joinsnooze.com/account": (
+            404,
+            "https://www.joinsnooze.com/account",
+            "",
+        ),
         "https://www.joinsnooze.com/": (200, "https://www.joinsnooze.com/", ""),
         failing_url: (
             200,
@@ -454,10 +503,13 @@ def run_self_test() -> int:
     results = run_validation([passing_url, failing_url], fetcher)
     print_report(results)
     pass_ok = results[0]["passed"]
+    warn_ok = len(results[0]["warnings"]) == 2 and all(
+        "bot-blocked or login-gated" in warning for warning in results[0]["warnings"]
+    )
     fail_ok = not results[1]["passed"] and any(
         "registered nurse" in reason for reason in results[1]["reasons"]
     )
-    if pass_ok and fail_ok:
+    if pass_ok and warn_ok and fail_ok:
         print("SELF-TEST PASS")
         return 0
     print("SELF-TEST FAIL")
@@ -486,6 +538,15 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run embedded parser and validator fixtures without live requests.",
     )
+    parser.add_argument(
+        "--login-gated-prefix",
+        dest="login_gated_prefixes",
+        action="append",
+        help=(
+            "Path prefix that may return 403 or 404 for anonymous validators. "
+            "Repeat to override the defaults."
+        ),
+    )
     return parser
 
 
@@ -502,7 +563,12 @@ def main() -> int:
         print(f"No URLs found in {args.url_file}", file=sys.stderr)
         return 2
     fetcher = Fetcher()
-    results = run_validation(urls, fetcher)
+    login_gated_prefixes = (
+        tuple(args.login_gated_prefixes)
+        if args.login_gated_prefixes
+        else DEFAULT_LOGIN_GATED_PREFIXES
+    )
+    results = run_validation(urls, fetcher, login_gated_prefixes=login_gated_prefixes)
     print_report(results)
     if args.json_path:
         write_json_report(args.json_path, results)
