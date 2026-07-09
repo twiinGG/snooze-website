@@ -1,3 +1,5 @@
+> **SUPERSEDED July 08, 2026:** Approved IA lives in `docs/projects/geo-seo/4_working/2026-07-07-SITE-TAXONOMY-PROPOSAL.md`. This document describes the pre-2026-07 architecture and is retained as history. Do not build from it.
+
 # Snooze Website Architecture
 
 **Date:** December 2025  

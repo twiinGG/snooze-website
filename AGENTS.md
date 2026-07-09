@@ -30,12 +30,12 @@ Only after the system initialization can you add page-specific component styles.
 The design system (colors, buttons, fonts) is scoped to `#home-page`. New page wrappers CANNOT access these styles without their own initialization block. **Skipping this step results in unstyled pages.**
 
 **Template Reference:**
-- See `#ask-sally-page` System Initialization block in `kajabi-deployment/global/css/snooze-unified-theme.css`
+- See `#ask-sally-page` System Initialization block in `kajabi-deployment/global/css/theme-custom-code.css` (`snooze-unified-theme.css` is historical only)
 - Full documentation: `docs/technical/CSS-STABILIZATION-BRIEF.md`
 
 **Workflow:**
 1. Create HTML with unique wrapper ID (e.g., `<div id="new-page">`)
-2. Add System Initialization block to `snooze-unified-theme.css` (copy from `#ask-sally-page`)
+2. Add System Initialization block to `theme-custom-code.css` (copy from `#ask-sally-page`)
 3. Add page-specific styles below the initialization block
 4. Register wrapper ID in CSS-STABILIZATION-BRIEF.md
 
@@ -124,7 +124,8 @@ When working with Lead Magnet bundles in `course-free-modules-conversion/`:
 ## Key Files
 
 - `kajabi-deployment/` - Production website code
-- `kajabi-deployment/global/css/snooze-unified-theme.css` - Design system
+- `kajabi-deployment/global/css/theme-custom-code.css` - Design system (canonical)
+- `kajabi-deployment/global/css/snooze-unified-theme.css` - Design system (historical reference only)
 - `docs/DEPLOYMENT-CHECKLIST.md` - Deployment workflow
 - `docs/technical/CSS-STABILIZATION-BRIEF.md` - CSS system documentation
 

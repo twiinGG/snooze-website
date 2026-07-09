@@ -4,7 +4,7 @@
 
 Kajabi Settings > Website > Theme > Custom CSS
 
-Paste the full contents of `snooze-unified-theme.css` into that field. This is the single CSS file for all website pages and sales funnels on joinsnooze.com.
+Paste the full contents of `theme-custom-code.css` into that field. This is the canonical CSS file for all website pages and sales funnels on joinsnooze.com. `snooze-unified-theme.css` is retained as historical reference only.
 
 ## File: snooze-unified-theme.css
 
