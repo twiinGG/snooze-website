@@ -73,6 +73,32 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 | Header scripts | Site-wide, all pages | n/a (scripts) | site_details textarea | YES - 1 canonical file |
 | Theme CSS/JS | Website pages only | n/a | customizer Ace | YES - 1 canonical file each |
 
+## New-page full-width / flush layout standard (MCP)
+
+Verified live 2026-07-09 against Kajabi's own theme skill file §9 plus a live example. Scope: single-code-block website pages and landing pages. Checkout pages for individual offers are out of scope.
+
+To make a website or landing page section render edge to edge with no side padding, set both values on the theme content in one combined `update_theme_content` MCP call:
+
+- Section setting: `full_width: "true"`
+- Code block setting: `make_flush: "true"`
+
+Booleans pass as strings, `"true"` or `"false"`, per Kajabi's skill file §9, "Booleans Are Strings in settings_data.json". One live page stored raw boolean `true`, but the skill file flags that as a divergent but working outlier. Use the string form.
+
+Also required in a new-page create or update call:
+
+- `content_for_index` must list the section id. It is a sibling array of `sections`, not nested. A section missing from `content_for_index` is stored but never renders, which is the number one silent-fail mode.
+- Each section's `block_order` must list its block ids in display order.
+- Section padding uses `padding_desktop` and `padding_mobile` as `{top,right,bottom,left}` string objects, for example `"0"`.
+- Numeric-looking settings such as `width` and `border_radius` are also strings.
+- Never put fixed-chrome sections such as `header`, `footer`, `two_step` or `exit_pop` in `content_for_index`.
+
+Do the write as one combined call: neutralise default lorem stub sections, insert the code block with `make_flush` and set section `full_width` together. Rapid single-block writes can silently drop because of Kajabi write coalescing.
+
+Verify after any write:
+
+1. Confirm `updated_at` advanced.
+2. Curl the public URL.
+
 ## Write-path mechanics learned in the Phase-5 deploy (2026-07-08)
 
 These are binding for all future pastes; they extend, not replace, the decision table above.
