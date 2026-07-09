@@ -14,6 +14,7 @@ Stabilize the Website Pages by separating global styles from page specific style
 - Updating a single page no longer causes visible regressions elsewhere.
 
 ## Latest Update
+- July 09, 2026: Guide page wrappers registered with guide-page init blocks and shared guide components. See `GUIDE-PAGE-TEMPLATE.md`.
 - January 21, 2026: Product page pricing sections standardized with multi-ID CSS scoping pattern. All pricing styles use hardcoded hex values (not CSS variables) for cross-page compatibility. See `PRODUCT-PAGE-PRICING-BRIEF.md` for complete implementation guide.
 - January 13, 2026: Home Page V2 work completed and deployed successfully.
 - January 13, 2026: Excluded `.snooze-section` from global Kajabi section resets and the Home V2 wrapper reset to restore Home V2 spacing.
@@ -57,6 +58,7 @@ Use a single, unique wrapper ID on each Website Page body container. All page sp
 - Store Page V2: `#store-page-v2`
 - Snooze Academy (Landing Page): `#snooze-academy-page`
 - Sleep & Parenting Glossary: `#glossary-page` (added June 2026; HTML is generated from `glossary/terms.json` via `glossary/build-glossary.mjs`)
+- Guide Page Template: `#chooser-page`, `#age-newborn-page`, `#age-3-4-month-page`, `#age-5-12-month-page`, `#age-toddler-page`, `#early-rising-page`, `#sleep-regressions-page`, `#nap-transitions-page`, `#bedtime-battles-page`, `#catnapping-page` (added July 2026; each has a guide-page init block plus shared guide components. See `GUIDE-PAGE-TEMPLATE.md`)
 
 ## Scoping Rules
 - Page specific selectors must be prefixed with the page wrapper ID.

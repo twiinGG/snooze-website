@@ -5232,11 +5232,11 @@
      .sf-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; }
    }
    
-   .sf-col { text-align: center; }
+   .sf-col { text-align: left; }
    .sf-logo {
      margin-bottom: 16px;
      display: flex;
-     justify-content: center;
+     justify-content: flex-start;
      align-items: center;
    }
    .sf-logo a {
@@ -5256,13 +5256,13 @@
      opacity: 1 !important;
    }
    .sf-logo-text { font-family: var(--sn-font-heading); font-size: 24px; color: var(--sn-white); display: block; margin-bottom: 16px; }
-   .sf-tagline { color: var(--sn-text-light); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; margin-left: auto; margin-right: auto; }
-   .sf-socials { display: flex; gap: 16px; justify-content: center; }
+   .sf-tagline { color: var(--sn-text-light); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; }
+   .sf-socials { display: flex; gap: 16px; justify-content: flex-start; }
    .sf-social-link { color: var(--sn-white); font-size: 13px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
    .sf-social-link:hover { opacity: 1; color: var(--sn-coral); }
    .sf-heading { color: #F43357 !important; font-size: 16px; font-weight: 600; margin: 0 0 20px 0; font-family: var(--sn-font-heading); }
    .sf-links { list-style: none; padding: 0; margin: 0; }
-   .sf-links li { margin-bottom: 12px; text-align: center; }
+   .sf-links li { margin-bottom: 12px; text-align: left; }
    .sf-links a { color: var(--sn-text-light); text-decoration: none; font-size: 14px; transition: color 0.2s; }
    .sf-links a:hover { color: var(--sn-coral); }
    .sf-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
@@ -5278,7 +5278,7 @@
      }
      .sf-logo-text { font-size: 20px; margin-bottom: 12px; }
      .sf-tagline { font-size: 13px; margin-bottom: 16px; }
-     .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: center; }
+     .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
      .sf-social-link { font-size: 12px; }
      .sf-heading { font-size: 14px; margin-bottom: 12px; }
      .sf-links li { margin-bottom: 8px; }
@@ -12760,6 +12760,462 @@ body.currency-loaded .dynamic-cta {
   #catnapping-page .snooze-section { padding: 48px 0; }
   #catnapping-page .btn { width: 100%; }
 }
+
+/* ============================================
+   GUIDE PAGES, HUBS AND CHOOSER SYSTEM INITIALIZATION
+   Page wrapper IDs: #chooser-page, #age-newborn-page, #age-3-4-month-page, #age-5-12-month-page, #age-toddler-page
+   Added: July 2026
+   ============================================ */
+
+#chooser-page,
+#age-newborn-page,
+#age-3-4-month-page,
+#age-5-12-month-page,
+#age-toddler-page {
+  --c-coral: #f43357;
+  --c-coral-hover: #d62646;
+  --c-navy: #1f293b;
+  --c-cream: #faf7f4;
+  --c-beige: #f2edea;
+  --c-white: #ffffff;
+  --c-sage: #7c8a98;
+  --c-yellow: #ffc107;
+  --c-text: #161e2a;
+  --c-muted: #64748b;
+
+  --font-body: 'Poppins', sans-serif;
+  --font-head: 'Playfair Display', serif;
+
+  --radius: 20px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
+  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);
+
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--c-text);
+  line-height: 1.6;
+  background: var(--c-cream);
+  isolation: isolate;
+}
+
+#chooser-page *,
+#chooser-page *::before,
+#chooser-page *::after,
+#age-newborn-page *,
+#age-newborn-page *::before,
+#age-newborn-page *::after,
+#age-3-4-month-page *,
+#age-3-4-month-page *::before,
+#age-3-4-month-page *::after,
+#age-5-12-month-page *,
+#age-5-12-month-page *::before,
+#age-5-12-month-page *::after,
+#age-toddler-page *,
+#age-toddler-page *::before,
+#age-toddler-page *::after { box-sizing: border-box; }
+
+#chooser-page img,
+#age-newborn-page img,
+#age-3-4-month-page img,
+#age-5-12-month-page img,
+#age-toddler-page img { max-width: 100%; height: auto; display: block; }
+
+#chooser-page a,
+#age-newborn-page a,
+#age-3-4-month-page a,
+#age-5-12-month-page a,
+#age-toddler-page a { text-decoration: none; transition: 0.3s ease; }
+
+#chooser-page h1, #chooser-page h2, #chooser-page h3, #chooser-page h4,
+#age-newborn-page h1, #age-newborn-page h2, #age-newborn-page h3, #age-newborn-page h4,
+#age-3-4-month-page h1, #age-3-4-month-page h2, #age-3-4-month-page h3, #age-3-4-month-page h4,
+#age-5-12-month-page h1, #age-5-12-month-page h2, #age-5-12-month-page h3, #age-5-12-month-page h4,
+#age-toddler-page h1, #age-toddler-page h2, #age-toddler-page h3, #age-toddler-page h4 {
+  font-family: var(--font-head);
+  color: var(--c-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+#chooser-page h1,
+#age-newborn-page h1,
+#age-3-4-month-page h1,
+#age-5-12-month-page h1,
+#age-toddler-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+
+#chooser-page h2,
+#age-newborn-page h2,
+#age-3-4-month-page h2,
+#age-5-12-month-page h2,
+#age-toddler-page h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+#chooser-page h3,
+#age-newborn-page h3,
+#age-3-4-month-page h3,
+#age-5-12-month-page h3,
+#age-toddler-page h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+
+#chooser-page .snooze-container,
+#age-newborn-page .snooze-container,
+#age-3-4-month-page .snooze-container,
+#age-5-12-month-page .snooze-container,
+#age-toddler-page .snooze-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+#chooser-page .snooze-section,
+#age-newborn-page .snooze-section,
+#age-3-4-month-page .snooze-section,
+#age-5-12-month-page .snooze-section,
+#age-toddler-page .snooze-section { padding: 72px 0; }
+
+#chooser-page .bg-white,
+#age-newborn-page .bg-white,
+#age-3-4-month-page .bg-white,
+#age-5-12-month-page .bg-white,
+#age-toddler-page .bg-white { background: var(--c-white); }
+
+#chooser-page .bg-cream,
+#age-newborn-page .bg-cream,
+#age-3-4-month-page .bg-cream,
+#age-5-12-month-page .bg-cream,
+#age-toddler-page .bg-cream { background: var(--c-cream); }
+
+#chooser-page .text-center,
+#age-newborn-page .text-center,
+#age-3-4-month-page .text-center,
+#age-5-12-month-page .text-center,
+#age-toddler-page .text-center { text-align: center; }
+
+#chooser-page .max-800,
+#age-newborn-page .max-800,
+#age-3-4-month-page .max-800,
+#age-5-12-month-page .max-800,
+#age-toddler-page .max-800 { max-width: 800px; margin: 0 auto; }
+
+#chooser-page .btn,
+#age-newborn-page .btn,
+#age-3-4-month-page .btn,
+#age-5-12-month-page .btn,
+#age-toddler-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: var(--c-coral);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  min-height: 48px;
+  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);
+  letter-spacing: 0.1px;
+}
+
+#chooser-page .btn:hover,
+#age-newborn-page .btn:hover,
+#age-3-4-month-page .btn:hover,
+#age-5-12-month-page .btn:hover,
+#age-toddler-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }
+
+#chooser-page .btn-outline,
+#age-newborn-page .btn-outline,
+#age-3-4-month-page .btn-outline,
+#age-5-12-month-page .btn-outline,
+#age-toddler-page .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(244, 51, 87, 0.45);
+  color: var(--c-coral);
+  box-shadow: none;
+}
+
+#chooser-page .btn-outline:hover,
+#age-newborn-page .btn-outline:hover,
+#age-3-4-month-page .btn-outline:hover,
+#age-5-12-month-page .btn-outline:hover,
+#age-toddler-page .btn-outline:hover {
+  background: rgba(244, 51, 87, 0.08);
+  border-color: rgba(244, 51, 87, 0.7);
+  color: var(--c-coral);
+}
+
+#chooser-page .snooze-section,
+#chooser-page .snooze-footer,
+#age-newborn-page .snooze-section,
+#age-newborn-page .snooze-footer,
+#age-3-4-month-page .snooze-section,
+#age-3-4-month-page .snooze-footer,
+#age-5-12-month-page .snooze-section,
+#age-5-12-month-page .snooze-footer,
+#age-toddler-page .snooze-section,
+#age-toddler-page .snooze-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+#chooser-page .snooze-breadcrumb-context,
+#age-newborn-page .snooze-breadcrumb-context,
+#age-3-4-month-page .snooze-breadcrumb-context,
+#age-5-12-month-page .snooze-breadcrumb-context,
+#age-toddler-page .snooze-breadcrumb-context {
+  font-size: 0.85rem;
+  color: var(--c-muted, #64748b);
+  margin: 0 0 18px;
+}
+
+#chooser-page .snooze-breadcrumb-context a,
+#age-newborn-page .snooze-breadcrumb-context a,
+#age-3-4-month-page .snooze-breadcrumb-context a,
+#age-5-12-month-page .snooze-breadcrumb-context a,
+#age-toddler-page .snooze-breadcrumb-context a { color: var(--c-coral, #f43357); }
+
+@media (max-width: 768px) {
+  #chooser-page .snooze-section,
+  #age-newborn-page .snooze-section,
+  #age-3-4-month-page .snooze-section,
+  #age-5-12-month-page .snooze-section,
+  #age-toddler-page .snooze-section { padding: 48px 0; }
+
+  #chooser-page .btn,
+  #age-newborn-page .btn,
+  #age-3-4-month-page .btn,
+  #age-5-12-month-page .btn,
+  #age-toddler-page .btn { width: 100%; }
+}
+
+/* ============================================
+   GUIDE PAGE SHARED COMPONENTS
+   Page wrapper IDs: chooser, age hubs and five guide pillars
+   Added: July 2026
+   ============================================ */
+
+#chooser-page .hero-wrap,
+#age-newborn-page .hero-wrap,
+#age-3-4-month-page .hero-wrap,
+#age-5-12-month-page .hero-wrap,
+#age-toddler-page .hero-wrap,
+#early-rising-page .hero-wrap,
+#sleep-regressions-page .hero-wrap,
+#nap-transitions-page .hero-wrap,
+#bedtime-battles-page .hero-wrap,
+#catnapping-page .hero-wrap {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+#chooser-page .hero-grid,
+#age-newborn-page .hero-grid,
+#age-3-4-month-page .hero-grid,
+#age-5-12-month-page .hero-grid,
+#age-toddler-page .hero-grid,
+#early-rising-page .hero-grid,
+#sleep-regressions-page .hero-grid,
+#nap-transitions-page .hero-grid,
+#bedtime-battles-page .hero-grid,
+#catnapping-page .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #chooser-page .hero-grid,
+  #age-newborn-page .hero-grid,
+  #age-3-4-month-page .hero-grid,
+  #age-5-12-month-page .hero-grid,
+  #age-toddler-page .hero-grid,
+  #early-rising-page .hero-grid,
+  #sleep-regressions-page .hero-grid,
+  #nap-transitions-page .hero-grid,
+  #bedtime-battles-page .hero-grid,
+  #catnapping-page .hero-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+}
+
+#chooser-page .steps-grid,
+#age-newborn-page .steps-grid,
+#age-3-4-month-page .steps-grid,
+#age-5-12-month-page .steps-grid,
+#age-toddler-page .steps-grid,
+#early-rising-page .steps-grid,
+#sleep-regressions-page .steps-grid,
+#nap-transitions-page .steps-grid,
+#bedtime-battles-page .steps-grid,
+#catnapping-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+#chooser-page .step-card,
+#age-newborn-page .step-card,
+#age-3-4-month-page .step-card,
+#age-5-12-month-page .step-card,
+#age-toddler-page .step-card,
+#early-rising-page .step-card,
+#sleep-regressions-page .step-card,
+#nap-transitions-page .step-card,
+#bedtime-battles-page .step-card,
+#catnapping-page .step-card {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chooser-page .step-card:hover,
+#age-newborn-page .step-card:hover,
+#age-3-4-month-page .step-card:hover,
+#age-5-12-month-page .step-card:hover,
+#age-toddler-page .step-card:hover,
+#early-rising-page .step-card:hover,
+#sleep-regressions-page .step-card:hover,
+#nap-transitions-page .step-card:hover,
+#bedtime-battles-page .step-card:hover,
+#catnapping-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
+
+#chooser-page .credential-chip,
+#age-newborn-page .credential-chip,
+#age-3-4-month-page .credential-chip,
+#age-5-12-month-page .credential-chip,
+#age-toddler-page .credential-chip,
+#early-rising-page .credential-chip,
+#sleep-regressions-page .credential-chip,
+#nap-transitions-page .credential-chip,
+#bedtime-battles-page .credential-chip,
+#catnapping-page .credential-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--c-cream, var(--sn-cream, #faf7f4));
+  border: 1px solid rgba(31, 41, 59, 0.08);
+  border-radius: 999px;
+  color: var(--c-muted, var(--sn-text-light, #6b7280));
+  font-family: var(--font-body, var(--sn-font-body, 'Poppins', sans-serif));
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#chooser-page .cta-row,
+#age-newborn-page .cta-row,
+#age-3-4-month-page .cta-row,
+#age-5-12-month-page .cta-row,
+#age-toddler-page .cta-row,
+#early-rising-page .cta-row,
+#sleep-regressions-page .cta-row,
+#nap-transitions-page .cta-row,
+#bedtime-battles-page .cta-row,
+#catnapping-page .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+#chooser-page .hero-media,
+#age-newborn-page .hero-media,
+#age-3-4-month-page .hero-media,
+#age-5-12-month-page .hero-media,
+#age-toddler-page .hero-media,
+#early-rising-page .hero-media,
+#sleep-regressions-page .hero-media,
+#nap-transitions-page .hero-media,
+#bedtime-battles-page .hero-media,
+#catnapping-page .hero-media {
+  max-width: 100%;
+}
+
+#chooser-page .hero-media img,
+#age-newborn-page .hero-media img,
+#age-3-4-month-page .hero-media img,
+#age-5-12-month-page .hero-media img,
+#age-toddler-page .hero-media img,
+#early-rising-page .hero-media img,
+#sleep-regressions-page .hero-media img,
+#nap-transitions-page .hero-media img,
+#bedtime-battles-page .hero-media img,
+#catnapping-page .hero-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+#chooser-page .direct-answer,
+#age-newborn-page .direct-answer,
+#age-3-4-month-page .direct-answer,
+#age-5-12-month-page .direct-answer,
+#age-toddler-page .direct-answer,
+#early-rising-page .direct-answer,
+#sleep-regressions-page .direct-answer,
+#nap-transitions-page .direct-answer,
+#bedtime-battles-page .direct-answer,
+#catnapping-page .direct-answer {
+  margin: 20px 0 24px;
+  color: var(--c-navy, var(--sn-navy, #1f293b));
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+#chooser-page .snooze-breadcrumb-context,
+#age-newborn-page .snooze-breadcrumb-context,
+#age-3-4-month-page .snooze-breadcrumb-context,
+#age-5-12-month-page .snooze-breadcrumb-context,
+#age-toddler-page .snooze-breadcrumb-context,
+#early-rising-page .snooze-breadcrumb-context,
+#sleep-regressions-page .snooze-breadcrumb-context,
+#nap-transitions-page .snooze-breadcrumb-context,
+#bedtime-battles-page .snooze-breadcrumb-context,
+#catnapping-page .snooze-breadcrumb-context {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--sn-text-light, #6b7280);
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+#chooser-page .snooze-breadcrumb-context a,
+#age-newborn-page .snooze-breadcrumb-context a,
+#age-3-4-month-page .snooze-breadcrumb-context a,
+#age-5-12-month-page .snooze-breadcrumb-context a,
+#age-toddler-page .snooze-breadcrumb-context a,
+#early-rising-page .snooze-breadcrumb-context a,
+#sleep-regressions-page .snooze-breadcrumb-context a,
+#nap-transitions-page .snooze-breadcrumb-context a,
+#bedtime-battles-page .snooze-breadcrumb-context a,
+#catnapping-page .snooze-breadcrumb-context a {
+  color: var(--c-coral, var(--sn-coral, #f43357));
+  text-decoration: none;
+}
+
+#chooser-page .snooze-breadcrumb-context a:hover,
+#age-newborn-page .snooze-breadcrumb-context a:hover,
+#age-3-4-month-page .snooze-breadcrumb-context a:hover,
+#age-5-12-month-page .snooze-breadcrumb-context a:hover,
+#age-toddler-page .snooze-breadcrumb-context a:hover,
+#early-rising-page .snooze-breadcrumb-context a:hover,
+#sleep-regressions-page .snooze-breadcrumb-context a:hover,
+#nap-transitions-page .snooze-breadcrumb-context a:hover,
+#bedtime-battles-page .snooze-breadcrumb-context a:hover,
+#catnapping-page .snooze-breadcrumb-context a:hover { text-decoration: underline; }
 
    #about-sally-page .about-sally-faq {
      padding: var(--spacing-2xl) 0;
