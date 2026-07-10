@@ -60,7 +60,7 @@
 }
 
 #snooze-custom-checkout .benefits-list .check-icon {
-  color: #F43357;
+  color: #D62646;
   font-size: 1.25rem;
   flex-shrink: 0;
   margin-top: 0.125rem;
@@ -115,14 +115,14 @@
 }
 
 #snooze-custom-checkout .checkout-footer-note a {
-  color: #F43357;
+  color: #D62646;
   text-decoration: underline;
 }
 
 #snooze-custom-checkout .mobile-scroll-to-checkout {
   display: none;
   width: 100%;
-  background: #F43357;
+  background: #D62646;
   color: white;
   padding: 1rem 2rem;
   font-size: 1.125rem;
@@ -185,7 +185,7 @@
 
 #snooze-custom-checkout .plan-tier-badge {
   align-self: flex-start;
-  background: #F43357;
+  background: #D62646;
   color: white;
   font-size: 0.75rem;
   font-weight: 600;
@@ -204,7 +204,7 @@
 }
 
 #snooze-custom-checkout .plan-tier-frame {
-  color: #F43357;
+  color: #D62646;
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0.25rem 0 0.75rem 0;
@@ -222,7 +222,7 @@
   display: block;
   text-align: center;
   background: #FFE7EA;
-  color: #F43357;
+  color: #D62646;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.75rem 1rem;
@@ -232,7 +232,7 @@
 }
 
 #snooze-custom-checkout .plan-tier.featured .plan-tier-cta {
-  background: #F43357;
+  background: #D62646;
   color: white;
   box-shadow: 0 4px 12px rgba(244, 51, 87, 0.3);
 }

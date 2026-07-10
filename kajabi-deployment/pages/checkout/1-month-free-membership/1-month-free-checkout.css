@@ -84,7 +84,7 @@
 }
 
 #snooze-custom-checkout .benefits-list .check-icon {
-  color: #F43357;
+  color: #D62646;
   font-size: 1.25rem;
   flex-shrink: 0;
   margin-top: 0.125rem;
@@ -134,7 +134,7 @@
 #snooze-custom-checkout .step-number {
   width: 3rem;
   height: 3rem;
-  background: #F43357;
+  background: #D62646;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -197,14 +197,14 @@
 }
 
 #snooze-custom-checkout .checkout-footer-note a {
-  color: #F43357;
+  color: #D62646;
   text-decoration: underline;
 }
 
 #snooze-custom-checkout .mobile-scroll-to-checkout {
   display: none;
   width: 100%;
-  background: #F43357;
+  background: #D62646;
   color: white;
   padding: 1rem 2rem;
   font-size: 1.125rem;
