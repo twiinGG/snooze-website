@@ -114,6 +114,8 @@ The orchestrator runs these independently; acceptance never rests on a teammate'
 | Diagnostic eval returns `[]` | Ace not mounted yet | wait ~1s after clicking the block, retry |
 | Page verifies 0-missing but renders unstyled | `<body id>` wrapper stripped (§5) | change to `<div id>`, re-paste, re-verify with getComputedStyle |
 | Can't reach theme CSS editor | caret dropdown ignores CDP clicks; raw editor plan-gated | operator opens it by hand; agent pastes from there |
+| "Changes Detected" modal loops; Save never greys; paste silently doesn't persist | **concurrent Save against the same shared theme** from another lane (all website pages share one theme; parallel saves collide on the theme version) | **paste in parallel, but SAVE one lane at a time.** Quiesce the other lanes, then re-Save the held paste (it commits cleanly, no modal). Verify server-side by curl, never by the greyed-button signal alone. (Proven 2026-07-10 age-hub push.) |
+| cursor grok lane aborts: "Too many MCP tools enabled for this model" | session MCP set exceeds grok's tool ceiling | `cursor-agent mcp disable <server>` for all servers during the grok dispatch, re-enable after; or use a gpt-codex model (tolerates the full set). Log `$?` explicitly on background dispatches — the wrapper exit-0 masks the agent's real exit. |
 
 ---
 
