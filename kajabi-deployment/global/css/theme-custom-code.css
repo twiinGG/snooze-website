@@ -5277,7 +5277,7 @@
    }
    
    @media (min-width: 768px) {
-     .sf-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; }
+     .sf-grid { grid-template-columns: 1.5fr repeat(4, 1fr); gap: 30px; } /* T6 moon-plan: 5-col footer fits one row (was 4 tracks → 5th col wrapped) */
    }
    
    .sf-col { text-align: left; }
@@ -10641,7 +10641,7 @@
 
 #store-page-v2 .hero-microline {
   font-size: 0.9rem;
-  color: var(--c-sage);
+  color: var(--c-muted); /* T1 a11y: sage #7C8A98 on cream ~3.2:1 fails AA → Muted Slate */
   letter-spacing: 0.5px;
 }
 
@@ -11907,7 +11907,7 @@
 #glossary-page .gl-related-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--c-sage);
+  color: var(--c-muted); /* T1 a11y: sage on light ~3.2:1 fails AA → Muted Slate */
 }
 #glossary-page .gl-chip {
   display: inline-block;
@@ -12968,3 +12968,15 @@ body.currency-loaded .dynamic-cta {
    :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page) .guide-close { font-size: 0.95rem; color: var(--c-muted); }
    :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page) .quiet-links { display: inline-flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; margin-top: 6px; }
    :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page) .quiet-links a { color: var(--c-coral); font-weight: 500; }
+
+/* ===================================================================
+   T1 ACCESSIBILITY CONTRAST — staged 2026-07-11 (moon-plan Phase 2)
+   White text on coral #F43357 ≈ 3.4:1 and coral #F43357 text on white
+   ≈ 3.9:1 both fail WCAG AA. Coral Deep #D62646 gives ≈ 4.97:1 both ways.
+   !important is required to beat the ID-scoped (#x-page .btn) rules.
+   INTERIM override — fold into the T7 token consolidation (single palette
+   + a dedicated button/link token). Does NOT change the coral brand accent
+   used for icons/dots/fills, only text-bearing coral.
+   =================================================================== */
+.btn:not(.btn-outline) { background: var(--c-coral-hover, #D62646) !important; }
+.btn-outline, .card-link, .quiet-links a { color: var(--c-coral-hover, #D62646) !important; }
