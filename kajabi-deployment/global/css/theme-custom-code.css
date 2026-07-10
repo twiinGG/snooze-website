@@ -234,7 +234,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) div[class*="section"]:not(.hero-section-complete):not(.feature-section):not(.trust-section):not(.testimonial-carousel):not(.pricing-section):not(.faq-section):not(.transformation-reviews):not(.inside-snooze):not(.value-comparison):not(.age-stages-section):not(.library-preview):not(.library-category-nav):not(.contact-hero-section):not(.contact-form-section):not(.contact-info-section):not(.snooze-problem-section):not(.snooze-target-audience):not(.snooze-individual-product-value):not(.snooze-membership-upgrade):not(.snooze-success-stories):not(.snooze-instructor-section):not(.snooze-faq-section):not(.snooze-final-cta-section):not(.course-hero-dark):not(.course-section-dark):not(.course-section-light):not(.course-overview-section):not(.course-curriculum-section):not(.course-reviews-section):not(.course-pricing-section):not(.course-faq-section):not(.course-curriculum-two-columns):not(.course-curriculum-column):not(.course-part-title),
 :is(
   #home-page,
@@ -255,7 +261,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) section[class*="section"]:not(.snooze-section):not(.hero-section-complete):not(.feature-section):not(.trust-section):not(.testimonial-carousel):not(.pricing-section):not(.faq-section):not(.transformation-reviews):not(.inside-snooze):not(.value-comparison):not(.age-stages-section):not(.library-preview):not(.library-category-nav):not(.contact-hero-section):not(.contact-form-section):not(.contact-info-section):not(.snooze-problem-section):not(.snooze-target-audience):not(.snooze-individual-product-value):not(.snooze-membership-upgrade):not(.snooze-success-stories):not(.snooze-instructor-section):not(.snooze-faq-section):not(.snooze-final-cta-section):not(.course-hero-dark):not(.course-section-dark):not(.course-section-light):not(.course-overview-section):not(.course-curriculum-section):not(.course-reviews-section):not(.course-pricing-section):not(.course-faq-section):not(.course-curriculum-two-columns):not(.course-curriculum-column):not(.course-part-title) {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -283,7 +295,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) div[class*="block"]:not(.hero-content-wrapper):not(.feature-grid):not(.trust-wrapper),
 :is(
   #home-page,
@@ -304,7 +322,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) div[class*="Block"]:not(.hero-content-wrapper):not(.feature-grid):not(.trust-wrapper),
 :is(
   #home-page,
@@ -325,7 +349,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) div[class*="code-block"],
 :is(
   #home-page,
@@ -346,7 +376,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) div[class*="html-block"] {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -374,7 +410,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) .kajabi-page-content > div > div,
 :is(
   #home-page,
@@ -395,7 +437,13 @@
   #product-5-12-month-course-page,
   #product-newborn-guide-page,
   #product-snooze-method-page,
-  #product-toddler-toolkit-page
+  #product-toddler-toolkit-page,
+  #chooser-page,
+  #early-rising-page,
+  #sleep-regressions-page,
+  #nap-transitions-page,
+  #bedtime-battles-page,
+  #catnapping-page
 ) .kajabi-page-content > section > div {
   margin: 0 !important;
   padding: 0 !important;
