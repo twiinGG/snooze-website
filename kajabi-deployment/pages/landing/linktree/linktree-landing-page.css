@@ -253,7 +253,7 @@
     color: var(--c-navy);
     box-shadow: var(--shadow-soft);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    min-height: 40px;
+    min-height: 44px;
   }
 
 #snooze-linktree .lt-tile:hover {
@@ -277,8 +277,8 @@
 }
 
 #snooze-linktree .lt-social {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
