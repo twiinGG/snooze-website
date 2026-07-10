@@ -169,3 +169,10 @@ The eval returns `{ok, length, expected, sha256prefix}`: verify by length/hash, 
 **Subagent context caps:** paste/browser subagents are capped at roughly 3-4 surfaces per spawn. On reaching the cap: write a handoff file (surfaces shipped + ids + pre-image paths + verification status, working mechanics, remaining queue), report, stop. Successors spawn fresh from the handoff file.
 
 Full write-path decision table and mechanics: `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`.
+
+### Parallel live deploy + the two Kajabi WAF walls
+
+For multi-surface live pushes, the proven repeatable model is CDP-attach to real headed Chrome, in parallel — full runbook `docs/technical/KAJABI-PARALLEL-CDP-DEPLOY.md`. Two hard rules bind every Kajabi admin browser task:
+
+- **Never auto-navigate a `app.kajabi.com` URL** (agent-browser `open`/`goto`/`reload`, or a Chrome launched at an admin URL). It returns HTTP 406 and burns the window. Launch windows to `about:blank`, have a HUMAN log in (clears Cloudflare), then move only by in-app clicks. Headless / fresh-profile browsers are hard-blocked outright. Attach lanes with `agent-browser --cdp <port> --session <UNIQUE-name>` (unique session per lane is mandatory); never `close --all` (unscoped — kills every window).
+- **Page wrapper MUST be `<div id="X-page">`, never `<body id>`** (§5 says div — this is why): Kajabi strips `<body>` from fragments, so a `<body id>` wrapper yields no `#X-page` element live and all id-scoped CSS silently dies (passes curl 0-missing, renders unstyled). Adding a page = `<div id>` wrapper + add the id to the `:is()` scope in `global/css/theme-custom-code.css`; verify with `getComputedStyle`, not just a line-match.

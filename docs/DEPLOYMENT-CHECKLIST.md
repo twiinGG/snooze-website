@@ -86,6 +86,16 @@ Complete these checks BEFORE pasting code to Kajabi.
   - Kajabi recommends this for security
 - [ ] Third-party code sourced from official vendor docs
 
+### Page Wrapper (website pages with id-scoped CSS)
+
+- [ ] Page content wrapped in `<div id="X-page">`, **never `<body id="X-page">`**
+  - **BLOCK if `<body id>`** — Kajabi strips `<body>` from custom-code fragments, so
+    the `#X-page` element never exists live and all `:is(#X-page,…)`-scoped CSS silently
+    dies (page passes curl 0-missing yet renders unstyled). See
+    `docs/technical/KAJABI-PARALLEL-CDP-DEPLOY.md` §5.
+  - `grep -L '<div id=".*-page"' <file>` and `grep -l '<body id=' <file>` to catch it.
+- [ ] New page id added to the `:is()` scope in `global/css/theme-custom-code.css`
+
 ---
 
 ## 2. Deploy to Staging (Kajabi Hidden Page)
@@ -94,11 +104,12 @@ Test in Kajabi staging environment before going live.
 
 ### Paste and Save
 
+For agent-driven pastes, use the CDP parallel model — full runbook `docs/technical/KAJABI-PARALLEL-CDP-DEPLOY.md`. Key rules: real headed Chrome per lane launched to `about:blank`, HUMAN login (never auto-navigate a kajabi URL → HTTP 406 burns the window), attach via `--cdp <port> --session <unique>`, token-safe paste via `scripts/emit_paste_js.py`, in-app clicks only.
+
 - [ ] Log into Kajabi: https://thesleepconscierge.mykajabi.com
-- [ ] Navigate to target page (Website > Pages > [page name])
-- [ ] Click Edit
-- [ ] Paste HTML/CSS/JS into Custom Code or Page Settings
-- [ ] Save page (keep hidden/unpublished)
+- [ ] Navigate to target page (Search → Pages → Website Pages → click title → builder → Custom Code block)
+- [ ] Paste via `scripts/emit_paste_js.py` (never hand-retype); confirm `ok:true` + `length == expected`
+- [ ] Save (Save button greys out = persisted; "Keep Editing" not Reload on any modal)
 
 ### Generate Preview
 
