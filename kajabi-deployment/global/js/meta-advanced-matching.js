@@ -72,13 +72,14 @@
   }
 
   function eventId(eventName) {
-    var storeKey = 'snooze_eventid_' + eventName.toLowerCase();
-    var existing = ls(storeKey);
-    if (existing) return existing;
+    // One fresh id per logical event occurrence. The browser Pixel event and the
+    // server-side (Stape sGTM) CAPI event dedupe by sharing this id via the
+    // dataLayer push below, within the same page load. Do NOT persist across
+    // loads: persisting per event-name reused one id for every Purchase /
+    // InitiateCheckout, so Meta collapsed distinct events into a single one.
     var id = (window.crypto && crypto.randomUUID)
       ? crypto.randomUUID()
       : (eventName + '-' + Date.now() + '-' + Math.random().toString(16).slice(2));
-    try { window.localStorage.setItem(storeKey, id); } catch (e) {}
     try {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'meta_event_id_set', meta_event: eventName, meta_event_id: id });

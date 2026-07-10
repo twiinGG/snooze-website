@@ -111,13 +111,14 @@ These IDs may still appear in old emails, ads, or backlinks but are no longer th
 
 **Purpose:** Fires GA4 purchase event with correct currency, Meta Pixel Purchase event with hashed Advanced Matching (em, etc.) and shared event_id for browser/server-side dedup, and InitiateCheckout when checkout page loads to improve Event Match Quality (EMQ).
 
-**AUD Offer ID Mapping:**
-- Legacy offers: `bFxLg2uz`, `SiiVEJuS` (update as more AUD variants are created)
+**AUD Offer ID Mapping (updated 2026-07-11):**
+- Currency is taken from `Kajabi.order.currency` when present; otherwise from the AUD offer-ID allow-list (`AUD_OFFER_IDS`, all live AUD-priced offers per Kajabi list_offers) for purchases, and the AUD checkout-slug list (`AUD_OFFER_SLUGS`) for path-based InitiateCheckout; else USD.
+- The old `bFxLg2uz` / `SiiVEJuS` offers are retired — do not reintroduce. Keep `AUD_OFFER_IDS` / `AUD_OFFER_SLUGS` (here and in gtm-variables.js) in sync when new AUD offers publish.
 
 **Event ID Dedup Contract:**
-- event_id is generated and persisted in localStorage (snooze_eventid_purchase / snooze_eventid_initiatecheckout)
-- Pushed to dataLayer as meta_event_id for GTM CAPI tag to read
-- Server-side CAPI Purchase/InitiateCheckout events MUST send identical event_id
+- event_id is generated FRESH per logical event occurrence (one per Purchase / InitiateCheckout fire) and pushed to dataLayer as meta_event_id.
+- Browser Pixel and server-side CAPI dedupe by reading that same meta_event_id within the same page load; the id is NOT persisted across loads (persisting collapsed distinct events into one).
+- Server-side CAPI Purchase/InitiateCheckout events MUST send the identical event_id read from the dataLayer for that page load.
 
 ---
 
@@ -153,7 +154,7 @@ This file is NOT pasted into Kajabi. It contains two Custom JavaScript Variable 
 - **Name:** `CJS - User Currency Preference`
 - **Description:** Detects user's currency preference from localStorage or URL
 - Detection order: (1) AUD offer ID in pathname, (2) `localStorage['snooze_currency_preference']`, (3) fallback `'USD'`
-- **Note:** AUD offer IDs array in this variable (`['bFxLg2uz', 'SiiVEJuS']`) reflects legacy offer slugs and should be updated to current AUD offer IDs (`vYgCNgJz`, `Sr6KzShx`, `46Bz9tk6`) when GTM is next updated.
+- **Note (updated 2026-07-11):** the AUD slug array now lists the live AUD checkout slugs (`vYgCNgJz`, `Sr6KzShx`, `46Bz9tk6`, `ENhg45mj`, + tier-2 twins). When GTM is next updated, paste the current `gtm-variables.js` version. Keep it in sync with `kajabi-checkout-tracking.js` `AUD_OFFER_SLUGS`.
 
 ### Variable 2: CJS - Dynamic Click Value
 
