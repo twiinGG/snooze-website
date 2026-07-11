@@ -13,19 +13,96 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.joinsnooze.com/"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.joinsnooze.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "5-12 month baby sleep help",
+          "item": "https://www.joinsnooze.com/5-12-month-baby-sleep-help"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "5-12 month sleep help",
-      "item": "https://www.joinsnooze.com/5-12-month-baby-sleep-help"
+      "@type": "Article",
+      "headline": "5-12 month sleep help: early rising, naps and what is normal",
+      "description": "Struggling with early rising or nap transitions? Get help for 5-12 month babies: fix early wake-ups, manage nap schedules and navigate developmental wobbles.",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.joinsnooze.com/5-12-month-baby-sleep-help"
+      },
+      "image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156873377/settings_images/e64f81f-40-1418-d252-46d4a0bc188_5-12month_Hero_image.png",
+      "datePublished": "2026-07-10",
+      "dateModified": "2026-07-11",
+      "author": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "reviewedBy": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Snooze by The Sleep Concierge",
+        "url": "https://www.joinsnooze.com/"
+      },
+      "about": "5-12 month baby sleep, early rising, nap transitions"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.joinsnooze.com/#sally",
+      "name": "Sally Woods",
+      "jobTitle": "Internationally certified sleep consultant and former paediatric nurse",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The Sleep Concierge"
+      },
+      "url": "https://www.joinsnooze.com/about-sally"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is normal sleep for a 5 to 12 month old?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From around five months naps consolidate, night feeds usually reduce and longer overnight sleep becomes realistic. Two to three naps a day is normal, moving toward two near the first birthday, and some babies still take one feed overnight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I fix early rising and nap issues at this age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Early rising is the most common concern now and usually traces to nap timing and bedtime. Review first nap timing and total sleep budget and adjust wake windows as naps consolidate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my baby's sleep unsettled around crawling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Separation awareness and new skills like crawling or pulling up can briefly unsettle sleep. Give practice time in the day and hold the routine; it settles as the skill beds in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I get help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a schedule review over one to two weeks changes nothing, night feeds increase rather than reduce, or there is a fever over 38C or signs of illness, seek guidance from your GP."
+          }
+        }
+      ]
     }
   ]
 }
@@ -134,7 +211,7 @@
   </div>
 </section>
 
-<!-- First steps: challenge pillars as card-link, preserving data-pillar values -->
+<!-- First steps: challenge pillars as card-link -->
 <section id="first-steps" class="snooze-section bg-white">
   <div class="snooze-container">
     <div class="text-center max-800">
@@ -147,27 +224,27 @@
       <div class="step-card">
         <h3>Early rising</h3>
         <p>Why early waking happens and what actually moves it.</p>
-        <a class="card-link" href="/early-rising" data-pillar="/early-rising">Early rising help</a>
+        <a class="card-link" href="/early-rising">Early rising help</a>
       </div>
       <div class="step-card">
         <h3>Nap transitions</h3>
         <p>When to drop a nap and how it changes the day.</p>
-        <a class="card-link" href="/nap-transitions" data-pillar="/nap-transitions">Nap transition help</a>
+        <a class="card-link" href="/nap-transitions">Nap transition help</a>
       </div>
       <div class="step-card">
         <h3>Sleep regressions</h3>
         <p>Telling a developmental shift from a schedule drift.</p>
-        <a class="card-link" href="/sleep-regressions" data-pillar="/sleep-regressions">Sleep regression help</a>
+        <a class="card-link" href="/sleep-regressions">Sleep regression help</a>
       </div>
       <div class="step-card">
         <h3>Catnapping</h3>
         <p>Stretching short naps to protect night sleep.</p>
-        <a class="card-link" href="/catnapping" data-pillar="/catnapping">Catnapping help</a>
+        <a class="card-link" href="/catnapping">Catnapping help</a>
       </div>
       <div class="step-card">
         <h3>Bedtime battles</h3>
         <p>Settling resistance and how to keep bedtime calm.</p>
-        <a class="card-link" href="/bedtime-battles" data-pillar="/bedtime-battles">Bedtime help</a>
+        <a class="card-link" href="/bedtime-battles">Bedtime help</a>
       </div>
     </div>
     <div class="text-center max-800">
@@ -209,7 +286,7 @@
 <section class="snooze-section bg-white">
   <div class="snooze-container max-800 text-center">
     <h2>All the help, in one place</h2>
-    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so the right help is always there when you need it.</p>
+    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so you have the full plan and the support to put the changes into practice, make them stick and handle whatever comes next.</p>
     <p class="guide-lead"><span class="dynamic-price" data-usd="79" data-aud="119" data-period-usd="/month" data-period-aud="/month">$79/month</span> &middot; Quarterly and yearly options available.</p>
     <div class="cta-row" style="justify-content:center;">
       <a class="btn dynamic-cta" data-checkout href="https://www.joinsnooze.com/offers/z63s9VaR/checkout">Access with the Snooze Membership</a>

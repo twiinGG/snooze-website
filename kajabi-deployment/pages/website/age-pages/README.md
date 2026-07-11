@@ -35,7 +35,7 @@ Each complete page contains:
 7. **Age Cross-Linking** - Links to other age pages
 8. **Footer** - Site footer
 
-All styling comes from `../snooze-unified-theme.css` - no inline styles needed.
+All styling comes from the global theme CSS `../../../global/css/theme-custom-code.css` (the `GUIDE PAGES` `:is()` block) - no inline styles needed. (`snooze-unified-theme.css` is historical reference only.)
 
 ---
 
@@ -71,7 +71,7 @@ All styling comes from `../snooze-unified-theme.css` - no inline styles needed.
 
 1. Copy the complete HTML file content
 2. Paste into Kajabi page editor
-3. Ensure `snooze-unified-theme.css` is deployed to Kajabi Custom CSS
+3. Ensure the global theme CSS `global/css/theme-custom-code.css` is deployed to Kajabi Custom CSS
 4. Ensure `snooze-globals-site-header.js` is in site header
 5. Test on desktop and mobile
 
@@ -88,7 +88,7 @@ All styling comes from `../snooze-unified-theme.css` - no inline styles needed.
 Inline comments were stripped from the four complete HTML files (deployable Kajabi custom code). Genuine notes are preserved here.
 
 ### Deployment target (all four files)
-- Styling and Font Awesome icons come from `snooze-unified-theme.css`.
+- Styling and Font Awesome icons come from the global theme CSS `global/css/theme-custom-code.css` (`snooze-unified-theme.css` is historical reference only).
 - Deploy CSS to: Kajabi Settings -> Website -> Theme -> Custom CSS.
 
 ### Toddler page only: required canonical inserts

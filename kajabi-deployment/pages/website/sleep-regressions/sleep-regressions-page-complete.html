@@ -13,19 +13,96 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.joinsnooze.com/"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.joinsnooze.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sleep regressions",
+          "item": "https://www.joinsnooze.com/sleep-regressions"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Sleep regressions",
-      "item": "https://www.joinsnooze.com/sleep-regressions"
+      "@type": "Article",
+      "headline": "Sleep regressions: what they really are and what to do first",
+      "description": "Most sleep regressions are a schedule your baby has outgrown, not a permanent change. Learn what counts as a true regression and the first steps to fix it.",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.joinsnooze.com/sleep-regressions"
+      },
+      "image": "https://tscmedia.khorus.ai/site-imagery/2026-07/sleep-regressions-hero.jpg",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-11",
+      "author": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "reviewedBy": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Snooze by The Sleep Concierge",
+        "url": "https://www.joinsnooze.com/"
+      },
+      "about": "baby sleep regressions, 4 month regression, developmental leaps"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.joinsnooze.com/#sally",
+      "name": "Sally Woods",
+      "jobTitle": "Internationally certified sleep consultant and former paediatric nurse",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The Sleep Concierge"
+      },
+      "url": "https://www.joinsnooze.com/about-sally"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a sleep regression really?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most of what parents call a regression is really a schedule your baby has outgrown, or a new skill breaking through in the night. A true regression is a temporary disruption to settled sleep that lines up with a burst of development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the 4 month regression permanent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 4 month change is the exception and the one true reset. Around 4 months your baby's sleep matures into adult-like cycles with lighter phases, and that is permanent, not a phase to wait out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I handle a sleep regression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Log three to five days, audit the schedule before you assume a regression, look for the developmental marker like rolling or crawling, hold the wind-down routine steady and rule out teething and illness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is night waking not just a regression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your baby has a fever, refuses feeds or seems unwell, or loses weight or shows signs of dehydration, contact your GP."
+          }
+        }
+      ]
     }
   ]
 }
@@ -191,6 +268,11 @@
     </div>
     <div class="steps-grid">
       <div class="step-card">
+        <h3>Night wakings</h3>
+        <p>Frequent overnight waking during a developmental leap</p>
+        <a class="card-link" href="/night-wakings">Night wakings</a>
+      </div>
+      <div class="step-card">
         <h3>3-4 month baby sleep help</h3>
         <p>the stage where the 4 month change lands</p>
         <a class="card-link" href="/3-4-month-baby-sleep-help">3-4 month baby sleep help</a>
@@ -233,9 +315,9 @@
 <section class="snooze-section bg-cream">
   <div class="snooze-container max-800 text-center">
     <h2>All the help, in one place</h2>
-    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so the right help is always there when you need it.</p>
+    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so you have the full plan and the support to put the changes into practice, make them stick and handle whatever comes next.</p>
     <div class="cta-row">
-      <a class="btn" href="https://www.joinsnooze.com/offers/z63s9VaR">See the Snooze Membership</a><!-- when a dedicated membership sales page ships, repoint here (parked item, 2026-07-09). -->
+      <a class="card-link" href="https://www.joinsnooze.com/offers/z63s9VaR">See the Snooze Membership</a><!-- when a dedicated membership sales page ships, repoint here (parked item, 2026-07-09). -->
     </div>
   </div>
 </section>

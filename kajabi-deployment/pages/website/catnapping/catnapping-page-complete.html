@@ -13,19 +13,96 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.joinsnooze.com/"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.joinsnooze.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Catnapping",
+          "item": "https://www.joinsnooze.com/catnapping"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Catnapping",
-      "item": "https://www.joinsnooze.com/catnapping"
+      "@type": "Article",
+      "headline": "Catnapping: why your baby wakes after 20 minutes and what to do first",
+      "description": "Most catnapping comes down to a baby waking between sleep cycles. Learn what counts as catnapping, why it happens and the first steps to lengthen naps today.",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.joinsnooze.com/catnapping"
+      },
+      "image": "https://tscmedia.khorus.ai/site-imagery/2026-07/catnapping-hero.jpg",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-11",
+      "author": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "reviewedBy": {
+        "@id": "https://www.joinsnooze.com/#sally"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Snooze by The Sleep Concierge",
+        "url": "https://www.joinsnooze.com/"
+      },
+      "about": "baby catnapping, short naps, sleep cycles"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.joinsnooze.com/#sally",
+      "name": "Sally Woods",
+      "jobTitle": "Internationally certified sleep consultant and former paediatric nurse",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The Sleep Concierge"
+      },
+      "url": "https://www.joinsnooze.com/about-sally"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my baby only nap for 20 to 30 minutes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A catnap is a single sleep cycle that ends when your baby surfaces into light sleep and does not link into the next one. In older babies a nap stuck at the same short mark is usually a timing and tiredness question."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are short naps normal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Short naps are completely normal in the early months and often need no fixing. A baby who catnaps but feeds well, grows well and is content between sleeps is doing fine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I lengthen my baby's naps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Log naps for a week, add up total daytime sleep and check the tiredness fit. The common trap is stretching wake windows to force a longer nap; easing the pressure before a nap usually does more than piling more on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I worry about short naps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a week or two of steady routine changes nothing, or there is poor weight gain or feeding trouble, speak to your GP or child health nurse."
+          }
+        }
+      ]
     }
   ]
 }
@@ -186,6 +263,11 @@
     </div>
     <div class="steps-grid">
       <div class="step-card">
+        <h3>Night wakings</h3>
+        <p>How short days can fragment the night</p>
+        <a class="card-link" href="/night-wakings">Night wakings</a>
+      </div>
+      <div class="step-card">
         <h3>Newborn baby sleep help</h3>
         <p>why short naps are normal in the early weeks</p>
         <a class="card-link" href="/newborn-baby-sleep-help">Newborn baby sleep help</a>
@@ -228,9 +310,9 @@
 <section class="snooze-section bg-cream">
   <div class="snooze-container max-800 text-center">
     <h2>All the help, in one place</h2>
-    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so the right help is always there when you need it.</p>
+    <p class="guide-lead">Whatever stage or challenge you are facing, you do not have to piece it together alone. The Snooze Membership brings every course, every stage guide, the Snooze Village community and Sally&rsquo;s Snooze Specialists together in one place, so you have the full plan and the support to put the changes into practice, make them stick and handle whatever comes next.</p>
     <div class="cta-row">
-      <a class="btn" href="https://www.joinsnooze.com/offers/z63s9VaR">See the Snooze Membership</a><!-- when a dedicated membership sales page ships, repoint here (parked item, 2026-07-09). -->
+      <a class="card-link" href="https://www.joinsnooze.com/offers/z63s9VaR">See the Snooze Membership</a><!-- when a dedicated membership sales page ships, repoint here (parked item, 2026-07-09). -->
     </div>
   </div>
 </section>
