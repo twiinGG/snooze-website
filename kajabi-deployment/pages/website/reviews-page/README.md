@@ -1,3 +1,15 @@
+<!-- ============================================================
+     SNOOZE REVIEWS PAGE  (#reviews-page)
+     Generated from the Member Feedback & Wins corpus (164 public reviews).
+     Styles: global/css/snooze-unified-theme.css  (#reviews-page block).
+     DRAFT: review before Kajabi paste (RUNBOOK Wave 3 #20 / #18 gate).
+     Kajabi page SEO settings (set in CMS, not here):
+       Title: "Snooze Reviews | Real Baby Sleep Results | The Sleep Concierge"
+       Meta:  "Read 164+ verified reviews from parents who used Snooze to help their
+               baby sleep through the night, self-settle and nap better. Membership,
+               courses, 1:1 consults and Camp Snooze."
+     ============================================================ -->
+     
 # Reviews Page & Notion Automation Project
 
 **Status:** v1 BUILT (2026-06-09) — awaiting sign-off before Kajabi paste

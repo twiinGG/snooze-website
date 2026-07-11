@@ -1,36 +1,45 @@
-# Blog Index Page
+# Blog Index Page (hybrid native surface)
 
-**Status:** Template (placeholders present)
+**Status:** Deployable hybrid. Live slug: `/blog`.
 
-## Overview
+## Why this page is different
 
-`blog-index.html` is the Snooze blog landing page. It ships as a Kajabi Website Page custom-code block. Wrapper ID: `#blog-index-page`. Styling comes from the global theme (`kajabi-deployment/global/css/snooze-unified-theme.css`); this page has no inline `<style>` block.
+Blog listings must stay as **native Kajabi blocks** so new posts appear automatically. Custom code cannot replace that feed. This page is therefore a hybrid:
 
-Originally labelled "Blog Index Page, Version 1.0", dated December 2025.
+1. **Title section** (custom code) - branded hero
+2. **Blog listings** (native Kajabi) - keep as-is
+3. **Footer section** (custom code) - canonical footer
 
-## Structure
+This is an intentional exception to the all-in-one page rule. Native listings have to sit between the two custom-code sections.
 
-- Hero (`.blog-hero`)
-- Category navigation (`.blog-categories`) linking to `/blog/category/*`
-- Featured post (`.blog-featured`) - single placeholder card
-- Posts grid (`.blog-posts`) - one placeholder `<article class="post-card">` template
-- CTA (`.blog-cta`) - "Join Snooze"
+## File
 
-## Build notes (relocated from in-file comments)
+- `blog-index.html` - source of truth for both custom-code pastes
+  - Top block: `<div id="blog-index-page">` + `.native-surface-hero`
+  - Bottom block: `<footer class="snooze-footer-clean">` (synced from `global/html/footer.html`)
 
-- The posts grid holds ONE `<article class="post-card">` as a template. Blog post cards are intended to be generated dynamically from the migrated posts. Repeat the template card for all 36 blog posts when populating.
-- The featured-post block is a single static placeholder; populate it separately from the grid.
+## Deploy
 
-## Placeholders to replace before deploy
+1. Paste theme CSS first if not already live (`global/css/theme-custom-code.css`) so `.native-surface-hero` styles exist.
+2. In the Kajabi page editor for `/blog`:
+   - Add/replace a **custom-code** section at the top with the `#blog-index-page` title block only (from the opening `<div>` through its closing `</div>`).
+   - Keep the native **blog listings** section.
+   - Add/replace a **custom-code** section at the bottom with the `<footer class="snooze-footer-clean">` block only.
+3. Delete the old Kajabi text section that says "LATEST ARTICLES" (blue banner).
+4. Remove any duplicate CMS footer section.
 
-- Featured: `[FEATURED_IMAGE_URL]`, `[FEATURED_POST_TITLE]`, `[featured-slug]`, `[Featured Post Title]`, `[Featured post excerpt...]`, `[Date]`
-- Post card template: `[POST_IMAGE_URL]`, `[POST_TITLE]`, `[CATEGORY]`, `[POST_SLUG]`, `[POST_EXCERPT]`, `[DATE]`
+Use `scripts/emit_paste_js.py` for pastes. Do not hand-transcribe.
 
-The placeholder scanner will BLOCK deployment until these are replaced; that is expected while this page is a template.
+## Wrapper / CSS
+
+- Wrapper ID: `#blog-index-page` (title section only)
+- Hero styles: `.native-surface-hero` in `theme-custom-code.css`
+- Footer styles: global `.sf-*` (no page-scoped footer CSS)
 
 ## Maintenance Log
 
-### June 29, 2026: Service-model copy sweep + comment strip
+### July 11, 2026: Hybrid title + footer
 
-- **Copy rewrite (CTA section):** "live coaching" rewritten to "live sessions" in the "Want More Support?" block. Live sessions with the Snooze Specialists are a real membership benefit; "live coaching" as an included benefit is not.
-- **Comments stripped:** all HTML comments removed from `blog-index.html` per the Kajabi deployable-code convention. The header/version metadata and the dynamic-generation build notes those comments carried are captured above.
+- Removed placeholder featured/grid/CTA template (never deployable; blocked by placeholder scanner).
+- Added branded title hero to replace the Kajabi "LATEST ARTICLES" text section.
+- Kept canonical footer as a separate paste target for the hybrid CMS layout.
