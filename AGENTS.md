@@ -45,6 +45,16 @@ The design system (colors, buttons, fonts) is scoped to `#home-page`. New page w
 
 Website pages, landing pages, checkout pages, thank-you pages and course lessons store code DIFFERENTLY (shared website theme vs own theme per landing page vs per-offer checkout field vs stripped lesson bodies). The canonical per-surface rulebook - including where the one-file/one-block consolidation rulings (Kade 2026-07-06, K2) apply and where they do not - is `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`. Do not paste to any surface without matching its row in that doc's decision table.
 
+### Footer: all-in-one inline (GLOBAL RULE, Kade ruling 2026-07-11)
+
+The site footer lives INLINE at the bottom of each page's own code, inside the page wrapper, as part of the one-file/all-in-one page block. This is the global rule for every website page that needs a footer.
+
+- The canonical footer markup is `kajabi-deployment/global/html/footer.html` (`<footer class="snooze-footer-clean">`, 5-col). It is a SYNC SOURCE, not a Kajabi include. Copy it verbatim into the bottom of each page's code (immediately before the closing `</div>` of the page wrapper) and keep it in sync when it changes.
+- BANNED: creating a separate footer section/block in the Kajabi CMS and pasting the footer there. Some prior deploys did this; it drifts silently from git and is why live footers went stale while source looked fixed. On the next deploy of any affected page, remove the separate CMS footer section and rely on the inline footer in the page code.
+- Every page-complete file that renders a footer to end users must carry the canonical footer inline. A page missing it is a defect to fix, not "relies on the CMS section".
+- The footer CSS (`.snooze-footer-clean` / `.sf-*`) is global in `theme-custom-code.css` and applies inside any wrapper, so the inline footer renders correctly under `#home-page`, `#contact-page`, etc. Wrapper must be `<div id="X-page">` not `<body id>` (Kajabi strips body), same as every other page.
+- Verify live per the footer audit standard: cache-busted curl, whitespace-normalize the rendered `<footer class="snooze-footer-clean">` block against `footer.html`, and confirm no legacy `class="snooze-footer"` / `.foot-grid` remains. Audit + remediation matrix: `scratchpad/footer-audit/REMEDIATION-MATRIX.md`.
+
 ### Kajabi HTML Patterns
 
 **Course Lessons (NOT landing pages or emails):**
