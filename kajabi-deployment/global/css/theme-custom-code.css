@@ -12568,6 +12568,18 @@ body.currency-loaded .dynamic-cta {
    :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .quiet-links { display: inline-flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; margin-top: 6px; }
    :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .quiet-links a { color: var(--c-coral); font-weight: 500; }
 
+   /* "Is this normal?" triage (replaces the 4-col table). Flat, mobile-first,
+      grouped by verdict. Scannability from labels + hairlines + weight, NOT
+      status colours (clinical/alarming) or side-stripes (banned). */
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage { max-width: 720px; margin: 36px auto 0; }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-group { padding-top: 28px; }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-group:first-child { padding-top: 0; }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-group + .triage-group { border-top: 1px solid rgba(31,41,59,0.10); }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) h3.triage-group-label { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--c-navy); margin: 0 0 16px; }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-list li { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--c-muted); }
+   :is(#chooser-page,#age-newborn-page,#age-3-4-month-page,#age-5-12-month-page,#age-toddler-page,#early-rising-page,#sleep-regressions-page,#nap-transitions-page,#bedtime-battles-page,#catnapping-page,#night-wakings-page) .triage-list li strong { display: block; color: var(--c-text); font-weight: 600; margin-bottom: 3px; }
+
 /* ===================================================================
    T1 ACCESSIBILITY CONTRAST — staged 2026-07-11 (moon-plan Phase 2)
    White text on coral #F43357 ≈ 3.4:1 and coral #F43357 text on white
