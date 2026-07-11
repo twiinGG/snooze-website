@@ -55,6 +55,16 @@ The site footer lives INLINE at the bottom of each page's own code, inside the p
 - The footer CSS (`.snooze-footer-clean` / `.sf-*`) is global in `theme-custom-code.css` and applies inside any wrapper, so the inline footer renders correctly under `#home-page`, `#contact-page`, etc. Wrapper must be `<div id="X-page">` not `<body id>` (Kajabi strips body), same as every other page.
 - Verify live per the footer audit standard: cache-busted curl, whitespace-normalize the rendered `<footer class="snooze-footer-clean">` block against `footer.html`, and confirm no legacy `class="snooze-footer"` / `.foot-grid` remains. Audit + remediation matrix: `scratchpad/footer-audit/REMEDIATION-MATRIX.md`.
 
+### Hybrid native surfaces (blog / newsletter)
+
+Blog index, blog search, newsletter index and newsletter subscribe keep **native Kajabi listings** (or search) so CMS publishes stay live. Custom code cannot own that feed. For these four pages only:
+
+1. Paste the **title** block (`#…-page` + `.native-surface-hero`) as a top custom-code section.
+2. Leave the native listings/search section in the middle.
+3. Paste the **footer** block (`<footer class="snooze-footer-clean">`) as a bottom custom-code section.
+
+Repo sources: `pages/website/blog-index/`, `blog-search/`, `newsletter/`, `newsletter-subscribe/`. Each README has the deploy steps. Delete the old Kajabi text / Newsletter Hero title sections on deploy. This two-section footer paste is the required exception to the all-in-one rule above; do not invent a third pattern.
+
 ### Kajabi HTML Patterns
 
 **Course Lessons (NOT landing pages or emails):**

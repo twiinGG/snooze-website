@@ -1,299 +1,64 @@
-<!-- The Snooze Methodology: LANDING PAGE build. Self-contained: this file carries its own
-     fonts, icons and scoped CSS because landing pages do not load the site theme's
-     snooze-unified-theme.css. Paste this whole file into the landing page's custom code
-     block. No page JS needed; the site-wide Header Page Scripts (currency engine) still
-     run on landing pages and drive the dynamic-cta below. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snooze - The Snooze Method</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
-
-<style>
-/* ==== Snooze Methodology landing page, scoped to #snooze-method-page ==== */
-#snooze-method-page {
-  --sn-coral: #F43357;
-  --sn-coral-hover: #D62646;
-  --sn-navy: #1F293B;
-  --sn-cream: #FAF7F4;
-  --sn-white: #FFFFFF;
-  --sn-text-dark: #161E2A;
-  --sn-text-light: #94A3B8;
-  --sn-sage: #7C8A98;
-  --sn-coral-tint: #FFE7EA;
-  --sn-radius: 20px;
-  --sn-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --sn-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--sn-text-dark);
-  line-height: 1.7;
-  font-size: 16px;
-}
-#snooze-method-page *, #snooze-method-page *::before, #snooze-method-page *::after { box-sizing: border-box; }
-#snooze-method-page h1, #snooze-method-page h2, #snooze-method-page h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--sn-navy);
-  line-height: 1.25;
-  margin: 0 0 1rem 0;
-}
-#snooze-method-page h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
-#snooze-method-page h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); text-align: center; }
-#snooze-method-page h3 { font-size: 1.25rem; }
-#snooze-method-page p { margin: 0 0 1rem 0; }
-#snooze-method-page .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-#snooze-method-page .section { padding: 64px 0; }
-
-/* Hero */
-#snooze-method-page .snooze-method-hero {
-  background: var(--sn-cream);
-  text-align: center;
-  padding: 88px 0 64px;
-}
-#snooze-method-page .snooze-method-hero .lead {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--sn-coral);
-  margin-bottom: 0.5rem;
-}
-#snooze-method-page .snooze-method-hero .subtitle {
-  font-size: 1.05rem;
-  color: var(--sn-sage);
-  margin-bottom: 0;
-}
-
-/* What makes it different */
-#snooze-method-page .what-makes-different { background: var(--sn-white); }
-#snooze-method-page .different-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-#snooze-method-page .different-card {
-  background: var(--sn-cream);
-  border-radius: var(--sn-radius);
-  padding: 32px 28px;
-  text-align: center;
-  box-shadow: var(--sn-shadow);
-}
-#snooze-method-page .different-card i {
-  font-size: 1.8rem;
-  color: var(--sn-coral);
-  margin-bottom: 16px;
-  display: inline-block;
-}
-#snooze-method-page .different-card p { margin-bottom: 0; color: var(--sn-text-dark); }
-
-/* Age sections */
-#snooze-method-page .learning-path { background: var(--sn-cream); }
-#snooze-method-page .section-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--sn-sage);
-  max-width: 700px;
-  margin: 0 auto 8px;
-}
-#snooze-method-page .tier-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-  align-items: stretch;
-}
-#snooze-method-page .tier-card {
-  background: var(--sn-white);
-  border-radius: var(--sn-radius);
-  padding: 36px 32px;
-  box-shadow: var(--sn-shadow-lg);
-  display: flex;
-  flex-direction: column;
-}
-#snooze-method-page .tier-description { color: var(--sn-sage); }
-#snooze-method-page .tier-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.25rem 0;
-  flex-grow: 1;
-}
-#snooze-method-page .tier-features li {
-  padding: 8px 0 8px 28px;
-  position: relative;
-}
-#snooze-method-page .tier-features li::before {
-  content: "\2713";
-  color: var(--sn-coral);
-  font-weight: 700;
-  position: absolute;
-  left: 4px;
-}
-#snooze-method-page .tier-audience {
-  font-size: 0.95rem;
-  color: var(--sn-sage);
-  margin-bottom: 1.25rem;
-}
-
-/* Core principles */
-#snooze-method-page .core-principles { background: var(--sn-white); }
-#snooze-method-page .principles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-#snooze-method-page .principle-card {
-  background: var(--sn-cream);
-  border-left: 4px solid var(--sn-coral);
-  border-radius: 12px;
-  padding: 28px;
-}
-#snooze-method-page .principle-card p { margin-bottom: 0; }
-
-/* Closing CTA */
-#snooze-method-page .method-cta {
-  background: var(--sn-navy);
-  text-align: center;
-}
-#snooze-method-page .method-cta h2, #snooze-method-page .method-cta p { color: var(--sn-white); }
-#snooze-method-page .method-cta p { max-width: 640px; margin: 0 auto 1.75rem; }
-
-/* Buttons */
-#snooze-method-page .btn-primary,
-#snooze-method-page .btn-secondary {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 9999px;
-  padding: 14px 32px;
-  transition: all 0.2s ease;
-  text-align: center;
-}
-#snooze-method-page .btn-primary {
-  background: var(--sn-coral);
-  color: var(--sn-white);
-}
-#snooze-method-page .btn-primary:hover { background: var(--sn-coral-hover); }
-#snooze-method-page .btn-secondary {
-  background: transparent;
-  color: var(--sn-coral);
-  border: 2px solid var(--sn-coral);
-  align-self: flex-start;
-}
-#snooze-method-page .btn-secondary:hover { background: var(--sn-coral-tint); }
-#snooze-method-page .btn-large { padding: 16px 44px; font-size: 1.05rem; }
-
-/* Responsive */
-@media (max-width: 900px) {
-  #snooze-method-page .different-grid { grid-template-columns: 1fr; }
-  #snooze-method-page .tier-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-  #snooze-method-page .section { padding: 48px 0; }
-  #snooze-method-page .snooze-method-hero { padding: 64px 0 48px; }
-  #snooze-method-page .principles-grid { grid-template-columns: 1fr; }
-}
-</style>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 <div id="snooze-method-page">
-<section class="snooze-method-hero">
-  <div class="container">
-    <h1>The Snooze Methodology</h1>
-    <p class="lead">Clear, evidence-based sleep help for tired parents</p>
-    <p class="subtitle">A structured but flexible approach that works in real life</p>
-  </div>
-</section>
 
-<section class="what-makes-different section">
-  <div class="container">
-    <h2>What Makes the Snooze Methodology Different</h2>
-    <div class="different-grid">
-      <div class="different-card">
-        <i class="fa-solid fa-lightbulb"></i>
-        <h3>Evidence-Based Clarity</h3>
-        <p>We give parents clear guidance backed by research. No confusion, no contradictions, just practical steps that work.</p>
-      </div>
-      <div class="different-card">
-        <i class="fa-solid fa-hands-holding"></i>
-        <h3>Structured Support</h3>
-        <p>Plans are important, but so is support. We give parents frameworks and hold their hand while they use them.</p>
-      </div>
-      <div class="different-card">
-        <i class="fa-solid fa-house"></i>
-        <h3>Real Life Solutions</h3>
-        <p>Our method works in real homes with real babies, not just in theory. Flexible enough for travel, illness, and life's curveballs.</p>
+<section class="snooze-hero-foundational" id="snooze-hero-snooze-method">
+  <div class="sh-container">
+    <div class="sh-content">
+      <h1 class="sh-headline">The Snooze Method</h1>
+      <p class="sh-subheadline">The evidence-based foundation for everything we teach. Understand the principles, then apply them to any age or stage. This is where great baby sleep starts.</p>
+      
+      <ul class="sh-supporting-points">
+        <li class="sh-point">The foundational principles of evidence-based sleep guidance</li>
+        <li class="sh-point">Age-appropriate application of The Snooze Method</li>
+        <li class="sh-point">Your starting point for comprehensive sleep support</li>
+      </ul>
+
+      <div id="hero-cta-location" class="sh-cta-container"></div>
+      <script>
+      (function() {
+        if (typeof window.SNOOZE_CHECKOUT_URL === 'undefined') {
+          window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
+        }
+        if (typeof window.SNOOZE_LIBRARY_URL === 'undefined') {
+          window.SNOOZE_LIBRARY_URL = '/snooze-library';
+        }
+        var userStatus = 'signposting';
+        if (typeof window.SnoozeUserDetection !== 'undefined') {
+          userStatus = window.SnoozeUserDetection.getUserStatus();
+        }
+        var heroCta = document.getElementById('hero-cta-location');
+        if (heroCta) {
+          var ctaHTML = '';
+          if (userStatus === 'snooze-member') {
+            ctaHTML = '<a href="' + window.SNOOZE_LIBRARY_URL + '" class="snooze-btn-primary">Go to Library</a>';
+          } else if (userStatus === 'logged-in-non-member') {
+            ctaHTML = '<a href="' + window.SNOOZE_CHECKOUT_URL + '" class="snooze-btn-primary">Upgrade to Snooze</a>';
+          } else {
+            ctaHTML = '<a href="' + window.SNOOZE_CHECKOUT_URL + '" class="snooze-btn-primary">Join Snooze</a>';
+          }
+          heroCta.innerHTML = ctaHTML;
+        }
+      })();
+      </script>
+      
+      <div class="sh-trust-signal">
+        <p class="sh-trust-text">
+          <strong>Trusted by thousands of families.</strong> Evidence-based guidance from a former paediatric nurse and certified sleep consultant who's helped over 10,000 families get better sleep.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="learning-path section">
-  <div class="container">
-    <h2>How the Snooze Methodology Works</h2>
-    <p class="section-intro">Everything you need for your baby's sleep, ready the moment you join, organised by age and stage</p>
 
-    <div class="tier-grid">
-      <div class="tier-card tier-2">
-        <h3>Age-Based Courses and Guides</h3>
-        <p class="tier-description">Comprehensive, stage-specific guidance for each developmental period</p>
-        <ul class="tier-features">
-          <li><strong>Newborn (0-3 months):</strong> Foundation, safe sleep, establishing routines</li>
-          <li><strong>3-4 Month Course:</strong> Fourth-trimester sleep, developmental changes, nap consolidation</li>
-          <li><strong>5-12 Month Guide:</strong> Sleep training, night weaning, schedule optimisation</li>
-          <li><strong>Toddler Toolkit (12+ months):</strong> Nap transitions, bedtime battles, regressions</li>
-        </ul>
-        <p class="tier-audience"><strong>For:</strong> Parents ready for stage-specific guidance</p>
-        <a href="/snooze-library" class="btn-secondary">Explore the Age-Based Courses</a>
-      </div>
-
-      <div class="tier-card tier-3">
-        <h3>Sleep Troubleshooting</h3>
-        <p class="tier-description">Quick-reference support for specific challenges that arise</p>
-        <ul class="tier-features">
-          <li>Early rising support</li>
-          <li>Sleep regression guidance</li>
-          <li>Nap troubleshooting</li>
-          <li>Night waking solutions</li>
-          <li>Sleep association help</li>
-        </ul>
-        <p class="tier-audience"><strong>For:</strong> Parents who need quick answers to specific problems</p>
-        <a href="/snooze-library" class="btn-secondary">Browse Troubleshooting Guides</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="core-principles section">
-  <div class="container">
-    <h2>The Core Principles</h2>
-    <div class="principles-grid">
-      <div class="principle-card">
-        <h3>Evidence-Based but Accessible</h3>
-        <p>No academic jargon. Just clear, practical guidance backed by research.</p>
-      </div>
-      <div class="principle-card">
-        <h3>Structured but Flexible</h3>
-        <p>Plans that adapt to real life. Structure helps families thrive, but we're not rigid.</p>
-      </div>
-      <div class="principle-card">
-        <h3>Supportive without Judgment</h3>
-        <p>No gentle versus harsh debate. We stay out of the sleep training wars and give you practical help that works for your family.</p>
-      </div>
-      <div class="principle-card">
-        <h3>Comprehensive Coverage</h3>
-        <p>Newborn through toddler. One place for everything you need.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="method-cta section">
-  <div class="container">
-    <h2>Ready to Get Started?</h2>
-    <p>Join the Snooze membership and get access to every age-based course and guide, live masterclasses and coaching sessions with the Snooze Specialists, troubleshooting help and an expert-moderated community.</p>
-    <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="btn-primary btn-large dynamic-cta" data-checkout>Join Snooze</a>
-  </div>
-</section>
 
 <footer class="snooze-footer-clean">
   <div class="sf-container">
@@ -380,3 +145,5 @@
 </footer>
 
 </div>
+</html>
+
