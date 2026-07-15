@@ -58,6 +58,7 @@ Use a single, unique wrapper ID on each Website Page body container. All page sp
 - Store Page V2: `#store-page-v2`
 - Snooze Academy (Landing Page): `#snooze-academy-page`
 - Sleep & Parenting Glossary: `#glossary-page` (added June 2026; HTML is generated from `glossary/terms.json` via `glossary/build-glossary.mjs`)
+- Press / Media ("As seen on"): `#press-page` (added July 2026; init block copied from `#ask-sally-page`. Homepage links to it via the `.as-seen-strip` under the trust bar. See `pages/website/press/README.md`)
 - Guide Page Template: `#chooser-page`, `#age-newborn-page`, `#age-3-4-month-page`, `#age-5-12-month-page`, `#age-toddler-page`, `#early-rising-page`, `#sleep-regressions-page`, `#nap-transitions-page`, `#bedtime-battles-page`, `#catnapping-page` (added July 2026; each has a guide-page init block plus shared guide components. See `GUIDE-PAGE-TEMPLATE.md`)
 
 ## Scoping Rules
