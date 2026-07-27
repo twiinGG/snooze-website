@@ -60,7 +60,7 @@ This is an **offer checkout page**, not a website or landing page. Custom code l
 3. Paste `bau-membership-checkout.js` into the checkout's **Custom JS** field
 4. Add the Google Fonts link to the site's Header Tracking Code (see Deployment Notes below)
 
-Because custom code is stored per-offer, copying this checkout to another offer means re-pasting all three files into that offer; there is no shared/site-wide checkout stylesheet to inherit from.
+Because layout custom code is stored per-offer, copying this checkout to another offer means re-pasting all three layout files into that offer; there is no shared/site-wide checkout stylesheet to inherit from. **Tracking is separate and site-wide:** Settings → Checkout → Header/Footer tracking code (`docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md`).
 
 ### 3. Offer reference
 

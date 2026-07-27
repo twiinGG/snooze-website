@@ -4,25 +4,20 @@
 
 ---
 
-## theme-custom-code.js — single website Custom JavaScript paste
+## theme-custom-code.js — website Theme Custom JavaScript only
 
-**Kajabi field:** Theme Custom Code → JS (`settings-js-input`), also called Settings → Website → Custom JavaScript.
+**Kajabi field:** Theme Custom Code → JS (`settings-js-input`).
 
 **Paste rule:** Copy the full contents of `theme-custom-code.js` only. Whole-field overwrite. Do not append other files.
 
-That one file already includes:
-
-1. GTM / Stape hybrid tracking
-2. Global checkout URL helpers (`window.SNOOZE_CHECKOUT_URL`)
-3. Landing-page JS (carousel, FAQ, sticky CTA, `[data-checkout]` placeholder fill only)
-4. Currency toggle engine (`window.__snoozeCurrencyToggle__`)
-5. Home-page helpers scoped to `#home-page`
+That file is the `#home-page` helpers only (age tabs, FAQ accordion, and related). After the 2026-07-27 split it must **not** contain GTM, Stape, currency toggle, or `[data-checkout]` helpers. Those live in Header Page Scripts (`global/html/site-header-page-scripts.html`).
 
 **Do not paste:** `snooze-globals.js` (stub pointer), `currency-toggle.js` (test extract only).
 
 **FOUC prevention** (`global/html/currency-toggle-fouc.html`) still goes in Site Details → Header Page Scripts. That is a separate head field, not Custom JavaScript.
 
-**Authoritative surface map:** `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`
+**Authoritative surface map:** `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`  
+**Contract:** `docs/technical/CODE-SURFACE-CONTRACT.md`
 
 ### Offer IDs (Snooze Access)
 
@@ -33,40 +28,46 @@ That one file already includes:
 
 ### Checkout normalisation (2026-07-27)
 
-`[data-checkout]` only fills placeholder hrefs (`#`, `#pricing`, empty). Real `/offers/<slug>` URLs are left alone so consult/course/Camp CTAs are not hijacked onto membership.
+`[data-checkout]` only fills placeholder hrefs (`#`, `#pricing`, empty). Real `/offers/<slug>` URLs are left alone so consult/course/Camp CTAs are not hijacked onto membership. That helper lives in Header Page Scripts, not this file.
 
 Regression: `node __tests__/data-checkout-normalize.test.js`
 
 ### Currency extract for unit tests
 
-`currency-toggle.js` is extracted from the marked block inside `theme-custom-code.js` so existing unit tests stay small.
+`currency-toggle.js` is kept in sync by `__tests__/sync-currency-toggle-extract.js` from the marked block in the currency paste source. After the 2026-07-27 split, currency logic lives in Header Page Scripts, not `theme-custom-code.js`; re-point that extract script before relying on `--check`.
 
 ```bash
-# After editing the currency block inside theme-custom-code.js:
 node __tests__/sync-currency-toggle-extract.js
-
-# CI / pre-paste drift check:
 node __tests__/sync-currency-toggle-extract.js --check
 node __tests__/currency-toggle.test.js
 ```
 
-Edit currency logic in `theme-custom-code.js` (between the `SNOOZE CURRENCY TOGGLE` markers), then re-extract.
-
 ---
 
-## kajabi-checkout-tracking.js
+## Checkout Tracking Code (Settings → Checkout)
 
-**Kajabi:** Settings > Checkout Tracking Code > Footer Tracking Code
+Site-wide. Not Header Page Scripts. Not per-offer theme JS.  
+**Index:** [`../../PASTE-MAP.md`](../../PASTE-MAP.md) A4/A5 · **Pointer:** [`../checkout-tracking/README.md`](../checkout-tracking/README.md)
+
+| Field | Repo file | Live 2026-07-27 | Action |
+|---|---|---|---|
+| Header | `../html/checkout-header-tracking.html` | Loader present | **Do not re-paste to sync** |
+| Header append (optional) | `meta-advanced-matching.js` (no comment header) | Not live | Paste only to ship Advanced Matching |
+| Footer | `kajabi-checkout-tracking.js` | Empty | Paste when shipping purchase dataLayer |
+
+Full instructions: `docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md`.
+
+### kajabi-checkout-tracking.js
+
+**Kajabi:** Settings → Checkout → Footer Tracking Code
 
 Must load AFTER GTM/Stape and AFTER meta-advanced-matching.js.
 
 **AUD Offer ID Mapping (updated 2026-07-11):** Currency from `Kajabi.order.currency` when present; else AUD offer-ID / slug allow-lists; else USD.
 
----
+### meta-advanced-matching.js
 
-## meta-advanced-matching.js
-
-**Kajabi:** Settings > Checkout Tracking Code > Header Tracking Code (after GTM/Stape)
+**Kajabi:** Settings → Checkout → Header Tracking Code (after GTM/Stape)
 
 Meta Pixel ID: `449153684613893`
 

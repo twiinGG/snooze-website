@@ -24,9 +24,24 @@ Shared HTML fragments injected site-wide via Kajabi.
 
 ## currency-toggle-fouc.html
 
-**Deployment location:** Kajabi Settings > Site Details > Header Page Scripts
+**Deployment location:** Kajabi Settings → Site Details → Header Page Scripts
 
 This script must run in the `<head>` before DOM ready to prevent flash of wrong currency on page load. It reads `snooze_currency_preference` from `localStorage`, auto-detects via timezone if no preference is saved, and adds `currency-aud-selected` and `currency-loaded` classes to `document.documentElement`.
+
+---
+
+## checkout-header-tracking.html
+
+**Deployment location:** Kajabi Settings → Checkout → Header tracking code  
+**Paste map:** [`../../PASTE-MAP.md`](../../PASTE-MAP.md) row A4  
+**Pointer:** [`../checkout-tracking/README.md`](../checkout-tracking/README.md)
+
+GTM/Stape loader for **checkout pages only**. Live Settings → Checkout header already holds this payload (confirmed 2026-07-27). **Do not re-paste to sync.**
+
+Optional upgrade only: after this loader, append `../js/meta-advanced-matching.js` (without its comment header) in the same field. Footer uses `../js/kajabi-checkout-tracking.js`.
+
+This is not Header Page Scripts and not website theme JS.
+
 
 ---
 

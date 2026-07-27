@@ -55,11 +55,10 @@ hit twice instead of merging:
 
 ## Deploy steps (HUMAN actions)
 
-1. Paste `meta-advanced-matching.js` (without the comment header) into Kajabi
-   Settings -> Checkout Tracking Code -> **Header** Tracking Code, AFTER the existing
-   GTM/Stape loader block (so `fbq` exists when it runs).
-2. Paste `kajabi-checkout-tracking.js` into Kajabi -> Checkout Tracking Code ->
-   **Footer** Tracking Code.
+Confirm field paths in [`../../kajabi-deployment/PASTE-MAP.md`](../../kajabi-deployment/PASTE-MAP.md) A4/A5 first.
+
+1. Settings → Checkout → Header tracking code already has the GTM/Stape loader (`checkout-header-tracking.html`). **Do not replace it unless changing the loader.** Append `meta-advanced-matching.js` (without the comment header) AFTER that existing block so `fbq` exists when it runs.
+2. Paste `kajabi-checkout-tracking.js` into Settings → Checkout → **Footer** Tracking Code (live footer was empty as of 2026-07-27).
 3. In GTM (`GTM-KNRTH6P`) / Stape: add dataLayer variable `meta_event_id`; bind the
    server CAPI Purchase + InitiateCheckout tags' Event ID to it for dedup. Optional
    but recommended: also map the localStorage `email` into the CAPI tag `user_data.em`

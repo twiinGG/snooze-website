@@ -1,8 +1,10 @@
 # Kajabi Deployment Validation Checklist
 
-**Last updated:** February 5, 2026
-**Owner:** Kade
+**Last updated:** 2026-07-27  
+**Owner:** Kade  
 **Applies to:** All Kajabi website deployments
+
+**Paste targets:** before any paste, confirm the field and file in [`../kajabi-deployment/PASTE-MAP.md`](../kajabi-deployment/PASTE-MAP.md). That map is the index of what goes where.
 
 ## When to Use This Checklist
 

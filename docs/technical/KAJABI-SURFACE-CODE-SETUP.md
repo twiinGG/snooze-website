@@ -14,7 +14,7 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 - **Theme model:** ALL website pages share the site's ONE Encore website theme (**2156873377**, 142 sections). Page content = per-page sections/blocks inside that theme; shared styling = the theme's Custom Code.
 - **Where code lives:**
   - Shared CSS: theme Custom Code Ace editor `settings-css-input` -> canonical repo file `kajabi-deployment/global/css/theme-custom-code.css` (one-file overwrite).
-  - Shared JS: `settings-js-input` -> `global/js/theme-custom-code.js` (one-file overwrite). Includes GTM/globals, currency-toggle, and home helpers. Do not append `snooze-globals.js` or `currency-toggle.js` separately.
+  - **Shared JS:** `settings-js-input` -> `global/js/theme-custom-code.js` (one-file overwrite). `#home-page` helpers only after the 2026-07-27 split. GTM, currency toggle and `[data-checkout]` helpers live in Header Page Scripts, not here. Do not paste `snooze-globals.js` or `currency-toggle.js`.
   - Page content: **THREE container shapes exist (census finding - the single biggest structural fact):**
     1. **Single custom-code block** (Home: section `1768118757163`, one 50KB block; Consultations). The paste model (block overwrite, byte-verify) applies directly.
     2. **Native Encore builder blocks** (3-4 Month Course CONFIRMED, Store CONFIRMED; 5-12 Course, Newborn Guide, Toddler Toolkit suspected). There is NO code field to paste an HTML file into. Copy fixes = edit the native text blocks individually (builder or `update_theme_content` on the specific block settings); landing a full HTML file requires ADDING a custom-code section with an explicit `content_for` insert, or rebuilding as native sections - an owner decision, not a mechanical paste.
@@ -32,9 +32,10 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 - **Publish state:** MCP `update_landing_page` with `publish_at` works (verified 2026-07-01).
 
 ### 3. Checkout pages (~65 published offers)
-- **Theme model:** each offer's checkout has its **OWN theme** (census: z63s9VaR theme 2163485833, vYgCNgJz theme 2166694709, trial pair themes 2164307125/2166681818); the custom-code block lives in that theme (NOT site-wide, NOT the website theme).
-- **Consequence:** each checkout needs a **self-contained stylesheet** pasted into that offer's checkout code block - never a delta that assumes shared CSS exists (memory: kajabi-checkout-custom-code-per-offer). Repo sources: `pages/checkout/<offer-family>/checkout-blocks.html` (+ aud/usd variants).
-- **Write path PROVEN:** MCP `update_theme_content` full-block on the offer's theme (census: all four core/trial checkouts round-trip byte-clean).
+- **Theme model:** each offer's checkout has its **OWN theme** (census: z63s9VaR theme 2163485833, vYgCNgJz theme 2166694709, trial pair themes 2164307125/2166681818); the custom-code block lives in that theme (NOT the website theme).
+- **Layout consequence:** each checkout needs a **self-contained stylesheet** in that offer's theme CSS field - never a delta that assumes shared website CSS exists (memory: kajabi-checkout-custom-code-per-offer). Repo sources: `pages/checkout/<offer-family>/` html + css + js (+ aud/usd variants).
+- **Tracking is NOT per-offer.** Site-wide checkout tracking lives at **Settings → Checkout → Checkout Tracking Code** (Header + Footer). See Site-level fields below. Per-offer section flags `inject_header_tracking_code` / `inject_footer_tracking_code` switch whether that site-wide pair is injected into that offer.
+- **Write path PROVEN for layout:** MCP `update_theme_content` full-block on the offer's theme (census: all four core/trial checkouts round-trip byte-clean). Tracking fields are edited in the Settings → Checkout admin UI (textarea), not via theme MCP.
 - **Consolidation ruling DOES NOT restructure checkouts** - already a single block; paste = whole-block overwrite from the one repo file. Dual-currency offers have PAIRED checkouts (USD/AUD twins) - paste both or neither.
 - **Known live state (census):** trial pair mqQikDM7/Sr6KzShx = MATCH (byte-identical to repo, correct twin-links - the only clean surfaces in the census). Core pair z63s9VaR/vYgCNgJz = DIVERGED with banned copy live ("Weekly live group coaching", "24/7 support") and the AUD checkout literally says "all prices are in USD"; the repo's clean `bau-membership-checkout/{usd,aud}/checkout-blocks.html` are the paste sources.
 
@@ -49,7 +50,11 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 
 ## Site-level fields (render across page surfaces)
 
-- **Header Page Scripts** (Settings -> Site Details, textarea `site_page_scripts_header`, at `/admin/sites/2148291177/edit/site-details`): loads on ALL public pages including landing pages (evidenced by GTM present in every pulled page). One canonical file: `global/html/site-header-page-scripts.html` (Kade one-file ruling; contains GTM single-instance, Stape, schema.org JSON-LD, currency-toggle v2). Whole-field overwrite; edits happen in the repo file first.
+- **Header Page Scripts** (Settings → Site Details, textarea `site_page_scripts_header`, at `/admin/sites/2148291177/edit/site-details`): loads on website and landing pages (evidenced by GTM present on every pulled public page of those types). One canonical file: `global/html/site-header-page-scripts.html` (Kade one-file ruling; contains GTM single-instance, Stape, schema.org JSON-LD, currency-toggle v2). Whole-field overwrite; edits happen in the repo file first. **This is not the checkout tracking surface.**
+- **Checkout Tracking Code** (Settings → Checkout, at `/admin/settings/checkout`): site-wide Header and Footer tracking fields placed in every checkout page when that offer's `inject_header_tracking_code` / `inject_footer_tracking_code` flags are true. Confirmed live 2026-07-27 (admin screenshot). Operator index: `kajabi-deployment/PASTE-MAP.md` rows A4/A5. Canonical sources:
+  - Header: `global/html/checkout-header-tracking.html` (**already live; do not re-paste to sync**). Optional: append `global/js/meta-advanced-matching.js` (strip its comment header) after the GTM/Stape block.
+  - Footer: `global/js/kajabi-checkout-tracking.js` (live empty as of 2026-07-27).
+  - Do not assume Header Page Scripts cover checkouts.
 - **Two-step opt-in section** (`two_step` in website theme 2156873377): its rendered block (`block-1585757543890`) appears in the pulled HTML of every page INCLUDING landing pages. The A1 popup fix targets this one block. **Verify across surface types after the fix**: curl one website page (/store) AND one landing page (/links) - if the landing-page copy persists, landing themes carry their own two_step copies and each must be fixed (not expected, but unproven until the first paste).
 
 ## Email surfaces (for completeness; see paste-queue B4)
@@ -67,10 +72,12 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 | Website page, shape 2 (native builder: Store, 3-4M Course + suspected guide pages) | Yes - website theme | theme CSS + native block settings | per-block edits only; NO code field exists | NO - owner decision before any restructure |
 | Website page, shape 3 (body unlocated: 3 age pages) | Yes - website theme | tbd | RESOLVE CONTAINER FIRST (customizer page dropdown) | tbd per shape |
 | Landing page | No - own theme each | self-contained in block | builder Ace block or MCP (own theme) | YES - 1 block, self-contained |
-| Checkout | No - own theme per offer | self-contained per offer | MCP full-block on offer theme | Already 1 block - overwrite whole; USD/AUD pairs together |
+| Checkout (layout / copy) | No - own theme per offer | self-contained per offer | MCP full-block on offer theme | Already 1 block - overwrite whole; USD/AUD pairs together |
+| Checkout Tracking Code (header) | Site-wide, every checkout when inject_header is true | n/a (scripts) | Settings → Checkout → Header tracking code | Header = loader file + meta-advanced-matching append |
+| Checkout Tracking Code (footer) | Site-wide, every checkout when inject_footer is true | n/a (scripts) | Settings → Checkout → Footer tracking code | YES - `kajabi-checkout-tracking.js` |
 | Thank-you | = landing page | self-contained | builder Ace (own theme) | YES |
 | Course lesson | n/a | inline !important only | MCP update_course_content | N/A - no blocks |
-| Header scripts | Site-wide, all pages | n/a (scripts) | site_details textarea | YES - 1 canonical file |
+| Header Page Scripts | Site-wide, website + landing | n/a (scripts) | site_details textarea | YES - 1 canonical file |
 | Theme CSS/JS | Website pages only | n/a | customizer Ace | YES - 1 canonical file each |
 
 ## New-page full-width / flush layout standard (MCP)

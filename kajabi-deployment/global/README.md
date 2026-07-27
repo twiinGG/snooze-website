@@ -1,10 +1,18 @@
 
-## Canonical single-file paste sources (Kade ruling 2026-07-06)
+## Canonical paste sources
 
-Every global surface pastes as a WHOLE-FIELD OVERWRITE from exactly one repo file; edits happen here first, never live:
+**Operator index:** [`../PASTE-MAP.md`](../PASTE-MAP.md)
 
-- `html/site-header-page-scripts.html` -> Header Page Scripts field (contains GTM single-instance, Stape, schema.org JSON-LD, currency-toggle v2)
-- `css/theme-custom-code.css` -> theme 2156873377 Custom Code CSS (`css/snooze-unified-theme.css` is legacy dev source, 1,716 diff-lines behind live; not a paste source until reconciled)
-- `js/theme-custom-code.js` -> theme 2156873377 Custom Code JS
+Every global surface pastes as a WHOLE-FIELD OVERWRITE from the repo file(s) below; edits happen here first, never live:
 
-Procedure per paste: fresh pre-image -> diff (merge new live drift into the canonical file FIRST, commit) -> overwrite -> byte-compare read-back -> curl sentinel. See docs/projects/copy-uplift/12-W3-PASTE-QUEUE.md appendix.
+- `html/site-header-page-scripts.html` → Settings → Site Details → Header Page Scripts (GTM single-instance, Stape, schema.org JSON-LD, currency-toggle v2). Website + landing pages.
+- `html/checkout-header-tracking.html` → Settings → Checkout → Header tracking code (GTM/Stape for checkouts). **Already live; do not re-paste to sync.** Optional upgrade: append `js/meta-advanced-matching.js` (no comment header) in the same field.
+- `js/kajabi-checkout-tracking.js` → Settings → Checkout → Footer tracking code. Live empty as of 2026-07-27.
+- `css/theme-custom-code.css` → website theme Custom Code CSS (`css/snooze-unified-theme.css` is legacy; not a paste source until reconciled)
+- `js/theme-custom-code.js` → website theme Custom Code JS (`#home-page` helpers only; not GTM)
+
+Short checkout pointer: [`checkout-tracking/README.md`](./checkout-tracking/README.md).
+
+Procedure per paste: fresh pre-image → diff (merge new live drift into the canonical file FIRST, commit) → overwrite → byte-compare read-back → curl sentinel (browser for checkouts; curl is 403). See `docs/technical/CODE-SURFACE-CONTRACT.md`.
+
+

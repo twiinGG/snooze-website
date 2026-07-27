@@ -1,27 +1,51 @@
 # Kajabi code-surface contract: one file per paste target
 
-**Authored 2026-07-27** after `theme-custom-code.js` was found merged with the header-scripts file. Verified against the **live site**, not inferred: every size below came from a cache-busted `curl` of the public page.
+**Authored 2026-07-27** after `theme-custom-code.js` was found merged with the header-scripts file. Verified against the **live site**, not inferred: every size below came from a cache-busted `curl` of the public page (checkouts via admin screenshot; curl is 403).
 
-This is the operational contract. The structural detail lives in [`KAJABI-SURFACE-CODE-SETUP.md`](./KAJABI-SURFACE-CODE-SETUP.md), which stays authoritative on container shapes and write paths.
+This is the operational contract. Operator index: [`../../kajabi-deployment/PASTE-MAP.md`](../../kajabi-deployment/PASTE-MAP.md). Structural detail: [`KAJABI-SURFACE-CODE-SETUP.md`](./KAJABI-SURFACE-CODE-SETUP.md).
 
 ## The rule
 
 **One repo file per paste target. Never merge two targets into one file.** A file that serves two fields cannot be pasted into either without breaking something.
 
-## The four surface classes, verified live 2026-07-27
+**Documented exception:** Settings → Checkout → Header may be loader (`checkout-header-tracking.html`) plus an optional append of `meta-advanced-matching.js` into that same field.
 
-| # | Paste target | Field | Canonical repo file | Reaches | Live size |
+## The five surface classes (corrected 2026-07-27)
+
+| # | Paste target | Field | Canonical repo file | Reaches | Live size / state |
 |---|---|---|---|---|---|
-| 1 | **Header Page Scripts** | Settings → Site Details, `site_page_scripts_header` | `global/html/site-header-page-scripts.html` | **Every public page**, website + landing + checkout | 68,022 in repo |
+| 1 | **Header Page Scripts** | Settings → Site Details, `site_page_scripts_header` | `global/html/site-header-page-scripts.html` | Website + landing pages (public site chrome) | 68,022 in repo |
 | 2 | **Website theme CSS** | Customizer → Theme Custom Code → CSS, `settings-css-input` | `global/css/theme-custom-code.css` | Website pages only | **403,694** live vs 403,726 repo. **MATCH** (32-char delta is Kajabi's injected wrapper line) |
 | 3 | **Website theme JS** | Customizer → Theme Custom Code → JS, `settings-js-input` | `global/js/theme-custom-code.js` | Website pages only | **4,323** live. Repo now byte-identical |
-| 4 | **Per-page theme CSS + JS** | Each landing page, checkout and thank-you page has its **own theme** with its **own** CSS and JS fields | one pair per page, see the gap below | That page only | `/links` CSS 8,366, JS 613 |
+| 4 | **Per-page theme CSS + JS + block HTML** | Each landing page, checkout and thank-you page has its **own theme** with its **own** CSS, JS and custom-code fields | one set per page / offer | That page / offer only | `/links` CSS 8,366, JS 613 |
+| 5 | **Checkout Tracking Code** | Settings → Checkout (`/admin/settings/checkout`) | see below | **Every checkout page** (when that offer's inject flags are on) | Confirmed live 2026-07-27 |
+
+### Surface 5 detail: Settings → Checkout (site-wide)
+
+This is a **real admin surface**. It is not the Header Page Scripts field and it is not per-offer theme CSS/JS. Path: **Settings → Checkout → Checkout Tracking Code**.
+
+| Sub-field | Kajabi UI | Canonical repo file(s) | Live as of 2026-07-27 | Re-paste? |
+|---|---|---|---|---|
+| Header tracking code | "placed in the `<head>` of every checkout page" | `global/html/checkout-header-tracking.html` (optional append: `global/js/meta-advanced-matching.js` without comment header) | GTM/Stape loader present and matches repo loader file; meta-advanced-matching **not** in the live field | **No** for the loader. Only paste if changing the loader or deliberately adding Advanced Matching |
+| Footer tracking code | "placed at the end of the `<body>` of each checkout page" | `global/js/kajabi-checkout-tracking.js` | **EMPTY** | **Yes** only when shipping purchase dataLayer |
+
+Per-offer checkout themes still carry their own HTML/CSS/JS for layout and copy (surface 4). Tracking for all checkouts is this site-wide Settings → Checkout pair.
+
+**How the inject flags relate.** Each checkout section has:
+
+```
+inject_header_tracking_code: true
+inject_footer_tracking_code: true
+```
+
+Those flags switch whether **this Settings → Checkout Tracking Code** is injected into that offer's checkout. They do **not** pull surface 1 (Header Page Scripts) into the checkout. If either flag is false on a checkout section, site-wide checkout GTM/Stape (and footer purchase tracking) stop on that offer while every other page keeps working. Check these two flags before debugging missing checkout conversions.
 
 ### Proof the classes are genuinely separate
 
 - `GTM-KNRTH6P` appears **exactly once** on home, `/links` and consultations. One instance, from surface 1.
 - The website theme JS field is **identical** on home and consultations, as expected for a shared theme.
 - `/links` theme CSS and JS **differ** from the website theme's, and `/links` does **not** contain the `SNOOZE UNIFIED THEME` banner. Landing pages genuinely do not inherit surface 2 or 3.
+- Checkouts have their **own** GTM/Stape loader in Settings → Checkout → Header tracking code (surface 5), separate from surface 1. Confirmed by admin screenshot 2026-07-27.
 
 ## What went wrong, so it is recognisable next time
 
@@ -42,13 +66,17 @@ Settled by checking where each is actually live.
 
 | Concern | Surface | Evidence |
 | --- | --- | --- |
-| GTM / Stape hybrid tracking | 1, header | Present once per page on all surface types |
+| GTM / Stape hybrid tracking (website + landing) | 1, header page scripts | Present once per page on website and landing surfaces |
+| GTM / Stape hybrid tracking (checkouts) | 5, Settings → Checkout → Header | Live admin field holds the checkout-specific loader |
+| Meta Advanced Matching on checkouts | 5, header (after GTM block) | `meta-advanced-matching.js`; intended append, not yet live as of 2026-07-27 |
+| Purchase / InitiateCheckout dataLayer | 5, Settings → Checkout → Footer | `kajabi-checkout-tracking.js`; live footer empty as of 2026-07-27 |
 | schema.org JSON-LD | 1, header | In the header file |
 | Currency toggle v2 (`__snoozeCurrencyToggle__`) | 1, header | Absent from the live theme JS field |
 | `[data-checkout]` and `SNOOZE_CHECKOUT_URL` helpers | 1, header | Absent from the live theme JS field, present in page HTML |
 | `#home-page` helpers: age tabs, FAQ accordion | 3, website theme JS | The entire live theme JS field |
 | Shared website styling | 2, website theme CSS | The `SNOOZE UNIFIED THEME` banner |
-| Anything a landing page needs | 4, that page's own theme | `/links` carries its own CSS and JS |
+| Anything a landing page needs for layout | 4, that page's own theme | `/links` carries its own CSS and JS |
+| Checkout layout / copy | 4, that offer's own theme | html + css + js per offer family |
 
 **`snooze-globals.js` and `currency-toggle.js` are not paste files.** The first is a 16-line stub pointer; the second is a test-only extract. Never paste either.
 
@@ -85,28 +113,21 @@ Note this **extends** the older "landing pages must be self-contained" guidance.
 
 **Do not bulk-create these from templates.** Each must be pulled from its live theme first, or the repo asserts a state the site does not have. Pull, commit as the pre-image, then edit.
 
-## VERIFIED: there is no site-wide checkout code field
+## CORRECTED: there IS a site-wide checkout tracking surface
 
-**Settled 2026-07-27 via Kajabi MCP `get_theme_content` on offer theme `2163485833`** (offer `z63s9VaR`), after `curl` proved unusable: checkout URLs return **HTTP 403** because Cloudflare blocks non-browser requests.
+**False claim overturned 2026-07-27.** An earlier pass of this contract, using only Kajabi MCP `get_theme_content` on offer theme `2163485833`, concluded there was no site-wide checkout code field. That was wrong. MCP theme payloads show per-offer `css` / `js` / custom-code only. They do not surface **Settings → Checkout**, which is a separate site-admin page with its own Header and Footer tracking code fields. Live admin confirmation: those fields exist, the header currently holds the Snooze Hybrid Tracking GTM/Stape loader, and the footer is empty.
 
-**Every theme has its own top-level `css` and `js` settings keys.** Website, landing and checkout themes are structurally identical in this respect. The checkout theme returned:
+**What MCP did get right:** every checkout offer theme still has its own top-level `css` and `js` plus a custom-code block. A checkout's **layout and copy** are three fields per offer (surface 4). Tracking is the separate site-wide pair (surface 5).
 
-- `settings.css` — the `#snooze-custom-checkout` scoped stylesheet
-- `settings.js` — the scroll-to-checkout script
-- plus the custom-code block HTML inside `sections.<id>.blocks.<id>.settings.code`
+**Do not conflate:**
 
-So a checkout is **three fields per offer**, not one. There is no separate global checkout code field.
+| Concern | Where it lives |
+|---|---|
+| Checkout layout, pricing copy, twin-currency link | Per-offer theme (surface 4) |
+| GTM / Stape / Meta Advanced Matching / purchase dataLayer on checkouts | Settings → Checkout Tracking Code (surface 5) |
+| GTM / Stape / schema / currency toggle on website + landing pages | Header Page Scripts (surface 1) |
 
-**How site-wide code reaches checkouts, which is the part worth knowing.** The checkout section carries two booleans:
-
-```
-inject_header_tracking_code: true
-inject_footer_tracking_code: true
-```
-
-Those flags are what pull the site-level **Header Page Scripts** field (surface 1) into the checkout page. They are the switch. If either is set false on a checkout section, the site-wide GTM and Stape stop firing on that checkout while every other page keeps working, which would look like a tracking bug with no obvious cause. **Check these two flags before debugging missing checkout conversions.**
-
-### Checkout repo coverage: good, one gap
+### Checkout repo coverage: good on layout, tracking drift open
 
 Checkouts are the **best-covered** surface, and are the model the landing pages should follow.
 
