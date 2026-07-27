@@ -48,7 +48,7 @@ def query_database_structure(database_id: str, token: str) -> Dict[str, Any]:
 
 def read_sop_template() -> str:
     """Read the SOP template content."""
-    template_path = "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze OS/snooze-product/projects/course-free-modules-conversion/docs/VA-SOP-TEMPLATE.md"
+    template_path = "/Users/kadegreenland/Snooze-OS/snooze-product/projects/course-free-modules-conversion/docs/VA-SOP-TEMPLATE.md"
     with open(template_path, "r") as f:
         return f.read()
 

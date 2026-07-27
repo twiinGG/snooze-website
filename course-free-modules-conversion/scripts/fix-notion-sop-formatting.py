@@ -274,7 +274,7 @@ def main():
         token = get_notion_token()
         
         # Read SOP template
-        template_path = "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/Platforms/Snooze OS/snooze-product/projects/course-free-modules-conversion/docs/VA-SOP-TEMPLATE.md"
+        template_path = "/Users/kadegreenland/Snooze-OS/snooze-product/projects/course-free-modules-conversion/docs/VA-SOP-TEMPLATE.md"
         with open(template_path, "r") as f:
             content = f.read()
         
