@@ -6,6 +6,10 @@
 - **Kajabi placement:** Website Pages; paste HTML into the custom code block for this page.
 - Navigation and footer are injected via Kajabi includes; do not add them to this file.
 
+## CTA / checkout note (2026-07-27)
+
+Book CTAs use `.dynamic-cta` only (no `data-checkout`). Global Custom JavaScript used to overwrite every `[data-checkout]` href with membership checkout (`z63s9VaR` / `vYgCNgJz`). Fixed in `global/js/theme-custom-code.js`. Redeploy: Kajabi Settings → Website → Custom JavaScript; paste that one file only (see `global/js/README.md`). Page paste removes `data-checkout` from the three book buttons as belt-and-suspenders.
+
 ## SEO metadata (add in Kajabi page settings, not in code)
 
 - **SEO Title:** Personalised Sleep Consultations with Sally | 1:1 Sleep Support for Babies and Toddlers

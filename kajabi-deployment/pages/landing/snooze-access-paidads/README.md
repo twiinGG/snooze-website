@@ -19,6 +19,8 @@ Cold-traffic paid-ads funnel selling Snooze Access, the baby-sleep membership by
    Pain-led hero with Sally&rsquo;s four-month reframe; what&rsquo;s inside Snooze Access; how it works; the money-back results guarantee featured; testimonial plus the &ldquo;As seen in&rdquo; trust row; pricing framed monthly / quarterly (anchor, &ldquo;Most popular&rdquo;) / annual (best value, cash upfront); primary CTA &ldquo;Start my 7-day free trial&rdquo;.
    Suggested slug: `/snooze-access-from-our-ads`.
 
+   **Hero visual option (Good Inside paid-LP pattern, July 2026):** a single composite image with floating pain chips is allowed on this paid sales step for ad-message match. Chip labels in that PNG are not crawlable. If you use it, repeat the same pain words as real HTML lower on the page (or as linked chips). Full notes: `../cold-traffic-landing-page/README.md` § “Hero pattern option: Good Inside paid-LP composite”. Do not use a baked composite on the organic homepage.
+
 3. **Thank-you / next-steps:** `thanks/index.html`
    Shown after the trial starts. Confirms the trial is live, walks through what happens next, reinforces the guarantee, and points to the plan.
    Suggested slug: `/snooze-access-from-our-ads/thanks`. Set this as the Kajabi post-purchase / trial-start redirect for the Snooze Access offer.

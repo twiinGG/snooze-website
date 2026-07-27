@@ -1,8 +1,8 @@
 # Cold Traffic Landing Page
 
 **Purpose:** Primary destination for paid cold traffic ads (Meta, etc.)  
-**Status:** ✅ Ready for Deployment  
-**Last Updated:** January 2025
+**Status:** Source exists; live `/get-great-baby-sleep` was unpublished/404 as of July 2026 (WS-D2). Rebuild or republish before routing ads here.  
+**Last Updated:** July 11, 2026
 
 ---
 
@@ -22,6 +22,35 @@ This landing page is designed specifically for **cold traffic conversion** from 
 - Finally presents pricing (after emotional commitment)
 
 **Use Case:** Route emotion-first Meta ads to this page for optimal conversion.
+
+---
+
+## Hero pattern option: Good Inside paid-LP composite (July 2026)
+
+Reference: Good Inside’s paid social LP (`/lp/social/`), not their organic homepage. Those surfaces diverge on purpose.
+
+### What they do on the paid LP
+- **Hero right visual is one composite PNG.** Family photo + floating pain chips (“Deeply Feeling Kids”, “Anxiety”, “Defiance”, “Bedtime battles”, “Meltdowns & tantrums”) are pixels in a single image, not separate DOM nodes.
+- **Headline/sub stay real HTML** (“Parenting is hard. We make it easier.” + category + founder line) so ad message match and accessibility still work.
+- **Topic keywords return as real HTML lower on the page** (stage/topic cards). That recovers crawlable copy the hero image cannot provide.
+- Page stays `index,follow` with a self-canonical. Paid LP is still conversion-first; organic is a secondary concern.
+
+### When to use this on `/get-great-baby-sleep`
+Use a **baked hero composite** when:
+- Traffic is paid (Meta/Google) and the ad creative already shows the same pain labels.
+- You want the “orbiting chips around outcome photo” look without Kajabi layout fights.
+- You will **repeat the same pain words as real text** below the fold (challenge cards, age stages, or linked chips).
+
+Do **not** use a baked composite on the organic homepage (`home-page.html`). Homepage chips must be HTML (preferably links to `/early-rising`, `/catnapping`, `/sleep-regressions`, `/bedtime-battles`, `/nap-transitions`) for SEO and internal linking.
+
+### Implementation sketch (this LP only)
+1. Design one hero asset: outcome photo (or Sally) + 4–6 pain chips as a single WebP/PNG. Keep chip text large and high-contrast.
+2. Left column: problem/promise H1, one-line “what Snooze is” + Sally credential, CTA, proof line (4.9 / families). All HTML.
+3. Below fold: same pain labels as HTML cards or links (reuse challenge-page slugs). Never leave those words only inside the PNG.
+4. Match ad headline language in the H1 (message match > cleverness).
+5. Confirm live offer copy (no “live coaching” / 24-7 over-promise) against Sally gate before publish.
+
+Related paid funnel (quiz → sales): `pages/landing/snooze-access-paidads/`. Same rule: composite hero allowed on the sales step; HTML keyword recovery required.
 
 ---
 
