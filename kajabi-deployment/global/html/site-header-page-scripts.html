@@ -775,17 +775,32 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log('❓ FAQ items:', faqItems.length);
 
   try {
+    // Only fill placeholder [data-checkout] hrefs (e.g. home #pricing).
+    // Never clobber a real /offers/<slug> URL; that hijacks course, consult,
+    // and Camp Snooze CTAs onto membership checkout (live bug 2026-07-27).
     const globalCheckoutUrl = (window && window.SNOOZE_CHECKOUT_URL) || document.body?.dataset?.checkoutUrl || null;
     const fallbackUrl = '#pricing';
+    const offerUrlRe = /\/offers\/[a-zA-Z0-9]{6,12}/;
+    const isPlaceholderHref = (href) => {
+      if (!href) return true;
+      const trimmed = String(href).trim();
+      if (!trimmed || trimmed === '#' || trimmed === '#pricing') return true;
+      if (trimmed.startsWith('javascript:')) return true;
+      return false;
+    };
     const targets = document.querySelectorAll('[data-checkout]');
     targets.forEach((el) => {
-      const href = globalCheckoutUrl || fallbackUrl;
-      if (el.tagName.toLowerCase() === 'a') {
+      const currentHref = el.getAttribute('href') || '';
+      const keepOfferUrl = offerUrlRe.test(currentHref);
+      const href = keepOfferUrl
+        ? currentHref
+        : (isPlaceholderHref(currentHref) ? (globalCheckoutUrl || fallbackUrl) : currentHref);
+      if (el.tagName.toLowerCase() === 'a' && href !== currentHref) {
         el.setAttribute('href', href);
       }
       if (el.classList.contains('feature-box') && el.tagName.toLowerCase() !== 'a') {
         el.addEventListener('click', () => {
-          window.location.href = href;
+          window.location.href = href || globalCheckoutUrl || fallbackUrl;
         });
         el.style.cursor = 'pointer';
       }

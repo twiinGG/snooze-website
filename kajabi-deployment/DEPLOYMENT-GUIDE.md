@@ -13,7 +13,7 @@
 
 **IMPORTANT:** The landing page has been migrated from "Landing Page" type to "Website Page" type. All CSS and JavaScript are now in global theme files.
 
-1. **Global JavaScript:** `global/js/snooze-globals.js`
+1. **Global JavaScript:** `global/js/theme-custom-code.js` (single paste; includes currency toggle)
    - Location: Kajabi Settings → Website → Custom JavaScript
    - One-time setup, applies to all website pages (including landing page)
    - Includes: Global variables, user detection, tracking, landing page functionality
@@ -52,28 +52,32 @@
 
 ### 1.1 Add Global JavaScript
 
-**File:** `global/js/snooze-globals.js`
+**File:** `global/js/theme-custom-code.js`
 
-**Location:** Kajabi Settings → Website → Custom JavaScript
+**Location:** Kajabi Settings → Website → Custom JavaScript (Theme Custom Code → JS)
 
 **Steps:**
-1. Open `kajabi-deployment/global/js/snooze-globals.js`
+1. Open `kajabi-deployment/global/js/theme-custom-code.js`
 2. Copy entire contents
 3. Go to Kajabi Settings → Website → Custom JavaScript
-4. Paste into the Custom JavaScript field
+4. Paste into the Custom JavaScript field (whole-field overwrite)
 5. Save
+
+Do not append other JS files. Currency toggle and globals ship in this one file.
 
 **What This Does:**
 - Sets up global JavaScript variables (`window.SNOOZE_CHECKOUT_URL`, etc.)
 - Enables user detection (`window.SnoozeUserDetection`)
 - Adds Google Tag Manager tracking
-- Preloads critical images
+- Dual-currency checkout + price rewriting
 - Landing page functionality (carousel, FAQ, sticky CTA, etc.)
 
 **Verification:**
 - Open browser console on any website page
 - Type: `window.SNOOZE_CHECKOUT_URL`
-- Should return: `'https://joinsnooze.com/offers/6iRarwak/checkout'`
+- Should return the membership checkout URL for the active currency (`z63s9VaR` or `vYgCNgJz`)
+- Type: `window.__snoozeCurrencyToggle__`
+- Should return the currency engine object
 
 ### 1.2 Add Global CSS
 
@@ -231,7 +235,7 @@
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `global/js/snooze-globals.js` | Settings → Website → Custom JavaScript | Global JS (variables, user detection, tracking, landing page functionality) |
+| `global/js/theme-custom-code.js` | Settings → Website → Custom JavaScript | Single global JS paste (variables, tracking, currency toggle, landing-page JS) |
 | `global/css/snooze-unified-theme.css` | Settings → Theme → Custom CSS | All website page styles (including landing page) |
 
 ### Page HTML Files

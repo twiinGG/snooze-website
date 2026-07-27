@@ -14,7 +14,7 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 - **Theme model:** ALL website pages share the site's ONE Encore website theme (**2156873377**, 142 sections). Page content = per-page sections/blocks inside that theme; shared styling = the theme's Custom Code.
 - **Where code lives:**
   - Shared CSS: theme Custom Code Ace editor `settings-css-input` -> canonical repo file `kajabi-deployment/global/css/theme-custom-code.css` (one-file overwrite).
-  - Shared JS: `settings-js-input` -> `global/js/theme-custom-code.js` (one-file overwrite).
+  - Shared JS: `settings-js-input` -> `global/js/theme-custom-code.js` (one-file overwrite). Includes GTM/globals, currency-toggle, and home helpers. Do not append `snooze-globals.js` or `currency-toggle.js` separately.
   - Page content: **THREE container shapes exist (census finding - the single biggest structural fact):**
     1. **Single custom-code block** (Home: section `1768118757163`, one 50KB block; Consultations). The paste model (block overwrite, byte-verify) applies directly.
     2. **Native Encore builder blocks** (3-4 Month Course CONFIRMED, Store CONFIRMED; 5-12 Course, Newborn Guide, Toddler Toolkit suspected). There is NO code field to paste an HTML file into. Copy fixes = edit the native text blocks individually (builder or `update_theme_content` on the specific block settings); landing a full HTML file requires ADDING a custom-code section with an explicit `content_for` insert, or rebuilding as native sections - an owner decision, not a mechanical paste.

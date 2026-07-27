@@ -39,6 +39,9 @@ Use a single, unique wrapper ID on each Website Page body container. All page sp
 - About Sally: `#about-sally-page`
 - Ask Sally (Author/Newsletter): `#ask-sally-page` (added January 2026)
 - Blog Index: `#blog-index-page`
+- Blog Search: `#blog-search-page` (hybrid native surface; title + footer custom-code only)
+- Newsletter Index: `#newsletter-page` (hybrid native surface; title + footer custom-code only)
+- Newsletter Subscribe: `#newsletter-subscribe-page` (hybrid native surface; title + footer custom-code only)
 - Consultations: `#consultations-page`
 - Library: `#library-page`
 - Recommended Products: `#recommended-products-page`
