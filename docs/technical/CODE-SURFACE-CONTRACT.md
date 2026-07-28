@@ -8,16 +8,16 @@ This is the operational contract. Operator index: [`../../kajabi-deployment/PAST
 
 **One repo file per paste target. Never merge two targets into one file.** A file that serves two fields cannot be pasted into either without breaking something.
 
-**Documented exception:** Settings → Checkout → Header may be loader (`checkout-header-tracking.html`) plus an optional append of `meta-advanced-matching.js` into that same field.
+**Documented exception:** Settings → Checkout → Header may be loader ([`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html)) plus an optional append of [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) into that same field.
 
 ## The five surface classes (corrected 2026-07-27)
 
 | # | Paste target | Field | Canonical repo file | Reaches | Live size / state |
 |---|---|---|---|---|---|
-| 1 | **Header Page Scripts** | Settings → Site Details, `site_page_scripts_header` | `global/html/site-header-page-scripts.html` | Website + landing pages (public site chrome) | 68,022 in repo |
-| 2 | **Website theme CSS** | Customizer → Theme Custom Code → CSS, `settings-css-input` | `global/css/theme-custom-code.css` | Website pages only | **403,694** live vs 403,726 repo. **MATCH** (32-char delta is Kajabi's injected wrapper line) |
-| 3 | **Website theme JS** | Customizer → Theme Custom Code → JS, `settings-js-input` | `global/js/theme-custom-code.js` | Website pages only | **4,323** live. Repo now byte-identical |
-| 4 | **Per-page theme CSS + JS + block HTML** | Each landing page, checkout and thank-you page has its **own theme** with its **own** CSS, JS and custom-code fields | one set per page / offer | That page / offer only | `/links` CSS 8,366, JS 613 |
+| 1 | **Header Page Scripts** | Settings → Site Details, `site_page_scripts_header` | [`global/html/site-header-page-scripts.html`](../../kajabi-deployment/global/html/site-header-page-scripts.html) | Website + landing pages (public site chrome) | 68,022 in repo |
+| 2 | **Website theme CSS** | Customizer → Theme Custom Code → CSS, `settings-css-input` | [`global/css/theme-custom-code.css`](../../kajabi-deployment/global/css/theme-custom-code.css) | Website pages only | Comment-stripped 2026-07-28 (405 comments removed for AI-scrape hygiene). **Re-paste required.** After paste, allow only Kajabi’s injected wrapper line as live delta. |
+| 3 | **Website theme JS** | Customizer → Theme Custom Code → JS, `settings-js-input` | [`global/js/theme-custom-code.js`](../../kajabi-deployment/global/js/theme-custom-code.js) | Website pages only | **4,323** live. Repo now byte-identical |
+| 4 | **Per-page theme CSS + JS + block HTML** | Each landing page, checkout and thank-you page has its **own theme** with its **own** CSS, JS and custom-code fields | one set per page / offer under [`pages/`](../../kajabi-deployment/pages/) | That page / offer only | `/links` CSS 8,366, JS 613 |
 | 5 | **Checkout Tracking Code** | Settings → Checkout (`/admin/settings/checkout`) | see below | **Every checkout page** (when that offer's inject flags are on) | Confirmed live 2026-07-27 |
 
 ### Surface 5 detail: Settings → Checkout (site-wide)
@@ -26,8 +26,8 @@ This is a **real admin surface**. It is not the Header Page Scripts field and it
 
 | Sub-field | Kajabi UI | Canonical repo file(s) | Live as of 2026-07-27 | Re-paste? |
 |---|---|---|---|---|
-| Header tracking code | "placed in the `<head>` of every checkout page" | `global/html/checkout-header-tracking.html` (optional append: `global/js/meta-advanced-matching.js` without comment header) | GTM/Stape loader present and matches repo loader file; meta-advanced-matching **not** in the live field | **No** for the loader. Only paste if changing the loader or deliberately adding Advanced Matching |
-| Footer tracking code | "placed at the end of the `<body>` of each checkout page" | `global/js/kajabi-checkout-tracking.js` | **EMPTY** | **Yes** only when shipping purchase dataLayer |
+| Header tracking code | "placed in the `<head>` of every checkout page" | [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) (optional append: [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) without comment header) | GTM/Stape loader present and matches repo loader file; meta-advanced-matching **not** in the live field | **No** for the loader. Only paste if changing the loader or deliberately adding Advanced Matching |
+| Footer tracking code | "placed at the end of the `<body>` of each checkout page" | [`kajabi-checkout-tracking.js`](../../kajabi-deployment/global/js/kajabi-checkout-tracking.js) | **EMPTY** | **Yes** only when shipping purchase dataLayer |
 
 Per-offer checkout themes still carry their own HTML/CSS/JS for layout and copy (surface 4). Tracking for all checkouts is this site-wide Settings → Checkout pair.
 

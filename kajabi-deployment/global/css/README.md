@@ -1,77 +1,77 @@
-# global/css - Snooze Unified Theme
+# global/css - Snooze theme CSS
 
 ## Deployment location
 
-Kajabi Settings > Website > Theme > Custom CSS
+Kajabi Settings → Website → Theme → Custom Code → **CSS**
 
-Paste the full contents of `theme-custom-code.css` into that field. This is the canonical CSS file for all website pages and sales funnels on joinsnooze.com. `snooze-unified-theme.css` is retained as historical reference only.
+Paste the full contents of [`theme-custom-code.css`](./theme-custom-code.css) into that field. This is the canonical CSS file for all website pages on joinsnooze.com.
 
-## File: snooze-unified-theme.css
+[`snooze-unified-theme.css`](./snooze-unified-theme.css) is historical reference only (not a paste source).
 
-Version 3.0 (Merged). Created January 2025.
+Operator index: [`../../PASTE-MAP.md`](../../PASTE-MAP.md) row A2.
 
-Contains all CSS for website and home pages:
+---
 
-- Global Design System and Variables
-- Navigation and Footer
-- Global Hero Sections
-- Library Page Styles
-- Home Page Components (Transformation, Pricing, FAQ, etc.)
-- Sticky CTA and Mobile Optimizations
+## Comment-free paste rule (CRITICAL)
 
-### Section index
+Deployable website code must ship **without internal commentary** (CSS `/* */`, HTML `<!-- -->`, or JS `//` / block comments that are not required syntax). Comments in live paste fields are visible in page source and get picked up by AI scrapes and crawlers.
 
-| Section | Description |
-|---------|-------------|
-| 0 | `@import` (Font Awesome CDN) |
-| 1 | Design System Variables (`:root`) |
-| 2 | Reset and Base Styles |
-| 3 | Kajabi Overrides (flush section/block wrappers) |
-| 4 | Navigation Styles (custom header `.snooze-nav-clean`) |
-| 5 | Button Styles (global and landing) |
-| 6 | Global Hero Sections (website pages) |
-| 7 | Home Page Hero (`.hero-section-complete`) |
-| 8 | Component: Transformation Reviews |
-| 9 | Component: Inside Snooze / What's Included |
-| 10 | Component: Feature Section |
-| 11 | Component: Age Stages Section |
-| 12 | Component: Value Comparison |
-| 13 | Component: Trust and Founder |
-| 14 | Component: Testimonial Carousel |
-| 15 | Component: Pricing |
-| 16 | Component: FAQ |
-| 17 | Component: Price Anchoring |
-| 18 | Component: Who It's For |
-| 19 | Component: Understanding Newborn |
-| 20 | Library Page Styles (global) |
-| 21 | Footer Styles |
-| 22 | Sticky CTA Bar and Utilities |
-| 23 | Context-Aware CTA and Signposting |
-| 24 | Product Landing Page Styles |
-| 25 | Product Page Dark Theme Styles |
+- [`theme-custom-code.css`](./theme-custom-code.css) is comment-free as of 2026-07-28 (405 comments removed).
+- Genuine instructions live in this README (and page-level READMEs), not in the paste file.
+- Live Kajabi may still prepend its own wrapper line `/* Custom CSS Added Via Theme Settings */`. That is Kajabi-injected, not repo commentary. Repo-vs-live compare allows exactly that delta.
+
+After editing the CSS, re-paste the whole field (A2). Do not leave operator notes in the file.
+
+---
+
+## File: theme-custom-code.css
+
+Contains all shared website CSS: design tokens, Kajabi flush overrides, nav/footer, heroes, home components, guide/age/chooser pages, Ask Sally / Reviews / Press init blocks, and related utilities.
 
 ### Design System Initialization rule (CRITICAL)
 
-Every new page wrapper ID requires its own System Initialization block before any page-specific styles. The design system tokens are scoped to `#home-page`; new page IDs cannot inherit them without a full init block.
+Every new page wrapper ID requires its own System Initialization block before any page-specific styles. Design-system tokens are scoped per wrapper (historically `#home-page`); new page IDs cannot inherit them without a full init block.
 
-Template: copy the `#ask-sally-page` System Initialization block from this file.
-Full documentation: `apps/snooze-website/docs/technical/CSS-STABILIZATION-BRIEF.md`.
+Template: copy the `#ask-sally-page` System Initialization block from this file.  
+Full documentation: [`CSS-STABILIZATION-BRIEF.md`](../../../docs/technical/CSS-STABILIZATION-BRIEF.md).
 
-### Kajabi Override notes
+When adding a page: (a) wrap content in `<div id="X-page">`, and (b) add that id to every shared `:is(...)` / flush-override selector list that should apply (Kajabi spacing reset, guide pages scope, etc.).
 
-Section 3 removes default Kajabi padding and margins on `section[class*="section"]`, `div[class*="block"]`, `div[class*="Block"]`, `div[class*="code-block"]`, and `div[class*="html-block"]` wrappers. This is scoped to a named list of page IDs (`#home-page`, `#about-sally-page`, etc.) and the `.home-page-active` body class. Adding a new page requires adding its ID to the selector list in section 3.
+### Kajabi flush overrides
+
+Default Kajabi padding/margins are removed on `section[class*="section"]`, `div[class*="block"]`, `div[class*="Block"]`, `div[class*="code-block"]`, and `div[class*="html-block"]` wrappers. Scope is a named list of page IDs (`#home-page`, `#about-sally-page`, guide wrappers, etc.) plus `.home-page-active`. **Adding a new page requires adding its ID to those selector lists**, or the page keeps Kajabi side padding.
 
 ### Banner / nav offset
 
-When `.sn-banner-visible` is present on `<body>`, the sticky nav (`top: 80px`) shifts down by 50 px to sit below the announcement banner. The banner JS toggles this class.
+When `.sn-banner-visible` is present on `<body>`, the sticky nav shifts down to sit below the announcement banner. Banner JS toggles this class.
+
+### About Sally / One Voice
+
+Common-challenges chips on About Sally are deliberately quiet secondary help links (not coral). Coral stays reserved for the primary CTA (One Voice / T2). Mobile: chips stay compact and subordinate; two-per-row max.
+
+### Guide / triage pages
+
+Guide-page design system (chooser + age hubs + challenge pages) is home-matched. The “Is this normal?” triage block is flat and mobile-first: scannability from labels, hairlines, and weight, not status colours or side-stripes.
+
+### T1 accessibility contrast (staged 2026-07-11)
+
+White text on coral `#F43357` and coral text on white were under WCAG AA for small text in places. T1 contrast overrides live in this file; do not reintroduce low-contrast coral/white pairings for body or small UI text.
+
+### Temporary / experimental CSS
+
+Do **not** park temporary rules inside the paste file with “REVERT SECTION” comments (that pattern was removed with the comment strip). Prefer a short-lived branch or a dated note in this README, then delete the rules when done.
+
+### Known leftover from the 2026-07-28 strip (manual delete)
+
+Nested comments in the old REVERT SECTION left a small inert remnant that a design-hook block prevented this session from deleting automatically. Search the file for `REVERT INSTRUCTIONS` or `#ff0000` and delete that block (the example `.test-button` rule plus the leftover prose ending in `*/`) before the next Kajabi paste. It is not intentional design.
+
+---
 
 ## File: currency-toggle.css
 
-**Kajabi deployment location:** Settings > Website > Theme > Custom CSS (paste separately or append to snooze-unified-theme.css)
+**Not the primary paste source.** Currency-toggle styles that matter live in Header Page Scripts / composed surfaces as documented in [`PASTE-MAP.md`](../../PASTE-MAP.md). This file is retained for reference / legacy extract use.
 
-**Purpose:** Styles for the USD/AUD currency toggle component.
-
-**Component Classes:**
+**Component classes (reference):**
 - `.currency-toggle-btn` - Toggle button with hover, focus, and active states
 - `.currency-flag` - Flag emoji display
 - `.dynamic-price`, `.dynamic-cta` - FOUC prevention; hidden until JS determines currency
@@ -79,5 +79,3 @@ When `.sn-banner-visible` is present on `<body>`, the sticky nav (`top: 80px`) s
 - `.aud-discount-warning` - Yellow warning box for AUD pricing notes
 - `.currency-mode-aud` - Body class active when AUD currency is selected
 - `.sr-only` - Screen-reader-only text for accessibility
-
-**Responsive:** Mobile breakpoint at 768px with adjusted button sizing and full-width toggle option.

@@ -15,7 +15,7 @@ Canonical contract: [`CODE-SURFACE-CONTRACT.md`](./CODE-SURFACE-CONTRACT.md) sur
 
 **Kajabi UI copy:** "This code will be placed in the `<head>` section of every checkout page."
 
-**Canonical file:** `kajabi-deployment/global/html/checkout-header-tracking.html`
+**Canonical file:** [`../../kajabi-deployment/global/html/checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html)
 
 **Live 2026-07-27:** the Settings → Checkout header field already holds this GTM/Stape loader (`GTM-KNRTH6P`, console `Snooze: Checkout Page - Loading Full Tracking`). The repo file matches that payload.
 
@@ -24,8 +24,8 @@ Canonical contract: [`CODE-SURFACE-CONTRACT.md`](./CODE-SURFACE-CONTRACT.md) sur
 | Change | Paste? |
 |---|---|
 | Sync the existing loader into Kajabi | **No.** Already live. |
-| Change the loader / Stape URL / container | Yes: whole-field overwrite from `checkout-header-tracking.html` |
-| Add Meta Advanced Matching | Yes: keep the loader, then append `meta-advanced-matching.js` (strip its comment header) so `fbq` exists |
+| Change the loader / Stape URL / container | Yes: whole-field overwrite from [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) |
+| Add Meta Advanced Matching | Yes: keep the loader, then append [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) (strip its comment header) so `fbq` exists |
 
 **Edit path:** Settings → Checkout → Edit header tracking code → Save.
 
@@ -35,7 +35,7 @@ Canonical contract: [`CODE-SURFACE-CONTRACT.md`](./CODE-SURFACE-CONTRACT.md) sur
 
 **Kajabi UI copy:** "This code will be placed at the end of the `<body>` of each checkout page."
 
-**Canonical file:** `kajabi-deployment/global/js/kajabi-checkout-tracking.js`
+**Canonical file:** [`../../kajabi-deployment/global/js/kajabi-checkout-tracking.js`](../../kajabi-deployment/global/js/kajabi-checkout-tracking.js)
 
 Must load after the header field (GTM, and Advanced Matching if present). Fires InitiateCheckout / Purchase with AUD/USD detection.
 
@@ -80,10 +80,10 @@ If either is false, this site-wide pair stops on that offer only. Check these be
 
 ## Related
 
-- `kajabi-deployment/global/html/checkout-header-tracking.html`
-- `kajabi-deployment/global/js/meta-advanced-matching.js`
-- `kajabi-deployment/global/js/kajabi-checkout-tracking.js`
-- `docs/technical/EMQ-CAPI-ADVANCED-MATCHING.md` (deploy steps)
-- `docs/technical/SNOOZE-TECHNICAL-TRACKING-BIBLE.md`
+- [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html)
+- [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js)
+- [`kajabi-checkout-tracking.js`](../../kajabi-deployment/global/js/kajabi-checkout-tracking.js)
+- [`EMQ-CAPI-ADVANCED-MATCHING.md`](./EMQ-CAPI-ADVANCED-MATCHING.md) (deploy steps)
+- [`SNOOZE-TECHNICAL-TRACKING-BIBLE.md`](./SNOOZE-TECHNICAL-TRACKING-BIBLE.md)
 
-**Last updated:** 2026-07-27
+**Last updated:** 2026-07-28

@@ -52,21 +52,21 @@ kajabi-deployment/
 
 | Concern | File | Kajabi field |
 |---|---|---|
-| Site + landing GTM / Stape / schema / currency | `global/html/site-header-page-scripts.html` | Settings → Site Details → Header Page Scripts |
-| Website shared CSS | `global/css/theme-custom-code.css` | Theme Custom Code → CSS |
-| Website home helpers JS | `global/js/theme-custom-code.js` | Theme Custom Code → JS |
-| Checkout GTM / Stape | `global/html/checkout-header-tracking.html` | Settings → Checkout → Header |
-| Checkout purchase tracking | `global/js/kajabi-checkout-tracking.js` | Settings → Checkout → Footer |
+| Site + landing GTM / Stape / schema / currency | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Settings → Site Details → Header Page Scripts |
+| Website shared CSS | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Theme Custom Code → CSS |
+| Website home helpers JS | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Theme Custom Code → JS |
+| Checkout GTM / Stape | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Settings → Checkout → Header |
+| Checkout purchase tracking | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Settings → Checkout → Footer |
 
-`snooze-unified-theme.css` and `snooze-globals.js` are **not** current paste sources. See PASTE-MAP §C.
+[`snooze-unified-theme.css`](./global/css/snooze-unified-theme.css) and [`snooze-globals.js`](./global/js/snooze-globals.js) are **not** current paste sources. See [`PASTE-MAP.md`](./PASTE-MAP.md) §C.
 
 ---
 
 ## Checkout tracking verdict (2026-07-27)
 
-- Live Settings → Checkout **Header** already holds the GTM/Stape loader. Repo file `global/html/checkout-header-tracking.html` matches that payload. **Do not re-paste the header just to sync.**
-- Live **Footer** is empty. Paste `kajabi-checkout-tracking.js` only when you deliberately want that live.
-- Optional: append `meta-advanced-matching.js` after the header loader when deploying Advanced Matching.
+- Live Settings → Checkout **Header** already holds the GTM/Stape loader. Repo file [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) matches that payload. **Do not re-paste the header just to sync.**
+- Live **Footer** is empty. Paste [`kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) only when you deliberately want that live.
+- Optional: append [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) after the header loader when deploying Advanced Matching.
 
 Details: [`global/checkout-tracking/README.md`](./global/checkout-tracking/README.md).
 

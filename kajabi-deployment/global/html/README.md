@@ -38,7 +38,7 @@ This script must run in the `<head>` before DOM ready to prevent flash of wrong 
 
 GTM/Stape loader for **checkout pages only**. Live Settings → Checkout header already holds this payload (confirmed 2026-07-27). **Do not re-paste to sync.**
 
-Optional upgrade only: after this loader, append `../js/meta-advanced-matching.js` (without its comment header) in the same field. Footer uses `../js/kajabi-checkout-tracking.js`.
+Optional upgrade only: after this loader, append [`../js/meta-advanced-matching.js`](../js/meta-advanced-matching.js) (without its comment header) in the same field. Footer uses [`../js/kajabi-checkout-tracking.js`](../js/kajabi-checkout-tracking.js).
 
 This is not Header Page Scripts and not website theme JS.
 

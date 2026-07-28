@@ -10,14 +10,15 @@
 
 **Paste rule:** Copy the full contents of `theme-custom-code.js` only. Whole-field overwrite. Do not append other files.
 
-That file is the `#home-page` helpers only (age tabs, FAQ accordion, and related). After the 2026-07-27 split it must **not** contain GTM, Stape, currency toggle, or `[data-checkout]` helpers. Those live in Header Page Scripts (`global/html/site-header-page-scripts.html`).
+That file is the `#home-page` helpers only (age tabs, FAQ accordion, and related). After the 2026-07-27 split it must **not** contain GTM, Stape, currency toggle, or `[data-checkout]` helpers. Those live in Header Page Scripts ([`../html/site-header-page-scripts.html`](../html/site-header-page-scripts.html)).
 
-**Do not paste:** `snooze-globals.js` (stub pointer), `currency-toggle.js` (test extract only).
+**Do not paste:** [`snooze-globals.js`](./snooze-globals.js) (stub pointer), [`currency-toggle.js`](./currency-toggle.js) (test extract only).
 
-**FOUC prevention** (`global/html/currency-toggle-fouc.html`) still goes in Site Details → Header Page Scripts. That is a separate head field, not Custom JavaScript.
+**FOUC prevention** ([`../html/currency-toggle-fouc.html`](../html/currency-toggle-fouc.html)) still goes in Site Details → Header Page Scripts. That is a separate head field, not Custom JavaScript.
 
-**Authoritative surface map:** `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`  
-**Contract:** `docs/technical/CODE-SURFACE-CONTRACT.md`
+**Authoritative surface map:** [`KAJABI-SURFACE-CODE-SETUP.md`](../../../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)  
+**Contract:** [`CODE-SURFACE-CONTRACT.md`](../../../docs/technical/CODE-SURFACE-CONTRACT.md)
+**Paste map:** [`../../PASTE-MAP.md`](../../PASTE-MAP.md)
 
 ### Offer IDs (Snooze Access)
 
@@ -51,11 +52,11 @@ Site-wide. Not Header Page Scripts. Not per-offer theme JS.
 
 | Field | Repo file | Live 2026-07-27 | Action |
 |---|---|---|---|
-| Header | `../html/checkout-header-tracking.html` | Loader present | **Do not re-paste to sync** |
-| Header append (optional) | `meta-advanced-matching.js` (no comment header) | Not live | Paste only to ship Advanced Matching |
-| Footer | `kajabi-checkout-tracking.js` | Empty | Paste when shipping purchase dataLayer |
+| Header | [`../html/checkout-header-tracking.html`](../html/checkout-header-tracking.html) | Loader present | **Do not re-paste to sync** |
+| Header append (optional) | [`meta-advanced-matching.js`](./meta-advanced-matching.js) (no comment header) | Not live | Paste only to ship Advanced Matching |
+| Footer | [`kajabi-checkout-tracking.js`](./kajabi-checkout-tracking.js) | Empty | Paste when shipping purchase dataLayer |
 
-Full instructions: `docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md`.
+Full instructions: [`KAJABI-CHECKOUT-TRACKING-CODE.md`](../../../docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md).
 
 ### kajabi-checkout-tracking.js
 
