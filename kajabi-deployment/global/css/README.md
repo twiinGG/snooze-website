@@ -57,6 +57,14 @@ Guide-page design system (chooser + age hubs + challenge pages) is home-matched.
 
 White text on coral `#F43357` and coral text on white were under WCAG AA for small text in places. T1 contrast overrides live in this file; do not reintroduce low-contrast coral/white pairings for body or small UI text.
 
+### Challenge-page FAQ (`.snooze-faq`), added 2026-08
+
+Visible FAQ companion for the FAQPage schema on challenge pages, first used on `/catnapping`. Unscoped by class name so any wrapper can use it; sizes follow DESIGN.md body (1rem) and the guide-page heading scale. Starter source kept at `pages/website/catnapping/optional-faq.css` as a diff helper only, and that file is queued for deletion under CNG-002 because it now only invites edits to the wrong file.
+
+### Kajabi form embed in a capture section (`.snooze-form-embed`), added 2026-08
+
+Scoped `#catnapping-page .snooze-form-embed`, for the inline Kajabi form embed that replaced the PWYW checkout CTA on `/catnapping` (form `2148526865`). Two things it does that are not obvious from the rules: it hides `.kajabi-form__title` and `.kajabi-form__subtitle`, because the embed ships its own stale "JOIN THE NEWSLETTER" heading and the section's own `<h2>` and `.guide-lead` own the copy; and it restyles the Kajabi inputs and submit button to match `.btn`. Extend this pattern for any new page that embeds a form, rather than adding a second one. Context: `docs/projects/catnapping-guide/00-overview.md`.
+
 ### Temporary / experimental CSS
 
 Do **not** park temporary rules inside the paste file with “REVERT SECTION” comments (that pattern was removed with the comment strip). Prefer a short-lived branch or a dated note in this README, then delete the rules when done.
