@@ -7,6 +7,8 @@ Wired August 2026 (`seo/wire-catnapping-sidecars`): visible FAQ + page JSON-LD (
 
 Capture changed August 5, 2026: the free guide is claimed through Kajabi form `2148526865` plus automations `369725` (grant) and `369723` (sequence), not through the PWYW checkout `maowxKB6`. Evidence, open items and tracking design live in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md). Read it before pasting.
 
+Paste-ready copy for the confirmation email and the `/catnapping-guide-ready` confirmation page: [`CAPTURE-COPY.md`](./CAPTURE-COPY.md). Proposed sequence fixes: [`../../sequences/2148414612-catnapping-guide-lead-gen-email-sequence/PROPOSED-EDITS.md`](../../sequences/2148414612-catnapping-guide-lead-gen-email-sequence/PROPOSED-EDITS.md).
+
 ---
 
 ## What changed in the HTML
@@ -81,8 +83,8 @@ If either form automation is unpublished or repointed, stop and fix the automati
 |---|---|
 | Internal Title | `Homepage Catnapping LeadGen Form` → **`FMLDGD01_Catnapping-Guide`** (registry code `LDGD01`; the form is no longer on the homepage) |
 | Embed tab, button | "Subscribe" → **"Send me the free guide"**. The title and subtitle ("JOIN THE NEWSLETTER") are hidden by the page CSS, so the button is the only visible one |
-| Confirmation email body | Drop "in your inbox shortly", it can mean tomorrow morning. State the real order: confirm, guide in the library, email follows |
-| Redirect to custom confirmation page | **Turn on**, point at a Snooze page linking to the guide. Required for the Lead tag in 5e |
+| Confirmation email subject, body, button | Replace with the paste-ready copy in [`CAPTURE-COPY.md`](./CAPTURE-COPY.md). Note the merge-tag warning: `{{first_name}}` is not a listed object in that field |
+| Redirect to custom confirmation page | **Turn on**, point at `/catnapping-guide-ready`. Required for the Lead tag in 5e. Page copy and the build decision are in [`CAPTURE-COPY.md`](./CAPTURE-COPY.md) |
 | Form fields | **Leave as Name + Email.** Several site-level fields attachable here are `required: true` at site level |
 | Double Opt-In | **Leave on** |
 
