@@ -1,0 +1,134 @@
+<!--
+  CATNAPPING, page-level JSON-LD (WebPage + FAQPage + BreadcrumbList)
+
+  WHERE: Catnapping page only (end of page HTML or page-specific code block).
+  PREREQ: faq-section.html is visible on the same URL with matching Q&A text.
+  PREREQ: Global schema-organization.html + schema-person-sally.html in Header Page Scripts.
+
+  @id contracts (must match global HTML):
+  - Organization: https://www.joinsnooze.com/#organization
+  - Person:       https://www.joinsnooze.com/author/sally-woods#person
+  - WebSite:      https://www.joinsnooze.com/#website
+
+  DO NOT redefine Organization or Person in this file.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.joinsnooze.com/catnapping#webpage",
+      "url": "https://www.joinsnooze.com/catnapping",
+      "name": "Catnapping: Why Naps End Early and How to Fix It",
+      "description": "Most baby catnapping is one sleep cycle that does not link to the next. Learn what is normal, when short naps are worth fixing, and the first steps to lengthen naps.",
+      "isPartOf": {
+        "@id": "https://www.joinsnooze.com/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Baby catnapping"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://tscmedia.khorus.ai/site-imagery/2026-07/catnapping-hero.jpg"
+      },
+      "dateModified": "2026-07-01",
+      "inLanguage": "en-AU",
+      "author": {
+        "@id": "https://www.joinsnooze.com/author/sally-woods#person"
+      },
+      "publisher": {
+        "@id": "https://www.joinsnooze.com/#organization"
+      },
+      "reviewedBy": {
+        "@id": "https://www.joinsnooze.com/author/sally-woods#person"
+      },
+      "mainEntity": {
+        "@id": "https://www.joinsnooze.com/catnapping#faq"
+      },
+      "breadcrumb": {
+        "@id": "https://www.joinsnooze.com/catnapping#breadcrumb"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.joinsnooze.com/catnapping#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is catnapping in babies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Catnapping is when a nap ends after a single sleep cycle, often around 20 to 40 minutes, because your baby surfaces into light sleep and does not link into the next cycle. Short naps are common in young babies. A stuck short-nap pattern in an older baby who wakes cranky is the pattern worth working on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 20 minute nap normal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes for many newborns and young babies, especially if they feed well, grow well and are content between sleeps. It is more of a concern when short naps drag on past the early months, leave your baby overtired, and start chipping away at night sleep."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I stretch wake windows to fix catnapping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not as the first move. Making a baby more tired to force a longer nap often backfires and feeds an over-tired loop. Easing pressure before the nap and checking the whole day's timing tends to help more than piling on awake time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can catnapping cause early rising or night wakes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can. When daytime sleep is fragmented, overnight sleep often fragments too. If short naps travel with early mornings, review nap timing across the whole day rather than treating the morning wake in isolation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I try first for short naps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Log naps for a week, add up total daytime sleep, check whether longer awake stretches make naps worse, and rule out teething, illness, hunger or a wet nappy. Those four steps tell you whether you are looking at a normal young-baby pattern or a stuck loop to work on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I get more help for catnapping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your baby is past the newborn stage, short naps are stuck, nights are suffering, and the first steps are not shifting things, it is reasonable to use a fuller plan and support. Poor weight gain or feeding trouble is not a nap-length issue, speak to your GP or child health nurse."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.joinsnooze.com/catnapping#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.joinsnooze.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Find the right sleep help",
+          "item": "https://www.joinsnooze.com/which-is-right-for-us"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Catnapping",
+          "item": "https://www.joinsnooze.com/catnapping"
+        }
+      ]
+    }
+  ]
+}
+</script>
