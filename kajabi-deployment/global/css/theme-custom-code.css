@@ -12255,3 +12255,70 @@ body.currency-loaded .dynamic-cta {
 
 #press-page .press-enquiries h3 { margin-bottom: 10px; }
 #press-page .press-enquiries p { color: var(--c-muted); margin-bottom: 22px; }
+
+/* ==========================================================================
+   Catnapping / challenge FAQ (.snooze-faq), 2026-08
+   Visible FAQ companion for FAQPage schema on challenge pages.
+   Source starter: pages/website/catnapping/optional-faq.css
+   Type sizes: DESIGN.md body (1rem); h2 inherits guide-page heading scale.
+   ========================================================================== */
+
+.snooze-faq {
+  margin: 0;
+  padding: 1.75rem 1.5rem;
+  background: var(--c-cream, #FAF7F4);
+  border-radius: 12px;
+  border: 1px solid rgba(31, 41, 59, 0.08);
+  color: var(--c-navy, #1F293B);
+}
+
+.snooze-faq h2 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  color: var(--c-navy, #1F293B);
+}
+
+.snooze-faq__intro {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--c-muted, #64748B);
+}
+
+.snooze-faq__item {
+  border-top: 1px solid rgba(31, 41, 59, 0.1);
+  padding: 0.85rem 0;
+}
+
+.snooze-faq__item:last-child {
+  border-bottom: 1px solid rgba(31, 41, 59, 0.1);
+}
+
+.snooze-faq__question {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  font-size: 1rem;
+  color: var(--c-navy, #1F293B);
+}
+
+.snooze-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.snooze-faq__answer {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--c-text, #161E2A);
+}
+
+.snooze-faq__answer p {
+  margin: 0;
+}
+
+.snooze-faq__answer a {
+  color: var(--c-coral-hover, #D62646);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

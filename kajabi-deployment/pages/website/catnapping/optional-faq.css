@@ -1,0 +1,61 @@
+/* Optional starter styles for faq-section.html
+   Canonical live styles live in global/css/theme-custom-code.css
+   (block: Catnapping / challenge FAQ, 2026-08). Keep this file as a
+   diff helper when cloning to other challenge pages.
+   Brand: coral #D62646, dark #1F293B, cream #FAF7F4
+   Type sizes: DESIGN.md body (1rem); h2 inherits page heading scale. */
+
+.snooze-faq {
+  margin: 2.5rem 0;
+  padding: 1.75rem 1.5rem;
+  background: #FAF7F4;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 41, 59, 0.08);
+  color: #1F293B;
+}
+
+.snooze-faq h2 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  color: #1F293B;
+}
+
+.snooze-faq__intro {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.snooze-faq__item {
+  border-top: 1px solid rgba(31, 41, 59, 0.1);
+  padding: 0.85rem 0;
+}
+
+.snooze-faq__item:last-child {
+  border-bottom: 1px solid rgba(31, 41, 59, 0.1);
+}
+
+.snooze-faq__question {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  font-size: 1rem;
+  color: #1F293B;
+}
+
+.snooze-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.snooze-faq__answer {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.snooze-faq__answer a {
+  color: #D62646;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
