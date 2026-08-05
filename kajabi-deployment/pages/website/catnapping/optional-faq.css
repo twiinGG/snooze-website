@@ -1,0 +1,58 @@
+/* Optional starter styles for faq-section.html
+   Map into snooze-unified-theme.css later if preferred.
+   Brand: coral #D62646, dark #1F293B, cream #FAF7F4 */
+
+.snooze-faq {
+  margin: 2.5rem 0;
+  padding: 1.75rem 1.5rem;
+  background: #FAF7F4;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 41, 59, 0.08);
+  color: #1F293B;
+}
+
+.snooze-faq h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #1F293B;
+}
+
+.snooze-faq__intro {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.snooze-faq__item {
+  border-top: 1px solid rgba(31, 41, 59, 0.1);
+  padding: 0.85rem 0;
+}
+
+.snooze-faq__item:last-child {
+  border-bottom: 1px solid rgba(31, 41, 59, 0.1);
+}
+
+.snooze-faq__question {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  color: #1F293B;
+}
+
+.snooze-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.snooze-faq__answer {
+  margin-top: 0.65rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.snooze-faq__answer a {
+  color: #D62646;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
