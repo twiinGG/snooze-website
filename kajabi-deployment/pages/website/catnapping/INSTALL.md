@@ -79,7 +79,9 @@ If either form automation is unpublished or repointed, stop and fix the automati
 
 Do **not** change the fields. Name and email, both required, is what the page copy promises.
 
-**5c. Note the after-submit behaviour.** Same form → Settings. Record whether it shows an inline confirmation or redirects to a thank-you page, and the path if it redirects. This picks the tracking trigger in 5e.
+**5c. Set the after-submit behaviour.** Same form → Settings. Record whether it shows an inline confirmation or redirects to a thank-you page, and the path if it redirects. This picks the tracking trigger in 5e.
+
+Fix the message while you are there. Email 1 of sequence `2148414612` sends on day 0 at **11:00 Melbourne**, not on submit, so a parent submitting in the afternoon waits until the next morning. The grant is immediate, so the confirmation should point them at the guide in their library and say the email follows. Without that, the page looks broken for up to 21 hours.
 
 **5d. Paste the page** (section 2 above) and the theme CSS (section 3). The CSS is required: without it the Kajabi form renders with its own default chrome and the stale "JOIN THE NEWSLETTER" title shows.
 
@@ -111,8 +113,8 @@ Do **not** change the fields. Name and email, both required, is what the page co
 - [ ] Fields and button match Snooze styling (coral button, beige-bordered inputs), full width on mobile
 - [ ] No console errors from `forms/2148526865/embed.js`
 - [ ] Smoke test with a real test email: submission appears against form `2148526865`
-- [ ] Test contact was **granted** offer `LDGD01` / `2149725554` (FREE Catnapping Guide) and can open the guide
-- [ ] Email 1 of sequence `2148414612` arrives
+- [ ] Test contact was **granted** offer `LDGD01` / `2149725554` (FREE Catnapping Guide) and can open the guide. This is the real delivery and it is immediate
+- [ ] Email 1 of sequence `2148414612` arrives. **Not instant:** day 0 at 11:00 Melbourne, so a submit after 11am means it lands the next morning. Check the contact is subscribed to the sequence rather than waiting on the inbox
 - [ ] Exactly **one** subscription to `2148414612` on the contact record, not two (see `CAPTURE-SETUP.md` item 3)
 - [ ] Meta Events Manager / Tag Assistant: **Lead** fired once. **No Purchase** and **no InitiateCheckout** for the free claim
 - [ ] Stape logs show the Lead event reaching the server container

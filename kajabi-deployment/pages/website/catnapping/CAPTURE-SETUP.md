@@ -23,20 +23,29 @@ A $0 Purchase teaches Meta to optimise toward free claimers. Lead keeps the free
 
 ## Verification, August 5, 2026
 
-**Service Limitation:** the Kajabi MCP server (`https://mcp.kajabi.com/mcp`) needed an interactive OAuth authorisation that was not completed in this session, so nothing below came from the admin API. Evidence is (a) the public Kajabi form embed endpoint, fetched live, and (b) `docs/operations/kajabi-catalogue/KAJABI-CATALOGUE.md`. Items marked **CONFIRM** need a human in the admin before paste.
+Kajabi MCP (`https://mcp.kajabi.com/mcp`, site `2148291177`) was authorised mid-session, so the form, the offer and the sequence below are **admin-API confirmed**.
+
+**Service Limitation, narrowed:** two things the MCP could not answer.
+
+- **Automations.** `list_automations` returns "The automations MCP tools are not enabled for this account yet. This capability is still being rolled out." So `369725`, `369723` and `369720` rest on `docs/operations/kajabi-catalogue/KAJABI-CATALOGUE.md`, not on a live read. A human still confirms them.
+- **Form after-submit behaviour.** `get_form` does not expose the thank-you message or redirect setting. Still a human check.
+
+Items marked **CONFIRM** need a human in the admin before paste.
 
 ### 1. Form `2148526865`, Homepage Catnapping LeadGen Form
 
-Live. `GET https://www.joinsnooze.com/forms/2148526865/embed.js` returned HTTP 200 and rendered markup posting to `https://www.joinsnooze.com/forms/2148526865/form_submissions`.
+Live, `get_form` 2026-08-05. 103 submissions. `webhook_url: null`, `newsletter_id: null`, so nothing else is listening to it. Created 2024-03-15, last updated 2024-10-31.
 
-Fields, exactly as the embed serves them:
+Fields, both required, matching what the embed serves:
 
-| Field | Name | Required |
-|---|---|---|
-| Name | `form_submission[name]` | yes |
-| Email | `form_submission[email]` | yes |
+| Field | Handle | Field ID | Type |
+|---|---|---|---|
+| Name | `name` | `2150719164` | TextField |
+| Email | `email` | `2150719165` | EmailField |
 
-Catalogue: `status: live`, 103 submissions.
+`GET https://www.joinsnooze.com/forms/2148526865/embed.js` returns HTTP 200 and posts to `https://www.joinsnooze.com/forms/2148526865/form_submissions`.
+
+Do not add fields. Site-level fields are available to attach (phone, address, Baby's Age, Baby's Date of Birth and others), and several of them carry `required: true` at site level, so attaching one silently adds a required field to this form and to the claim.
 
 **Stale form chrome.** The embed carries its own title, subtitle and button copy, and all three are wrong for this claim:
 
@@ -53,7 +62,7 @@ Two ways to fix it, both listed in `INSTALL.md` section 5:
 
 ### 2. Automations `369725` and `369723`
 
-Both `status: Published` in the catalogue, both triggered by this exact form:
+Catalogue evidence only, the automations MCP toolset is not enabled for this account. Both `status: Published` in the catalogue, both triggered by this exact form:
 
 | ID | Trigger | Action |
 |---|---|---|
@@ -77,21 +86,45 @@ Treat it as **legacy, leave running**. Reasons:
 
 ### 4. Offer identity behind "FREE Catnapping Guide"
 
-One offer, not two. The grant and the checkout point at the same record.
+One offer, not two. The grant and the checkout point at the same record. `get_offer` 2026-08-05:
 
 | Field | Value |
 |---|---|
 | Offer code | `LDGD01` |
 | Kajabi offer ID | `2149725554` |
-| Internal title | `LDGD01_Catnapping-Guide` (live Kajabi still reads `LDGD01_Catnapping Guide - Lead Magnet`) |
-| Live public title | `FREE Catnapping Guide` (registry target: `Catnapping Guide (Free)`) |
-| Checkout slug | `maowxKB6` |
-| Product | `GD-CATNAP`, Catnapping Guide (Lead Magnet) |
-| Price | Free, PWYW checkout |
+| Status | `published` |
+| Live title | `FREE Catnapping Guide` (registry target: `Catnapping Guide (Free)`) |
+| Live internal title | `LDGD01_Catnapping Guide - Lead Magnet` (registry target: `LDGD01_Catnapping-Guide`, so the drift recorded on 2026-06-28 is still open) |
+| Pricing | `$0.00 USD`, `price_strategy: pay_what_you_want`, one-time |
+| Product | `2148791611` Catnapping Guide, `DigitalDownload` (registry `GD-CATNAP`) |
+| Checkout URL | `https://www.joinsnooze.com/offers/maowxKB6/checkout` |
+| Active checkout theme | `2162910889` |
+| Post-purchase | `preference: custom_message` with an **empty body** |
 
 So `369725` "Grant an offer: FREE Catnapping Guide" grants offer `2149725554`, which is the same entitlement a `maowxKB6` checkout would have granted. The delivery is identical. Only the entry point changed.
 
-Source: `docs/operations/offers-verified-kajabi-2026-06-28.csv` row 17, `docs/operations/KAJABI-OFFERS-REGISTRY.md` (LDGD01), `docs/operations/KAJABI-PRODUCTS-REGISTRY.md` (GD-CATNAP).
+The empty post-purchase message is one more reason not to send parents to that checkout: anyone completing it lands on a blank confirmation. Fixing it belongs to the checkout retirement task, not this one.
+
+Source: `get_offer` via Kajabi MCP, cross-checked against `docs/operations/offers-verified-kajabi-2026-06-28.csv` row 17, `docs/operations/KAJABI-OFFERS-REGISTRY.md` (LDGD01) and `docs/operations/KAJABI-PRODUCTS-REGISTRY.md` (GD-CATNAP).
+
+### 4b. Sequence `2148414612`, and why email 1 is not instant
+
+`get_sequence` 2026-08-05. Three emails, all `publication_status: published`. Send hour 11, timezone Melbourne.
+
+| # | Email | Day | Send time | Subject |
+|---|---|---|---|---|
+| 1 | `2149832304` Welcome + Guide Delivery | 0 | 11:00 | Your Catnapping Guide (quick win inside!) |
+| 2 | `2149832305` Problem + Solution | 2 | 11:00 | Baby still stuck with 30-minute naps? |
+| 3 | `2149832306` Transformation Focus | 3 | 09:00 | From exhausted to 14 hours of sleep a day |
+
+`last_sent_at` 2026-08-05, so the sequence is live and sending. `subscriber_count: 0`, so nobody is mid-sequence right now.
+
+**This matters for the page promise.** Email 1 is day 0 at **11:00 Melbourne**, not on submit. A parent who submits at 2pm Melbourne waits until 11am the next day for the delivery email. What they get immediately is the **offer grant**, which puts the guide in their Kajabi library.
+
+Two consequences:
+
+- The form's after-submit message should tell them the guide is in their library now and the email is coming, otherwise the page reads as broken for up to 21 hours. That is item 2 in the open list.
+- At smoke test, do not wait on email 1 to call the test passed. Verify the **grant** first. See the QA note in `INSTALL.md`.
 
 ### 5. Where the form is used today, and double-submit risk
 
@@ -158,8 +191,8 @@ No GTM JSON is written here, because the live `GTM-KNRTH6P` container was not re
 
 ## Open items for a human before paste
 
-1. **CONFIRM** automations `369725` and `369723` are still Published and still bound to form `2148526865`.
-2. **CONFIRM** the form's after-submit behaviour, inline message or redirect, and the thank-you path if it redirects. This picks tracking option A or B.
+1. **CONFIRM** automations `369725` and `369723` are still Published and still bound to form `2148526865`. This cannot be read over MCP (automations toolset not enabled for the account), so it is a manual admin check, and it is the one item the whole change depends on.
+2. **CONFIRM and probably fix** the form's after-submit behaviour, inline message or redirect, plus the message copy. Not exposed over MCP. Because email 1 does not send until 11:00 Melbourne (item 4b), the after-submit message is the only immediate feedback a parent gets. It should say the guide is in their library now and the email follows.
 3. **DECIDE** whether to fix the form's title, subtitle and button copy in Kajabi. The page still reads correctly without it, but the button says "Subscribe".
 4. **BUILD** the Lead tag in `GTM-KNRTH6P`. Until it exists, the capture is untracked in Meta and GA4, and no Purchase will cover for it.
 5. **CONFIRM** at smoke test that one submission produces one sequence subscription, not two (item 3 above).
