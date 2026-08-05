@@ -34,7 +34,27 @@ Items marked **CONFIRM** need a human in the admin before paste.
 
 ### 1. Form `2148526865`, Homepage Catnapping LeadGen Form
 
-Live, `get_form` 2026-08-05. 103 submissions. `webhook_url: null`, `newsletter_id: null`, so nothing else is listening to it. Created 2024-03-15, last updated 2024-10-31.
+Live, `get_form` plus an admin screenshot of Form details, 2026-08-05. 103 submissions. `webhook_url: null`, `newsletter_id: null`, so nothing else is listening to it. Created 2024-03-15, last updated 2024-10-31.
+
+**Opt-in: Double Opt-In (the important one).** The form is set to Double Opt-In, so a submission does **not** fire the automations. The contact receives a confirmation email and must click **Confirm email** first. Only then do `369725` (grant) and `369723` (sequence) run. The real flow is:
+
+```
+submit  ->  confirmation email  ->  contact clicks Confirm email
+        ->  369725 grants offer 2149725554  +  369723 subscribes to sequence 2148414612
+        ->  sequence email 1 at 11:00 Melbourne, day 0
+```
+
+Consequences, all of which the deploy has to account for:
+
+- **Nothing is instant.** An unconfirmed submitter never gets the guide and never enters the sequence. They are not a lead in any useful sense.
+- **The confirm click is the conversion**, not the submit. That splits the tracking question in two (see Tracking).
+- **The page and the confirmation copy have to say "check your email"**, or a parent who submits and waits reads the page as broken.
+
+A custom confirmation email is already configured and switched on: subject "Important: please confirm your email for The Sleep Concierge", body "Thanks for signing up. Click the button below to confirm your subscription to {{site.title}}. / Keep an eye out for your Free Catnapping Guide in your inbox shortly! / - Sally / The Sleep Concierge", button "Confirm email" on coral. The "shortly" is optimistic given the 11:00 send window; see item 4b.
+
+**After Submission: nothing is set.** All three boxes are unchecked (no team notification, no third-party provider, no custom thank-you page), and "Redirect contacts to custom confirmation page" is off, so post-confirmation lands on Kajabi's Default Confirmation Page. Both of those defaults are addressed in the recommendations below.
+
+**Automations panel: CONFIRMED.** The form's own Automations list shows exactly two, both with a published indicator: "Form is submitted → Grant an offer: FREE Catnapping Guide" and "Form is submitted → Subscribe to an email sequence: Catnapping Guide Lead Gen Email Sequence". This closes the automations gap that the MCP could not read.
 
 Fields, both required, matching what the embed serves:
 
@@ -119,12 +139,14 @@ Source: `get_offer` via Kajabi MCP, cross-checked against `docs/operations/offer
 
 `last_sent_at` 2026-08-05, so the sequence is live and sending. `subscriber_count: 0`, so nobody is mid-sequence right now.
 
-**This matters for the page promise.** Email 1 is day 0 at **11:00 Melbourne**, not on submit. A parent who submits at 2pm Melbourne waits until 11am the next day for the delivery email. What they get immediately is the **offer grant**, which puts the guide in their Kajabi library.
+**This matters for the page promise.** Email 1 is day 0 at **11:00 Melbourne**, and day 0 starts at the **confirm click**, not the submit. Stack that on double opt-in and the worst case is: submit at 12:00, confirm at 12:05, wait until 11:00 the next day for the guide email. Just under 23 hours.
+
+The grant lands at the confirm click, so the guide is in the contact's Kajabi library well before the email arrives. Nothing in the current setup tells them that, because the post-confirmation page is Kajabi's default.
 
 Two consequences:
 
-- The form's after-submit message should tell them the guide is in their library now and the email is coming, otherwise the page reads as broken for up to 21 hours. That is item 2 in the open list.
-- At smoke test, do not wait on email 1 to call the test passed. Verify the **grant** first. See the QA note in `INSTALL.md`.
+- The confirmation page is the only place that can bridge the gap. Point it at a Snooze page that links straight to the guide. See recommendation R3.
+- At smoke test, do not wait on email 1 to call the test passed, and do not expect anything at all until the confirmation link is clicked. Verify the **grant** first. See the QA note in `INSTALL.md`.
 
 ### 5. Where the form is used today, and double-submit risk
 
@@ -168,20 +190,25 @@ Current state of the surfaces involved:
 
 ### Proposed tag shape
 
-No GTM JSON is written here, because the live `GTM-KNRTH6P` container was not read in this session. Build it in the GTM UI against whichever trigger the form's after-submit behaviour supports.
+No GTM JSON is written here, because the live `GTM-KNRTH6P` container was not read in this session. Build it in the GTM UI.
 
-**Option A, preferred: thank-you page trigger.** Requires the form to redirect (item 1, CONFIRM).
+Double opt-in splits this into two distinct events. Track both, and only one of them is the Lead.
 
-- Trigger: Page View, Page Path equals the thank-you path, on the site container.
-- Tag: Meta pixel custom event `Lead`, plus a GA4 event `generate_lead`.
+**`form_submit`, diagnostic only, not a Lead.** The visitor submitted but has not confirmed. Useful for measuring confirm-rate and for spotting a broken confirmation email; useless as a Meta optimisation signal, because a large share never confirm.
+
+- Trigger: Form Submission with **Check Validation** on, scoped to the form inside `#catnapping-guide-capture`. If the Kajabi embed does not expose a usable form ID, fall back to Click, All Elements, CSS selector `#catnapping-guide-capture button[type="submit"]`, and accept slight overcounting on client-side validation failures.
+- The embed posts to `https://www.joinsnooze.com/forms/2148526865/form_submissions`, so the browser leaves the page. Enable **Wait for Tags**, or the event is cut off before it sends.
+- Send to GA4 only. **Do not** map this to Meta `Lead`.
+
+**`Lead`, the real one: the post-confirmation page.** The confirm click is where the grant and the sequence actually happen, so that is the lead.
+
+- Requires R3 below: turn on "Redirect contacts to custom confirmation page" and point it at a Snooze page we control. Kajabi's Default Confirmation Page cannot carry a reliable trigger.
+- Trigger: Page View, Page Path equals that confirmation page path, on the site container.
+- Tag: Meta `Lead`, plus GA4 `generate_lead`.
 - Parameters: `content_name: catnapping_guide`, `content_category: lead_magnet`, `value: 0`, `currency: AUD`.
-- Why preferred: fires after Kajabi has accepted the submission, so it cannot count a failed or validation-blocked submit.
+- Guard against reloads and repeat visits, which are common on a link clicked from email: fire once per session, or gate on a query parameter Kajabi appends.
 
-**Option B, fallback: form submit on the page.** Use if the form shows an inline confirmation instead of redirecting.
-
-- Trigger: Form Submission, with **Check Validation** on, Form ID matches the Kajabi embed's form inside `#catnapping-guide-capture`. If the Kajabi embed does not expose a usable form ID, fall back to Click, All Elements, matching CSS selector `#catnapping-guide-capture button[type="submit"]`, and accept that a client-side validation failure can overcount slightly.
-- Tag and parameters: same as option A.
-- Note the embed posts to `https://www.joinsnooze.com/forms/2148526865/form_submissions`, so the browser leaves the page. Enable **Wait for Tags** on the trigger, or the Lead can be cut off before it sends.
+If R3 is rejected and the confirmation stays on the Kajabi default, then fire `Lead` on the submit instead and accept that Meta is optimising toward unconfirmed submitters. State that trade-off out loud rather than letting it happen quietly.
 
 **Do not** add `Purchase` to either option, and do not paste `kajabi-checkout-tracking.js` (row A5) as part of this change. That script belongs to the paid checkout stack and is a separate decision.
 
@@ -189,11 +216,53 @@ No GTM JSON is written here, because the live `GTM-KNRTH6P` container was not re
 
 ---
 
+## Form changes to make in Kajabi
+
+Ordered by what breaks without it. R1 to R3 are the ones that matter.
+
+### R1. Rename the form to the registry code
+
+Internal Title, currently `Homepage Catnapping LeadGen Form`. Two problems: it carries no registry code, and it is no longer on the homepage. The form is embedded on `/catnapping` and nowhere else (item 5).
+
+**Change to:** `FMLDGD01_Catnapping-Guide`
+
+Reasoning, and the honest caveat. `SNOOZE-NAMING-CONVENTIONS.md` v2 covers **offers only**, so there is no ratified form convention to cite. The only precedent in the account is `FMLM01_5-12M-Schedules` (form `2149418596`), which is `FM` + a pre-v2 lead-magnet code + kebab slug. `FMLDGD01_Catnapping-Guide` keeps that `FM` prefix and the `{CODE}_{Kebab-Slug}` shape from the offers convention, and swaps the dead `LM01` numbering for the live registry code `LDGD01`, so the form's name points at the exact offer it grants (`2149725554`).
+
+Alternative if you would rather stay literally consistent with the one precedent: `FMLM02_Catnapping-Guide`. It reads cleaner but tells you nothing about which offer is granted, and `LM` is not a code in v2. My recommendation is `FMLDGD01_Catnapping-Guide`, and then add a one-line "Forms" section to `SNOOZE-NAMING-CONVENTIONS.md` so the next form is not another judgement call.
+
+The **form ID `2148526865` is the durable anchor** and never changes, which is why every reference in this repo leads with the ID. A rename breaks nothing.
+
+While renaming, also fix the customer-visible embed chrome. That copy is not on the Form details screen; it is under the **Embed** tab. It currently reads title "JOIN THE NEWSLETTER", subtitle "Subscribe to get our latest content by email.", button "Subscribe". The page CSS hides the title and subtitle, so the button is the one that shows: change it to **Send me the free guide**.
+
+### R2. Fix the confirmation email copy
+
+Subject and structure are fine. One line is wrong: "Keep an eye out for your Free Catnapping Guide in your inbox shortly!" With the day-0 11:00 Melbourne send window, "shortly" can mean tomorrow morning.
+
+Replace with something that states the real sequence: confirm, guide lands in the library straight away, email follows in the morning. Keep the Sally sign-off and the coral Confirm email button as they are.
+
+### R3. Set a custom confirmation page
+
+Currently "Redirect contacts to custom confirmation page" is off, so the confirm click lands on Kajabi's Default Confirmation Page. That page is doing two jobs badly: it is the only moment you can hand the parent the guide, and it is the only place a reliable `Lead` tag can fire.
+
+Turn it on and point it at a Snooze page that links directly to the granted guide. That single change fixes the delivery gap and unlocks the Lead trigger in one move.
+
+Optionally also tick **After Submission → Send the contact to a custom thank you page** for the pre-confirmation step, with a page that says "check your email to confirm". Less critical, because Kajabi's default post-submit message does say something, but it is the difference between a parent understanding the flow and abandoning it.
+
+### R4. Leave these alone
+
+- **Double Opt-In: keep it.** It costs you confirmations, and it is still the right call: it protects domain deliverability for every other Snooze send, and the guide is worthless to someone who typed a fake address. Switching to Single Opt-In would lift raw claim numbers and enable reCAPTCHA, but it fills the sequence with addresses that never open. If you want that trade, make it a deliberate decision with a before-and-after on confirm rate, not a side effect of this deploy.
+- **Form fields: Name and Email only.** Do not attach more. Several site-level fields available on this form (`Baby's Age`, `Baby's Date of Birth`, `Country`, `City`) carry `required: true` at site level, so attaching one silently makes it mandatory on this claim.
+- **Send a notification to your team: leave unchecked.** The automations handle delivery, and 103 submissions of inbox noise helps nobody.
+- **Send the contact to a third party email provider: leave unchecked.** Kajabi is the list.
+
+---
+
 ## Open items for a human before paste
 
-1. **CONFIRM** automations `369725` and `369723` are still Published and still bound to form `2148526865`. This cannot be read over MCP (automations toolset not enabled for the account), so it is a manual admin check, and it is the one item the whole change depends on.
-2. **CONFIRM and probably fix** the form's after-submit behaviour, inline message or redirect, plus the message copy. Not exposed over MCP. Because email 1 does not send until 11:00 Melbourne (item 4b), the after-submit message is the only immediate feedback a parent gets. It should say the guide is in their library now and the email follows.
-3. **DECIDE** whether to fix the form's title, subtitle and button copy in Kajabi. The page still reads correctly without it, but the button says "Subscribe".
-4. **BUILD** the Lead tag in `GTM-KNRTH6P`. Until it exists, the capture is untracked in Meta and GA4, and no Purchase will cover for it.
-5. **CONFIRM** at smoke test that one submission produces one sequence subscription, not two (item 3 above).
-6. **DECIDE** the fate of checkout `maowxKB6`: leave it live but unlinked (recommended, protects old links and the 861 historic buyers), or retire it in a separate task with its stale "6 months+" theme copy.
+1. ~~CONFIRM automations `369725` and `369723`~~ **Done.** The form's own Automations panel shows both, published, correctly bound. Verified from the admin screenshot 2026-08-05.
+2. ~~CONFIRM the form's after-submit behaviour~~ **Done, and it needs fixing.** Nothing is configured. See R3.
+3. **DO** R1 to R3 above, in Kajabi, before or alongside the page paste.
+4. **BUILD** the `Lead` tag in `GTM-KNRTH6P`, on the R3 confirmation page. Until it exists, the capture is untracked in Meta and GA4, and no Purchase will cover for it.
+5. **CONFIRM** at smoke test that one confirmed submission produces one sequence subscription, not two (item 3 above).
+6. **DECIDE** the fate of checkout `maowxKB6`: leave it live but unlinked (recommended, protects old links and the 861 historic buyers), or retire it in a separate task with its stale "6 months+" theme copy and empty post-purchase message.
+7. **OPTIONAL, follow-up:** add a "Forms" section to `docs/operations/SNOOZE-NAMING-CONVENTIONS.md` so form naming stops being a per-case decision (see R1).

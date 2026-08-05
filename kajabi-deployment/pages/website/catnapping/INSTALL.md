@@ -75,20 +75,26 @@ Full evidence and open items: [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md). The shor
 
 If either form automation is unpublished or repointed, stop and fix the automation first. The page paste is worthless without them.
 
-**5b. Form copy (recommended, optional).** Marketing → Forms → **Homepage Catnapping LeadGen Form** (`2148526865`). The embed currently serves title "JOIN THE NEWSLETTER", subtitle "Subscribe to get our latest content by email." and button "Subscribe". The CSS hides the title and subtitle on this page, but the button label is visible. Change the button to "Send me the free guide". No other live page embeds this form, so nothing else is affected.
+**5b. Form changes.** Marketing → Forms → **Homepage Catnapping LeadGen Form** (`2148526865`). Full reasoning in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md) "Form changes to make in Kajabi". In short:
 
-Do **not** change the fields. Name and email, both required, is what the page copy promises.
+| | Change |
+|---|---|
+| Internal Title | `Homepage Catnapping LeadGen Form` → **`FMLDGD01_Catnapping-Guide`** (registry code `LDGD01`; the form is no longer on the homepage) |
+| Embed tab, button | "Subscribe" → **"Send me the free guide"**. The title and subtitle ("JOIN THE NEWSLETTER") are hidden by the page CSS, so the button is the only visible one |
+| Confirmation email body | Drop "in your inbox shortly", it can mean tomorrow morning. State the real order: confirm, guide in the library, email follows |
+| Redirect to custom confirmation page | **Turn on**, point at a Snooze page linking to the guide. Required for the Lead tag in 5e |
+| Form fields | **Leave as Name + Email.** Several site-level fields attachable here are `required: true` at site level |
+| Double Opt-In | **Leave on** |
 
-**5c. Set the after-submit behaviour.** Same form → Settings. Record whether it shows an inline confirmation or redirects to a thank-you page, and the path if it redirects. This picks the tracking trigger in 5e.
-
-Fix the message while you are there. Email 1 of sequence `2148414612` sends on day 0 at **11:00 Melbourne**, not on submit, so a parent submitting in the afternoon waits until the next morning. The grant is immediate, so the confirmation should point them at the guide in their library and say the email follows. Without that, the page looks broken for up to 21 hours.
+**5c. Understand the opt-in gate before you QA.** The form is **Double Opt-In**. A submission fires nothing. The contact gets a confirmation email, clicks **Confirm email**, and only then do `369725` (grant) and `369723` (sequence) run. Day 0 of the sequence starts at the confirm click, and email 1 goes at 11:00 Melbourne, so the guide email can be nearly 23 hours behind the submit. The grant lands at the confirm click, which is why the confirmation page in 5b matters: it is the only fast path to the guide.
 
 **5d. Paste the page** (section 2 above) and the theme CSS (section 3). The CSS is required: without it the Kajabi form renders with its own default chrome and the stale "JOIN THE NEWSLETTER" title shows.
 
-**5e. Build the Lead tag in GTM `GTM-KNRTH6P`.** There is no Lead tag today, so this capture is untracked until one exists. Tag shape, trigger options and parameters are specified in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md) "Tracking". Two rules:
+**5e. Build the Lead tag in GTM `GTM-KNRTH6P`.** There is no Lead tag today, so this capture is untracked until one exists. Tag shape, triggers and parameters are specified in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md) "Tracking". Three rules:
 
-- Fire **Lead** (Meta) and `generate_lead` (GA4). Never `Purchase` and never `InitiateCheckout` for a free claim.
-- Do not paste `kajabi-checkout-tracking.js` (paste row A5) as part of this change.
+- Fire **Lead** (Meta) and `generate_lead` (GA4) on the **confirmation page**, not on submit. Double opt-in means an unconfirmed submit is not a lead.
+- A submit-time `form_submit` event is fine as a GA4-only diagnostic for confirm-rate. Do not map it to Meta `Lead`.
+- Never `Purchase` and never `InitiateCheckout` for a free claim. Do not paste `kajabi-checkout-tracking.js` (paste row A5) as part of this change.
 
 **5f. Checkout `maowxKB6`.** Leave it live and unlinked. It still serves old emails, ads and the 861 historic buyers. Retiring it, and its stale "6 months+" theme copy, is a separate task.
 
@@ -113,10 +119,13 @@ Fix the message while you are there. Email 1 of sequence `2148414612` sends on d
 - [ ] Fields and button match Snooze styling (coral button, beige-bordered inputs), full width on mobile
 - [ ] No console errors from `forms/2148526865/embed.js`
 - [ ] Smoke test with a real test email: submission appears against form `2148526865`
-- [ ] Test contact was **granted** offer `LDGD01` / `2149725554` (FREE Catnapping Guide) and can open the guide. This is the real delivery and it is immediate
-- [ ] Email 1 of sequence `2148414612` arrives. **Not instant:** day 0 at 11:00 Melbourne, so a submit after 11am means it lands the next morning. Check the contact is subscribed to the sequence rather than waiting on the inbox
+- [ ] Confirmation email arrives, subject "Important: please confirm your email…", and the **Confirm email** button works
+- [ ] Before the confirm click: **no** grant, **no** sequence subscription. That is correct behaviour under double opt-in, not a failure
+- [ ] After the confirm click: test contact was **granted** offer `LDGD01` / `2149725554` (FREE Catnapping Guide) and can open the guide. This is the real delivery
+- [ ] Confirm click lands on the Snooze confirmation page from 5b, and that page links to the guide
+- [ ] Email 1 of sequence `2148414612` arrives. **Not instant:** day 0 at 11:00 Melbourne counted from the confirm click, so afternoon confirmations land the next morning. Check the sequence subscription on the contact record rather than waiting on the inbox
 - [ ] Exactly **one** subscription to `2148414612` on the contact record, not two (see `CAPTURE-SETUP.md` item 3)
-- [ ] Meta Events Manager / Tag Assistant: **Lead** fired once. **No Purchase** and **no InitiateCheckout** for the free claim
+- [ ] Meta Events Manager / Tag Assistant: **Lead** fired once, on the confirmation page. **No Purchase** and **no InitiateCheckout** for the free claim
 - [ ] Stape logs show the Lead event reaching the server container
 - [ ] Delete or tag the test contact afterwards so it does not sit in the lead-gen sequence
 
