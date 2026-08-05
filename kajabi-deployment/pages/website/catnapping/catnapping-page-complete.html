@@ -292,9 +292,16 @@
 <section id="catnapping-guide-capture" class="snooze-section bg-cream">
   <div class="snooze-container max-800 text-center">
     <h2>Free catnapping guide</h2>
-    <p class="guide-lead">Want a tracking template and age-by-age norms to work out whether your baby's short naps are normal? Get the free catnapping guide and check your baby's day against it.</p>
-    <div class="cta-row">
-      <a class="btn" href="https://www.joinsnooze.com/offers/maowxKB6/checkout?utm_source=site&amp;utm_medium=challenge_page&amp;utm_campaign=catnapping_guide">Send me the free guide</a>
+    <p class="guide-lead">Want a tracking template and age-by-age norms to work out whether your baby's short naps are normal? Add your name and email and we will send you the free catnapping guide.</p>
+    <!--
+      Capture = Kajabi form 2148526865 (Homepage Catnapping LeadGen Form). NOT the PWYW checkout.
+      Form submit fires automation 369725 (grant offer FREE Catnapping Guide, LDGD01 / 2149725554)
+      and automation 369723 (subscribe to sequence 2148414612). Both Published.
+      Do not restore offers/maowxKB6/checkout here: a $0 checkout fires Purchase and pollutes
+      Meta optimisation. Free claims track as Lead. See CAPTURE-SETUP.md.
+    -->
+    <div class="snooze-form-embed" data-snooze-capture="catnapping-guide" data-kajabi-form="2148526865">
+      <script src="https://www.joinsnooze.com/forms/2148526865/embed.js"></script>
     </div>
     <p class="guide-close">Yours free, and a first step toward the full plan.</p>
   </div>

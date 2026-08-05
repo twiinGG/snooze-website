@@ -12322,3 +12322,79 @@ body.currency-loaded .dynamic-cta {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* ==========================================================================
+   Kajabi form embed inside a challenge-page capture section, 2026-08
+   Used by: #catnapping-page #catnapping-guide-capture (form 2148526865).
+   The embed serves its own title, subtitle and submit button. The title and
+   subtitle are hidden so the section's own h2 and .guide-lead own the copy.
+   Source: pages/website/catnapping/capture-section.html + CAPTURE-SETUP.md.
+   ========================================================================== */
+
+#catnapping-page .snooze-form-embed {
+  margin: 24px auto 0;
+  max-width: 480px;
+  text-align: left;
+}
+
+#catnapping-page .snooze-form-embed #kajabi-form,
+#catnapping-page .snooze-form-embed .kajabi-form--inline {
+  width: 100%;
+}
+
+#catnapping-page .snooze-form-embed .kajabi-form__title,
+#catnapping-page .snooze-form-embed .kajabi-form__subtitle {
+  display: none;
+}
+
+#catnapping-page .snooze-form-embed fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#catnapping-page .snooze-form-embed .kajabi-form__form-item {
+  margin: 0;
+}
+
+#catnapping-page .snooze-form-embed input[type="text"],
+#catnapping-page .snooze-form-embed input[type="email"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--c-beige, #F2EDEA);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--c-white, #FFFFFF);
+  color: var(--c-text, #161E2A);
+}
+
+#catnapping-page .snooze-form-embed input[type="text"]:focus,
+#catnapping-page .snooze-form-embed input[type="email"]:focus {
+  outline: none;
+  border-color: var(--c-coral, #F43357);
+}
+
+#catnapping-page .snooze-form-embed .kajabi-form__btn,
+#catnapping-page .snooze-form-embed button[type="submit"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 28px;
+  background: var(--c-coral, #F43357);
+  color: var(--c-white, #FFFFFF);
+  border: 2px solid var(--c-coral, #F43357);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#catnapping-page .snooze-form-embed .kajabi-form__btn:hover,
+#catnapping-page .snooze-form-embed button[type="submit"]:hover {
+  background: var(--c-coral-hover, #D62646);
+  border-color: var(--c-coral-hover, #D62646);
+}

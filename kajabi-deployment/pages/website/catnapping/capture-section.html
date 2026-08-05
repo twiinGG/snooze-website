@@ -1,0 +1,25 @@
+<!--
+  Sidecar: free catnapping guide capture section.
+  Source of truth for #catnapping-guide-capture inside catnapping-page-complete.html.
+  Edit here, then re-sync into the page-complete file in the same commit.
+
+  Capture = Kajabi form 2148526865 (Homepage Catnapping LeadGen Form). NOT the PWYW checkout.
+  Form submit fires automation 369725 (grant offer FREE Catnapping Guide, LDGD01 / 2149725554)
+  and automation 369723 (subscribe to sequence 2148414612). Both Published.
+  Do not restore offers/maowxKB6/checkout here: a $0 checkout fires Purchase and pollutes
+  Meta optimisation. Free claims track as Lead. See CAPTURE-SETUP.md.
+
+  Styling: .snooze-form-embed block in global/css/theme-custom-code.css (paste row A2).
+  The embed serves its own title, subtitle and button; the title and subtitle are hidden by
+  that CSS so the h2 and .guide-lead below carry the copy.
+-->
+<section id="catnapping-guide-capture" class="snooze-section bg-cream">
+  <div class="snooze-container max-800 text-center">
+    <h2>Free catnapping guide</h2>
+    <p class="guide-lead">Want a tracking template and age-by-age norms to work out whether your baby's short naps are normal? Add your name and email and we will send you the free catnapping guide.</p>
+    <div class="snooze-form-embed" data-snooze-capture="catnapping-guide" data-kajabi-form="2148526865">
+      <script src="https://www.joinsnooze.com/forms/2148526865/embed.js"></script>
+    </div>
+    <p class="guide-close">Yours free, and a first step toward the full plan.</p>
+  </div>
+</section>

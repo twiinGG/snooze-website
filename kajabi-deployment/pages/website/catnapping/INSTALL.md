@@ -1,9 +1,11 @@
 # Install, Catnapping challenge page
 
 **Deploy artifact:** [`catnapping-page-complete.html`](./catnapping-page-complete.html)  
-Sidecars (`faq-section.html`, `page-schema.jsonld.html`, `optional-faq.css`, `panel-seo.md`) stay as sources of truth / diff helpers. Edit them, then re-sync into the page-complete file in the same commit.
+Sidecars (`faq-section.html`, `capture-section.html`, `page-schema.jsonld.html`, `optional-faq.css`, `panel-seo.md`) stay as sources of truth / diff helpers. Edit them, then re-sync into the page-complete file in the same commit.
 
 Wired August 2026 (`seo/wire-catnapping-sidecars`): visible FAQ + page JSON-LD (WebPage + FAQPage + BreadcrumbList) live inside the page-complete HTML. Old Article + `#sally` Person block removed.
+
+Capture changed August 5, 2026: the free guide is claimed through Kajabi form `2148526865` plus automations `369725` (grant) and `369723` (sequence), not through the PWYW checkout `maowxKB6`. Evidence, open items and tracking design live in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md). Read it before pasting.
 
 ---
 
@@ -14,9 +16,10 @@ Wired August 2026 (`seo/wire-catnapping-sidecars`): visible FAQ + page JSON-LD (
 | JSON-LD | Single `@graph`: WebPage + FAQPage + BreadcrumbList. Person/Org are `@id` refs only (`…/author/sally-woods#person`, `…/#organization`). No Article, no `#sally`. |
 | Visible breadcrumb | `Part of: Find the right sleep help › Catnapping` (hub = `/which-is-right-for-us`) |
 | Visible FAQ | `.snooze-faq` with 6 questions, after **First steps**, before **Free catnapping guide** |
-| Free guide CTA | Still `maowxKB6`; optional UTM appended (`utm_source=site&utm_medium=challenge_page&utm_campaign=catnapping_guide`) |
+| Free guide CTA | **Replaced.** The `maowxKB6` checkout link and its UTMs are gone. `#catnapping-guide-capture` now embeds Kajabi form `2148526865` inline (`forms/2148526865/embed.js`), same pattern as `/contact`, `/newsletter` and `/sleep-regressions`. Source sidecar: [`capture-section.html`](./capture-section.html) |
 | Membership CTA | Unchanged (`z63s9VaR`) |
 | FAQ CSS | Folded into [`../../global/css/theme-custom-code.css`](../../global/css/theme-custom-code.css) (paste target A2). `optional-faq.css` kept as starter/diff helper. |
+| Form embed CSS | New `#catnapping-page .snooze-form-embed` block at the end of [`../../global/css/theme-custom-code.css`](../../global/css/theme-custom-code.css) (same paste target A2). Styles the Kajabi fields and button to match `.btn`, and hides the embed's own title and subtitle. |
 | Preview `<title>` / meta description | Match [`panel-seo.md`](./panel-seo.md) for local preview only. Kajabi panel SEO wins in production; do not paste head tags into the body code block. |
 
 ---
@@ -58,6 +61,35 @@ Do **not** paste a second Organization or Person graph on the catnapping page.
 
 Optional sameAs additions stay in [`schema-organization-sameAs-proposal.md`](../../global/html/schema-organization-sameAs-proposal.md) until separately approved.
 
+### 5. Guide capture: form, automations, tracking
+
+Full evidence and open items: [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md). The short version, in the order to do it.
+
+**5a. Confirm the automations (before the page paste).** Marketing → Automations:
+
+| ID | Expected |
+|---|---|
+| `369725` | Published. When form is submitted: Homepage Catnapping LeadGen Form → Grant an offer: FREE Catnapping Guide |
+| `369723` | Published. When form is submitted: Homepage Catnapping LeadGen Form → Subscribe to an email sequence: Catnapping Guide Lead Gen Email Sequence (`2148414612`) |
+| `369720` | Published. Leave running. Offer purchased → same sequence, kept for historic `maowxKB6` buyers. Pause it only if the smoke test shows a double subscription |
+
+If either form automation is unpublished or repointed, stop and fix the automation first. The page paste is worthless without them.
+
+**5b. Form copy (recommended, optional).** Marketing → Forms → **Homepage Catnapping LeadGen Form** (`2148526865`). The embed currently serves title "JOIN THE NEWSLETTER", subtitle "Subscribe to get our latest content by email." and button "Subscribe". The CSS hides the title and subtitle on this page, but the button label is visible. Change the button to "Send me the free guide". No other live page embeds this form, so nothing else is affected.
+
+Do **not** change the fields. Name and email, both required, is what the page copy promises.
+
+**5c. Note the after-submit behaviour.** Same form → Settings. Record whether it shows an inline confirmation or redirects to a thank-you page, and the path if it redirects. This picks the tracking trigger in 5e.
+
+**5d. Paste the page** (section 2 above) and the theme CSS (section 3). The CSS is required: without it the Kajabi form renders with its own default chrome and the stale "JOIN THE NEWSLETTER" title shows.
+
+**5e. Build the Lead tag in GTM `GTM-KNRTH6P`.** There is no Lead tag today, so this capture is untracked until one exists. Tag shape, trigger options and parameters are specified in [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md) "Tracking". Two rules:
+
+- Fire **Lead** (Meta) and `generate_lead` (GA4). Never `Purchase` and never `InitiateCheckout` for a free claim.
+- Do not paste `kajabi-checkout-tracking.js` (paste row A5) as part of this change.
+
+**5f. Checkout `maowxKB6`.** Leave it live and unlinked. It still serves old emails, ads and the 861 historic buyers. Retiring it, and its stale "6 months+" theme copy, is a separate task.
+
 ---
 
 ## QA checklist
@@ -68,8 +100,23 @@ Optional sameAs additions stay in [`schema-organization-sameAs-proposal.md`](../
 - [ ] Person refs use `…/author/sally-woods#person`
 - [ ] Visible FAQ (6 `<details>`) between First steps and Free guide; mobile accordion works
 - [ ] Visible breadcrumb includes hub link to `/which-is-right-for-us`
-- [ ] Free guide (`maowxKB6`) and membership (`z63s9VaR`) CTAs work on mobile
+- [ ] Membership CTA (`z63s9VaR`) works on mobile
 - [ ] FAQ schema `name` / `text` still match visible FAQ after any copy edit (update sidecar + page-complete together)
+- [ ] `grep -c 'offers/maowxKB6/checkout"' catnapping-page-complete.html` returns 0 (the only remaining `maowxKB6` mention is the do-not-restore comment)
+
+### Capture QA (after section 5)
+
+- [ ] `#catnapping-guide-capture` renders the real Kajabi form (name + email + button), not an empty gap
+- [ ] Embed's own title / subtitle are hidden; the page `<h2>` "Free catnapping guide" and lead paragraph are the visible copy
+- [ ] Fields and button match Snooze styling (coral button, beige-bordered inputs), full width on mobile
+- [ ] No console errors from `forms/2148526865/embed.js`
+- [ ] Smoke test with a real test email: submission appears against form `2148526865`
+- [ ] Test contact was **granted** offer `LDGD01` / `2149725554` (FREE Catnapping Guide) and can open the guide
+- [ ] Email 1 of sequence `2148414612` arrives
+- [ ] Exactly **one** subscription to `2148414612` on the contact record, not two (see `CAPTURE-SETUP.md` item 3)
+- [ ] Meta Events Manager / Tag Assistant: **Lead** fired once. **No Purchase** and **no InitiateCheckout** for the free claim
+- [ ] Stape logs show the Lead event reaching the server container
+- [ ] Delete or tag the test contact afterwards so it does not sit in the lead-gen sequence
 
 ---
 
