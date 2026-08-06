@@ -44,9 +44,9 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
 ### The GTM Containers (GTM account `6058575269`)
 *   **Web Container (`GTM-KNRTH6P`):** Acts as the "Scraper." It runs in the user's browser, detects button clicks, scrapes pricing/email data from the DOM, and sends it to the server.
 *   **Server Container, Stape (`GTM-PHFGMTQJ`):** The **live** "Broadcaster." It receives data, cleans it, anonymizes IP addresses, and sends it to ad platforms via API. The web container routes to this one (`server_container_url = https://ss.joinsnooze.com`).
-*   **Server Container, GCP (`GTM-WGPK9KFP`, numeric `230205471`): DEAD. Scheduled for retirement.**
-    v3.0 called this "a parallel/staged server container" and "likely the target of a future
-    Stape-to-GCP migration". **That was wrong.** Measured 2026-08-06 at the network layer:
+*   **Server Container, GCP (`GTM-WGPK9KFP`, numeric `230205471`): RETIRED IN FAVOUR OF STAPE.**
+    Kade confirmed the migration direction on August 6, 2026: production moved from this GCP deployment
+    to Stape, not the reverse. The network state matches that decision:
 
     ```
     dig +short sst.sleepconcierge.com.au   ->  no output, no DNS record
@@ -54,9 +54,11 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
     https://ss.joinsnooze.com/healthy      ->  HTTP 200   (Stape, control)
     ```
 
-    No DNS record means no event can reach it, so its **seven unpaused tags fire zero times**. It holds a
-    live Meta CAPI access token on tag 19, in a container nobody is watching. Do not wire anything into
-    it. Rotate that token, then retire the container.
+    No DNS record means no production event can reach its configured custom domain, so its **seven
+    unpaused tags fire zero times**. The residual GTM configuration includes a Meta CAPI access token on
+    tag 19. A secure API comparison confirmed that this matches paused Stape tag 32, not live Stape tag
+    34; no token value was printed or stored. Do not restore DNS or route traffic to it. Remove the
+    retired/paused credential pair, then remove the residual container.
 
 ---
 
