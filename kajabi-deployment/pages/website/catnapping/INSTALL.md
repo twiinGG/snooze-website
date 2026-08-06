@@ -1,7 +1,9 @@
 # Install, Catnapping challenge page
 
 **Deploy artifact:** [`catnapping-page-complete.html`](./catnapping-page-complete.html)  
-Sidecars (`faq-section.html`, `capture-section.html`, `page-schema.jsonld.html`, `optional-faq.css`, `panel-seo.md`) stay as sources of truth / diff helpers. Edit them, then re-sync into the page-complete file in the same commit.
+Sidecars (`faq-section.html`, `capture-section.html`, `page-schema.jsonld.html`, `panel-seo.md`) stay as sources of truth / diff helpers. Edit them, then re-sync into the page-complete file in the same commit.
+
+**Doc ownership, one owner per thing.** `INSTALL.md` owns paste steps. [`CAPTURE-SETUP.md`](./CAPTURE-SETUP.md) owns evidence and reasoning. [`CAPTURE-COPY.md`](./CAPTURE-COPY.md) owns member-facing copy. If a change belongs in two of them, it goes in one and the others point at it.
 
 Wired August 2026 (`seo/wire-catnapping-sidecars`): visible FAQ + page JSON-LD (WebPage + FAQPage + BreadcrumbList) live inside the page-complete HTML. Old Article + `#sally` Person block removed.
 
@@ -20,7 +22,7 @@ Paste-ready copy for the confirmation email and the `/catnapping-guide-ready` co
 | Visible FAQ | `.snooze-faq` with 6 questions, after **First steps**, before **Free catnapping guide** |
 | Free guide CTA | **Replaced.** The `maowxKB6` checkout link and its UTMs are gone. `#catnapping-guide-capture` now embeds Kajabi form `2148526865` inline (`forms/2148526865/embed.js`), same pattern as `/contact`, `/newsletter` and `/sleep-regressions`. Source sidecar: [`capture-section.html`](./capture-section.html) |
 | Membership CTA | Unchanged (`z63s9VaR`) |
-| FAQ CSS | Folded into [`../../global/css/theme-custom-code.css`](../../global/css/theme-custom-code.css) (paste target A2). `optional-faq.css` kept as starter/diff helper. |
+| FAQ CSS | Folded into [`../../global/css/theme-custom-code.css`](../../global/css/theme-custom-code.css) (paste target A2). The old `optional-faq.css` starter was deleted in CNG-002 because it invited edits to a file nothing reads. |
 | Form embed CSS | New `#catnapping-page .snooze-form-embed` block at the end of [`../../global/css/theme-custom-code.css`](../../global/css/theme-custom-code.css) (same paste target A2). Styles the Kajabi fields and button to match `.btn`, and hides the embed's own title and subtitle. |
 | Preview `<title>` / meta description | Match [`panel-seo.md`](./panel-seo.md) for local preview only. Kajabi panel SEO wins in production; do not paste head tags into the body code block. |
 

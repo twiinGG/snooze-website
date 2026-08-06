@@ -12259,7 +12259,7 @@ body.currency-loaded .dynamic-cta {
 /* ==========================================================================
    Catnapping / challenge FAQ (.snooze-faq), 2026-08
    Visible FAQ companion for FAQPage schema on challenge pages.
-   Source starter: pages/website/catnapping/optional-faq.css
+   Canonical home for these rules. The optional-faq.css starter was deleted 2026-08-06.
    Type sizes: DESIGN.md body (1rem); h2 inherits guide-page heading scale.
    ========================================================================== */
 
