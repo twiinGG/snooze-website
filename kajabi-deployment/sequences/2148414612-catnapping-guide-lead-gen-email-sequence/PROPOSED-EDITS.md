@@ -45,7 +45,7 @@ Try this today, before you have even finished reading it:
 
 Darken the room for the next nap. Really dark. If you can see your hand in front of your face, it is too bright.
 
-That one change extends naps for a lot of babies straight away.
+It will not fix every short nap. It is the cheapest thing to try, it costs you nothing, and it is worth ruling out before anything harder.
 
 Over the next few days I will send you the rest: what nap lengths actually look like at your baby's age, why the 30 to 45 minute wake happens, and what to change first.
 
@@ -68,6 +68,10 @@ That is the D1 fix and the one change in this document you cannot skip. If the l
 ### Also fixed here
 
 D3 typo. Removed "using". Also dropped "The Sleep Concierge's Catnapping Guide" to "your catnapping guide", because they know whose guide it is by now.
+
+**D9, added 2026-08-06 from the cross-provider verify pass.** The draft previously read "That one change extends naps for a lot of babies straight away." That is an unquantified efficacy claim about infant sleep, made to an exhausted parent, with "a lot of babies" implying a population-level result and "straight away" adding a timing promise on top. Neither is substantiated anywhere in the repo. Under Australian Consumer Law a material benefit claim needs to be substantiable, and this one reads as proven when it is anecdotal.
+
+The replacement makes the same suggestion without promising an outcome: it names the cost (nothing) and the reason to try it first, rather than the result. **This is clinical-adjacent wording and Sally gates it**, both for accuracy and because she may want a different first tip entirely. Full verify output: [`../../../../docs/projects/catnapping-guide/4_working-cng002/verify/claims-cursor-composer.md`](../../../../docs/projects/catnapping-guide/4_working-cng002/verify/claims-cursor-composer.md).
 
 ---
 

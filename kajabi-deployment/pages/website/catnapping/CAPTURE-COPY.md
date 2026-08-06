@@ -54,13 +54,13 @@ Current subject is "Important: please confirm your email for The Sleep Concierge
 ### Body
 
 ```
-You asked for the free catnapping guide. One click and it is on its way.
+You asked for the free catnapping guide. One click and it is yours.
 
 [Confirm and get the guide]
 
-Confirming tells us your address is right, so the guide lands in your inbox instead of a spam folder.
+Confirming tells us we have your address right, so the emails that follow reach you instead of a spam folder.
 
-Once you confirm, the guide is yours straight away. Over the next few days I will also send you the practical parts: what nap lengths actually look like at your baby's age, why the 30 to 45 minute wake happens, and what to change first.
+The guide itself is on the page you land on, so you do not have to wait for an inbox. Over the next few days I will also send you the practical parts: what nap lengths actually look like at your baby's age, why the 30 to 45 minute wake happens, and what to change first.
 
 Sweet dreams,
 
@@ -82,8 +82,17 @@ Currently "Confirm email", which describes the mechanic rather than the reward. 
 |---|---|---|---|
 | Subject | "Important: please confirm your email for The Sleep Concierge" | "One click and your catnapping guide is yours" | Leads with the reward. Drops "Important:", a spam-filter tell |
 | Opening | "Thanks for signing up. Click the button below to confirm your subscription to {{site.title}}." | "You asked for the free catnapping guide." | "Confirm your subscription" sounds like a newsletter they do not remember joining. They asked for a guide |
-| Timing claim | "Keep an eye out for your Free Catnapping Guide in your inbox shortly!" | "the guide is yours straight away" plus what follows over the next few days | "Shortly" was wrong. Sequence email 1 goes at 11:00 Melbourne, so it can be nearly a day later. The confirmation page is what delivers straight away |
+| Timing claim | "Keep an eye out for your Free Catnapping Guide in your inbox shortly!" | "The guide itself is on the page you land on, so you do not have to wait for an inbox" | "Shortly" was wrong. Sequence email 1 goes at 11:00 Melbourne, so it can be nearly a day later. The confirmation page is what delivers straight away |
 | Button | "Confirm email" | "Confirm and get the guide" | Names the reward, not the mechanic |
+
+### Corrections from the cross-provider verify pass, 2026-08-06
+
+A non-Anthropic refute pass (Cursor Composer, full output in [`../../../../../../docs/projects/catnapping-guide/4_working-cng002/verify/claims-cursor-composer.md`](../../../../../../docs/projects/catnapping-guide/4_working-cng002/verify/claims-cursor-composer.md)) found two lines in the draft above that misdescribed the delivery mechanic. Both are now fixed in the copy.
+
+| Was | Problem | Now |
+|---|---|---|
+| "One click and it is **on its way**" | "On its way" reads as inbox delivery. Nothing is emailed at confirm time, and the sequence email can be nearly 23 hours later. A parent would sit waiting for an email that is not coming | "One click and it is **yours**" |
+| "Confirming tells us your address is right, so **the guide** lands in your inbox instead of a spam folder" | Factually wrong about cause and effect. Confirming does not deliver the guide to an inbox. It verifies the address for the emails that follow. The guide is delivered on the confirmation page | "so **the emails that follow** reach you instead of a spam folder", plus an explicit line that the guide is on the page
 
 ---
 
@@ -118,8 +127,10 @@ Embed the PDF below the button so a parent on a phone can read without downloadi
 ```
 What comes next
 
-Over the next few days I will send you three short emails: age-by-age nap norms so you can tell normal from a problem, why short naps happen, and the first change to make. No pressure to buy anything.
+Over the next few days I will send you three short emails: age-by-age nap norms so you can tell normal from a problem, why short naps happen, and the first change to make. I will also tell you about the Snooze Membership, because it is what I would point you to next. Read it or ignore it, the guide is yours either way.
 ```
+
+**"No pressure to buy anything" was cut, and it is the most important correction in this document.** Two of the three sequence emails carry a membership call to action. Promising no pressure and then selling in two of three emails is a plain contradiction, easy for a member to screenshot, and under Australian Consumer Law the overall impression is what counts rather than a disclaimer elsewhere. It was flagged as the single most dangerous claim in the funnel by the cross-provider verify pass, and the fix is to say what actually happens.
 
 ### Membership CTA (secondary, below the fold)
 
