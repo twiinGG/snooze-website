@@ -1,3 +1,12 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Landing Page Performance Analysis
 **Date:** December 20, 2025  
 **Period:** Last 30 Days (November 20 - December 19, 2025)  

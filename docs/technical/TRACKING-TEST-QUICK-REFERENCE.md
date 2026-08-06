@@ -1,3 +1,12 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Tracking Test Quick Reference
 
 **Date:** December 16, 2025  

@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **This is the June 19 2026 fix that never went live. Its three deploy steps were never completed, and its premise that adding email reaches EMQ 8.0 was disproved: Purchase carries six keys at 100% and scores 6.9.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # EMQ Fix: Meta Advanced Matching + CAPI Dedup (Checkout)
 
 **Date:** June 19, 2026

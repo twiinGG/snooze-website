@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **Purchase value handling is now documented in the bible, including the defect where free claims report a purchase worth zero.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Final Price Tracking Fix - After Discount
 
 **Date:** December 16, 2025  

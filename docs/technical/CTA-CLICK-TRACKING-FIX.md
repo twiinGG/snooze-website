@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **This file is marked FIXED. It is not fixed. ME-006 measured cta_click at 1 browser event and 0 server events across a month, and click_checkout_cta at 232 browser and 0 server.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # CTA Click Tracking Fix - Landing Page to Checkout
 
 **Date:** December 20, 2025  

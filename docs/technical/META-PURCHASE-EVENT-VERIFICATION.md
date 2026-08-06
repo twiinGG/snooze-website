@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **Purchase is now measured rather than pending verification: EMQ 6.9, email coverage 100%, 34 browser to 33 server, dedup confirmed working.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Meta Purchase Event Verification Guide
 
 **Date:** December 16, 2025  

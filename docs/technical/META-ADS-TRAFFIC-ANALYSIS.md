@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **Predates the April 2026 stop in Meta ad spend. Its traffic conclusions no longer describe the account.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Meta Ads Traffic Analysis
 
 **Date:** December 20, 2025  

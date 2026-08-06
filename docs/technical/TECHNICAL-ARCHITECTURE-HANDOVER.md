@@ -1,3 +1,14 @@
+> # ⚠️ SUPERSEDED, do not use as guidance
+>
+> Folded into `SNOOZE-TECHNICAL-TRACKING-BIBLE.md` v4.0 on August 6, 2026 by ME-006, which re-read the live
+> state from the Meta, GA4, GTM, Kajabi and Stape APIs. Kept for history only.
+>
+> **Contractor-era handover. The architecture description is superseded by the bible, which corrects the GCP container, the Stape power-ups and the advanced matching rationale.**
+>
+> Evidence: `docs/projects/measurement/4_working/2026-08-06-stack-review/`
+
+---
+
 # Technical Architecture Handover
 
 For VSP's dev team. Covers the Snooze website architecture, tracking, JavaScript systems, CSS structure and deployment constraints.
