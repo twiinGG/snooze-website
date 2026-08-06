@@ -58,7 +58,8 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
     unpaused tags fired zero times**. On August 6, 2026, GTM MCP moved the container to Trash after a
     temporary, authorised permission elevation; the permission was restored immediately afterward.
     Paused Stape tag 32, which held the same obsolete Meta token as GCP tag 19, was removed from the live
-    server container in version 9. Live Stape tag 34 remains active and healthy.
+    server container in version 9. The shared legacy token is invalid. Server version 10 rotated the
+    credential on live Stape tag 34, revoked the former live token and kept tag 34 active and healthy.
 
 ---
 
@@ -380,7 +381,8 @@ Dataset `449153684613893` ("TSC Kajabi"), window 2026-07-09 to 2026-08-06.
     feedback despite four tags sending it. To make it useful, bind it to a stable per-person identifier
     at login or purchase.
 *   **Stape server tag 34 is in production mode.** Server GTM version 8 removed `TEST3319` and
-    `logType: debug`. The tag remains active.
+    `logType: debug`. Version 10 rotated its Meta CAPI credential. The former live token is revoked, the
+    older legacy token is invalid and tag 34 remains active.
 *   **Limited Data Use is off**, `dpoLDU: false` on every Meta tag.
 
 ### Paid advertising status
@@ -416,7 +418,8 @@ one Stape container, both went dark together, and the failure went unnoticed for
     (`monitoring: false`, `monitoringLimit: 0`), so the governed n8n workflow `stape-health-monitor`
     checks the container base, `/healthy` and the deployed custom loader every hour. It writes
     `mcp_health_logs` and sends a Gmail alert on non-healthy results. ME-006 corrected the loader URL on
-    August 6, 2026, and all three checks now contribute to the verdict.
+    August 6, 2026, and all three checks now contribute to the verdict. First corrected hourly execution
+    `28790` passed the base, custom loader and `/healthy` checks with combined status `healthy`.
 
 Full detail: `docs/operations/TRACKING-RECOVERY-AND-GA4-MCP-2026-06-08.md`.
 
