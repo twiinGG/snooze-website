@@ -8,7 +8,7 @@
 |------------|------|
 | Catnapping FAQ (visible) | `kajabi-deployment/pages/website/catnapping/faq-section.html` |
 | Catnapping page JSON-LD | `kajabi-deployment/pages/website/catnapping/page-schema.jsonld.html` |
-| Catnapping FAQ CSS (optional) | `kajabi-deployment/pages/website/catnapping/optional-faq.css` |
+| Catnapping FAQ CSS | `kajabi-deployment/global/css/theme-custom-code.css` (`.snooze-faq` block, paste row A2) |
 | Catnapping Kajabi panel SEO | `kajabi-deployment/pages/website/catnapping/panel-seo.md` |
 | Catnapping install steps | `kajabi-deployment/pages/website/catnapping/INSTALL.md` |
 | Challenge template notes | `docs/seo/challenge-schema-pack/challenge-page-template.md` |

@@ -216,15 +216,15 @@ If R3 is rejected and the confirmation stays on the Kajabi default, then fire `L
 
 ---
 
-## Form changes to make in Kajabi
+## Form changes: the reasoning
+
+**This section owns the reasoning. [`INSTALL.md`](./INSTALL.md) section 5b owns the steps, and [`CAPTURE-COPY.md`](./CAPTURE-COPY.md) owns the words.** Do the changes from 5b's table; read R1 to R4 here for why each one is what it is. If the two ever disagree, 5b is what someone follows in the admin, so fix 5b and re-point this.
 
 Ordered by what breaks without it. R1 to R3 are the ones that matter.
 
-### R1. Rename the form to the registry code
+### R1. Why the form is renamed to `FMLDGD01_Catnapping-Guide`
 
 Internal Title, currently `Homepage Catnapping LeadGen Form`. Two problems: it carries no registry code, and it is no longer on the homepage. The form is embedded on `/catnapping` and nowhere else (item 5).
-
-**Change to:** `FMLDGD01_Catnapping-Guide`
 
 Reasoning, and the honest caveat. `SNOOZE-NAMING-CONVENTIONS.md` v2 covers **offers only**, so there is no ratified form convention to cite. The only precedent in the account is `FMLM01_5-12M-Schedules` (form `2149418596`), which is `FM` + a pre-v2 lead-magnet code + kebab slug. `FMLDGD01_Catnapping-Guide` keeps that `FM` prefix and the `{CODE}_{Kebab-Slug}` shape from the offers convention, and swaps the dead `LM01` numbering for the live registry code `LDGD01`, so the form's name points at the exact offer it grants (`2149725554`).
 
@@ -232,15 +232,15 @@ Alternative if you would rather stay literally consistent with the one precedent
 
 The **form ID `2148526865` is the durable anchor** and never changes, which is why every reference in this repo leads with the ID. A rename breaks nothing.
 
-While renaming, also fix the customer-visible embed chrome. That copy is not on the Form details screen; it is under the **Embed** tab. It currently reads title "JOIN THE NEWSLETTER", subtitle "Subscribe to get our latest content by email.", button "Subscribe". The page CSS hides the title and subtitle, so the button is the one that shows: change it to **Send me the free guide**.
+The customer-visible embed chrome is a separate field and a separate fix. That copy is not on the Form details screen; it is under the **Embed** tab. It currently reads title "JOIN THE NEWSLETTER", subtitle "Subscribe to get our latest content by email.", button "Subscribe". The page CSS hides the title and subtitle, so the button is the one that shows, which is why 5b changes only the button.
 
-### R2. Fix the confirmation email copy
+### R2. Why the confirmation email copy is replaced
 
-Subject and structure are fine. One line is wrong: "Keep an eye out for your Free Catnapping Guide in your inbox shortly!" With the day-0 11:00 Melbourne send window, "shortly" can mean tomorrow morning.
+Subject and structure are fine in shape. One line is factually wrong: "Keep an eye out for your Free Catnapping Guide in your inbox shortly!" With the day-0 11:00 Melbourne send window, "shortly" can mean tomorrow morning.
 
-Replace with something that states the real sequence: confirm, guide lands in the library straight away, email follows in the morning. Keep the Sally sign-off and the coral Confirm email button as they are.
+The replacement has to state the real sequence: confirm, guide is available straight away on the confirmation page, email follows. Sally sign-off and the coral button stay. The paste-ready wording is in [`CAPTURE-COPY.md`](./CAPTURE-COPY.md), not here.
 
-### R3. Set a custom confirmation page
+### R3. Why a custom confirmation page
 
 Currently "Redirect contacts to custom confirmation page" is off, so the confirm click lands on Kajabi's Default Confirmation Page. That page is doing two jobs badly: it is the only moment you can hand the parent the guide, and it is the only place a reliable `Lead` tag can fire.
 
@@ -250,7 +250,7 @@ Optionally also tick **After Submission → Send the contact to a custom thank y
 
 ### R4. Leave these alone
 
-- **Double Opt-In: keep it.** It costs you confirmations, and it is still the right call: it protects domain deliverability for every other Snooze send, and the guide is worthless to someone who typed a fake address. Switching to Single Opt-In would lift raw claim numbers and enable reCAPTCHA, but it fills the sequence with addresses that never open. If you want that trade, make it a deliberate decision with a before-and-after on confirm rate, not a side effect of this deploy.
+- **Double Opt-In: unchanged by this run, and now under review.** The position written here originally was "keep it", on deliverability grounds. [`02-capture-target-state.md`](../../../../../../docs/projects/catnapping-guide/02-capture-target-state.md) section 2 reverses that recommendation to single opt-in with reCAPTCHA, on the grounds that in Kajabi a non-confirmer gets no grant, no sequence and no guide, so the gate is not filtering bad leads, it is failing to deliver to people who asked. Both arguments are real. **The decision belongs to Sally and Kade**, it changes a live consent mechanic, and it is on the CNG-002 gate sheet. Until it is made, the form stays Double Opt-In and the funnel is built to work under it.
 - **Form fields: Name and Email only.** Do not attach more. Several site-level fields available on this form (`Baby's Age`, `Baby's Date of Birth`, `Country`, `City`) carry `required: true` at site level, so attaching one silently makes it mandatory on this claim.
 - **Send a notification to your team: leave unchecked.** The automations handle delivery, and 103 submissions of inbox noise helps nobody.
 - **Send the contact to a third party email provider: leave unchecked.** Kajabi is the list.
