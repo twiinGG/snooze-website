@@ -57,8 +57,8 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
     No DNS record meant no production event could reach its configured custom domain, so its **seven
     unpaused tags fired zero times**. On August 6, 2026, GTM MCP moved the container to Trash after a
     temporary, authorised permission elevation; the permission was restored immediately afterward.
-    Paused Stape tag 32, which held the same obsolete Meta token as GCP tag 19, was deleted from the draft
-    workspace but deliberately not published. Live Stape tag 34 was unchanged and remained healthy.
+    Paused Stape tag 32, which held the same obsolete Meta token as GCP tag 19, was removed from the live
+    server container in version 9. Live Stape tag 34 remains active and healthy.
 
 ---
 
@@ -300,12 +300,12 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
     *   *Purpose:* Hides GTM from Ad Blockers by serving it from our own domain.
 *   **Container identifier:** `tmfzxzts` | **Plan:** Pro, USD 20/month, paid and healthy
 *   **Power-Ups: BOTH OF THE BELOW ARE OFF.** v3.0 listed Cookie Keeper and Ad Block Bypass as active.
-    **Both were wrong.** Read from the Stape API 2026-08-06:
+    **Both were wrong.** Corrected and verified through the Stape API 2026-08-06:
 
     | Setting | The loader is built as though | The container actually says |
     |---|---|---|
-    | Cookie Keeper | `codeSettings.useCookieKeeper: true` | `powerUps.cookieKeeper: false` |
-    | Ad blocker bypass | `codeSettings.useAdblockBypass: true` | `powerUps.adBlocker: false` |
+    | Cookie Keeper | `codeSettings.useCookieKeeper: false` | `powerUps.cookieKeeper: false` |
+    | Ad blocker bypass | `codeSettings.useAdblockBypass: false` | `powerUps.adBlocker: false` |
 
     Both are included in the Pro plan and simply not switched on. So cookie life is **not** extended,
     and the long-standing question "is the Cookie Life Extender actually on" is answered: no.
@@ -315,14 +315,15 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
     resumes, since it restores click IDs and there are currently almost no ad clicks to restore.
 *   **Monitoring is NOT available on the Pro plan** (`monitoring: false`, `monitoringLimit: 0`). Logs
     retain **three days** only.
-*   **Stape's stored `codeSettings.domain` is `ss.sleepconcierge.com.au`, which has no DNS record.** The
-    deployed loader correctly uses `load.ss.joinsnooze.com`. Nothing is broken, but re-copying the
-    container code from the Stape UI would ship a dead host. Fix the stored value.
+*   **Stape's stored domain is `ss.joinsnooze.com`.** The generated loader correctly uses
+    `load.ss.joinsnooze.com`. The full encrypted loader URL returned HTTP 200 after correction.
 *   **API access:** the Pro plan has `features.api: false`, so `app.stape.io/api/v2` returns 401 to every
     request regardless of key. This is not a broken credential. The working programmatic lane is the MCP
     server at `https://mcp.stape.ai/mcp`, authenticated with the **account** API key.
 *   **Single point of failure:** GA4 and Meta CAPI both broadcast through this one Stape container. If the Stape subscription lapses, GA4 and Meta both go dark together (see the Outage & Recovery section).
-*   **GCP usage:** A GCP service account now backs GA4/GTM read access (analytics tooling, not the live tag path), and a parallel GCP server container exists (`GTM-WGPK9KFP`). The "BigQuery" references in the Stape server container remain dormant/legacy and can be ignored.
+*   **GCP usage:** A GCP service account backs GA4/GTM analytics tooling, not the live tag path. The
+    retired parallel GCP server container `GTM-WGPK9KFP` was moved to GTM Trash on August 6, 2026. The
+    "BigQuery" references in the Stape server container remain dormant legacy settings.
 
 ---
 
@@ -378,9 +379,8 @@ Dataset `449153684613893` ("TSC Kajabi"), window 2026-07-09 to 2026-08-06.
     identity, so it identifies a browser rather than a person. It appears in **no event's** match-key
     feedback despite four tags sending it. To make it useful, bind it to a stable per-person identifier
     at login or purchase.
-*   **`TEST3319` and `logType: debug`** are live on Stape server tag 34. Measured **not** to be blocking
-    ingestion: server events arrive normally and `server_last_fired_time` is current. Still a defect to
-    remove.
+*   **Stape server tag 34 is in production mode.** Server GTM version 8 removed `TEST3319` and
+    `logType: debug`. The tag remains active.
 *   **Limited Data Use is off**, `dpoLDU: false` on every Meta tag.
 
 ### Paid advertising status
@@ -412,15 +412,11 @@ one Stape container, both went dark together, and the failure went unnoticed for
 *   **Reporting impact:** treat Apr 18 - Jun 7, 2026 as a known GA4/Meta data gap, not a real drop.
 *   **Recovery confirmed:** GA4 realtime showed real homepage and `/blog` traffic on Jun 8. Re-verify
     full GA4 volume and Meta server (CAPI) events after the ~24h reporting lag clears.
-*   **Prevention: still not in place, and the planned route does not exist.** v3.0 said monitoring was
-    planned via Stape. **Stape monitoring is not available on the Pro plan** (`monitoring: false`,
-    `monitoringLimit: 0`), so it cannot simply be switched on. Logs retain three days, short enough that
-    a lapse over a long weekend leaves no evidence behind.
-
-    Two viable routes: upgrade the Stape plan, or put an external uptime check on
-    `https://ss.joinsnooze.com/healthy`, which already returns a clean 200. **The external check is much
-    cheaper and covers the exact failure that actually happened.** Until one exists, the single point of
-    failure above is unguarded.
+*   **Prevention is in place outside Stape.** Native Stape monitoring is not available on the Pro plan
+    (`monitoring: false`, `monitoringLimit: 0`), so the governed n8n workflow `stape-health-monitor`
+    checks the container base, `/healthy` and the deployed custom loader every hour. It writes
+    `mcp_health_logs` and sends a Gmail alert on non-healthy results. ME-006 corrected the loader URL on
+    August 6, 2026, and all three checks now contribute to the verdict.
 
 Full detail: `docs/operations/TRACKING-RECOVERY-AND-GA4-MCP-2026-06-08.md`.
 
