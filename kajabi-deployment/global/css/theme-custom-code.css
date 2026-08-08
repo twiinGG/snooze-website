@@ -12638,7 +12638,7 @@ body.currency-loaded .dynamic-cta {
 #snooze-method-page h3 { font-size: 1.25rem; }
 #snooze-method-page p { margin: 0 0 1rem 0; }
 #snooze-method-page .method-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-#snooze-method-page .method-section { padding: 64px 0; }
+#snooze-method-page .method-band { padding: 64px 0; }
 
 #snooze-method-page .snooze-method-hero {
   background: var(--sn-cream);
@@ -12680,7 +12680,7 @@ body.currency-loaded .dynamic-cta {
 #snooze-method-page .different-card p { margin-bottom: 0; color: var(--sn-text-dark); }
 
 #snooze-method-page .learning-path { background: var(--sn-cream); }
-#snooze-method-page .method-section-intro {
+#snooze-method-page .method-intro {
   text-align: center;
   font-size: 1.1rem;
   color: var(--sn-sage);
@@ -12789,7 +12789,7 @@ body.currency-loaded .dynamic-cta {
   #snooze-method-page .tier-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  #snooze-method-page .method-section { padding: 48px 0; }
+  #snooze-method-page .method-band { padding: 48px 0; }
   #snooze-method-page .snooze-method-hero { padding: 64px 0 48px; }
   #snooze-method-page .principles-grid { grid-template-columns: 1fr; }
 }

@@ -11,6 +11,7 @@ Supporting docs (do not duplicate the map elsewhere):
 | Doc | Role |
 |---|---|
 | [`PASTE-MAP.md`](./PASTE-MAP.md) | Operator index: what / where / re-paste? |
+| [`CTA-CHECKOUT-FRESHNESS-AUDIT-2026-08-08.md`](./CTA-CHECKOUT-FRESHNESS-AUDIT-2026-08-08.md) | Live CTA audit: broken vs outdated checkout destinations; Claude Code handoff |
 | [`../docs/technical/CODE-SURFACE-CONTRACT.md`](../docs/technical/CODE-SURFACE-CONTRACT.md) | One-file-per-field contract + surface classes |
 | [`../docs/technical/KAJABI-SURFACE-CODE-SETUP.md`](../docs/technical/KAJABI-SURFACE-CODE-SETUP.md) | Container shapes and write paths |
 | [`../docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md`](../docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md) | Settings → Checkout header/footer how-to |
