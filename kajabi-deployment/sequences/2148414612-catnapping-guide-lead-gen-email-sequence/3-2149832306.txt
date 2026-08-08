@@ -1,37 +1,25 @@
+Internal title: Catnapping Email 3 (Alice story + trial) - 6 days later
+Email ID: 2149832306
+Send: Day 6 at 11:00 Melbourne
+Subject: Alice’s baby went from 3 to 5 wake-ups to 90 minute naps
+Preview text: One parent’s week, and the honest catch with any guide
+Pulled from live: 2026-08-08
+
+---
+
+[View in Web Browser]({{ view_as_webpage_link }})
 Hi again {{ first_name }},
-
-I wanted to share Alice's story with you:
-
+I want to share Alice’s story.
 "We were on 3-5 wakes a night with our 5-month-old, and I needed to hold her for every nap during the day, with it getting harder and harder to get her to sleep (even in my arms).
-
 In less than a week our babe was putting herself to sleep with no dummy, sleeping roughly 6pm - 7am with one feed at night. In less than two weeks she was also putting herself to sleep for naps, lasting roughly 90 minutes. She now sleeps between 14-15 hours a day and puts herself to sleep every time.
-
-After following Sally's guide, I feel I am once again enjoying my little girl, and also have the time to look after myself."
-
-This is Alice's success story, but every baby's sleep journey is unique. 
-
-This is why I've created different ways to support you:
-
-🌟 5-12 Month Sleep Guide Complete step-by-step system for independent sleep
-
-💫 The Snooze Social
-Daily access to sleep experts and a supportive parent community
-
-✨ 3-4 Month Sleep Course Navigate the 4-month sleep regression and lay solid sleep foundations with my best selling course
-
-Connect with our sleep community:
-
-Join me on Instagram @thesleepconcierge for daily sleep tips and real family transformations
-Watch my free sleep masterclasses in our Instagram highlights
-Get more sleep tips on TikTok @thesleepconcierge
-
-Wherever you are at with your sleep journey, know you're not alone. You got this!
-
+After following Sally’s guide, I feel I am once again enjoying my little girl, and also have the time to look after myself."
+Alice’s baby is not your baby, and that is the honest catch with any guide. Every baby needs the plan adjusted, which is the part a PDF cannot do.
+That is why the membership exists: the age-by-age plans, the courses, and Sally in your corner when your baby does not follow the plan. Sally is an internationally certified sleep consultant and former paediatric nurse, and she reads the questions herself.
+[Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
+The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
+Wherever you are with sleep right now, you are not alone in it.
 Sweet dreams,
-
 Sally
-
-P.S. Have questions about which solution is right for you? Reply to this email - I'm here to help you find the perfect fit for your family!
-
-Unsubscribe | Sent by {{ settings_name }}
+P.S. Not sure whether the membership is right for you? Reply and tell me your baby’s age and what your days look like. I will tell you straight.
+[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
 {{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

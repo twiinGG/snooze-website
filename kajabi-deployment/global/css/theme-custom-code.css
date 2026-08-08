@@ -199,7 +199,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) div[class*="section"]:not(.hero-section-complete):not(.feature-section):not(.trust-section):not(.testimonial-carousel):not(.pricing-section):not(.faq-section):not(.transformation-reviews):not(.inside-snooze):not(.value-comparison):not(.age-stages-section):not(.library-preview):not(.library-category-nav):not(.contact-hero-section):not(.contact-form-section):not(.contact-info-section):not(.snooze-problem-section):not(.snooze-target-audience):not(.snooze-individual-product-value):not(.snooze-membership-upgrade):not(.snooze-success-stories):not(.snooze-instructor-section):not(.snooze-faq-section):not(.snooze-final-cta-section):not(.course-hero-dark):not(.course-section-dark):not(.course-section-light):not(.course-overview-section):not(.course-curriculum-section):not(.course-reviews-section):not(.course-pricing-section):not(.course-faq-section):not(.course-curriculum-two-columns):not(.course-curriculum-column):not(.course-part-title),
 :is(
@@ -232,7 +231,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) section[class*="section"]:not(.snooze-section):not(.hero-section-complete):not(.feature-section):not(.trust-section):not(.testimonial-carousel):not(.pricing-section):not(.faq-section):not(.transformation-reviews):not(.inside-snooze):not(.value-comparison):not(.age-stages-section):not(.library-preview):not(.library-category-nav):not(.contact-hero-section):not(.contact-form-section):not(.contact-info-section):not(.snooze-problem-section):not(.snooze-target-audience):not(.snooze-individual-product-value):not(.snooze-membership-upgrade):not(.snooze-success-stories):not(.snooze-instructor-section):not(.snooze-faq-section):not(.snooze-final-cta-section):not(.course-hero-dark):not(.course-section-dark):not(.course-section-light):not(.course-overview-section):not(.course-curriculum-section):not(.course-reviews-section):not(.course-pricing-section):not(.course-faq-section):not(.course-curriculum-two-columns):not(.course-curriculum-column):not(.course-part-title) {
   padding-top: 0 !important;
@@ -271,7 +269,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) div[class*="block"]:not(.hero-content-wrapper):not(.feature-grid):not(.trust-wrapper),
 :is(
@@ -304,7 +301,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) div[class*="Block"]:not(.hero-content-wrapper):not(.feature-grid):not(.trust-wrapper),
 :is(
@@ -337,7 +333,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) div[class*="code-block"],
 :is(
@@ -370,7 +365,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) div[class*="html-block"] {
   padding-top: 0 !important;
@@ -409,7 +403,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) .kajabi-page-content > div > div,
 :is(
@@ -442,7 +435,6 @@
   #bedtime-battles-page,
   #night-wakings-page,
   #catnapping-page,
-  #catnapping-guide-ready-page,
   #press-page
 ) .kajabi-page-content > section > div {
   margin: 0 !important;
@@ -12615,224 +12607,4 @@ body.currency-loaded .dynamic-cta {
 #catnapping-page .snooze-form-embed button[type="submit"]:hover {
   background: var(--c-coral-hover, #D62646);
   border-color: var(--c-coral-hover, #D62646);
-}
-
-#catnapping-guide-ready-page {
-
-  --c-coral: #F43357;
-  --c-coral-hover: #D62646;
-  --c-navy: #1F293B;
-  --c-cream: #FAF7F4;
-  --c-beige: #F2EDEA;
-  --c-white: #FFFFFF;
-  --c-sage: #7C8A98;
-  --c-yellow: #FFC107;
-  --c-text: #161E2A;
-  --c-muted: #64748B;
-
-  --font-body: 'Poppins', sans-serif;
-  --font-head: 'Playfair Display', serif;
-
-  --radius: 20px;
-  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);
-  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
-  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);
-
-  width: 100%;
-  overflow-x: hidden;
-  font-family: var(--font-body);
-  color: var(--c-text);
-  line-height: 1.6;
-  background: var(--c-cream);
-  isolation: isolate;
-}
-
-#catnapping-guide-ready-page *,
-#catnapping-guide-ready-page *::before,
-#catnapping-guide-ready-page *::after { box-sizing: border-box; }
-#catnapping-guide-ready-page img { max-width: 100%; height: auto; display: block; }
-#catnapping-guide-ready-page a { text-decoration: none; transition: 0.3s ease; }
-
-#catnapping-guide-ready-page h1, #catnapping-guide-ready-page h2, #catnapping-guide-ready-page h3, #catnapping-guide-ready-page h4 {
-  font-family: var(--font-head);
-  color: var(--c-navy);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-#catnapping-guide-ready-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
-#catnapping-guide-ready-page h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-#catnapping-guide-ready-page h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
-
-#catnapping-guide-ready-page .snooze-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
-}
-#catnapping-guide-ready-page .snooze-section { padding: 72px 0; }
-#catnapping-guide-ready-page .bg-white { background: var(--c-white); }
-#catnapping-guide-ready-page .bg-cream { background: var(--c-cream); }
-#catnapping-guide-ready-page .text-center { text-align: center; }
-#catnapping-guide-ready-page .max-800 { max-width: 800px; margin: 0 auto; }
-
-#catnapping-guide-ready-page .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 32px;
-  background: var(--c-coral);
-  color: white;
-  font-weight: 600;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  min-height: 48px;
-  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);
-  letter-spacing: 0.1px;
-}
-#catnapping-guide-ready-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }
-#catnapping-guide-ready-page .btn-outline {
-  background: transparent;
-  border: 1px solid rgba(244, 51, 87, 0.45);
-  color: var(--c-coral);
-  box-shadow: none;
-}
-#catnapping-guide-ready-page .btn-outline:hover {
-  background: rgba(244, 51, 87, 0.08);
-  border-color: rgba(244, 51, 87, 0.7);
-  color: var(--c-coral);
-}
-
-#catnapping-guide-ready-page .hero-wrap {
-  padding-top: 56px;
-  padding-bottom: 40px;
-}
-
-#catnapping-guide-ready-page .steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-#catnapping-guide-ready-page .step-card {
-  background: white;
-  padding: 30px;
-  border-radius: var(--radius);
-  text-align: center;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-#catnapping-guide-ready-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
-
-#catnapping-guide-ready-page .snooze-section,
-#catnapping-guide-ready-page .snooze-footer {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-
-@media (max-width: 768px) {
-  #catnapping-guide-ready-page .snooze-section { padding: 56px 0; }
-  #catnapping-guide-ready-page .btn { width: 100%; }
-}
-
-#catnapping-guide-ready-page .cgr-hero-lead {
-  font-size: 1.1rem;
-  color: var(--c-muted);
-  margin: 0 auto 28px;
-  max-width: 640px;
-}
-
-#catnapping-guide-ready-page .cgr-library-note {
-  font-size: 0.9rem;
-  color: var(--c-muted);
-  margin: 18px auto 0;
-  max-width: 640px;
-}
-
-#catnapping-guide-ready-page .cgr-preview {
-  margin: 40px auto 0;
-  max-width: 640px;
-  border: 1px solid var(--c-beige);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--c-white);
-  box-shadow: var(--shadow-card);
-}
-#catnapping-guide-ready-page .cgr-preview iframe {
-  display: block;
-  width: 100%;
-  height: 640px;
-  border: none;
-}
-@media (max-width: 600px) {
-  #catnapping-guide-ready-page .cgr-preview iframe { height: 420px; }
-}
-
-#catnapping-guide-ready-page .cgr-age-question {
-  margin: 0 auto;
-  max-width: 640px;
-  border: none;
-  padding: 0;
-}
-#catnapping-guide-ready-page .cgr-age-legend {
-  font-family: var(--font-head);
-  color: var(--c-navy);
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-}
-#catnapping-guide-ready-page .cgr-age-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-#catnapping-guide-ready-page .cgr-age-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 56px;
-  padding: 14px 18px;
-  background: var(--c-white);
-  border: 2px solid var(--c-beige);
-  border-radius: 14px;
-  color: var(--c-navy);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-#catnapping-guide-ready-page .cgr-age-btn:hover,
-#catnapping-guide-ready-page .cgr-age-btn:focus-visible {
-  border-color: var(--c-coral);
-  box-shadow: var(--ring);
-  transform: translateY(-2px);
-}
-@media (max-width: 600px) {
-  #catnapping-guide-ready-page .cgr-age-grid {
-    grid-template-columns: 1fr;
-  }
-  #catnapping-guide-ready-page .cgr-age-btn {
-    width: 100%;
-  }
-}
-
-#catnapping-guide-ready-page .cgr-next-lead {
-  font-size: 1.05rem;
-  color: var(--c-text);
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-#catnapping-guide-ready-page .cgr-membership-lead {
-  font-size: 1.05rem;
-  color: var(--c-text);
-  max-width: 720px;
-  margin: 0 auto 28px;
 }

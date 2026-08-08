@@ -1,45 +1,23 @@
+Internal title: Catnapping Email 2 (Problem + Solution) - 2 days later
+Email ID: 2149832305
+Send: Day 2 at 11:00 Melbourne
+Subject: Baby still stuck with 30-minute naps?
+Preview text: The critical shift that happens at 5 months...
+Pulled from live: 2026-08-08
+
+---
+
+[View in Web Browser]({{ view_as_webpage_link }})
 Hey {{ first_name }},
-
-Quick question - does this sound familiar?
-
-❌ Your baby wakes after exactly 30-45 minutes
-
-❌ Resettling seems impossible
-
-❌ You're both overtired and cranky
-
-❌ Nothing you've tried seems to work
-
-Here's what many parents don't realize: At 5-6 months, your baby's sleep cycles mature.
-
-What worked for newborn sleep won't cut it anymore.
-
-Ready to make lasting changes? My 5-12 Month Sleep Guide shows you:
-
-✨ How to extend naps to 1-2 hours
-
-✨ The science behind sleep cycles at this age
-
-✨ Step-by-step settling techniques that work
-
-✨ How to create predictable daily routines
-
-Every day of better sleep means:
-
-A happier, more rested baby
-More time for you to recharge
-Predictable windows for getting things done
-Quality time together when you're both at your best
-
-Join 1000's of well-rested parents:
-
-Get Your Sleep Back
-
+Does this sound familiar?
+Your baby wakes after 30 or 45 minutes, almost to the minute. Resettling feels impossible. You are both fried by mid-afternoon. Nothing you have tried has stuck.
+Here is the part most parents are never told: a short nap is usually a symptom, not the problem. As sleep cycles mature, the day that used to work stops working, and naps are the first thing to break.
+Which means the fix is rarely a nap trick. It is the day around the nap: wake windows that match your baby now, feeds anchored in the right places, a settling approach you can repeat when you are tired.
+That is what the Snooze Membership is for. Age-by-age plans, the full course library, and Sally’s coaching when your baby does not match the plan. Your catnapping guide is already part of it.
+[Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
+The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
 Sweet dreams,
-
 Sally
-
 The Sleep Concierge
-
-Unsubscribe | Sent by {{ settings_name }}
+[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
 {{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

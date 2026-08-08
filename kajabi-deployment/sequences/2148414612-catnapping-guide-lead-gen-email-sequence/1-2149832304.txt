@@ -1,26 +1,23 @@
+Internal title: Catnapping Email 1 (Welcome + Guide Delivery)
+Email ID: 2149832304
+Send: Immediately
+Subject: Your catnapping guide, plus one thing to try today
+Preview text: Your guide is ready, plus one thing to try today
+Pulled from live: 2026-08-08
+
+---
+
+[View in Web Browser]({{ view_as_webpage_link }})
 Hey {{ first_name }},
-
-Your copy of The Sleep Concierge's Catnapping Guide using is ready! 
-
-Grab it here in your Member Library 👇
-
-Access Your Guide
-
-Quick Win: While you're reading the guide, try this today:
-
-Darken your baby's room for the next nap. I mean really dark. If you can see your hand in front of your face, it's too bright!
-
-This simple change helps many babies extend their naps immediately.
-
-I'll share more practical tips over the next few days alongside your guide to help you tackle those short naps.
-
-Sweet Dreams,
-
+Your catnapping guide is ready.
+[Open the guide](https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf)
+Try this today, before you have even finished reading it:
+Darken the room for the next nap. Really dark. If you can see your hand in front of your face, it is too bright.
+It will not fix every short nap. It is the cheapest thing to try, it costs you nothing and it is worth ruling out before anything harder.
+Over the next few days I will send you the rest: what nap lengths actually look like at your baby’s age, why the 30 to 45 minute wake happens and what to change first.
+Sweet dreams,
 Sally
-
-The Sleep Concierge 
-
-P.S. Been struggling with catnaps for a while? Reply to this email and let me know your biggest challenge. I read every response!
-
-Unsubscribe | Sent by {{ settings_name }}
+The Sleep Concierge
+P.S. Been fighting short naps for a while? Reply and tell me your biggest challenge. I read every response.
+[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
 {{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

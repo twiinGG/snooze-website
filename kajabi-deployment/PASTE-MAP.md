@@ -21,11 +21,38 @@ Authoritative detail:
 | # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo (2026-07-27) | Re-paste? |
 |---|---|---|---|---|---|---|
 | A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | Repo now contains membership CTA and attribution remediation that is not live | **Yes, with the membership release** |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | Repo now contains `#snooze-membership-page` System Initialization and page styles that are not live | **Yes, before page preview** |
+| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **MATCH** live payload (GTM/Stape loader only) | **No** for current loader |
 | A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
+
+### A2: two things that will waste your time if you do not know them
+
+Both learned first-hand on 2026-08-07, after three saves were silently lost.
+
+**1. "Save greys out" does NOT mean it saved.** The Customizer sends an `updated_at` optimistic-concurrency token with `PUT /admin/themes/<id>/settings`. An editor that has been sitting open on a stale token gets **HTTP 409 Conflict**, and the UI swallows it completely: no toast, no modal, and the Save button greys to `disabled` exactly as if the save had succeeded.
+
+> **Reload the theme settings page immediately before pasting**, and **verify on the live site**, never on the Save button.
+
+Verification that actually proves it, on any live website page:
+
+```bash
+curl -sS "https://www.joinsnooze.com/catnapping?cb=$RANDOM" \
+  | python3 -c "import sys,re; h=sys.stdin.read(); i=h.find('Custom CSS Added Via Theme Settings'); s=h.rfind('<style',0,i); e=h.find('</style>',i); b=h[s:e]; print('chars',len(b),'braces',b.count('{'),b.count('}'))"
+```
+
+Kajabi wraps the pasted file in `/* Custom CSS Added Via Theme Settings */`, so the served block is the repo file **plus 48 chars**. For the current file expect roughly **374,958 chars and 2276 balanced braces**.
+
+**2. Getting to the editor.** Design → caret → "Modify code" ignores synthetic clicks, which is why this was once thought to need a human for every paste. It does not. From inside the Customizer (`/admin/themes/<id>/settings/edit`), **Settings → Custom Code** mounts `settings-css-input` in two ordinary clicks and survives a page reload.
+
+### Checkout header compose order (A4)
+
+The live Header field today is **only** the GTM/Stape loader ([`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html)). That matches the repo file. **Do not re-paste A4 just to “sync” it.**
+
+Optional intended upgrade (not live yet): after the loader, append [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) with its comment header stripped, so `fbq` exists when Advanced Matching runs. That would be a deliberate new paste, not a restore.
+
+Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking/README.md).
 
 ### TO DO
 
@@ -67,7 +94,7 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 | # | Kajabi location | Admin path | Canonical file | Reaches | Live vs repo | Action |
 |---|---|---|---|---|---|---|
 | A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DRIFT:** repo contains the membership CTA and attribution remediation | **Yes, with the membership release** |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **DRIFT:** repo gained the membership page, `.snooze-faq` and catnapping blocks | **Yes, whole-file overwrite** during the coordinated website release |
+| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DONE** loader | No (see P7 for AM) |
 | A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | Was **EMPTY** (2026-07-27) | **Deploy only with the coordinated GTM order-bound cutover** |
