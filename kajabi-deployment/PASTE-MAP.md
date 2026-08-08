@@ -137,6 +137,7 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 | Landing | Live URL | Repo HTML | CSS in repo? | JS in repo? | Notes |
 |---|---|---|---|---|---|
 | `/links` (linktree) | <https://www.joinsnooze.com/links> | [`pages/landing/linktree/linktree-landing-page.html`](./pages/landing/linktree/linktree-landing-page.html) | yes | yes | Only complete trio |
+| Trial thank-you | Publish at the slug recorded in its metadata | [`pages/landing/7-day-trial-thank-you/thank-you-page.html`](./pages/landing/7-day-trial-thank-you/thank-you-page.html) | yes | yes | Shared redirect destination for both membership trial offers |
 | The Snooze Method | <https://www.joinsnooze.com/the-snooze-method> | [`pages/website/snooze-method/the-snooze-method.html`](./pages/website/snooze-method/the-snooze-method.html) | inlined in HTML | n/a | File lives under `pages/website/` but **deploys as a landing page**. **DONE** (H1 Methodology) |
 | Camp Snooze | camp landing | [`pages/landing/camp-snooze/`](./pages/landing/camp-snooze/) | partial | partial | Own theme; pull before overwrite |
 | Day Pass / paid ads / cold traffic / snooze-access | respective URLs | under [`pages/landing/`](./pages/landing/) | mostly missing | partial | WS-001 WS1 |

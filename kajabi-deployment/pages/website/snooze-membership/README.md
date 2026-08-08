@@ -2,6 +2,8 @@
 
 Paste `snooze-membership-page.html` into one full-width, flush custom-code section on the Kajabi Website Page at `/snooze-membership`. The wrapper is `#snooze-membership-page`. Native website navigation renders above the block. The canonical footer is copied inline at the bottom.
 
+Enter the page title, description, canonical URL and social-sharing values from [`page-metadata.md`](./page-metadata.md) through the Kajabi Website Page settings. Do not add metadata tags to the custom-code block.
+
 ## Offer and currency contract
 
 - Authoring currency: USD
@@ -9,6 +11,8 @@ Paste `snooze-membership-page.html` into one full-width, flush custom-code secti
 - AUD trial checkout: offer `2151254578`, slug `Sr6KzShx`
 - Trial links use the explicit USD URL plus `.dynamic-cta` and `data-checkout`. The existing site currency engine maps them to AUD.
 - Prices use `.dynamic-price`, `data-usd` and `data-aud`.
+- Pricing cards show rounded monthly equivalents: USD `$79`, `$66` and `$55`; AUD `$119`, `$99` and `$83` when paid monthly, quarterly or yearly. The visible currency toggle supplies the currency context, so these three AUD cards intentionally omit the `A` prefix.
+- Kajabi checkout remains the source of truth for the full quarterly and annual charge.
 - Currency controls mount through `.sn-currency-inline` and `data-currency-toggle-mount`.
 - The page does not select a pricing option. Visitors choose monthly, quarterly or annual billing at checkout.
 
@@ -34,6 +38,7 @@ Local provenance sources:
 ## Deployment notes
 
 - Page surface: Kajabi Website Page, shared Encore website theme `2156873377`.
+- Page settings source: [`page-metadata.md`](./page-metadata.md).
 - Section setting: `full_width: "true"`.
 - Code block setting: `make_flush: "true"`.
 - Add the section ID to `content_for_index` and its block ID to `block_order`.

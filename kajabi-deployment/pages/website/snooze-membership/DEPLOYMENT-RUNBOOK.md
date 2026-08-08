@@ -49,8 +49,10 @@ node apps/snooze-website/kajabi-deployment/global/js/__tests__/kajabi-checkout-t
 node apps/snooze-website/kajabi-deployment/global/js/__tests__/site-click-tracking.test.js
 node apps/snooze-website/kajabi-deployment/global/js/__tests__/currency-toggle.test.js
 node apps/snooze-website/kajabi-deployment/pages/website/snooze-membership/__tests__/membership-funnel.test.js
-npx --yes htmlhint --rules tag-pair,attr-no-duplication,id-unique,src-not-empty apps/snooze-website/kajabi-deployment/pages/website/snooze-membership/snooze-membership-page.html apps/snooze-website/kajabi-deployment/pages/website/home/home-page.html apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/usd/checkout-blocks.html apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/aud/checkout-blocks.html apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/thank-you-page.html
-npx --yes stylelint --config apps/snooze-website/scripts/stylelint-kajabi.json apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/shared/checkout.css apps/snooze-website/kajabi-deployment/global/css/theme-custom-code.css
+node --check apps/snooze-website/kajabi-deployment/pages/landing/7-day-trial-thank-you/thank-you-page.js
+node apps/snooze-website/kajabi-deployment/pages/landing/7-day-trial-thank-you/__tests__/thank-you-page.test.js
+npx --yes htmlhint --rules tag-pair,attr-no-duplication,id-unique,src-not-empty apps/snooze-website/kajabi-deployment/pages/website/snooze-membership/snooze-membership-page.html apps/snooze-website/kajabi-deployment/pages/website/home/home-page.html apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/usd/checkout-blocks.html apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/aud/checkout-blocks.html apps/snooze-website/kajabi-deployment/pages/landing/7-day-trial-thank-you/thank-you-page.html
+npx --yes stylelint --config apps/snooze-website/scripts/stylelint-kajabi.json apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/shared/checkout.css apps/snooze-website/kajabi-deployment/pages/landing/7-day-trial-thank-you/thank-you-page.css apps/snooze-website/kajabi-deployment/global/css/theme-custom-code.css
 ```
 
 The generic file-mode link checker treats root-relative Kajabi routes as local files. Check links against the unpublished preview in a headed browser, then repeat against the public origin after publication.
@@ -60,15 +62,16 @@ Block release on a placeholder, broken internal link, missing required environme
 ## Draft page creation
 
 1. Create a Kajabi Website Page with slug `/snooze-membership` and keep it unpublished.
-2. Add one full-width, flush custom-code section.
-3. Paste `snooze-membership-page.html` with `scripts/emit_paste_js.py`.
-4. Paste the complete shared `global/css/theme-custom-code.css` into the website theme CSS field.
-5. Save, reload and read the values back.
-6. Preview logged out at 320px, 390px, 768px and 1440px.
-7. Verify the native navigation remains above the custom block and the inline footer appears once.
-8. Verify both currency controls switch every displayed price and every `.dynamic-cta` together.
-9. Switch AUD to USD and confirm the original USD values and URL return.
-10. Confirm `view_item` fires once with no personal data.
+2. Enter every page setting from `page-metadata.md`.
+3. Add one full-width, flush custom-code section.
+4. Paste `snooze-membership-page.html` with `scripts/emit_paste_js.py`.
+5. Paste the complete shared `global/css/theme-custom-code.css` into the website theme CSS field.
+6. Save, reload and read the values back.
+7. Preview logged out at 320px, 390px, 768px and 1440px.
+8. Verify the native navigation remains above the custom block and the inline footer appears once.
+9. Verify both currency controls switch every displayed price and every `.dynamic-cta` together.
+10. Switch AUD to USD and confirm the original USD values and URL return.
+11. Confirm `view_item` fires once with no personal data.
 
 Do not update navigation or existing internal links until the draft passes.
 
@@ -132,6 +135,7 @@ Do not build or publish `/start-snooze` until the identity and field write proof
 ## Release acceptance
 
 - `/snooze-membership` returns 200 with no redirect.
+- The title, description, canonical URL and social tags match `page-metadata.md`.
 - USD and AUD checkout destinations, prices and variants match the offer registry.
 - No trial CTA uses a non-trial offer.
 - Every plan shows cadence, post-trial amount and cancellation instructions.

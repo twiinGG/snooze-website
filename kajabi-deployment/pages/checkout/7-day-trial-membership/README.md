@@ -28,11 +28,15 @@ toggle); see `KAJABI-OFFER-SETUP.md` → Currency.
     checkout-blocks.html   USD checkout HTML (PUBMS02_USD), links to AUD.
   aud/
     checkout-blocks.html   AUD checkout HTML (PUBMS02_AUD), links to USD.
-  thank-you-page.html      Post-purchase page (currency-neutral; set on both offers).
   emails/                  Trial email sequence (currency-neutral).
   KAJABI-OFFER-SETUP.md    Full Kajabi configuration + currency + operator tasks.
   README.md                This file.
 ```
+
+The post-purchase page is a separate landing-page bundle at
+`../../landing/7-day-trial-thank-you/`. Its HTML, CSS and JavaScript go into
+that landing page's own theme fields. Both currency offers redirect to the same
+published landing page.
 
 > Kajabi checkout CSS/JS is **per-offer**, not site-wide. For each offer, paste its
 > own `<currency>/checkout-blocks.html` as the HTML, and the SAME `shared/checkout.css`
@@ -70,8 +74,8 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 2. **Duplicate Core Offer:** Duplicate your existing core membership offer in Kajabi
 3. **Configure Trial Settings:** Set 7-day trial period and auto-conversion
 4. **Set Up Checkout Page:** Use the checkout HTML, CSS, and JS files
-5. **Set Up Thank You Page:** Use the thank you page HTML
-6. **Configure Email Automations:** Set up the 4 email automations with the provided templates
+5. **Set Up Thank You Page:** Deploy the complete `pages/landing/7-day-trial-thank-you/` bundle
+6. **Configure Email Sequence:** Set the offer post-purchase email to None, subscribe both offers to one lifecycle sequence and add the `7-day-trial-started` tag on purchase
 
 ---
 
@@ -99,6 +103,10 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 
 ## Email Sequence
 
+Both trial offers subscribe purchasers to the same `7 Day Trial Lifecycle`
+sequence. The offer purchase also adds the `7-day-trial-started` tag. The
+offer-level post-purchase email is set to None.
+
 1. **Welcome Email** (Day 0 - Immediate)
    - Sent immediately after trial signup
    - Introduces trial and next steps
@@ -109,8 +117,8 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
    - Encourages exploration
    - Highlights key features they might have missed
 
-3. **Day 4-5 Check-In** (Day 4)
-   - Sent 4 days after signup
+3. **Day 4-5 Check-In** (Day 5)
+   - Sent 5 days after signup
    - Subject line: 3 days left in your trial
    - Preview text: Your trial ends in 3 days. Here's what happens next and how to continue.
    - Reminds about trial ending soon

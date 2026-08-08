@@ -48,12 +48,21 @@ assert('every trial link starts from the USD trial offer', allTrialLinks.every(l
 assert('no trial link uses the non-trial membership offers', allTrialLinks.every(link => !nonTrialOfferPattern.test(link.href)));
 assert('every trial link uses dynamic currency routing', allTrialLinks.every(link => /class="[^"]*dynamic-cta/.test(link.tag) && /data-checkout/.test(link.tag)));
 
-['79', '197', '657'].forEach(value => {
+['79', '66', '55'].forEach(value => {
   assert('membership page includes USD price ' + value, membership.includes('data-usd="' + value + '"'));
 });
-['119', '299', '997'].forEach(value => {
+['119', '99', '83'].forEach(value => {
   assert('membership page includes AUD price ' + value, membership.includes('data-aud="' + value + '"'));
 });
+assert('every pricing card states per month', (membership.match(/membership-price-period">per month/g) || []).length === 3);
+assert('every AUD pricing card suppresses the redundant A prefix', (membership.match(/data-symbol-aud="\$"/g) || []).length === 3);
+assert('currency engine honours per-price symbol overrides', headerScripts.includes('symbolOverride !== null ? symbolOverride'));
+assert('quarterly card retains the original featured treatment', membership.includes('membership-price-card membership-price-card-highlight'));
+assert('monthly card says cancel anytime', membership.includes('<p class="membership-saving">Cancel anytime</p>'));
+assert('quarterly card says save 17%', membership.includes('<p class="membership-saving">Save 17%</p>'));
+assert('annual card says save 31%', membership.includes('<p class="membership-saving">Save 31%</p>'));
+assert('pricing cards omit currency-specific savings copy', !/Save \d+% in USD|Save \d+% in AUD/.test(membership));
+assert('pricing cards omit old billed totals', !/data-usd="(?:197|657)"|data-aud="(?:299|997)"/.test(membership));
 
 assert('membership page links payment settings', membership.includes('https://www.joinsnooze.com/settings/cards'));
 assert('membership page states login is required', /Login required/i.test(membership));

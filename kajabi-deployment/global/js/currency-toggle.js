@@ -164,7 +164,8 @@
       }
 
       try {
-        const symbol = currency === 'AUD' ? 'A$' : '$';
+        const symbolOverride = el.getAttribute(`data-symbol-${currency.toLowerCase()}`);
+        const symbol = symbolOverride !== null ? symbolOverride : (currency === 'AUD' ? 'A$' : '$');
 
         if (el.classList.contains('price')) {
           el.innerHTML = `<span class="dollar-sign">${symbol}</span>${price}<span> ${currency}</span><span>${period}</span>`;

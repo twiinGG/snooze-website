@@ -128,15 +128,23 @@ differs per currency; the CSS and JS are identical and shared.
 
 ## Step 7: Thank You Page Setup
 
-1. Go to **Offer Settings → Thank You Page**
-2. Select **"Custom Thank You Page"** or **"Redirect to URL"**
-3. Create a new Website Page in Kajabi:
-   - Go to **Website → Pages**
-   - Click **"New Page"**
-   - Name: "7-Day Trial Thank You"
-   - Page Type: Custom HTML or Code Block
-4. Paste the HTML from `thank-you-page.html` (currency-neutral; use for both offers)
-5. Link the page to your offer's thank you page settings
+1. Deploy the landing-page bundle at `../../landing/7-day-trial-thank-you/`.
+2. In Kajabi, go to **Website → Pages → Landing Pages** and create a blank page
+   named **7-Day Trial Thank You**.
+3. Add one full-width, flush Custom Code section with zero section padding.
+4. Paste `thank-you-page.html` into the Custom Code block.
+5. Paste `thank-you-page.css` into that landing page theme's Custom CSS field.
+6. Paste `thank-you-page.js` into that landing page theme's Custom JavaScript field.
+7. Remove or hide the theme's default header and footer. The bundle includes its
+   own minimal member header and support footer.
+8. Enter the values from the landing bundle's
+   `../../landing/7-day-trial-thank-you/page-metadata.md`, publish the page and
+   verify it while logged in as a trial member.
+9. For both currency offers, go to **Offer Settings → Thank You Page**, select
+   **Redirect to URL** and enter the same published landing-page URL.
+
+Do not paste the bundle into an offer-level custom thank-you code block. That
+surface does not supply this landing page's CSS and JavaScript theme fields.
 
 ---
 
@@ -156,21 +164,14 @@ The current draft sequence and its trigger conditions are in
 [`emails/README.md`](./emails/README.md). Do not use a checkout-page view, a
 missing tag or a trial-start event as proof of paid conversion.
 
-### Automation: Purchase & Send Welcome Email
+### Offer Post-Purchase Setting
 
-**When offer is purchased:**
-1. **Tag:** Add tag `snooze-trial` (or `7-day-trial-started`)
-2. **Send:** Post-Purchase email (welcome email from `emails/welcome-email.html`)
-3. **Subscribe:** Subscribe to the Day 2 and Day 5 lifecycle sequence.
+Set **Post-purchase email** to **None** on both the USD and AUD offers. The
+welcome email is the first email in the lifecycle sequence, so the offer must
+not send a second default or custom post-purchase email.
 
-**Setup in Kajabi:**
-1. Go to **Marketing → Automations**
-2. Create automation: "7 Day Trial - Purchase & Welcome"
-3. **Trigger:** Purchase "Snooze 7-Day Full Access Trial" offer
-4. **Actions:**
-   - Add tag `snooze-trial`
-   - Send email: Use content from `emails/welcome-email.html`
-   - Subscribe to email campaign: "7 Day Trial Lifecycle"
+Keep the separate Kajabi receipt enabled. The receipt is not part of the email
+sequence.
 
 ### Email Campaign Sequence Setup
 
@@ -178,14 +179,23 @@ Create an email campaign in Kajabi Marketing → Email Campaigns:
 
 **Campaign Name:** "7 Day Trial Lifecycle"
 
+Add an **Offer is purchased** subscribe trigger for each authorised trial
+offer. The same confirmed offer purchase must also add the
+`7-day-trial-started` tag. Do not trigger the sequence from the tag itself.
+
 **Emails in Sequence:**
-1. **Day 2 first action** - Use content from `emails/day-2-3-checkin-email.html`
+1. **Day 0 welcome** - Use content from `emails/welcome-email.html`
+   - Subject: "You&rsquo;re in. Start here"
+   - Preview Text: "Choose your baby&rsquo;s stage and take one clear first step."
+   - Delay: Day 0, immediately after the offer purchase subscribes the contact
+
+2. **Day 2 first action** - Use content from `emails/day-2-3-checkin-email.html`
    - Subject: "Your first Snooze step"
    - Preview Text: "Open your chosen guide or course and complete the first section."
    - Delay: 2 days after confirmed trial start
    - Condition: Trial access remains active
 
-2. **Day 5 trial reminder** - Use content from `emails/day-4-5-checkin-email.html`
+3. **Day 5 trial reminder** - Use content from `emails/day-4-5-checkin-email.html`
    - Subject: "A reminder before your trial ends"
    - Preview Text: "Your selected plan starts after day seven unless you cancel."
    - Delay: 5 days after confirmed trial start
@@ -198,14 +208,16 @@ Create two separate Day 8 automations. They must be mutually exclusive:
    - Preview Text: "Return to the guide or course that fits your baby&rsquo;s stage."
    - Trigger: Confirmed first paid subscription charge after a trial
 
-2. **Non-converter recovery** - Use `emails/trial-ended-followup-email.html`
-   - Subject: "Your Snooze trial has ended"
-   - Preview Text: "You can return when structured sleep support is useful."
-   - Trigger: Confirmed trial cancellation or expiry without a first paid charge
-   - Do not add a discount or special offer without written approval.
+2. **Non-converter recovery - PARKED**
+   - Do not configure the generic `emails/trial-ended-followup-email.html` branch while TCW-001 is parked.
+   - Voluntary trial cancellation will be owned by [TCW-001](../../../../../../docs/projects/trial-cancellation-winback/), using the dedicated Kajabi `Subscription cancelation initiated` trigger for immediate routing after approval.
+   - Do not use `Recurring payments cancelation initiated/completed` for TCW-001 enrolment.
+   - Do not enrol the win-back sequence from `Subscription cancelation complete`; reserve that event for terminal-state recording or cleanup if the controlled test requires it.
+   - A future non-cancellation expiry path must exclude anyone already routed into TCW-001 so the two messages cannot overlap.
 
-Stop the Day 2 and Day 5 sequence when Kajabi records cancellation, expiry or a
-first paid charge.
+Stop the lifecycle sequence when Kajabi records `Subscription cancelation
+initiated`, expiry or a first paid charge. Stopping the sequence on cancellation
+does not activate the parked TCW-001 win-back sequence.
 
 ---
 
@@ -223,11 +235,13 @@ first paid charge.
 
 ### Tag Setup in Automations
 
-- **Welcome Email Automation:** Add tag `7-day-trial-started`
+- **Offer purchase automation:** Add tag `7-day-trial-started` and subscribe the
+  contact to `7 Day Trial Lifecycle`
 - **Day 2 first action:** Add tag `trial-day-2-sent`
 - **Day 5 trial reminder:** Add tag `trial-day-5-sent`
 - **Confirmed first charge:** Add tag `trial-first-charge-confirmed`
-- **Confirmed cancellation or expiry without a charge:** Add tag `trial-ended-without-charge`
+- **Confirmed expiry without a charge:** Add tag `trial-ended-without-charge`
+- **Voluntary cancellation initiated:** stop the lifecycle sequence. TCW-001 will define its cancellation and entry-guard tags when that parked project is approved.
 
 ---
 
