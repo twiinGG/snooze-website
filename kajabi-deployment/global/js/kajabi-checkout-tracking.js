@@ -2,8 +2,6 @@
 (function () {
   'use strict';
 
-  // All live AUD-priced offers (numeric offer IDs, Kajabi list_offers 2026-07-11).
-  // Keep in sync when a new AUD offer is published. USD is the safe fallback.
   var AUD_OFFER_IDS = [
     '2150873956', '2150946767', '2151134284', '2151254578', '2151256977',
     '2151262009', '2151262011', '2151262012', '2151262013', '2151262014',
@@ -47,7 +45,6 @@
   var variantId = String(order.variant_id || order.pricing_option_id || order.offer_price_id || '');
   var trialPlan = TRIAL_VARIANTS[variantId] || { plan: 'unknown', cadence: 'unknown' };
 
-  // A missing Kajabi order ID cannot deduplicate or reconcile. Fail closed.
   if (!orderId || amount === null) return;
 
   var isTrialStart = amount === 0 && TRIAL_OFFER_IDS.indexOf(offerId) > -1;
@@ -60,9 +57,6 @@
   window.dataLayer = window.dataLayer || [];
 
   if (amount > 0) {
-    // This is the sole browser Purchase source. GTM sends the browser Meta
-    // event and GA4 request from this one dataLayer event. Server GTM receives
-    // the same event ID for Meta browser/server deduplication.
     window.dataLayer.push({
       event: 'purchase',
       ecommerce: {
@@ -91,8 +85,6 @@
       measurement_source: 'kajabi_order'
     });
   } else {
-    // Free orders are useful lifecycle signals for Contact 360, but they are
-    // not revenue. No GTM tag maps this diagnostic event to Purchase.
     window.dataLayer.push({
       event: 'free_claim',
       order_id: orderId,

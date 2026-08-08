@@ -39,14 +39,6 @@
   </div>
 </section>
 
-<!-- ============================================
-     ABOUT SALLY PAGE - SECTION 2: STORY
-     Version 2.0 (New Style)
-     Date: January 2025
-     
-     Why I created Snooze - Sally's story and mission.
-     ============================================ -->
-
 <section class="about-sally-story" id="story">
   <div class="snooze-container">
     <div class="about-section-header">
@@ -66,14 +58,6 @@
     </div>
   </div>
 </section>
-
-<!-- ============================================
-     ABOUT SALLY PAGE - SECTION 3: PHILOSOPHY
-     Version 2.0 (New Style)
-     Date: January 2025
-     
-     Sally's core philosophy and beliefs about sleep and parenting.
-     ============================================ -->
 
 <section class="about-sally-philosophy" id="philosophy">
   <div class="snooze-container">
@@ -117,14 +101,6 @@
     </div>
   </div>
 </section>
-
-<!-- ============================================
-     ABOUT SALLY PAGE - SECTION 4: CREDENTIALS
-     Version 2.0 (New Style)
-     Date: January 2025
-     
-     Sally's credentials, experience, and expertise.
-     ============================================ -->
 
 <section class="about-sally-credentials" id="credentials">
   <div class="snooze-container">
@@ -177,15 +153,6 @@
   </div>
 </section>
 
-<!-- ============================================
-     ABOUT SALLY PAGE - SECTION 4B: FAQ (GEO/credential accuracy)
-     Date: June 2026
-
-     Extractable Q&A so AI assistants quote the correct credential
-     and never present Sally as a currently practising nurse (she is on a non-practising registration).
-     Visible text mirrors the FAQPage schema at the foot of the page.
-     ============================================ -->
-
 <section class="about-sally-faq" id="about-sally-faq">
   <div class="snooze-container">
     <div class="about-section-header">
@@ -206,58 +173,40 @@
   </div>
 </section>
 
-<!-- ============================================
-     ABOUT SALLY PAGE - SECTION 5: CTA
-     Version 2.0 (New Style)
-     Date: January 2025
-
-     Context-aware CTA section for joining Snooze.
-     ============================================ -->
-
 <section class="about-sally-cta" id="cta">
   <div class="snooze-container">
     <div class="about-cta-content">
       <h2 class="about-cta-title">Ready to Work Together?</h2>
       <p class="about-cta-text">Join the Snooze membership and get access to every age-based course and guide, live masterclasses and coaching sessions with the Snooze Specialists and a supportive community of parents who get it.</p>
       
-      <!-- Context-Aware CTA Component -->
       <div class="about-cta-container">
-        <!-- This will be populated by JavaScript -->
         <div id="about-sally-cta-location" class="snooze-context-cta"></div>
       </div>
       
       <script>
       (function() {
-        // Ensure globals are loaded
         if (typeof window.SNOOZE_CHECKOUT_URL === 'undefined') {
           window.SNOOZE_CHECKOUT_URL = 'https://joinsnooze.com/offers/z63s9VaR/checkout';
         }
         if (typeof window.SNOOZE_LIBRARY_URL === 'undefined') {
           window.SNOOZE_LIBRARY_URL = '/snooze-library';
         }
-        // Acquisition branches use the 7 day trial; SNOOZE_CHECKOUT_URL stays the
-        // paid membership for the logged-in upgrade path.
         if (typeof window.SNOOZE_TRIAL_URL === 'undefined') {
           window.SNOOZE_TRIAL_URL = 'https://www.joinsnooze.com/offers/mqQikDM7/checkout';
         }
         
-        // Get user status (with fallback to signposting)
         var userStatus = 'signposting'; // Default to signposting (safest approach)
         
-        // Try detection if available
         if (typeof window.SnoozeUserDetection !== 'undefined') {
           userStatus = window.SnoozeUserDetection.getUserStatus();
         }
         
-        // Get CTA container
         var ctaContainer = document.getElementById('about-sally-cta-location');
         if (!ctaContainer) return;
         
-        // Generate appropriate CTA based on status
         var ctaHTML = '';
         
         if (userStatus === 'snooze-member') {
-          // Snooze Member: Show Library access
           ctaHTML = `
             <div class="snooze-cta-member">
               <a href="${window.SNOOZE_LIBRARY_URL}" class="snooze-btn-primary">
@@ -267,7 +216,6 @@
             </div>
           `;
         } else if (userStatus === 'logged-in-non-member') {
-          // Logged-in Non-Member: Show upgrade CTA
           ctaHTML = `
             <div class="snooze-cta-upgrade">
               <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
@@ -277,7 +225,6 @@
             </div>
           `;
         } else if (userStatus === 'new-visitor') {
-          // New Visitor: Show join CTA
           ctaHTML = `
             <div class="snooze-cta-join">
               <a href="${window.SNOOZE_TRIAL_URL}" class="snooze-btn-primary">
@@ -287,7 +234,6 @@
             </div>
           `;
         } else {
-          // Signposting: Show all options with clear labels
           ctaHTML = `
             <div class="snooze-cta-signposting">
               <div class="snooze-cta-options">
@@ -311,7 +257,6 @@
           `;
         }
         
-        // Insert CTA HTML
         ctaContainer.innerHTML = ctaHTML;
       })();
       </script>
@@ -319,17 +264,6 @@
   </div>
 </section>
 
-<!-- ============================================
-     ABOUT SALLY PAGE - STRUCTURED DATA (JSON-LD)
-     Date: June 2026
-
-     Person + FAQPage schema. Pins Sally's credential as an
-     extractable, machine-readable fact (GEO project, item 1).
-     Page already renders <script> (see CTA), so JSON-LD is safe here.
-     Note: site-wide Organization schema is tracked separately
-     (IMPLEMENTATION-AND-DEPLOYMENT.md item 2); worksFor below is
-     self-contained until that global entity lands.
-     ============================================ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

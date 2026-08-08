@@ -1,37 +1,12 @@
-<!--
-  SNOOZE BAU MEMBERSHIP CHECKOUT - USD (offer z63s9VaR / 2150754998)
-  AUD twin: aud/checkout-blocks.html (offer vYgCNgJz / 2151256977)
-  Deployed 2026-07-02 via MCP update_theme_content (theme 2163485833,
-  section 1744906803654, block 1767316681231). HTML only, no <style>/<script>.
-  Currency switch = static twin link in the footer note (server-rendered price;
-  no JS toggle on checkout pages), same pattern as the 7-day-trial pair.
-
-  APPROVAL STATUS: draft, awaiting Sally sign-off through the approval queue.
-  Change owner: PRD-LADDER (BM-001) section 5(a), 2026-07-05.
-  Change: added the monthly/quarterly/annual plan-tiers framing block below the
-  hero. Quarterly is the honest-middle "try the full season" step; annual is
-  "lock in the year". Variant IDs are pulled from currency-toggle.js
-  CONFIG.variantMapping (USD offer 2150754998: monthly 68112, quarterly 37262,
-  yearly 37263) and carried as data-variant only. No dollar figures appear here;
-  the native Kajabi variant selector renders the prices, and the annual saving is
-  stated as a registry-derived proportion (~30% vs paying monthly across 12
-  months). CU-001 principles P1/P3/P6/P7/P8 apply. No prices changed.
--->
 
 <div id="snooze-custom-checkout" class="snooze-checkout-content">
 
-  <!-- Hero Section -->
   <div class="snooze-checkout-hero">
     <h1>Your Access to the Snooze Membership</h1>
     <p class="subheadline">A calm, structured path to better sleep. Expert guidance, a supportive community, and clear steps you can use straight away.</p>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
 
-  <!-- Plan Tiers: monthly / quarterly / annual.
-       Variant IDs from currency-toggle.js CONFIG.variantMapping (USD offer 2150754998):
-       monthly 68112, quarterly 37262, yearly 37263. Carried as data-variant only;
-       the native Kajabi checkout selector renders the actual prices. -->
   <div class="plan-tiers-wrap">
     <h2>Choose the plan that fits your season</h2>
     <p class="plan-tiers-intro">Every plan gives you the full Snooze membership. The only difference is how you pay and how much you save.</p>
@@ -62,7 +37,6 @@
     </div>
   </div>
 
-  <!-- What's Included Section -->
   <div class="whats-included">
     <h2>What's Included</h2>
     <ul class="benefits-list">
@@ -109,20 +83,16 @@
         </div>
       </li>
     </ul>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
 
-  <!-- Why Join Section -->
   <div class="why-join">
     <h2>Why parents join</h2>
     <p>Fast clarity. Practical steps. A village that understands the season you're in.</p>
     <p>Your membership provides one place for guidance, live sessions, and ongoing support so you can make steady progress and rest easier.</p>
-    <!-- Mobile scroll to checkout button -->
     <a href="#" class="mobile-scroll-to-checkout scroll-to-checkout">Continue to Checkout</a>
   </div>
 
-  <!-- Footer Note -->
   <div class="checkout-footer-note">
     <p><strong>Please note:</strong> Prices shown in USD. Paying from Australia? <a href="https://www.joinsnooze.com/offers/vYgCNgJz/checkout" data-currency-switch="AUD">View AUD pricing</a>.</p>
     <p>All products and services are covered by our <a href="/terms-conditions" target="_blank">Terms & Conditions</a>.</p>

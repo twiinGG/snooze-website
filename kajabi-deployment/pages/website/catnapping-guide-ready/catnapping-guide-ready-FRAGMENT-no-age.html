@@ -11,15 +11,11 @@
 
 <section class="snooze-section bg-white">
   <div class="snooze-container text-center max-800">
-    <!-- Inline PDF preview so a parent on a phone can read without downloading. Falls back to the
-         download button above if the browser cannot render the embed. -->
     <div class="cgr-preview">
       <iframe src="https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf" title="Catnapping guide preview" loading="lazy"></iframe>
     </div>
   </div>
 </section>
-
-
 
 <section class="snooze-section bg-white">
   <div class="snooze-container text-center max-800">
@@ -84,7 +80,7 @@
       <div class="sf-col">
         <h4 class="sf-heading">Programs</h4>
         <ul class="sf-links">
-          <li><a href="/snooze-access">Snooze Membership</a></li>
+          <li><a href="/snooze-membership">Snooze Membership</a></li>
           <li><a href="/store">Courses &amp; Guides</a></li>
           <li><a href="/camp-snooze-sleep-coaching">Camp Snooze</a></li>
           <li><a href="/one-on-one-sleep-consultations">Consultations</a></li>
@@ -121,30 +117,6 @@
   </div>
 </footer>
 
-<!--
-  CNG-002 Lead tracking. Verified against live GTM-KNRTH6P on 2026-08-06.
-
-  This page does NOT need new GTM tags. The Lead stack already exists and is live:
-    tag 138 "1.5 FB Lead"          -> Meta standard event Lead, advanced matching
-    tag 139 "2.5 GA4 - generate_lead" -> GA4 generate_lead, routed server-side
-    trigger 137                    -> custom event, dataLayer event name "generate_lead"
-  Nothing on the site pushes that event, which is the only reason the capture was
-  untracked. This block is what fires it. Do not add a Meta or GA4 tag for this.
-
-  Advanced matching: GTM variable {{cJS - Lead - Email}} reads
-  localStorage.getItem('lead_email'). We set it ONLY when the confirmation redirect
-  actually carries an email. If it does not, the event still fires and still matches
-  on the external_id cookie, just with lower match quality. We never invent a value.
-
-  Fires ONCE per browser per confirmation. This page is reached from an email link,
-  and email clients prefetch, parents reload, and people return to re-download the
-  guide days later. Every one of those is a page view that must not count as a
-  second lead.
-
-  KNOWN CONSEQUENCE, flagged for Kade: the server container also has tag 19
-  "GAds generate_lead" on this same event, so this will also register a Google Ads
-  conversion. That is a decision, not an accident.
--->
 <script>
 (function () {
   var LEAD_KEY = 'cng002_lead_fired';
@@ -152,8 +124,6 @@
   try {
     if (window.localStorage.getItem(LEAD_KEY)) { return; }
   } catch (e) {
-    // Private mode or storage disabled. Fall through and fire once for this load
-    // rather than losing the lead entirely.
   }
 
   var params = new URLSearchParams(window.location.search);

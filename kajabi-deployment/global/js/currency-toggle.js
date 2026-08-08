@@ -6,18 +6,12 @@
     storageKey: 'snooze_currency_preference',
     defaultCurrency: 'USD',
     offerMapping: {
-      // Core Snooze Membership (USD offer 2150754998 / z63s9VaR -> AUD offer 2151256977 / vYgCNgJz).
-      // UPDATED 2026-06-30: repointed from the old monthly-only AUD draft offer (now DELETED) to the
-      // complete AUD core offer vYgCNgJz/2151256977 (A$119/A$299/A$997).
       '2150754998': '2151256977',
       'z63s9VaR': 'vYgCNgJz',
       '2150887297': '2151254578',
       'mqQikDM7': 'Sr6KzShx',
       '2150884129': '2150946767',
       'K3Y6FEKX': '46Bz9tk6',
-      // Tier-2 AUD twins (created via MCP 2026-07-02, USD x1.51 charm-rounded).
-      // DO NOT deploy this block to Kajabi until the AUD twins are PUBLISHED in admin,
-      // or AUD mode will link to draft (404) checkouts.
       '2149475268': '2151262009', // PUBCR01 3-4 Month Course  $117 -> A$179
       'W2PyqL2X': 'FkZfbT25',
       '2150844344': '2151262011', // PUBCR02 5-12 Course       $117 -> A$179
@@ -36,18 +30,14 @@
       'mwiSia6A': 'ZYWF7eY8'
     },
     variantMapping: {
-      // Core Snooze Membership variants (USD offer 2150754998 -> AUD offer 2151256977 / vYgCNgJz).
-      // RESOLVED 2026-06-30: AUD core offer created with all three tiers; placeholders filled.
       '68112': '161174', // monthly:   USD $79  -> AUD $119
       '37262': '161175', // quarterly: USD $197 -> AUD $299
       '37263': '161176', // yearly:    USD $657 -> AUD $997
-      // 7-Day Trial variants (USD offer 2150887297 -> AUD offer 2151254578 / Sr6KzShx).
       '160544': '160790', // monthly:   USD $79  -> AUD $119
       '64815': '160791',  // quarterly: USD $197 -> AUD $299
       '64816': '160792'   // yearly:    USD $657 -> AUD $997
     },
     audOfferIds: ['2150946767', '2151256977', '2151254578',
-      // Tier-2 AUD twins (2026-07-02):
       '2151262009', '2151262011', '2151262012', '2151262013',
       '2151262014', '2151262016', '2151262017', '2151262018']
   };
@@ -252,10 +242,6 @@
         }
 
         const newLink = rewriteCheckoutUrl(originalHref, currency);
-        // Compare against the CURRENT href, not the stored original. newLink is always
-        // the correct target for `currency` (derived from the immutable original href),
-        // so writing it whenever it differs from what's on the element makes the toggle
-        // round-trip: switching back to USD restores the USD href even after an AUD switch.
         const linkChanged = newLink !== btn.getAttribute('href');
 
         if (linkChanged) {
@@ -330,8 +316,6 @@
       }
     }
 
-    // Inline toggles: opt-in per page. Any element with class .sn-currency-inline
-    // gets a toggle mounted inside it (e.g. inside a pricing section). Idempotent.
     const inlineMounts = document.querySelectorAll('.sn-currency-inline');
     inlineMounts.forEach(mount => {
       if (mount.querySelector('.currency-toggle-btn')) return;
@@ -342,8 +326,6 @@
       }
     });
 
-    // Sticky toggle: opt-in per page via .sn-currency-sticky placeholder.
-    // The page controls positioning via CSS; the engine only mounts the button.
     const stickyMounts = document.querySelectorAll('.sn-currency-sticky');
     stickyMounts.forEach(mount => {
       if (mount.querySelector('.currency-toggle-btn')) return;
@@ -354,9 +336,6 @@
       }
     });
 
-    // Label every freshly-injected toggle immediately (initCurrency runs
-    // setCurrency before injectToggles, so toggles would otherwise be blank
-    // until the first click).
     try {
       const current = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
       updateToggleUI(current);

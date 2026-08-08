@@ -11,7 +11,6 @@
     if (!grid || grid.getAttribute('data-sn-enhanced')) return;
     grid.setAttribute('data-sn-enhanced', '1');
 
-    // Monthly / Quarterly / Annual -> [USD, AUD, period label]
     var map = [
       ['79', '119', 'per month'],
       ['197', '299', 'per 3 months'],
@@ -33,17 +32,10 @@
       if (micro && /\/day/.test(micro.textContent)) {
         micro.innerHTML = 'Less than <span class="dynamic-price" data-usd="2.20/day" data-aud="3.30/day"></span>';
       }
-      // Tier CTA: the engine rewrites .dynamic-cta, but these buttons are
-      // .price-card a (not the engine's .pricing-card a selector), so tag them
-      // to keep the AU checkout currency-correct (z63s9VaR -> vYgCNgJz in AUD).
       var cta = cards[i].querySelector('a');
       if (cta) cta.classList.add('dynamic-cta');
     }
 
-    // Inline currency toggle above the grid. The engine's injectToggles has
-    // already run, so mount the v2 two-segment switch via the engine's own
-    // exposed builder (never hand-roll v1 markup: v2 updateToggleUI only
-    // drives role=radio segments, so a bare button renders empty/invisible).
     if (!document.querySelector('#pricing .sn-currency-inline')) {
       var api = window.__snoozeCurrencyToggle__;
       if (api && api.createToggleButton) {
@@ -58,8 +50,6 @@
       }
     }
 
-    // Re-run the engine so the freshly-tagged prices + toggle reflect the
-    // current currency (initCurrency already ran before these existed).
     if (window.setCurrency) {
       var current = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
       window.setCurrency(current, false);
