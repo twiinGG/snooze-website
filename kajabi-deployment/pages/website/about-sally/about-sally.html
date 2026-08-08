@@ -235,6 +235,11 @@
         if (typeof window.SNOOZE_LIBRARY_URL === 'undefined') {
           window.SNOOZE_LIBRARY_URL = '/snooze-library';
         }
+        // Acquisition branches use the 7 day trial; SNOOZE_CHECKOUT_URL stays the
+        // paid membership for the logged-in upgrade path.
+        if (typeof window.SNOOZE_TRIAL_URL === 'undefined') {
+          window.SNOOZE_TRIAL_URL = 'https://www.joinsnooze.com/offers/mqQikDM7/checkout';
+        }
         
         // Get user status (with fallback to signposting)
         var userStatus = 'signposting'; // Default to signposting (safest approach)
@@ -275,10 +280,10 @@
           // New Visitor: Show join CTA
           ctaHTML = `
             <div class="snooze-cta-join">
-              <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
-                Join Snooze
+              <a href="${window.SNOOZE_TRIAL_URL}" class="snooze-btn-primary">
+                Start the 7 day trial
               </a>
-              <p class="snooze-cta-note">Get access to all sleep resources and support</p>
+              <p class="snooze-cta-note">The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.</p>
             </div>
           `;
         } else {
@@ -287,10 +292,11 @@
             <div class="snooze-cta-signposting">
               <div class="snooze-cta-options">
                 <div class="snooze-cta-option">
-                  <a href="${window.SNOOZE_CHECKOUT_URL}" class="snooze-btn-primary">
-                    Join Snooze
+                  <a href="${window.SNOOZE_TRIAL_URL}" class="snooze-btn-primary">
+                    Start the 7 day trial
                   </a>
                   <p class="snooze-cta-label">New to Snooze? Start here</p>
+                  <p class="snooze-cta-label">The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.</p>
                 </div>
                 <div class="snooze-cta-divider">or</div>
                 <div class="snooze-cta-option">
