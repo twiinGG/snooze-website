@@ -150,8 +150,8 @@ rg -n 'offers/mqQikDM7/checkout' \
   apps/snooze-website/kajabi-deployment/pages/website/age-pages \
   apps/snooze-website/kajabi-deployment/pages/website/{catnapping,early-rising,nap-transitions,sleep-regressions,bedtime-battles,night-wakings}
 
-# Live smoke (post-deploy)
-curl -sS -o /dev/null -w '%{http_code}\n' \
+# Live smoke (post-deploy). --http1.1 is required: see Method notes.
+curl -sS --http1.1 -o /dev/null -w '%{http_code}\n' \
   'https://www.joinsnooze.com/offers/mqQikDM7/checkout' \
   'https://www.joinsnooze.com/offers/z63s9VaR/checkout'
 ```
@@ -162,6 +162,7 @@ Paste via [`PASTE-MAP.md`](./PASTE-MAP.md) and the surface rules in [`../docs/te
 
 ## Method notes
 
+- **Offer URLs need `curl --http1.1`.** Corrected 2026-08-09 (WS-003). A bare `curl` to `https://www.joinsnooze.com/offers/<slug>/checkout` returns **403**, and this doc's original smoke command did exactly that. That 403 is an HTTP/2 fingerprinting artefact, **not** a Cloudflare block and not a tool limit: the identical request with `--http1.1` and the same desktop UA returns **200**. Re-verified 2026-08-09 against `mqQikDM7`: HTTP/2 gives 403, HTTP/1.1 gives 200. Offer status is therefore fully verifiable over HTTP with no browser lane, and the method cleanly discriminates a mounted checkout from a login wall. Treating a 403 here as a finding is a false positive.
 - Live HTTP checks for `kjb-embedded-checkout` / React checkout mount (Kajabi loads products client-side).  
 - Offer inventory from deployable HTML/JS under `kajabi-deployment/` (excluded `_live-preimages`, `_retired`, `_archive`).  
 - Kajabi MCP was `needsAuth` during the audit session; product-grant line items were not re-verified in admin.  

@@ -58,7 +58,7 @@ Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking
 
 | # | Status | What to do | Where | Repo / replacement text |
 |---|---|---|---|---|
-| **P5** | **TO DO** | Fix banned Store copy | Customizer → `/store` → section **`1764559895491`** ("Offer Storefront") → text block **`1764559895491_0`** | Replace `Weekly group coaching and replays` with: `Live masterclasses and coaching sessions with the Snooze Specialists, plus a full library of catch up recordings.` (admin UI only; no repo HTML) |
+| **P5** | **DONE** (closed 2026-08-09) | Fix banned Store copy | superseded: `/store` is no longer the native-builder page this row described | `Weekly group coaching and replays` returns 0 on live `/store` and 0 in [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html), verified 2026-08-09. The StoreV2 deploy replaced the text block this row pointed at |
 | **P3** | **TO DO (optional)** | Paste purchase tracking if shipping it | **Settings → Checkout** → **Footer tracking code** | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) · Inject flags are **true** on membership checkouts; footer field was **EMPTY** as of 2026-07-27 (cannot re-read via public curl; Cloudflare 403 on checkouts) |
 | **LIB** | **TO DO (confirm first)** | Logged-in compare before any paste | <https://www.joinsnooze.com/snooze-library> · page **2156716053** (`authenticated_only`) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) · Public verify blocked (403) |
 | **P6** | **HOLD** | Pull day-pass theme css+js from live before editing | Day-pass offer theme CSS + JS fields | Missing under [`pages/checkout/day-pass-offer/`](./pages/checkout/day-pass-offer/) |
@@ -116,9 +116,22 @@ Enter customizer via <https://app.kajabi.com/admin/sites/2148291177/themes> → 
 | About Sally | <https://www.joinsnooze.com/about-sally> | [2154679198](https://app.kajabi.com/admin/website_pages/2154679198/edit) | Whole-page custom code (confirm H1 before edit) | [`pages/website/about-sally/about-sally.html`](./pages/website/about-sally/about-sally.html) | **DONE** |
 | 1:1 Consultations | <https://www.joinsnooze.com/one-on-one-sleep-consultations> | [2155283958](https://app.kajabi.com/admin/website_pages/2155283958/edit) | Section/block **`1765189516514`** only | [`pages/website/consultations/one-on-one-consultations-page.html`](./pages/website/consultations/one-on-one-consultations-page.html) | **DONE** |
 | Snooze Library | <https://www.joinsnooze.com/snooze-library> | [2156716053](https://app.kajabi.com/admin/website_pages/2156716053/edit) | That page’s Custom Code block(s) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) | **TO DO: confirm logged-in** |
-| Store | <https://www.joinsnooze.com/store> | [2154679200](https://app.kajabi.com/admin/website_pages/2154679200/edit) | Native builder; text block **`1764559895491_0`** | no wholesale HTML file for live `/store` | **TO DO (P5)** |
+| Store | <https://www.joinsnooze.com/store> | [2154679200](https://app.kajabi.com/admin/website_pages/2154679200/edit) | Custom-code page, wrapper `#store-page-v2` | [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html) | **DONE** (verified live 2026-08-09) |
+| Reviews | <https://www.joinsnooze.com/reviews> | see page settings | That page's Custom Code block | [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | row added 2026-08-09; live state not re-verified |
 
 Guide / age / product pages under [`pages/website/`](./pages/website/) use the same shared theme CSS/JS (A2/A3). Paste each page’s own custom-code file only when that page’s body changed.
+
+**Correction pass, 2026-08-09 (WS-003).** Two rows in this matrix were wrong and one was missing. Each was re-verified against live before editing, which mattered: the `/store` row was wrong in a *different* way than WS-002 recorded on August 8.
+
+| Row | What this file said | What live actually serves | Evidence |
+|---|---|---|---|
+| Store | Native builder, no wholesale HTML file | Custom-code page, wrapper `#store-page-v2`, matching [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html) at **357 of 357 non-blank lines, 0 missing** | Cache-busted `curl` 2026-08-09 |
+| Reviews | no row at all | Repo source exists at [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | Repo read; live state not re-verified, so the row says so |
+| P5 Store copy | TO DO | The banned phrase returns 0 live and 0 in the repo source | Cache-busted `curl` 2026-08-09 |
+
+`DEAD-END-REGISTER.md` D5, written 2026-08-09, records live `/store` as wrapper `#store-page` matching `store-live-twin.html` at 98%, and recommends deploying StoreV2. **That deploy has since happened**, so D5's finding and its recommendation are both closed. Neither [`pages/website/store/store-page.html`](./pages/website/store/store-page.html) nor [`pages/website/store/store-live-twin.html`](./pages/website/store/store-live-twin.html) matches live any more (both 138 of ~385 lines, and both still use the dead `#store-page` wrapper, for which the shared theme carries zero rules). Retiring those two files is a WS-001 task, not done here.
+
+The third row WS-002 flagged, the nav "Join Snooze" target, is **not in this file**. It never was. That correction belongs to the "not defects" table in `DEAD-END-REGISTER.md`, which already records it correctly: all 14 navbars point at `/snooze-membership`, and nothing points at `z63s9VaR`. Re-confirmed on the live homepage 2026-08-09: 6 hrefs to `/snooze-membership`, 0 hrefs to `z63s9VaR`.
 
 ---
 
