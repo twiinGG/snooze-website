@@ -34,6 +34,8 @@ No `.js` file. The page's only script is the inline `generate_lead` dataLayer pu
 
 `catnapping-guide-ready.css` is **extracted from** [`../../../global/css/theme-custom-code.css`](../../../global/css/theme-custom-code.css), the A2 file, so the two can drift. If you change the page's appearance, change it in **both** places or decide deliberately that they differ.
 
+**Decision, CNG-002 close-out (2026-08-08): accept as documented, no automated drift check added.** The same pattern already exists for `camp-snooze` and `linktree`, both landing pages extracted from a shared theme, and neither carries automated tooling either. Building a drift check into `sweep.py` would need to parse two CSS files and diff selector-by-selector, which is more machinery than one extracted stylesheet justifies. If A2 changes materially, re-extract by hand and re-verify with `getComputedStyle`, the same method this run used to prove the extraction correct in the first place.
+
 Two regions were taken:
 
 | Region | Source lines (at time of extraction) | What it is |

@@ -1,6 +1,8 @@
 # Install, Catnapping guide ready (confirmation / fulfilment page)
 
-**Deploy artifact:** [`catnapping-guide-ready-page-complete.html`](./catnapping-guide-ready-page-complete.html)
+**SUPERSEDED, 2026-08-07.** `/catnapping-guide-ready` shipped as a **landing page**, not a website page, because only landing pages expose a noindex control on this Kajabi account. The live artifact is `pages/landing/catnapping-guide-ready/`. This folder is kept for its build history (the website-page attempt, the placeholder-token discipline, the `__AGE_FORM_ACTION__` removal) and must never be deployed: the tokens below are still present by design, as the deploy guard. Do not paste anything from this folder.
+
+**Deploy artifact:** [`catnapping-guide-ready-page-complete.html`](./catnapping-guide-ready-page-complete.html) (historical, do not deploy; see the landing folder instead)
 
 **What this page is.** `/catnapping-guide-ready` is the page a parent lands on after clicking Confirm in the catnapping double opt-in email. It delivers the guide (download + inline preview), asks one profiling question, and offers the membership as a secondary CTA. Wrapper `<div id="catnapping-guide-ready-page">`. It is a fulfilment page, not an SEO surface: **noindex**.
 
