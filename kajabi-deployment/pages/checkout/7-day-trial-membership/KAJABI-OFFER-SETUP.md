@@ -27,7 +27,7 @@ This offer provides a 7-day full access trial of the Snooze membership. After du
 ### Basic Information
 
 **In Kajabi Offer Settings:**
-- **Title field (Public):** `Snooze Access - 7 Day Trial`  
+- **Title field (Public):** `The Snooze Membership - 7 Day Trial`
   - This is the public-facing title that may appear on the site
 - **Internal Title field (optional):** `MBMS04_Snooze-Access-Trial-7day`  
   - This is the team-readable internal identifier with code
@@ -36,7 +36,7 @@ This offer provides a 7-day full access trial of the Snooze membership. After du
 
 **Description:** 
 ```
-7-day full access trial of Snooze membership. Get access to all courses, guides, community, and coaching for 7 days. Trial automatically converts to paid membership after 7 days, or cancel anytime with no charges.
+7-day full access trial of the Snooze Membership. Get access to all courses, guides and the Snooze Village for 7 days. The selected plan starts after 7 days unless cancelled.
 ```
 
 ---
@@ -94,7 +94,7 @@ You have two options for how the trial converts:
 ### Access Level
 
 - Full access to all membership benefits during trial
-- Same access level as paid members (courses, guides, community, coaching)
+- Same access level as paid members (courses, guides and the Snooze Village)
 
 ---
 
@@ -103,7 +103,7 @@ You have two options for how the trial converts:
 > **Kajabi checkout CSS/JS is per-offer, not site-wide.** Each offer's checkout
 > page carries its own custom HTML, CSS and JS in that offer's checkout
 > settings. Although the styles are scoped to `#snooze-custom-checkout`, they are
-> NOT shared with other checkouts — paste the full set into this offer only.
+> NOT shared with other checkouts. Paste the full set into this offer only.
 > (Verified against deployed snapshots: the BAU and Camp checkouts each contain
 > only their own styles, with no overlap.)
 
@@ -115,10 +115,10 @@ differs per currency; the CSS and JS are identical and shared.
    `aud/checkout-blocks.html` (AUD offer) into that offer's checkout HTML / Custom
    Code Block (HTML only, no `<style>` / `<script>` tags).
 3. **CSS:** paste the **entire** `shared/checkout.css` into the offer's checkout
-   Custom CSS. It is self-contained (BAU base + trial-specific sections). The
-   trial-highlight and how-it-works sections will be unstyled without it.
+   Custom CSS. It includes the transactional checkout, visible selected state
+   and selected-plan disclosure styles.
 4. **JS:** paste `shared/checkout.js` into the offer's checkout Custom JavaScript
-   (standard scroll-to-checkout handler, same as the BAU checkout).
+   (disclosure updates, plan-selection events and attribution preservation).
 5. **Google Fonts:** add to Header Tracking Code if not already present:
    ```html
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -152,14 +152,16 @@ differs per currency; the CSS and JS are identical and shared.
 
 ## Step 9: Post-Purchase Email Setup
 
-**IMPORTANT:** For this trial, we use a simplified automation approach:
+The current draft sequence and its trigger conditions are in
+[`emails/README.md`](./emails/README.md). Do not use a checkout-page view, a
+missing tag or a trial-start event as proof of paid conversion.
 
 ### Automation: Purchase & Send Welcome Email
 
 **When offer is purchased:**
 1. **Tag:** Add tag `snooze-trial` (or `7-day-trial-started`)
 2. **Send:** Post-Purchase email (welcome email from `emails/welcome-email.html`)
-3. **Subscribe:** Subscribe to email campaign sequence (Day 2-3, 4-5, 8+ emails)
+3. **Subscribe:** Subscribe to the Day 2 and Day 5 lifecycle sequence.
 
 **Setup in Kajabi:**
 1. Go to **Marketing → Automations**
@@ -168,33 +170,42 @@ differs per currency; the CSS and JS are identical and shared.
 4. **Actions:**
    - Add tag `snooze-trial`
    - Send email: Use content from `emails/welcome-email.html`
-   - Subscribe to email campaign: "7 Day Trial Email Sequence"
+   - Subscribe to email campaign: "7 Day Trial Lifecycle"
 
 ### Email Campaign Sequence Setup
 
 Create an email campaign in Kajabi Marketing → Email Campaigns:
 
-**Campaign Name:** "7 Day Trial Email Sequence"
+**Campaign Name:** "7 Day Trial Lifecycle"
 
 **Emails in Sequence:**
-1. **Day 2-3 Check-In** - Use content from `emails/day-2-3-checkin-email.html`
-   - Subject: "How's your trial going?"
-   - Preview Text: "You're a couple of days in - here are a few places to start that many parents find helpful."
-   - Delay: 2 days after welcome email
+1. **Day 2 first action** - Use content from `emails/day-2-3-checkin-email.html`
+   - Subject: "Your first Snooze step"
+   - Preview Text: "Open your chosen guide or course and complete the first section."
+   - Delay: 2 days after confirmed trial start
+   - Condition: Trial access remains active
 
-2. **Day 4-5 Check-In** - Use content from `emails/day-4-5-checkin-email.html`
-   - Subject: "3 days left in your trial"
-   - Preview Text: "Your trial ends in 3 days - here's what happens next and how to continue."
-   - Delay: 4 days after welcome email
+2. **Day 5 trial reminder** - Use content from `emails/day-4-5-checkin-email.html`
+   - Subject: "A reminder before your trial ends"
+   - Preview Text: "Your selected plan starts after day seven unless you cancel."
+   - Delay: 5 days after confirmed trial start
+   - Condition: Trial access remains active
 
-3. **Day 8 Follow-Up** - Use content from `emails/trial-ended-followup-email.html`
-   - Subject: "Your trial ended - special offer for you"
-   - Preview Text: "Because you tried Snooze, here's a special offer to continue your sleep journey."
-   - Delay: 8 days after welcome email (after trial ended)
-   - Condition: Does NOT have tag `trial-converted-to-member`
+Create two separate Day 8 automations. They must be mutually exclusive:
 
-**Exclusion Rules for Campaign:**
-- Has tag `trial-converted-to-member` (exclude from all emails after conversion)
+1. **Converted member onboarding** - Use `emails/day-8-converted-member-onboarding-email.html`
+   - Subject: "Keep going with Snooze"
+   - Preview Text: "Return to the guide or course that fits your baby&rsquo;s stage."
+   - Trigger: Confirmed first paid subscription charge after a trial
+
+2. **Non-converter recovery** - Use `emails/trial-ended-followup-email.html`
+   - Subject: "Your Snooze trial has ended"
+   - Preview Text: "You can return when structured sleep support is useful."
+   - Trigger: Confirmed trial cancellation or expiry without a first paid charge
+   - Do not add a discount or special offer without written approval.
+
+Stop the Day 2 and Day 5 sequence when Kajabi records cancellation, expiry or a
+first paid charge.
 
 ---
 
@@ -205,18 +216,18 @@ Create an email campaign in Kajabi Marketing → Email Campaigns:
 1. Go to **Marketing → People → Tags**
 2. Create the following tags:
    - `7-day-trial-started`
-   - `trial-day-2-checkin-sent`
-   - `trial-day-4-checkin-sent`
-   - `trial-converted-to-member`
-   - `trial-ended-no-purchase`
+   - `trial-day-2-sent`
+   - `trial-day-5-sent`
+   - `trial-first-charge-confirmed`
+   - `trial-ended-without-charge`
 
 ### Tag Setup in Automations
 
 - **Welcome Email Automation:** Add tag `7-day-trial-started`
-- **Day 2-3 Check-In:** Add tag `trial-day-2-checkin-sent`
-- **Day 4-5 Check-In:** Add tag `trial-day-4-checkin-sent`
-- **Purchase Detection (if they convert):** Add tag `trial-converted-to-member`
-- **Trial Ended Follow-Up:** Add tag `trial-ended-no-purchase`
+- **Day 2 first action:** Add tag `trial-day-2-sent`
+- **Day 5 trial reminder:** Add tag `trial-day-5-sent`
+- **Confirmed first charge:** Add tag `trial-first-charge-confirmed`
+- **Confirmed cancellation or expiry without a charge:** Add tag `trial-ended-without-charge`
 
 ---
 
@@ -224,12 +235,14 @@ Create an email campaign in Kajabi Marketing → Email Campaigns:
 
 ### Set Up Conversion Detection
 
-1. Go to **Marketing → Automations**
-2. Create automation: **"Trial Conversion Detection"**
-3. **Trigger:** Purchase "Snooze Membership" (the core paid membership offer)
-4. **Condition:** Has tag `7-day-trial-started`
-5. **Action:** Add tag `trial-converted-to-member`
-6. **Action:** Remove tag `trial-ended-no-purchase` (if they convert, don't send the trial-ended email)
+1. Identify the Kajabi event or connected commerce event that proves the first
+   paid subscription charge for the selected trial plan.
+2. Test that event with a short trial before configuring the converted-member
+   email.
+3. Add `trial-first-charge-confirmed` only from that event.
+4. Identify the event that proves cancellation or expiry without a first charge.
+5. Add `trial-ended-without-charge` only from that event.
+6. Confirm the two Day 8 automations cannot both send to the same contact.
 
 ---
 
@@ -243,10 +256,12 @@ Before going live, test the complete flow:
 - [ ] Thank you page displays after signup
 - [ ] Welcome email sends immediately
 - [ ] User has full access to membership content
-- [ ] Day 2-3 check-in email sends after 2 days
-- [ ] Day 4-5 check-in email sends after 4 days
-- [ ] Trial converts to paid membership after 7 days (test with short trial period first)
-- [ ] Trial-ended follow-up email only sends if they didn't convert
+- [ ] Day 2 first-action email sends after 2 days while trial access remains active
+- [ ] Day 5 reminder sends after 5 days while trial access remains active
+- [ ] Trial converts to a paid membership after 7 days (test with a short trial period first)
+- [ ] Confirmed first charge sends the converted-member Day 8 email only
+- [ ] Confirmed cancellation or expiry without a first charge sends the non-converter Day 8 email only
+- [ ] A contact cannot receive both Day 8 emails
 - [ ] Tags are applied correctly
 - [ ] Cancellation works (if they cancel during trial, no charge)
 
@@ -296,8 +311,16 @@ Two switch mechanisms are wired:
    `Australia` → AUD), rewrites CTAs to the right-currency offer, and injects its
    own switch link on the checkout.
 
+The trial variant mapping is complete in the live header-page source and the
+canonical repo sources:
+
+| Plan | USD | AUD |
+|---|---:|---:|
+| Monthly | `160544` | `160790` |
+| Quarterly | `64815` | `160791` |
+| Annual | `64816` | `160792` |
+
 ### Remaining operator tasks
-- [ ] Confirm the AUD variant IDs and add them to `variantMapping` in `currency-toggle.js` so tier-level routing swaps (right now only the offer-level swap is mapped; the static cross-links and offer-level geo-routing already work).
 - [ ] Set the AUD offer internal title to `PUBMS02_AUD_Snooze_7-Day-Trial` (MCP create_offer cannot set internal_title).
 - [ ] Paste `aud/checkout-blocks.html` + `shared/checkout.css` + `shared/checkout.js` into the AUD offer's checkout (Step 6).
 

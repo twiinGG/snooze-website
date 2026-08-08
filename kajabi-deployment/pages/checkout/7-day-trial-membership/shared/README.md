@@ -5,15 +5,28 @@ intentionally **comment-free** so nothing instructional or internal is exposed t
 scrapers/LLMs. Keep them that way; notes live here.
 
 ## checkout.css
-Self-contained, scoped to `#snooze-custom-checkout`. Includes the BAU base styles
-plus the trial-specific sections (`.trial-highlight`, `.how-it-works`, `.steps`)
-and the `.checkout-currency-link`. Paste the ENTIRE file into each offer's checkout
-Custom CSS - do not rely on another page's styles being present (Kajabi checkout
-CSS is per-offer, not site-wide).
+Self-contained checkout styling, including the selected-plan disclosure, visible
+selected-state label, secondary-text contrast and mobile tap targets. Paste the
+ENTIRE file into each offer's checkout Custom CSS. Kajabi checkout CSS is
+per-offer, not site-wide.
 
 ## checkout.js
-Standard scroll-to-checkout handler (same behaviour as `bau-membership-checkout.js`).
-Paste into each offer's checkout Custom JavaScript.
+Observes Kajabi's selected pricing option without changing it. It updates the
+recurring-charge disclosure, emits `begin_checkout` and deduplicated
+`pricing_option_selected` dataLayer events and preserves inbound attribution on
+the reciprocal currency link. If Kajabi's pricing DOM cannot be read, the static
+trial disclosure remains visible. Paste the entire file into each offer's
+checkout Custom JavaScript.
+
+Canonical variant mapping:
+
+| Plan | USD | AUD |
+|---|---:|---:|
+| Monthly | `160544` | `160790` |
+| Quarterly | `64815` | `160791` |
+| Annual | `64816` | `160792` |
+
+Run `node shared/__tests__/checkout.test.js` before either checkout is pasted.
 
 ## Usage
 Both currency pages (`../usd/`, `../aud/`) use these same two files. Full setup:

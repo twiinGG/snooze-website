@@ -1,6 +1,6 @@
 # Kajabi paste map (source of truth)
 
-**Updated:** 2026-07-28  
+**Updated:** 2026-08-08
 **App:** [`apps/snooze-website/kajabi-deployment/`](./)
 
 Git is the source of truth. Kajabi is the render surface. Every paste target below has exactly one canonical repo path (or a documented two-file compose order for the checkout header).
@@ -18,11 +18,12 @@ File paths in this map use relative markdown links so they open and highlight in
 
 | # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo (2026-07-27) | Re-paste? |
 |---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | Not fully re-compared this session | Only if that file changes |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | Comment-stripped 2026-07-28 (was MATCH before strip; **re-paste required**). Live may still show Kajabi’s wrapper-line delta only after paste. | **Yes** after this strip |
+| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | Repo now contains membership CTA and attribution remediation that is not live | **Yes, with the membership release** |
+| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | Repo now contains `#snooze-membership-page` System Initialization and page styles that are not live | **Yes, before page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **MATCH** live payload (GTM/Stape loader only) | **No** for current loader |
 | A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
+| A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
 
 ### Checkout header compose order (A4)
 
@@ -76,6 +77,13 @@ Tracking for all of these is still A4/A5, not these files.
 
 Shared styling from A2/A3. Page body is a custom-code block or native builder blocks (see [`KAJABI-SURFACE-CODE-SETUP.md`](../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)). One-file ruling applies only to code-block pages.
 
+| Page | Canonical file | Kajabi target | Release state |
+|---|---|---|---|
+| Homepage | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | Existing homepage full-page custom-code block | Repo update, paste after membership page publication |
+| Snooze Membership | [`pages/website/snooze-membership/snooze-membership-page.html`](./pages/website/snooze-membership/snooze-membership-page.html) | New Website Page at `/snooze-membership`, one full-width flush custom-code block | New draft page |
+
+The trial confirmation page and lifecycle email paste targets are documented in [`pages/checkout/7-day-trial-membership/README.md`](./pages/checkout/7-day-trial-membership/README.md) and its [`emails/README.md`](./pages/checkout/7-day-trial-membership/emails/README.md). They are member-facing drafts and require approval before activation.
+
 ---
 
 ## C. Not paste files (do not put these into Kajabi fields)
@@ -99,9 +107,11 @@ Shared styling from A2/A3. Page body is a custom-code block or native builder bl
 | Checkout Meta Advanced Matching | [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) | Same Header field, after the loader (optional upgrade) |
 | Checkout purchase / InitiateCheckout dataLayer | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Settings → Checkout → Footer tracking code |
 | Shared website CSS | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Theme Custom Code → CSS |
+| Website navigation | [`global/html/navigation.html`](./global/html/navigation.html) | Website theme navigation custom-code block |
 | Home-page JS helpers | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Theme Custom Code → JS |
 | One landing page look/feel | [`pages/landing/`](./pages/landing/) | That landing page’s own theme fields |
 | One checkout layout/copy | [`pages/checkout/`](./pages/checkout/) | That offer’s theme fields |
+| Snooze Membership page body | [`pages/website/snooze-membership/snooze-membership-page.html`](./pages/website/snooze-membership/snooze-membership-page.html) | `/snooze-membership` Website Page custom-code block |
 
 ---
 

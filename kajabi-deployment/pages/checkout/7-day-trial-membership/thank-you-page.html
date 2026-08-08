@@ -1,308 +1,185 @@
 <style>
-  .thank-you-container {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #1F293B;
-    line-height: 1.6;
-    max-width: 800px;
+  .sn-trial-thank-you {
+    box-sizing: border-box;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 48px 24px 64px;
+    color: #1f293b;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
   }
-  
-  .thank-you-header {
-    text-align: center;
-    margin-bottom: 3rem;
+
+  .sn-trial-thank-you *,
+  .sn-trial-thank-you *::before,
+  .sn-trial-thank-you *::after { box-sizing: border-box; }
+
+  .sn-trial-thank-you h1,
+  .sn-trial-thank-you h2,
+  .sn-trial-thank-you h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1f293b;
   }
-  
-  .thank-you-header h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #D62646;
-    margin-bottom: 1rem;
+
+  .sn-trial-thank-you h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+  .sn-trial-thank-you h2 { margin: 0 0 12px; font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.25; }
+  .sn-trial-thank-you h3 { margin: 0 0 8px; font-size: 1.2rem; line-height: 1.3; }
+  .sn-trial-thank-you p { margin: 0 0 16px; }
+
+  .sn-trial-thank-you__intro { margin-bottom: 28px; text-align: center; }
+  .sn-trial-thank-you__eyebrow { margin-bottom: 10px; color: #d62646; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .sn-trial-thank-you__lead { max-width: 570px; margin-right: auto; margin-left: auto; font-size: 1.12rem; }
+
+  .sn-trial-thank-you__notice,
+  .sn-trial-thank-you__path-result {
+    margin: 24px 0;
+    padding: 22px;
+    border-radius: 12px;
+    background: #f9f2f2;
   }
-  
-  .thank-you-header p {
-    font-size: 1.125rem;
-    color: #7C8A98;
-    margin-bottom: 1rem;
+
+  .sn-trial-thank-you__notice p:last-child,
+  .sn-trial-thank-you__path-result p:last-child { margin-bottom: 0; }
+  .sn-trial-thank-you__notice a,
+  .sn-trial-thank-you__path-result a { color: #b51f3a; font-weight: 700; }
+  .sn-trial-thank-you__section { margin-top: 40px; }
+  .sn-trial-thank-you__section-lead { max-width: 610px; }
+
+  .sn-trial-thank-you__paths {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
   }
-  
-  .trial-badge {
+
+  .sn-trial-thank-you__path {
+    width: 100%;
+    min-height: 126px;
+    padding: 20px;
+    border: 2px solid #ead4d8;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1f293b;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .sn-trial-thank-you__path:hover,
+  .sn-trial-thank-you__path:focus-visible,
+  .sn-trial-thank-you__path[aria-pressed='true'] {
+    border-color: #d62646;
+    box-shadow: 0 8px 20px rgba(214, 38, 70, 0.12);
+    outline: none;
+    transform: translateY(-1px);
+  }
+
+  .sn-trial-thank-you__path small { display: block; margin-bottom: 4px; color: #7c8a98; font-size: 0.86rem; }
+  .sn-trial-thank-you__path strong { display: block; font-size: 1.1rem; }
+  .sn-trial-thank-you__path span { display: block; margin-top: 5px; color: #4b5563; font-size: 0.94rem; }
+
+  .sn-trial-thank-you__button {
     display: inline-block;
-    background: #FFE7EA;
-    border: 2px solid #F43357;
+    margin: 4px 0 14px;
+    padding: 13px 20px;
     border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    margin: 1rem 0;
-    font-weight: 600;
-    color: #1F293B;
-    font-size: 1rem;
-  }
-  
-  .trial-timer {
-    background: #F9F2F2;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .trial-timer h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
+    background: #d62646;
+    color: #ffffff !important;
     font-weight: 700;
-    color: #1F293B;
-    margin-bottom: 0.5rem;
-  }
-  
-  .trial-timer p {
-    color: #1F293B;
-    font-size: 1rem;
-    margin: 0;
-  }
-  
-  .step-box {
-    background: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .step-box h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #D62646;
-    margin-bottom: 1.5rem;
-  }
-  
-  .step-box p {
-    color: #1F293B;
-    margin-bottom: 1rem;
-  }
-  
-  .step-box a {
-    color: #D62646;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #D62646;
-    color: #FFFFFF;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-top: 1rem;
-    transition: background 0.3s ease;
   }
-  
-  .cta-button:hover {
-    background: #D12A47;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .quick-access {
-    background: #F9F2F2;
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .quick-access h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1F293B;
-    margin-bottom: 1rem;
-  }
-  
-  .quick-access-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  
-  .quick-access-links a {
-    color: #D62646;
-    text-decoration: underline;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-  }
-  
-  .benefits-box {
-    background: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin: 2rem 0;
-  }
-  
-  .benefits-box h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #D62646;
-    margin-bottom: 1.5rem;
-  }
-  
-  .benefits-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .benefits-list li {
-    padding: 0.75rem 0;
-    color: #1F293B;
-    padding-left: 2rem;
-    position: relative;
-  }
-  
-  .benefits-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #D62646;
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-  
-  .note-box {
-    background: #FFE7EA;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .note-box h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1F293B;
-    margin-bottom: 1rem;
-  }
-  
-  .note-box p {
-    color: #1F293B;
-    margin-bottom: 0.5rem;
-  }
-  
-  .note-box a {
-    color: #D62646;
-    font-weight: 600;
-  }
-  
-  @media (max-width: 768px) {
-    .quick-access-links {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
+
+  .sn-trial-thank-you__support { margin-top: 34px; color: #4b5563; font-size: 0.95rem; }
+
+  @media (max-width: 600px) {
+    .sn-trial-thank-you { padding: 32px 18px 48px; }
+    .sn-trial-thank-you__paths { grid-template-columns: 1fr; }
   }
 </style>
 
-<div class="thank-you-container">
-  <div class="thank-you-header">
-    <h1>Your 7-Day Trial Starts Now!</h1>
-    <p>Welcome to Snooze. You have full access to everything for the next 7 days.</p>
-    <div class="trial-badge">✨ 7-Day Full Access Trial</div>
-  </div>
-  
-  <div class="trial-timer">
-    <h3>Your Trial Period</h3>
-    <p>You have 7 days of full access to explore everything Snooze has to offer. After your trial ends, your membership will automatically convert to a paid subscription, or you can cancel anytime with no charges.</p>
-  </div>
-  
-  <div class="step-box">
-    <h2>Step 1: Check Your Email</h2>
-    <p>We've sent you a welcome email with your login details and getting started guide. Check your inbox (and spam folder) for access instructions.</p>
-    <p>This email contains everything you need to get started, including links to access your membership and a quick guide to navigating Snooze.</p>
-  </div>
-  
-  <div class="step-box">
-    <h2>Step 2: Access Your Library</h2>
-    <p>Your Snooze Library is ready with all courses, guides, and resources. Start with the age-based pathway that matches your baby's stage.</p>
-    <p>You'll find everything from newborn sleep foundations to toddler sleep strategies, all organised by age so you can find exactly what you need.</p>
-    <a href="/products/communities/v2/snooze/library" class="cta-button">Go to Library</a>
-  </div>
-  
-  <div class="step-box">
-    <h2>Step 3: Join the Village Community</h2>
-    <p>Connect with other parents in the Snooze Village. Share wins, ask questions, and get support from our expert-moderated community.</p>
-    <p>This is where you'll find ongoing support, celebrate milestones, and connect with parents who are on the same journey.</p>
-    <a href="/products/communities/v2/snooze" class="cta-button">Join Village</a>
-  </div>
-  
-  <div class="step-box">
-    <h2>Step 4: Introduce Yourself in the Village</h2>
-    <p>Not sure where to start? Head to the Snooze Village and introduce yourself. Share your baby's age and main challenge, and we'll point you to the right resources.</p>
-    <p>This helps us get to know you and ensures you're connected with the most relevant content and support for your situation.</p>
-    <a href="/products/communities/v2/snooze">Join Village →</a>
-  </div>
-  
-  <div class="step-box">
-    <h2>Step 5: Join a Live Session</h2>
-    <p>Join our Snooze Specialists for live sessions inside the community. Bring your questions and get guidance tailored to your baby.</p>
-    <p>These sessions are where you can ask questions and learn from other parents' experiences, alongside daily, expert-moderated community support.</p>
-    <a href="/products/communities/v2/snooze">View Schedule →</a>
-  </div>
-  
-  <div class="quick-access">
-    <h3>Quick Access</h3>
-    <div class="quick-access-links">
-      <a href="/products/communities/v2/snooze/library">📚 Snooze Library</a>
-      <a href="/products/communities/v2/snooze">💬 Snooze Village</a>
-      <a href="/one-on-one-consultations">👩‍⚕️ Book a Consult</a>
+<main class="sn-trial-thank-you" aria-labelledby="trial-thank-you-title">
+  <section class="sn-trial-thank-you__intro">
+    <p class="sn-trial-thank-you__eyebrow">Welcome to Snooze</p>
+    <h1 id="trial-thank-you-title">Your 7-day trial starts now.</h1>
+    <p class="sn-trial-thank-you__lead">You have full access to the Snooze Library and Snooze Village. Start with one age-based path, then take the first step inside it.</p>
+  </section>
+
+  <section class="sn-trial-thank-you__notice" aria-label="Trial details">
+    <h2>Your selected plan</h2>
+    <p>The plan you chose at checkout starts after your 7-day trial unless you cancel before your first charge.</p>
+    <p><a href="https://www.joinsnooze.com/settings/cards">Manage payment settings</a> (login required).</p>
+  </section>
+
+  <section class="sn-trial-thank-you__section" aria-labelledby="choose-stage-title">
+    <h2 id="choose-stage-title">Choose your baby&rsquo;s stage</h2>
+    <p class="sn-trial-thank-you__section-lead">This does not save to your profile. It gives you one clear place to begin today.</p>
+    <div class="sn-trial-thank-you__paths" role="group" aria-label="Choose your baby&rsquo;s stage">
+      <button class="sn-trial-thank-you__path" type="button" aria-pressed="false" data-age-band="newborn" data-destination="https://www.joinsnooze.com/products/newborn-sleep-guide" data-title="Newborn Sleep Guide" data-action="Open the guide and start with the introduction.">
+        <small>0-3 months</small>
+        <strong>Newborn</strong>
+        <span>Start with the Newborn Sleep Guide.</span>
+      </button>
+      <button class="sn-trial-thank-you__path" type="button" aria-pressed="false" data-age-band="3_4_months" data-destination="https://www.joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge" data-title="3-4 Month Sleep Course" data-action="Open the course and begin with the first lesson.">
+        <small>3-4 months</small>
+        <strong>3-4 months</strong>
+        <span>Start with the 3-4 Month Sleep Course.</span>
+      </button>
+      <button class="sn-trial-thank-you__path" type="button" aria-pressed="false" data-age-band="5_12_months" data-destination="https://www.joinsnooze.com/products/5-12-month-sleep-training-course" data-title="5-12 Month Sleep Course" data-action="Open the course and begin with the first lesson.">
+        <small>5-12 months</small>
+        <strong>5-12 months</strong>
+        <span>Start with the 5-12 Month Sleep Course.</span>
+      </button>
+      <button class="sn-trial-thank-you__path" type="button" aria-pressed="false" data-age-band="toddler" data-destination="https://www.joinsnooze.com/products/toddler-toolkit" data-title="Toddler Toolkit" data-action="Open the toolkit and begin with the first lesson.">
+        <small>12+ months</small>
+        <strong>Toddler</strong>
+        <span>Start with the Toddler Toolkit.</span>
+      </button>
     </div>
-  </div>
-  
-  <div class="benefits-box">
-    <h2>What's Included in Your Trial</h2>
-    <ul class="benefits-list">
-      <li>All sleep courses & guides</li>
-      <li>Live sessions with the Snooze Specialists</li>
-      <li>Expert-moderated community</li>
-      <li>Member pricing on consults</li>
-      <li>New content monthly</li>
-    </ul>
-  </div>
-  
-  <div class="note-box">
-    <h3>Important: About Your Trial</h3>
-    <p><strong>Your trial period:</strong> You have 7 days of full access to explore everything Snooze has to offer.</p>
-    <p><strong>After 7 days:</strong> Your trial will automatically convert to a paid membership. You'll be charged at the standard membership rate (quarterly or annual, depending on what you selected).</p>
-    <p><strong>Cancel anytime:</strong> You can cancel your trial at any time during the 7-day period and you won't be charged. Simply go to your account settings to cancel.</p>
-    <p><strong>Need help?</strong> If you have any questions about your trial or getting started, just reply to your welcome email or contact us at <a href="mailto:support@sleepconcierge.com.au">support@sleepconcierge.com.au</a></p>
-  </div>
-</div>
+  </section>
+
+  <section id="sn-trial-path-result" class="sn-trial-thank-you__path-result" hidden aria-live="polite">
+    <h2 id="sn-trial-path-title"></h2>
+    <p id="sn-trial-path-action"></p>
+    <a id="sn-trial-path-link" class="sn-trial-thank-you__button" href="https://www.joinsnooze.com/products/communities/v2/snooze/library">Open your starting point</a>
+    <p>Need a place to ask? <a id="sn-trial-village-link" href="https://www.joinsnooze.com/products/communities/v2/snooze">Ask in the Snooze Village</a>.</p>
+  </section>
+
+  <p class="sn-trial-thank-you__support">If you have trouble accessing your account, contact <a href="mailto:support@sleepconcierge.com.au">support@sleepconcierge.com.au</a>.</p>
+</main>
 
 <script>
-(function() {
-  try {
-    var pref = window.localStorage && window.localStorage.getItem('snooze_currency_preference');
-    if (pref !== 'AUD' && pref !== 'USD') return;
-    var els = document.querySelectorAll('.dynamic-price');
-    els.forEach(function(el) {
-      var val = el.getAttribute('data-' + pref.toLowerCase());
-      if (val) {
-        var symbol = pref === 'AUD' ? 'A$' : '$';
-        el.textContent = symbol + val;
-      }
+  (function () {
+    var paths = document.querySelectorAll('.sn-trial-thank-you__path');
+    var result = document.getElementById('sn-trial-path-result');
+    var title = document.getElementById('sn-trial-path-title');
+    var action = document.getElementById('sn-trial-path-action');
+    var pathLink = document.getElementById('sn-trial-path-link');
+    var villageLink = document.getElementById('sn-trial-village-link');
+
+    function emit(eventName, payload) {
+      window.dataLayer = window.dataLayer || [];
+      payload.event = eventName;
+      window.dataLayer.push(payload);
+    }
+
+    paths.forEach(function (path) {
+      path.addEventListener('click', function () {
+        paths.forEach(function (item) { item.setAttribute('aria-pressed', 'false'); });
+        path.setAttribute('aria-pressed', 'true');
+        title.textContent = 'Start with the ' + path.getAttribute('data-title');
+        action.textContent = path.getAttribute('data-action');
+        pathLink.href = path.getAttribute('data-destination');
+        result.hidden = false;
+        emit('onboarding_path_selected', {
+          age_band: path.getAttribute('data-age-band'),
+          destination: path.getAttribute('data-destination')
+        });
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
     });
-  } catch (e) {
-  }
-})();
+
+    villageLink.addEventListener('click', function () {
+      emit('village_cta_click', { placement: 'trial_thank_you_age_path' });
+    });
+  }());
 </script>

@@ -463,35 +463,74 @@ document.addEventListener("DOMContentLoaded", () => {
     lazyImages.forEach(img => imageObserver.observe(img));
   }
 
-  const trackEvent = (category, action, label, value) => {
+  const trackEvent = (category, action, label, properties) => {
     window.dataLayer = window.dataLayer || [];
 
-    window.dataLayer.push({
+    const payload = Object.assign({
       'event': action,
       'event_category': category,
       'event_label': label,
-      'value': value,
       'page_path': window.location.pathname,
       'page_title': document.title
-    });
+    }, properties || {});
 
-    if (typeof gtag !== 'undefined') {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': label,
-        'value': value
+    window.dataLayer.push(payload);
+  };
+
+  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+
+  const captureAttribution = () => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const touch = {};
+      attributionKeys.forEach(key => {
+        if (params.has(key)) touch[key] = params.get(key);
       });
+      if (Object.keys(touch).length === 0) return;
+      const firstTouchKey = 'snooze_attribution_first_touch';
+      const currentTouchKey = 'snooze_attribution_current_touch';
+      if (!window.localStorage.getItem(firstTouchKey)) {
+        window.localStorage.setItem(firstTouchKey, JSON.stringify(touch));
+      }
+      window.localStorage.setItem(currentTouchKey, JSON.stringify(touch));
+    } catch (error) {
+      console.warn('Snooze Tracking: Attribution storage unavailable', error);
     }
+  };
 
-    if (typeof fbq !== 'undefined') {
-      fbq('track', action, {
-        content_name: label,
-        value: value,
-        currency: 'USD'
-      });
+  const activeCurrency = () => {
+    try {
+      const preference = window.localStorage.getItem('snooze_currency_preference');
+      if (preference === 'AUD' || preference === 'USD') return preference;
+    } catch (error) {}
+    if (document.body.classList.contains('currency-mode-aud')) return 'AUD';
+    return 'USD';
+  };
+
+  const eventSurface = link => {
+    const explicit = link.closest('[data-surface]');
+    if (explicit && explicit.getAttribute('data-surface')) return explicit.getAttribute('data-surface');
+    const wrapper = link.closest('[id$="-page"]');
+    if (wrapper) return wrapper.id.replace(/-page$/, '');
+    return window.location.pathname === '/' ? 'homepage' : window.location.pathname.replace(/^\/+|\/+$/g, '') || 'unknown';
+  };
+
+  const eventPlacement = link => {
+    if (link.getAttribute('data-placement')) return link.getAttribute('data-placement');
+    const explicit = link.closest('[data-placement]');
+    if (explicit) return explicit.getAttribute('data-placement');
+    const section = link.closest('section[id], header, footer, nav');
+    if (!section) return 'body';
+    return section.id || section.tagName.toLowerCase();
+  };
+
+  const destinationPath = href => {
+    try {
+      const url = new URL(href, window.location.origin);
+      return url.pathname;
+    } catch (error) {
+      return href.split('?')[0];
     }
-
-    console.log('Event tracked:', { category, action, label, value });
   };
 
   const isCheckoutLink = (href) => {
@@ -525,6 +564,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const isMembershipCta = href => {
+    if (!href) return false;
+    return [
+      '/snooze-membership',
+      'mqQikDM7', 'Sr6KzShx', '2150887297', '2151254578',
+      'z63s9VaR', 'vYgCNgJz', '2150754998', '2151256977'
+    ].some(identifier => href.indexOf(identifier) > -1);
+  };
+
+  captureAttribution();
+
+  const membershipPage = document.getElementById('snooze-membership-page');
+  if (membershipPage && !window.__snoozeMembershipViewItemFired) {
+    window.__snoozeMembershipViewItemFired = true;
+    trackEvent('ecommerce', 'view_item', 'Snooze Membership', {
+      item_id: 'snooze_membership',
+      item_name: 'Snooze Membership',
+      currency: activeCurrency(),
+      surface: 'snooze_membership'
+    });
+  }
+
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a');
     if (!link) return;
@@ -532,33 +593,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = link.href || link.getAttribute('href') || '';
     const buttonText = link.textContent.trim() || link.innerText.trim() || 'Checkout Link';
     const isCheckout = isCheckoutLink(href);
-    const isAnnual = buttonText.toLowerCase().includes('annual') || buttonText.toLowerCase().includes('yearly');
-    const value = isAnnual ? 490 : 147;
-
-    if (link.classList.contains('btn-primary') ||
+    const isPrimaryCta = link.classList.contains('btn-primary') ||
         link.classList.contains('cta-btn') ||
         link.classList.contains('primary') ||
         link.closest('.btn-primary') ||
-        link.closest('.cta-btn')) {
-      trackEvent('engagement', 'cta_click', buttonText, value);
-    }
+        link.closest('.cta-btn');
 
-    if (isCheckout) {
-      trackEvent('conversion', 'click_checkout_cta', buttonText + ' → Checkout', value);
-
-      if (href && !href.includes('utm_source')) {
-        try {
-          const url = new URL(href, window.location.origin);
-          url.searchParams.set('utm_source', 'landing-page');
-          url.searchParams.set('utm_medium', 'cta');
-          url.searchParams.set('utm_campaign', window.location.pathname.replace('/', '') || 'unknown');
-
-          link.href = url.toString();
-          link.setAttribute('href', url.toString());
-        } catch (err) {
-          console.warn('Snooze Tracking: Could not add UTM parameters to link:', err);
-        }
-      }
+    if (isMembershipCta(href)) {
+      trackEvent('conversion', 'membership_cta_click', buttonText, {
+        surface: eventSurface(link),
+        placement: eventPlacement(link),
+        button_text: buttonText,
+        destination: destinationPath(href),
+        currency: activeCurrency()
+      });
+    } else if (isCheckout) {
+      trackEvent('conversion', 'checkout_cta_click', buttonText, {
+        surface: eventSurface(link),
+        placement: eventPlacement(link),
+        button_text: buttonText,
+        destination: destinationPath(href),
+        currency: activeCurrency()
+      });
+    } else if (isPrimaryCta) {
+      trackEvent('engagement', 'cta_click', buttonText, {
+        surface: eventSurface(link),
+        placement: eventPlacement(link),
+        button_text: buttonText,
+        destination: destinationPath(href)
+      });
     }
   }, true);
 
@@ -1392,6 +1455,10 @@ document.addEventListener('DOMContentLoaded', function() {
       currency = CONFIG.defaultCurrency;
     }
 
+    const previousCurrency = document.body.classList.contains('currency-mode-aud')
+      ? 'AUD'
+      : (document.body.classList.contains('currency-mode-usd') ? 'USD' : null);
+
     document.body.classList.remove('currency-mode-usd', 'currency-mode-aud');
     document.body.classList.add('currency-mode-' + currency.toLowerCase());
 
@@ -1414,11 +1481,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.body.classList.add('currency-loaded');
 
-    if (window.dataLayer) {
+    if (save && previousCurrency && previousCurrency !== currency) {
       try {
+        const pageWrapper = document.querySelector('[id$="-page"]');
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'currency_change',
-          'currency_preference': currency
+          'previous_currency': previousCurrency,
+          'currency': currency,
+          'surface': pageWrapper
+            ? pageWrapper.id.replace(/-page$/, '')
+            : (window.location.pathname === '/' ? 'homepage' : window.location.pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
         });
       } catch (e) {
         logError('Failed to push currency_change event', e);

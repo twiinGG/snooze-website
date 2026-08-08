@@ -22,8 +22,8 @@ toggle); see `KAJABI-OFFER-SETUP.md` → Currency.
 ```
 7-day-trial-membership/
   shared/
-    checkout.css      Self-contained stylesheet (BAU base + trial sections). Identical for both currencies.
-    checkout.js       Scroll-to-checkout handler (same as BAU). Identical for both currencies.
+    checkout.css      Self-contained transactional checkout and selected-state styles. Identical for both currencies.
+    checkout.js       Disclosure, pricing-option analytics and attribution preservation. Identical for both currencies.
   usd/
     checkout-blocks.html   USD checkout HTML (PUBMS02_USD), links to AUD.
   aud/
@@ -84,6 +84,17 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 - **Access Level:** Full membership access during trial
 - **Products Included:** Same as core membership offer
 
+## Browser measurement
+
+- The checkout script emits one `begin_checkout` per render.
+- A native plan change emits one `pricing_option_selected` with the canonical
+  offer, variant, plan, cadence, amount and currency.
+- The reciprocal currency link keeps existing destination parameters and adds
+  inbound `utm_*`, `fbclid` and `gclid` values only when they are absent.
+- The script sends no email, name, phone or address to the dataLayer.
+- Confirmed order classification lives in
+  `global/js/kajabi-checkout-tracking.js`, not this per-offer script.
+
 ---
 
 ## Email Sequence
@@ -132,6 +143,10 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 ## Testing Checklist
 
 Before going live, test:
+- [ ] Monthly is selected by default and visibly labelled
+- [ ] Monthly, quarterly and annual each update the selected-plan disclosure
+- [ ] Currency switching preserves attribution without duplicate query parameters
+- [ ] `begin_checkout` fires once and plan changes do not duplicate
 - [ ] Trial signup works (no payment required)
 - [ ] Checkout page displays correctly
 - [ ] Thank you page displays after signup
@@ -145,18 +160,11 @@ Before going live, test:
 
 ---
 
-## Customization Notes
+## Day 8 lifecycle branches
 
-### In Trial Ended Follow-Up Email
+The Day 8 converted-member and non-converter messages are separate drafts. Configure them as mutually exclusive branches from authoritative first-charge, cancellation and expiry conditions. Do not add a discount, trial extension or money-back framing to the initial launch.
 
-The trial-ended follow-up email includes a placeholder for a special offer:
-- `[SPECIAL OFFER - e.g., $20 off your first month, or extend your trial, etc.]`
-- `[MEMBERSHIP_CHECKOUT_URL]`
-
-Update these before deploying:
-1. Decide on your special offer for trial members who didn't convert
-2. Replace the placeholder text with your actual offer
-3. Replace the checkout URL with your membership checkout URL (with discount code if applicable)
+The non-converter email links to `/snooze-membership`. The converted-member email links to the Snooze Library. Validate both destinations as the intended test contact before activation.
 
 ---
 
@@ -169,5 +177,5 @@ If you have questions about setup or need help customizing any of the content, r
 
 ---
 
-**Last Updated:** January 2026  
-**Status:** ✅ Complete & Ready for Deployment
+**Last Updated:** August 8, 2026
+**Status:** Repo-ready; paired Kajabi deployment and live browser validation required

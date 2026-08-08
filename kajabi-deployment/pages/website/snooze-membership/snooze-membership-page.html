@@ -1,304 +1,97 @@
-<!-- The Snooze Methodology: LANDING PAGE build. Self-contained: this file carries its own
-     fonts, icons and scoped CSS because landing pages do not load the site theme's
-     snooze-unified-theme.css. Paste this whole file into the landing page's custom code
-     block. No page JS needed; the site-wide Header Page Scripts (currency engine) still
-     run on landing pages and drive the dynamic-cta below. -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
-
-<style>
-/* ==== Snooze Methodology landing page, scoped to #snooze-method-page ==== */
-#snooze-method-page {
-  --sn-coral: #F43357;
-  --sn-coral-hover: #D62646;
-  --sn-navy: #1F293B;
-  --sn-cream: #FAF7F4;
-  --sn-white: #FFFFFF;
-  --sn-text-dark: #161E2A;
-  --sn-text-light: #94A3B8;
-  --sn-sage: #7C8A98;
-  --sn-coral-tint: #FFE7EA;
-  --sn-radius: 20px;
-  --sn-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --sn-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--sn-text-dark);
-  line-height: 1.7;
-  font-size: 16px;
-}
-#snooze-method-page *, #snooze-method-page *::before, #snooze-method-page *::after { box-sizing: border-box; }
-#snooze-method-page h1, #snooze-method-page h2, #snooze-method-page h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--sn-navy);
-  line-height: 1.25;
-  margin: 0 0 1rem 0;
-}
-#snooze-method-page h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
-#snooze-method-page h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); text-align: center; }
-#snooze-method-page h3 { font-size: 1.25rem; }
-#snooze-method-page p { margin: 0 0 1rem 0; }
-#snooze-method-page .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-#snooze-method-page .section { padding: 64px 0; }
-
-/* Hero */
-#snooze-method-page .snooze-method-hero {
-  background: var(--sn-cream);
-  text-align: center;
-  padding: 88px 0 64px;
-}
-#snooze-method-page .snooze-method-hero .lead {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--sn-coral);
-  margin-bottom: 0.5rem;
-}
-#snooze-method-page .snooze-method-hero .subtitle {
-  font-size: 1.05rem;
-  color: var(--sn-sage);
-  margin-bottom: 0;
-}
-
-/* What makes it different */
-#snooze-method-page .what-makes-different { background: var(--sn-white); }
-#snooze-method-page .different-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-#snooze-method-page .different-card {
-  background: var(--sn-cream);
-  border-radius: var(--sn-radius);
-  padding: 32px 28px;
-  text-align: center;
-  box-shadow: var(--sn-shadow);
-}
-#snooze-method-page .different-card i {
-  font-size: 1.8rem;
-  color: var(--sn-coral);
-  margin-bottom: 16px;
-  display: inline-block;
-}
-#snooze-method-page .different-card p { margin-bottom: 0; color: var(--sn-text-dark); }
-
-/* Age sections */
-#snooze-method-page .learning-path { background: var(--sn-cream); }
-#snooze-method-page .section-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--sn-sage);
-  max-width: 700px;
-  margin: 0 auto 8px;
-}
-#snooze-method-page .tier-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-  align-items: stretch;
-}
-#snooze-method-page .tier-card {
-  background: var(--sn-white);
-  border-radius: var(--sn-radius);
-  padding: 36px 32px;
-  box-shadow: var(--sn-shadow-lg);
-  display: flex;
-  flex-direction: column;
-}
-#snooze-method-page .tier-description { color: var(--sn-sage); }
-#snooze-method-page .tier-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.25rem 0;
-  flex-grow: 1;
-}
-#snooze-method-page .tier-features li {
-  padding: 8px 0 8px 28px;
-  position: relative;
-}
-#snooze-method-page .tier-features li::before {
-  content: "\2713";
-  color: var(--sn-coral);
-  font-weight: 700;
-  position: absolute;
-  left: 4px;
-}
-#snooze-method-page .tier-audience {
-  font-size: 0.95rem;
-  color: var(--sn-sage);
-  margin-bottom: 1.25rem;
-}
-
-/* Core principles */
-#snooze-method-page .core-principles { background: var(--sn-white); }
-#snooze-method-page .principles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-#snooze-method-page .principle-card {
-  background: var(--sn-cream);
-  border-left: 4px solid var(--sn-coral);
-  border-radius: 12px;
-  padding: 28px;
-}
-#snooze-method-page .principle-card p { margin-bottom: 0; }
-
-/* Closing CTA */
-#snooze-method-page .method-cta {
-  background: var(--sn-navy);
-  text-align: center;
-}
-#snooze-method-page .method-cta h2, #snooze-method-page .method-cta p { color: var(--sn-white); }
-#snooze-method-page .method-cta p { max-width: 640px; margin: 0 auto 1.75rem; }
-
-/* Buttons */
-#snooze-method-page .btn-primary,
-#snooze-method-page .btn-secondary {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 9999px;
-  padding: 14px 32px;
-  transition: all 0.2s ease;
-  text-align: center;
-}
-#snooze-method-page .btn-primary {
-  background: var(--sn-coral);
-  color: var(--sn-white);
-}
-#snooze-method-page .btn-primary:hover { background: var(--sn-coral-hover); }
-#snooze-method-page .btn-secondary {
-  background: transparent;
-  color: var(--sn-coral);
-  border: 2px solid var(--sn-coral);
-  align-self: flex-start;
-}
-#snooze-method-page .btn-secondary:hover { background: var(--sn-coral-tint); }
-#snooze-method-page .btn-large { padding: 16px 44px; font-size: 1.05rem; }
-
-/* Responsive */
-@media (max-width: 900px) {
-  #snooze-method-page .different-grid { grid-template-columns: 1fr; }
-  #snooze-method-page .tier-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-  #snooze-method-page .section { padding: 48px 0; }
-  #snooze-method-page .snooze-method-hero { padding: 64px 0 48px; }
-  #snooze-method-page .principles-grid { grid-template-columns: 1fr; }
-}
-</style>
-
-<div id="snooze-method-page">
-<section class="snooze-method-hero">
-  <div class="container">
-    <h1>The Snooze Methodology</h1>
-    <p class="lead">Clear, evidence-based sleep help for tired parents</p>
-    <p class="subtitle">A structured but flexible approach that works in real life</p>
-  </div>
-</section>
-
-<section class="what-makes-different section">
-  <div class="container">
-    <h2>What Makes the Snooze Methodology Different</h2>
-    <div class="different-grid">
-      <div class="different-card">
-        <i class="fa-solid fa-lightbulb"></i>
-        <h3>Evidence-Based Clarity</h3>
-        <p>We give parents clear guidance backed by research. No confusion, no contradictions, just practical steps that work.</p>
-      </div>
-      <div class="different-card">
-        <i class="fa-solid fa-hands-holding"></i>
-        <h3>Structured Support</h3>
-        <p>Plans are important, but so is support. We give parents frameworks and hold their hand while they use them.</p>
-      </div>
-      <div class="different-card">
-        <i class="fa-solid fa-house"></i>
-        <h3>Real Life Solutions</h3>
-        <p>Our method works in real homes with real babies, not just in theory. Flexible enough for travel, illness, and life's curveballs.</p>
+<!-- Kajabi Website Page: /snooze-membership. One custom-code block. Native website navigation renders above. -->
+<div id="snooze-membership-page">
+  <section class="hero-wrap membership-hero">
+    <div class="snooze-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="membership-eyebrow">THE SNOOZE MEMBERSHIP</span>
+          <h1>A clear plan for better baby sleep, with expert help as you go</h1>
+          <p>Get the age-based Snooze Library, practical troubleshooting and the Snooze Village in one membership.</p>
+          <div class="sn-currency-inline" data-currency-toggle-mount aria-label="Choose pricing currency"></div>
+          <a class="btn dynamic-cta" data-checkout href="https://www.joinsnooze.com/offers/mqQikDM7/checkout">Start your 7-day free trial</a>
+          <p class="membership-trial-note">Pay $0 today. Choose monthly, quarterly or annual billing at checkout.</p>
+        </div>
+        <div class="membership-hero-card">
+          <p class="membership-card-kicker">Access from day one</p>
+          <ul class="membership-check-list"><li>The full Library from newborn to toddler</li><li>The Snooze Village community and forum</li><li>Guidance from the Snooze Specialists</li></ul>
+          <p class="membership-proof-line"><strong>Created by Sally, The Sleep Concierge</strong><br>Internationally certified sleep consultant and former paediatric nurse.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="learning-path section">
-  <div class="container">
-    <h2>How the Snooze Methodology Works</h2>
-    <p class="section-intro">Everything you need for your baby's sleep, ready the moment you join, organised by age and stage</p>
+  <section class="membership-trust-strip" aria-label="Membership trust points"><div class="snooze-container"><div class="membership-trust-grid"><span>Evidence-based guidance</span><span>Newborn to toddler pathways</span><span>Cancel online before your first charge</span></div></div></section>
 
-    <div class="tier-grid">
-      <div class="tier-card tier-2">
-        <h3>Age-Based Courses and Guides</h3>
-        <p class="tier-description">Comprehensive, stage-specific guidance for each developmental period</p>
-        <ul class="tier-features">
-          <li><strong>Newborn (0-3 months):</strong> Foundation, safe sleep, establishing routines</li>
-          <li><strong>3-4 Month Course:</strong> Fourth-trimester sleep, developmental changes, nap consolidation</li>
-          <li><strong>5-12 Month Guide:</strong> Sleep training, night weaning, schedule optimisation</li>
-          <li><strong>Toddler Toolkit (12+ months):</strong> Nap transitions, bedtime battles, regressions</li>
-        </ul>
-        <p class="tier-audience"><strong>For:</strong> Parents ready for stage-specific guidance</p>
-        <a href="/snooze-library" class="btn-secondary">Explore the Age-Based Courses</a>
-      </div>
+  <section class="snooze-section bg-white" aria-labelledby="membership-fit-title">
+    <div class="snooze-container">
+      <div class="text-center max-800"><h2 id="membership-fit-title">Is Snooze right for your family?</h2><p>Snooze gives you structure when scattered tips have left you unsure what to try next.</p></div>
+      <div class="membership-fit-grid"><article><h3>You want a clear starting point</h3><p>Choose the pathway for your baby's age, then work through one practical step at a time.</p></article><article><h3>You want choices that fit your family</h3><p>Learn the options, understand why they work and choose an approach you feel comfortable following.</p></article><article><h3>You want help when things change</h3><p>Ask in the Snooze Village when a regression, nap transition or new challenge changes the plan.</p></article></div>
+    </div>
+  </section>
 
-      <div class="tier-card tier-3">
-        <h3>Sleep Troubleshooting</h3>
-        <p class="tier-description">Quick-reference support for specific challenges that arise</p>
-        <ul class="tier-features">
-          <li>Early rising support</li>
-          <li>Sleep regression guidance</li>
-          <li>Nap troubleshooting</li>
-          <li>Night waking solutions</li>
-          <li>Sleep association help</li>
-        </ul>
-        <p class="tier-audience"><strong>For:</strong> Parents who need quick answers to specific problems</p>
-        <a href="/snooze-library" class="btn-secondary">Browse Troubleshooting Guides</a>
+  <section class="snooze-section bg-cream" aria-labelledby="membership-included-title">
+    <div class="snooze-container">
+      <div class="text-center max-800"><p class="membership-eyebrow">YOUR MEMBERSHIP</p><h2 id="membership-included-title">Everything you need in one place</h2></div>
+      <div class="membership-inclusions-grid">
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">01</span><h3>Age-based courses</h3><p>Complete learning paths for newborn, 3 to 4 month, 5 to 12 month and toddler sleep.</p></article>
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">02</span><h3>Focused guides</h3><p>Practical help for early rising, catnapping, regressions, nap transitions and bedtime battles.</p></article>
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">03</span><h3>The Snooze Village</h3><p>A parent community where you can share what is happening and ask for help with implementation.</p></article>
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">04</span><h3>Expert troubleshooting</h3><p>The Snooze Specialists help you understand what to adjust. We aim to respond within 24 hours, Monday to Friday.</p></article>
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">05</span><h3>Masterclasses and sessions</h3><p>Learn from focused masterclasses and coaching sessions on the Snooze courses and guides.</p></article>
+        <article class="membership-inclusion-card"><span class="membership-icon" aria-hidden="true">06</span><h3>Support as your baby grows</h3><p>Move to the next stage without starting your research again or buying another age course.</p></article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="core-principles section">
-  <div class="container">
-    <h2>The Core Principles</h2>
-    <div class="principles-grid">
-      <div class="principle-card">
-        <h3>Evidence-Based but Accessible</h3>
-        <p>No academic jargon. Just clear, practical guidance backed by research.</p>
+  <section class="snooze-section bg-white" aria-labelledby="membership-path-title">
+    <div class="snooze-container"><div class="text-center max-800"><h2 id="membership-path-title">Start with your baby's stage</h2><p>Your first pathway points you to the right course and the most useful next action.</p></div><div class="membership-path-grid"><article><p>Birth to 12 weeks</p><h3>Newborn</h3><span>Understand newborn sleep, settling and realistic routines.</span></article><article><p>3 to 4 months</p><h3>Sleep cycles change</h3><span>Prepare for the regression and build settling foundations.</span></article><article><p>5 to 12 months</p><h3>Naps and nights</h3><span>Work through schedules, settling, night wakes and transitions.</span></article><article><p>12 months and beyond</p><h3>Toddler</h3><span>Build clear routines and work through common toddler challenges.</span></article></div></div>
+  </section>
+
+  <section class="snooze-section bg-cream" aria-labelledby="membership-two-part-title">
+    <div class="snooze-container"><div class="membership-two-part"><div><p class="membership-eyebrow">THE LIBRARY</p><h2 id="membership-two-part-title">Learn the plan</h2><p>Start with structured guidance for your baby's age. Each course explains what is happening, what to work on and what to expect.</p></div><div><p class="membership-eyebrow">THE VILLAGE</p><h2>Get help applying it</h2><p>Bring your questions to the Snooze Village. The Snooze Specialists can help you troubleshoot when real life does not follow the example.</p></div></div></div>
+  </section>
+
+  <section class="snooze-section bg-white" aria-labelledby="membership-trial-title">
+    <div class="snooze-container"><div class="text-center max-800"><h2 id="membership-trial-title">Your seven-day trial</h2><p>Try the full membership before your first payment.</p></div><div class="steps-grid"><article class="step-card"><span class="step-num">1</span><h3>Choose your plan</h3><p>Select monthly, quarterly or annual billing during checkout. Your total due today is $0.</p></article><article class="step-card"><span class="step-num">2</span><h3>Use full access for seven days</h3><p>Open your age pathway, use the Library and join the Snooze Village from the start.</p></article><article class="step-card"><span class="step-num">3</span><h3>Stay or cancel online</h3><p>Your selected plan starts after seven days unless you cancel. Log in and visit <a href="https://www.joinsnooze.com/settings/cards">payment settings</a> before the first charge. Login required.</p></article></div></div>
+  </section>
+
+  <section class="snooze-section bg-cream membership-pricing" id="membership-pricing" aria-labelledby="membership-pricing-title">
+    <div class="snooze-container"><div class="text-center max-800"><p class="membership-eyebrow">PRICING</p><h2 id="membership-pricing-title">Choose your plan at checkout</h2><p>Every plan includes the same membership access and starts with the seven-day free trial.</p><div class="sn-currency-inline" data-currency-toggle-mount aria-label="Choose pricing currency"></div></div>
+      <div class="membership-pricing-grid">
+        <article class="membership-price-card"><p class="membership-price-label">Most flexible</p><h3>Monthly</h3><p class="membership-price"><span class="dynamic-price" data-usd="79" data-aud="119">$79</span></p><p>per month</p><p class="membership-saving">Cancel before the next renewal</p></article>
+        <article class="membership-price-card"><p class="membership-price-label">Quarterly</p><h3>Every 3 months</h3><p class="membership-price"><span class="dynamic-price" data-usd="197" data-aud="299">$197</span></p><p><span class="dynamic-price" data-usd="65.67" data-aud="99.67" data-period-usd=" monthly equivalent" data-period-aud=" monthly equivalent">$65.67 monthly equivalent</span></p><p class="membership-saving">Save 17% in USD or 16% in AUD against monthly</p></article>
+        <article class="membership-price-card membership-price-card-highlight"><p class="membership-price-label">Lowest monthly equivalent</p><h3>Annual</h3><p class="membership-price"><span class="dynamic-price" data-usd="657" data-aud="997">$657</span></p><p><span class="dynamic-price" data-usd="54.75" data-aud="83.08" data-period-usd=" monthly equivalent" data-period-aud=" monthly equivalent">$54.75 monthly equivalent</span></p><p class="membership-saving">Save 31% in USD or 30% in AUD against monthly</p></article>
       </div>
-      <div class="principle-card">
-        <h3>Structured but Flexible</h3>
-        <p>Plans that adapt to real life. Structure helps families thrive, but we're not rigid.</p>
-      </div>
-      <div class="principle-card">
-        <h3>Supportive without Judgment</h3>
-        <p>No gentle versus harsh debate. We stay out of the sleep training wars and give you practical help that works for your family.</p>
-      </div>
-      <div class="principle-card">
-        <h3>Comprehensive Coverage</h3>
-        <p>Newborn through toddler. One place for everything you need.</p>
-      </div>
+      <div class="text-center membership-shared-cta"><a class="btn dynamic-cta" data-checkout href="https://www.joinsnooze.com/offers/mqQikDM7/checkout">Start your 7-day free trial and choose your plan at checkout</a><p>$0 is charged when your trial begins.</p></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="method-cta section">
-  <div class="container">
-    <h2>Ready to Get Started?</h2>
-    <p>Join the Snooze membership and get access to every age-based course and guide, live masterclasses and coaching sessions with the Snooze Specialists, troubleshooting help and an expert-moderated community.</p>
-    <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="btn-primary btn-large dynamic-cta" data-checkout>Join Snooze</a>
-  </div>
-</section>
+  <section class="snooze-section bg-white" aria-labelledby="membership-reviews-title">
+    <div class="snooze-container"><div class="text-center max-800"><h2 id="membership-reviews-title">Real sleep wins from Snooze families</h2><p>These public reviews cover different Snooze courses, guides and membership experiences.</p></div><div class="membership-reviews-grid">
+      <article class="membership-review-card"><div class="membership-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I found it really hard to find consistent information on 3 to 4 month sleep. My baby girl was starting to sleep through the night.”</blockquote><p>Kassandra C., baby 4 months</p></article>
+      <article class="membership-review-card"><div class="membership-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“In less than a week our babe was putting herself to sleep with no dummy, sleeping roughly 6pm to 7am with one feed.”</blockquote><p>Alice L., baby 5 months</p></article>
+      <article class="membership-review-card"><div class="membership-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“She made sleep training sound less scary, which helped me as I have quite bad anxiety around sleep. I noticed my baby learning to self settle.”</blockquote><p>Cassy B.</p></article>
+      <article class="membership-review-card"><div class="membership-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“My daughter no longer cries to go to sleep. I had almost given up, resigned to the idea that sleep might just not be in the cards for us.”</blockquote><p>Kate C., baby 12 months</p></article>
+    </div><p class="text-center membership-review-link"><a href="/reviews">Read more Snooze reviews</a></p></div>
+  </section>
+
+  <section class="snooze-section bg-cream" aria-labelledby="membership-support-title"><div class="snooze-container"><div class="membership-support-grid"><div><p class="membership-eyebrow">SALLY AND THE SNOOZE TEAM</p><h2 id="membership-support-title">Experienced guidance, without the judgment</h2><p>Sally is an internationally certified sleep consultant and former paediatric nurse. She built the Snooze Library from years of supporting families through baby and toddler sleep.</p><p>The Snooze Specialists support the Village and help members apply the courses and guides. They aim to respond within 24 hours, Monday to Friday.</p><a href="/about-sally">Meet Sally and the Snooze team</a></div><aside class="membership-support-note"><strong>The Snooze approach</strong><p>You choose the approach that feels right for your family. The guidance explains your options and helps you follow a consistent plan.</p></aside></div></div></section>
+
+  <section class="snooze-section bg-white" aria-labelledby="membership-faq-title"><div class="snooze-container max-800"><div class="text-center"><h2 id="membership-faq-title">Membership questions</h2></div><div class="membership-faq-list">
+    <details><summary>What do I get during the free trial?</summary><p>You receive full access to the Snooze Library and Snooze Village for seven days. $0 is charged when the trial begins.</p></details>
+    <details><summary>When do I choose my plan?</summary><p>You choose monthly, quarterly or annual billing during checkout. Your selected plan starts after the seven-day trial unless you cancel.</p></details>
+    <details><summary>How do I cancel?</summary><p>Log in and visit <a href="https://www.joinsnooze.com/settings/cards">payment settings</a>. Cancel before the end of your trial to avoid the first charge. Login required.</p></details>
+    <details><summary>Will Sally answer my question personally?</summary><p>The Snooze Specialists support the Village as a team. Sally creates and leads the Snooze approach, but the membership does not promise a personal reply from Sally.</p></details>
+    <details><summary>Can I use Snooze with a gradual approach?</summary><p>Yes. The courses explain different approaches so you can choose one that feels manageable for your family.</p></details>
+    <details><summary>Is the membership suitable for newborns?</summary><p>Yes. The newborn pathway focuses on realistic newborn sleep, settling and routines. It does not recommend formal sleep training for young babies.</p></details>
+  </div></div></section>
+
+  <section class="snooze-section membership-final-cta"><div class="snooze-container max-800 text-center"><h2>Start with a clear plan today</h2><p>Get full membership access for seven days and choose your billing plan at checkout.</p><div class="sn-currency-inline" data-currency-toggle-mount aria-label="Choose pricing currency"></div><a class="btn dynamic-cta" data-checkout href="https://www.joinsnooze.com/offers/mqQikDM7/checkout">Start your 7-day free trial</a><p class="membership-trial-note">Pay $0 today. Cancel online before your first charge.</p></div></section>
 
 <footer class="snooze-footer-clean">
   <div class="sf-container">
     <div class="sf-grid">
-      
+
       <div class="sf-col sf-brand-col">
         <div class="sf-logo">
           <a href="/">
@@ -309,19 +102,19 @@
         </div>
         <p class="sf-tagline">Everything you need for great baby sleep,<br>all in one place.</p>
         <div class="sf-socials">
-          <a href="https://www.instagram.com/thesleepconcierge/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
+          <a href="https://www.instagram.com/thesleepconcierge/"
+             target="_blank"
+             rel="noopener noreferrer"
              class="sf-social-link"
              aria-label="Instagram">Instagram</a>
-          <a href="https://www.tiktok.com/@thesleepconcierge" 
-             target="_blank" 
-             rel="noopener noreferrer" 
+          <a href="https://www.tiktok.com/@thesleepconcierge"
+             target="_blank"
+             rel="noopener noreferrer"
              class="sf-social-link"
              aria-label="TikTok">TikTok</a>
-          <a href="https://www.facebook.com/thesleepconcierge" 
-             target="_blank" 
-             rel="noopener noreferrer" 
+          <a href="https://www.facebook.com/thesleepconcierge"
+             target="_blank"
+             rel="noopener noreferrer"
              class="sf-social-link"
              aria-label="Facebook">Facebook</a>
         </div>
@@ -378,5 +171,4 @@
     </div>
   </div>
 </footer>
-
 </div>

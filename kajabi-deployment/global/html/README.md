@@ -8,6 +8,8 @@ Shared HTML fragments injected site-wide via Kajabi.
 
 **Deployment:** Paste into Kajabi > Website > Theme > Navigation custom code block (or equivalent global header injection point).
 
+The membership release changes the desktop and mobile Membership links to `/snooze-membership`, sends explicit trial CTAs to `mqQikDM7` and removes the expired founding-member banner. Paste this file only after `/snooze-membership` is published and tested as a draft.
+
 **Note:** `toggleSnoozeMenu()` is defined in `global/js/snooze-globals.js` (site header script), not inline here.
 
 **Branding source:** Snooze logotype (coral) SVG originates from `docs/branding/Snooze Logotype - coral.svg`.
@@ -17,6 +19,8 @@ Shared HTML fragments injected site-wide via Kajabi.
 ## footer.html
 
 **Branding source:** Snooze logotype (white) SVG originates from `docs/branding/Snooze Logotype - white.svg`.
+
+This is a sync source. Website pages carry the footer inline inside their page wrapper. The membership link now points to `/snooze-membership`; changed website page sources must keep their inline copy byte-equivalent after whitespace normalisation.
 
 **Deferred nav item:** "The Snooze Method" link (`/the-snooze-method`) was intentionally hidden at launch and is not rendered. Re-enable by adding `<li><a href="/the-snooze-method">The Snooze Method</a></li>` back into the Explore column list when the page is ready.
 
