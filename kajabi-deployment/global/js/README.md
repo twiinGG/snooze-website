@@ -52,8 +52,7 @@ Site-wide. Not Header Page Scripts. Not per-offer theme JS.
 
 | Field | Repo file | Live 2026-07-27 | Action |
 |---|---|---|---|
-| Header | [`../html/checkout-header-tracking.html`](../html/checkout-header-tracking.html) | Loader present | **Do not re-paste to sync** |
-| Header append (optional) | [`meta-advanced-matching.js`](./meta-advanced-matching.js) (no comment header) | Not live | Paste only to ship Advanced Matching |
+| Header | [`../html/checkout-header-tracking.html`](../html/checkout-header-tracking.html) | Loader present | **Do not re-paste to sync.** Inline Advanced Matching into this file before any AM paste |
 | Footer | [`kajabi-checkout-tracking.js`](./kajabi-checkout-tracking.js) | Empty | Paste when shipping purchase dataLayer |
 
 Full instructions: [`KAJABI-CHECKOUT-TRACKING-CODE.md`](../../../docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md).
@@ -62,13 +61,13 @@ Full instructions: [`KAJABI-CHECKOUT-TRACKING-CODE.md`](../../../docs/technical/
 
 **Kajabi:** Settings → Checkout → Footer Tracking Code
 
-Must load AFTER GTM/Stape and AFTER meta-advanced-matching.js.
+Must load AFTER the header field (GTM/Stape, and Advanced Matching if inlined into the header file).
 
 **AUD Offer ID Mapping (updated 2026-07-11):** Currency from `Kajabi.order.currency` when present; else AUD offer-ID / slug allow-lists; else USD.
 
 ### meta-advanced-matching.js
 
-**Kajabi:** Settings → Checkout → Header Tracking Code (after GTM/Stape)
+**Not a paste target.** Fragment only. Inline into [`../html/checkout-header-tracking.html`](../html/checkout-header-tracking.html) (inside a `<script>` after the loader) before shipping Advanced Matching.
 
 Meta Pixel ID: `449153684613893`
 

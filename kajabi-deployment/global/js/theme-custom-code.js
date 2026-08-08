@@ -1,26 +1,3 @@
-/* ===========================================================================
-   theme-custom-code.js — Website theme Custom Code JS
-   ---------------------------------------------------------------------------
-   PASTE TARGET: Customizer -> Theme Custom Code -> JS  (`settings-js-input`)
-   SCOPE:        Website pages ONLY (website theme 2156873377).
-                 Landing pages, checkouts and thank-you pages each have their
-                 OWN theme and do NOT inherit this field.
-   PASTE RULE:   Whole-field overwrite. Bare JavaScript only.
-
-   THIS FIELD TAKES JAVASCRIPT, NOT HTML. No <script>, no <link>.
-   GTM / Stape, the schema.org JSON-LD, the currency toggle and the
-   `[data-checkout]` / SNOOZE_CHECKOUT_URL helpers all live in the SITE-WIDE
-   field instead: Settings -> Site Details -> Header Page Scripts, canonical
-   file `global/html/site-header-page-scripts.html`.
-
-   Do NOT merge that file into this one. On 2026-07-27 a consolidation did
-   exactly that and left this file at 62,708 chars against 4,326 chars live,
-   92% of it duplicating the header file. Pasting it would have been a JS
-   syntax error AND a second GTM instance double-firing on every website page.
-   Pre-split copy kept at `_archive/theme-custom-code.js.pre-split-2026-07-27`.
-
-   Surface map: docs/technical/KAJABI-SURFACE-CODE-SETUP.md
-   =========================================================================== */
 
   document.addEventListener('DOMContentLoaded', function() {
 

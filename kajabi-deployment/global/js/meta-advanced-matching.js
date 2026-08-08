@@ -1,4 +1,9 @@
-
+/**
+ * NOT A PASTE TARGET.
+ * Fragment only. Inline into global/html/checkout-header-tracking.html
+ * (inside <script> after the GTM/Stape loader) before shipping Advanced Matching.
+ * See PASTE-MAP.md §C and CODE-SURFACE-CONTRACT.md.
+ */
 (function () {
   'use strict';
 

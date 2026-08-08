@@ -101,6 +101,10 @@
       currency = CONFIG.defaultCurrency;
     }
 
+    const previousCurrency = document.body.classList.contains('currency-mode-aud')
+      ? 'AUD'
+      : (document.body.classList.contains('currency-mode-usd') ? 'USD' : null);
+
     document.body.classList.remove('currency-mode-usd', 'currency-mode-aud');
     document.body.classList.add('currency-mode-' + currency.toLowerCase());
 
@@ -123,11 +127,20 @@
 
     document.body.classList.add('currency-loaded');
 
-    if (window.dataLayer) {
+    if (save && previousCurrency && previousCurrency !== currency) {
       try {
+        const pageWrapper = document.querySelector('[id$="-page"]');
+        const pathname = window.location && typeof window.location.pathname === 'string'
+          ? window.location.pathname
+          : '';
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'currency_change',
-          'currency_preference': currency
+          'previous_currency': previousCurrency,
+          'currency': currency,
+          'surface': pageWrapper
+            ? pageWrapper.id.replace(/-page$/, '')
+            : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
         });
       } catch (e) {
         logError('Failed to push currency_change event', e);

@@ -34,7 +34,7 @@ kajabi-deployment/
 │   ├── js/
 │   │   ├── theme-custom-code.js            # website Theme Custom Code → JS
 │   │   ├── kajabi-checkout-tracking.js     # Settings → Checkout → Footer
-│   │   ├── meta-advanced-matching.js       # optional append after checkout header
+│   │   ├── meta-advanced-matching.js       # fragment; inline into checkout-header-tracking.html
 │   │   ├── snooze-globals.js               # NOT a paste file (stub)
 │   │   └── currency-toggle.js              # NOT a paste file (test extract)
 │   └── checkout-tracking/README.md         # points at the three checkout tracking files
@@ -66,7 +66,7 @@ kajabi-deployment/
 
 - Live Settings → Checkout **Header** already holds the GTM/Stape loader. Repo file [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) matches that payload. **Do not re-paste the header just to sync.**
 - Live **Footer** is empty. Paste [`kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) only when you deliberately want that live.
-- Optional: append [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) after the header loader when deploying Advanced Matching.
+- Advanced Matching: inline [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) into the header file in git first, then whole-field overwrite once. Never append a second file at paste time.
 
 Details: [`global/checkout-tracking/README.md`](./global/checkout-tracking/README.md).
 
@@ -74,7 +74,7 @@ Details: [`global/checkout-tracking/README.md`](./global/checkout-tracking/READM
 
 ## Rules that keep pastes safe
 
-1. One repo file per Kajabi field (checkout header may append meta-matching after the loader; that is the documented exception).
+1. One repo file per Kajabi field. Never compose a field from two files at paste time.
 2. Pull live before inventing per-page css/js.
 3. `node --check` every `.js` paste file before pasting.
 4. Never accept a greyed-out Save as proof: curl public pages; use a real browser for checkouts (curl is 403).

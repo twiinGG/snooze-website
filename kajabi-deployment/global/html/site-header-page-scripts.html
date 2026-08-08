@@ -1484,6 +1484,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (save && previousCurrency && previousCurrency !== currency) {
       try {
         const pageWrapper = document.querySelector('[id$="-page"]');
+        const pathname = window.location && typeof window.location.pathname === 'string'
+          ? window.location.pathname
+          : '';
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'currency_change',
@@ -1491,7 +1494,7 @@ document.addEventListener('DOMContentLoaded', function() {
           'currency': currency,
           'surface': pageWrapper
             ? pageWrapper.id.replace(/-page$/, '')
-            : (window.location.pathname === '/' ? 'homepage' : window.location.pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
+            : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
         });
       } catch (e) {
         logError('Failed to push currency_change event', e);

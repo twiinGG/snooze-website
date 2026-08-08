@@ -68,7 +68,7 @@ hit twice instead of merging:
 
 Confirm field paths in [`../../kajabi-deployment/PASTE-MAP.md`](../../kajabi-deployment/PASTE-MAP.md) A4/A5 first.
 
-1. Settings → Checkout → Header tracking code already has the GTM/Stape loader (`checkout-header-tracking.html`). **Do not replace it unless changing the loader.** Append `meta-advanced-matching.js` (without the comment header) AFTER that existing block so `fbq` exists when it runs.
+1. Inline `meta-advanced-matching.js` into `checkout-header-tracking.html` in git (wrap the fragment in `<script>…</script>` after the loader). Then whole-field overwrite Settings → Checkout → Header tracking code from that **one** file. Never append a second file in Kajabi.
 2. Paste `kajabi-checkout-tracking.js` into Settings → Checkout → **Footer** Tracking Code (live footer was empty as of 2026-07-27).
 3. In GTM (`GTM-KNRTH6P`) / Stape: add dataLayer variable `meta_event_id`; bind the
    server CAPI Purchase + InitiateCheckout tags' Event ID to it for dedup. Optional

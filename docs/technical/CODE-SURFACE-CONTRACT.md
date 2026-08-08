@@ -6,9 +6,9 @@ This is the operational contract. Operator index: [`../../kajabi-deployment/PAST
 
 ## The rule
 
-**One repo file per paste target. Never merge two targets into one file.** A file that serves two fields cannot be pasted into either without breaking something.
+**One repo file per paste target.** Never merge two targets into one file. Never compose one target from two files at paste time (append / strip-header / glue). A file that serves two fields cannot be pasted into either without breaking something; a field assembled from two files at paste time loses chunks.
 
-**Documented exception:** Settings → Checkout → Header may be loader ([`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html)) plus an optional append of [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) into that same field.
+If Advanced Matching ships on checkouts, **inline** it into [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) in git first. [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) is a fragment only, not a paste target.
 
 ## The five surface classes (corrected 2026-07-27)
 
@@ -26,7 +26,7 @@ This is a **real admin surface**. It is not the Header Page Scripts field and it
 
 | Sub-field | Kajabi UI | Canonical repo file(s) | Live as of 2026-07-27 | Re-paste? |
 |---|---|---|---|---|
-| Header tracking code | "placed in the `<head>` of every checkout page" | [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) (optional append: [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) without comment header) | GTM/Stape loader present and matches repo loader file; meta-advanced-matching **not** in the live field | **No** for the loader. Only paste if changing the loader or deliberately adding Advanced Matching |
+| Header tracking code | "placed in the `<head>` of every checkout page" | [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) only | GTM/Stape loader present and matches repo; Advanced Matching **not** in the live field (inline into this file before any AM paste) | **No** for the loader. Paste only after editing this single file |
 | Footer tracking code | "placed at the end of the `<body>` of each checkout page" | [`kajabi-checkout-tracking.js`](../../kajabi-deployment/global/js/kajabi-checkout-tracking.js) | **EMPTY** | **Yes** only when shipping purchase dataLayer |
 
 Per-offer checkout themes still carry their own HTML/CSS/JS for layout and copy (surface 4). Tracking for all checkouts is this site-wide Settings → Checkout pair.
@@ -68,7 +68,7 @@ Settled by checking where each is actually live.
 | --- | --- | --- |
 | GTM / Stape hybrid tracking (website + landing) | 1, header page scripts | Present once per page on website and landing surfaces |
 | GTM / Stape hybrid tracking (checkouts) | 5, Settings → Checkout → Header | Live admin field holds the checkout-specific loader |
-| Meta Advanced Matching on checkouts | 5, header (after GTM block) | `meta-advanced-matching.js`; intended append, not yet live as of 2026-07-27 |
+| Meta Advanced Matching on checkouts | 5, header (same file as loader) | Inline into `checkout-header-tracking.html` before paste; fragment at `meta-advanced-matching.js`; not live as of 2026-07-27 |
 | Purchase / InitiateCheckout dataLayer | 5, Settings → Checkout → Footer | `kajabi-checkout-tracking.js`; live footer empty as of 2026-07-27 |
 | schema.org JSON-LD | 1, header | In the header file |
 | Currency toggle v2 (`__snoozeCurrencyToggle__`) | 1, header | Absent from the live theme JS field |

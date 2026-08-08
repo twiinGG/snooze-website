@@ -1,5 +1,7 @@
 # Batch 1 Kajabi paste guide (CU-001, tag website-v1.1.0)
 
+> **Status note (2026-07-30):** Batch-1 **copy edits are in the repo files** named below. Several stages already shipped live (Home, About, Consultations credentials/prices, Snooze Method). Checkboxes in this file are **stale**. For what still needs a Kajabi paste (exact field → file), use [`../kajabi-deployment/PASTE-MAP.md`](../kajabi-deployment/PASTE-MAP.md) §0.
+
 Deploy runbook for the copy-uplift Batch 1. Every stage links the repo file (click to open in Cursor), the live page, and the Kajabi admin location. Repo state: main, tag `website-v1.1.0` onward. The dual-currency engine v2 is ALREADY LIVE in Header Page Scripts (2026-07-02); no engine paste needed.
 
 **Ground rules:** git is the source of truth, Kajabi is the rendering surface. One paste cycle per page. Do not edit copy in the Kajabi editor; fix in repo, commit, re-paste. Kajabi MCP pages/themes toolsets deactivate per session; re-run `enable_toolset` if MCP calls fail.
