@@ -8,7 +8,7 @@
 
 ## CTA / checkout note (2026-07-27)
 
-Book CTAs use `.dynamic-cta` only (no `data-checkout`). Global Custom JavaScript used to overwrite every `[data-checkout]` href with membership checkout (`z63s9VaR` / `vYgCNgJz`). Fixed in `global/js/theme-custom-code.js`. Redeploy: Kajabi Settings → Website → Custom JavaScript; paste that one file only (see `global/js/README.md`). Page paste removes `data-checkout` from the three book buttons as belt-and-suspenders.
+Book CTAs use `.dynamic-cta` only (no `data-checkout`). A global handler used to overwrite every `[data-checkout]` href with membership checkout (`z63s9VaR` / `vYgCNgJz`). Fixed in [`global/html/site-header-page-scripts.html`](../../global/html/site-header-page-scripts.html) (Header Page Scripts; live). Page paste removes `data-checkout` from the three book buttons as belt-and-suspenders; see [`PASTE-MAP.md`](../../PASTE-MAP.md) row P2.
 
 ## SEO metadata (add in Kajabi page settings, not in code)
 

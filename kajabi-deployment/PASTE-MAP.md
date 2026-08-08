@@ -1,113 +1,135 @@
 # Kajabi paste map (source of truth)
 
-**Updated:** 2026-07-28  
+**Updated:** 2026-07-31  
+**Last live verify:** 2026-07-31 (curl + whitespace-normalized CSS match; Kajabi MCP for Store CMS + membership checkouts)  
 **App:** [`apps/snooze-website/kajabi-deployment/`](./)
 
-Git is the source of truth. Kajabi is the render surface. Every paste target below has exactly one canonical repo path (or a documented two-file compose order for the checkout header).
+Git is the source of truth. Kajabi is the render surface. **One repo file per paste target.** Never compose a field from two files at paste time. Edit the canonical file in git, then whole-field overwrite.
 
 Authoritative detail:
 - Contract: [`CODE-SURFACE-CONTRACT.md`](../docs/technical/CODE-SURFACE-CONTRACT.md)
 - Surface rules: [`KAJABI-SURFACE-CODE-SETUP.md`](../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)
 - Checkout tracking how-to: [`KAJABI-CHECKOUT-TRACKING-CODE.md`](../docs/technical/KAJABI-CHECKOUT-TRACKING-CODE.md)
-
-File paths in this map use relative markdown links so they open and highlight in Cursor Explorer.
-
----
-
-## A. Site-wide fields (paste once; reach many pages)
-
-| # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo (2026-07-27) | Re-paste? |
-|---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | Not fully re-compared this session | Only if that file changes |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | Comment-stripped 2026-07-28 (was MATCH before strip; **re-paste required**). Live may still show Kajabi’s wrapper-line delta only after paste. | **Yes** after this strip |
-| A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
-| A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **MATCH** live payload (GTM/Stape loader only) | **No** for current loader |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
-
-### Checkout header compose order (A4)
-
-The live Header field today is **only** the GTM/Stape loader ([`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html)). That matches the repo file. **Do not re-paste A4 just to “sync” it.**
-
-Optional intended upgrade (not live yet): after the loader, append [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) with its comment header stripped, so `fbq` exists when Advanced Matching runs. That would be a deliberate new paste, not a restore.
-
-Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking/README.md).
-
-### What A4 / A5 are not
-
-| Do not use for checkout tracking | Why |
-|---|---|
-| A1 Header Page Scripts | Website + landing chrome. Not the checkout Settings fields. |
-| A3 website theme JS | `#home-page` helpers only. Pasting tracking here double-fires GTM on website pages. |
-| Per-offer theme JS | Layout/scroll helpers for that offer only. |
-
-Per-offer section flags `inject_header_tracking_code` / `inject_footer_tracking_code` switch whether **A4/A5** inject into that offer. They do not pull A1 into the checkout.
+- Older CU-001 stage notes (checkboxes may be stale): [`../docs/BATCH-1-PASTE-GUIDE.md`](../docs/BATCH-1-PASTE-GUIDE.md)
 
 ---
 
-## B. Per-page / per-offer layout (own theme each)
+## 0. Status board (2026-07-31)
 
-### B1. Landing pages → [`pages/landing/`](./pages/landing/)
+### TO DO
 
-Target shape per page under [`pages/landing/<page>/`](./pages/landing/):
-
-```
-<page>.html   → that page’s custom-code block
-<page>.css    → that page’s own theme CSS field
-<page>.js     → that page’s own theme JS field
-```
-
-Pull from live before inventing files. Coverage and gaps: [`WS-001 overview`](../../../docs/projects/website-surfaces/00-overview.md). Only [`linktree`](./pages/landing/linktree/) is complete today.
-
-### B2. Checkout layout (not tracking) → [`pages/checkout/`](./pages/checkout/)
-
-Per offer family: html + css + js into that offer’s theme custom-code / CSS / JS. Dual-currency = paste both twins or neither.
-
-| Family | html | css | js | Gap |
+| # | Status | What to do | Where | Repo / replacement text |
 |---|---|---|---|---|
-| [`1-month-free-membership`](./pages/checkout/1-month-free-membership/) | yes | yes | yes | — |
-| [`7-day-trial-membership`](./pages/checkout/7-day-trial-membership/) | yes | yes | yes | — |
-| [`bau-membership-checkout`](./pages/checkout/bau-membership-checkout/) | yes | yes | yes | Copy DIVERGED live (Sally gate) |
-| [`camp-snooze-v2-luxury`](./pages/checkout/camp-snooze-v2-luxury/) | yes | yes | yes | — |
-| [`day-pass-offer`](./pages/checkout/day-pass-offer/) | yes | **no** | **no** | Pull css+js from live |
+| **P5** | **TO DO** | Fix banned Store copy | Customizer → `/store` → section **`1764559895491`** ("Offer Storefront") → text block **`1764559895491_0`** | Replace `Weekly group coaching and replays` with: `Live masterclasses and coaching sessions with the Snooze Specialists, plus a full library of catch up recordings.` (admin UI only; no repo HTML) |
+| **P3** | **TO DO (optional)** | Paste purchase tracking if shipping it | **Settings → Checkout** → **Footer tracking code** | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) · Inject flags are **true** on membership checkouts; footer field was **EMPTY** as of 2026-07-27 (cannot re-read via public curl; Cloudflare 403 on checkouts) |
+| **LIB** | **TO DO (confirm first)** | Logged-in compare before any paste | <https://www.joinsnooze.com/snooze-library> · page **2156716053** (`authenticated_only`) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) · Public verify blocked (403) |
+| **P6** | **HOLD** | Pull day-pass theme css+js from live before editing | Day-pass offer theme CSS + JS fields | Missing under [`pages/checkout/day-pass-offer/`](./pages/checkout/day-pass-offer/) |
+| **P7** | **HOLD** | Advanced Matching not shipping | **Settings → Checkout** → **Header tracking code** | Inline [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) into [`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git first; then one overwrite. Do not append a second file. |
 
-Tracking for all of these is still A4/A5, not these files.
+### DONE (live MATCH; do not re-paste)
 
-### B3. Website pages → [`pages/website/`](./pages/website/)
+| # | Status | Surface | Evidence (2026-07-31) |
+|---|---|---|---|
+| **P1** | **SUPERSEDED** | Theme CSS (A2) | Was MATCH on 2026-07-31: live style block = repo after normalize, **10743 / 10743** non-blank lines, theme `updated_at` 2026-07-30. Repo has since gained the `.snooze-faq` and `#catnapping-page .snooze-form-embed` blocks, so A2 is drift again. Re-paste with the `/catnapping` deploy. |
+| **P2** | **DONE** | Consultations | Book CTAs have **no** `data-checkout` (membership "Join" links still correctly use it). Credentials/prices present. |
+| **P4** | **DONE** | Membership checkouts USD/AUD | MCP themes `2163485833` / `2166694709` block `1767316681231`: cleaned benefits; no "Weekly live group coaching" / "24/7"; USD says USD; AUD says AUD. |
+| **A1** | **DONE** | Header Page Scripts | `keepOfferUrl` / `isPlaceholderHref` live on home; `GTM-KNRTH6P` ×1. |
+| **A3** | **DONE** | Theme JS | Helpers present on home. |
+| **A4** | **DONE** | Checkout header loader | GTM/Stape loader MATCH; inject_header **true**. |
+| **Home** | **DONE** | Home body | No banned "Weekly Live Coaching" / "24/7 support". |
+| **About** | **DONE** | About Sally | H1 "Hi, I'm Sally"; former paediatric nurse; `/snooze-library` present. |
+| **Method** | **DONE** | The Snooze Method | H1 "The Snooze Methodology". |
 
-Shared styling from A2/A3. Page body is a custom-code block or native builder blocks (see [`KAJABI-SURFACE-CODE-SETUP.md`](../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)). One-file ruling applies only to code-block pages.
+**Only mandatory live write right now:** P5 Store text.
 
 ---
 
-## C. Not paste files (do not put these into Kajabi fields)
+## A. Site-wide fields (one file each)
+
+| # | Kajabi location | Admin path | Canonical file | Reaches | Live vs repo | Action |
+|---|---|---|---|---|---|---|
+| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DONE** | No |
+| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **DRIFT** since P1: repo gained the `.snooze-faq` block and the `#catnapping-page .snooze-form-embed` block (August 2026) | **Yes, whole-file overwrite** with the next `/catnapping` deploy ([`pages/website/catnapping/INSTALL.md`](./pages/website/catnapping/INSTALL.md) sections 3 and 5) |
+| A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
+| A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DONE** loader | No (see P7 for AM) |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | Was **EMPTY** (2026-07-27) | **TO DO if shipping (P3)** |
+
+### A4 note
+
+Live header = GTM/Stape loader only. **Do not re-paste to sync.**  
+Meta Advanced Matching: inline the fragment into [`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git, then overwrite A4 once. [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) is **not** a paste target.
+
+---
+
+## B. Website pages (shared theme 2156873377)
+
+Enter customizer via <https://app.kajabi.com/admin/sites/2148291177/themes> → Customize → page dropdown. Deep links into the customizer 404.
+
+| Page | Live URL | Page settings | Custom Code field | Repo file | Action |
+|---|---|---|---|---|---|
+| Home | <https://www.joinsnooze.com> | [2154679189](https://app.kajabi.com/admin/website_pages/2154679189/edit) | Section **`1768118757163`** Full Page | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | **DONE** |
+| About Sally | <https://www.joinsnooze.com/about-sally> | [2154679198](https://app.kajabi.com/admin/website_pages/2154679198/edit) | Whole-page custom code (confirm H1 before edit) | [`pages/website/about-sally/about-sally.html`](./pages/website/about-sally/about-sally.html) | **DONE** |
+| 1:1 Consultations | <https://www.joinsnooze.com/one-on-one-sleep-consultations> | [2155283958](https://app.kajabi.com/admin/website_pages/2155283958/edit) | Section/block **`1765189516514`** only | [`pages/website/consultations/one-on-one-consultations-page.html`](./pages/website/consultations/one-on-one-consultations-page.html) | **DONE** |
+| Snooze Library | <https://www.joinsnooze.com/snooze-library> | [2156716053](https://app.kajabi.com/admin/website_pages/2156716053/edit) | That page’s Custom Code block(s) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) | **TO DO: confirm logged-in** |
+| Store | <https://www.joinsnooze.com/store> | [2154679200](https://app.kajabi.com/admin/website_pages/2154679200/edit) | Native builder; text block **`1764559895491_0`** | no wholesale HTML file for live `/store` | **TO DO (P5)** |
+
+Guide / age / product pages under [`pages/website/`](./pages/website/) use the same shared theme CSS/JS (A2/A3). Paste each page’s own custom-code file only when that page’s body changed.
+
+---
+
+## C. Landing pages (own theme each)
+
+Shape per page under [`pages/landing/<page>/`](./pages/landing/):
+
+```
+<page>.html  → that landing page’s custom-code block
+<page>.css   → that landing page’s theme CSS field
+<page>.js    → that landing page’s theme JS field
+```
+
+Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../docs/projects/website-surfaces/00-overview.md).
+
+| Landing | Live URL | Repo HTML | CSS in repo? | JS in repo? | Notes |
+|---|---|---|---|---|---|
+| `/links` (linktree) | <https://www.joinsnooze.com/links> | [`pages/landing/linktree/linktree-landing-page.html`](./pages/landing/linktree/linktree-landing-page.html) | yes | yes | Only complete trio |
+| The Snooze Method | <https://www.joinsnooze.com/the-snooze-method> | [`pages/website/snooze-method/the-snooze-method.html`](./pages/website/snooze-method/the-snooze-method.html) | inlined in HTML | n/a | File lives under `pages/website/` but **deploys as a landing page**. **DONE** (H1 Methodology) |
+| Camp Snooze | camp landing | [`pages/landing/camp-snooze/`](./pages/landing/camp-snooze/) | partial | partial | Own theme; pull before overwrite |
+| Day Pass / paid ads / cold traffic / snooze-access | respective URLs | under [`pages/landing/`](./pages/landing/) | mostly missing | partial | WS-001 WS1 |
+| `annual-moment-v1`, `kic-partnership` | — | empty dirs | no | no | Pull from live first |
+
+---
+
+## D. Checkout layout (not tracking) → [`pages/checkout/`](./pages/checkout/)
+
+Per offer family: html + css + js into **that offer’s** theme Custom Code / CSS / JS. Dual-currency = both twins or neither. Tracking is still A4/A5.
+
+| Family | html | css | js | Action |
+|---|---|---|---|---|
+| [`1-month-free-membership`](./pages/checkout/1-month-free-membership/) | yes | yes | yes | Only if that family’s files changed |
+| [`7-day-trial-membership`](./pages/checkout/7-day-trial-membership/) | yes | yes | yes | Only if changed |
+| [`bau-membership-checkout`](./pages/checkout/bau-membership-checkout/) | yes | yes | yes | **DONE (P4)** live cleaned |
+| [`camp-snooze-v2-luxury`](./pages/checkout/camp-snooze-v2-luxury/) | yes | yes | yes | Only if changed |
+| [`day-pass-offer`](./pages/checkout/day-pass-offer/) | yes | **no** | **no** | **HOLD (P6)** pull css+js first |
+
+---
+
+## E. Not paste files
 
 | File | Role |
 |---|---|
 | [`global/js/snooze-globals.js`](./global/js/snooze-globals.js) | Stub pointer only |
 | [`global/js/currency-toggle.js`](./global/js/currency-toggle.js) | Test extract only |
-| [`global/js/gtm-variables.js`](./global/js/gtm-variables.js) | GTM container variables, configured in GTM UI |
-| [`global/css/snooze-unified-theme.css`](./global/css/snooze-unified-theme.css) | Historical / non-canonical vs [`theme-custom-code.css`](./global/css/theme-custom-code.css) |
-| [`global/html/footer.html`](./global/html/footer.html) | Sync source copied inline into page HTML, not a Kajabi include |
+| [`global/js/gtm-variables.js`](./global/js/gtm-variables.js) | GTM UI variables |
+| [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) | Fragment; inline into checkout-header HTML before shipping |
+| [`global/css/snooze-unified-theme.css`](./global/css/snooze-unified-theme.css) | Historical; paste [`theme-custom-code.css`](./global/css/theme-custom-code.css) instead |
+| [`global/html/footer.html`](./global/html/footer.html) | Sync source copied inline into page HTML |
 
 ---
 
-## D. Quick “where do I edit X?”
+## F. Verification rules
 
-| Concern | Edit this file | Paste here |
-|---|---|---|
-| Site GTM / Stape / schema / currency toggle (site + landing) | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Settings → Site Details → Header Page Scripts |
-| Checkout GTM / Stape loader | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Settings → Checkout → Header tracking code |
-| Checkout Meta Advanced Matching | [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) | Same Header field, after the loader (optional upgrade) |
-| Checkout purchase / InitiateCheckout dataLayer | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Settings → Checkout → Footer tracking code |
-| Shared website CSS | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Theme Custom Code → CSS |
-| Home-page JS helpers | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Theme Custom Code → JS |
-| One landing page look/feel | [`pages/landing/`](./pages/landing/) | That landing page’s own theme fields |
-| One checkout layout/copy | [`pages/checkout/`](./pages/checkout/) | That offer’s theme fields |
-
----
-
-## E. Verification rules
-
-1. Website / landing: cache-busted `curl` of the public URL; every non-blank repo line appears live.
-2. Checkouts: curl is **HTTP 403** (Cloudflare). Verify in a real browser, or read back from Settings → Checkout after Save.
-3. Any `.js` paste file must pass `node --check`. Markup in a theme-JS field is a defect.
-4. `GTM-KNRTH6P` must appear at most once per assembled page type (site pages from A1; checkouts from A4).
+1. Website / landing: cache-busted `curl` of the public URL; every non-blank repo line appears live (or length/sha from `emit_paste_js.py` eval).
+2. Checkouts: curl is **HTTP 403**. Verify in a real browser, or read back Settings → Checkout after Save. Offer layout copy: Kajabi MCP `get_theme_content` on the offer theme.
+3. Any `.js` paste file must pass `node --check`.
+4. `GTM-KNRTH6P` at most once per assembled page type (site from A1; checkouts from A4).
+5. Never merge two paste targets into one file; never append a second file into a Kajabi field at paste time.

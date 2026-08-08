@@ -25,7 +25,7 @@ Canonical contract: [`CODE-SURFACE-CONTRACT.md`](./CODE-SURFACE-CONTRACT.md) sur
 |---|---|
 | Sync the existing loader into Kajabi | **No.** Already live. |
 | Change the loader / Stape URL / container | Yes: whole-field overwrite from [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) |
-| Add Meta Advanced Matching | Yes: keep the loader, then append [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) (strip its comment header) so `fbq` exists |
+| Add Meta Advanced Matching | Yes: **inline** the fragment into [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) in git first, then whole-field overwrite once. Never append a second file in Kajabi |
 
 **Edit path:** Settings → Checkout → Edit header tracking code → Save.
 
@@ -80,8 +80,8 @@ If either is false, this site-wide pair stops on that offer only. Check these be
 
 ## Related
 
-- [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html)
-- [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js)
+- [`checkout-header-tracking.html`](../../kajabi-deployment/global/html/checkout-header-tracking.html) (single A4 paste file; Advanced Matching inlines here when shipped)
+- [`meta-advanced-matching.js`](../../kajabi-deployment/global/js/meta-advanced-matching.js) (fragment only; not a paste target)
 - [`kajabi-checkout-tracking.js`](../../kajabi-deployment/global/js/kajabi-checkout-tracking.js)
 - [`EMQ-CAPI-ADVANCED-MATCHING.md`](./EMQ-CAPI-ADVANCED-MATCHING.md) (deploy steps)
 - [`SNOOZE-TECHNICAL-TRACKING-BIBLE.md`](./SNOOZE-TECHNICAL-TRACKING-BIBLE.md)
