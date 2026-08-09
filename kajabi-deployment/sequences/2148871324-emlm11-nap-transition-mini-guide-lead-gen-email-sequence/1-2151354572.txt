@@ -1,16 +1,22 @@
 Internal title: Nap Transition Email 1 (Welcome + Access)
-Email ID: 2151354205
+Email ID: 2151354572
+Body theme: 2167139022
 Send: Immediately
 Subject: Your 3-to-2 nap transition guide is ready
-Preview text: Find your baby's age first, then cap before you drop
-Written: 2026-08-09 (WS-003). NOT yet pasted live.
+Preview text: Find your age first, then cap before you drop
+Written: 2026-08-09 (WS-003). Draft, not published.
 
 ---
 
-Hi {{ first_name }},
+[View in Web Browser]({{ view_as_webpage_link }})
+Hey {{ first_name }},
 Your 3-to-2 nap transition guide is in your library. Nothing else to claim and nothing to pay.
 [Open your guide](https://www.joinsnooze.com/products/e78214b0-16a4-45a1-bf3d-c77b8f19839c)
 Find your baby's age first. The guide runs 6 to 9 months, so start on the schedule closest to where you actually are rather than where you are heading.
 One thing before you start: cap before you drop. Shortening that third nap usually buys you a few more weeks of it, and those weeks matter.
+Sweet dreams,
 Sally
 The Sleep Concierge
+P.S. Not sure whether to cap or drop? Reply and tell me your current nap times. I read every response.
+[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
+{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,6 +1,6 @@
 # Newborn Guide Preview Lead Gen Email Sequence
 
-**Kajabi sequence id:** `2148871241` · **Send hour:** 11:00 Melbourne · **Builder:** classic HTML
+**Kajabi sequence id:** `2148871323` · **Send hour:** 11:00 Melbourne · **Builder:** classic HTML
 **Bound to offer:** `zs2zLeUw` (`2150851932`)
 **Status:** all three emails created as **drafts** on 2026-08-09 (WS-003). None is published and none is bound to a trigger yet.
 
@@ -16,16 +16,14 @@ Creating a sequence does not subscribe anyone to it. That needs a Kajabi automat
 
 ## The copy lives in `sequences/`, not here
 
-Bodies, twins and paste instructions: [`../../../sequences/2148871241-newborn-guide-preview-lead-gen-email-sequence/`](../../../sequences/2148871241-newborn-guide-preview-lead-gen-email-sequence/)
+Bodies, twins and ids: [`../../../sequences/2148871323-emlm10-newborn-guide-preview-lead-gen-email-sequence/`](../../../sequences/2148871323-emlm10-newborn-guide-preview-lead-gen-email-sequence/)
 
-That directory follows the same shape as the catnapping sequence `2148414612`: a `README.md` with
-ids and editor URLs, a numbered `.txt` twin per email, and, because these are classic-HTML-editor
-emails rather than theme-builder ones, a paste-ready `.html` body per email.
+Same shape as the catnapping sequence `2148414612`. Each email body is its own Kajabi theme, written
+with `update_theme_content`; the directory holds a readable `.txt` twin per email plus a README with
+the ids, subjects, preview lines, send timing and editor URLs.
 
-**The bodies currently in Kajabi are mangled.** They were created via `add_sequence_email` with raw
-HTML in `body` but no `body_format: "html"`. That parameter defaults to `markdown`, so the server
-parsed the HTML as markdown and the sanitizer rendered the tags as visible text. The `.html` files
-in the sequences directory are the correct bodies and need pasting over what is there.
+Sequence `2148871241` was an earlier classic-HTML attempt whose bodies were mangled. It is superseded and
+should be deleted in the admin.
 
-This file owns the *why*: what the magnet is, what was wrong with what came before, and what gates
-the paste. The sequences directory owns the *words*. Do not copy bodies back into this file.
+This file owns the *why*: what the magnet is, what came before, and what gates the wiring. The
+sequences directory owns the *words*. Do not copy bodies back into this file.
