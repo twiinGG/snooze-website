@@ -12,25 +12,20 @@ Creating a sequence does not subscribe anyone to it. That needs a Kajabi automat
 
 **This gates the page paste.** `nap-transition-mini-guide-ready.html` tells the claimant that three emails are coming. That sentence is false until the automation exists and the emails are published. Build the automation and publish the emails first, or remove the "What comes next" band before pasting.
 
-## Emails
+---
 
-| # | Day | Kajabi id | Subject |
-|---|---|---|---|
-| 1 | 0 | `2151354205` | Your 3-to-2 nap transition guide is ready |
-| 2 | 2 | `2151354206` | Early waking during a nap transition is normal |
-| 3 | 6 | `2151354207` | This is not the last transition |
+## The copy lives in `sequences/`, not here
 
-Asset link used in every email: `https://www.joinsnooze.com/products/e78214b0-16a4-45a1-bf3d-c77b8f19839c`
-Trial CTA in email 3: `https://www.joinsnooze.com/offers/mqQikDM7/checkout`, with the approved renewal disclosure directly beneath the button, per `cta-trial-ADJUDICATION.md`.
+Bodies, twins and paste instructions: [`../../../sequences/2148871242-3-to-2-nap-transition-mini-guide-lead-gen-email-sequence/`](../../../sequences/2148871242-3-to-2-nap-transition-mini-guide-lead-gen-email-sequence/)
 
-## House rules these bodies follow
+That directory follows the same shape as the catnapping sequence `2148414612`: a `README.md` with
+ids and editor URLs, a numbered `.txt` twin per email, and, because these are classic-HTML-editor
+emails rather than theme-builder ones, a paste-ready `.html` body per email.
 
-- Single wrapper `div`, all styling inline, no `!important`. Email clients, not the course-lesson pattern.
-- `<br />` for spacing rather than margin-bottom.
-- `{{first_name}}` merge tag.
-- No em dashes, no Oxford comma, no LLM fingerprint phrases.
-- Sally writes in first person and signs off. She is never described as a current or registered nurse.
+**The bodies currently in Kajabi are mangled.** They were created via `add_sequence_email` with raw
+HTML in `body` but no `body_format: "html"`. That parameter defaults to `markdown`, so the server
+parsed the HTML as markdown and the sanitizer rendered the tags as visible text. The `.html` files
+in the sequences directory are the correct bodies and need pasting over what is there.
 
-## Live source of truth
-
-The bodies live in Kajabi. This file records what was written, why, and the ids. If you edit an email in the admin, update this file in the same change or the two drift.
+This file owns the *why*: what the magnet is, what was wrong with what came before, and what gates
+the paste. The sequences directory owns the *words*. Do not copy bodies back into this file.

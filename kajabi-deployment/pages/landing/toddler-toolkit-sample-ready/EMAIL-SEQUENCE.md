@@ -45,74 +45,18 @@ That includes the Kajabi paywall offer dropdown, which is an admin change on the
 
 ---
 
-## Emails
+## The copy lives in `sequences/`, not here
 
-| # | Day | Kajabi id | Subject | State |
-|---|---|---|---|---|
-| 1 | 0 | `2151354199` | Your Toddler Toolkit sample is ready | **needs the corrected body below pasted** |
-| 2 | 2 | `2151354200` | The 2–1 nap drop takes longer than you think | **needs the corrected body below pasted**, subject also changes |
-| 3 | 6 | `2151354201` | When a sample is not enough | as created, no change needed |
+Bodies, twins and paste instructions: [`../../../sequences/2148871240-toddler-toolkit-sample-lead-gen-email-sequence/`](../../../sequences/2148871240-toddler-toolkit-sample-lead-gen-email-sequence/)
 
-Asset link: `https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c`
-Trial CTA in email 3: `https://www.joinsnooze.com/offers/mqQikDM7/checkout`, with the approved renewal disclosure directly beneath the button, per `cta-trial-ADJUDICATION.md`.
+That directory follows the same shape as the catnapping sequence `2148414612`: a `README.md` with
+ids and editor URLs, a numbered `.txt` twin per email, and, because these are classic-HTML-editor
+emails rather than theme-builder ones, a paste-ready `.html` body per email.
 
----
+**The bodies currently in Kajabi are mangled.** They were created via `add_sequence_email` with raw
+HTML in `body` but no `body_format: "html"`. That parameter defaults to `markdown`, so the server
+parsed the HTML as markdown and the sanitizer rendered the tags as visible text. The `.html` files
+in the sequences directory are the correct bodies and need pasting over what is there.
 
-## Email 1, corrected body
-
-Subject stays `Your Toddler Toolkit sample is ready`.
-
-```html
-<div style="font-family: Arial, Helvetica, sans-serif; line-height: 1.8; color: #333333; max-width: 600px; margin: 0 auto; padding: 20px;">
-<p>Hi {{ first_name }},<br /><br /></p>
-<p>Your Toddler Toolkit sample is in your library. Nothing else to claim and nothing to pay.</p>
-<p>You have the welcome lesson and all seven lessons of <strong>Module 1: The 2&#8211;1 Nap Drop</strong>, which is the transition that catches most families out between 13 and 18 months.</p>
-<p style="text-align: center; margin: 28px 0;"><a href="https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c" style="display: inline-block; padding: 1rem 2rem; background: #F43357; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;">Open your sample</a></p>
-<p><strong>What is in it</strong></p>
-<ul style="color: #1f293b; line-height: 2; margin-top: 0;">
-<li>What is actually going on in the 2&#8211;1 drop</li>
-<li>The transitional short and long schedule, and how to use it</li>
-<li>How to know it is genuinely time for one nap</li>
-<li>Making the drop, and troubleshooting when it goes sideways</li>
-<li>Your role through the transition</li>
-</ul>
-<p>Start at 1.1 and read straight through before you change anything. It is short, and knowing the whole shape first saves you guessing at 2am.</p>
-<p>Then hold whatever you change for 48 hours. Toddlers push back before they settle, so two days tells you far more than two hours.</p>
-<p>Sally<br />The Sleep Concierge</p>
-</div>
-```
-
-## Email 2, corrected body
-
-Subject changes from "The toddler bedtime problem is rarely bedtime" to **`The 2–1 nap drop takes longer than you think`**. The original was written about bedtime resistance, which is not what the sample covers.
-
-```html
-<div style="font-family: Arial, Helvetica, sans-serif; line-height: 1.8; color: #333333; max-width: 600px; margin: 0 auto; padding: 20px;">
-<p>Hi {{ first_name }},<br /><br /></p>
-<p>The most common mistake in the 2&#8211;1 nap drop is treating it as a switch rather than a stretch.</p>
-<p>One bad day of two naps does not mean they are ready for one. Most toddlers spend weeks somewhere in between, which is exactly why Module 1 gives you a transitional schedule instead of a date to circle.</p>
-<p>Two things worth knowing while you are in it. An earlier bedtime carries you through the gap far better than a longer day does. And a toddler mid-transition will often take a great one-nap day, then fall apart the next. That is normal and it is not a signal to go back.</p>
-<p style="text-align: center; margin: 28px 0;"><a href="https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c" style="display: inline-block; padding: 1rem 2rem; background: #F43357; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;">Open your sample</a></p>
-<p>Lesson 1.6 is the one to reread if this week has been messy.</p>
-<p>Sally<br />The Sleep Concierge</p>
-</div>
-```
-
-Both bodies use `&#8211;` for the en dash in "2–1" because that is the course's own module title, not prose punctuation. No em dashes anywhere.
-
----
-
-## House rules these bodies follow
-
-- Single wrapper `div`, all styling inline, no `!important`.
-- `<br />` for spacing rather than margin-bottom.
-- `{{ first_name }}` merge tag, matching the spacing Kajabi already uses on this site.
-- No em dashes, no Oxford comma, no LLM fingerprint phrases.
-- Sally writes in first person and signs off. Never described as a current or registered nurse.
-- No claim about module or lesson counts that a `get_course` read does not support.
-
-## Live source of truth
-
-The bodies live in Kajabi. This file records what was written, why, and the ids. If you edit an email in the admin, update this file in the same change or the two drift.
-
-There is no MCP tool to update or delete a sequence email, only `add_sequence_email`. So corrections to an existing email are an admin paste, and this file is where the paste comes from.
+This file owns the *why*: what the magnet is, what was wrong with what came before, and what gates
+the paste. The sequences directory owns the *words*. Do not copy bodies back into this file.
