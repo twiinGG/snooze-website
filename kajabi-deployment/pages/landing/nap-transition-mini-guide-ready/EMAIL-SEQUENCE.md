@@ -1,8 +1,8 @@
 # 3-to-2 Nap Transition Mini Guide Lead Gen Email Sequence
 
-**Kajabi sequence id:** `2148871324` · **Send hour:** 11:00 Melbourne · **Builder:** classic HTML
+**Kajabi sequence id:** `2148871324` · **Send hour:** 11:00 Melbourne · **Builder:** theme, matching catnapping `2148414612`
 **Bound to offer:** `FwisMwa6` (`2151272119`)
-**Status:** all three emails created as **drafts** on 2026-08-09 (WS-003). None is published and none is bound to a trigger yet.
+**Status:** created 2026-08-09 (WS-003). All three emails are **drafts** and none is bound to a trigger. Bodies are written and correct; the earlier classic-HTML attempt was deleted.
 
 ## The binding does not exist yet
 
