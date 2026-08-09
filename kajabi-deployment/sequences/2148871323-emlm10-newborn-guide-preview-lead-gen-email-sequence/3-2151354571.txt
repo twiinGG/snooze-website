@@ -1,23 +1,18 @@
 Internal title: Newborn Preview Email 3 (Trial) - 6 days later
 Email ID: 2151354571
-Body theme: 2167139021
 Send: day 6 at 11:00 Melbourne
 Subject: What comes after the newborn weeks
-Preview text: Four months is the one that undoes it
-Written: 2026-08-09 (WS-003). Draft, not published.
+Preview text: The four month regression is the one that undoes it
+Written: 2026-08-09 (WS-003). NOT yet pasted live.
 
 ---
 
-[View in Web Browser]({{ view_as_webpage_link }})
-Hey {{ first_name }},
+Hi {{ first_name }},
 The preview shows you how the Newborn Sleep Guide is built and where your weeks sit inside it.
 What it cannot do is follow you. Newborn sleep is the first of several versions of this you will go through, and the four month regression is the one that undoes what worked. Parents who plan only for now tend to start from scratch each time.
 The 7 day trial opens the full newborn guide and every stage after it, through to toddler bedtimes, plus my coaching when your baby does something no guide predicted.
 [Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
 The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
 The preview stays yours either way.
-Sweet dreams,
 Sally
 The Sleep Concierge
-[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
-{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

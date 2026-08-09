@@ -1,23 +1,18 @@
 Internal title: Toddler Sample Email 3 (Trial) - 6 days later
 Email ID: 2151354568
-Body theme: 2167139016
 Send: day 6 at 11:00 Melbourne
 Subject: When a sample is not enough
-Preview text: Seven more modules sit behind that paywall
-Written: 2026-08-09 (WS-003). Draft, not published.
+Preview text: What sits behind the paywall, and the cheapest way in
+Written: 2026-08-09 (WS-003). NOT yet pasted live.
 
 ---
 
-[View in Web Browser]({{ view_as_webpage_link }})
-Hey {{ first_name }},
-Module 1 gives you the 2-1 nap drop end to end. It is deliberately one transition.
+Hi {{ first_name }},
+Module 1 gives you the 2–1 nap drop end to end. It is deliberately one transition.
 Behind it sit seven more modules: the 18 month regression, the two year regression, toddler early rising, the big bed transition, dropping the last nap, a break-glass plan for when everything falls apart, and the full toddler schedules.
 The 7 day trial opens all of it, plus every other Snooze course from the newborn weeks up, and my coaching when your toddler does something no module predicted.
 [Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
 The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
 If the sample was enough on its own, that is a good outcome and it stays yours either way.
-Sweet dreams,
 Sally
 The Sleep Concierge
-[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
-{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

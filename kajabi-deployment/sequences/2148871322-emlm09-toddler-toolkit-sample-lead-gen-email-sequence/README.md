@@ -2,81 +2,78 @@
 
 - Kajabi sequence ID: 2148871322
 - Created: 2026-08-09 (WS-003)
-- Bound to offer: `4HQjFJGC` (2150846925) Toddler Toolkit - Sample Access
+- Bound to offer: `4HQjFJGC` (2150846925)
 - Send hour: 11:00 Melbourne
-- Builder: **theme**, matching the catnapping sequence `2148414612`
+- Builder: **theme builder**, one `section_text` carrying the whole body
 
-**Each email body is its own Kajabi theme**, written with `update_theme_content` against the body
-theme id below. Subject, preview text, internal title, day and send time live on the email record
-itself. The twins below are snapshots of what was written, not drafts to paste.
+## Body structure: one section, self-contained HTML
 
-## Status: drafts, and nothing is wired
+Kade's ruling was a blank email with a single code block. **The Encore Email theme has no code
+section.** Its addable catalog is `section_text`, `section_image`, `section_cta`, `section_logo`,
+`section_video`, `section_countdown`, `section_social_icons`, `section_divider`,
+`section_announcement`, three split types and the Amplify ad, and the theme skill states plainly
+that Encore Email sections have no blocks at all.
 
-All three emails are `publication_status: draft`. Publishing is an admin action. A draft email in a
-published sequence is skipped silently, so publish all three before the automation goes live.
+The closest available shape, and what these use, is **one `section_text` whose `body` rich-text
+field holds the entire email**, including the CTA as a styled inline `<a>`. Verified working on a
+probe email: the HTML round-trips through `update_theme_content` and `get_theme_content` byte for
+byte.
 
-A **Published** automation, [`391060` Toddler Toolkit Sample - Post-purchase](https://app.kajabi.com/admin/workflows/391060/edit), already fires on this offer and sends an
-inline email. Kade's ruling on 2026-08-09: change its action to **Subscribe to an email sequence**
-pointing here, and retire the inline email.
+That differs from the catnapping sequence, which composes `section_text` x3 plus a native
+`section_cta`. The native button emits table-based markup that survives Outlook on Windows, where
+an inline `<a>` with `border-radius` loses its rounded corners. The trade is deliberate: one block
+that matches the repo file exactly, against a button that renders square in one client.
 
-That inline email described a course that does not exist and its membership CTA pointed at draft
-offer `6iRarwak`. Kade repointed that CTA at the membership landing page on 2026-08-09 as an
-interim fix. Full record: [`../../pages/landing/toddler-toolkit-sample-ready/EMAIL-SEQUENCE.md`](../../pages/landing/toddler-toolkit-sample-ready/EMAIL-SEQUENCE.md).
+**The `.html` file beside each twin is the body**, and it goes into that single section's rich
+text, not into a classic HTML editor.
 
-Copy here is written against a `get_course` read of course `2149259086`. The sample is the welcome
-lesson plus Module 1 "The 2-1 Nap Drop", 7 lessons, 8 above the paywall.
+There is no MCP tool to update or delete a sequence email, only `add_sequence_email`, and Kajabi
+rejects a second email on a day and time that is already taken. Writing a body therefore needs the
+email's `active_theme_id`, which only `add_sequence_email` returns and no read tool exposes.
+
+The inline email on the Published automation **Toddler Toolkit Sample - Post-purchase** is retired in favour of this sequence. What was wrong with it is recorded in [`../../pages/landing/toddler-toolkit-sample-ready/EMAIL-SEQUENCE.md`](../../pages/landing/toddler-toolkit-sample-ready/EMAIL-SEQUENCE.md).
+
+Emails 1 and 2 were rewritten on 2026-08-09 against a `get_course` read of course `2149259086`. The sample is the intro lesson plus Module 1 "The 2&#8211;1 Nap Drop", 7 lessons, 8 above the paywall.
 
 ## Emails
 
-- Position 1 | Email ID 2151354566 | body theme 2167139014
+- Position 1 | Email ID 2151354566
   - Subject: Your Toddler Toolkit sample is ready
-  - Preview: Module 1 is unlocked, all seven lessons of it
   - Send: Immediately
-  - Twin file: `1-2151354566.txt`
+  - Body to paste: `1-2151354566.html`
+  - Readable twin: `1-2151354566.txt`
   - Editor URL: https://app.kajabi.com/admin/email_sequence_emails/2151354566/edit
-  - Status: **draft**
-- Position 2 | Email ID 2151354567 | body theme 2167139015
+  - Status: **draft, body mangled, needs the paste above**
+- Position 2 | Email ID 2151354567
   - Subject: The 2–1 nap drop takes longer than you think
-  - Preview: One bad day of two naps is not the signal
   - Send: day 2 at 11:00 Melbourne
-  - Twin file: `2-2151354567.txt`
+  - Body to paste: `2-2151354567.html`
+  - Readable twin: `2-2151354567.txt`
   - Editor URL: https://app.kajabi.com/admin/email_sequence_emails/2151354567/edit
-  - Status: **draft**
-- Position 3 | Email ID 2151354568 | body theme 2167139016
+  - Status: **draft, body mangled, needs the paste above**
+- Position 3 | Email ID 2151354568
   - Subject: When a sample is not enough
-  - Preview: Seven more modules sit behind that paywall
   - Send: day 6 at 11:00 Melbourne
-  - Twin file: `3-2151354568.txt`
+  - Body to paste: `3-2151354568.html`
+  - Readable twin: `3-2151354568.txt`
   - Editor URL: https://app.kajabi.com/admin/email_sequence_emails/2151354568/edit
-  - Status: **draft**
-
-## Supersedes 2148871240
-
-Sequence `2148871240` was a first attempt using the classic HTML editor. Its nine bodies across the
-three sequences were mangled: `add_sequence_email` takes `body_format`, which defaults to `markdown`,
-and raw HTML was passed without setting it to `html`, so the sanitizer rendered the tags as visible
-text. Classic-builder emails also have no `active_theme_id`, so there was no programmatic edit path
-at all once created.
-
-Rebuilding on the theme builder fixes both: the format matches catnapping, and every future edit is
-an `update_theme_content` call rather than an admin paste.
-
-**Delete sequence `2148871240` in the admin.** It is unwired and has no subscribers.
+  - Status: **draft, body mangled, needs the paste above**
 
 ## House rules these bodies follow
 
-- Section shape copied from catnapping: `section_text` for copy, `section_cta` for buttons, coral
-  `#ff644a` on the greeting and signoff, button `#ff644a` on `#fffbf5` at radius 4.
+- Single wrapper `div`, all styling inline, no `!important`. Email pattern, not the course-lesson pattern.
+- `<br />` for spacing rather than margin-bottom.
 - `{{ first_name }}` merge tag, spaced the way this site already writes it.
 - No em dashes, no Oxford comma, no LLM fingerprint phrases.
 - Sally writes in first person and signs off. Never described as a current or registered nurse.
-- Every trial CTA carries the approved renewal disclosure in its own section directly beneath the
-  button, per `docs/projects/catnapping-guide/4_working-cng002/verify/cta-trial-ADJUDICATION.md`.
-  No price. USD slug only; `currency-toggle.js` does not run in email, so the checkout resolves
-  currency itself.
+- Every trial CTA carries the approved renewal disclosure directly beneath the button, per
+  `docs/projects/catnapping-guide/4_working-cng002/verify/cta-trial-ADJUDICATION.md`. No price.
 - No claim about module or lesson counts that a live read does not support.
+
+Kajabi appends its own unsubscribe and address footer to a classic-builder email, so the bodies
+here carry no footer chrome of their own.
 
 ## Drift
 
-Bodies live in Kajabi. If you edit one in the admin, update its twin here in the same change or the
-two drift.
+The bodies live in Kajabi once pasted. If you edit one in the admin, update the `.html` and the
+twin `.txt` in the same change or the two drift.

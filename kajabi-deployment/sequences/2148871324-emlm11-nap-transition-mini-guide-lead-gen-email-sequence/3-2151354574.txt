@@ -1,23 +1,18 @@
 Internal title: Nap Transition Email 3 (Trial) - 6 days later
 Email ID: 2151354574
-Body theme: 2167139024
 Send: day 6 at 11:00 Melbourne
 Subject: This is not the last transition
-Preview text: Two to one catches almost everybody out
-Written: 2026-08-09 (WS-003). Draft, not published.
+Preview text: Two to one catches people out, one to none catches everyone
+Written: 2026-08-09 (WS-003). NOT yet pasted live.
 
 ---
 
-[View in Web Browser]({{ view_as_webpage_link }})
-Hey {{ first_name }},
+Hi {{ first_name }},
 Three naps to two is the one people plan for. Two to one catches them out, and one to none catches out almost everybody.
 Each transition has the same shape: a stretch of days where it looks like it is failing, then it settles. Knowing that in advance is most of what makes it bearable.
 The 7 day trial opens every transition from the newborn weeks through to dropping the last nap, the full courses, and my coaching for the weeks a guide cannot predict.
 [Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
 The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
 The guide is yours to keep either way.
-Sweet dreams,
 Sally
 The Sleep Concierge
-[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
-{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}

@@ -1,22 +1,16 @@
 Internal title: Newborn Preview Email 1 (Welcome + Access)
 Email ID: 2151354569
-Body theme: 2167139017
 Send: Immediately
 Subject: Your Newborn Sleep Guide preview is ready
-Preview text: It is in your library, plus where to start
-Written: 2026-08-09 (WS-003). Draft, not published.
+Preview text: It is already in your library, nothing else to claim
+Written: 2026-08-09 (WS-003). NOT yet pasted live.
 
 ---
 
-[View in Web Browser]({{ view_as_webpage_link }})
-Hey {{ first_name }},
+Hi {{ first_name }},
 Your Newborn Sleep Guide preview is in your library. Nothing else to claim and nothing to pay.
 [Open your preview](https://www.joinsnooze.com/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2)
 Start with wake windows. Newborn sleep follows the awake time before it, not the clock on the wall, and getting that one thing closer to right settles more than any routine will at this age.
 Then change one thing at a time. Newborn days move fast enough that two changes at once tell you nothing about either.
-Sweet dreams,
 Sally
 The Sleep Concierge
-P.S. In the thick of it right now? Reply and tell me how old your baby is. I read every response.
-[Unsubscribe]({{ unsubscribe_link }}) | Sent by {{ settings_name }}
-{{ settings_address_street }} • {{ settings_address_city }}, {{ settings_address_state }} • {{ settings_address_zip }}
