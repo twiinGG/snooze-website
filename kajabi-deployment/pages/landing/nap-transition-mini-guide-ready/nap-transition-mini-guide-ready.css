@@ -59,7 +59,8 @@
   padding: 0 24px;
   width: 100%;
 }
-#nap-transition-ready-page .ntr-band { padding: 72px 0; }
+#nap-transition-ready-page .ntr-band { padding: 48px 0; }
+#nap-transition-ready-page .ntr-band.bg-white + .ntr-band.bg-white { padding-top: 0; }
 #nap-transition-ready-page .bg-white { background: var(--c-white); }
 #nap-transition-ready-page .bg-cream { background: var(--c-cream); }
 #nap-transition-ready-page .text-center { text-align: center; }
@@ -94,19 +95,19 @@
 }
 
 #nap-transition-ready-page .hero-wrap {
-  padding-top: 56px;
-  padding-bottom: 40px;
+  padding-top: 48px;
+  padding-bottom: 32px;
 }
 
 #nap-transition-ready-page .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 24px;
+  margin-top: 28px;
 }
 #nap-transition-ready-page .step-card {
   background: white;
-  padding: 30px;
+  padding: 26px;
   border-radius: var(--radius);
   text-align: center;
   box-shadow: var(--shadow-card);
@@ -122,7 +123,7 @@
 }
 
 @media (max-width: 768px) {
-  #nap-transition-ready-page .ntr-band { padding: 56px 0; }
+  #nap-transition-ready-page .ntr-band { padding: 36px 0; }
   #nap-transition-ready-page .btn { width: 100%; }}
 
 

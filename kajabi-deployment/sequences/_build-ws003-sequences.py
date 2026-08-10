@@ -54,7 +54,7 @@ SEQUENCES = [
                  preview="It is already in your library, nothing else to claim",
                  blocks=[
                      ("p", "Hi {{ first_name }},<br /><br />"),
-                     ("p", "Your Toddler Toolkit sample is in your library. Nothing else to claim and nothing to pay."),
+                     ("p", "Your Toddler Toolkit sample is in your library, ready when you are."),
                      ("p", "You have the welcome lesson and all seven lessons of <strong>Module 1: The 2&#8211;1 Nap Drop</strong>, which is the transition that catches most families out between 13 and 18 months."),
                      ("btn", None),
                      ("p", "<strong>What is in it</strong>"),
@@ -115,7 +115,7 @@ SEQUENCES = [
                  preview="It is already in your library, nothing else to claim",
                  blocks=[
                      ("p", "Hi {{ first_name }},<br /><br />"),
-                     ("p", "Your Newborn Sleep Guide preview is in your library. Nothing else to claim and nothing to pay."),
+                     ("p", "Your Newborn Sleep Guide preview is in your library, ready when you are."),
                      ("btn", None),
                      ("p", "Start with wake windows. Newborn sleep follows the awake time before it, not the clock on the wall, and getting that one thing closer to right settles more than any routine will at this age."),
                      ("p", "Then change one thing at a time. Newborn days move fast enough that two changes at once tell you nothing about either."),
@@ -167,7 +167,7 @@ SEQUENCES = [
                  preview="Find your baby's age first, then cap before you drop",
                  blocks=[
                      ("p", "Hi {{ first_name }},<br /><br />"),
-                     ("p", "Your 3-to-2 nap transition guide is in your library. Nothing else to claim and nothing to pay."),
+                     ("p", "Your 3-to-2 nap transition guide is in your library, ready when you are."),
                      ("btn", None),
                      ("p", "Find your baby's age first. The guide runs 6 to 9 months, so start on the schedule closest to where you actually are rather than where you are heading."),
                      ("p", "One thing before you start: cap before you drop. Shortening that third nap usually buys you a few more weeks of it, and those weeks matter."),

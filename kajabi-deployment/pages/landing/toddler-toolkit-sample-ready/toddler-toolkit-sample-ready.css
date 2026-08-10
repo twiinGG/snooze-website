@@ -59,7 +59,8 @@
   padding: 0 24px;
   width: 100%;
 }
-#toddler-sample-ready-page .tsr-band { padding: 72px 0; }
+#toddler-sample-ready-page .tsr-band { padding: 48px 0; }
+#toddler-sample-ready-page .tsr-band.bg-white + .tsr-band.bg-white { padding-top: 0; }
 #toddler-sample-ready-page .bg-white { background: var(--c-white); }
 #toddler-sample-ready-page .bg-cream { background: var(--c-cream); }
 #toddler-sample-ready-page .text-center { text-align: center; }
@@ -94,19 +95,19 @@
 }
 
 #toddler-sample-ready-page .hero-wrap {
-  padding-top: 56px;
-  padding-bottom: 40px;
+  padding-top: 48px;
+  padding-bottom: 32px;
 }
 
 #toddler-sample-ready-page .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 24px;
+  margin-top: 28px;
 }
 #toddler-sample-ready-page .step-card {
   background: white;
-  padding: 30px;
+  padding: 26px;
   border-radius: var(--radius);
   text-align: center;
   box-shadow: var(--shadow-card);
@@ -122,7 +123,7 @@
 }
 
 @media (max-width: 768px) {
-  #toddler-sample-ready-page .tsr-band { padding: 56px 0; }
+  #toddler-sample-ready-page .tsr-band { padding: 36px 0; }
   #toddler-sample-ready-page .btn { width: 100%; }}
 
 
