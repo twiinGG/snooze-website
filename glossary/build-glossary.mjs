@@ -207,6 +207,7 @@ const css = `#${WRAP}{--c-coral:#F43357;--c-coral-hover:#D62646;--c-navy:#1F293B
 #${WRAP} .gl-band{background:var(--c-beige);text-align:center;padding:56px 20px}
 #${WRAP} .gl-band h2{font-size:clamp(1.6rem,4vw,2.3rem)}
 #${WRAP} .gl-band p{max-width:640px;margin:14px auto 24px;color:var(--c-muted)}
+#${WRAP} .gl-band p.gl-cta-note{margin:16px auto 0;font-size:.9rem}
 #${WRAP} .gl-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 32px;background:var(--c-coral);color:#fff;font-weight:600;border-radius:50px;box-shadow:0 6px 18px rgba(244,51,87,.22)}
 #${WRAP} .gl-btn:hover{background:var(--c-coral-hover);transform:translateY(-2px);color:#fff}
 @media(max-width:768px){#${WRAP} .gl-name{font-size:1.15rem}#${WRAP} .gl-term{padding:16px}#${WRAP} .gl-az a,#${WRAP} .gl-az span{min-width:22px}}`;
@@ -263,7 +264,8 @@ ${listHtml}
   <section class="gl-band">
     <h2>When you need more than a definition</h2>
     <p>Knowing what's going on is a great start. When you're ready to actually change it, that's what Snooze is for. You get the full plan for your baby's age and stage, plus me and my team beside you the whole way.</p>
-    <div id="gl-cta-slot"><a href="/" class="gl-btn">Discover Snooze</a></div>
+    <div id="gl-cta-slot"><a href="https://www.joinsnooze.com/offers/mqQikDM7/checkout" class="gl-btn dynamic-cta" data-checkout>Start the 7 day trial</a></div>
+    <p class="gl-cta-note">The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial. <a href="/snooze-membership">See the Snooze Membership</a>.</p>
   </section>
 </div>`;
 

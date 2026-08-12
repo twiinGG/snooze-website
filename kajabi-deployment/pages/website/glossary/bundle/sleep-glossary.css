@@ -48,6 +48,7 @@
 #snooze-glossary .gl-band{background:var(--c-beige);text-align:center;padding:56px 20px}
 #snooze-glossary .gl-band h2{font-size:clamp(1.6rem,4vw,2.3rem)}
 #snooze-glossary .gl-band p{max-width:640px;margin:14px auto 24px;color:var(--c-muted)}
+#snooze-glossary .gl-band p.gl-cta-note{margin:16px auto 0;font-size:.9rem}
 #snooze-glossary .gl-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 32px;background:var(--c-coral);color:#fff;font-weight:600;border-radius:50px;box-shadow:0 6px 18px rgba(244,51,87,.22)}
 #snooze-glossary .gl-btn:hover{background:var(--c-coral-hover);transform:translateY(-2px);color:#fff}
 @media(max-width:768px){#snooze-glossary .gl-name{font-size:1.15rem}#snooze-glossary .gl-term{padding:16px}#snooze-glossary .gl-az a,#snooze-glossary .gl-az span{min-width:22px}}
