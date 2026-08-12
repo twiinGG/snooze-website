@@ -36,6 +36,11 @@ content = open(args.file, encoding="utf-8").read()
 payload = json.dumps(content)  # safe JS string literal
 sha = hashlib.sha256(content.encode()).hexdigest()[:16]
 
+# JS String.length counts UTF-16 code units, so every astral character (emoji,
+# rare CJK) is 2 there and 1 to Python. Comparing Python's len() against the
+# editor's .length reports a false mismatch on any file containing one.
+expected = len(content.encode("utf-16-le")) // 2
+
 if args.target == "ace":
     js = f"""
 (() => {{
@@ -50,7 +55,7 @@ if args.target == "ace":
   ed.insert(' ');
   ed.remove('left');
   const v = ed.getValue();
-  return JSON.stringify({{ok: v.length === {len(content)}, length: v.length, expected: {len(content)}, sha256prefix: '{sha}', editors: els.length}});
+  return JSON.stringify({{ok: v.length === {expected}, length: v.length, expected: {expected}, sha256prefix: '{sha}', editors: els.length}});
 }})()
 """
 else:
@@ -65,7 +70,7 @@ else:
   setter.call(el, {payload});
   el.dispatchEvent(new Event('input', {{bubbles:true}}));
   el.dispatchEvent(new Event('change', {{bubbles:true}}));
-  return JSON.stringify({{ok: el.value.length === {len(content)}, length: el.value.length, expected: {len(content)}, sha256prefix: '{sha}'}});
+  return JSON.stringify({{ok: el.value.length === {expected}, length: el.value.length, expected: {expected}, sha256prefix: '{sha}'}});
 }})()
 """
 sys.stdout.write(js)
