@@ -68,7 +68,7 @@ Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking
 
 | # | Status | Surface | Evidence (2026-07-31) |
 |---|---|---|---|
-| **P1** | **SUPERSEDED** | Theme CSS (A2) | Was MATCH on 2026-07-31: live style block = repo after normalize, **10743 / 10743** non-blank lines, theme `updated_at` 2026-07-30. Repo has since gained the `.snooze-faq` and `#catnapping-page .snooze-form-embed` blocks, so A2 is drift again. Re-paste with the `/catnapping` deploy. |
+| **P1** | **RE-CHECKED 2026-08-13 (WS-006)** | Theme CSS (A2) | The `.snooze-faq` and `#catnapping-page .snooze-form-embed` blocks named in the 2026-07-31 note **did ship** with the `/catnapping` deploy. Re-measured 2026-08-13 by extracting the live inline style block from the rendered `/catnapping` page and diffing against the repo after comment and whitespace normalization: **11247 non-blank repo lines, 15 missing from live**, and all 15 are the WS-006 widening of the form-embed selector from `#catnapping-page` to an `:is()` list covering the five capture pages. A2 is otherwise in sync. Re-paste with the WS-006 age-page deploy. |
 | **P2** | **DONE** | Consultations | Book CTAs have **no** `data-checkout` (membership "Join" links still correctly use it). Credentials/prices present. |
 | **P4** | **DONE** | Membership checkouts USD/AUD | MCP themes `2163485833` / `2166694709` block `1767316681231`: cleaned benefits; no "Weekly live group coaching" / "24/7"; USD says USD; AUD says AUD. |
 | **A1** | **DONE** | Header Page Scripts | `keepOfferUrl` / `isPlaceholderHref` live on home; `GTM-KNRTH6P` ×1. |
