@@ -4,6 +4,12 @@
 Diagram: [`docs/projects/website-surfaces/diagrams/WS-006-lead-magnet-flows.excalidraw`](../../../docs/projects/website-surfaces/diagrams/WS-006-lead-magnet-flows.excalidraw).
 Evidence: [`docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md`](../../../docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md).
 
+> **CONTESTED, August 14, 2026.** Kade reports the live flow is clunky: form submit lands on a login
+> page the parent cannot use, then a set-up-account email leads to a reset-password screen that asks
+> for the email again. That does not match the five claims WS-006 measured, which showed one email and
+> one click. Do not build a new magnet from this document until CA-05 is settled:
+> [`docs/projects/website-surfaces/5_followups/CRITICAL-ACTIONS-2026-08-14.md`](../../../docs/projects/website-surfaces/5_followups/CRITICAL-ACTIONS-2026-08-14.md).
+
 This is how a free magnet is claimed on this site. Build the next one this way; do not invent a
 variant without a ruling.
 
