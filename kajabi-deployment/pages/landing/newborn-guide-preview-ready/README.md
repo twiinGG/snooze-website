@@ -1,9 +1,11 @@
 # Newborn Guide preview ready (post-purchase page)
 
-**Kajabi surface:** landing page, id to be assigned at create. Slug `newborn-guide-preview-ready`.
-**Status:** built in repo, **not yet pasted and not yet live**. Copy is propose-only until Sally approves it.
+**Kajabi surface:** landing page `2152205839`, own theme `2167137728`. Slug `newborn-guide-preview-ready`.
+**Status:** **live**. Last pasted August 13, 2026, verified at 119 of 119 non-blank lines with 0 missing, plus a `getComputedStyle` check confirming the `#newborn-preview-ready-page` wrapper resolves and the button renders `rgb(244, 51, 87)`. Sally has not reviewed the copy; Kade ruled ship it and record that.
 
-Post-purchase destination for offer `zs2zLeUw`, which is claimed from `/newborn-baby-sleep-help`.
+Delivery destination for the Newborn Sleep Guide preview. **Reached as the form's thank-you page, not as a post-purchase page.** WS-006 moved the magnet off the `zs2zLeUw` $0 checkout onto form `2149692312` with single opt-in, so the parent lands here straight after submitting, before any email arrives.
+
+That is why the hero copy points at the password email rather than at a login. A form-created contact has no password at the moment they reach this page. Kajabi's member invite email arrives within seconds and is the only way in, so telling them to "log in with the email you just used" walls them at `/login`. Changed August 13, 2026. Any page that serves a form plus grant magnet needs the same wording; the other four still serve $0 checkouts, which set a password mid-flow, and keep the login wording until their own cutover.
 
 Built for WS-003 workstream 2, which closes dead-end register D2: the offer's post-purchase preference was `disabled`, so a claimant landed on Kajabi's default confirmation page with no next step.
 
