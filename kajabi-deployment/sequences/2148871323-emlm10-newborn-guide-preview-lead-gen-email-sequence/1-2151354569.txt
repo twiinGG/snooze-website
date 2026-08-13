@@ -3,7 +3,11 @@ Email ID: 2151354569
 Send: Immediately
 Subject: Your Newborn Sleep Guide preview is ready
 Preview text: It is already in your library, nothing else to claim
-Written: 2026-08-09 (WS-003). NOT yet pasted live.
+Written: 2026-08-09 (WS-003). Live and published; confirmed by get_sequence on 2026-08-13.
+Amended 2026-08-13 (WS-006): the Gmail placement paragraph was removed on Kade's ruling. It was
+written to rescue the double opt-in confirmation email from the Promotions tab, and that email no
+longer sends under single opt-in. Both emails a claimer now receives arrive on the branded
+kjbm.joinsnooze.com domain and land in Updates, measured on five claims.
 
 ---
 
@@ -12,6 +16,5 @@ Your Newborn Sleep Guide preview is in your library, ready when you are.
 [Open your preview](https://www.joinsnooze.com/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2)
 Start with wake windows. Newborn sleep follows the awake time before it, not the clock on the wall, and getting that one thing closer to right settles more than any routine will at this age.
 Then change one thing at a time. Newborn days move fast enough that two changes at once tell you nothing about either.
-Using Gmail, drag this email into your Primary tab, or on your phone open it, tap the three dots and choose Move to Primary. Adding sally@sleepconcierge.com.au to your contacts does the same job in five seconds.
 Sally
 The Sleep Concierge

@@ -2,11 +2,41 @@
 
 **Location:** `kajabi-deployment/pages/checkout/lead-magnet-samples/`
 **Created:** August 13, 2026
-**Status:** Newborn preview repo-ready, not pasted live
+**Status:** RETIRED August 13, 2026. All five checkouts now bounce to their capture page.
 
 ---
 
-## Why this exists
+## Retired, August 13, 2026 (WS-006)
+
+The five free-sample checkouts are no longer an entry point. A parent claims each magnet with name and
+email on the age page they are already reading, and the $0 checkout is unreachable.
+
+Each offer's Custom Code block now holds its `retired-checkout-bounce.html` instead of its
+`checkout-blocks.html`: a `location.replace()` to the capture page with a `noscript` fallback link.
+**The offer stays published.** Drafting it would blank the code block, and entitlement survives either
+way because nothing was deleted.
+
+| Slug | Offer | Checkout theme | Bounces to |
+|---|---|---|---|
+| `zs2zLeUw` | 2150851932 | 2164093530 | `/newborn-baby-sleep-help` |
+| `4HQjFJGC` | 2150846925 | 2164064013 | `/toddler-sleep-help` |
+| `FwisMwa6` | 2151272119 | 2166784491 | `/nap-transitions` |
+| `dk25rdGU` | 2150953839 | 2164710780 | `/3-4-month-baby-sleep-help` |
+| `2x92uaLF` | 2150914364 | 2164474536 | `/5-12-month-baby-sleep-help` |
+
+All five verified live by cache-busted `curl --http1.1` at 8 of 8 non-blank lines with 0 missing, plus
+a real browser load. Full record: `docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md`.
+
+**`checkout-blocks.html` and `shared/checkout.css` are kept as history, not as deploy targets.** They
+describe what each checkout served until this date. Do not paste them back without a ruling; doing so
+reopens a $0 purchase path that Meta records as a `Purchase` rather than a `Lead`. The offers' Custom
+CSS fields still carry `shared/checkout.css` and were left alone, since the bounce fires before render.
+
+Everything below this line describes the retired checkouts and is retained for that reason.
+
+---
+
+## Why this existed
 
 WS-004 shipped the thank-you pages, the sequences and the automations for the three
 free samples, but nobody looked at the checkout page itself. Every free sample
