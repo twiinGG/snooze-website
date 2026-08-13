@@ -257,6 +257,24 @@ Build, publish, **save**, then rename from the automations list row's own **Rena
 in-canvas title editor silently refuses to commit on an unsaved record and each Enter queues a
 navigation; that fault created four duplicate records in one session.
 
+### Before concluding a paste did not land, prove your marker exists
+
+Learned August 14, 2026, after two live surfaces were reported broken when both were fully deployed.
+
+- **`grep -c '<marker>' <repo file>` first.** If the string you are searching the live page for is not
+  in the file you claim was pasted, its absence proves nothing. Both false alarms came from markers
+  inherited from another session's handoff and never checked: one searched for `.sn-trial-thank-you__*`
+  class selectors on a stylesheet that scopes everything to the ID `#sn-trial-thank-you-page`, the
+  other for `normaliseSurface`, which exists only in a different worktree's copy of the file.
+- **A whole-file line-match is worthless for CSS.** Short declarations (`margin: 0;`, `display: flex;`,
+  `}`) match anywhere in a large page, so a stylesheet can score 558 of 558 lines "present" while
+  telling you nothing. Use a distinctive selector, a custom property name, or an `@import` URL.
+- **Check for worktree skew.** `~/.worktrees/Snooze-OS/*` may hold a newer copy of the same file. A
+  string missing from live can mean unmerged work rather than a failed deploy, which is a completely
+  different action.
+- **Rule out caching properly** before blaming the paste: fetch with `Cache-Control: no-cache` and read
+  `cf-cache-status`. `DYNAMIC` plus `no-store` means what you are seeing is genuinely live.
+
 ### Always hand over the admin link, never a bare id
 
 Kade ruling, August 14, 2026, and it binds documents as much as chat replies: an id on its own is
