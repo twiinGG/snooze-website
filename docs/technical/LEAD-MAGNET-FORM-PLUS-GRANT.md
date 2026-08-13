@@ -4,11 +4,21 @@
 Diagram: [`docs/projects/website-surfaces/diagrams/WS-006-lead-magnet-flows.excalidraw`](../../../docs/projects/website-surfaces/diagrams/WS-006-lead-magnet-flows.excalidraw).
 Evidence: [`docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md`](../../../docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md).
 
-> **CONTESTED, August 14, 2026.** Kade reports the live flow is clunky: form submit lands on a login
-> page the parent cannot use, then a set-up-account email leads to a reset-password screen that asks
-> for the email again. That does not match the five claims WS-006 measured, which showed one email and
-> one click. Do not build a new magnet from this document until CA-05 is settled:
-> [`docs/projects/website-surfaces/5_followups/CRITICAL-ACTIONS-2026-08-14.md`](../../../docs/projects/website-surfaces/5_followups/CRITICAL-ACTIONS-2026-08-14.md).
+> **CONTESTED RESOLVED, August 14, 2026, by measurement.** Both accounts were true, of different paths.
+> One claim on a genuinely new address with no Kajabi session confirmed WS-006's five claims exactly:
+> contact in 2 seconds, grant in 8, **one** email (Kajabi's member invite, branded domain), whose link
+> opens "Create New Password" and, once submitted, auto-signs the member in on the product. Ninety
+> seconds end to end.
+>
+> Kade's clunky path is real and it is **our own copy, not the pattern**. It starts on the delivery
+> page: its CTA points at `/products/<slug>`, which is a login wall for a claimer who has no password
+> yet, and the only way forward from that screen is Forgot Password, which asks for the email again.
+> The sequence email's "You can log in and start right here" walls the parent the same way. The invite
+> token is also single-use, so a second click on the email lands on the same reset screen.
+>
+> **The pattern stands. Build the next magnet this way.** One ruling is still open with Kade: whether
+> the delivery pages get the button fix described in rule 4 below, or the funnel reverts to checkouts.
+> Evidence: [`WS-007-run-log-2026-08-14.md`](../../../docs/projects/website-surfaces/4_working/WS-007-run-log-2026-08-14.md).
 
 This is how a free magnet is claimed on this site. Build the next one this way; do not invent a
 variant without a ruling.
@@ -52,10 +62,20 @@ from the grant, within the same second, from the branded `kjbm.joinsnooze.com` d
 Gmail's Updates tab. Setting the password auto-signs the member in and drops them on the product.
 Ticking `Send offer grant email` only adds a second, redundant email.
 
-**4. Delivery page copy must point at the email, not at a login.** A claimer reaches the delivery page
-*before* the invite arrives, so at that moment they have no password and any "log in and it's in your
-library" CTA walls them. Correct wording: "It is already in your Snooze Library. Check your inbox for
-how to set your password and get access."
+**4. Delivery page copy must point at the email, not at a login. So must the BUTTON, and WS-006 fixed
+only the wording.** A claimer reaches the delivery page *before* the invite arrives, so at that moment
+they have no password and any "log in and it's in your library" CTA walls them. Correct wording: "It is
+already in your Snooze Library. Check your inbox for how to set your password and get access."
+
+WS-007 measured what the leftover button costs. A `/products/<slug>` CTA sends a passwordless claimer to
+`/login`, "You need to sign in or sign up before continuing", whose only affordance is Forgot Password,
+which goes to `/password/new` and asks for the email address again. That single button reproduces the
+entire "clunky flow" complaint, on a flow that otherwise delivers in ninety seconds. **The same applies
+to sequence email 1:** "You can log in and start right here" walls the parent identically.
+
+Pending Kade's ruling, the fix is a login-aware section (the CA-10 pattern, proven on the Glossary
+page): show "check your inbox" to a guest and "open it in your library" to a signed-in member, on the
+same page.
 
 **5. Sequence email 1 must not promise a library link as the only path** for a magnet whose artefact
 is a file. For a course magnet the library works once the password is set. For a DigitalDownload, see
