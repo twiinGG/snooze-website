@@ -196,3 +196,63 @@ For multi-surface live pushes, the proven repeatable model is CDP-attach to real
 
 - **Never auto-navigate a `app.kajabi.com` URL** (agent-browser `open`/`goto`/`reload`, or a Chrome launched at an admin URL). It returns HTTP 406 and burns the window. Launch windows to `about:blank`, have a HUMAN log in (clears Cloudflare), then move only by in-app clicks. Headless / fresh-profile browsers are hard-blocked outright. Attach lanes with `agent-browser --cdp <port> --session <UNIQUE-name>` (unique session per lane is mandatory); never `close --all` (unscoped — kills every window).
 - **Page wrapper MUST be `<div id="X-page">`, never `<body id>`** (§5 says div — this is why): Kajabi strips `<body>` from fragments, so a `<body id>` wrapper yields no `#X-page` element live and all id-scoped CSS silently dies (passes curl 0-missing, renders unstyled). Adding a page = `<div id>` wrapper + add the id to the `:is()` scope in `global/css/theme-custom-code.css`; verify with `getComputedStyle`, not just a line-match.
+
+### Kajabi admin mechanics learned the hard way (WS-006, August 13 2026)
+
+Every item below cost a wasted cycle or nearly caused a wrong conclusion. Full evidence in
+`docs/projects/website-surfaces/4_working/WS-006-run-log-2026-08-13.md`.
+
+**Saving**
+
+- **The paste helper's dirty keystroke does not always enable Save.** Twice the paste landed with
+  correct length and hash and the Save button stayed `disabled`, so a click would have been a silent
+  no-op. **Re-running `emit_paste_js.py` unchanged enabled it both times**, content and hash identical.
+- **Check `button.disabled` in the DOM, not the accessibility snapshot.** The snapshot reported Save as
+  disabled while the DOM correctly reported it enabled. The snapshot is the unreliable one.
+- **A save can still silently fail** after reporting no error. Every paste gets a cache-busted curl.
+- **`list_website_pages` `updated_at` does not bump on a theme-file content edit.** It tracks page
+  metadata only. It is a false-negative trap for checking whether a paste landed.
+
+**Overlays that eat clicks**
+
+- A `sage-dropdown__screen` overlay, `position: fixed`, full viewport, `z-index: 90`, sits over the Save
+  button on the email theme editor and makes every click a no-op with a covered-element error.
+  `getComputedStyle` shows it present while `offsetParent` reports it invisible, so an `offsetParent`
+  visibility test misses it. A real trusted click **on the overlay itself** dismisses it.
+- The media picker's "Looking for older files/images?" popovers render in a portal and swallow clicks
+  aimed at the Upload button. Remove the popover nodes, then click.
+
+**Navigation**
+
+- Left-nav `pds-link` `data-search-term` values are not what the UI calls them. Offers live under
+  **`pricing`** (`/admin/sites/<id>/offers`). Digital download products are NOT findable in the
+  products list in practice: go **`downloads`**, which lands on `/downloads/collections`, and the
+  collection is the product.
+- The offers list paginates and its "Next" control did not advance reliably; do not assume an offer is
+  absent because it is not on page one.
+
+**Two things not to click**
+
+- The offers-list banner hides a modal titled **"Convert Offers to Kajabi Payments"** with a
+  `Convert Now` button. That is a payments migration across every offer on the site. Dismiss with
+  "I'll do this later".
+- Do not accept the unsaved-changes dialog that the automation builder throws on Enter; dismiss it.
+
+**File uploads are not automatable**
+
+Kajabi's media library has **no `input[type=file]`** at any point, so `agent-browser upload` has nothing
+to target, and `add_media` states outright that MCP cannot upload. Arming
+`Page.setInterceptFileChooserDialog` over CDP and firing a trusted `Input.dispatchMouseEvent` at the
+Upload button produced no `fileChooserOpened` event. **Uploads are a human step.** Hand the user
+`add_media`'s `upload_url` and the local path.
+
+Worse, the first Upload click opens a native macOS file dialog as a **sheet on the window**, which
+blocks all input to that Chrome window while JavaScript keeps evaluating normally. Diagnose it with a
+trusted click on a text input: if `document.activeElement` stays `BODY`, a sheet is open.
+`document.hasFocus()` still returns true and is not a reliable test.
+
+**Automations**
+
+Build, publish, **save**, then rename from the automations list row's own **Rename** action. The
+in-canvas title editor silently refuses to commit on an unsaved record and each Enter queues a
+navigation; that fault created four duplicate records in one session.

@@ -39,6 +39,14 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 - **Consolidation ruling DOES NOT restructure checkouts** - already a single block; paste = whole-block overwrite from the one repo file. Dual-currency offers have PAIRED checkouts (USD/AUD twins) - paste both or neither.
 - **Known live state (census):** trial pair mqQikDM7/Sr6KzShx = MATCH (byte-identical to repo, correct twin-links - the only clean surfaces in the census). Core pair z63s9VaR/vYgCNgJz = DIVERGED with banned copy live ("Weekly live group coaching", "24/7 support") and the AUD checkout literally says "all prices are in USD"; the repo's clean `bau-membership-checkout/{usd,aud}/checkout-blocks.html` are the paste sources.
 
+### 3b. Retired checkouts (the five free lead magnets, WS-006 2026-08-13)
+
+- `zs2zLeUw` / `4HQjFJGC` / `FwisMwa6` / `dk25rdGU` / `2x92uaLF` no longer sell anything. Their checkout code block is a **hard bounce** to the magnet's capture page: `location.replace('<age page>')` plus a `<noscript>` fallback link, no HTML comments. Repo sources: `pages/checkout/lead-magnet-samples/*/retired-checkout-bounce.html`.
+- **The offer stays PUBLISHED.** Drafting it blanks the code block, so the bounce would not render; entitlement survives either way because nothing is deleted. Kajabi has no path-redirect surface, so a 301 was never available.
+- `checkout-blocks.html` and `shared/checkout.css` in that folder are **history, not deploy targets**. Pasting them back reopens a $0 purchase path that Meta records as a `Purchase` rather than a `Lead`.
+- The offers' Custom CSS fields still carry the old checkout styles and were deliberately left; the bounce fires before render.
+- Full pattern: [`LEAD-MAGNET-FORM-PLUS-GRANT.md`](./LEAD-MAGNET-FORM-PLUS-GRANT.md).
+
 ### 4. Thank-you pages
 - **They are landing pages** (surface type 2) with their own themes - e.g. /thankyou/2x92uaLF (LMCR04, theme 2164551197), /thankyou/lmcr08-access, camp waitlist thank-you. Same rules: self-contained, own theme, single block, builder Ace or MCP on their own theme id.
 - Offer-level "thank you page" settings merely POINT a purchase at one of these landing pages; there is no separate code surface.
@@ -47,6 +55,14 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 - **No custom-code blocks at all.** Kajabi STRIPS `<style>` blocks and styled wrapper divs from lesson bodies.
 - **Pattern:** flat HTML, ALL inline styles with `!important` on every property, HTML entities, lowercase hex (AGENTS.md "Course Lessons" section).
 - **Write path:** MCP `update_course_content` (batch lesson writes; single rapid writes coalesce). Never paste page/landing HTML into a lesson.
+
+### 6. Digital download files and the media library (NOT a code surface, but a paste-adjacent one)
+
+- A **DigitalDownload product is a download collection**, reached in the admin via left-nav `downloads` -> `/downloads/collections/<id>`, NOT via the products list. Example: product `2148990031` is collection `204878`.
+- The file itself is a `DigitalDownloads::File` row. Legacy ones predate the media library and have **no media asset behind them**, which means `replace_media` has no `source_media_id` to swap from and the only route is a fresh upload. `list_media extension:pdf` is the quick test for whether an asset exists.
+- **Uploading cannot be automated.** `add_media` says so explicitly, and Kajabi's media picker exposes no `input[type=file]`. Hand the human `add_media`'s `upload_url` plus the local path. See AGENTS.md "File uploads are not automatable" for the CDP attempts that failed and the native-dialog trap that follows.
+- Once the asset exists, the rest is deterministic: `place_media` onto the `DigitalDownloads::File` surface, or `replace_media` if a media-backed source exists, then verify by fetching the stored object and comparing sha256 against the local build.
+- **Kajabi cannot serve a durable public file.** Non-image uploads land in a private `files/` prefix and yield `X-Amz-Expires=604800` signed URLs: 7 days. For anything a non-member must download, host on Cloudflare R2 and keep the Kajabi copy for members. Proven on the catnapping guide (CNG-002) and the nap transition guide (WS-006).
 
 ## Site-level fields (render across page surfaces)
 
