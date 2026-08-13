@@ -2,30 +2,42 @@
 
 Companion to the WS-006 run log. Everything here is paste-ready copy for form `2149692312` (`FMLDCR04_Newborn-Guide-Preview`), which replaces the `zs2zLeUw` checkout as the entry point for the Newborn Sleep Guide preview.
 
-Derived from [`../../catnapping/CAPTURE-COPY.md`](../../catnapping/CAPTURE-COPY.md), which is the approved shape. The substitutions are the magnet name, the reward noun ("preview" not "guide") and the three teasers, which come from sequence `2148871323` emails 1 to 3. Nothing is invented.
+Derived from [`../../catnapping/CAPTURE-COPY.md`](../../catnapping/CAPTURE-COPY.md), which was the approved shape under double opt-in. This doc has since diverged from it on opt-in, on the after-submit setting and on delivery. Where they differ, this doc is current and catnapping is the older pattern.
+
+**Revised August 13, 2026** after Kade ruled single opt-in. Every step below is proven by a real claim on the live page, not by a screenshot. Two earlier versions of this doc were wrong and both are corrected in place, with the reason kept so the error is not repeated.
 
 Flow this copy serves:
 
 ```
-/newborn-baby-sleep-help form 2149692312  ->  confirmation email  ->  Confirm click
+/newborn-baby-sleep-help form 2149692312  ->  submit
    ->  grant automation grants offer 2150851932  +  sequence automation subscribes to 2148871323
-   ->  /newborn-guide-preview-ready (preview delivered here)
-   ->  sequence email 1 at 11:00 Melbourne
+   ->  /newborn-guide-preview-ready  (thank-you page setting, reached immediately)
+   ->  Kajabi member invite email, "Set up password", arrives within seconds
+   ->  password set signs the member in and opens the product
+   ->  sequence email 1
 ```
+
+Measured on the second pilot claim: submit at 08:53:06Z, contact at 08:53:07Z, grant at 08:53:15Z, invite email at 08:53:18Z. Nine seconds from submit to granted access.
 
 ---
 
 ## 1. Opt-in setting
 
-**Double Opt-In: ON.** Kade ruling, August 13, 2026, matching catnapping. Nothing is granted until the parent clicks Confirm.
+**Single Opt-In.** Kade ruling, August 13, 2026. This supersedes the earlier "Double Opt-In: ON" ruling in this doc and kickoff decision 3.
+
+Reason: a mistyped or fake address is already caught downstream, because every course magnet and the trial need a login, and the password email is the only way in. Double opt-in was buying hygiene the login wall already enforces.
+
+What it cost, which is why it was reversed: the double opt-in confirmation email is sent by Kajabi from its shared `t.kajabimail.com` pool, not from the branded `kjbm.joinsnooze.com` domain that every other Snooze email uses, and it carries no `List-Unsubscribe` header. On the first pilot claim Gmail filed it under **Promotions** while both branded emails landed in **Updates**. There is no setting for this. Marketing Settings already shows Custom Email Domain setup complete and applied, and the form screen exposes no sender field. Kajabi treats the opt-in confirmation as a system email.
+
+Kajabi enables reCAPTCHA automatically on single opt-in forms. It is the invisible kind, renders 0 x 0, and does not disturb the embed at 1440 or 390. Google's floating badge appears bottom-right on the page.
 
 ---
 
-## 2. Confirmation email
+## 2. Confirmation email: configured but no longer sends
+
+Leave the settings in place. Single opt-in makes them dormant, and keeping them means the ruling is reversible without rebuilding the email. **Nothing below reaches a parent while single opt-in is on.**
 
 Kajabi path: Marketing, then Forms, then form `2149692312`, then Opt-in Settings, then Additional Options, then "Send custom confirmation email to new contacts".
-
-**Merge-tag warning, carried over from catnapping.** The field lists `{{site}}`, `{{offer}}`, `{{member}}` and `{{site_login_url}}` as available objects. `{{first_name}}` is not listed, and the contact is unconfirmed at this point, so a name tag can render as literal text. The copy below uses no name tag. Do not add one.
 
 ### Subject
 
@@ -34,8 +46,6 @@ One click and your newborn guide preview is yours
 ```
 
 ### Body
-
-**The body is the text below and nothing else. Do not put the button in it.** The button is a separate field, covered in the next subsection.
 
 ```
 You asked for the free preview of the Newborn Sleep Guide. One click and it is yours.
@@ -52,7 +62,7 @@ The Sleep Concierge
 
 ### Confirmation button
 
-**This is a LABEL ONLY. You set the words. You never set the link.**
+Label only. Kajabi generates the URL.
 
 ```
 Confirm and get the preview
@@ -60,16 +70,15 @@ Confirm and get the preview
 
 Background `#F43357`. Text white.
 
-**Why this warning exists.** An earlier version of this doc printed the button as a bare `[Confirm and get the preview]` line inside the body block. That is ambiguous about whether the line is body text or the button element, and it is the suspected cause of the failed pilot claim on 2026-08-13: the confirm click redirected to the right page and confirmed nothing, so no contact was created, no offer was granted and no sequence ran.
+**Correction, recorded so the false lead is not chased again.** An earlier version of this doc printed the button as a bare `[Confirm and get the preview]` line inside the body block, and the first failed pilot reading was blamed on that ambiguity. Read directly from the admin, that was wrong on both counts.
 
-The confirmation button's URL is generated by Kajabi per contact and carries the opt-in token. **An ordinary link or button pointing at the confirmation page skips confirmation entirely**, and the failure is silent: the parent sees the right page and believes they are done, while the account has no record of them.
+- The opt-in screen carries a dedicated **Confirmation Button** block with exactly three fields, `message_button_text`, `message_button_background_color` and `message_button_text_color`. There is **no URL field anywhere on the screen**, so an author cannot set the href even by mistake.
+- The body field is named `message_intro` and Kajabi appends its own button beneath it. The stored body was five paragraphs of prose with zero anchor tags and zero button tags.
+- The only merge tags offered are `{{site}}`, `{{offer}}`, `{{member}}` and `{{site_login_url}}`. None is a confirm token, so nothing was left unused.
 
-Rules that follow, and they apply to all five magnets:
+The first pilot claim did not fail. Confirm worked, the contact was created at 07:02:08Z and the offer was granted at 07:02:15Z. The "no contact, no grant" reading came from a check run before the confirm click landed. **A negative on a freshly created record is only valid if the read is timestamped after the write.**
 
-- Use Kajabi's own confirmation button element on the opt-in settings screen. Set its label and its colour only.
-- Never type, paste or edit a URL into that button.
-- Never insert an anchor tag or a second button into the body.
-- After setting it, verify by a real claim, not by looking at the screen. The only proof is a contact appearing and the offer being granted.
+The merge-tag warning carried over from catnapping still holds: `{{first_name}}` is not listed and the contact is unconfirmed at that point, so a name tag can render as literal text. The copy above uses no name tag.
 
 ---
 
@@ -89,30 +98,21 @@ A new form ships Kajabi's default chrome. The page CSS hides the title and subti
 
 | Setting | Value |
 |---|---|
-| Redirect contacts to custom confirmation page | **On**, pointing at `/newborn-guide-preview-ready`. This is the POST-CONFIRM destination |
-| Post-submit thank-you message | Replace the Kajabi default. Copy in 4b below |
+| Send the contact to a custom thank you page | **On**, pointing at `/newborn-guide-preview-ready` (landing page `2152205839`). This is now the delivery destination |
+| Redirect contacts to custom confirmation page | Leave set to the same page. Dormant under single opt-in |
 | Send a notification to your team | Leave unchecked |
 | Send the contact to a third party email provider | Leave unchecked |
 
-## 4b. The post-submit thank-you message
+**The thank-you page setting is not optional and it is the step most likely to be missed.** Under double opt-in the delivery page was reached by the confirmation click, so `thank_you_page_id` could stay empty. Turn double opt-in off without setting it and the parent lands on Kajabi's bare default page instead, which is the one silent total-loss failure in this flow.
 
-Kade ruling, August 13, 2026: the form's own thank-you page is editable, so this is a form setting and not a new landing page.
+## 4b. Correction: the default thank-you page is NOT editable, and no new page is needed
 
-Kajabi's default reads "Thank you! We have received your submission." and never mentions the confirmation email. The parent submits, lands there, and has no idea an email is coming. Under double opt-in that is silent total loss, because the "check your inbox" line on the age page is on a page they have already left.
+Two earlier versions of this section were wrong. Both are recorded because each closed off a wrong option.
 
-Replace it with:
+1. It first said the form's own thank-you page is editable and the check-your-inbox prompt could be a form setting. It cannot. `curl https://www.joinsnooze.com/forms/2149692312/thank_you` returns 12KB with zero `data-section-id` attributes, so it is a hardcoded Kajabi system page with nothing to edit. The form's only related control is the custom thank-you page dropdown, which takes an existing Landing Page record and offers no inline text field. `embed.js` is a plain POST with no redirect or success-state parameter, so there is no client-side hook either.
+2. It then said the fix needed a new landing page, which was outside the authorised write list, and the item was parked. That is also wrong. `/newborn-guide-preview-ready` is already a Landing Page record, so it is selectable in that dropdown as it stands. **No page was created and nothing was needed from outside the write list.**
 
-```
-Almost there. Check your inbox.
-
-We just sent you a confirmation link. It needs one click before your preview can send.
-
-Gmail sometimes files it under Promotions or Updates, so look there if it is not in your inbox.
-```
-
-For the other magnets, swap "preview" for the right noun: sample, guide, mini guide, module.
-
-The confirmation page is where the preview is actually delivered, because sequence email 1 does not go out until 11:00 Melbourne and day 0 counts from the confirm click, not the submit. An afternoon confirmation waits until the next morning for the email.
+So there is no post-submit "check your inbox" message on this flow and none is needed. The parent lands on the delivery page immediately. The inbox prompt lives on the age page instead, in section 6 below, because under single opt-in the email is about setting a password and not about confirming.
 
 ---
 
@@ -124,18 +124,34 @@ The confirmation page is where the preview is actually delivered, because sequen
 
 ## 6. The page copy that goes with it
 
-Already shipped in the repo at [`../newborn-page-complete.html`](../newborn-page-complete.html). The section keeps its existing heading and pitch. What changed:
+Shipped in the repo at [`../newborn-page-complete.html`](../newborn-page-complete.html) and live. The section keeps its existing heading and pitch.
 
 | Line | Copy |
 |---|---|
 | Above the form | Free, no card needed. Add your name and email and the preview is yours. |
-| Below the form | Check your inbox for a confirmation link. It needs one click before the preview can send. Gmail sometimes files it under Promotions or Updates. |
+| Below the form | Check your inbox for your password link. It sets up your account so the preview stays in your library. |
 
-The line below the form is not optional. Under double opt-in a parent who submits and waits reads the page as broken.
+The line below the form was rewritten when opt-in changed. It previously promised a confirmation link, which no longer exists. Do not reintroduce the words "confirmation link", "one click" or the Promotions and Updates advice on any age page, because under single opt-in there is no confirmation email to look for and the one email that does arrive lands in Updates.
 
 ---
 
-## 7. Sequence email 1, deliverability line
+## 7. Delivery, and how the parent actually gets in
+
+Kajabi sends its own member invite the moment the grant automation fires. Subject "Your New Snooze by The Sleep Concierge Account", from `Sally <sally@kjbm.joinsnooze.com>`, body "We have set up an account for you on Snooze by The Sleep Concierge. To finish creating your account, set up a password." The button resolves to `/member_invite/<token>`, which redirects to `/password/edit`. Submitting the password signs the member in and lands them on the product.
+
+Proven on the second pilot claim: Module 1 Lesson 1 "About the Newborn Sleep Guide" rendered with real body copy, no paywall and no sign-in prompt.
+
+This is Kajabi's own email and it is not editable through this phase's write list. It is the reason form plus grant works for a course magnet at all, so **do not turn it off** and do not assume the delivery page can replace it.
+
+### Known defect on the delivery page, not fixed
+
+`/newborn-guide-preview-ready` says "Open the Newborn Guide preview" and "Log in with the email you just used and it is waiting in your library". A single opt-in claimer reaches that page **before** the password email, so at that moment they have no password and that link walls them at `/login`. The working path is the email.
+
+That wording is correct for the old checkout flow, which set a password mid-flow, and wrong for form plus grant. The same wording is on all five delivery pages. It is a WS-004 landing page and landing page edits are not on this phase's authorised write list, so it is open for Kade.
+
+---
+
+## 8. Sequence email 1, deliverability line
 
 Email `2151354569` in sequence `2148871323`. Added immediately before the sign-off, once, and not repeated in emails 2 or 3.
 
@@ -146,3 +162,11 @@ Using Gmail, drag this email into your Primary tab, or on your phone open it, ta
 Styled `font-size: 14px; color: #666666;` to sit quieter than the body. Repo twins: `../../../sequences/2148871323-emlm10-newborn-guide-preview-lead-gen-email-sequence/1-2151354569.html` and `.txt`.
 
 Both surfaces are covered deliberately. Dragging works on Gmail desktop with tabs enabled and there is no drag on the phone, so a line naming only one reads as broken advice.
+
+Keep it, with one expectation corrected: this line cannot rescue the confirmation email, because sequence email 1 only sends after the contact already exists. Under single opt-in that no longer matters. Both branded emails already land in Updates on their own.
+
+---
+
+## 9. Copy review status
+
+Sally has not reviewed any copy in this doc. Kade ruling: ship it and record that she has not seen it.
