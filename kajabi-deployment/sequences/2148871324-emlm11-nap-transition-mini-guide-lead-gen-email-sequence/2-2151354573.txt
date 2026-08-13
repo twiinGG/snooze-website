@@ -11,7 +11,7 @@ Hi {{ first_name }},
 If you have started the transition, this is usually the week it looks like a mistake. Early morning waking, a shorter second nap, and a baby who falls apart before dinner.
 That is the transition, not a sign you got it wrong. Two naps have to stretch across a day that three naps used to cover, and the gap shows up at the ends first.
 The fix is almost always an earlier bedtime while they adjust, not a longer day to tire them out. Push the day and the early waking gets worse.
-[Open your guide](https://www.joinsnooze.com/products/e78214b0-16a4-45a1-bf3d-c77b8f19839c)
+[Open your guide](https://tscmedia.khorus.ai/guides/3-to-2-nap-transition-guide.pdf)
 Give it a fortnight before you decide it is not working.
 Sally
 The Sleep Concierge
