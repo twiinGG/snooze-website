@@ -3,7 +3,11 @@ Email ID: 2151354572
 Send: Immediately
 Subject: Your 3-to-2 nap transition guide is ready
 Preview text: Find your baby's age first, then cap before you drop
-Written: 2026-08-09 (WS-003). NOT yet pasted live.
+Written: 2026-08-09 (WS-003). Pasted live and verified 2026-08-13 (WS-006).
+Amended 2026-08-13 (WS-006): the "Open your guide" link now points at the rebuilt guide on R2,
+https://tscmedia.khorus.ai/guides/3-to-2-nap-transition-guide.pdf, instead of the product page. The
+product's attached file has never downloaded, and a form-created claimer has no password or session,
+so a library link could not serve a fresh lead at all.
 
 ---
 

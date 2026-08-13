@@ -1,7 +1,14 @@
 # 3-to-2 nap transition guide ready (post-purchase page)
 
-**Kajabi surface:** landing page, id to be assigned at create. Slug `nap-transition-mini-guide-ready`.
-**Status:** built in repo, **not yet pasted and not yet live**. Copy is propose-only until Sally approves it.
+**Kajabi surface:** landing page **2152205840**, own theme **2167137729**, section `ws004code` block 0. Slug `nap-transition-mini-guide-ready`.
+**Status:** **live and verified**, August 13, 2026 (WS-006). Sally has not reviewed the copy.
+
+The page delivers the rebuilt guide directly from R2 rather than sending the claimer to the product
+page. The hero button downloads `https://tscmedia.khorus.ai/guides/3-to-2-nap-transition-guide.pdf`
+and an `.ntr-preview` iframe renders it inline; the Snooze Library line is demoted to the sub-note.
+Reason: the product's attached file has never downloaded, and a form-created claimer arrives with no
+password and no session, so a library link cannot serve a fresh lead at all. Same shape as
+`../catnapping-guide-ready/`.
 
 Post-purchase destination for offer `FwisMwa6`, which is claimed from `/nap-transitions`.
 
@@ -39,7 +46,7 @@ No `.js` file. This page fires no tracking of its own; see "Tracking" below.
 | `.snooze-container` becomes `.ntr-wrap` | WS-003 decision 6, see below |
 | `.snooze-section` becomes `.ntr-band` | WS-003 decision 6, see below |
 | `.cgr-*` becomes `.ntr-*` | Page prefix |
-| `.cgr-preview` rules dropped | No PDF preview on this page |
+| ~~`.cgr-preview` rules dropped~~ **restored as `.ntr-preview`, August 13, 2026** | The page now carries a PDF preview iframe, so the source page's preview rules were re-derived under the `ntr-` prefix, including the 420px mobile height |
 | `.cgr-age-*` rules dropped | No age question on this page |
 
 The `.snooze-footer` full-bleed selector was also dropped. It never matched anything: the footer element is `.snooze-footer-clean`, so that rule was dead on the source page too.
