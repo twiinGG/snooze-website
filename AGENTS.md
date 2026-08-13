@@ -256,3 +256,33 @@ trusted click on a text input: if `document.activeElement` stays `BODY`, a sheet
 Build, publish, **save**, then rename from the automations list row's own **Rename** action. The
 in-canvas title editor silently refuses to commit on an unsaved record and each Enter queues a
 navigation; that fault created four duplicate records in one session.
+
+### Always hand over the admin link, never a bare id
+
+Kade ruling, August 14, 2026, and it binds documents as much as chat replies: an id on its own is
+unusable because Kajabi admin surfaces cannot be reached by search, and several of them are not
+reachable from the obvious list either (a DigitalDownload product is not in the products list; offers
+live under the left-nav `pricing` item). Always write the link. Keep the id visible next to it, since
+the id is what the MCP tools and scripts take as input.
+
+| Surface | Admin URL |
+|---|---|
+| Landing page settings | `https://app.kajabi.com/admin/landing_pages/<id>/edit` |
+| Any theme's customizer (landing page, checkout, email, website) | `https://app.kajabi.com/admin/themes/<theme_id>/settings/edit` |
+| Offer | `https://app.kajabi.com/admin/offers/<id>/edit` |
+| Product | `https://app.kajabi.com/admin/products/<id>` |
+| Download collection files | `https://app.kajabi.com/admin/downloads/collections/<id>/files` |
+| Download collection settings | `https://app.kajabi.com/admin/downloads/collections/<id>/settings/edit` |
+| Contact | `https://app.kajabi.com/admin/contacts/<id>/edit` |
+| Form | `https://app.kajabi.com/admin/sites/2148291177/forms/<id>/edit` |
+| Email sequence | `https://app.kajabi.com/admin/email_sequences/<id>` |
+| Sequence email | `https://app.kajabi.com/admin/email_sequence_emails/<id>/edit` |
+| Site settings (Header Page Scripts lives here) | `https://app.kajabi.com/admin/sites/2148291177/edit` |
+| Media asset | `https://app.kajabi.com/admin/media_library/assets/<id>` |
+| Automations | `https://app.kajabi.com/admin/sites/2148291177/automations` |
+
+The Kajabi MCP already returns `admin_url` on most `get_*` responses. Use it rather than composing a
+URL by hand, and never invent a pattern that is not in this table or in a tool response.
+
+**These are for the human to click.** The agent still must not auto-navigate them: `open`, `goto` and
+`reload` on `app.kajabi.com` return HTTP 406 and burn the window.
