@@ -3,4 +3,131 @@
 
   console.log('Snooze: Checkout Page - Loading Full Tracking');
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://load.ss.joinsnooze.com/2ostmfzxzts.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','9r2=GhBHPy4rQD89Ji4wTDZLAk5GVElcAgNJABgfHQoFAhoQHR8KHQNDFxwZVBkP');
+
+  (function () {
+    'use strict';
+
+    var PIXEL_ID = '449153684613893';
+
+    function sha256Hex(input) {
+      try {
+        var norm = String(input == null ? '' : input).trim().toLowerCase();
+        if (!norm) return Promise.resolve(null);
+        var bytes = new TextEncoder().encode(norm);
+        return crypto.subtle.digest('SHA-256', bytes).then(function (buf) {
+          var arr = Array.from(new Uint8Array(buf));
+          return arr.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        });
+      } catch (e) {
+        return Promise.resolve(null);
+      }
+    }
+
+    function readCookie(name) {
+      try {
+        var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return m ? decodeURIComponent(m[1]) : null;
+      } catch (e) { return null; }
+    }
+
+    function ls(key) {
+      try { return window.localStorage.getItem(key); } catch (e) { return null; }
+    }
+
+    function getFbc() {
+      var fbc = readCookie('_fbc');
+      if (fbc) return fbc;
+      try {
+        var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+        if (fbclid) return 'fb.1.' + Date.now() + '.' + fbclid;
+      } catch (e) {}
+      return null;
+    }
+    function getFbp() { return readCookie('_fbp'); }
+
+    function collectRaw() {
+      var fullName = ls('full_name') || '';
+      var fn = '', ln = '';
+      if (fullName) {
+        var parts = fullName.trim().split(/\s+/);
+        fn = parts[0] || '';
+        ln = parts.length > 1 ? parts.slice(1).join(' ') : '';
+      }
+      return {
+        em: ls('email'),
+        ph: (ls('phone') || '').replace(/[^0-9]/g, ''),
+        fn: fn,
+        ln: ln,
+        ct: ls('city'),
+        zp: ls('zip'),
+        country: ls('country')
+      };
+    }
+
+    function buildUserData() {
+      var raw = collectRaw();
+      var keys = ['em', 'ph', 'fn', 'ln', 'ct', 'zp', 'country'];
+      return Promise.all(keys.map(function (k) {
+        return raw[k] ? sha256Hex(raw[k]) : Promise.resolve(null);
+      })).then(function (hashes) {
+        var ud = {};
+        keys.forEach(function (k, i) { if (hashes[i]) ud[k] = hashes[i]; });
+        return ud;
+      });
+    }
+
+    function eventId(eventName) {
+      // One fresh id per logical event occurrence. The browser Pixel event and the
+      // server-side (Stape sGTM) CAPI event dedupe by sharing this id via the
+      // dataLayer push below, within the same page load. Do NOT persist across
+      // loads: persisting per event-name reused one id for every Purchase /
+      // InitiateCheckout, so Meta collapsed distinct events into a single one.
+      var id = (window.crypto && crypto.randomUUID)
+        ? crypto.randomUUID()
+        : (eventName + '-' + Date.now() + '-' + Math.random().toString(16).slice(2));
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'meta_event_id_set', meta_event: eventName, meta_event_id: id });
+      } catch (e) {}
+      return id;
+    }
+
+    function fireWithMatch(eventName, params) {
+      if (typeof window.fbq !== 'function') {
+        if (fireWithMatch._tries == null) fireWithMatch._tries = 0;
+        if (fireWithMatch._tries++ < 20) {
+          return setTimeout(function () { fireWithMatch(eventName, params); }, 250);
+        }
+        return;
+      }
+      buildUserData().then(function (ud) {
+        var fbc = getFbc();
+        var fbp = getFbp();
+        try {
+          window.fbq('init', PIXEL_ID, ud);
+        } catch (e) {}
+        var id = eventId(eventName);
+        try {
+          window.fbq('track', eventName, params || {}, { eventID: id });
+        } catch (e) {}
+        try {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'meta_advanced_match_fired',
+            meta_event: eventName,
+            meta_event_id: id,
+            meta_has_em: !!ud.em,
+            meta_has_fbc: !!fbc,
+            meta_has_fbp: !!fbp
+          });
+        } catch (e) {}
+      });
+    }
+
+    window.SnoozeMetaMatch = {
+      fire: fireWithMatch,
+      eventId: eventId,
+      buildUserData: buildUserData
+    };
+  })();
 </script>
