@@ -131,3 +131,108 @@
     };
   })();
 </script>
+
+<script>
+  (function () {
+    'use strict';
+
+    var STORAGE_KEY = 'snooze_utm_attribution';
+    // First-touch-wins window: 30 days. Reasoning: long enough to cover a
+    // parent who sees a paid ad, researches for a week or two, then starts a
+    // 7-day trial without re-clicking the ad (the considered-purchase case
+    // this funnel expects); short enough that a genuinely new visit long
+    // after the original click is treated as a fresh journey rather than
+    // permanently pinned to a stale campaign. Matches the common GA4/Meta
+    // lookback-window order of magnitude rather than inventing a new one.
+    var WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
+    var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+    function ls(key) {
+      try { return window.localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function setLs(key, value) {
+      try { window.localStorage.setItem(key, value); } catch (e) {}
+    }
+
+    function readStored() {
+      var raw = ls(STORAGE_KEY);
+      if (!raw) return null;
+      try {
+        var parsed = JSON.parse(raw);
+        return parsed && typeof parsed === 'object' ? parsed : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function isStale(stored) {
+      if (!stored || !stored.captured_at) return true;
+      var capturedAt = Date.parse(stored.captured_at);
+      if (!isFinite(capturedAt)) return true;
+      return (Date.now() - capturedAt) > WINDOW_MS;
+    }
+
+    function captureFromUrl() {
+      var params;
+      try {
+        params = new URLSearchParams(window.location.search);
+      } catch (e) {
+        return;
+      }
+
+      var incoming = {};
+      var hasAny = false;
+      UTM_KEYS.forEach(function (key) {
+        // utm_content (and every other key here) is read and stored verbatim,
+        // no trim, no case change, no truncation: it carries ad_name
+        // character for character and any normalisation breaks the
+        // utm_content == ad_name attribution join.
+        var value = params.get(key);
+        if (value !== null && value !== '') {
+          incoming[key] = value;
+          hasAny = true;
+        }
+      });
+      var fbclid = params.get('fbclid');
+      if (fbclid) {
+        incoming.fbclid = fbclid;
+        hasAny = true;
+      }
+
+      if (!hasAny) return;
+
+      var stored = readStored();
+      // First touch wins within the window: only overwrite when there is
+      // nothing stored yet, or what is stored has aged past WINDOW_MS. A
+      // later organic visit never carries UTM params at all, so it can never
+      // reach this branch and never overwrites a paid first touch.
+      if (stored && !isStale(stored)) return;
+
+      incoming.captured_at = new Date().toISOString();
+      setLs(STORAGE_KEY, JSON.stringify(incoming));
+    }
+
+    function pushToDataLayer() {
+      var stored = readStored();
+      if (!stored) return;
+
+      var payload = { event: 'utm_attribution_present' };
+      var hasAny = false;
+      UTM_KEYS.concat(['fbclid']).forEach(function (key) {
+        if (stored[key]) {
+          payload[key] = stored[key];
+          hasAny = true;
+        }
+      });
+      if (!hasAny) return;
+
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(payload);
+      } catch (e) {}
+    }
+
+    captureFromUrl();
+    pushToDataLayer();
+  })();
+</script>
