@@ -20,12 +20,25 @@ Authoritative detail:
 
 | # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo (2026-07-27) | Re-paste? |
 |---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | Repo now contains membership CTA and attribution remediation that is not live, plus ME-007's surface, currency and cta_click fixes, plus the 2026-08-16 Cookie Keeper loader | **Yes, with the membership release.** The Cookie Keeper loader rides along, it is not worth breaking the release gate for |
+| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **Drift measured line by line 2026-08-16, 22 of 480 substantive lines:** ME-007's surface, currency and cta_click fixes, and the Cookie Keeper loader. **No membership CTA drift remains** | **Yes, ready now.** The old "with the membership release" gate is retired, see the note below |
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **DRIFT as of 2026-08-16:** repo holds the Cookie Keeper loader, live still holds the pre-Cookie-Keeper one. Was a verified MATCH until then | **Yes.** Clean isolated paste, this field is the only loader on a checkout page |
 | A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
+
+### A1: the "membership release" gate is retired, 2026-08-16
+
+Rows A1 carried "Yes, with the membership release" from 2026-07-27. **That gate is stale and has
+been removed.** `https://www.joinsnooze.com/snooze-membership` returns HTTP 200 and appears in the
+live navigation, so the membership release shipped, around 2026-08-08.
+
+The gate was not retired on that reasoning alone. Every substantive line of the repo file was
+compared against the live page on 2026-08-16: 480 lines of 45 characters or more, of which 22 are
+absent from live. All 22 are ME-007's currency, surface and `cta_click` fixes plus the Cookie
+Keeper loader. **Not one line of membership CTA drift remains.**
+
+Re-run the check before pasting, because it costs nothing and this note will age too.
 
 ### A2: two things that will waste your time if you do not know them
 
@@ -93,7 +106,7 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 
 | # | Kajabi location | Admin path | Canonical file | Reaches | Live vs repo | Action |
 |---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DRIFT:** repo contains the membership CTA and attribution remediation, ME-007's three header-script fixes, and the 2026-08-16 Cookie Keeper loader | **Yes, with the membership release** |
+| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DRIFT, measured 2026-08-16:** ME-007's three header-script fixes and the Cookie Keeper loader only. The membership CTA work is already live | **Yes, ready now** |
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live | **Yes** (see P7 for AM) |
