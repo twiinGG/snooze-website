@@ -1,4 +1,25 @@
 <script>
+/**
+ * RETIRED, August 16 2026. NOT A PASTE TARGET.
+ *
+ * This script cannot fire and never has. The Kajabi Checkout Header and Footer tracking
+ * fields inject on /offers/<token>/checkout only. They do NOT inject on the confirmation
+ * page joinsnooze.com/thank_you/<token>, and window.Kajabi.order is null there, so the
+ * guard on the first executable line returns on every page this can load on. Measured in a
+ * real buyer's browser 2026-08-15:
+ *   {"footer":false,"header":false,"gtm":true,"kajabi":"object","order":null,"ls":[]}
+ * A copy has been live in the Footer field since about 2026-07-11 and has emitted zero
+ * events.
+ *
+ * Its classification rules were correct and now run server-side against the Kajabi
+ * payment.succeeded webhook: workflows/n8n/kajabi-order-conversions/classify-order.js.
+ * That source also carries the true amount charged and the stated currency, so the
+ * AUD_OFFER_IDS fallback below is no longer load bearing anywhere.
+ *
+ * Kept as the record of what is live in the Kajabi field until that field is cleared.
+ * Do not "fix" it, do not extend it, do not paste it.
+ * Evidence: docs/projects/measurement/4_working/2026-08-16-order-tracking-consolidation/
+ */
 (function () {
   'use strict';
 
