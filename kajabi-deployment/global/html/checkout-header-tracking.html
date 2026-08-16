@@ -243,6 +243,8 @@
 
     var ENDPOINT = 'https://n8n.khorus.ai/webhook/snooze-checkout-identity';
     var UTM_STORAGE_KEY = 'snooze_utm_attribution';
+    var FIRST_TOUCH_KEY = 'snooze_attribution_first_touch';
+    var CURRENT_TOUCH_KEY = 'snooze_attribution_current_touch';
     var SENT_PREFIX = 'snooze_identity_sent_';
     var POLL_MS = 1000;
     var MAX_POLLS = 120;
@@ -302,13 +304,36 @@
       } catch (e) { return null; }
     }
 
+    // Three stores, because two different blocks write attribution under two
+    // different names and this one originally read only the first. The checkout
+    // header block writes snooze_utm_attribution; the site header scripts write
+    // snooze_attribution_first_touch and snooze_attribution_current_touch. A
+    // visitor who arrives on an ad, browses, and types their email on a later page
+    // has no UTM in the URL, so reading the wrong key loses the channel that paid
+    // for them. Measured 2026-08-16: the site store held the campaign and this
+    // function returned nothing.
+    //
+    // First touch wins, because that is the click that earned the customer. Fields
+    // are merged rather than the whole object taken, so a partial store still
+    // contributes what it has.
     function storedAttribution() {
-      try {
-        var raw = window.localStorage.getItem(UTM_STORAGE_KEY);
-        if (!raw) return {};
-        var parsed = JSON.parse(raw);
-        return parsed && typeof parsed === 'object' ? parsed : {};
-      } catch (e) { return {}; }
+      var merged = {};
+      var keys = [UTM_STORAGE_KEY, FIRST_TOUCH_KEY, CURRENT_TOUCH_KEY];
+      for (var i = 0; i < keys.length; i++) {
+        try {
+          var raw = window.localStorage.getItem(keys[i]);
+          if (!raw) continue;
+          var parsed = JSON.parse(raw);
+          if (!parsed || typeof parsed !== 'object') continue;
+          for (var k in parsed) {
+            if (Object.prototype.hasOwnProperty.call(parsed, k)
+                && merged[k] === undefined && parsed[k] !== null && parsed[k] !== '') {
+              merged[k] = parsed[k];
+            }
+          }
+        } catch (e) {}
+      }
+      return merged;
     }
 
     function offerToken() {
@@ -427,11 +452,17 @@
       if (polls < MAX_POLLS) window.setTimeout(tick, POLL_MS);
     }
 
-    // Only the hosted checkout carries an order to attribute. Everywhere else this is
-    // dead weight, so it does not start.
-    if (String(window.location.pathname || '').indexOf('/checkout') > -1) {
-      window.setTimeout(tick, POLL_MS);
-    }
+    // Runs on every page, because the buyer's email is not readable where the order
+    // is. Kajabi's hosted checkout collects it inside a Stripe iframe, which is
+    // cross-origin: measured 2026-08-16 on two live checkouts, currentEmail() null
+    // on both, zero rows captured and zero workflow executions. The email IS
+    // readable in the lead forms on the website and landing pages, so that is where
+    // this has to run. The order webhook joins on the hash whenever it was captured.
+    //
+    // The earlier guard started the poll only on a /checkout path, which is why the
+    // block was live and inert. The cost of dropping it is 120 querySelector calls
+    // spread over two minutes, once per page, and then it stops.
+    window.setTimeout(tick, POLL_MS);
 
     window.SnoozeCheckoutIdentity = { send: send, hash: sha256Hex, currentEmail: currentEmail };
   })();
