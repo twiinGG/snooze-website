@@ -1,7 +1,13 @@
 /**
  * NOT A PASTE TARGET.
- * Fragment only. Inlined into global/html/checkout-header-tracking.html, which is the
- * one file that goes into Kajabi Settings, Checkout, Checkout Tracking Code, Header field.
+ * Fragment only. Inlined into global/html/checkout-header-tracking.html as the third
+ * script block, which is the one file that goes into Kajabi Settings, Checkout,
+ * Checkout Tracking Code, Header field.
+ *
+ * This header claimed the inlining had happened from the day the file was written.
+ * It had not: the HTML held the loader, Meta Advanced Matching and the UTM capture,
+ * and no identity block at all. Inlined for real on 2026-08-16. Keep this file and
+ * that block byte-identical from the IIFE onwards.
  * See global/checkout-tracking/README.md and CODE-SURFACE-CONTRACT.md.
  *
  * WHAT THIS IS FOR
