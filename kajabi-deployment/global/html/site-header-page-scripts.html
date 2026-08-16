@@ -17,12 +17,23 @@
   if (isFastPage) {
     console.log('Snooze: Fast Page Detected - Delaying Tracking');
 
+    // Deferred by 1500 ms, and loaded through Stape exactly like every other
+    // page. The delay is the page-speed optimisation and it is kept. Loading
+    // from googletagmanager.com instead of Stape was never part of that
+    // optimisation and it cost everything Stape provides.
+    //
+    // Measured 2026-08-16 on /links: no Stape loader, a direct gtm.js, and
+    // ZERO GA4 collect requests of any kind. Only Google Ads fired, because its
+    // conversion id is hardcoded while GA4's measurement id comes from web
+    // container variable 79, which holds the placeholder G-1111111111. The
+    // server container rewrites that to the real stream on every page that
+    // goes through Stape; on these four pages there was no server to do it.
+    // GA4 recorded 155 sessions and 0 page views on /links over 28 days.
+    //
+    // The two loaders cost the same: 4 ms for Stape, 5 ms for Google, both
+    // async, measured on the same visit.
     setTimeout(function() {
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer',containerId);
+      !function(){"use strict";function l(e){for(var t=e,r=0,n=document.cookie.split(";");r<n.length;r++){var o=n[r].split("=");if(o[0].trim()===t)return o[1]}}function s(e){return localStorage.getItem(e)}function u(e){return window[e]}function A(e,t){e=document.querySelector(e);return t?null==e?void 0:e.getAttribute(t):null==e?void 0:e.textContent}var e=window,t=document,r="script",n="dataLayer",o="https://ss.joinsnooze.com",a="https://load.ss.joinsnooze.com",i="2ostmfzxzts",c="9r2=GhBHPy4rQD89Ji4wTDZLAk5GVElcAgNJGRsTFgkIAhsJEVQbFQs%3D",g="stapeUserId",v="",E="",d=!1;try{var d=!!g&&(m=navigator.userAgent,!!(m=new RegExp("Version/([0-9._]+)(.*Mobile)?.*Safari.*").exec(m)))&&16.4<=parseFloat(m[1]),f="stapeUserId"===g,I=d&&!f?function(e,t,r){void 0===t&&(t="");var n={cookie:l,localStorage:s,jsVariable:u,cssSelector:A},t=Array.isArray(t)?t:[t];if(e&&n[e])for(var o=n[e],a=0,i=t;a<i.length;a++){var c=i[a],c=r?o(c,r):o(c);if(c)return c}else console.warn("invalid uid source",e)}(g,v,E):void 0;d=d&&(!!I||f)}catch(e){console.error(e)}var m=e,g=(m[n]=m[n]||[],m[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"}),t.getElementsByTagName(r)[0]),v=I?"&bi="+encodeURIComponent(I):"",E=t.createElement(r),f=(d&&(i=8<i.length?i.replace(/([a-z]{8}$)/,"kp$1"):"kp"+i),!d&&a?a:o);E.async=!0,E.src=f+"/"+i+".js?"+c+v,null!=(e=g.parentNode)&&e.insertBefore(E,g)}();
     }, 1500);
 
   } else {
