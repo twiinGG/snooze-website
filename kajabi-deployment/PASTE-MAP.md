@@ -24,7 +24,7 @@ Authoritative detail:
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **The old "MATCH, loader only" note was WRONG, see the warning below.** Repo file rebuilt 2026-08-16 from the live field: loader plus Meta Advanced Matching plus UTM attribution capture. **Checkout identity capture inlined as a fourth block 2026-08-16 (ME-009)**, so the repo file is now AHEAD of live | **Yes.** Read the live field first and diff BOTH directions; the repo file should differ from live by exactly the identity block |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **LIVE and IDENTICAL to the repo file**, measured 2026-08-16: 90 significant lines, the order-bound purchase script. The "EMPTY" note below was wrong | **No.** It is already deployed. See the dormant-emitter warning |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **DELIBERATELY CLEARED 2026-08-16 (ME-009).** The field is now empty on purpose. It previously held the order-bound purchase script, which had never fired | **NEVER.** Pasting it back re-creates a second purchase emitter beside the server-side path |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
 
 ### A4: the "loader only" note was wrong, and a paste from the old repo file would have deleted live code
@@ -87,7 +87,7 @@ Kajabi wraps the pasted file in `/* Custom CSS Added Via Theme Settings */`, so 
 
 **2. Getting to the editor.** Design → caret → "Modify code" ignores synthetic clicks, which is why this was once thought to need a human for every paste. It does not. From inside the Customizer (`/admin/themes/<id>/settings/edit`), **Settings → Custom Code** mounts `settings-css-input` in two ordinary clicks and survives a page reload.
 
-### A5: the footer field is a live, dormant second purchase emitter
+### A5: the footer field held a dormant second purchase emitter, and is now cleared
 
 **Measured 2026-08-16 by reading the live screen**, after three separate notes in this file recorded
 it as empty. It holds 90 significant lines, byte-identical to
@@ -105,9 +105,20 @@ tracking moved to the server. So it returns on every run today.
 Meta would count the order twice because the `event_id` values differ, and GA4 has no deduplication
 primitive at all. That is a money bug waiting on a Kajabi behaviour change nobody controls.
 
-**Open decision for Kade, named rather than taken:** clear the footer field as part of the
-server-side cutover. Nothing is lost by clearing it, because it has never fired. Clearing it removes
-the only remaining browser surface that could emit a second purchase.
+**Resolved 2026-08-16: the field was cleared**, on Kade's instruction to resolve it as seen fit.
+Nothing was lost, because it had never fired. It removed the last browser surface that could emit a
+second purchase, ahead of the server-side path going live.
+
+A byte-exact copy of what was live at the moment of clearing is in the run scratchpad, and
+[`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) is the same
+content, kept in git as history.
+
+**Do not paste that file into this field again.** If a browser purchase path is ever wanted back, it
+needs a new decision and a dedup scheme shared with the server path, because the two key on
+different ids.
+
+Verified after clearing by a cache-busted read of the live checkout: `AUD_OFFER_IDS` and
+`TRIAL_OFFER_IDS` both absent, while the header field's four blocks all still load.
 
 ### Checkout header compose order (A4)
 
@@ -160,7 +171,7 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live. Repo file also rebuilt to hold the full live field | **Yes** (see P7 for AM) |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **LIVE, identical to repo** (2026-08-16 screen read) | **Nothing to deploy.** The open question is whether to CLEAR it, see below |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **CLEARED 2026-08-16**, verified by a cache-busted read: `AUD_OFFER_IDS` absent from the live checkout | **NEVER.** See the warning below |
 
 ### A4 note
 
