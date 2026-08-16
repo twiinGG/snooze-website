@@ -1,7 +1,7 @@
 # Kajabi paste map (source of truth)
 
 **Updated:** 2026-08-08
-**Last live verify:** 2026-07-31 (curl + whitespace-normalized CSS match; Kajabi MCP for Store CMS + membership checkouts)
+**Last live verify:** **2026-08-16**, ten fields read off the live screens and diffed both directions with `live-capture/check-live-vs-repo.mjs`. Nine matched git exactly. The two exceptions are recorded: `linktree-landing-page.js` was a 1-byte placeholder in git and has been restored from live, and the checkout Header field is behind git by exactly the new identity capture block. Previous entry was 2026-07-31 (curl + whitespace-normalized CSS match; Kajabi MCP for Store CMS + membership checkouts)
 **App:** [`apps/snooze-website/kajabi-deployment/`](./)
 
 Git is the source of truth. Kajabi is the render surface. **One repo file per paste target.** Never compose a field from two files at paste time. Edit the canonical file in git, then whole-field overwrite.
@@ -24,7 +24,7 @@ Authoritative detail:
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **The old "MATCH, loader only" note was WRONG, see the warning below.** Repo file rebuilt 2026-08-16 from the live field: loader plus Meta Advanced Matching plus UTM attribution capture. **Checkout identity capture inlined as a fourth block 2026-08-16 (ME-009)**, so the repo file is now AHEAD of live | **Yes.** Read the live field first and diff BOTH directions; the repo file should differ from live by exactly the identity block |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **LIVE and IDENTICAL to the repo file**, measured 2026-08-16: 90 significant lines, the order-bound purchase script. The "EMPTY" note below was wrong | **No.** It is already deployed. See the dormant-emitter warning |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
 
 ### A4: the "loader only" note was wrong, and a paste from the old repo file would have deleted live code
@@ -87,6 +87,28 @@ Kajabi wraps the pasted file in `/* Custom CSS Added Via Theme Settings */`, so 
 
 **2. Getting to the editor.** Design → caret → "Modify code" ignores synthetic clicks, which is why this was once thought to need a human for every paste. It does not. From inside the Customizer (`/admin/themes/<id>/settings/edit`), **Settings → Custom Code** mounts `settings-css-input` in two ordinary clicks and survives a page reload.
 
+### A5: the footer field is a live, dormant second purchase emitter
+
+**Measured 2026-08-16 by reading the live screen**, after three separate notes in this file recorded
+it as empty. It holds 90 significant lines, byte-identical to
+[`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js). It has been live
+since about 2026-07-11, which `01-ROOT-CAUSE-AND-BLACKOUT.md` already said; this file was the outlier
+and is now corrected.
+
+It is **inert**, not harmless. Line 37 is `if (typeof Kajabi === 'undefined' || !Kajabi.order) return;`
+and `Kajabi.order` is null on every page the field injects into, which is the whole reason order
+tracking moved to the server. So it returns on every run today.
+
+**Why it still matters.** If it ever did run, it pushes `event: 'purchase'` with
+`transaction_id: orderId`, the Kajabi **order** id. The server-side path in ME-009 keys on
+`payment_transaction.id`, a different number. Two emitters with different ids do not deduplicate:
+Meta would count the order twice because the `event_id` values differ, and GA4 has no deduplication
+primitive at all. That is a money bug waiting on a Kajabi behaviour change nobody controls.
+
+**Open decision for Kade, named rather than taken:** clear the footer field as part of the
+server-side cutover. Nothing is lost by clearing it, because it has never fired. Clearing it removes
+the only remaining browser surface that could emit a second purchase.
+
 ### Checkout header compose order (A4)
 
 **That claim was wrong and is corrected here.** The repo file holds four script blocks as of 2026-08-16: the GTM/Stape loader, Meta Advanced Matching (`window.SnoozeMetaMatch`), the UTM attribution capture, and the checkout identity capture (`window.SnoozeCheckoutIdentity`). The first three were rebuilt from a live read; the fourth is new and is not live yet. **Read the live field and diff both directions before any overwrite.** Checking that repo lines appear in live detects additions only and is blind to deletions, which on 2026-08-16 nearly deleted two live blocks.
@@ -100,7 +122,7 @@ Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking
 | # | Status | What to do | Where | Repo / replacement text |
 |---|---|---|---|---|
 | **P5** | **DONE** (closed 2026-08-09) | Fix banned Store copy | superseded: `/store` is no longer the native-builder page this row described | `Weekly group coaching and replays` returns 0 on live `/store` and 0 in [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html), verified 2026-08-09. The StoreV2 deploy replaced the text block this row pointed at |
-| **P3** | **TO DO (optional)** | Paste purchase tracking if shipping it | **Settings → Checkout** → **Footer tracking code** | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) · Inject flags are **true** on membership checkouts; footer field was **EMPTY** as of 2026-07-27 (cannot re-read via public curl; Cloudflare 403 on checkouts) |
+| **P3** | **TO DO (optional)** | Paste purchase tracking if shipping it | **Settings → Checkout** → **Footer tracking code** | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) · Inject flags are **true** on membership checkouts; footer field was recorded **EMPTY** as of 2026-07-27; **that was wrong.** Read from the live screen 2026-08-16: 90 lines, identical to the repo file. Nothing to paste |
 | **LIB** | **TO DO (confirm first)** | Logged-in compare before any paste | <https://www.joinsnooze.com/snooze-library> · page **2156716053** (`authenticated_only`) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) · Public verify blocked (403) |
 | **P6** | **HOLD** | Pull day-pass theme css+js from live before editing | Day-pass offer theme CSS + JS fields | Missing under [`pages/checkout/day-pass-offer/`](./pages/checkout/day-pass-offer/) |
 | **P7** | **HOLD** | Advanced Matching not shipping | **Settings → Checkout** → **Header tracking code** | Inline [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) into [`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git first; then one overwrite. Do not append a second file. |
@@ -138,7 +160,7 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
 | A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live. Repo file also rebuilt to hold the full live field | **Yes** (see P7 for AM) |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | Was **EMPTY** (2026-07-27) | **Deploy only with the coordinated GTM order-bound cutover** |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **LIVE, identical to repo** (2026-08-16 screen read) | **Nothing to deploy.** The open question is whether to CLEAR it, see below |
 
 ### A4 note
 
