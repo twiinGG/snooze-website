@@ -42,7 +42,18 @@ const currencyEnd = source.indexOf('function updatePrices', currencyStart);
 const currencyTracking = source.slice(currencyStart, currencyEnd);
 assert('currency change only emits for explicit changes', currencyTracking.indexOf('save && previousCurrency && previousCurrency !== currency') > -1);
 assert('currency change carries previous and current currency', currencyTracking.indexOf("'previous_currency': previousCurrency") > -1 && currencyTracking.indexOf("'currency': currency") > -1);
-assert('currency change carries surface', currencyTracking.indexOf("'surface': pageWrapper") > -1);
+assert('currency change carries surface', currencyTracking.indexOf("'surface':") > -1 && currencyTracking.indexOf('pageWrapper') > -1);
+
+// ME-007 August 14, 2026: the three header-script defects found while proving
+// the funnel events on real traffic. Each assertion pins one fix.
+assert('ME-007: currency change normalises surface to underscores', /replace\(\/-\/g,\s*'_'\)/.test(currencyTracking));
+assert('ME-007: eventSurface normalises surface to underscores', tracker.indexOf('normaliseSurface') > -1 && /const normaliseSurface = value =>/.test(tracker));
+// eventSurface has exactly three return paths: an explicit data-surface, the
+// wrapper id, and the pathname fallback. All three must be normalised.
+assert('ME-007: every surface return path is normalised', (tracker.match(/normaliseSurface\(/g) || []).length >= 3);
+assert('ME-007: cta_click carries currency', /destination: destinationPath\(href\),\s*(\/\/[^\n]*\n\s*)*currency: activeCurrency\(\)/.test(tracker));
+assert('ME-007: activeCurrency falls back to the rendered toggle', tracker.indexOf("[data-currency].is-active") > -1);
+assert('ME-007: all three click events carry currency', (tracker.match(/currency: activeCurrency\(\)/g) || []).length >= 3);
 
 console.log('');
 console.log('Summary: ' + passed + ' passed, ' + failed + ' failed.');

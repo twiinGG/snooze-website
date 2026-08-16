@@ -504,15 +504,31 @@ document.addEventListener("DOMContentLoaded", () => {
       if (preference === 'AUD' || preference === 'USD') return preference;
     } catch (error) {}
     if (document.body.classList.contains('currency-mode-aud')) return 'AUD';
+    // ME-007 fix: on a first visit with no stored preference, view_item used to
+    // report USD while the page rendered AUD, because the body class is not set
+    // until the currency engine initialises. Read the rendered toggle instead.
+    const activeToggle = document.querySelector('[data-currency].is-active');
+    if (activeToggle) {
+      const rendered = activeToggle.getAttribute('data-currency');
+      if (rendered === 'AUD' || rendered === 'USD') return rendered;
+    }
     return 'USD';
   };
 
+  // ME-007 fix: surface was reported two ways for the same page. view_item
+  // hardcodes 'snooze_membership' with an underscore while the click and
+  // currency paths derived 'snooze-membership' from the wrapper id, so any
+  // report grouped by surface split one page into two values. Everything is
+  // normalised to underscores, which is the form view_item and the GTM
+  // view_item trigger already use.
+  const normaliseSurface = value => String(value || '').replace(/-/g, '_');
+
   const eventSurface = link => {
     const explicit = link.closest('[data-surface]');
-    if (explicit && explicit.getAttribute('data-surface')) return explicit.getAttribute('data-surface');
+    if (explicit && explicit.getAttribute('data-surface')) return normaliseSurface(explicit.getAttribute('data-surface'));
     const wrapper = link.closest('[id$="-page"]');
-    if (wrapper) return wrapper.id.replace(/-page$/, '');
-    return window.location.pathname === '/' ? 'homepage' : window.location.pathname.replace(/^\/+|\/+$/g, '') || 'unknown';
+    if (wrapper) return normaliseSurface(wrapper.id.replace(/-page$/, ''));
+    return window.location.pathname === '/' ? 'homepage' : normaliseSurface(window.location.pathname.replace(/^\/+|\/+$/g, '')) || 'unknown';
   };
 
   const eventPlacement = link => {
@@ -620,7 +636,10 @@ document.addEventListener("DOMContentLoaded", () => {
         surface: eventSurface(link),
         placement: eventPlacement(link),
         button_text: buttonText,
-        destination: destinationPath(href)
+        destination: destinationPath(href),
+        // ME-007 fix: this branch was the only click event with no currency, so
+        // its GA4 tag had to omit the parameter entirely.
+        currency: activeCurrency()
       });
     }
   }, true);
@@ -1473,13 +1492,16 @@ document.addEventListener('DOMContentLoaded', function() {
           ? window.location.pathname
           : '';
         window.dataLayer = window.dataLayer || [];
+        // ME-007 fix: normalised to underscores to match view_item and the
+        // click events, so surface is one value per page rather than two.
+        const surfaceValue = pageWrapper
+          ? pageWrapper.id.replace(/-page$/, '')
+          : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown');
         window.dataLayer.push({
           'event': 'currency_change',
           'previous_currency': previousCurrency,
           'currency': currency,
-          'surface': pageWrapper
-            ? pageWrapper.id.replace(/-page$/, '')
-            : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
+          'surface': String(surfaceValue).replace(/-/g, '_')
         });
       } catch (e) {
         logError('Failed to push currency_change event', e);
