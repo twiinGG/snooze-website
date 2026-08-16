@@ -23,9 +23,37 @@ Authoritative detail:
 | A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **Drift measured line by line 2026-08-16, 22 of 480 substantive lines:** ME-007's surface, currency and cta_click fixes, and the Cookie Keeper loader. **No membership CTA drift remains** | **Yes, ready now.** The old "with the membership release" gate is retired, see the note below |
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
-| A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **DRIFT as of 2026-08-16:** repo holds the Cookie Keeper loader, live still holds the pre-Cookie-Keeper one. Was a verified MATCH until then | **Yes.** Clean isolated paste, this field is the only loader on a checkout page |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
+| A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **The old "MATCH, loader only" note was WRONG, see the warning below.** Repo file rebuilt 2026-08-16 from the live field: loader plus Meta Advanced Matching plus UTM attribution capture | **Yes**, now that the file is complete |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | Live field **EMPTY** | **Yes, if you want purchase tracking live** (intended, not currently deployed) |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
+
+### A4: the "loader only" note was wrong, and a paste from the old repo file would have deleted live code
+
+**Found 2026-08-16, before pasting, by reading the live field rather than trusting this map.**
+
+Rows A4 recorded the checkout Header tracking code as a MATCH containing the "GTM/Stape loader
+only". The live field actually holds **8,027 characters in three blocks**:
+
+| Block | Lines | Was it in the repo file? |
+|---|---|---|
+| GTM / Stape custom loader | 1 to 5 | yes |
+| Meta Advanced Matching, `window.SnoozeMetaMatch`, SHA-256 hashing and event-id dedup | 7 to 133 | **no**, it lived only as the un-inlined fragment `global/js/meta-advanced-matching.js` |
+| UTM attribution capture, `snooze_utm_attribution`, 30 day first touch | 135 to 238 | **no. It existed nowhere in this repository at all** |
+
+The repo file held only the loader, 1,484 bytes. A whole-field overwrite from it would have deleted
+Meta Advanced Matching and the UTM attribution capture from every live checkout. The UTM block feeds
+the attribution join, so ME-008 would have broken the thing it is being built to fix.
+
+`global/html/checkout-header-tracking.html` has been rebuilt from the live capture with exactly one
+line changed, the loader. Verified line by line: 239 live lines against 238 rebuilt lines, one
+differing line, both `<script>` blocks pass `node --check`.
+
+**The lesson, and it now applies to every row in this map.** Checking that repo lines appear in live
+only detects additions. It cannot detect deletions. **Diff both directions before any whole-field
+overwrite**, and read the field itself rather than trusting a "MATCH" note written weeks earlier.
+
+**Still open:** the UTM attribution capture block has no owner document and no test. It reached
+production without ever entering git.
 
 ### A1: the "membership release" gate is retired, 2026-08-16
 
@@ -109,8 +137,8 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 | A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DRIFT, measured 2026-08-16:** ME-007's three header-script fixes and the Cookie Keeper loader only. The membership CTA work is already live | **Yes, ready now** |
 | A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
 | A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
-| A4 | Settings → Checkout → **Header tracking code** | `/admin/settings/checkout` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live | **Yes** (see P7 for AM) |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/settings/checkout` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | Was **EMPTY** (2026-07-27) | **Deploy only with the coordinated GTM order-bound cutover** |
+| A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live. Repo file also rebuilt to hold the full live field | **Yes** (see P7 for AM) |
+| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | Was **EMPTY** (2026-07-27) | **Deploy only with the coordinated GTM order-bound cutover** |
 
 ### A4 note
 
