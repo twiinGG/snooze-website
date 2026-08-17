@@ -2204,6 +2204,15 @@ document.addEventListener('DOMContentLoaded', function () {
      * The session id lives in _ga_<STREAM>. The container routes through the Stape
      * server container with a placeholder measurement id, so the suffix cannot be
      * assumed. Scan for any _ga_ cookie and take the session id segment.
+     *
+     * The cookie's third dot-separated segment is NOT the session id on its own. The
+     * live value measured 2026-08-17 is
+     * `_ga_J4TY43FW1G=GS2.1.s1786946916$o1$g1$t1786946942$j34$l0$h1685109018`, so
+     * splitting on '.' yields `s1786946916$o1$g1$...` and returning it whole sent GA4
+     * a session_id it cannot stitch. Caught on a live order in ME-010: the join
+     * succeeded, the client id was right, and the session id was unusable. The digits
+     * after the optional leading 's' and before the first '$' are the session id. The
+     * regex also handles the older format where the segment is a bare number.
      */
     function gaSessionId() {
       var cookies = allCookies();
@@ -2211,7 +2220,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var pair = cookies[i].split('=');
         if (pair[0] && pair[0].indexOf('_ga_') === 0 && pair[1]) {
           var segs = decodeURIComponent(pair[1]).split('.');
-          if (segs.length >= 3) return segs[2];
+          if (segs.length >= 3) {
+            var m = String(segs[2] || '').match(/^s?(\d+)/);
+            if (m) return m[1];
+          }
         }
       }
       return null;

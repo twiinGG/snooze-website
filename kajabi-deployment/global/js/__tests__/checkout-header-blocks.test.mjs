@@ -115,6 +115,31 @@ for (const key of ['snooze_utm_attribution', 'snooze_attribution_first_touch', '
 }
 
 // ---------------------------------------------------------------------------
+// GA4 session id parsing. Measured on a live order in ME-010: the join succeeded,
+// the client id was correct and the session id was the whole dollar-delimited
+// cookie tail, which GA4 cannot stitch. Asserted on the real cookie value.
+// ---------------------------------------------------------------------------
+assert(!/return segs\[2\];/.test(fragment), 'session id is not the raw third cookie segment');
+assert(/\^s\?\(\\d\+\)/.test(fragment), 'session id is parsed with the leading-s digits pattern');
+
+// The parse itself, run against the value read from the live browser on 2026-08-17
+// and against the older bare-number format, so both keep working.
+function parseSessionId(cookieValue) {
+  const segs = decodeURIComponent(cookieValue).split('.');
+  if (segs.length < 3) return null;
+  const m = String(segs[2] || '').match(/^s?(\d+)/);
+  return m ? m[1] : null;
+}
+assert(
+  parseSessionId('GS2.1.s1786946916$o1$g1$t1786946942$j34$l0$h1685109018') === '1786946916',
+  'session id parses out of the live dollar-delimited cookie',
+);
+assert(parseSessionId('GS1.1.1755300123.4.0.1755300456.0.0.0') === '1755300123',
+  'session id still parses out of the older bare-number cookie');
+assert(parseSessionId('GS2.1.') === null, 'a truncated cookie yields no session id rather than a bad one');
+assert(parseSessionId('GS2.1.xyz') === null, 'an unparseable segment yields no session id');
+
+// ---------------------------------------------------------------------------
 // No credential may ever sit in a paste target.
 // ---------------------------------------------------------------------------
 for (const [label, source] of [['checkout header', html], ['site header', siteHtml]]) {
