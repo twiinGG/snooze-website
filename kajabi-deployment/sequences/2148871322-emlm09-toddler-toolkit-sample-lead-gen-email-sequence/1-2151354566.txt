@@ -8,9 +8,9 @@ Written: 2026-08-09 (WS-003). NOT yet pasted live.
 ---
 
 Hi {{ first_name }},
-Your Toddler Toolkit sample is in your library, ready when you are.
+Your Toddler Toolkit sample is ready when you are.
 You have the welcome lesson and all seven lessons of Module 1: The 2–1 Nap Drop, which is the transition that catches most families out between 13 and 18 months.
-[Open your sample](https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c)
+[Open your sample](https://www.joinsnooze.com/toddler-toolkit-sample-ready)
 What is in it
 - What is actually going on in the 2–1 drop
 - The transitional short and long schedule, and how to use it

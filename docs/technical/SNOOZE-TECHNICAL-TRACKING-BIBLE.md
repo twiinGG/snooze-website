@@ -15,6 +15,28 @@ fact. Four statements in v3.0 were wrong and are marked inline. Full evidence:
 > a configuration that looked right was never checked against live data. Configuration evidence is not
 > behaviour evidence. If you add to this file, say how you know.
 
+> ## AMENDMENT, August 16 2026: order events are no longer a browser concern
+>
+> **Everything below about browser-side `purchase` collection is superseded.** The Kajabi
+> checkout tracking fields inject on `/offers/<token>/checkout` only. They do **not** inject
+> on the confirmation page `joinsnooze.com/thank_you/<token>`, and `window.Kajabi.order` is
+> `null` there. Measured in a real buyer's browser on 2026-08-15:
+> `{"footer":false,"header":false,"gtm":true,"kajabi":"object","order":null,"ls":[]}`
+>
+> So the order-bound footer script returns at its first guard on every page it can load on.
+> With the synthetic purchase tag `98` correctly paused by ME-006 on August 6, GA4 recorded
+> its last `purchase` on **2026-08-06**, Meta's dataset holds **no `Purchase` event at all**,
+> and Google Ads went dark with them. Thirty Kajabi orders landed untracked in the following
+> ten days.
+>
+> `purchase`, `trial_started` and `free_claim` are now dispatched server-side from the Kajabi
+> `payment.succeeded` webhook by `workflows/n8n/kajabi-order-conversions/`. GTM remains the
+> only **browser** dispatcher; order conversions have a second, server-side path by design.
+>
+> Current register, root cause and evidence:
+> `docs/projects/measurement/4_working/2026-08-16-order-tracking-consolidation/`. Read
+> `00-STATE-OF-TRACKING.md` first.
+
 ---
 
 ## 1. Architecture Overview

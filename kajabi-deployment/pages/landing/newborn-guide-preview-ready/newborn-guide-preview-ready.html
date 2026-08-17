@@ -3,9 +3,9 @@
 <section class="hero-wrap">
   <div class="npr-wrap text-center max-800">
     <h1>You're in. Your Newborn Sleep Guide preview is ready.</h1>
-    <p class="npr-hero-lead">It is already in your Snooze Library. Check your inbox for how to set your password and get access.</p>
-    <a class="btn" href="https://www.joinsnooze.com/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2">Open the Newborn Guide preview</a>
-    <p class="npr-trial-note">Set your password first and this opens straight into the preview.</p>
+    <p class="npr-hero-lead" data-claim-lead>Your Snooze account is made. Set your password and the preview opens straight away.</p>
+    <a class="btn" href="https://www.joinsnooze.com/password/new" data-claim-cta>Set your password</a>
+    <p class="npr-trial-note" data-claim-note>Use the same email address you just entered.</p>
   </div>
 </section>
 
@@ -128,5 +128,21 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+(function(){
+  try {
+    var u = window.Kajabi && window.Kajabi.currentSiteUser;
+    if (!u || u.type !== 'Member') { return; }
+    var lead = document.querySelector('[data-claim-lead]');
+    var cta = document.querySelector('[data-claim-cta]');
+    var note = document.querySelector('[data-claim-note]');
+    if (lead) { lead.textContent = 'It is in your Snooze Library, ready when you are.'; }
+    if (cta) { cta.setAttribute('href', 'https://www.joinsnooze.com/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2'); cta.textContent = 'Open the Newborn Guide preview'; }
+    if (note) { note.textContent = 'You are signed in, so this opens straight into it.'; }
+  } catch (e) {}
+})();
+</script>
 
 </div>

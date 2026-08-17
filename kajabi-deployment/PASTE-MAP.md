@@ -246,6 +246,26 @@ Per offer family: html + css + js into **that offer’s** theme Custom Code / CS
 
 ---
 
+## D2. Course paywall modals → [`pages/paywall-modals/`](./pages/paywall-modals/)
+
+Product-level surface, **not** a page: the modal a limited-access member hits on paywalled lesson content. One `.html` per modal, pasted into that course's paywall-modal **Text** block via the `<>` source-code button. No shared theme CSS applies; all styling is inline. Full conventions and the offer-must-grant-the-product prerequisite: [`pages/paywall-modals/README.md`](./pages/paywall-modals/README.md).
+
+All five now sell the **7 day trial of the Snooze Membership**, not the single course behind them. The trial is a dual-currency twin pair: [`2150887297` USD](https://app.kajabi.com/admin/offers/2150887297/edit) (`mqQikDM7`) and [`2151254578` AUD](https://app.kajabi.com/admin/offers/2151254578/edit) (`Sr6KzShx`). Author the USD slug in the button; `currency-toggle.js` maps it for Australian visitors.
+
+| Course (paywall sits here) | Product | Repo file | Action |
+|---|---|---|---|
+| 5–12 Month Sleep Schedules (Free Module) | [`2149308933`](https://app.kajabi.com/admin/products/2149308933) | [`5-12-month-schedules-free-module/`](./pages/paywall-modals/5-12-month-schedules-free-module/) | **DONE, live.** Captured verbatim from live 2026-08-16 |
+| 3-4 Month 4hr Feeds (Free Module) | [`2149324660`](https://app.kajabi.com/admin/products/2149324660) | [`3-4-month-4hr-feeds-free-module/`](./pages/paywall-modals/3-4-month-4hr-feeds-free-module/) | **DONE, live** 2026-08-16 |
+| Newborn Sleep Guide | [`2149275660`](https://app.kajabi.com/admin/products/2149275660) | [`newborn-sleep-guide/`](./pages/paywall-modals/newborn-sleep-guide/) | **DONE, live** 2026-08-16 |
+| 3-4 Month Baby Sleep Course | [`2148571314`](https://app.kajabi.com/admin/products/2148571314) | [`3-4-month-baby-sleep-course/`](./pages/paywall-modals/3-4-month-baby-sleep-course/) | **DONE, live** 2026-08-16. Pull the field before any future overwrite |
+| Toddler Toolkit | [`2149259086`](https://app.kajabi.com/admin/products/2149259086) | [`toddler-toolkit/`](./pages/paywall-modals/toddler-toolkit/) | **DONE, live** 2026-08-16. Pull the field before any future overwrite |
+
+**Open:** the twins are not identical. The AUD offer grants [`2149309110`](https://app.kajabi.com/admin/products/2149309110) (5-12 limited access) and the USD offer does not, so AUD trial members see an extra library tile. Twins move together; pick one direction and square them.
+
+Verification: course consumption pages are behind auth, so `curl` cannot reach them. Read the field back after Save, or use Kajabi MCP `get_theme_content` on the course's `active_theme_id`.
+
+---
+
 ## E. Not paste files
 
 | File | Role |
@@ -272,6 +292,7 @@ Per offer family: html + css + js into **that offer’s** theme Custom Code / CS
 | Home-page JS helpers | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Theme Custom Code → JS |
 | One landing page look/feel | [`pages/landing/`](./pages/landing/) | That landing page’s own theme fields |
 | One checkout layout/copy | [`pages/checkout/`](./pages/checkout/) | That offer’s theme fields |
+| One course paywall modal | [`pages/paywall-modals/`](./pages/paywall-modals/) | That course’s paywall modal Text block, via the `<>` source-code button |
 | Snooze Membership page body | [`pages/website/snooze-membership/snooze-membership-page.html`](./pages/website/snooze-membership/snooze-membership-page.html) | `/snooze-membership` Website Page custom-code block |
 
 1. Website / landing: cache-busted `curl` of the public URL; every non-blank repo line appears live (or length/sha from `emit_paste_js.py` eval).
