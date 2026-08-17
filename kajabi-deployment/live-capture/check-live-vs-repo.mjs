@@ -134,10 +134,15 @@ const TARGETS = [
 
 const filter = process.argv[2];
 
+// Capture files are gitignored, so a fresh clone has none. Create on demand
+// rather than making the reader mkdir their way to a working tool.
 function read(file) {
   try {
     return fs.readFileSync(file, 'utf8');
   } catch {
+    try {
+      fs.writeFileSync(file, '');
+    } catch {}
     return '';
   }
 }

@@ -1,0 +1,10 @@
+# Live field snapshots are never committed.
+#
+# They are a point-in-time copy of what is in Kajabi, and they go stale the
+# moment somebody edits a field. A stale snapshot in git is worse than none,
+# because the next person reads it as canonical and diffs against the wrong
+# thing. That is the exact failure this folder exists to prevent, and on
+# 2026-08-17 459 KB of them were committed before the closing sweep caught it.
+#
+# The checker creates any file it needs, so nothing here has to exist in advance.
+*.txt
