@@ -1,7 +1,7 @@
 # LMCR08 - Product Metadata
 
 **Bundle Code:** LMCR08  
-**Variant Name:** 3-4 Month Feed or Resettle  
+**Variant Name:** 3-4 Month 4hr Feeds  
 **Target Problem:** Overnight Feed Decisions (Hunger vs Habit)
 
 ---
@@ -9,7 +9,7 @@
 ## Kajabi Product Settings
 
 ### Product Title
-**Title:** 3-4 Month Feed or Resettle (Free Module)
+**Title:** 3-4 Month 4hr Feeds (Free Module)
 
 **Location in Kajabi:**  
 Products → Courses → [Product] → Settings → Details → Title
@@ -32,7 +32,7 @@ Products → Courses → [Product] → Settings → Details → Description
 **Current Thumbnail Elements:**
 - Woman smiling while holding a baby
 - Overlaid text: "FREE MODULE" (yellow banner)
-- Overlaid text: "Feed or Resettle?" or "3-4 Month Night Feeds"
+- Overlaid text: "4hr Feeds" or "3-4 Month Night Feeds"
 - Brand logo: "snooze. by The Sleep Concierge"
 - Bottle/feeding graphic in background
 

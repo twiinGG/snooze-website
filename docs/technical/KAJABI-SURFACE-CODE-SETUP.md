@@ -75,7 +75,7 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 
 ## Email surfaces (for completeness; see paste-queue B4)
 
-- **Sequence emails:** classic Froala editor; DOM edits revert on save - drive the real UI or hand to Kade. Bodies unreadable via API.
+- **Sequence emails: THEMED on this account, not Froala** (corrected 2026-08-14, WS-008). Each sequence email carries its own `Encore Email` theme with `themeable_type: EmailSequenceEmail`, and the write path is MCP `update_theme_content` on that theme, section `ws004_body` (or the section id the email actually uses; older ones use a numeric id). Round-trips byte-clean; proven on four emails. **No MCP tool returns the theme id.** Get it by opening `/admin/email_sequence_emails/<id>/edit` and matching `themes/(\d+)` in the page HTML; you do not need to click through to the editor. **Never leave the theme editor open across an MCP write** - it holds the pre-write copy and its Save would silently revert you; leave with browser `back`, not "Save and Close".
 - **Broadcasts (new builder):** content lives in the broadcast's theme -> MCP `update_theme_content`.
 - **Automation emails:** subject/body inside workflow action nodes (`/admin/workflows/<id>/edit`, trusted mouse events).
 - **HTML pattern for all emails:** inline styles, no `!important`, single wrapper div allowed, `<br />` spacing, merge tags `{{...}}` (AGENTS.md "Email Campaigns" section).

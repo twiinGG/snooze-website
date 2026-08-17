@@ -3,9 +3,9 @@
 <section class="hero-wrap">
   <div class="tsr-wrap text-center max-800">
     <h1>You're in. Your Toddler Toolkit sample is ready.</h1>
-    <p class="tsr-hero-lead">It is already in your Snooze Library. Check your inbox for how to set your password and get access.</p>
-    <a class="btn" href="https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c">Open the Toddler Toolkit sample</a>
-    <p class="tsr-trial-note">Set your password first and this opens straight into the sample.</p>
+    <p class="tsr-hero-lead" data-claim-lead>Your Snooze account is made. Set your password and the sample opens straight away.</p>
+    <a class="btn" href="https://www.joinsnooze.com/password/new" data-claim-cta>Set your password</a>
+    <p class="tsr-trial-note" data-claim-note>Use the same email address you just entered.</p>
   </div>
 </section>
 
@@ -128,5 +128,21 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+(function(){
+  try {
+    var u = window.Kajabi && window.Kajabi.currentSiteUser;
+    if (!u || u.type !== 'Member') { return; }
+    var lead = document.querySelector('[data-claim-lead]');
+    var cta = document.querySelector('[data-claim-cta]');
+    var note = document.querySelector('[data-claim-note]');
+    if (lead) { lead.textContent = 'It is in your Snooze Library, ready when you are.'; }
+    if (cta) { cta.setAttribute('href', 'https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c'); cta.textContent = 'Open the Toddler Toolkit sample'; }
+    if (note) { note.textContent = 'You are signed in, so this opens straight into it.'; }
+  } catch (e) {}
+})();
+</script>
 
 </div>
