@@ -28,6 +28,10 @@ For each checkout variant:
 
 The JS field can also be set site-wide at Settings > Website > Custom JavaScript.
 
+The shared JavaScript reads the public `camp-capacity` Edge Function. It uses the
+`?cohort=` query parameter when present, then falls back to the next open cohort.
+If the feed fails, it shows a neutral status and does not disable checkout.
+
 ## Notes
 
 - `camp-snooze-member-checkout-blocks.html` still carries a `[YOUR_OFFER_ID]` placeholder for the member-only Camp Snooze offer. Replace it with the live offer ID before deploying.

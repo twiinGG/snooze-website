@@ -1,4 +1,68 @@
+const CAMP_CHECKOUT_CAPACITY_URL = window.CAMP_CAPACITY_FEED_URL ||
+  'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
+
+window.CampCheckoutCapacity = (function () {
+  function fallback(root) {
+    root.dataset.capacityState = 'fallback';
+    root.innerHTML = '<strong>Camp availability</strong><span>Live availability is taking a moment to update. You can still continue with checkout.</span>';
+  }
+
+  function chooseCohort(cohorts) {
+    const requested = Number(new URLSearchParams(window.location.search || '').get('cohort'));
+    if (requested) {
+      const match = cohorts.find(function (cohort) { return cohort.cohort_number === requested; });
+      if (match) return match;
+    }
+    return cohorts.find(function (cohort) { return cohort.state === 'open' || cohort.state === 'filling'; }) || cohorts[0];
+  }
+
+  function render(root, cohort) {
+    root.dataset.capacityState = cohort.state;
+    const start = cohort.start_date
+      ? new Intl.DateTimeFormat('en-AU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(cohort.start_date + 'T00:00:00+10:00'))
+      : 'date to be confirmed';
+    if (cohort.state === 'full' || cohort.state === 'closed') {
+      root.innerHTML = '<strong>Camp Snooze #' + cohort.cohort_number + ' is ' + cohort.state + '</strong>' +
+        '<span>Starts ' + start + '. Join the waitlist before completing checkout.</span>' +
+        '<a href="https://www.joinsnooze.com/camp-snooze#waitlist-section">Join the Waitlist</a>';
+      return;
+    }
+    root.innerHTML = '<strong>Camp Snooze #' + cohort.cohort_number + '</strong>' +
+      '<span>Starts ' + start + '. ' + cohort.seats_remaining + ' of 15 places remain.</span>';
+  }
+
+  async function init(root, options) {
+    if (!root) return 'missing';
+    const settings = options || {};
+    const fetchImpl = settings.fetchImpl || window.fetch.bind(window);
+    const feedUrl = settings.feedUrl || CAMP_CHECKOUT_CAPACITY_URL;
+    const timeoutMs = settings.timeoutMs || 5000;
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
+      let response;
+      try {
+        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json' } });
+      } finally {
+        clearTimeout(timer);
+      }
+      if (!response.ok) throw new Error('capacity feed failed');
+      const body = await response.json();
+      if (!body || !Array.isArray(body.cohorts) || body.cohorts.length === 0) throw new Error('capacity feed shape invalid');
+      render(root, chooseCohort(body.cohorts));
+      return 'ready';
+    } catch (error) {
+      fallback(root);
+      return 'fallback';
+    }
+  }
+
+  return { init: init, fallback: fallback };
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
+
+  window.CampCheckoutCapacity.init(document.querySelector('[data-camp-checkout-capacity]'));
 
   (function() {
     const existingLink = document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]');

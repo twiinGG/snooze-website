@@ -252,6 +252,21 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 | Day Pass / paid ads / cold traffic / snooze-access | respective URLs | under [`pages/landing/`](./pages/landing/) | mostly missing | partial | WS-001 WS1 |
 | `annual-moment-v1`, `kic-partnership` | — | empty dirs | no | no | Pull from live first |
 
+### P3 Camp capacity and waitlist paste queue
+
+Every row below is **DRIFT, repo ahead of live, August 18, 2026**. Paste the
+whole field from this branch after the migration and Edge Function are live.
+
+| Row | Status | Kajabi field | Admin link | Whole-field repo source |
+|---|---|---|---|---|
+| P3-CAMP-LANDING-HTML | **DRIFT** | Camp landing custom-code block | [`/camp-snooze-sleep-coaching`, page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit) | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
+| P3-CAMP-LANDING-CSS | **DRIFT** | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
+| P3-CAMP-LANDING-JS | **DRIFT** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
+| P3-CAMP-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
+| P3-CAMP-MEMBER-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
+| P3-CAMP-CHECKOUT-CSS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
+| P3-CAMP-CHECKOUT-JS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+
 ---
 
 ## D. Checkout layout (not tracking) → [`pages/checkout/`](./pages/checkout/)

@@ -5,6 +5,120 @@ const CAMP_CURRENCY_CONFIG = {
   audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6'
 };
 
+const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
+  'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
+
+window.CampCapacityWidget = (function () {
+  function dateLabel(value) {
+    if (!value) return 'Dates to be confirmed';
+    return new Intl.DateTimeFormat('en-AU', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    }).format(new Date(value + 'T00:00:00+10:00'));
+  }
+
+  function checkoutUrl(cohortNumber) {
+    const currency = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+    const base = currency === 'AUD' ? CAMP_CURRENCY_CONFIG.audCheckoutUrl : CAMP_CURRENCY_CONFIG.usdCheckoutUrl;
+    const url = new URL(base, window.location.href);
+    url.searchParams.set('cohort', String(cohortNumber));
+    return url.toString();
+  }
+
+  function renderFallback(root) {
+    root.dataset.capacityState = 'fallback';
+    root.innerHTML = '<div class="camp-capacity-neutral"><p>Live availability is taking a moment to update. You can still continue to checkout.</p>' +
+      '<a href="' + CAMP_CURRENCY_CONFIG.usdCheckoutUrl + '" class="btn-camp dynamic-cta" data-checkout>Continue to Camp Checkout</a></div>';
+    const currency = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+    campUpdateLinks(currency);
+  }
+
+  function renderCohorts(root, cohorts) {
+    root.dataset.capacityState = 'ready';
+    root.innerHTML = cohorts.map(function (cohort) {
+      const isAvailable = cohort.state === 'open' || cohort.state === 'filling';
+      const stateLabel = cohort.state === 'filling' ? 'Filling now' :
+        cohort.state === 'full' ? 'Waitlist open' :
+        cohort.state === 'closed' ? 'Checkout closed' : 'Open';
+      const availability = isAvailable
+        ? cohort.seats_remaining + ' of 15 places remaining'
+        : cohort.state === 'full' ? 'All 15 places are currently held' : 'This intake is closed';
+      const action = isAvailable
+        ? '<a class="btn-camp dynamic-cta" data-checkout data-cohort="' + cohort.cohort_number + '" href="' + checkoutUrl(cohort.cohort_number) + '">Choose Camp #' + cohort.cohort_number + '</a>'
+        : '<a class="btn-camp btn-outline" href="#waitlist-section" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
+      return '<article class="camp-capacity-card camp-capacity-card--' + cohort.state + '">' +
+        '<p class="camp-capacity-state">' + stateLabel + '</p>' +
+        '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
+        '<p class="camp-capacity-date">Starts ' + dateLabel(cohort.start_date) + '</p>' +
+        '<p class="camp-capacity-places">' + availability + '</p>' + action + '</article>';
+    }).join('');
+
+    root.querySelectorAll('[data-waitlist-cohort]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        const select = document.querySelector('[data-camp-waitlist-form] select[name="preferred_cohort"]');
+        if (select) select.value = link.getAttribute('data-waitlist-cohort');
+      });
+    });
+  }
+
+  async function init(root, options) {
+    if (!root) return 'missing';
+    const settings = options || {};
+    const fetchImpl = settings.fetchImpl || window.fetch.bind(window);
+    const feedUrl = settings.feedUrl || CAMP_CAPACITY_FEED_URL;
+    const timeoutMs = settings.timeoutMs || 5000;
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
+      let response;
+      try {
+        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json' } });
+      } finally {
+        clearTimeout(timer);
+      }
+      if (!response.ok) throw new Error('capacity feed returned ' + response.status);
+      const body = await response.json();
+      if (!body || !Array.isArray(body.cohorts) || body.cohorts.length === 0) throw new Error('capacity feed shape invalid');
+      renderCohorts(root, body.cohorts);
+      return 'ready';
+    } catch (error) {
+      renderFallback(root);
+      return 'fallback';
+    }
+  }
+
+  async function submitWaitlist(form) {
+    const status = form.querySelector('[data-camp-waitlist-status]');
+    const button = form.querySelector('button[type="submit"]');
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get('name') || ''),
+      email: String(data.get('email') || ''),
+      preferred_cohort: Number(data.get('preferred_cohort'))
+    };
+    if (button) button.disabled = true;
+    if (status) status.textContent = 'Joining the waitlist.';
+    try {
+      const response = await window.fetch(CAMP_CAPACITY_FEED_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.error || 'Waitlist unavailable');
+      if (status) status.textContent = body.status === 'already_joined'
+        ? 'You are already on this Camp waitlist.'
+        : 'You are on the waitlist. Check your inbox for the next step.';
+      if (body.status === 'joined') form.reset();
+    } catch (error) {
+      if (status) status.textContent = 'We could not join the waitlist just now. Email hello@joinsnooze.com and we will help.';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
+  return { init: init, renderFallback: renderFallback, submitWaitlist: submitWaitlist };
+})();
+
 function safeLocalStorage() {
   try {
     return localStorage;
@@ -67,7 +181,14 @@ function campUpdateLinks(currency) {
     if (!btn.getAttribute('data-original-href')) {
       btn.setAttribute('data-original-href', btn.getAttribute('href') || '');
     }
-    btn.setAttribute('href', url);
+    const cohort = btn.getAttribute('data-cohort');
+    if (cohort) {
+      const cohortUrl = new URL(url, window.location.href);
+      cohortUrl.searchParams.set('cohort', cohort);
+      btn.setAttribute('href', cohortUrl.toString());
+    } else {
+      btn.setAttribute('href', url);
+    }
   });
 }
 
@@ -295,9 +416,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
-  const isWaitlistMode = window.CAMP_PAGE_MODE === 'waitlist' ||
-    document.querySelector('[data-camp-mode="waitlist"]') ||
-    document.getElementById('waitlist-section');
+  const isWaitlistMode = window.CAMP_PAGE_MODE === 'waitlist';
+
+  const capacityRoot = document.querySelector('[data-camp-capacity-widget]');
+  window.CampCapacityWidget.init(capacityRoot);
+  const waitlistForm = document.querySelector('[data-camp-waitlist-form]');
+  if (waitlistForm) {
+    waitlistForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      window.CampCapacityWidget.submitWaitlist(waitlistForm);
+    });
+  }
 
   (function () {
     const hero = document.querySelector('.camp-section');

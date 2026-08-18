@@ -5,7 +5,7 @@
 | File | Purpose |
 |------|---------|
 | `camp-snooze-landing-page-blocks.html` | Landing page blocks - CHECKOUT mode (live intake) |
-| `camp-snooze-landing-page-blocks-waitlist.html` | Landing page blocks - WAITLIST mode (between intakes) |
+| `camp-snooze-landing-page-blocks-waitlist.html` | Landing page blocks with live capacity and waitlist capture |
 | `camp-snooze-v2-luxury.css` | Shared stylesheet for both landing page variants |
 | `camp-snooze-v2-luxury.js` | Shared JavaScript for both landing page variants |
 | `Camp Snooze Pricing V2 Mockup.html` | Standalone pricing mockup (self-contained, not Kajabi blocks) |
@@ -30,16 +30,17 @@ Paste into the Kajabi landing page's custom code blocks.
 
 ---
 
-## Mode switching (checkout vs waitlist)
+## Mode switching
 
 The two HTML block files share the same CSS and JS. Switch between modes by choosing which HTML file to paste into Kajabi:
 
 - **CHECKOUT mode:** use `camp-snooze-landing-page-blocks.html`
   - Renders pricing section with live checkout CTA
   - Sets no `window.CAMP_PAGE_MODE`; JS defaults to checkout behaviour
-- **WAITLIST mode:** use `camp-snooze-landing-page-blocks-waitlist.html`
-  - Renders waitlist form section instead of pricing
-  - Sets `window.CAMP_PAGE_MODE = 'waitlist'` at top of file; JS detects this to suppress countdown and show waitlist sticky CTA
+- **LIVE CAPACITY mode:** use `camp-snooze-landing-page-blocks-waitlist.html`
+  - Reads the `camp-capacity` Edge Function and renders the next three intakes
+  - Offers checkout for open intakes and the waitlist for full or closed intakes
+  - Falls back to a neutral message and keeps checkout working if the feed fails
 
 ---
 
@@ -67,9 +68,8 @@ Preference is persisted in localStorage under the key `snooze_currency_preferenc
 
 ## Countdown timer
 
-`COUNTDOWN_DEADLINE` in `camp-snooze-v2-luxury.js` is the applications-close datetime.
-Current value targets end of March 2026 intake. Update this value for each new intake.
-The countdown only runs in CHECKOUT mode (suppressed in waitlist mode).
+The older checkout variant still uses `COUNTDOWN_DEADLINE`. The live-capacity
+variant reads checkout dates from the cohort feed and needs no date edit per Camp.
 
 ---
 

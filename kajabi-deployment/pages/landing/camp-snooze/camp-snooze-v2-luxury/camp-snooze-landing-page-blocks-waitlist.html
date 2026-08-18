@@ -1,4 +1,4 @@
-<script>window.CAMP_PAGE_MODE = 'waitlist';</script>
+<script>window.CAMP_PAGE_MODE = 'live-capacity';</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -55,15 +55,15 @@
       </p>
       <p class="font-heading fade-in-up"
         style="font-size: 1rem; color: hsl(150, 25%, 20% / 0.6); letter-spacing: 0.05em; margin-bottom: 1.5rem;">
-        Runs bi-monthly - July Camps SOLD OUT
+        15 families per camp. Live availability updates below.
       </p>
 
       <div class="fade-in-up" style="margin-bottom: 1.5rem;">
         <p style="color: var(--camp-forest); font-size: 1rem; margin-bottom: 1rem;">
-          Want early access to August dates?
+          Choose the Camp intake that works for your family.
         </p>
-        <a href="#waitlist-section" class="btn-camp btn-camp-cta btn-hero-cta" style="text-decoration: none; display: inline-block; width: 100%; max-width: 280px;">
-          Join the Waitlist
+        <a href="#camp-capacity-section" class="btn-camp btn-camp-cta btn-hero-cta" style="text-decoration: none; display: inline-block; width: 100%; max-width: 280px;">
+          See Live Camp Availability
         </a>
       </div>
 
@@ -222,6 +222,25 @@
   </div>
 </section>
 
+<section id="camp-capacity-section" class="camp-section camp-section-alt">
+  <div class="camp-container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h2 class="font-heading" style="font-size: 2.5rem; font-weight: 700; color: var(--camp-forest); margin-bottom: 1rem;">
+        Upcoming Camp Availability
+      </h2>
+      <p style="color: var(--muted-foreground); max-width: 38rem; margin: 0 auto;">
+        Each Camp has room for 15 families. Choose an open intake or join the waitlist when one fills.
+      </p>
+    </div>
+    <div class="camp-capacity-widget" data-camp-capacity-widget aria-live="polite">
+      <div class="camp-capacity-neutral">
+        <p>Checking the latest Camp availability.</p>
+        <a href="https://www.joinsnooze.com/offers/K3Y6FEKX/checkout" class="btn-camp dynamic-cta" data-checkout>Continue to Camp Checkout</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="camp-section camp-section-alt">
   <div class="camp-container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -316,7 +335,7 @@
         <a href="#waitlist-section" class="btn-camp btn-camp-lg" style="text-decoration: none; display: inline-block;">
           Join the Waitlist
         </a>
-        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">6 spots per intake</p>
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">15 families per camp</p>
       </div>
     </div>
   </div>
@@ -584,7 +603,7 @@
             <i class="fa-solid fa-users" style="font-size: 0.875rem;"></i>
           </div>
           <div>
-            <span style="font-weight: 500; color: var(--camp-rust);">Capacity: maximum 8 families only</span>
+            <span style="font-weight: 500; color: var(--camp-rust);">Capacity: 15 families per camp</span>
           </div>
         </div>
       </div>
@@ -651,11 +670,24 @@
         Get Notified When the Next Intake Opens
       </h2>
       <p class="fade-in-up" style="font-size: 1rem; color: var(--camp-sage); margin-bottom: 2rem;">
-        Join the waitlist and we'll email you first when applications open. Limited to 8 families per intake.
+        Join the waitlist for your preferred intake. If a seat becomes available, the queue offers it to one family at a time.
       </p>
 
       <div class="fade-in-up pricing-card-dark waitlist-form-wrap" style="padding: 2.5rem 2rem;">
-        <script src="https://www.joinsnooze.com/forms/2149246740/embed.js"></script>
+        <form class="camp-waitlist-form" data-camp-waitlist-form novalidate>
+          <label for="camp-waitlist-name">Your name</label>
+          <input id="camp-waitlist-name" name="name" type="text" maxlength="120" autocomplete="name" required>
+          <label for="camp-waitlist-email">Email</label>
+          <input id="camp-waitlist-email" name="email" type="email" maxlength="320" autocomplete="email" required>
+          <label for="camp-waitlist-cohort">Preferred Camp</label>
+          <select id="camp-waitlist-cohort" name="preferred_cohort" required>
+            <option value="15">Camp Snooze #15, starts August 31, 2026</option>
+            <option value="16">Camp Snooze #16, dates to be confirmed</option>
+            <option value="17">Camp Snooze #17, dates to be confirmed</option>
+          </select>
+          <button type="submit" class="btn-camp btn-camp-cta">Join the Waitlist</button>
+          <p class="camp-waitlist-status" data-camp-waitlist-status role="status"></p>
+        </form>
       </div>
 
       <p class="fade-in-up" style="color: var(--camp-sage); font-size: 0.875rem; margin-top: 1.5rem;">
@@ -778,7 +810,7 @@
         <a href="#waitlist-section" class="btn-camp btn-camp-xl" style="text-decoration: none; display: inline-block;">
           Join the Waitlist
         </a>
-        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">8 spots per intake</p>
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">15 families per camp</p>
       </div>
     </div>
   </div>
