@@ -90,6 +90,21 @@ Keeper loader. **Not one line of membership CTA drift remains.**
 
 Re-run the check before pasting, because it costs nothing and this note will age too.
 
+### A1: further DRIFT, 2026-08-18, dead program-level Camp offer removed from the currency mapping
+
+**DRIFT.** Camp 15 launch repo cleanup. The currency-toggle script embedded in this file mapped the
+program-level Camp pair, offer `2151342069` to `2151342068` and checkout token `JqoPWuzv` to `mzwFzpg5`,
+and carried `2151342068` in `audOfferIds`. That pair was **deleted** in Kajabi on August 17 to 18, 2026
+(not merely unpublished); see `docs/strategy/paid-scaling/4_working/2026-08-organic-harvest/DECISIONS-2026-08-17-KADE.md`
+R3. The existing Camp mapping, `2150884129` to `2150946767` / `K3Y6FEKX` to `46Bz9tk6`, already covers
+the live destination, so the dead entries were removed rather than remapped. The mirror file
+[`global/js/currency-toggle.js`](./global/js/currency-toggle.js) (not a paste target, test extract only
+per §E) got the identical edit so the two stay in sync.
+
+**Not yet pasted.** Whole-field overwrite of Settings → Site Details → Header Page Scripts
+(`/admin/sites/2148291177/edit/site-details`) from this file. Verify by cache-busted curl that the served
+script no longer contains `mzwFzpg5`, `JqoPWuzv`, or `2151342068`, and still contains `46Bz9tk6`.
+
 ### A2: two things that will waste your time if you do not know them
 
 Both learned first-hand on 2026-08-07, after three saves were silently lost.
@@ -266,6 +281,53 @@ whole field from this branch after the migration and Edge Function are live.
 | P3-CAMP-MEMBER-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
 | P3-CAMP-CHECKOUT-CSS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
 | P3-CAMP-CHECKOUT-JS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+
+#### Measured live state, 2026-08-18, and how Kade verifies each paste
+
+These seven rows are **not** paper drift. The live surfaces were read in a headed browser on
+2026-08-18 and they disagree with the repo on the buyer-facing capacity number, which is the
+number decision R6 changed to 15 families.
+
+| Surface | Live said, 2026-08-18 | Repo says | Gap |
+|---|---|---|---|
+| `/camp-snooze-sleep-coaching` | "maximum 8 families", "Limited to 8 families", "8 spots per intake", and one "6 spots per intake" | "15 families per camp", five times | Live understates capacity by seven seats and carries two different stale numbers |
+| AUD checkout `46Bz9tk6` | No capacity block at all. No Camp 15 date, no availability, no waitlist | Capacity block, "15 families per camp", live availability widget | The whole P3 block is absent live |
+| USD checkout `K3Y6FEKX` | Same, nothing | Same as AUD | The whole P3 block is absent live |
+
+So until these pastes land, an ad drives a buyer to a page promising 8 families while the seat
+governor, the cohort table and the capacity feed all say 15. **This is a launch blocker and it
+needs Kade in the Kajabi admin. No agent can paste it.**
+
+**Verification, per row, run after saving.** The landing page is public so a cache-busted curl
+works. Checkouts return HTTP 403 to curl, so those two are browser-only.
+
+```bash
+# P3-CAMP-LANDING-HTML, P3-CAMP-LANDING-CSS, P3-CAMP-LANDING-JS
+# Expect: 15 families present, and every stale number gone.
+URL="https://www.joinsnooze.com/camp-snooze-sleep-coaching?cb=$(date +%s)"
+curl -s "$URL" | grep -c "15 families"          # expect 5 or more, never 0
+curl -s "$URL" | grep -Eo "(maximum|Limited to|only) [0-9]+ families"   # expect no output
+curl -s "$URL" | grep -Eo "[0-9]+ spots per intake"                     # expect no output
+curl -s "$URL" | grep -c "camp-capacity"        # expect 1 or more, the capacity feed call
+```
+
+```bash
+# P3-CAMP-CHECKOUT-HTML, P3-CAMP-MEMBER-CHECKOUT-HTML, P3-CAMP-CHECKOUT-CSS, P3-CAMP-CHECKOUT-JS
+# curl is HTTP 403 on checkouts. Confirm this from a browser on each of the four offers:
+#   AUD 46Bz9tk6, USD K3Y6FEKX, AUD member 2151264520, USD member 2150947919
+# Expect on each: the text "15 families per camp", a seats-remaining line naming 15,
+# and the correct due-now amount unchanged (A$997 AUD, $690 USD).
+```
+
+The capacity feed those pastes call is live and answering already, so the widget has real data
+to read the moment the block lands:
+
+```bash
+curl -s "https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity?limit=3" \
+  -H "Authorization: Bearer $SUPABASE_ANON_KEY" -H "apikey: $SUPABASE_ANON_KEY"
+# Verified 2026-08-18: Camp 15 open, 15 of 15 seats remaining, no personal data in the payload.
+```
+
 
 ---
 
