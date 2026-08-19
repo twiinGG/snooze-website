@@ -9,7 +9,7 @@ A searchable home for your advice content and newsletter, with a clear pathway i
 
 ## Recommended URL + name
 
-* Keep the URL you already have (**/author/sally-woods**) for now.
+* URL: **/ask-sally** (ratified hub slug, Kade 2026-07-11; supersedes this brief's earlier "keep /author/sally-woods for now" draft language).
 * Rename the page everywhere on-page to **Ask Sally**.
 
 ---

@@ -1,4 +1,4 @@
-# author-sally-woods
+# ask-sally
 
 Kajabi website pages for the Ask Sally author hub.
 
