@@ -1,6 +1,55 @@
 const CAMP_CHECKOUT_CAPACITY_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
+// Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
+const CAMP_CHECKOUT_ANON_KEY = window.SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
+
+// This same HTML+JS pair is pasted verbatim onto four checkout pages (regular USD/AUD, member USD/AUD;
+// see PASTE-MAP.md P3-CAMP-CHECKOUT-HTML and P3-CAMP-MEMBER-CHECKOUT-HTML, "paste to both currency
+// twins"). Before this block existed, every `.dynamic-price` span rendered its hardcoded fallback text
+// and the `.currency` label was a static "USD" string, so the AUD checkout pages showed the USD number
+// and label regardless of which offer a buyer was actually completing. This detects currency from the
+// offer identifier in the page's own URL (the same short-code pattern the landing page already keys its
+// checkout links off) and re-renders every price and currency label from data-usd/data-aud, matching how
+// the landing page's campUpdatePrices() already works.
+const CAMP_CHECKOUT_CURRENCY_CONFIG = {
+  audOfferKeys: ['46Bz9tk6', 'ENhg45mj'],
+  usdOfferKeys: ['K3Y6FEKX', 'rVuLzkZa'],
+  defaultCurrency: 'USD',
+  memberCheckoutUrl: {
+    USD: 'https://www.joinsnooze.com/offers/rVuLzkZa/checkout',
+    AUD: 'https://www.joinsnooze.com/offers/ENhg45mj/checkout'
+  }
+};
+
+function campCheckoutDetectCurrency() {
+  const href = window.location.href;
+  if (CAMP_CHECKOUT_CURRENCY_CONFIG.audOfferKeys.some(function (key) { return href.indexOf(key) > -1; })) return 'AUD';
+  if (CAMP_CHECKOUT_CURRENCY_CONFIG.usdOfferKeys.some(function (key) { return href.indexOf(key) > -1; })) return 'USD';
+  return CAMP_CHECKOUT_CURRENCY_CONFIG.defaultCurrency;
+}
+
+function campCheckoutFormatPriceNum(num) {
+  const n = Math.abs(parseFloat(String(num).replace(/[^0-9.-]/g, '')));
+  if (Number.isNaN(n)) return num;
+  return n >= 1000 ? n.toLocaleString() : String(n);
+}
+
+function campCheckoutRenderCurrency(currency) {
+  document.querySelectorAll('#snooze-custom-checkout .dynamic-price').forEach(function (el) {
+    const price = el.getAttribute('data-' + currency.toLowerCase());
+    if (!price) return;
+    el.textContent = '$' + campCheckoutFormatPriceNum(price);
+  });
+  document.querySelectorAll('#snooze-custom-checkout .currency').forEach(function (el) {
+    el.textContent = currency;
+  });
+  document.querySelectorAll('#snooze-custom-checkout [data-member-checkout]').forEach(function (el) {
+    el.setAttribute('href', CAMP_CHECKOUT_CURRENCY_CONFIG.memberCheckoutUrl[currency] || CAMP_CHECKOUT_CURRENCY_CONFIG.memberCheckoutUrl.USD);
+  });
+}
+
 window.CampCheckoutCapacity = (function () {
   function fallback(root) {
     root.dataset.capacityState = 'fallback';
@@ -42,7 +91,7 @@ window.CampCheckoutCapacity = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json' } });
+        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CHECKOUT_ANON_KEY, Authorization: 'Bearer ' + CAMP_CHECKOUT_ANON_KEY } });
       } finally {
         clearTimeout(timer);
       }
@@ -61,6 +110,8 @@ window.CampCheckoutCapacity = (function () {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  campCheckoutRenderCurrency(campCheckoutDetectCurrency());
 
   window.CampCheckoutCapacity.init(document.querySelector('[data-camp-checkout-capacity]'));
 
