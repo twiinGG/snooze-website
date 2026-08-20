@@ -272,9 +272,50 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 Every row below is **DRIFT, repo ahead of live, August 18, 2026**. Paste the
 whole field from this branch after the migration and Edge Function are live.
 
+**CORRECTED 2026-08-21, page ids and source files both moved.** Two things in the original row were
+wrong by the time anyone came to paste it.
+
+**How the swap works, per Kade 2026-08-21.** There are two camp landing pages. The **`-WAITLIST` suffix
+marks the parked page**; the active page holds the bare slug `camp-snooze-sleep-coaching`. Each page's
+title describes the content it holds, so the title and the suffix together tell you what is live.
+
+| Page | Title, describes its content | Slug today | State today |
+|---|---|---|---|
+| [`2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit) | Welcome to Camp Snooze, the **checkout / primary** content | `camp-snooze-sleep-coaching-WAITLIST` | **Parked** |
+| [`2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit) | Join the Camp Snooze Waitlist, the **waitlist** content | `camp-snooze-sleep-coaching` | **Live** |
+
+Verified 2026-08-21 by structure, not by title: curling `/camp-snooze-sleep-coaching` returns
+`id="waitlist-section"` and no `id="pricing-section"`, and the `-WAITLIST` slug returns the reverse.
+
+**So the waitlist page is what every paid click lands on today.** That is the funnel's current front door,
+and it is why the launch needs both a paste and a swap, not a paste alone.
+
+`STATE CORRECTION: this table paired page 2151771543 with camp-snooze-landing-page-blocks-waitlist.html
+-> 2151771543 holds the CHECKOUT content. Pasting the waitlist HTML onto it would have put waitlist
+markup on the checkout page and left the actually-live waitlist page untouched. The two rows below pair
+each page with the file whose content it holds.`
+
+Kade's ruling on which variant is primary: the **checkout variant is the primary camp page** and the
+**waitlist variant is the backup**, kept for reinstating the waitlist later. Both files are maintained in
+sync; only the primary is in the launch-critical path.
+
+**The launch swap, concretely, and the order matters.** Kajabi will not hold one slug on two pages, so the
+bare slug has to be freed before it can be claimed:
+
+1. Paste the primary content onto page `2151771543` while it is still parked, and verify it on
+   `/camp-snooze-sleep-coaching-WAITLIST`. Nothing a buyer sees changes yet.
+2. Rename page `2151845416`'s slug to `camp-snooze-sleep-coaching-WAITLIST`. The bare slug is now free
+   and, for those few seconds, serving nothing.
+3. Rename page `2151771543`'s slug to `camp-snooze-sleep-coaching`.
+4. Curl the bare slug and confirm it now returns `id="pricing-section"`.
+
+Every ad URL, UTM and internal link keeps working throughout, because none of them change. Step 1 before
+step 2 is what keeps the window between them down to the two renames rather than a paste.
+
 | Row | Status | Kajabi field | Admin link | Whole-field repo source |
 |---|---|---|---|---|
-| P3-CAMP-LANDING-HTML | **DRIFT** | Camp landing custom-code block | [`/camp-snooze-sleep-coaching`, page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit) | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
+| P3-CAMP-LANDING-HTML | **DRIFT, and the page is currently PARKED** | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), today on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
+| P3-CAMP-WAITLIST-HTML | **DRIFT, backup surface, and the page is currently LIVE** | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), today on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
 | P3-CAMP-LANDING-CSS | **DRIFT** | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
 | P3-CAMP-LANDING-JS | **DRIFT** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
 | P3-CAMP-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |

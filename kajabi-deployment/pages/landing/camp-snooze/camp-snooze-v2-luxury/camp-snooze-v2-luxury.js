@@ -8,6 +8,19 @@ const CAMP_CURRENCY_CONFIG = {
 const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
+// Where a full or closed cohort's CTA sends a family. The waitlist variant hosts the form itself, so it
+// leaves this unset and gets the on-page anchor. The primary page has no waitlist form on it, so it sets
+// window.CAMP_WAITLIST_TARGET to the parked waitlist page's URL. Without this the primary page's
+// full-cohort CTA would point at an anchor that does not exist there and would silently do nothing.
+//
+// Resolved at render time, not at load time, deliberately. This file is pasted into a Kajabi theme's
+// Custom JS while the override is set by an inline script in the page's custom-code block, and Kajabi
+// does not guarantee that the block runs before the theme JS. Reading the value when the card is built
+// makes the two paste order-independent.
+function waitlistTarget() {
+  return window.CAMP_WAITLIST_TARGET || '#waitlist-section';
+}
+
 // Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
 const CAMP_CAPACITY_ANON_KEY = window.SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
@@ -48,7 +61,7 @@ window.CampCapacityWidget = (function () {
         : cohort.state === 'full' ? 'All 15 places are currently held' : 'This intake is closed';
       const action = isAvailable
         ? '<a class="btn-camp dynamic-cta" data-checkout data-cohort="' + cohort.cohort_number + '" href="' + checkoutUrl(cohort.cohort_number) + '">Choose Camp #' + cohort.cohort_number + '</a>'
-        : '<a class="btn-camp btn-outline" href="#waitlist-section" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
+        : '<a class="btn-camp btn-outline" href="' + waitlistTarget() + '" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
       return '<article class="camp-capacity-card camp-capacity-card--' + cohort.state + '">' +
         '<p class="camp-capacity-state">' + stateLabel + '</p>' +
         '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
