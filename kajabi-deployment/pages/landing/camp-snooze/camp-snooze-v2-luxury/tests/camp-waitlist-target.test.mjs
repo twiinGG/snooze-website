@@ -36,11 +36,19 @@ async function render(payload) {
   return root.innerHTML;
 }
 
-// 1. Waitlist variant: no override set, so the on-page anchor is kept.
+// 1. Waitlist variant: no override, and the section IS on the page, so the anchor is kept.
 delete window.CAMP_WAITLIST_TARGET;
+document.querySelector = (sel) => (sel === '#waitlist-section' ? {} : null);
 const onPage = await render(full(15));
 assert.match(onPage, /href="#waitlist-section"/);
 assert.match(onPage, /Join Camp #15 Waitlist/);
+
+// 1b. Selling variant: no override AND no waitlist section on the page. The CTA must never emit the
+// dead anchor; it falls back to email, a destination that always resolves.
+document.querySelector = () => null;
+const noSection = await render(full(15));
+assert.doesNotMatch(noSection, /href="#waitlist-section"/);
+assert.match(noSection, /href="mailto:camp@joinsnooze\.com/);
 
 // 2. Primary page: override set, so the CTA leaves for the parked waitlist page.
 const PARKED = 'https://www.joinsnooze.com/camp-snooze-sleep-coaching-WAITLIST';
@@ -50,6 +58,8 @@ assert.match(offPage, new RegExp('href="' + PARKED.replace(/[.*+?^${}()|[\]\\]/g
 assert.doesNotMatch(offPage, /href="#waitlist-section"/);
 
 // 3. Set after load, which is the Kajabi paste-order case the render-time lookup exists for.
+// The section is present here, so with no override the anchor is used; setting the override then wins.
+document.querySelector = (sel) => (sel === '#waitlist-section' ? {} : null);
 delete window.CAMP_WAITLIST_TARGET;
 assert.match(await render(full(15)), /href="#waitlist-section"/);
 window.CAMP_WAITLIST_TARGET = PARKED;

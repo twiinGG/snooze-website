@@ -18,7 +18,13 @@ const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
 // does not guarantee that the block runs before the theme JS. Reading the value when the card is built
 // makes the two paste order-independent.
 function waitlistTarget() {
-  return window.CAMP_WAITLIST_TARGET || '#waitlist-section';
+  const override = window.CAMP_WAITLIST_TARGET;
+  if (override) return override;
+  // Only offer the on-page anchor if the section is actually on this page. The selling variant has no
+  // waitlist section, and the waitlist page it used to point at is now parked as an unpublished draft,
+  // so a hardcoded URL there would 404. Falling back to email keeps the CTA a real destination.
+  if (document.querySelector('#waitlist-section')) return '#waitlist-section';
+  return 'mailto:camp@joinsnooze.com?subject=Camp%20Snooze%20waitlist';
 }
 
 // Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
