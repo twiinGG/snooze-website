@@ -1,5 +1,12 @@
 # Camp Snooze Checkout Page
 
+> **PRICE CORRECTION, 2026-08-21.** Every price below this line is dead. The `$690` base, the `$300`
+> discount code and the `$390` member price all predate the ratified structure. The locked prices, read
+> live from `get_offer` on 2026-08-21, are: non-member **US$611 / A$878 due today, then US$79 / A$119 per
+> month**, and member **US$611 / A$878 once, with nothing recurring**. The camp price is the price and the
+> first month of Snooze access is included. Full audit:
+> `docs/strategy/paid-scaling/4_working/2026-08-camp-funnel-completion/PRICING-AUDIT-2026-08-21.md`.
+
 **Location:** `kajabi-deployment/pages/camp-snooze/`  
 **Purpose:** Checkout/landing page for Camp Snooze virtual baby sleep summer camp
 
