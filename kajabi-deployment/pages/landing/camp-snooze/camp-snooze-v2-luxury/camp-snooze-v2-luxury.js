@@ -328,6 +328,11 @@ function campInjectToggles() {
   campUpdateToggleUI(document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD');
 }
 
+// UNUSED, and deliberately left in place. This date is long past and neither landing variant contains
+// any of the five countdown element ids (#hero-countdown, #hero-days, #hero-hours, #hero-minutes,
+// #hero-seconds), so updateCountdown() writes nothing and its interval clears itself on the first tick.
+// If you add a countdown block to a camp page, set this from the cohort feed FIRST. Left as-is it would
+// immediately render "Applications are now closed" to every buyer.
 const COUNTDOWN_DEADLINE = new Date('2026-03-31T23:59:00+11:00').getTime();
 
 function toggleModal(modalId, show) {
@@ -465,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <div style="display: flex; align-items: center; gap: 1rem; width: 100%; justify-content: space-between;">
             <div style="display: flex; align-items: center; gap: 0.75rem;">
               <div>
-                <span class="dynamic-price" data-usd="611" data-aud="878" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$611 USD</span>
+                <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
                 <span style="font-size: 0.8rem; font-weight: 500; color: var(--camp-cream); opacity: 0.85;"> today, then </span>
                 <span class="dynamic-price" data-usd="79" data-aud="119" data-period-usd="/mo USD" data-period-aud="/mo AUD" style="font-size: 0.95rem; font-weight: 600; color: var(--camp-cream);">$79/mo USD</span>
               </div>
