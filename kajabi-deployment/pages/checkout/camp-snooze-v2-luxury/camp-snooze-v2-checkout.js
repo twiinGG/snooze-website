@@ -33,7 +33,13 @@ function campCheckoutDetectCurrency() {
 function campCheckoutFormatPriceNum(num) {
   const n = Math.abs(parseFloat(String(num).replace(/[^0-9.-]/g, '')));
   if (Number.isNaN(n)) return num;
-  return n >= 1000 ? n.toLocaleString() : String(n);
+  // Same rule as the landing formatter: cents only when the amount has them, so 39.5 renders as 39.50
+  // rather than 39.5, and 690 stays 690.
+  const hasCents = Math.round(n * 100) % 100 !== 0;
+  return n.toLocaleString('en-US', {
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2
+  });
 }
 
 function campCheckoutRenderCurrency(currency) {

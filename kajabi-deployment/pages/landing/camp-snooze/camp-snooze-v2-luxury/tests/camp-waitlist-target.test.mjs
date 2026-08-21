@@ -70,6 +70,9 @@ const openHtml = await render(open(15));
 assert.match(openHtml, /Choose Camp #15/);
 assert.match(openHtml, /offers\/(K3Y6FEKX|46Bz9tk6)/);
 assert.doesNotMatch(openHtml, /Waitlist/);
-assert.match(openHtml, /15 of 15 places remaining/);
+// Deliberately asserts the ABSENCE of a count now. This line used to assert
+// "15 of 15 places remaining", which is the anti-social-proof string the display bands removed.
+assert.doesNotMatch(openHtml, /places remaining/);
+assert.doesNotMatch(openHtml, /camp-capacity-places/);
 
 console.log('WAITLIST TARGET PASSED: anchor kept without the override, parked page URL with it, honoured when set after load, open cohorts still go to checkout');

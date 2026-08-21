@@ -232,6 +232,17 @@
         Each Camp has room for 15 families. Choose an open intake or join the waitlist when one fills.
       </p>
     </div>
+    <div id="camp-currency-toggle-wrap" class="camp-currency-toggle-wrap" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+      <div class="camp-currency-toggle" style="display: inline-flex; border: 2px solid hsl(140,25%,75%); border-radius: 9999px; overflow: hidden; background: rgba(255,255,255,0.15); padding: 4px;">
+        <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.6rem 1.25rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <span style="font-size: 1.1em;"></span>USD
+        </button>
+        <button type="button" data-currency="AUD" aria-label="Australian Dollar" onclick="campSetCurrency('AUD', true)" style="padding: 0.6rem 1.25rem; border: none; background: hsl(38,70%,55%); color: hsl(150,35%,25%); font-family: DM Sans, sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <span style="font-size: 1.1em;"></span>AUD
+        </button>
+      </div>
+    </div>
+
     <div class="camp-capacity-widget" data-camp-capacity-widget aria-live="polite">
       <div class="camp-capacity-neutral">
         <p>Checking the latest Camp availability.</p>
@@ -646,7 +657,7 @@
     </div>
 
     <p class="fade-in-up" style="text-align: center; font-size: 0.9rem; color: var(--muted-foreground); margin-top: 1rem;">
-      Your Snooze access continues at <span class="dynamic-price" data-usd="79" data-aud="119">$79</span> a month after your first month, and you can cancel anytime.<br>
+      Your Snooze access continues at <span class="dynamic-price" data-usd="39.50" data-aud="59.50">$39.50</span> a month after your first month, which is half the usual price, and you can cancel anytime.<br>
       Snooze members use checkout link inside Snooze Village for your discount.
     </p>
 
@@ -771,7 +782,7 @@
           </h3>
           <p style="color: var(--muted-foreground); line-height: 1.75;">
             Along with the two-week intensive Camp experience you will gain access to Snooze, the all-access baby sleep support from The Sleep Concierge.
-            <p style="color: var(--muted-foreground); line-height: 1.75;">Your investment is $690 USD due today, which includes your first month of Snooze access, then $79 USD a month, or get two weeks free with quarterly access.</p>
+            <p style="color: var(--muted-foreground); line-height: 1.75;">Your investment is $690 USD due today, which includes your first month of Snooze access, then $39.50 USD a month, half the usual price, or get two weeks free with quarterly access.</p>
           </p>
         </div>
       </div>

@@ -193,7 +193,13 @@ function campSetCurrency(currency, save) {
 function formatPriceNum(num) {
   const n = Math.abs(parseFloat(String(num).replace(/[^0-9.-]/g, '')));
   if (Number.isNaN(n)) return num;
-  const s = n >= 1000 ? n.toLocaleString() : String(n);
+  // Cents are rendered only when the amount actually has them. String(39.5) is "39.5", which would put
+  // "$39.5/mo" on the page. Whole amounts stay whole, so $690 does not become $690.00.
+  const hasCents = Math.round(n * 100) % 100 !== 0;
+  const s = n.toLocaleString('en-US', {
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2
+  });
   return num < 0 ? '-' + s : s;
 }
 
@@ -487,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <div>
                 <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
                 <span style="font-size: 0.8rem; font-weight: 500; color: var(--camp-cream); opacity: 0.85;"> today, then </span>
-                <span class="dynamic-price" data-usd="79" data-aud="119" data-period-usd="/mo USD" data-period-aud="/mo AUD" style="font-size: 0.95rem; font-weight: 600; color: var(--camp-cream);">$79/mo USD</span>
+                <span class="dynamic-price" data-usd="39.50" data-aud="59.50" data-period-usd="/mo USD" data-period-aud="/mo AUD" style="font-size: 0.95rem; font-weight: 600; color: var(--camp-cream);">$39.50/mo USD</span>
               </div>
               <div class="sticky-currency-toggle camp-currency-toggle" style="display: inline-flex; border: 1px solid hsl(140,25%,60%); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.1); padding: 2px;">
                 <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">USD</button>
