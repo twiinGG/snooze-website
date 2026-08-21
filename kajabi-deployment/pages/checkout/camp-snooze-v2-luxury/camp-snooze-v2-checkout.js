@@ -56,6 +56,38 @@ function campCheckoutRenderCurrency(currency) {
   });
 }
 
+// The order summary and the Key Dates block used to hardcode one cohort, "Camp Snooze #15"
+// with its August dates, while the capacity card beside them resolved the live cohort from the
+// feed. The feed's own RPC drops a camp once its start date passes, so from the morning of
+// 2026-08-31 the two halves of the same page disagreed: the card said #16 and the summary the
+// buyer was paying against still said #15. These fill the summary from the same resolved cohort.
+// The static text stays in the HTML as the fallback, so a failed feed leaves a correct-looking
+// page rather than an empty one.
+function campCheckoutFormatCohortDate(value) {
+  if (!value) return 'date to be confirmed';
+  // Cohort dates are plain calendar dates. Pin them to Melbourne so a US buyer's browser cannot
+  // render the day before.
+  return new Intl.DateTimeFormat('en-AU', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  }).format(new Date(value + 'T00:00:00+10:00'));
+}
+
+function campCheckoutRenderCohortText(cohort) {
+  if (!cohort) return;
+  const writes = [
+    ['[data-camp-cohort-title]', cohort.title || ('Camp Snooze #' + cohort.cohort_number)],
+    ['[data-camp-cohort-start]', campCheckoutFormatCohortDate(cohort.start_date)],
+    ['[data-camp-cohort-access]', campCheckoutFormatCohortDate(cohort.access_friday)]
+  ];
+  writes.forEach(function (pair) {
+    const text = pair[1];
+    if (!text) return;
+    document.querySelectorAll('#snooze-custom-checkout ' + pair[0]).forEach(function (el) {
+      el.textContent = text;
+    });
+  });
+}
+
 window.CampCheckoutCapacity = (function () {
   function fallback(root) {
     root.dataset.capacityState = 'fallback';
@@ -68,22 +100,33 @@ window.CampCheckoutCapacity = (function () {
       const match = cohorts.find(function (cohort) { return cohort.cohort_number === requested; });
       if (match) return match;
     }
-    return cohorts.find(function (cohort) { return cohort.state === 'open' || cohort.state === 'filling'; }) || cohorts[0];
+    // The feed bands availability open / filling / low / full / closed. 'low' is still a
+    // sellable camp, so it belongs here. Omitting it made the checkout skip a camp that had
+    // 1 to 5 seats left and name the NEXT camp instead, on the page selling the current one.
+    return cohorts.find(function (cohort) {
+      return cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
+    }) || cohorts[0];
   }
 
   function render(root, cohort) {
     root.dataset.capacityState = cohort.state;
-    const start = cohort.start_date
-      ? new Intl.DateTimeFormat('en-AU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(cohort.start_date + 'T00:00:00+10:00'))
-      : 'date to be confirmed';
+    const start = campCheckoutFormatCohortDate(cohort.start_date);
     if (cohort.state === 'full' || cohort.state === 'closed') {
       root.innerHTML = '<strong>Camp Snooze #' + cohort.cohort_number + ' is ' + cohort.state + '</strong>' +
         '<span>Starts ' + start + '. Join the waitlist before completing checkout.</span>' +
         '<a href="https://www.joinsnooze.com/camp-snooze#waitlist-section">Join the Waitlist</a>';
       return;
     }
+    // Same band rule the landing page already applies: a precise count appears ONLY when the camp
+    // is genuinely low, because "15 of 15 places remain" tells a buyer that nobody has booked.
+    //   open     10+ left   no places line at all
+    //   filling  6 to 9     "Filling fast", no number
+    //   low      1 to 5     the real number
+    const places = cohort.state === 'low'
+      ? (cohort.seats_remaining === 1 ? ' Only 1 place left.' : ' Only ' + cohort.seats_remaining + ' places left.')
+      : cohort.state === 'filling' ? ' Filling fast.' : '';
     root.innerHTML = '<strong>Camp Snooze #' + cohort.cohort_number + '</strong>' +
-      '<span>Starts ' + start + '. ' + cohort.seats_remaining + ' of 15 places remain.</span>';
+      '<span>Starts ' + start + '.' + places + '</span>';
   }
 
   async function init(root, options) {
@@ -104,7 +147,9 @@ window.CampCheckoutCapacity = (function () {
       if (!response.ok) throw new Error('capacity feed failed');
       const body = await response.json();
       if (!body || !Array.isArray(body.cohorts) || body.cohorts.length === 0) throw new Error('capacity feed shape invalid');
-      render(root, chooseCohort(body.cohorts));
+      const cohort = chooseCohort(body.cohorts);
+      render(root, cohort);
+      campCheckoutRenderCohortText(cohort);
       return 'ready';
     } catch (error) {
       fallback(root);
