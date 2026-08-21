@@ -42,4 +42,18 @@ If the feed fails, it shows a neutral status and does not disable checkout.
 
 ### Change log
 
+- **2026-08-21 (PM-005 follow-up, cohort rollover):** the order summary stopped hardcoding a cohort.
+  `camp-snooze-checkout-blocks.html` and `camp-snooze-member-checkout-blocks.html` now carry
+  `data-camp-cohort-title`, `data-camp-cohort-start` and `data-camp-cohort-access`, and
+  `camp-snooze-v2-checkout.js` fills them from the same cohort the capacity card already resolves.
+  `get_camp_capacity` drops a camp once its `start_date` has passed, so before this the card would
+  have rolled to Camp #16 on 2026-08-31 while the summary the buyer was paying against still said
+  Camp #15. Two more fixes in the same pass: `chooseCohort` now accepts the `low` band, which is 1
+  to 5 seats and still sellable, where before a camp at 3 seats was skipped and the next camp named
+  in its place; and the card follows the landing page's band rule instead of printing "15 of 15
+  places remain" on a camp nobody has booked. Static HTML text is the dead-feed fallback and still
+  names Camp 15, so it needs a refresh once Camp 15 starts. Test:
+  `tests/camp-checkout-cohort-summary.test.mjs`. **Needs a re-paste of all three rows together, see
+  PASTE-MAP.md.**
+
 - **2026-07-04 (CU-001 session 3 execution):** single-camp checkout repriced off the dead `$390` member price to the ratified §1.7 figures: non-member `$690 / A$997`, member `$611 / A$878`, member saving `$79 / A$119` (the bonus first month a member does not need). Applied to `camp-snooze-member-checkout-blocks.html` and `camp-snooze-checkout-blocks.html` (the two live single-camp blocks that remain here). **The bundle, multiples and feb9 blocks were retired** to `../../_retired/checkout-camp-snooze-bundles/` (decision-additions item A=B: composite totals + unratified multiples price have no §1.7 basis, feb9 is a past cohort); see `docs/projects/copy-uplift/10-decision-additions.md` item A. Camp is to be presented as its own total price with the bonus first month of membership framed as an add-on, not "inclusive"; full reframe deferred to the alumni-50%-off review for the open pricing questions. Spelling/em-dash HARD fixes applied to all blocks.

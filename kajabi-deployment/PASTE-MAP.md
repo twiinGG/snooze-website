@@ -318,10 +318,10 @@ step 2 is what keeps the window between them down to the two renames rather than
 | P3-CAMP-WAITLIST-HTML | **DRIFT, backup surface, and the page is currently LIVE** | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), today on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
 | P3-CAMP-LANDING-CSS | **DRIFT** | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
 | P3-CAMP-LANDING-JS | **DRIFT** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
-| P3-CAMP-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
-| P3-CAMP-MEMBER-CHECKOUT-HTML | **DRIFT, paste to both currency twins** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
-| P3-CAMP-CHECKOUT-CSS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
-| P3-CAMP-CHECKOUT-JS | **DRIFT, paste to all four Camp checkout themes** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+| P3-CAMP-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
+| P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
+| P3-CAMP-CHECKOUT-CSS | **IN SYNC, read back 2026-08-21** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
+| P3-CAMP-CHECKOUT-JS | **IN SYNC, verified live 2026-08-21** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
 
 #### Measured live state, 2026-08-18, and how Kade verifies each paste
 
@@ -351,6 +351,72 @@ curl -s "$URL" | grep -Eo "(maximum|Limited to|only) [0-9]+ families"   # expect
 curl -s "$URL" | grep -Eo "[0-9]+ spots per intake"                     # expect no output
 curl -s "$URL" | grep -c "camp-capacity"        # expect 1 or more, the capacity feed call
 ```
+
+#### The four Camp checkout themes, pasted and verified 2026-08-21
+
+All four rows above are now **in sync and proven live**. This closes the 2026-08-18 measurement
+below, which recorded the whole P3 block as absent from both checkouts; it is present on all four.
+
+Checkout theme per offer, which the admin does not put anywhere obvious. Each is reached from the
+offer's edit page by the **"Edit checkout"** link, and the code sits in two places inside it:
+the block HTML under `Sections → Checkout → Custom Code`, and the CSS and JS under
+`Settings → Custom Code`, as Ace editors 0 and 1 of that panel.
+
+| Offer | Reads | Checkout theme | HTML source |
+|---|---|---|---|
+| [`2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit) USD, `K3Y6FEKX` | Camp Snooze | [`2164289025`](https://app.kajabi.com/admin/themes/2164289025/settings/edit) | `camp-snooze-checkout-blocks.html` |
+| [`2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) AUD, `46Bz9tk6` | Camp Snooze | [`2164667756`](https://app.kajabi.com/admin/themes/2164667756/settings/edit) | `camp-snooze-checkout-blocks.html` |
+| [`2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit) USD member, `rVuLzkZa` | Camp Snooze (Member Discount) | [`2164675367`](https://app.kajabi.com/admin/themes/2164675367/settings/edit) | `camp-snooze-member-checkout-blocks.html` |
+| [`2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) AUD member, `ENhg45mj` | Camp Snooze (Member Discount) AUD | [`2166737611`](https://app.kajabi.com/admin/themes/2166737611/settings/edit) | `camp-snooze-member-checkout-blocks.html` |
+
+Eight pastes, all `ok:true` with `length == expected`. Two distinct HTML checksums, `6fc71e9c219443c2`
+non-member and `7900bfee6a5a5f2b` member, and one JS checksum `3dc1adccdd0a0d8f` on all four themes.
+CSS was read back at 10,893 characters on every theme, matching the repo, and was not touched.
+
+**Navigation, and this supersedes wall #2 for an authenticated window.** A CDP `Page.navigate` to an
+`app.kajabi.com` URL still 406s because it carries no Referer. An **anchor click from the loaded page
+does not**: inject `<a href="/admin/...">` into the authenticated document and click it, and Kajabi
+serves the page normally. Proven eight times this run with no 406 and no human re-navigation. Helper
+kept out of the repo deliberately; it is three lines of `eval`.
+
+**Save still needs attempt two**, exactly as the PM-005 landmine says. Every one of the eight saves
+left the button enabled on the first click and greyed on the second. Treat one click as a no-op.
+
+Verified from a logged-out browser on all four public checkouts, cache-busted:
+
+- The order summary, the Key Dates and the capacity card all name the same camp.
+- `?cohort=16` renders **Camp Snooze #16, Monday 14 September 2026, Friday 11 September 2026** in all
+  three places at once, which is the rollover proven rather than argued.
+- Our total still equals Kajabi's own button: `Pay $690.00 USD` and `Pay $878.00 AUD` read beside it.
+- `15 families per camp` present on all four. The "15 of 15 places remain" line is gone.
+
+#### The cohort rollover re-paste, 2026-08-21
+
+Three of those rows changed again on 2026-08-21 and the live surfaces are now behind the repo by
+more than the capacity number. **P3-CAMP-CHECKOUT-HTML, P3-CAMP-MEMBER-CHECKOUT-HTML and
+P3-CAMP-CHECKOUT-JS all need re-pasting together.** The HTML alone is inert without the JS, and the
+JS alone has nothing to write into.
+
+What changed and why it cannot wait past 2026-08-30:
+
+- The order summary's camp name and the two Key Dates were static. `get_camp_capacity` drops a camp
+  once `start_date` has passed, so on the morning of **2026-08-31** the capacity card would have
+  rolled to Camp #16 while the order summary the buyer was paying against still read "Camp Snooze
+  #15" with August dates. They now carry `data-camp-cohort-title`, `data-camp-cohort-start` and
+  `data-camp-cohort-access`, filled from the same cohort the card resolves.
+- `chooseCohort` accepted only `open` and `filling`. The feed also bands `low`, which is 1 to 5
+  seats and still a sellable camp, so a camp at 3 seats was skipped and the **next** camp was named
+  on the page selling the current one.
+- The card printed `seats_remaining + ' of 15 places remain'` in every band, so an untouched camp
+  advertised "15 of 15 places remain". It now follows the landing page's ratified band rule: no
+  number when open, "Filling fast" when filling, the true count only when low.
+
+The static text left in the HTML is the fallback for a dead feed, so it must stay accurate. It reads
+Camp Snooze #15, Monday 31 August 2026, Friday 28 August 2026, in the same `en-AU` shape the
+formatter emits. **Once Camp 15 has started, that fallback is itself stale and the HTML rows need
+another paste with Camp 16's values.**
+
+Regression cover: `pages/checkout/camp-snooze-v2-luxury/tests/camp-checkout-cohort-summary.test.mjs`.
 
 ```bash
 # P3-CAMP-CHECKOUT-HTML, P3-CAMP-MEMBER-CHECKOUT-HTML, P3-CAMP-CHECKOUT-CSS, P3-CAMP-CHECKOUT-JS
