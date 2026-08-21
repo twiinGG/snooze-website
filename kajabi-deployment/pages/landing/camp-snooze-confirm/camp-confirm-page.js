@@ -96,7 +96,14 @@ window.CampConfirm = (function () {
   // What makes the `Member` case reliable is a checkout setting rather than
   // anything on this page: "Require new customers to create password at
   // checkout" on the camp offers, which is what puts a fresh buyer in a session
-  // before they arrive here. Kade turned that on for exactly this reason.
+  // before they arrive here.
+  //
+  // AS OF 2026-08-21 THAT SETTING IS OFF ON ALL SIX CAMP OFFERS. Read live from
+  // each offer's Settings tab (`offer_collect_password_checkbox`). Kade decided
+  // to turn it on; nobody has. Until somebody does, a brand-new buyer arrives
+  // here with no session and gets the sign-in state rather than the confirm
+  // button. The page is correct either way; it just cannot do its job for a new
+  // buyer until that setting changes.
   //
   // Two overrides stay ahead of the global. `SN_CAMP_CONTACT_ID` is for the
   // page's own custom-code block, if Kajabi's Liquid context ever turns out to
