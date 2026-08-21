@@ -338,8 +338,10 @@ an email address to a contact (`filter[email]` returns 200 and the newest 25 con
 tested 2026-08-21). A buyer with no session gets the sign-in state, not the confirm button.
 
 What puts a fresh buyer in a session is **`Require new customers to create password at checkout`** on the
-camp offers, which Kade turned on for that reason on 2026-08-21. If that setting is ever switched off, this
-page stops working for new buyers and the symptom is a sign-in prompt rather than an error.
+camp offers. **It is OFF on all six as of 2026-08-21**, read live from each offer's Settings tab, so a
+brand-new buyer currently reaches this page with no session and sees the sign-in state rather than the
+confirm button. Kade decided to turn it on; it has not been done. Check it before concluding the page is
+broken, because the symptom is a sign-in prompt rather than an error.
 
 ### P3 Camp capacity and waitlist paste queue
 
