@@ -98,12 +98,15 @@ window.CampConfirm = (function () {
   // checkout" on the camp offers, which is what puts a fresh buyer in a session
   // before they arrive here.
   //
-  // AS OF 2026-08-21 THAT SETTING IS OFF ON ALL SIX CAMP OFFERS. Read live from
-  // each offer's Settings tab (`offer_collect_password_checkbox`). Kade decided
-  // to turn it on; nobody has. Until somebody does, a brand-new buyer arrives
-  // here with no session and gets the sign-in state rather than the confirm
-  // button. The page is correct either way; it just cannot do its job for a new
-  // buyer until that setting changes.
+  // TURNED ON, ON ALL SIX CAMP OFFERS, 2026-08-21. Kade's decision, and each one
+  // verified afterwards by reloading the offer's Settings tab and reading
+  // `offer_collect_password_checkbox` back, rather than trusting the save. The
+  // six: 2150884129, 2150946767, 2150947919, 2151264520, 2151114090,
+  // 2151134284.
+  //
+  // If it is ever switched off, this page stops working for new buyers and the
+  // symptom is a sign-in prompt, not an error. Check it before debugging
+  // anything here.
   //
   // Two overrides stay ahead of the global. `SN_CAMP_CONTACT_ID` is for the
   // page's own custom-code block, if Kajabi's Liquid context ever turns out to
