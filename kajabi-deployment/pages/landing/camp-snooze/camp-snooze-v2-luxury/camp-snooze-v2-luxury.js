@@ -58,13 +58,22 @@ window.CampCapacityWidget = (function () {
   function renderCohorts(root, cohorts) {
     root.dataset.capacityState = 'ready';
     root.innerHTML = cohorts.map(function (cohort) {
-      const isAvailable = cohort.state === 'open' || cohort.state === 'filling';
-      const stateLabel = cohort.state === 'filling' ? 'Filling now' :
-        cohort.state === 'full' ? 'Waitlist open' :
+      // Display bands, per Kade 2026-08-21. The feed decides the band so the page and the checkout card
+      // cannot disagree. A precise number appears ONLY when it is genuinely low, because
+      // "15 of 15 places remaining" tells a visitor that nobody has booked.
+      //   open     10+ left   no capacity line at all
+      //   filling  6 to 9     "Filling fast", no number
+      //   low      1 to 5     the real number
+      //   full     0          taken, and the sold-out paths take over
+      const isAvailable = cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
+      const stateLabel = cohort.state === 'filling' ? 'Filling fast' :
+        cohort.state === 'low' ? 'Almost full' :
+        cohort.state === 'full' ? 'Full' :
         cohort.state === 'closed' ? 'Checkout closed' : 'Open';
-      const availability = isAvailable
-        ? cohort.seats_remaining + ' of 15 places remaining'
-        : cohort.state === 'full' ? 'All 15 places are currently held' : 'This intake is closed';
+      const places = cohort.seats_remaining === 1 ? '1 place left' : 'Only ' + cohort.seats_remaining + ' places left';
+      const availability = cohort.state === 'low' ? places :
+        cohort.state === 'full' ? 'All 15 places are taken' :
+        cohort.state === 'closed' ? 'This intake is closed' : '';
       const action = isAvailable
         ? '<a class="btn-camp dynamic-cta" data-checkout data-cohort="' + cohort.cohort_number + '" href="' + checkoutUrl(cohort.cohort_number) + '">Choose Camp #' + cohort.cohort_number + '</a>'
         : '<a class="btn-camp btn-outline" href="' + waitlistTarget() + '" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
@@ -72,7 +81,7 @@ window.CampCapacityWidget = (function () {
         '<p class="camp-capacity-state">' + stateLabel + '</p>' +
         '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
         '<p class="camp-capacity-date">Starts ' + dateLabel(cohort.start_date) + '</p>' +
-        '<p class="camp-capacity-places">' + availability + '</p>' + action + '</article>';
+        (availability ? '<p class="camp-capacity-places">' + availability + '</p>' : '') + action + '</article>';
     }).join('');
 
     root.querySelectorAll('[data-waitlist-cohort]').forEach(function (link) {
