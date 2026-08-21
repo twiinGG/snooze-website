@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+#sn-cc-page {
+  --sn-cc-coral: #f43357;
+  --sn-cc-coral-dark: #b51f3a;
+  --sn-cc-navy: #1f293b;
+  --sn-cc-ink: #273244;
+  --sn-cc-muted: #5f6f82;
+  --sn-cc-cream: #faf7f4;
+  --sn-cc-blush: #f9ecef;
+  --sn-cc-line: #eadde0;
+  --sn-cc-white: #ffffff;
+  --sn-cc-font-body: 'Poppins', Arial, sans-serif;
+  --sn-cc-font-head: 'Playfair Display', Georgia, serif;
+  --sn-cc-focus: 0 0 0 4px rgba(244, 51, 87, 0.2);
+
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+  background: var(--sn-cc-white);
+  color: var(--sn-cc-ink);
+  font-family: var(--sn-cc-font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  isolation: isolate;
+}
+
+#sn-cc-page *,
+#sn-cc-page *::before,
+#sn-cc-page *::after {
+  box-sizing: border-box;
+}
+
+#sn-cc-page [hidden] {
+  display: none !important;
+}
+
+#sn-cc-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#sn-cc-page p,
+#sn-cc-page h1,
+#sn-cc-page h2,
+#sn-cc-page h3 {
+  margin: 0;
+}
+
+#sn-cc-page h1,
+#sn-cc-page h2 {
+  color: var(--sn-cc-navy);
+  font-family: var(--sn-cc-font-head);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+#sn-cc-page .sn-cc-container {
+  width: min(100% - 40px, 1160px);
+  margin-inline: auto;
+}
+
+#sn-cc-page .sn-cc-skip {
+  position: fixed;
+  z-index: 20;
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--sn-cc-navy);
+  color: var(--sn-cc-white);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 180ms ease-out;
+}
+
+#sn-cc-page .sn-cc-skip:focus {
+  transform: translateY(0);
+}
+
+#sn-cc-page .sn-cc-header {
+  border-block-end: 1px solid var(--sn-cc-line);
+  background: var(--sn-cc-white);
+}
+
+#sn-cc-page .sn-cc-header-inner {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+#sn-cc-page .sn-cc-brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+#sn-cc-page .sn-cc-wordmark {
+  color: var(--sn-cc-coral-dark);
+  font-family: var(--sn-cc-font-head);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+#sn-cc-page .sn-cc-brandline {
+  margin-block-start: 4px;
+  color: var(--sn-cc-coral-dark);
+  font-size: 0.85rem;
+}
+
+#sn-cc-page .sn-cc-header-status {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding-inline: 16px;
+  border-radius: 999px;
+  background: var(--sn-cc-blush);
+  color: var(--sn-cc-coral-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+#sn-cc-page .sn-cc-header-status::before {
+  width: 8px;
+  height: 8px;
+  margin-inline-end: 8px;
+  border-radius: 50%;
+  background: var(--sn-cc-coral-dark);
+  content: '';
+}
+
+#sn-cc-page .sn-cc-hero {
+  padding-block: clamp(48px, 7vw, 80px);
+  background: var(--sn-cc-cream);
+}
+
+#sn-cc-page .sn-cc-kicker {
+  display: inline-flex;
+  margin-block-end: 20px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--sn-cc-coral-dark);
+  color: var(--sn-cc-white);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+#sn-cc-page .sn-cc-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+}
+
+#sn-cc-page .sn-cc-lead {
+  max-width: 66ch;
+  margin-block-start: 20px;
+  color: var(--sn-cc-ink);
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  text-wrap: pretty;
+}
+
+/*
+ * THE CONFIRM WIDGET.
+ *
+ * This card is the primary object on the page, not one section among equals.
+ * It carries its own elevation and a wider border than any other block here
+ * so it reads first regardless of which state JS has revealed.
+ */
+#sn-cc-page .sn-cc-confirm-section {
+  padding-block: clamp(40px, 6vw, 64px);
+  background: var(--sn-cc-white);
+}
+
+#sn-cc-page .sn-cc-card {
+  max-width: 640px;
+  margin-inline: auto;
+  padding: clamp(32px, 5vw, 48px);
+  border: 2px solid var(--sn-cc-line);
+  border-radius: 20px;
+  background: var(--sn-cc-white);
+  box-shadow: 0 24px 48px -32px rgba(31, 41, 59, 0.28);
+}
+
+#sn-cc-page .sn-cc-card-label {
+  margin-block-end: 8px;
+  color: var(--sn-cc-coral-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#sn-cc-page .sn-cc-card h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+/* Each state is shown one at a time by JS via `hidden`; see the [hidden]
+   rule above. This rule only spaces out whichever state is visible. */
+#sn-cc-page .sn-cc-state {
+  display: grid;
+  gap: 16px;
+  margin-block-start: 20px;
+}
+
+#sn-cc-page .sn-cc-state h3 {
+  color: var(--sn-cc-navy);
+  font-family: var(--sn-cc-font-head);
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+/* Programmatically focused (tabindex="-1") when a state renders, so it is
+   not a real interactive element; matches the sibling thank-you pages'
+   treatment of their own programmatic-focus headings. */
+#sn-cc-page .sn-cc-state h3:focus {
+  outline: none;
+}
+
+#sn-cc-page .sn-cc-held {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: var(--sn-cc-blush);
+  color: var(--sn-cc-ink);
+  font-size: 1.05rem;
+}
+
+#sn-cc-page .sn-cc-held strong {
+  color: var(--sn-cc-coral-dark);
+}
+
+#sn-cc-page .sn-cc-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: var(--sn-cc-coral-dark);
+  color: var(--sn-cc-white);
+  font-family: var(--sn-cc-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 180ms ease-out, transform 180ms ease-out;
+}
+
+#sn-cc-page .sn-cc-button:hover {
+  transform: translateY(-2px);
+}
+
+#sn-cc-page .sn-cc-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+#sn-cc-page .sn-cc-button-quiet {
+  background: transparent;
+  border-color: var(--sn-cc-coral-dark);
+  color: var(--sn-cc-coral-dark);
+}
+
+/* The picker is deliberately secondary: the default camp is the answer for
+   almost everybody, so the summary reads as a quiet text link, not a
+   button. */
+#sn-cc-page .sn-cc-switch {
+  margin-block-start: 4px;
+}
+
+#sn-cc-page .sn-cc-switch summary {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sn-cc-coral-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  list-style: none;
+}
+
+#sn-cc-page .sn-cc-switch summary::-webkit-details-marker {
+  display: none;
+}
+
+#sn-cc-page .sn-cc-switch-body {
+  display: grid;
+  gap: 10px;
+  margin-block-start: 12px;
+}
+
+#sn-cc-page .sn-cc-switch-note {
+  margin-block-start: 0;
+}
+
+#sn-cc-page .sn-cc-label {
+  color: var(--sn-cc-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#sn-cc-page .sn-cc-select {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 2px solid var(--sn-cc-line);
+  border-radius: 10px;
+  background: var(--sn-cc-white);
+  color: var(--sn-cc-ink);
+  font-family: var(--sn-cc-font-body);
+  font-size: 1rem;
+}
+
+#sn-cc-page .sn-cc-select:hover {
+  border-color: var(--sn-cc-coral);
+}
+
+#sn-cc-page .sn-cc-error {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--sn-cc-blush);
+  color: var(--sn-cc-coral-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#sn-cc-page .sn-cc-done-mark {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--sn-cc-navy);
+  color: var(--sn-cc-white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+#sn-cc-page .sn-cc-muted {
+  color: var(--sn-cc-muted);
+  font-size: 0.9rem;
+}
+
+#sn-cc-page .sn-cc-text-link,
+#sn-cc-page .sn-cc-inline-link {
+  color: var(--sn-cc-coral-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#sn-cc-page .sn-cc-card :focus-visible,
+#sn-cc-page .sn-cc-brand:focus-visible,
+#sn-cc-page .sn-cc-app-actions a:focus-visible,
+#sn-cc-page .sn-cc-footer a:focus-visible {
+  outline: none;
+  box-shadow: var(--sn-cc-focus);
+}
+
+/*
+ * WELCOME VIDEO PLACEHOLDER.
+ *
+ * The section ships `hidden` until the video is recorded. This box still
+ * needs to look intentional, not broken, in case it is ever previewed with
+ * `hidden` removed before the embed is dropped in.
+ */
+#sn-cc-page .sn-cc-video-section {
+  padding-block: clamp(48px, 7vw, 80px);
+  background: var(--sn-cc-cream);
+}
+
+#sn-cc-page .sn-cc-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-block-start: 32px;
+  overflow: hidden;
+  border: 2px solid var(--sn-cc-line);
+  border-radius: 20px;
+  background: var(--sn-cc-blush);
+}
+
+#sn-cc-page .sn-cc-video-frame::before {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 0 16px 26px;
+  border-color: transparent transparent transparent var(--sn-cc-coral-dark);
+  content: '';
+}
+
+#sn-cc-page .sn-cc-steps-section {
+  padding-block: clamp(56px, 8vw, 96px);
+  background: var(--sn-cc-white);
+}
+
+#sn-cc-page .sn-cc-section-heading {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+#sn-cc-page .sn-cc-section-heading h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+#sn-cc-page .sn-cc-section-heading p {
+  margin-block-start: 16px;
+  color: var(--sn-cc-muted);
+  font-size: 1.02rem;
+}
+
+#sn-cc-page .sn-cc-steps {
+  max-width: 760px;
+  margin: 40px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sn-cc-page .sn-cc-step {
+  display: flex;
+  gap: 20px;
+  padding-block: 32px;
+  border-block-start: 1px solid var(--sn-cc-line);
+}
+
+#sn-cc-page .sn-cc-step:first-child {
+  padding-block-start: 0;
+  border-block-start: 0;
+}
+
+#sn-cc-page .sn-cc-step-number {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sn-cc-blush);
+  color: var(--sn-cc-coral-dark);
+  font-family: var(--sn-cc-font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#sn-cc-page .sn-cc-step-body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+#sn-cc-page .sn-cc-step-body h3 {
+  color: var(--sn-cc-navy);
+  font-family: var(--sn-cc-font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#sn-cc-page .sn-cc-step-body p {
+  margin-block-start: 10px;
+  color: var(--sn-cc-ink);
+  font-size: 1rem;
+}
+
+#sn-cc-page .sn-cc-step-body .sn-cc-muted {
+  margin-block-start: 12px;
+}
+
+#sn-cc-page .sn-cc-step-body .sn-cc-button {
+  margin-block-start: 16px;
+}
+
+#sn-cc-page .sn-cc-app-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block-start: 16px;
+}
+
+#sn-cc-page .sn-cc-app-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: transform 180ms ease-out;
+}
+
+#sn-cc-page .sn-cc-app-actions a:hover {
+  transform: translateY(-2px);
+}
+
+#sn-cc-page .sn-cc-app-actions img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#sn-cc-page .sn-cc-app-actions a[data-app-platform='ios'] img {
+  width: 180px;
+}
+
+#sn-cc-page .sn-cc-app-actions a[data-app-platform='android'] img {
+  width: 200px;
+}
+
+#sn-cc-page .sn-cc-footer {
+  border-block-start: 1px solid var(--sn-cc-line);
+  background: var(--sn-cc-cream);
+}
+
+#sn-cc-page .sn-cc-footer-inner {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+#sn-cc-page .sn-cc-footer p {
+  color: var(--sn-cc-muted);
+}
+
+#sn-cc-page .sn-cc-footer a {
+  color: var(--sn-cc-coral-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  #sn-cc-page .sn-cc-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  #sn-cc-page .sn-cc-container {
+    width: min(100% - 32px, 1160px);
+  }
+
+  #sn-cc-page .sn-cc-header-inner {
+    min-height: 80px;
+  }
+
+  #sn-cc-page .sn-cc-brandline {
+    font-size: 0.85rem;
+  }
+
+  #sn-cc-page .sn-cc-header-status {
+    min-height: 36px;
+    padding-inline: 12px;
+    font-size: 0.85rem;
+  }
+
+  #sn-cc-page .sn-cc-hero {
+    padding-block: 40px;
+  }
+
+  #sn-cc-page .sn-cc-hero h1 {
+    font-size: clamp(2.1rem, 10vw, 2.8rem);
+  }
+
+  #sn-cc-page .sn-cc-confirm-section {
+    padding-block: 32px;
+  }
+
+  #sn-cc-page .sn-cc-card {
+    padding: 24px 20px;
+  }
+
+  #sn-cc-page .sn-cc-button {
+    width: 100%;
+  }
+
+  #sn-cc-page .sn-cc-steps-section {
+    padding-block: 48px;
+  }
+
+  #sn-cc-page .sn-cc-step {
+    flex-direction: column;
+    gap: 12px;
+    padding-block: 24px;
+  }
+
+  #sn-cc-page .sn-cc-step-body .sn-cc-button {
+    width: 100%;
+  }
+
+  #sn-cc-page .sn-cc-footer-inner {
+    flex-direction: column;
+    padding-block: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sn-cc-page *,
+  #sn-cc-page *::before,
+  #sn-cc-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  #sn-cc-page .sn-cc-card,
+  #sn-cc-page .sn-cc-button,
+  #sn-cc-page .sn-cc-select,
+  #sn-cc-page .sn-cc-video-frame {
+    border: 2px solid CanvasText;
+  }
+}

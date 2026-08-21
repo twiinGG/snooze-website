@@ -1,0 +1,205 @@
+<div id="sn-cc-page">
+  <a class="sn-cc-skip" href="#sn-cc-main">Skip to confirming your camp</a>
+
+  <header class="sn-cc-header">
+    <div class="sn-cc-container sn-cc-header-inner">
+      <a class="sn-cc-brand" href="https://www.joinsnooze.com" aria-label="Snooze by The Sleep Concierge home">
+        <span class="sn-cc-wordmark">snooze.</span>
+        <span class="sn-cc-brandline">by The Sleep Concierge</span>
+      </a>
+      <span class="sn-cc-header-status">Payment received</span>
+    </div>
+  </header>
+
+  <main id="sn-cc-main">
+    <section class="sn-cc-hero" aria-labelledby="sn-cc-title">
+      <div class="sn-cc-container">
+        <p class="sn-cc-kicker">Camp Snooze</p>
+        <h1 id="sn-cc-title">One thing left. Confirm your camp.</h1>
+        <p class="sn-cc-lead">Camp runs in small groups of fifteen families, so we hold your place against a
+          specific camp rather than a queue. Confirm below and your place is locked in.</p>
+      </div>
+    </section>
+
+    <!--
+      THE CONFIRM WIDGET.
+
+      Every state below is present in the HTML and hidden by `hidden`. The
+      JavaScript reveals exactly one at a time. The no-JavaScript case therefore
+      shows `sn-cc-confirm-noscript`, which tells the buyer to reply to their
+      confirmation email, rather than showing an inert button or nothing at all.
+
+      Do not remove a state block because it looks unused. Each one is reachable.
+    -->
+    <section class="sn-cc-confirm-section" aria-labelledby="sn-cc-confirm-title">
+      <div class="sn-cc-container">
+        <div class="sn-cc-card" id="sn-cc-confirm" data-state="noscript">
+
+          <p class="sn-cc-card-label">Your camp</p>
+          <h2 id="sn-cc-confirm-title">Confirm your place</h2>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-noscript">
+            <p>This step needs JavaScript, and it looks like it is switched off. Reply to your confirmation
+              email with the camp you want and a person will book you in.</p>
+            <p><a class="sn-cc-text-link" href="mailto:support@joinsnooze.com">support@joinsnooze.com</a></p>
+          </div>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-loading" hidden>
+            <p class="sn-cc-muted" role="status">Loading the camps that are still open.</p>
+          </div>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-ready" hidden>
+            <p class="sn-cc-held" id="sn-cc-held-line"></p>
+
+            <button type="button" class="sn-cc-button" id="sn-cc-confirm-button">Confirm this camp</button>
+
+            <details class="sn-cc-switch" id="sn-cc-switch">
+              <summary>I want a different camp</summary>
+              <div class="sn-cc-switch-body">
+                <label class="sn-cc-label" for="sn-cc-cohort-select">Choose your camp</label>
+                <select id="sn-cc-cohort-select" class="sn-cc-select"></select>
+                <p class="sn-cc-muted sn-cc-switch-note">Camps that have filled or already started are not
+                  listed.</p>
+              </div>
+            </details>
+
+            <p class="sn-cc-error" id="sn-cc-confirm-error" hidden role="alert"></p>
+          </div>
+
+          <!--
+            No Kajabi session, so no contact id, so nothing to confirm against.
+
+            Asking for an email here would be worse than useless: Kajabi's REST
+            API cannot resolve an email to a contact (`filter[email]` is
+            silently ignored, tested 2026-08-21), so a typed address would book
+            a seat that never receives its access. Sending them to sign in is
+            the only honest move. See camp-confirm-page.js `resolveIdentity`.
+          -->
+          <div class="sn-cc-state" id="sn-cc-confirm-signin" hidden>
+            <p class="sn-cc-held" id="sn-cc-signin-held"></p>
+            <p>Sign in with the email and password you used at checkout, and this page will let you confirm
+              it.</p>
+            <a class="sn-cc-button" href="https://www.joinsnooze.com/login">Sign in to confirm</a>
+            <p class="sn-cc-muted">If you have not set a password yet, use
+              <a class="sn-cc-inline-link" href="https://www.joinsnooze.com/login">Forgot password</a> and we
+              will send you one. Your place is held either way.</p>
+            <p><a class="sn-cc-text-link" href="mailto:support@joinsnooze.com">Or email
+              support@joinsnooze.com and we will confirm it for you</a></p>
+          </div>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-done" hidden>
+            <p class="sn-cc-done-mark" aria-hidden="true">Booked</p>
+            <h3 id="sn-cc-done-title" tabindex="-1"></h3>
+            <p id="sn-cc-done-body"></p>
+            <p class="sn-cc-muted">Nothing else is needed from you today. Work through the steps below while
+              you wait.</p>
+          </div>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-full" hidden>
+            <h3 id="sn-cc-full-title" tabindex="-1">That camp has filled</h3>
+            <p id="sn-cc-full-body"></p>
+            <p><a class="sn-cc-text-link" href="mailto:support@joinsnooze.com">Email us and we will sort it
+              out</a></p>
+          </div>
+
+          <div class="sn-cc-state" id="sn-cc-confirm-failed" hidden>
+            <h3 tabindex="-1">We could not save that</h3>
+            <p id="sn-cc-failed-body">Something went wrong at our end. Your payment is fine and your place is
+              not lost.</p>
+            <button type="button" class="sn-cc-button sn-cc-button-quiet" id="sn-cc-retry">Try again</button>
+            <p><a class="sn-cc-text-link" href="mailto:support@joinsnooze.com">Or email
+              support@joinsnooze.com</a></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--
+      WELCOME VIDEO. Placeholder slot, deliberately.
+
+      Kade deferred who records this, Sally or Bec or both. Until that lands the
+      section is hidden with `hidden` on the <section>, so the page reads as
+      finished rather than broken.
+
+      TO GO LIVE: upload the video to the Kajabi media library, put its embed in
+      place of the comment inside `sn-cc-video-frame`, and delete the `hidden`
+      attribute on the section. Nothing else changes.
+    -->
+    <section class="sn-cc-video-section" aria-labelledby="sn-cc-video-title" id="sn-cc-video-section" hidden>
+      <div class="sn-cc-container">
+        <div class="sn-cc-section-heading">
+          <h2 id="sn-cc-video-title">Watch this before your first day</h2>
+          <p>Two minutes on how camp runs and what we will ask of you.</p>
+        </div>
+        <div class="sn-cc-video-frame" id="sn-cc-video-frame">
+          <!-- WELCOME VIDEO EMBED GOES HERE -->
+        </div>
+      </div>
+    </section>
+
+    <section class="sn-cc-steps-section" aria-labelledby="sn-cc-steps-title">
+      <div class="sn-cc-container">
+        <div class="sn-cc-section-heading">
+          <h2 id="sn-cc-steps-title">What to do this week</h2>
+          <p>Three things, and the first one is the one people put off.</p>
+        </div>
+
+        <ol class="sn-cc-steps">
+          <li class="sn-cc-step">
+            <span class="sn-cc-step-number" aria-hidden="true">1</span>
+            <div class="sn-cc-step-body">
+              <h3>Log in and get the app</h3>
+              <p>Sign in with the same email and password you used at checkout. Most families end up using
+                the Kajabi app on their phone, because camp happens at 2am as often as it happens at 2pm.</p>
+              <div class="sn-cc-app-actions" aria-label="Download the Kajabi app">
+                <a href="https://apps.apple.com/us/app/kajabi/id1485646310" target="_blank" rel="noopener"
+                   data-app-platform="ios" aria-label="Download Kajabi on the App Store">
+                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                       alt="Download on the App Store" loading="lazy" />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=kajabi.kajabiapp" target="_blank"
+                   rel="noopener" data-app-platform="android" aria-label="Get Kajabi on Google Play">
+                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                       alt="Get it on Google Play" loading="lazy" />
+                </a>
+              </div>
+              <p class="sn-cc-muted">If your password does not work, use
+                <a class="sn-cc-inline-link" href="https://www.joinsnooze.com/login">Forgot password</a> on
+                the login screen.</p>
+            </div>
+          </li>
+
+          <li class="sn-cc-step">
+            <span class="sn-cc-step-number" aria-hidden="true">2</span>
+            <div class="sn-cc-step-body">
+              <h3>Work through your Camp Packing List</h3>
+              <p>It is open to you now. It holds your agreement, your intake form and the short set of things
+                to have ready before day one. Doing it early means camp gets spent on your baby rather than on
+                paperwork.</p>
+              <a class="sn-cc-button sn-cc-button-quiet"
+                 href="https://www.joinsnooze.com/products/camp-snooze-program">Open your Camp Packing List</a>
+            </div>
+          </li>
+
+          <li class="sn-cc-step">
+            <span class="sn-cc-step-number" aria-hidden="true">3</span>
+            <div class="sn-cc-step-body">
+              <h3>Wait for your Friday</h3>
+              <p id="sn-cc-friday-line">Your camp group and the full Snooze library open on the Friday before
+                camp starts. That gives you the weekend to look around and post your first question before the
+                first day proper.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sn-cc-footer">
+    <div class="sn-cc-container sn-cc-footer-inner">
+      <p>Something not right, or you need to change camps?</p>
+      <a href="mailto:support@joinsnooze.com">support@joinsnooze.com</a>
+    </div>
+  </footer>
+</div>
