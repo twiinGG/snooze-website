@@ -266,6 +266,80 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 | Camp Snooze | camp landing | [`pages/landing/camp-snooze/`](./pages/landing/camp-snooze/) | partial | partial | Own theme; pull before overwrite |
 | Day Pass / paid ads / cold traffic / snooze-access | respective URLs | under [`pages/landing/`](./pages/landing/) | mostly missing | partial | WS-001 WS1 |
 | `annual-moment-v1`, `kic-partnership` | — | empty dirs | no | no | Pull from live first |
+| **Camp confirm (post-purchase)** | **NOT PUBLISHED YET.** Proposed slug `camp-confirm` | [`pages/landing/camp-snooze-confirm/camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | yes | yes | New in PM-006. The post-purchase surface where a Camp Snooze buyer confirms which camp they are in. **Paired change with the six camp offers' `post_purchase` redirect**, see C1 below |
+
+### C1. Camp confirm page, and the paired offer redirect
+
+**New in PM-006, 2026-08-21. Three paste targets and one Kajabi setting change, and the verification only
+passes when all four are live.** Half of this shipped alone would leave either a page nobody reaches or six
+offers pointing at nothing.
+
+Source: [`pages/landing/camp-snooze-confirm/`](./pages/landing/camp-snooze-confirm/). One repo file per
+field, whole-field overwrite, never composed at paste time.
+
+| # | Kajabi target | Canonical file | State |
+|---|---|---|---|
+| C1a | The landing page's single full-width, flush custom-code block | [`camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | Built, htmlhint clean, not pasted |
+| C1b | That landing page theme's **Custom CSS** field | [`camp-confirm-page.css`](./pages/landing/camp-snooze-confirm/camp-confirm-page.css) | Built, stylelint clean against `scripts/stylelint-kajabi.json`, not pasted |
+| C1c | That landing page theme's **Custom JavaScript** field | [`camp-confirm-page.js`](./pages/landing/camp-snooze-confirm/camp-confirm-page.js) | Built, `node --check` clean, 51 unit assertions passing, not pasted |
+| C1d | `post_purchase.preference` on **six** camp offers, switched from `custom_message` to `landing_page` pointing at this page | Not a repo file. Kajabi setting | Not done |
+
+Page setup, same as the two sibling thank-you pages: section full width, code block flush, all section
+padding zero, and hide the landing theme's default header and footer because the page carries its own.
+Metadata in [`page-metadata.md`](./pages/landing/camp-snooze-confirm/page-metadata.md); the page is
+noindex, nofollow and must not enter navigation or the sitemap.
+
+**Do not paste any of these into an offer's own thank-you code field.** That field has no landing-page CSS
+or JavaScript surface, which is the entire reason the design moved to a landing page.
+
+The six offers for C1d, and it is six rather than the four the kickoff named. The product's own offer list
+is the evidence:
+
+| Offer | Internal title |
+|---|---|
+| [`2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit) | `P_CM01_USD - Camp (USD)` |
+| [`2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | `P_CM01_AUD - Camp (AUD)` |
+| [`2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit) | `P_CM02 - Camp (Member Discount)` |
+| [`2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | `P_CM02_AUD_Camp Member Discount` |
+| [`2151114090`](https://app.kajabi.com/admin/offers/2151114090/edit) | `P_CM03_USD - Camp Multiples (USD)` |
+| [`2151134284`](https://app.kajabi.com/admin/offers/2151134284/edit) | `P_CM04_AUD - Camp PayPlan (AUD)` |
+
+**Verification, and it passes only when the page is live AND all six offers point at it.** Run all three:
+
+```bash
+# 1. The page is live and carries the confirm widget. Cache-busted, desktop UA.
+curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" \
+  "https://www.joinsnooze.com/camp-confirm?cb=$(date +%s)" \
+  | grep -c 'sn-cc-confirm-button'          # expect 1 or more
+
+# 2. Its JS is on the page, not just its markup. Pick a marker that only this build has.
+curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" \
+  "https://www.joinsnooze.com/camp-confirm?cb=$(date +%s)" \
+  | grep -c 'currentSiteUser'               # expect 1 or more
+
+# 3. All six offers point at the same landing page id.
+#    mcp__kajabi__get_offer on each of the six ids above; every one must return
+#    post_purchase.preference == "landing_page" and the SAME landing_page_id.
+```
+
+A `grep -c` of `0` on step 1 or 2 means the paste did not land. Before concluding that, confirm the marker
+actually exists in the repo file (`grep -c 'sn-cc-confirm-button' <file>`) rather than trusting this row:
+a marker inherited from a stale note has produced two false alarms on this repo before.
+
+**Do not verify the CSS by a whole-file line match.** Short declarations match anywhere in a large page and
+a stylesheet can score every line "present" while telling you nothing. Use `#sn-cc-page` or a custom
+property name unique to this file.
+
+### Why the page needs a checkout setting to work at all
+
+Worth knowing before anybody debugs the confirm button. The page identifies the buyer by reading
+`window.Kajabi.currentSiteUser` and requiring `type === "Member"`, because Kajabi's REST API cannot resolve
+an email address to a contact (`filter[email]` returns 200 and the newest 25 contacts, ignoring the filter,
+tested 2026-08-21). A buyer with no session gets the sign-in state, not the confirm button.
+
+What puts a fresh buyer in a session is **`Require new customers to create password at checkout`** on the
+camp offers, which Kade turned on for that reason on 2026-08-21. If that setting is ever switched off, this
+page stops working for new buyers and the symptom is a sign-in prompt rather than an error.
 
 ### P3 Camp capacity and waitlist paste queue
 
