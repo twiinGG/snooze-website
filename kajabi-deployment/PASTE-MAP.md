@@ -398,7 +398,7 @@ step 2 is what keeps the window between them down to the two renames rather than
 | P3-CAMP-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
 | P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
 | P3-CAMP-CHECKOUT-CSS | **IN SYNC, read back 2026-08-21** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
-| P3-CAMP-CHECKOUT-JS | **OUT OF SYNC as of 2026-08-22, and it breaks camps 18 and 19. See note below** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+| P3-CAMP-CHECKOUT-JS | **IN SYNC, verified live on all four offers 2026-08-22** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
 
 #### Correction and open item, 2026-08-22 (PM-008 WS1b)
 
@@ -421,24 +421,19 @@ four offer themes still request `?limit=3`. The checkout resolves `?cohort=N` on
 requests, so a cohort outside that window is silently replaced by the soonest camp. Measured live
 2026-08-22:
 
-| Clicked on the landing page | Checkout order summary |
-|---|---|
-| Choose Camp #16 | Camp Snooze #16, 14 September 2026. Correct |
-| Choose Camp #18 | **Camp Snooze #15, 31 August 2026. Wrong** |
-| Choose Camp #19 | **Camp Snooze #15, 31 August 2026. Wrong** |
+**CLOSED 2026-08-22.** Kade pasted `?limit=5` into all four offer themes. Verified live on every camp
+checkout, on every one of the four offers, by loading `?cohort=N` and reading the rendered order summary:
 
-The landing page now offers five camps and the checkout can only resolve three, so this is worse than
-the original defect: two of the five buttons mis-describe what the buyer is paying for.
+| Offer | Checkout slug | cohort 16 | cohort 19 |
+|---|---|---|---|
+| [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | `46Bz9tk6` | Camp Snooze #16 | Camp Snooze #19 |
+| [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit) | `K3Y6FEKX` | Camp Snooze #16 | Camp Snooze #19 |
+| [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | `ENhg45mj` | Camp Snooze #16 | Camp Snooze #19 |
+| [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit) | `rVuLzkZa` | Camp Snooze #16 | Camp Snooze #19 |
 
-Two ways to close it, either is fine:
-
-- **Finish the paste.** Change `'?limit=3'` to `'?limit=5'` in the Custom JS of all four offer themes:
-  [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit),
-  [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit),
-  [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit),
-  [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit).
-- **Or step the landing page back** to `'?limit=3'`, which restores a self-consistent three-camp funnel
-  until the offer themes are done.
+On the AUD offer all five cohorts were checked and each rendered its own real start date: #15 Monday 31
+August 2026, #16 Monday 14 September 2026, #17 Monday 28 September 2026, #18 Monday 12 October 2026, #19
+Monday 26 October 2026. Those match `snooze_os.camp_cohorts.start_date` exactly for all five.
 
 Regression cover for the parity rule:
 `pages/landing/camp-snooze/camp-snooze-v2-luxury/tests/camp-checkout-url.test.mjs`.
