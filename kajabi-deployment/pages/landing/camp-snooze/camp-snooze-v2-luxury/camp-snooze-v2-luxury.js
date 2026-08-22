@@ -2,7 +2,16 @@ const CAMP_CURRENCY_CONFIG = {
   storageKey: 'snooze_currency_preference',
   defaultCurrency: 'USD',
   usdCheckoutUrl: 'https://www.joinsnooze.com/offers/K3Y6FEKX/checkout',
-  audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6'
+  // Both of these MUST end in /checkout. Kajabi redirects /offers/{slug} to
+  // /offers/{slug}/checkout and throws the query string away in the process, so a
+  // base without /checkout silently loses ?cohort=N. This one was missing it, and
+  // the symptom was every buyer landing on a checkout that said "Camp Snooze #15
+  // Starts Monday 31 August 2026" no matter which camp they clicked. The checkout's
+  // own JS was correct all along: given the parameter it resolves the cohort from
+  // the live feed and fills the summary. It was never given the parameter.
+  // Reported by Kade 2026-08-22, reproduced, fixed here. Guarded by
+  // tests/camp-checkout-url.test.mjs.
+  audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6/checkout'
 };
 
 const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
@@ -103,7 +112,20 @@ window.CampCapacityWidget = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CAPACITY_ANON_KEY, Authorization: 'Bearer ' + CAMP_CAPACITY_ANON_KEY } });
+        // Ask for five, not three.
+        //
+        // Two reasons, and the second one is a latent bug rather than a preference.
+        //
+        // 1. get_camp_capacity defaults to coalesce(p_limit, 3), and there are five open cohorts. At limit=3 a
+        //    family who wants a later date cannot see that it exists.
+        // 2. The landing page and this checkout MUST request the same window. The checkout resolves ?cohort=N by
+        //    searching the list the feed returns; a cohort outside that window is not found and it silently
+        //    falls back to the soonest camp. That is the same class of failure as the missing /checkout: the
+        //    buyer picks one camp and pays on a page describing another. Raising one side without the other
+        //    re-creates it for camps 4 and 5 in the list.
+        //
+        // Keep these two numbers equal. The feed caps at 10.
+        response = await fetchImpl(feedUrl + '?limit=5', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CAPACITY_ANON_KEY, Authorization: 'Bearer ' + CAMP_CAPACITY_ANON_KEY } });
       } finally {
         clearTimeout(timer);
       }
