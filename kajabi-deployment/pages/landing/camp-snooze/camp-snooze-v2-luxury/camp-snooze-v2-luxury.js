@@ -2,7 +2,7 @@ const CAMP_CURRENCY_CONFIG = {
   storageKey: 'snooze_currency_preference',
   defaultCurrency: 'USD',
   usdCheckoutUrl: 'https://www.joinsnooze.com/offers/K3Y6FEKX/checkout',
-  audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6'
+  audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6/checkout'
 };
 
 const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
@@ -103,7 +103,7 @@ window.CampCapacityWidget = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CAPACITY_ANON_KEY, Authorization: 'Bearer ' + CAMP_CAPACITY_ANON_KEY } });
+        response = await fetchImpl(feedUrl + '?limit=5', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CAPACITY_ANON_KEY, Authorization: 'Bearer ' + CAMP_CAPACITY_ANON_KEY } });
       } finally {
         clearTimeout(timer);
       }
@@ -492,8 +492,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="display: flex; align-items: center; gap: 0.75rem;">
               <div>
                 <span class="dynamic-price" data-usd="690" data-aud="997" data-period-usd=" USD" data-period-aud=" AUD" style="font-size: 1.125rem; font-weight: 700; color: var(--camp-cream);">$690 USD</span>
-                <span style="font-size: 0.8rem; font-weight: 500; color: var(--camp-cream); opacity: 0.85;"> today, then </span>
-                <span class="dynamic-price" data-usd="39.50" data-aud="59.50" data-period-usd="/mo USD" data-period-aud="/mo AUD" style="font-size: 0.95rem; font-weight: 600; color: var(--camp-cream);">$39.50/mo USD</span>
               </div>
               <div class="sticky-currency-toggle camp-currency-toggle" style="display: inline-flex; border: 1px solid hsl(140,25%,60%); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.1); padding: 2px;">
                 <button type="button" data-currency="USD" aria-label="US Dollar" onclick="campSetCurrency('USD', true)" style="padding: 0.25rem 0.5rem; border: none; background: transparent; color: hsl(42,33%,96%); font-family: DM Sans, sans-serif; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 4px;">USD</button>
