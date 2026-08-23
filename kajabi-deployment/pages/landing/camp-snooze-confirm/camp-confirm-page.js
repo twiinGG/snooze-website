@@ -1,28 +1,9 @@
-// Camp Snooze post-purchase confirmation.
-//
-// The buyer has already paid. This page's only job is to record WHICH camp they
-// are in, because Kajabi's checkout has no field that can carry that and drops
-// `?cohort=` on the way through. Until this page existed, a family's camp was
-// displayed to them and never written down anywhere.
-//
-// The design rule from the spec: a buyer who reads nothing and clicks the one
-// button gets the right answer. The soonest open camp is pre-selected, and the
-// camp picker is behind a disclosure, because the picker exists for the family
-// who bought ahead and not for everybody else to have to think.
-//
-// Paste target: this landing page theme's Custom JavaScript field. Not the
-// offer-level thank-you code field, which has no JS surface.
-
 const CAMP_CONFIRM_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
-// Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
 const CAMP_CONFIRM_ANON_KEY = window.SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
 
-// A camp whose state is one of these can still take a confirmation. `full` and
-// `closed` cannot, and the Edge Function rejects them again server side, so a
-// stale page cannot book a sixteenth family into a camp of fifteen.
 const CONFIRMABLE_STATES = ['open', 'filling', 'low'];
 
 window.CampConfirm = (function () {
@@ -46,12 +27,6 @@ window.CampConfirm = (function () {
     }).format(new Date(value + 'T00:00:00+10:00'));
   }
 
-  // Which camp to show first. `?cohort=17` wins if it names a camp that is
-  // actually confirmable, because that is the camp the buyer chose on the
-  // landing page and carried through checkout. Otherwise the soonest one.
-  //
-  // This is the first time `?cohort=` survives a transaction. It has been
-  // appended to checkout URLs and discarded by Kajabi since the picker shipped.
   function pickDefault(cohorts, requested) {
     const open = cohorts.filter((c) => CONFIRMABLE_STATES.indexOf(c.state) !== -1);
     if (!open.length) return null;
@@ -70,50 +45,6 @@ window.CampConfirm = (function () {
     }
   }
 
-  // WHO IS THIS BUYER.
-  //
-  // `window.Kajabi.currentSiteUser` is emitted on every page of this site by a
-  // header script block, shaped `{ id, type, contactId }` where `type` is
-  // `Guest`, `User` (Kajabi staff) or `Member`. Only a `Member` carries a real
-  // `contactId`. This is the same global and the same test the team already
-  // ships on two other landing pages:
-  //   pages/landing/toddler-toolkit-sample-ready/toddler-toolkit-sample-ready.html
-  //   pages/landing/newborn-guide-preview-ready/newborn-guide-preview-ready.html
-  // and it is the rule written down in
-  //   docs/technical/LEAD-MAGNET-FORM-PLUS-GRANT.md
-  // which also says why NOT to use `SnoozeUserDetection` here: it infers
-  // membership from a `/login` link in the site nav, and a landing page carries
-  // its own theme with no site nav, so it calls every visitor new.
-  //
-  // Asking the buyer for their email instead is not an option, and this is
-  // worth knowing before anybody adds a field. Kajabi's REST API cannot look a
-  // contact up by email: `GET /v1/contacts?filter[email]=<addr>` returns HTTP
-  // 200 and the newest 25 contacts, ignoring the filter, while honouring
-  // `page[size]` in the same request. Tested 2026-08-21. So an email address
-  // cannot be turned into the contact id the tag-add needs, and a typed email
-  // would record a seat that never gets its entitlement.
-  //
-  // What makes the `Member` case reliable is a checkout setting rather than
-  // anything on this page: "Require new customers to create password at
-  // checkout" on the camp offers, which is what puts a fresh buyer in a session
-  // before they arrive here.
-  //
-  // TURNED ON, ON ALL SIX CAMP OFFERS, 2026-08-21. Kade's decision, and each one
-  // verified afterwards by reloading the offer's Settings tab and reading
-  // `offer_collect_password_checkbox` back, rather than trusting the save. The
-  // six: 2150884129, 2150946767, 2150947919, 2151264520, 2151114090,
-  // 2151134284.
-  //
-  // If it is ever switched off, this page stops working for new buyers and the
-  // symptom is a sign-in prompt, not an error. Check it before debugging
-  // anything here.
-  //
-  // Two overrides stay ahead of the global. `SN_CAMP_CONTACT_ID` is for the
-  // page's own custom-code block, if Kajabi's Liquid context ever turns out to
-  // expose the member server-side. The URL parameter is for testing, and it is
-  // last-resort rather than first-choice because Kajabi does not put one there:
-  // 180 days of GA4 on this site shows every paid confirmation path as a bare
-  // path with no query string.
   function resolveIdentity() {
     if (window.SN_CAMP_CONTACT_ID) {
       return { contactId: String(window.SN_CAMP_CONTACT_ID), source: 'page_override' };
@@ -125,13 +56,9 @@ window.CampConfirm = (function () {
         return { contactId: String(user.contactId), source: 'kajabi_site_user' };
       }
       if (user && user.type) {
-        // A real answer, and the answer is "not a member". Carry the type
-        // through so the page can say something specific and so the analytics
-        // distinguish a logged-out buyer from a broken global.
         return { contactId: null, source: 'kajabi_site_user_' + String(user.type).toLowerCase() };
       }
     } catch (err) {
-      // Fall through. A missing global is its own answer.
     }
 
     const paramContact = queryParam('contact_id') || queryParam('kajabi_contact_id');
@@ -155,7 +82,6 @@ window.CampConfirm = (function () {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(Object.assign({ event: event, surface: 'camp_confirm_page' }, payload || {}));
     } catch (err) {
-      // Analytics must never break the one action this page exists for.
     }
   }
 
@@ -206,10 +132,6 @@ window.CampConfirm = (function () {
       select.appendChild(option);
     });
 
-    // No contact id means no session, and there is no way to recover from that
-    // on this page: Kajabi cannot resolve an email to a contact over its REST
-    // API, so a typed address would book a seat that never gets its access.
-    // Send them to sign in rather than offering a button that cannot deliver.
     if (!identity.contactId) {
       root.querySelector('#sn-cc-signin-held').innerHTML = heldLine(chosen);
       show(root, 'signin');
@@ -219,14 +141,6 @@ window.CampConfirm = (function () {
     show(root, 'ready');
   }
 
-  // Three ways this ends well, and the buyer should be able to tell them apart.
-  //
-  //   confirmed           the seat was just taken
-  //   already_confirmed   they clicked twice, or came back to the page
-  //   holds_other_cohort  they already hold a place in a DIFFERENT camp, so the
-  //                       page reports the camp they are actually in rather
-  //                       than the one they just clicked. One family holds one
-  //                       seat, and the database enforces that across cohorts.
   function renderDone(root, result, cohort) {
     const title = result.title || cohort.title;
     const startDate = result.start_date || cohort.start_date;
@@ -276,8 +190,6 @@ window.CampConfirm = (function () {
         requested_cohort: queryParam('cohort') || null
       });
     }).catch((err) => {
-      // The feed is down. Do not offer a button that cannot work; send them to
-      // a person instead. The buyer has paid, so silence is the worst outcome.
       root.querySelector('#sn-cc-failed-body').textContent =
         'We cannot reach our camp list right now. Your payment is fine and your place is not lost. Email us ' +
         'and we will confirm your camp by hand.';
@@ -289,8 +201,6 @@ window.CampConfirm = (function () {
     const select = root.querySelector('#sn-cc-cohort-select');
     const errorLine = root.querySelector('#sn-cc-confirm-error');
 
-    // Keep the held line honest when they change the picker, so the sentence
-    // above the button always names the camp the button will actually book.
     select.addEventListener('change', () => {
       const next = cohorts.find((c) => String(c.cohort_number) === select.value);
       if (!next) return;
@@ -318,9 +228,6 @@ window.CampConfirm = (function () {
           return;
         }
 
-        // 409 is the seat cap or the camp's own dates saying no. The feed said
-        // the camp was open when the page loaded, so this is a race, and the
-        // buyer needs to know which of the two happened.
         if (result.status === 409) {
           const reason = (result.body && result.body.status) || 'full';
           root.querySelector('#sn-cc-full-title').textContent = reason === 'closed'
@@ -335,10 +242,6 @@ window.CampConfirm = (function () {
           return;
         }
 
-        // 503 is a camp that exists but has no Kajabi tag behind it yet, so
-        // confirming it would record a place with no path to an access grant.
-        // The Edge Function refuses and gives the seat back rather than record
-        // one it cannot deliver.
         if (result.status === 503) {
           root.querySelector('#sn-cc-failed-body').textContent =
             chosen.title + ' is not taking confirmations yet. Your payment is fine and your place is not ' +

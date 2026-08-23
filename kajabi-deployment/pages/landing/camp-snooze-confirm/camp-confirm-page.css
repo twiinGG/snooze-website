@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 #sn-cc-page {
-  --sn-cc-coral: #f43357;
-  --sn-cc-coral-dark: #b51f3a;
-  --sn-cc-navy: #1f293b;
-  --sn-cc-ink: #273244;
-  --sn-cc-muted: #5f6f82;
-  --sn-cc-cream: #faf7f4;
-  --sn-cc-blush: #f9ecef;
-  --sn-cc-line: #eadde0;
+  --sn-cc-coral: #dda23c;
+  --sn-cc-coral-dark: #b85c2e;
+  --sn-cc-navy: #263c59;
+  --sn-cc-ink: #264033;
+  --sn-cc-muted: #577566;
+  --sn-cc-cream: #f8f6f1;
+  --sn-cc-blush: #afcfba;
+  --sn-cc-line: #dce6de;
   --sn-cc-white: #ffffff;
-  --sn-cc-font-body: 'Poppins', Arial, sans-serif;
-  --sn-cc-font-head: 'Playfair Display', Georgia, serif;
-  --sn-cc-focus: 0 0 0 4px rgba(244, 51, 87, 0.2);
+  --sn-cc-font-body: 'DM Sans', Arial, sans-serif;
+  --sn-cc-font-head: 'Cormorant Garamond', Georgia, serif;
+  --sn-cc-focus: 0 0 0 4px rgba(184, 92, 46, 0.2);
 
   position: relative;
   width: 100vw;

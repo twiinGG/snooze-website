@@ -26,7 +26,7 @@ No non-member-only price. All purchasers get 1 month Snooze included; access sta
 - **Camp starts / kick-off call:** Monday, February 9, 2026  
 - **Daily group call:** 10–11am AEDT  
 
-Login details for the included Snooze month are in the post-purchase email and in the camp packing list email.
+Login details for the included Snooze month are in the post-purchase email and in the welcome to camp email.
 
 ---
 
