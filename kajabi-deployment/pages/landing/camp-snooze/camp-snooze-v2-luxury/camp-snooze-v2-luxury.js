@@ -32,11 +32,24 @@ const CAMP_CAPACITY_ANON_KEY = window.SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
 
 window.CampCapacityWidget = (function () {
+  // Fixed tables rather than Intl's 'short' month: ICU disagrees between browsers on
+  // whether September abbreviates to Sep or Sept, and a card that wraps to two lines
+  // when its neighbours do not reads as a layout bug.
+  const CAMP_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
   function dateLabel(value) {
     if (!value) return 'Dates to be confirmed';
-    return new Intl.DateTimeFormat('en-AU', {
-      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-    }).format(new Date(value + 'T00:00:00+10:00'));
+    const parts = new Intl.DateTimeFormat('en-AU', {
+      timeZone: 'Australia/Melbourne',
+      weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'
+    }).formatToParts(new Date(value + 'T00:00:00+10:00'));
+    const get = function (type) {
+      const part = parts.find(function (p) { return p.type === type; });
+      return part ? part.value : '';
+    };
+    const monthIndex = parseInt(get('month'), 10) - 1;
+    const month = CAMP_MONTHS[monthIndex] || get('month');
+    return get('weekday') + ' ' + parseInt(get('day'), 10) + ' ' + month + ' ' + get('year');
   }
 
   function checkoutUrl(cohortNumber) {
