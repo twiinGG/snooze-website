@@ -1,0 +1,20 @@
+Internal title: Travel Sleep Guide Email 3 (Trial) - 6 days later
+Email ID: 2151382456
+Send: day 6 at 11:00 Melbourne
+Subject: The trip is the easy part to plan for
+Preview text: A guide cannot predict the week you get home
+Written: 2026-08-23 (TSG-001). Pasted with update_theme_content and read back byte for byte the same day.
+Guide link: https://tscmedia.khorus.ai/guides/travel-sleep-guide.pdf on Cloudflare R2, the same host the
+catnapping and 3-to-2 nap transition guides use.
+
+---
+
+Hi {{ first_name }},
+The trip is the part you can plan for. The week you land, the week you get home and the first illness after it are the ones that catch people out.
+Travel is a good rehearsal for that. It gives you a real chance to practise troubleshooting when life cannot be exactly the same every single day, and that flexibility is a good thing to have under your belt.
+The 7 day trial opens the full courses at every age, from the newborn weeks through to toddler bedtimes, plus my coaching for the weeks a guide cannot predict.
+[Start the 7 day trial](https://www.joinsnooze.com/offers/mqQikDM7/checkout)
+The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.
+The guide is yours to keep either way.
+Sally
+The Sleep Concierge

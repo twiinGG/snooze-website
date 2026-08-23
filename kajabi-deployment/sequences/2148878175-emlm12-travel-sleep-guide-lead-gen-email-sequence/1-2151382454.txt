@@ -1,0 +1,18 @@
+Internal title: Travel Sleep Guide Email 1 (Welcome + Access)
+Email ID: 2151382454
+Send: day 0 at 11:00 Melbourne (Kajabi sends a day-0 email on subscribe)
+Subject: Your Travel Sleep Guide is ready
+Preview text: Bank the sleep before you go, not the time zone shift
+Written: 2026-08-23 (TSG-001). Pasted with update_theme_content and read back byte for byte the same day.
+Guide link: https://tscmedia.khorus.ai/guides/travel-sleep-guide.pdf on Cloudflare R2, the same host the
+catnapping and 3-to-2 nap transition guides use.
+
+---
+
+Hi {{ first_name }},
+Your Travel Sleep Guide is ready when you are.
+[Open your guide](https://tscmedia.khorus.ai/guides/travel-sleep-guide.pdf)
+Start with the first section. The single most useful thing you can do before you travel is focus on a really solid week of sleep leading into your trip, because well-rested babies cope much better with disruption.
+One thing before you start planning: if you are heading into a new time zone, do not try to shift your baby onto it before you leave. Prioritise great sleep at home and then crack on with the new time zone once you get there.
+Sally
+The Sleep Concierge

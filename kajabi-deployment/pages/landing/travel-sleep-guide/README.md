@@ -1,0 +1,85 @@
+# Travel Sleep Guide (capture page)
+
+**Kajabi surface:** landing page **2152231511**, own theme **2167290795**. Slug `travel-sleep-guide`.
+Admin: https://app.kajabi.com/admin/landing_pages/2152231511/edit
+Public: https://www.joinsnooze.com/travel-sleep-guide
+**Status:** created 2026-08-23 (TSG-001). Draft, noindex set. **Body and stylesheet not yet pasted.**
+
+The capture surface for the Travel Sleep Guide, a **pattern A** magnet: a file artefact, so no Kajabi
+offer, no grant automation and no member account. See
+[`../../../docs/technical/LEAD-MAGNET-FORM-PLUS-GRANT.md`](../../../docs/technical/LEAD-MAGNET-FORM-PLUS-GRANT.md).
+
+Every other magnet on this site captures from an age page. This one has no age page to sit on, so it gets
+its own landing page. That is the only structural difference; the form, the automation and the sequence
+follow the pattern exactly.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `travel-sleep-guide.html` | Page body. Pastes into the landing page's Custom Code block |
+| `travel-sleep-guide.css` | Self-contained stylesheet. Pastes into the landing page's own Custom CSS field |
+
+## The stylesheet is generated, not hand written
+
+Derived from [`../nap-transition-mini-guide-ready/nap-transition-mini-guide-ready.css`](../nap-transition-mini-guide-ready/nap-transition-mini-guide-ready.css),
+which is itself derived from the A2 design system in `global/css/theme-custom-code.css`:
+
+| Change | Reason |
+|---|---|
+| `#nap-transition-ready-page` becomes `#travel-sleep-guide-page` | Page wrapper id |
+| `.ntr-*` becomes `.tsg-*` | Page prefix |
+| `.tsg-preview` rules dropped | No PDF preview on the capture page |
+| `.steps-grid` / `.step-card` become `.cards-grid` / `.tsg-card` | Six content cards rather than three steps |
+| `.tsg-next-lead` becomes `.tsg-sally-lead`, `.tsg-membership-lead` becomes `.tsg-sally-quote` (italic) | The bands this page actually has |
+| `.snooze-form-embed` block added | Re-derived from the `:is(#catnapping-page, ...)` block in `global/css/theme-custom-code.css`, rescoped to this page |
+
+**Assertions on the generated file:** 76 balanced brace pairs, 0 comments, 0 variables used but not
+defined, 0 classes in the page body with no matching rule.
+
+## Class names avoid three substrings
+
+Kajabi carries `!important` resets that match on a substring of the class name, so no page-scoped class
+may contain `section`, `container` or `block`. Every class here is prefixed `tsg-` and contains none of
+the three. `.snooze-footer-clean` and `.sf-*` are the shared footer sync source and are not renamed.
+
+## The form
+
+Form **2149700924** "Travel Sleep Guide Lead Magnet", embedded with the standard one-line pattern in
+`pages/website/KAJABI-FORM-EMBED-PATTERN.md`. **Name and email only.** No site-level fields: `Baby's Age`,
+`Baby's Date of Birth`, `Country` and `City` are `required: true` at site level and attaching any of them
+silently makes it mandatory.
+
+Two settings have to be set together on the form, in the admin, and neither is reachable by MCP:
+
+1. **Single opt-in**, not double.
+2. **`thank_you_page_id` = 2152231510** (the delivery page). Under double opt-in the redirect comes from
+   `double_opt_in_settings.landing_page_id`; switching to single opt-in silently removes the redirect
+   unless the thank-you page is set in the same save.
+
+## Copy source
+
+Every claim on the page is the guide's own language. The hero lead and the pull quote are Sally verbatim
+from page 1 and page 2 of the PDF, which is why they carry an Oxford comma the house style otherwise
+drops. The six cards name the guide's six real sections.
+
+## Paste steps
+
+1. **Custom CSS.** Settings, Custom CSS, paste `travel-sleep-guide.css` whole.
+2. **Page body.** Paste `travel-sleep-guide.html` into the Custom Code block. Fragment only, no
+   `<!DOCTYPE>`, `<html>`, `<head>` or `<body>`.
+3. **noindex.** Already set by `update_landing_page`. Confirm by curl, not by the toggle.
+4. **Publish.**
+
+Paste mechanics: `scripts/emit_paste_js.py`, never a hand-transcribed paste.
+
+## QA checklist
+
+- [ ] View source: wrapper is `<div id="travel-sleep-guide-page">`, never `<body id>`
+- [ ] Exactly one `<title>` and one `<body>` in the served HTML
+- [ ] noindex confirmed by `curl`
+- [ ] `getComputedStyle`: `h1` in `"Playfair Display", serif`, `.tsg-band` padding-top `48px` (`36px`
+      under 768px), `a.btn` background `rgb(244, 51, 87)` with 50px radius
+- [ ] The form renders name and email only, styled to match `.btn`, and submits
+- [ ] A submission lands on `/travel-sleep-guide-ready`
+- [ ] Footer renders styled: navy background, white text, `.sf-grid` in columns

@@ -1,0 +1,19 @@
+Internal title: Travel Sleep Guide Email 2 (Airport and plane) - 2 days later
+Email ID: 2151382455
+Send: day 2 at 11:00 Melbourne
+Subject: The airport nap that does not happen
+Preview text: Travel days rarely run to plan and that is fine
+Written: 2026-08-23 (TSG-001). Pasted with update_theme_content and read back byte for byte the same day.
+Guide link: https://tscmedia.khorus.ai/guides/travel-sleep-guide.pdf on Cloudflare R2, the same host the
+catnapping and 3-to-2 nap transition guides use.
+
+---
+
+Hi {{ first_name }},
+Travel days rarely run to plan. You can time your Uber, flights, feeds and naps perfectly, and something somewhere still gets delayed.
+Airport naps can be clunky and unpredictable, or sometimes a little non-existent, and that is completely normal. It is bright, it is noisy, and if your baby finally falls asleep in the carrier that will be the exact moment somebody needs you to take them out of it.
+Pack the portable white noise, have a good carrier or travel pram with you and make things darker where you safely can. Then just try your best to get a nap in. If it works, amazing. If it does not, you troubleshoot the rest of the day accordingly.
+If you are travelling around bedtime, change your baby into their pyjamas, do a simple version of your usual bedtime routine, feed them as you normally would and settle them however makes sense for the circumstances.
+[Open your guide](https://tscmedia.khorus.ai/guides/travel-sleep-guide.pdf)
+Sally
+The Sleep Concierge
