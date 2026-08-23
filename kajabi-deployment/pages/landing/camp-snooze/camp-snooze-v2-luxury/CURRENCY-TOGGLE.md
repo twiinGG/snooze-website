@@ -1,6 +1,6 @@
 # Camp Snooze Currency Toggle (AUD/USD)
 
-**Status:** Deployed (January 30, 2026)  
+**Status:** Deployed (January 30, 2026); toggle placement revised August 23, 2026  
 **Scope:** Standalone implementation for Camp Snooze landing page only.
 
 ---
@@ -16,7 +16,7 @@ Dynamic AUD/USD currency toggle for the Camp Snooze Feb 9 intake landing page. I
 | Currency | URL |
 |----------|-----|
 | USD | `https://www.joinsnooze.com/offers/K3Y6FEKX/checkout` |
-| AUD | `https://www.joinsnooze.com/offers/46Bz9tk6` |
+| AUD | `https://www.joinsnooze.com/offers/46Bz9tk6/checkout` |
 
 All CTAs with `dynamic-cta` or `data-checkout` are updated by the script to the correct URL for the selected currency.
 
@@ -50,9 +50,15 @@ Display format: `$` for both (e.g. `$885 AUD`, not `A$885`).
 
 ## Toggle Placement
 
-1. **Pricing section** – Inline in HTML above the pricing card (`#camp-currency-toggle-wrap`). Full-width toggle with flags (USD / AUD).
-2. **Sticky footer** – Injected in JS next to price and countdown. Compact USD/AUD buttons.
-3. **Nav** (optional) – Injected into `.navbar .sn-actions` or similar if present; may not exist on all Kajabi themes.
+1. **Sticky footer** – Injected in JS next to the price. Compact USD/AUD buttons.
+2. **Nav and mobile menu** (optional) – Injected by `campInjectToggles` into `.navbar .sn-actions` or `.sn-mobile-inner` and similar if present; may not exist on all Kajabi themes.
+
+**Removed August 23, 2026:** the inline `#camp-currency-toggle-wrap` toggle that
+sat above the cohort cards in the "Choose Your Camp" section (Kade's call). With
+the price section now above the cohort grid, a third toggle beside the cards
+invited a currency switch mid-decision, after the visitor had already read the
+price. The `.camp-currency-toggle-wrap` CSS rule is kept — the waitlist variant
+(`camp-snooze-landing-page-blocks-waitlist.html`) still uses it.
 
 ---
 

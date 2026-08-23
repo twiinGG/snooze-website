@@ -1,6 +1,65 @@
 # Camp Snooze V2 - Changelog
 
-**Location:** `projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/`
+**Location:** `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/`
+
+---
+
+## [2026-08-23] - Price Before Dates, and a Consistent Card Date
+
+Landing page: **Welcome to Camp Snooze** (`camp-snooze-sleep-coaching`, page
+`2151771543`, theme `2164288957`). Deployed live the same day.
+
+### Changed
+- **Pricing section moved above the cohort grid.** `#pricing-section` now
+  precedes `#camp-capacity-section`, with a gold "Select your dates" CTA
+  anchoring down to it. The visitor reads the price before choosing a date.
+- **CTA targets split at the price.** The six CTAs above the price section
+  (hero, inclusions, who it's for, how it works, key dates, why camp costs less)
+  now anchor to `#pricing-section`; they previously skipped straight to the date
+  grid, so a visitor could reach the cohort buttons without seeing the price.
+  The two CTAs below the price still go to `#camp-capacity-section`.
+- **Sticky footer carries the camp price alone.** It used to print
+  `$997 AUD today, then $59.50/mo AUD`, which read as a second charge rather
+  than a continuation.
+- **Pricing card slimmed.** Dropped the "Camp Snooze plus one month of Snooze
+  access, included (continues at .../month ...)" paragraph, which repeated the
+  section intro two lines above it.
+- **Cost FAQ follows the currency toggle.** Both amounts in "What's included and
+  what does it cost?" were hard-coded USD; they are now `dynamic-price` spans, so
+  AUD readers see `$997 AUD` and `$59.50 AUD a month`.
+- **Cohort dates abbreviate the month.** `Monday 14 Sept 2026`, not
+  `Monday 14 September 2026`, so no card wraps to two lines while its neighbours
+  do not. Abbreviations come from the `CAMP_MONTHS` table rather than `Intl`'s
+  `month: 'short'`, because ICU disagrees across browsers on `Sep` vs `Sept`.
+  Day, weekday and year stay on `Intl`, pinned to `Australia/Melbourne`.
+- **Key Dates rows share one icon column.** The highlighted roll call row
+  carried 1rem of horizontal padding the other rows did not, and centre
+  alignment floated the icon to the middle of any row whose copy wrapped. Rows
+  now share the same padding plus a transparent 1px border, align to the top,
+  hold the icon at a 2rem box, and the closing "For best results" note gets the
+  same icon column instead of an inline glyph.
+
+### Removed
+- **Inline currency toggle in "Choose Your Camp"** (`#camp-currency-toggle-wrap`).
+  The sticky footer and nav toggles remain. See `CURRENCY-TOGGLE.md`.
+
+### Fixed (repo drift against live)
+The live page had two changes the repo never received; a blind paste would have
+reverted both.
+- AUD checkout URL keeps its `/checkout` suffix.
+- The capacity feed requests `?limit=5`, not `?limit=3`.
+
+### Files Modified
+- `camp-snooze-landing-page-blocks.html`
+- `camp-snooze-v2-luxury.js`
+- `README.md` (deploy route, mode switching, cohort date format)
+- `CURRENCY-TOGGLE.md` (toggle placement)
+
+### Deploy note
+The theme editor's Custom Code fields and the block code field are Ace editors;
+Save issues one `PUT /admin/themes/2164288957/settings` with the whole settings
+hash, with no draft layer. `README.md` carries the `agent-browser` recipe used
+here, and the reminder to diff live against the repo first.
 
 ---
 
