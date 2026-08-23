@@ -140,7 +140,20 @@ window.CampCheckoutCapacity = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        response = await fetchImpl(feedUrl + '?limit=3', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CHECKOUT_ANON_KEY, Authorization: 'Bearer ' + CAMP_CHECKOUT_ANON_KEY } });
+        // Ask for five, not three.
+        //
+        // Two reasons, and the second one is a latent bug rather than a preference.
+        //
+        // 1. get_camp_capacity defaults to coalesce(p_limit, 3), and there are five open cohorts. At limit=3 a
+        //    family who wants a later date cannot see that it exists.
+        // 2. The landing page and this checkout MUST request the same window. The checkout resolves ?cohort=N by
+        //    searching the list the feed returns; a cohort outside that window is not found and it silently
+        //    falls back to the soonest camp. That is the same class of failure as the missing /checkout: the
+        //    buyer picks one camp and pays on a page describing another. Raising one side without the other
+        //    re-creates it for camps 4 and 5 in the list.
+        //
+        // Keep these two numbers equal. The feed caps at 10.
+        response = await fetchImpl(feedUrl + '?limit=5', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CHECKOUT_ANON_KEY, Authorization: 'Bearer ' + CAMP_CHECKOUT_ANON_KEY } });
       } finally {
         clearTimeout(timer);
       }

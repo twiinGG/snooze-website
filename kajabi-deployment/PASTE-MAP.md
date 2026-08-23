@@ -391,14 +391,57 @@ step 2 is what keeps the window between them down to the two renames rather than
 
 | Row | Status | Kajabi field | Admin link | Whole-field repo source |
 |---|---|---|---|---|
-| P3-CAMP-LANDING-HTML | **DRIFT, and the page is currently PARKED** | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), today on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
-| P3-CAMP-WAITLIST-HTML | **DRIFT, backup surface, and the page is currently LIVE** | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), today on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
+| P3-CAMP-LANDING-HTML | **DRIFT.** Path claim corrected 2026-08-22, see note below | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
+| P3-CAMP-WAITLIST-HTML | **DRIFT, backup surface.** Path claim corrected 2026-08-22, see note below | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
 | P3-CAMP-LANDING-CSS | **DRIFT** | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
-| P3-CAMP-LANDING-JS | **DRIFT** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
+| P3-CAMP-LANDING-JS | **DRIFT overall, two lines reconciled 2026-08-22** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
 | P3-CAMP-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
 | P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
 | P3-CAMP-CHECKOUT-CSS | **IN SYNC, read back 2026-08-21** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
-| P3-CAMP-CHECKOUT-JS | **IN SYNC, verified live 2026-08-21** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+| P3-CAMP-CHECKOUT-JS | **IN SYNC, verified live on all four offers 2026-08-22** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+
+#### Correction and open item, 2026-08-22 (PM-008 WS1b)
+
+**The two landing rows had the pages the wrong way round.** They said the selling page was parked on
+`/camp-snooze-sleep-coaching-WAITLIST` while the waitlist variant served `/camp-snooze-sleep-coaching`.
+A live read on 2026-08-22 shows the opposite, and the right way round:
+[`2151771543` Welcome to Camp Snooze](https://app.kajabi.com/admin/landing_pages/2151771543/edit) serves
+`camp-snooze-sleep-coaching`, and
+[`2151845416` Join the Camp Snooze Waitlist](https://app.kajabi.com/admin/landing_pages/2151845416/edit)
+serves `camp-snooze-sleep-coaching-WAITLIST`. Both published, both updated 2026-08-21. The HTML blocks
+themselves were not compared, so those rows stay DRIFT on content; only the path claim is corrected.
+
+**P3-CAMP-LANDING-JS, two lines reconciled.** Kade pasted `audCheckoutUrl` with its missing `/checkout`
+and `?limit=5` into the camp landing theme on 2026-08-22. Verified live: all five cohort cards render and
+every CTA href is `https://www.joinsnooze.com/offers/46Bz9tk6/checkout?cohort=N`. The rest of the field
+was not compared, so the row stays DRIFT.
+
+**P3-CAMP-CHECKOUT-JS is now out of sync, and the mismatch is live.** The repo requests `?limit=5`; the
+four offer themes still request `?limit=3`. The checkout resolves `?cohort=N` only within the window it
+requests, so a cohort outside that window is silently replaced by the soonest camp. Measured live
+2026-08-22:
+
+**CLOSED 2026-08-22.** Kade pasted `?limit=5` into all four offer themes. Verified live on every camp
+checkout, on every one of the four offers, by loading `?cohort=N` and reading the rendered order summary:
+
+| Offer | Checkout slug | cohort 16 | cohort 19 |
+|---|---|---|---|
+| [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | `46Bz9tk6` | Camp Snooze #16 | Camp Snooze #19 |
+| [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit) | `K3Y6FEKX` | Camp Snooze #16 | Camp Snooze #19 |
+| [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | `ENhg45mj` | Camp Snooze #16 | Camp Snooze #19 |
+| [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit) | `rVuLzkZa` | Camp Snooze #16 | Camp Snooze #19 |
+
+On the AUD offer all five cohorts were checked and each rendered its own real start date: #15 Monday 31
+August 2026, #16 Monday 14 September 2026, #17 Monday 28 September 2026, #18 Monday 12 October 2026, #19
+Monday 26 October 2026. Those match `snooze_os.camp_cohorts.start_date` exactly for all five.
+
+Regression cover for the parity rule:
+`pages/landing/camp-snooze/camp-snooze-v2-luxury/tests/camp-checkout-url.test.mjs`.
+
+**Not a defect, recorded so it is not chased again.** A "You already purchased Camp Snooze on 15 August
+2026" line appears on the checkout with a fixed date. It is Kajabi's own `sage-banner__text` component,
+shown only to a signed-in member who already owns the offer. It is not in any repo block and a new buyer
+never sees it.
 
 #### Measured live state, 2026-08-18, and how Kade verifies each paste
 
