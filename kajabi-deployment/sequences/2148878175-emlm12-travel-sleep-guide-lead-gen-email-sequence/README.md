@@ -28,13 +28,18 @@ Same trade EMLM11 documents: one block that matches the repo file exactly, again
 Editor URLs: `https://app.kajabi.com/admin/email_sequences/2148878175/edit`
 
 **Day 0 timing.** `add_sequence_email` stores `send_time_in_minutes: 660` on a day-0 email and there is
-no MCP override. This is identical to EMLM11's live email 1, which the WS-006 run verified as arriving on
-submit, so the shape here matches the proven magnet rather than the kickoff's assumption of a send-hour
-override.
+no MCP override, but the value is inert: the sequence page lists email 1 as **"Immediately"** and its
+editor states "This email will be sent immediately after someone subscribes to this email sequence".
+Identical to EMLM11's live email 1. No send-hour override exists or is needed.
 
 ## Status
 
-All three emails are **draft**. Publishing a sequence email is an admin UI action; no MCP tool exposes it.
+All three are **published**, confirmed by `get_sequence` after the write. Publishing a sequence email is
+just pressing **Save** on its edit page; before that the page shows "Editing incomplete. This email is not
+currently being sent to sequence subscribers." No MCP tool exposes it.
+
+Bound by automation **935751**, "TSG-001 Travel Sleep Guide form submitted, subscribe to EMLM12",
+published. The sequence page shows **1 subscribe trigger**, and no duplicate.
 
 ## Where the copy came from
 
