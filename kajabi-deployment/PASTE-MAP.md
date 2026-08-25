@@ -270,7 +270,7 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 | Camp Snooze | camp landing | [`pages/landing/camp-snooze/`](./pages/landing/camp-snooze/) | partial | partial | Own theme; pull before overwrite |
 | Day Pass / paid ads / cold traffic / snooze-access | respective URLs | under [`pages/landing/`](./pages/landing/) | mostly missing | partial | WS-001 WS1 |
 | `annual-moment-v1`, `kic-partnership` | — | empty dirs | no | no | Pull from live first |
-| **Camp confirm (post-purchase)** | **NOT PUBLISHED YET.** Proposed slug `camp-confirm` | [`pages/landing/camp-snooze-confirm/camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | yes | yes | New in PM-006. The post-purchase surface where a Camp Snooze buyer confirms which camp they are in. **Paired change with the six camp offers' `post_purchase` redirect**, see C1 below |
+| **Camp confirm (post-purchase)** | **LIVE and published** at [`/camp-confirm`](https://www.joinsnooze.com/camp-confirm), page [`2152228966`](https://app.kajabi.com/admin/landing_pages/2152228966/edit), theme [`2167276583`](https://app.kajabi.com/admin/themes/2167276583/settings/edit) | [`pages/landing/camp-snooze-confirm/camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | yes | yes | New in PM-006. The post-purchase surface where a Camp Snooze buyer confirms which camp they are in. **Paired change with the six camp offers' `post_purchase` redirect**, see C1 below |
 
 ### C1. Camp confirm page, and the paired offer redirect
 
@@ -283,10 +283,29 @@ field, whole-field overwrite, never composed at paste time.
 
 | # | Kajabi target | Canonical file | State |
 |---|---|---|---|
-| C1a | The landing page's single full-width, flush custom-code block | [`camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | Built, htmlhint clean, not pasted |
-| C1b | That landing page theme's **Custom CSS** field | [`camp-confirm-page.css`](./pages/landing/camp-snooze-confirm/camp-confirm-page.css) | Built, stylelint clean against `scripts/stylelint-kajabi.json`, not pasted |
-| C1c | That landing page theme's **Custom JavaScript** field | [`camp-confirm-page.js`](./pages/landing/camp-snooze-confirm/camp-confirm-page.js) | Built, `node --check` clean, 51 unit assertions passing, not pasted |
-| C1d | `post_purchase.preference` on **six** camp offers, switched from `custom_message` to `landing_page` pointing at this page | Not a repo file. Kajabi setting | Not done |
+| C1a | The landing page's single full-width, flush custom-code block | [`camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | **AHEAD OF LIVE, needs paste 2026-08-26** (camp-component redesign, `How to get ready for Camp`, app block above the fold). Live currently holds the 2026-08-25 version, diffed both directions and byte-identical to the previous repo file |
+| C1b | That landing page theme's **Custom CSS** field | [`camp-confirm-page.css`](./pages/landing/camp-snooze-confirm/camp-confirm-page.css) | **AHEAD OF LIVE, needs paste 2026-08-26** (rewritten on the camp landing palette and components). stylelint clean against `scripts/stylelint-kajabi.json` |
+| C1c | That landing page theme's **Custom JavaScript** field | [`camp-confirm-page.js`](./pages/landing/camp-snooze-confirm/camp-confirm-page.js) | **IN SYNC, verified live 2026-08-26** by both-direction diff. Unchanged by the 2026-08-26 redesign: every id the script binds to was preserved, and its 53 assertions still pass |
+| C1d | `post_purchase.preference` on **six** camp offers, switched from `custom_message` to `landing_page` pointing at this page | Not a repo file. Kajabi setting | **Done.** All six read `preference: landing_page`, `landing_page_id: 2152228966`, verified 2026-08-26. The dormant `body` on all six was also rewritten date-free that day, see C1e |
+
+### C1e. The six offers' dormant post-purchase body, rewritten 2026-08-26
+
+Every one of the six camp offers carried a `post_purchase.body` hardcoding **Camp Snooze #15, Friday 28
+August 2026 and Monday 31 August 2026**. Because all six run `preference: landing_page`, that text is
+**dormant and never shown to a buyer** — the redirect wins. It was still a trap: anyone flipping the
+preference back to the custom message would have shipped a stale camp's dates to every buyer. Rewritten
+date-free on all six, pointing at the confirmation email for the camp's own dates.
+
+**The Kajabi offer API strips most tags from this field.** `h2`, `h3`, `ol`, `li` and `strong` were all
+removed on the first write and the numbered list collapsed into one run-on paragraph. Only `p` survives,
+so the body is now plain paragraphs with manual "1." numbering. Do not reintroduce rich markup here.
+
+Offers: [`2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit) USD,
+[`2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) AUD,
+[`2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit) USD member,
+[`2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) AUD member,
+[`2151114090`](https://app.kajabi.com/admin/offers/2151114090/edit) multiples,
+[`2151134284`](https://app.kajabi.com/admin/offers/2151134284/edit) AUD payment plan.
 
 Page setup, same as the two sibling thank-you pages: section full width, code block flush, all section
 padding zero, and hide the landing theme's default header and footer because the page carries its own.
