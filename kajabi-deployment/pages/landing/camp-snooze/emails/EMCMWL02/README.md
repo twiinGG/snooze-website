@@ -16,7 +16,7 @@
 
 ### camp-snooze-waitlist-03-last-chance.html
 - **Subject:** Last Chance for Camp Snooze
-- **Preview:** Enrollment closes January 23, 2026. This is your final reminder.
+- **Preview:** Intake closes 11:59pm AEST on the Thursday before camp starts. This is your final reminder.
 - **Trigger:** Day before enrollment closes (for waitlist subscribers)
 - **Deployment note:** PRD §4.8 - currency footer note: Prices shown in USD. AUD pricing available at joinsnooze.com.
 

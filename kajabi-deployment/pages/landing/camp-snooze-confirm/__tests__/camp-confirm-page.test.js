@@ -263,5 +263,23 @@ assert(
   })()
 );
 
+// The page confirms one camp; it does not reopen the choice. Removed 2026-08-25 with the
+// single-intake change, and asserted here because a picker is easy to reintroduce by copying an
+// older revision of the markup.
+assert(
+  'the markup carries no camp picker',
+  !html.includes('sn-cc-cohort-select') && !html.includes('<select')
+);
+
+assert(
+  'the script never reads a camp picker',
+  !js.includes('sn-cc-cohort-select')
+);
+
+assert(
+  'the confirm button is still there',
+  html.includes('sn-cc-confirm-button')
+);
+
 console.log(`\nSummary: ${passed} passed, ${failed} failed.`);
 if (failed) process.exit(1);

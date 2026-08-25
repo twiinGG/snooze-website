@@ -21,16 +21,6 @@
       </div>
     </section>
 
-    <!--
-      THE CONFIRM WIDGET.
-
-      Every state below is present in the HTML and hidden by `hidden`. The
-      JavaScript reveals exactly one at a time. The no-JavaScript case therefore
-      shows `sn-cc-confirm-noscript`, which tells the buyer to reply to their
-      confirmation email, rather than showing an inert button or nothing at all.
-
-      Do not remove a state block because it looks unused. Each one is reachable.
-    -->
     <section class="sn-cc-confirm-section" aria-labelledby="sn-cc-confirm-title">
       <div class="sn-cc-container">
         <div class="sn-cc-card" id="sn-cc-confirm" data-state="noscript">
@@ -40,7 +30,7 @@
 
           <div class="sn-cc-state" id="sn-cc-confirm-noscript">
             <p>This step needs JavaScript, and it looks like it is switched off. Reply to your confirmation
-              email with the camp you want and a person will book you in.</p>
+              email and a person will confirm your camp for you.</p>
             <p><a class="sn-cc-text-link" href="mailto:support@joinsnooze.com">support@joinsnooze.com</a></p>
           </div>
 
@@ -53,28 +43,12 @@
 
             <button type="button" class="sn-cc-button" id="sn-cc-confirm-button">Confirm this camp</button>
 
-            <details class="sn-cc-switch" id="sn-cc-switch">
-              <summary>I want a different camp</summary>
-              <div class="sn-cc-switch-body">
-                <label class="sn-cc-label" for="sn-cc-cohort-select">Choose your camp</label>
-                <select id="sn-cc-cohort-select" class="sn-cc-select"></select>
-                <p class="sn-cc-muted sn-cc-switch-note">Camps that have filled or already started are not
-                  listed.</p>
-              </div>
-            </details>
+            <p class="sn-cc-muted sn-cc-switch-note">This is the camp you bought. If you need a
+              different one, reply to your confirmation email before you confirm and we will move you.</p>
 
             <p class="sn-cc-error" id="sn-cc-confirm-error" hidden role="alert"></p>
           </div>
 
-          <!--
-            No Kajabi session, so no contact id, so nothing to confirm against.
-
-            Asking for an email here would be worse than useless: Kajabi's REST
-            API cannot resolve an email to a contact (`filter[email]` is
-            silently ignored, tested 2026-08-21), so a typed address would book
-            a seat that never receives its access. Sending them to sign in is
-            the only honest move. See camp-confirm-page.js `resolveIdentity`.
-          -->
           <div class="sn-cc-state" id="sn-cc-confirm-signin" hidden>
             <p class="sn-cc-held" id="sn-cc-signin-held"></p>
             <p>Sign in with the email and password you used at checkout, and this page will let you confirm
@@ -115,17 +89,6 @@
       </div>
     </section>
 
-    <!--
-      WELCOME VIDEO. Placeholder slot, deliberately.
-
-      Kade deferred who records this, Sally or Bec or both. Until that lands the
-      section is hidden with `hidden` on the <section>, so the page reads as
-      finished rather than broken.
-
-      TO GO LIVE: upload the video to the Kajabi media library, put its embed in
-      place of the comment inside `sn-cc-video-frame`, and delete the `hidden`
-      attribute on the section. Nothing else changes.
-    -->
     <section class="sn-cc-video-section" aria-labelledby="sn-cc-video-title" id="sn-cc-video-section" hidden>
       <div class="sn-cc-container">
         <div class="sn-cc-section-heading">
@@ -133,7 +96,7 @@
           <p>Two minutes on how camp runs and what we will ask of you.</p>
         </div>
         <div class="sn-cc-video-frame" id="sn-cc-video-frame">
-          <!-- WELCOME VIDEO EMBED GOES HERE -->
+          
         </div>
       </div>
     </section>
@@ -174,8 +137,9 @@
             <span class="sn-cc-step-number" aria-hidden="true">2</span>
             <div class="sn-cc-step-body">
               <h3>Work through your Welcome To Camp</h3>
-              <p>It is open to you now. It holds your intake form and the short set of things to have ready
-                before day one. Doing it early means camp gets spent on your baby rather than on paperwork.</p>
+              <p>It is open to you now. It holds your agreement, your intake form and the short set of things
+                to have ready before day one. Doing it early means camp gets spent on your baby rather than on
+                paperwork.</p>
               <a class="sn-cc-button sn-cc-button-quiet"
                  href="https://www.joinsnooze.com/products/welcome-to-camp">Open your Welcome To Camp</a>
             </div>

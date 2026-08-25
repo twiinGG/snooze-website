@@ -2,7 +2,7 @@ const CAMP_CONFIRM_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
 const CAMP_CONFIRM_ANON_KEY = window.SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; 
 
 const CONFIRMABLE_STATES = ['open', 'filling', 'low'];
 
@@ -17,13 +17,6 @@ window.CampConfirm = (function () {
     if (!value) return 'dates to be confirmed';
     return new Intl.DateTimeFormat('en-AU', {
       weekday: 'long', day: 'numeric', month: 'long'
-    }).format(new Date(value + 'T00:00:00+10:00'));
-  }
-
-  function shortDate(value) {
-    if (!value) return 'TBC';
-    return new Intl.DateTimeFormat('en-AU', {
-      day: 'numeric', month: 'short'
     }).format(new Date(value + 'T00:00:00+10:00'));
   }
 
@@ -122,16 +115,6 @@ window.CampConfirm = (function () {
   function renderReady(root, cohorts, chosen, identity) {
     root.querySelector('#sn-cc-held-line').innerHTML = heldLine(chosen);
 
-    const select = root.querySelector('#sn-cc-cohort-select');
-    select.innerHTML = '';
-    cohorts.filter((c) => CONFIRMABLE_STATES.indexOf(c.state) !== -1).forEach((c) => {
-      const option = document.createElement('option');
-      option.value = String(c.cohort_number);
-      option.textContent = c.title + ', starts ' + shortDate(c.start_date);
-      if (c.cohort_number === chosen.cohort_number) option.selected = true;
-      select.appendChild(option);
-    });
-
     if (!identity.contactId) {
       root.querySelector('#sn-cc-signin-held').innerHTML = heldLine(chosen);
       show(root, 'signin');
@@ -198,15 +181,7 @@ window.CampConfirm = (function () {
     });
 
     const button = root.querySelector('#sn-cc-confirm-button');
-    const select = root.querySelector('#sn-cc-cohort-select');
     const errorLine = root.querySelector('#sn-cc-confirm-error');
-
-    select.addEventListener('change', () => {
-      const next = cohorts.find((c) => String(c.cohort_number) === select.value);
-      if (!next) return;
-      chosen = next;
-      root.querySelector('#sn-cc-held-line').innerHTML = heldLine(next);
-    });
 
     button.addEventListener('click', async () => {
       if (!chosen || !identity.contactId) return;

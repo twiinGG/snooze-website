@@ -78,6 +78,28 @@ nothing on the page ever closed and there was no reason to decide today.
   `notes/<filename>.NOTES.md`; `scripts/kajabi/extract-comments.mjs` does the move and its `--check`
   mode gates commits, with a PreToolUse hook blocking Write/Edit.
 
+### Emails and post-purchase (added later the same day)
+- **The post-purchase page stopped offering a choice.** `pages/landing/camp-snooze-confirm/` lost its
+  "I want a different camp" picker; the confirm step itself stays, which is the whole point of the page.
+  A quiet line under the button routes anyone who genuinely needs a different camp to reply before
+  confirming. Three new assertions lock it: no `<select>` in the markup, no picker id in the script, and
+  the confirm button still present. Deployed to theme `2167276583`; a live-only copy edit found in the
+  block ("your agreement, your intake form") was adopted into the repo rather than overwritten.
+- **The four confirmation emails were camp-specific and are not any more.** Subjects read "Your Camp
+  Snooze #15 dates"; bodies opened "You are booked into Camp Snooze #15" and listed three hardcoded
+  dates. From 2026-08-28 that is a confirmation email naming the wrong camp. All four now carry a
+  confirm CTA to `/camp-confirm`, no camp number and no fixed dates, with their arm-specific billing
+  paragraph intact. Probed on four separate aliases and read in the inbox. Sequences and emails renamed
+  off `#15`.
+- **Four stale waitlist-launch sequences retired.** EMWL02, EMWL03 and both EMWL04s carried "closes
+  January 23", "starts Monday 23 February" and "only 6 spots" against a cap that is fifteen. Their
+  twelve emails are published theme-builder emails, which deliver a snapshot from publish time and
+  cannot be edited at all, so they are prefixed `[RETIRED 2026-08-25 stale-dates]` on Kade's ruling. The
+  evergreen replacement copy is in the repo at `pages/landing/camp-snooze/emails/`, to be built as one
+  classic-builder sequence at the next launch.
+- **Three legacy thank-you assets retired** to `_retired/camp-snooze-thank-you-legacy/`. The old
+  thank-you page hardcoded January 2026 dates in AEDT and ET; `/camp-confirm` replaced it.
+
 ### Tests
 - `tests/camp-single-intake.test.mjs` (new): one card out of a five-cohort feed,
   auto-advance past full and closed camps, waitlist when nothing is sellable, and

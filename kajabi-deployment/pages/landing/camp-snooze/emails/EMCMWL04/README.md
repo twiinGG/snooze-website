@@ -16,7 +16,7 @@
 
 ### camp-snooze-waitlist-03-last-chance.html
 - **Subject:** Final Call for Camp Snooze
-- **Preview:** 6 spots. Enrollment closes Tuesday, February 17.
+- **Preview:** Fifteen places. Intake closes 11:59pm AEST on the Thursday before camp starts.
 - **Trigger:** 2 days before enrollment closes
 - **Deployment note:** PRD §4.8 - currency footer note: Prices shown in USD. AUD pricing available at joinsnooze.com.
 
