@@ -391,14 +391,42 @@ step 2 is what keeps the window between them down to the two renames rather than
 
 | Row | Status | Kajabi field | Admin link | Whole-field repo source |
 |---|---|---|---|---|
-| P3-CAMP-LANDING-HTML | **DRIFT.** Path claim corrected 2026-08-22, see note below | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
-| P3-CAMP-WAITLIST-HTML | **DRIFT, backup surface.** Path claim corrected 2026-08-22, see note below | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
-| P3-CAMP-LANDING-CSS | **DRIFT** | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
-| P3-CAMP-LANDING-JS | **DRIFT overall, two lines reconciled 2026-08-22** | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
-| P3-CAMP-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
-| P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, verified live 2026-08-21** | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
+| P3-CAMP-LANDING-HTML | **IN SYNC, pasted and verified live 2026-08-25** (single-intake urgency change) | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
+| P3-CAMP-WAITLIST-HTML | **IN SYNC, pasted and verified live 2026-08-25.** Backup surface. Live had drifted: the cohort select read "starts August 31, 2026" and "dates to be confirmed" for camps 16 and 17 | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
+| P3-CAMP-LANDING-CSS | **IN SYNC, pasted 2026-08-25** on both the landing theme `2164288957` and the waitlist theme `2164775842` | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
+| P3-CAMP-LANDING-JS | **IN SYNC, pasted 2026-08-25** on both the landing theme `2164288957` and the waitlist theme `2164775842`. The waitlist theme was two fixes behind: `audCheckoutUrl` without `/checkout` and `?limit=3` | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
+| P3-CAMP-CHECKOUT-HTML | **IN SYNC, re-pasted and verified live 2026-08-25** (Intake Closes row) | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
+| P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, re-pasted and verified live 2026-08-25** (Intake Closes row) | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
 | P3-CAMP-CHECKOUT-CSS | **IN SYNC, read back 2026-08-21** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
-| P3-CAMP-CHECKOUT-JS | **IN SYNC, verified live on all four offers 2026-08-22** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+| P3-CAMP-CHECKOUT-JS | **IN SYNC, re-pasted on all four offers and verified live 2026-08-25** | Each offer theme Custom JS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.js`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js) |
+
+#### Single-intake urgency pass, 2026-08-25
+
+All seven camp rows above were pasted and read back on 2026-08-25. Every field was diffed live against
+the repo before it was overwritten, with comments removed from both sides, and only the waitlist page
+carried real drift (recorded in its row). Theme ids used: landing `2164288957`, waitlist `2164775842`,
+checkout `2164289025` (USD), `2164667756` (AUD), `2164675367` (USD member), `2166737611` (AUD member).
+
+Paste targets now ship comment-free (Kade's rule, same day). Comments live in
+`notes/<filename>.NOTES.md` beside each file. `node scripts/kajabi/extract-comments.mjs --check <file>`
+is the gate, wired to a pre-commit hook and a PreToolUse hook, so a re-paste from the repo is already
+comment-free and no manual stripping step is needed.
+
+Verify commands, run 2026-08-25, all six surfaces:
+
+```bash
+# Landing and waitlist: one card, with the deadline on it.
+# Expect: ready cards=1, and an "Intake closes ..." line.
+agent-browser open "https://www.joinsnooze.com/camp-snooze-sleep-coaching"
+agent-browser eval "document.querySelector('[data-camp-capacity-widget]').textContent"
+
+# All four checkouts: the close row is filled from the feed, not left on its fallback text.
+# Expect: "Thursday 27 August at 11:59 pm Melbourne", never "the Thursday before camp".
+for slug in K3Y6FEKX 46Bz9tk6 rVuLzkZa ENhg45mj; do
+  agent-browser open "https://www.joinsnooze.com/offers/$slug/checkout"
+  agent-browser eval "document.querySelector('[data-camp-cohort-close]').textContent"
+done
+```
 
 #### Correction and open item, 2026-08-22 (PM-008 WS1b)
 

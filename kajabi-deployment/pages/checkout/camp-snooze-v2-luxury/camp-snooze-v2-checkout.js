@@ -1,18 +1,9 @@
 const CAMP_CHECKOUT_CAPACITY_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
-// Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
 const CAMP_CHECKOUT_ANON_KEY = window.SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; 
 
-// This same HTML+JS pair is pasted verbatim onto four checkout pages (regular USD/AUD, member USD/AUD;
-// see PASTE-MAP.md P3-CAMP-CHECKOUT-HTML and P3-CAMP-MEMBER-CHECKOUT-HTML, "paste to both currency
-// twins"). Before this block existed, every `.dynamic-price` span rendered its hardcoded fallback text
-// and the `.currency` label was a static "USD" string, so the AUD checkout pages showed the USD number
-// and label regardless of which offer a buyer was actually completing. This detects currency from the
-// offer identifier in the page's own URL (the same short-code pattern the landing page already keys its
-// checkout links off) and re-renders every price and currency label from data-usd/data-aud, matching how
-// the landing page's campUpdatePrices() already works.
 const CAMP_CHECKOUT_CURRENCY_CONFIG = {
   audOfferKeys: ['46Bz9tk6', 'ENhg45mj'],
   usdOfferKeys: ['K3Y6FEKX', 'rVuLzkZa'],
@@ -33,8 +24,7 @@ function campCheckoutDetectCurrency() {
 function campCheckoutFormatPriceNum(num) {
   const n = Math.abs(parseFloat(String(num).replace(/[^0-9.-]/g, '')));
   if (Number.isNaN(n)) return num;
-  // Same rule as the landing formatter: cents only when the amount has them, so 39.5 renders as 39.50
-  // rather than 39.5, and 690 stays 690.
+  
   const hasCents = Math.round(n * 100) % 100 !== 0;
   return n.toLocaleString('en-US', {
     minimumFractionDigits: hasCents ? 2 : 0,
@@ -56,20 +46,22 @@ function campCheckoutRenderCurrency(currency) {
   });
 }
 
-// The order summary and the Key Dates block used to hardcode one cohort, "Camp Snooze #15"
-// with its August dates, while the capacity card beside them resolved the live cohort from the
-// feed. The feed's own RPC drops a camp once its start date passes, so from the morning of
-// 2026-08-31 the two halves of the same page disagreed: the card said #16 and the summary the
-// buyer was paying against still said #15. These fill the summary from the same resolved cohort.
-// The static text stays in the HTML as the fallback, so a failed feed leaves a correct-looking
-// page rather than an empty one.
 function campCheckoutFormatCohortDate(value) {
   if (!value) return 'date to be confirmed';
-  // Cohort dates are plain calendar dates. Pin them to Melbourne so a US buyer's browser cannot
-  // render the day before.
+  
   return new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'Etc/GMT-10',
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
   }).format(new Date(value + 'T00:00:00+10:00'));
+}
+
+function campCheckoutFormatCloseAt(value) {
+  if (!value) return '';
+  return new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'Etc/GMT-10',
+    weekday: 'long', day: 'numeric', month: 'long',
+    hour: 'numeric', minute: '2-digit', hour12: true
+  }).format(new Date(value)) + ' AEST';
 }
 
 function campCheckoutRenderCohortText(cohort) {
@@ -77,7 +69,8 @@ function campCheckoutRenderCohortText(cohort) {
   const writes = [
     ['[data-camp-cohort-title]', cohort.title || ('Camp Snooze #' + cohort.cohort_number)],
     ['[data-camp-cohort-start]', campCheckoutFormatCohortDate(cohort.start_date)],
-    ['[data-camp-cohort-access]', campCheckoutFormatCohortDate(cohort.access_friday)]
+    ['[data-camp-cohort-access]', campCheckoutFormatCohortDate(cohort.access_friday)],
+    ['[data-camp-cohort-close]', campCheckoutFormatCloseAt(cohort.checkout_close_at)]
   ];
   writes.forEach(function (pair) {
     const text = pair[1];
@@ -100,9 +93,7 @@ window.CampCheckoutCapacity = (function () {
       const match = cohorts.find(function (cohort) { return cohort.cohort_number === requested; });
       if (match) return match;
     }
-    // The feed bands availability open / filling / low / full / closed. 'low' is still a
-    // sellable camp, so it belongs here. Omitting it made the checkout skip a camp that had
-    // 1 to 5 seats left and name the NEXT camp instead, on the page selling the current one.
+    
     return cohorts.find(function (cohort) {
       return cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
     }) || cohorts[0];
@@ -117,16 +108,15 @@ window.CampCheckoutCapacity = (function () {
         '<a href="https://www.joinsnooze.com/camp-snooze#waitlist-section">Join the Waitlist</a>';
       return;
     }
-    // Same band rule the landing page already applies: a precise count appears ONLY when the camp
-    // is genuinely low, because "15 of 15 places remain" tells a buyer that nobody has booked.
-    //   open     10+ left   no places line at all
-    //   filling  6 to 9     "Filling fast", no number
-    //   low      1 to 5     the real number
+    
     const places = cohort.state === 'low'
       ? (cohort.seats_remaining === 1 ? ' Only 1 place left.' : ' Only ' + cohort.seats_remaining + ' places left.')
       : cohort.state === 'filling' ? ' Filling fast.' : '';
+    
+    const closes = campCheckoutFormatCloseAt(cohort.checkout_close_at);
     root.innerHTML = '<strong>Camp Snooze #' + cohort.cohort_number + '</strong>' +
-      '<span>Starts ' + start + '.' + places + '</span>';
+      '<span>Starts ' + start + '.' + places + '</span>' +
+      (closes ? '<span>Intake closes ' + closes + '.</span>' : '');
   }
 
   async function init(root, options) {
@@ -140,19 +130,7 @@ window.CampCheckoutCapacity = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        // Ask for five, not three.
-        //
-        // Two reasons, and the second one is a latent bug rather than a preference.
-        //
-        // 1. get_camp_capacity defaults to coalesce(p_limit, 3), and there are five open cohorts. At limit=3 a
-        //    family who wants a later date cannot see that it exists.
-        // 2. The landing page and this checkout MUST request the same window. The checkout resolves ?cohort=N by
-        //    searching the list the feed returns; a cohort outside that window is not found and it silently
-        //    falls back to the soonest camp. That is the same class of failure as the missing /checkout: the
-        //    buyer picks one camp and pays on a page describing another. Raising one side without the other
-        //    re-creates it for camps 4 and 5 in the list.
-        //
-        // Keep these two numbers equal. The feed caps at 10.
+        
         response = await fetchImpl(feedUrl + '?limit=5', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CHECKOUT_ANON_KEY, Authorization: 'Bearer ' + CAMP_CHECKOUT_ANON_KEY } });
       } finally {
         clearTimeout(timer);
@@ -186,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-      link.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; // pragma: allowlist secret
+      link.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; 
       link.crossOrigin = 'anonymous';
       link.referrerPolicy = 'no-referrer';
       document.head.appendChild(link);

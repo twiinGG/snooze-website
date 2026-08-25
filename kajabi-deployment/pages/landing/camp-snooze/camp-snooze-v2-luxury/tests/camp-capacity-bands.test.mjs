@@ -21,11 +21,13 @@ await import('../camp-snooze-v2-luxury.js');
 
 async function render(state, remaining) {
   const root = { dataset: {}, innerHTML: '', querySelectorAll: () => [] };
-  const payload = { cohorts: [{ cohort_number: 15, state, seats_remaining: remaining, start_date: '2026-08-31' }] };
+  const payload = { cohorts: [{ cohort_number: 15, state, seats_remaining: remaining, start_date: '2026-08-31', access_friday: '2026-08-28', checkout_close_at: '2026-08-27T13:59:59.000Z' }] };
   const result = await window.CampCapacityWidget.init(root, {
     feedUrl: 'http://127.0.0.1:1/stub',
     fetchImpl: async () => ({ ok: true, json: async () => payload }),
     timeoutMs: 100,
+    // Pinned two days before the close, so the countdown assertions do not drift with the wall clock.
+    nowMs: Date.parse('2026-08-25T23:59:59+10:00'),
   });
   assert.equal(result, 'ready');
   return root.innerHTML;
@@ -36,7 +38,7 @@ for (const n of [15, 10]) {
   const html = await render('open', n);
   assert.doesNotMatch(html, /camp-capacity-places/, `open with ${n} left must render no places element`);
   assert.doesNotMatch(html, /of 15 places remaining/);
-  assert.match(html, /Choose Camp #15/);
+  assert.match(html, /Join Camp #15/);
 }
 
 // filling: words only, no number anywhere in the capacity line.
@@ -44,14 +46,14 @@ for (const n of [9, 6]) {
   const html = await render('filling', n);
   assert.match(html, /Filling fast/);
   assert.doesNotMatch(html, /camp-capacity-places/, `filling with ${n} left must not print a count`);
-  assert.match(html, /Choose Camp #15/);
+  assert.match(html, /Join Camp #15/);
 }
 
 // low: the real number, and still bookable.
 const low5 = await render('low', 5);
 assert.match(low5, /Only 5 places left/);
 assert.match(low5, /Almost full/);
-assert.match(low5, /Choose Camp #15/);
+assert.match(low5, /Join Camp #15/);
 
 // low: singular reads correctly.
 const low1 = await render('low', 1);
@@ -63,10 +65,23 @@ const low4 = await render('low', 4);
 assert.match(low4, /Only 4 places left/);
 assert.doesNotMatch(low4, /Only 5 places left/);
 
+// An open camp names the deadline and how long is left on it. Both come from checkout_close_at, which
+// the feed is already enforcing, so the card cannot promise a window the checkout will not honour.
+const openCard = await render('open', 15);
+assert.match(openCard, /Intake closes Thursday 27 Aug, 11:59pm AEST/);
+assert.match(openCard, /Closes in 2 days/);
+assert.match(openCard, /Snooze access opens Friday 28 Aug 2026/);
+
 // full: taken, and routed to the waitlist path rather than a checkout.
 const full = await render('full', 0);
 assert.match(full, /All 15 places are taken/);
 assert.match(full, /Join Camp #15 Waitlist/);
-assert.doesNotMatch(full, /Choose Camp #15/);
+// The waitlist CTA now shares the "Join Camp #15" prefix with the buy CTA, so the check that a full
+// camp offers no checkout has to look at the link itself rather than its label.
+assert.doesNotMatch(full, /data-checkout/);
+
+// A camp nobody can buy must not advertise a deadline; the waitlist is the only action left.
+assert.doesNotMatch(full, /Intake closes/);
+assert.doesNotMatch(full, /camp-capacity-countdown/);
 
 console.log('CAPACITY BANDS PASSED: open prints nothing, filling has no number, low prints the true count and pluralises, full routes to the waitlist');

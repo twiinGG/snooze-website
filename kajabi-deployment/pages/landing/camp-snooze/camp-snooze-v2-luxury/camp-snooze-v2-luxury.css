@@ -501,9 +501,9 @@ h6 {
 
 .camp-capacity-widget {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
-  max-width: 60rem;
+  max-width: 34rem;
   margin: 0 auto;
 }
 
@@ -538,9 +538,38 @@ h6 {
 }
 
 .camp-capacity-date,
+.camp-capacity-access,
 .camp-capacity-places {
   color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.camp-capacity-places {
   margin-bottom: 1rem;
+}
+
+.camp-capacity-access {
+  font-size: 0.9rem;
+}
+
+.camp-capacity-close {
+  color: var(--camp-forest);
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.camp-capacity-countdown {
+  background: hsl(38, 70%, 55% / 0.15);
+  border: 1px solid hsl(38, 70%, 55% / 0.4);
+  border-radius: 999px;
+  color: var(--camp-rust);
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.9rem;
+  text-transform: uppercase;
 }
 
 .camp-capacity-card--filling {

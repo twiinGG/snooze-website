@@ -75,8 +75,13 @@ The two HTML block files share the same CSS and JS. Switch between modes by choo
 
 - **LIVE CAPACITY mode (currently live):** use `camp-snooze-landing-page-blocks.html`
   - Sets `window.CAMP_PAGE_MODE = 'live-capacity'` in its first line
-  - Reads the `camp-capacity` Edge Function and renders the next five intakes
-  - Offers checkout for open intakes and the waitlist for full or closed intakes
+  - Reads the `camp-capacity` Edge Function and renders **one** intake: the
+    soonest sellable camp, with its start date, its access Friday, its intake
+    close time and a countdown
+  - Requests `?limit=5` even though it shows one, because the checkout resolves
+    `?cohort=N` against the same window. Keep the two numbers equal.
+  - Auto-advances past a full or closed camp to the next sellable one, and shows
+    the soonest camp with a waitlist CTA only when nothing in the window sells
   - Falls back to a neutral message and keeps checkout working if the feed fails
 - **WAITLIST mode:** use `camp-snooze-landing-page-blocks-waitlist.html`
   - Sets `window.CAMP_PAGE_MODE = 'waitlist'`; the sticky CTA becomes a single
@@ -116,6 +121,21 @@ Preference is persisted in localStorage under the key `snooze_currency_preferenc
 The older checkout variant still uses `COUNTDOWN_DEADLINE`. The live-capacity
 variant reads checkout dates from the cohort feed and needs no date edit per Camp.
 
+The card's countdown reads `checkout_close_at` from the feed. That value is set
+by the trigger in `20260825150000_camp_intake_close_aest_sign_fix.sql`: 23:59:59 AEST on
+the Thursday before the cohort's `access_friday`, one clear day before the Friday
+grant fires. The offset is fixed at GMT+10, not the Australia/Melbourne zone, so
+the instant and the "AEST" label agree through the October to April AEDT period
+instead of drifting an hour apart. Postgres reads a bare `'+10'` as UTC minus 10,
+so the derivation subtracts `interval '10 hours'` from a UTC timestamp rather than
+naming an offset; `20260825140000` got this wrong and `20260825150000` fixed it. `get_camp_capacity` already bands a cohort `closed` once the
+instant passes, so the label and the enforcement come from the same column and
+cannot disagree.
+
+To change one camp's deadline, write `checkout_close_at` on that row directly —
+the trigger fills a null only, so an explicit value survives later edits to
+`access_friday`. To change the rule for every camp, edit the trigger.
+
 ---
 
 ## Font Awesome CDN (pre-commit note)
@@ -135,4 +155,5 @@ The `pragma: allowlist secret` directive has been removed from the inline HTML a
 not from `Intl`'s `month: 'short'` — ICU disagrees across browsers on `Sep` vs
 `Sept`, and mixed widths made some cards wrap to two lines while their
 neighbours did not. Day, weekday and year come from `Intl`, pinned to
-`Australia/Melbourne` so a cohort start cannot slide a day for a US visitor.
+`Etc/GMT-10`, which is AEST, so a cohort start cannot slide a day for a US
+visitor and every date we print carries the same offset.

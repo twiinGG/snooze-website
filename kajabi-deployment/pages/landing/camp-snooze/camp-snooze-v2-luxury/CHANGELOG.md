@@ -4,6 +4,91 @@
 
 ---
 
+## [2026-08-25] - One Camp, With a Deadline
+
+Kade, 2026-08-25: "in giving all the options for booking camp snooze we have
+inadvertantly removed a sense of urgency." Listing the next five intakes meant a
+family who could not make the soonest camp clicked a later card instead, so
+nothing on the page ever closed and there was no reason to decide today.
+
+### Changed
+- **The capacity widget renders one cohort, not five.** `renderCohorts` now picks
+  a single camp through `chooseCohort` and renders one card. The feed request
+  stays at `?limit=5` on both the landing page and the checkout: the checkout
+  resolves `?cohort=N` by searching that window, and narrowing it would silently
+  fall back to the wrong camp.
+- **Auto-advance when the immediate camp is gone.** A full or closed soonest camp
+  hands the card to the next sellable one, so the page always has something to
+  buy. The skipped camp is not shown at all — a "Camp #15 is full" card beside a
+  "Camp #16 is open" card is the list this change removed. Only when nothing in
+  the window is sellable does the card fall back to the soonest camp with a
+  waitlist CTA.
+- **The card names the deadline.** "Intake closes Thursday 27 Aug, 11:59pm" plus
+  a countdown pill that coarsens with distance: days, then hours inside a day,
+  then minutes inside an hour. It reads `checkout_close_at`, which
+  `get_camp_capacity` is already enforcing, so the card cannot promise a window
+  the checkout will not honour. A tab left open re-reads the feed when the
+  deadline passes rather than guessing at the new state.
+- **Copy follows the model.** Section heading "Choose Your Camp" -> "The Next
+  Camp"; every "Choose Your Camp" / "Select your dates" CTA -> "Join the Next
+  Camp"; card CTA "Choose Camp #N" -> "Join Camp #N".
+- **Key Dates corrected.** The block said "1 Week Prior: Applications Close",
+  which was never what the system did. It now reads "Thursday 11:59pm: Intake
+  closes, the day before access opens", matching the rule the feed enforces.
+- **Checkout pages carry the same deadline.** A new Key Dates row
+  (`[data-camp-cohort-close]`) and a line on the live availability card, both on
+  the regular and member checkout blocks, so the sentence a buyer read before
+  clicking is the sentence on the page they pay on.
+
+### Database
+- `supabase/migrations/20260825090000_camp_intake_close_at.sql`. Every cohort had
+  a null `checkout_close_at`, so there was no deadline to show or enforce. A
+  `before insert or update` trigger derives it from `access_friday`, and the eight
+  existing cohorts were backfilled. The trigger only fills a null, so an explicit
+  override, an extended intake or an early close, always wins.
+- `supabase/migrations/20260825140000_camp_intake_close_aest.sql`. Kade's ruling
+  later the same day: every time and date we write is AEST, GMT+10, never
+  "Melbourne". The offset had to move with the label, not just the wording.
+  Melbourne runs AEDT, GMT+11, from October to April, so a page reading
+  "11:59pm AEST" on the old zonal rule would have named an instant an hour off
+  its own label from camp 19 onward. The trigger and all eight rows now use a
+  fixed offset. Camps 15 to 18 close before the switch and did not move; camps 19
+  to 22 each moved an hour later, which adds an hour of selling rather than
+  removing one. A Melbourne reader's own clock in summer shows 12:59am on the
+  Friday.
+- `supabase/migrations/20260825150000_camp_intake_close_aest_sign_fix.sql`. The
+  migration above used `at time zone '+10'`, and Postgres reads a bare `'+10'`
+  with POSIX sign semantics, meaning UTC MINUS 10. Camp 15's close was stored as
+  2026-08-28T09:59:59Z instead of 2026-08-27T13:59:59Z: twenty hours late, and
+  past the access Friday it exists to precede. The verify query used the same
+  inverted expression and printed a correct-looking answer; the live page, which
+  formats with `Etc/GMT-10` in `Intl` (real tzdata, UTC+10), showed "Intake closes
+  Friday 28 Aug, 7:59pm AEST" and gave it away. The derivation now subtracts
+  `interval '10 hours'` and labels the result UTC, so there is no sign convention
+  left to get wrong. Read back on all eight rows: every close is 13:59:59Z, which
+  is Thursday 23:59:59 AEST.
+
+### Deployed
+- All six live surfaces pasted and verified 2026-08-25: landing theme `2164288957`, waitlist theme
+  `2164775842` (theme CSS, theme JS, page block on each), and the checkout Custom JS plus block on all
+  four offer themes, `2164289025` USD, `2164667756` AUD, `2164675367` USD member, `2166737611` AUD
+  member. Every field was diffed live against the repo before overwrite; only the waitlist page had
+  drifted, and it was two fixes behind (`audCheckoutUrl` missing `/checkout`, `?limit=3`).
+- Paste targets now ship comment-free per Kade's rule the same day. Comments moved to
+  `notes/<filename>.NOTES.md`; `scripts/kajabi/extract-comments.mjs` does the move and its `--check`
+  mode gates commits, with a PreToolUse hook blocking Write/Edit.
+
+### Tests
+- `tests/camp-single-intake.test.mjs` (new): one card out of a five-cohort feed,
+  auto-advance past full and closed camps, waitlist when nothing is sellable, and
+  the countdown at day / hour / minute scale including the expired case.
+- `tests/camp-capacity-bands.test.mjs`: pinned `nowMs`, asserts the close line
+  and countdown on an open camp and their absence on a full one.
+- `checkout/.../tests/camp-checkout-cohort-summary.test.mjs`: asserts the close
+  row and the card line render the same instant the feed enforces.
+
+---
+
 ## [2026-08-23] - Price Before Dates, and a Consistent Card Date
 
 Landing page: **Welcome to Camp Snooze** (`camp-snooze-sleep-coaching`, page
@@ -31,7 +116,7 @@ Landing page: **Welcome to Camp Snooze** (`camp-snooze-sleep-coaching`, page
   `Monday 14 September 2026`, so no card wraps to two lines while its neighbours
   do not. Abbreviations come from the `CAMP_MONTHS` table rather than `Intl`'s
   `month: 'short'`, because ICU disagrees across browsers on `Sep` vs `Sept`.
-  Day, weekday and year stay on `Intl`, pinned to `Australia/Melbourne`.
+  Day, weekday and year stay on `Intl`, pinned to `Etc/GMT-10`, which is AEST.
 - **Key Dates rows share one icon column.** The highlighted roll call row
   carried 1rem of horizontal padding the other rows did not, and centre
   alignment floated the icon to the middle of any row whose copy wrapped. Rows

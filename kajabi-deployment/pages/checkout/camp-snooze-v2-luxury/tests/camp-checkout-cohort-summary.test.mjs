@@ -16,7 +16,8 @@ function fakeElement(text) {
 const dom = {
   '[data-camp-cohort-title]': [fakeElement('Camp Snooze #15')],
   '[data-camp-cohort-start]': [fakeElement('Monday 31 August 2026')],
-  '[data-camp-cohort-access]': [fakeElement('Friday 28 August 2026')]
+  '[data-camp-cohort-access]': [fakeElement('Friday 28 August 2026')],
+  '[data-camp-cohort-close]': [fakeElement('the Thursday before camp, 11:59pm AEST')]
 };
 
 globalThis.window = {
@@ -68,6 +69,17 @@ assert.equal(dom['[data-camp-cohort-access]'][0].textContent, 'Friday 11 Septemb
 // A full camp must never advertise its own emptiness. 'open' prints no number at all.
 assert.doesNotMatch(root.innerHTML, /15 of 15/);
 assert.doesNotMatch(root.innerHTML, /places left/);
+
+// Case 2c: the intake deadline. It must be the same instant the feed is enforcing and the same
+// sentence the landing page card showed, because a buyer who clicked through on "closes Thursday" and
+// then read a different date on the payment page has been told two things.
+await window.CampCheckoutCapacity.init(root, {
+  fetchImpl: feedReturning([
+    { cohort_number: 16, title: 'Camp Snooze #16', start_date: '2026-09-14', access_friday: '2026-09-11', checkout_close_at: '2026-09-10T13:59:59.000Z', seats_remaining: 15, seat_cap: 15, state: 'open' }
+  ])
+});
+assert.equal(dom['[data-camp-cohort-close]'][0].textContent, 'Thursday 10 September at 11:59 pm AEST');
+assert.match(root.innerHTML, /Intake closes Thursday 10 September/);
 
 // Case 2b: 'filling' says so without a number.
 await window.CampCheckoutCapacity.init(root, {

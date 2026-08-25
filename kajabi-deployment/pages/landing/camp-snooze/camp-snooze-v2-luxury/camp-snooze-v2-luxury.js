@@ -2,54 +2,32 @@ const CAMP_CURRENCY_CONFIG = {
   storageKey: 'snooze_currency_preference',
   defaultCurrency: 'USD',
   usdCheckoutUrl: 'https://www.joinsnooze.com/offers/K3Y6FEKX/checkout',
-  // Both of these MUST end in /checkout. Kajabi redirects /offers/{slug} to
-  // /offers/{slug}/checkout and throws the query string away in the process, so a
-  // base without /checkout silently loses ?cohort=N. This one was missing it, and
-  // the symptom was every buyer landing on a checkout that said "Camp Snooze #15
-  // Starts Monday 31 August 2026" no matter which camp they clicked. The checkout's
-  // own JS was correct all along: given the parameter it resolves the cohort from
-  // the live feed and fills the summary. It was never given the parameter.
-  // Reported by Kade 2026-08-22, reproduced, fixed here. Guarded by
-  // tests/camp-checkout-url.test.mjs.
+  
   audCheckoutUrl: 'https://www.joinsnooze.com/offers/46Bz9tk6/checkout'
 };
 
 const CAMP_CAPACITY_FEED_URL = window.CAMP_CAPACITY_FEED_URL ||
   'https://qwwwosoafcsupebpangw.supabase.co/functions/v1/camp-capacity';
 
-// Where a full or closed cohort's CTA sends a family. The waitlist variant hosts the form itself, so it
-// leaves this unset and gets the on-page anchor. The primary page has no waitlist form on it, so it sets
-// window.CAMP_WAITLIST_TARGET to the parked waitlist page's URL. Without this the primary page's
-// full-cohort CTA would point at an anchor that does not exist there and would silently do nothing.
-//
-// Resolved at render time, not at load time, deliberately. This file is pasted into a Kajabi theme's
-// Custom JS while the override is set by an inline script in the page's custom-code block, and Kajabi
-// does not guarantee that the block runs before the theme JS. Reading the value when the card is built
-// makes the two paste order-independent.
 function waitlistTarget() {
   const override = window.CAMP_WAITLIST_TARGET;
   if (override) return override;
-  // Only offer the on-page anchor if the section is actually on this page. The selling variant has no
-  // waitlist section, and the waitlist page it used to point at is now parked as an unpublished draft,
-  // so a hardcoded URL there would 404. Falling back to email keeps the CTA a real destination.
+  
   if (document.querySelector('#waitlist-section')) return '#waitlist-section';
   return 'mailto:camp@joinsnooze.com?subject=Camp%20Snooze%20waitlist';
 }
 
-// Public Supabase anon key, safe to ship in a pasted page (RLS-scoped, not a service-role secret).
 const CAMP_CAPACITY_ANON_KEY = window.SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; // pragma: allowlist secret
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; 
 
 window.CampCapacityWidget = (function () {
-  // Fixed tables rather than Intl's 'short' month: ICU disagrees between browsers on
-  // whether September abbreviates to Sep or Sept, and a card that wraps to two lines
-  // when its neighbours do not reads as a layout bug.
+  
   const CAMP_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
   function dateLabel(value) {
     if (!value) return 'Dates to be confirmed';
     const parts = new Intl.DateTimeFormat('en-AU', {
-      timeZone: 'Australia/Melbourne',
+      timeZone: 'Etc/GMT-10',
       weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'
     }).formatToParts(new Date(value + 'T00:00:00+10:00'));
     const get = function (type) {
@@ -77,34 +55,70 @@ window.CampCapacityWidget = (function () {
     campUpdateLinks(currency);
   }
 
-  function renderCohorts(root, cohorts) {
+  function closeLabel(value) {
+    if (!value) return '';
+    const parts = new Intl.DateTimeFormat('en-AU', {
+      timeZone: 'Etc/GMT-10',
+      weekday: 'long', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true
+    }).formatToParts(new Date(value));
+    const get = function (type) {
+      const part = parts.find(function (p) { return p.type === type; });
+      return part ? part.value : '';
+    };
+    const month = CAMP_MONTHS[parseInt(get('month'), 10) - 1] || get('month');
+    const period = (get('dayPeriod') || '').toLowerCase().replace(/\s|\./g, '');
+    return get('weekday') + ' ' + parseInt(get('day'), 10) + ' ' + month +
+      ', ' + parseInt(get('hour'), 10) + ':' + get('minute') + period + ' AEST';
+  }
+
+  function countdownLabel(value, nowMs) {
+    if (!value) return '';
+    const remaining = new Date(value).getTime() - nowMs;
+    if (!isFinite(remaining) || remaining <= 0) return '';
+    const minutes = Math.floor(remaining / 60000);
+    if (minutes < 60) return minutes <= 1 ? 'Closing within the hour' : 'Closes in ' + minutes + ' minutes';
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return 'Closes in ' + hours + (hours === 1 ? ' hour' : ' hours');
+    const days = Math.floor(hours / 24);
+    return 'Closes in ' + days + (days === 1 ? ' day' : ' days');
+  }
+
+  function chooseCohort(cohorts) {
+    return cohorts.find(function (cohort) {
+      return cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
+    }) || cohorts[0];
+  }
+
+  function renderCohorts(root, cohorts, nowMs) {
     root.dataset.capacityState = 'ready';
-    root.innerHTML = cohorts.map(function (cohort) {
-      // Display bands, per Kade 2026-08-21. The feed decides the band so the page and the checkout card
-      // cannot disagree. A precise number appears ONLY when it is genuinely low, because
-      // "15 of 15 places remaining" tells a visitor that nobody has booked.
-      //   open     10+ left   no capacity line at all
-      //   filling  6 to 9     "Filling fast", no number
-      //   low      1 to 5     the real number
-      //   full     0          taken, and the sold-out paths take over
-      const isAvailable = cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
-      const stateLabel = cohort.state === 'filling' ? 'Filling fast' :
-        cohort.state === 'low' ? 'Almost full' :
-        cohort.state === 'full' ? 'Full' :
-        cohort.state === 'closed' ? 'Checkout closed' : 'Open';
-      const places = cohort.seats_remaining === 1 ? '1 place left' : 'Only ' + cohort.seats_remaining + ' places left';
-      const availability = cohort.state === 'low' ? places :
-        cohort.state === 'full' ? 'All 15 places are taken' :
-        cohort.state === 'closed' ? 'This intake is closed' : '';
-      const action = isAvailable
-        ? '<a class="btn-camp dynamic-cta" data-checkout data-cohort="' + cohort.cohort_number + '" href="' + checkoutUrl(cohort.cohort_number) + '">Choose Camp #' + cohort.cohort_number + '</a>'
-        : '<a class="btn-camp btn-outline" href="' + waitlistTarget() + '" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
-      return '<article class="camp-capacity-card camp-capacity-card--' + cohort.state + '">' +
-        '<p class="camp-capacity-state">' + stateLabel + '</p>' +
-        '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
-        '<p class="camp-capacity-date">Starts ' + dateLabel(cohort.start_date) + '</p>' +
-        (availability ? '<p class="camp-capacity-places">' + availability + '</p>' : '') + action + '</article>';
-    }).join('');
+    const cohort = chooseCohort(cohorts);
+    const now = typeof nowMs === 'number' ? nowMs : Date.now();
+    
+    const isAvailable = cohort.state === 'open' || cohort.state === 'filling' || cohort.state === 'low';
+    const stateLabel = cohort.state === 'filling' ? 'Filling fast' :
+      cohort.state === 'low' ? 'Almost full' :
+      cohort.state === 'full' ? 'Full' :
+      cohort.state === 'closed' ? 'Checkout closed' : 'Open';
+    const places = cohort.seats_remaining === 1 ? '1 place left' : 'Only ' + cohort.seats_remaining + ' places left';
+    const availability = cohort.state === 'low' ? places :
+      cohort.state === 'full' ? 'All 15 places are taken' :
+      cohort.state === 'closed' ? 'This intake is closed' : '';
+    const closes = closeLabel(cohort.checkout_close_at);
+    const countdown = countdownLabel(cohort.checkout_close_at, now);
+    const action = isAvailable
+      ? '<a class="btn-camp dynamic-cta" data-checkout data-cohort="' + cohort.cohort_number + '" href="' + checkoutUrl(cohort.cohort_number) + '">Join Camp #' + cohort.cohort_number + '</a>'
+      : '<a class="btn-camp btn-outline" href="' + waitlistTarget() + '" data-waitlist-cohort="' + cohort.cohort_number + '">Join Camp #' + cohort.cohort_number + ' Waitlist</a>';
+    root.innerHTML = '<article class="camp-capacity-card camp-capacity-card--' + cohort.state + '">' +
+      '<p class="camp-capacity-state">' + stateLabel + '</p>' +
+      '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
+      '<p class="camp-capacity-date">Starts ' + dateLabel(cohort.start_date) + '</p>' +
+      
+      (cohort.access_friday ? '<p class="camp-capacity-access">Snooze access opens ' + dateLabel(cohort.access_friday) + '</p>' : '') +
+      (isAvailable && closes ? '<p class="camp-capacity-close">Intake closes ' + closes + '</p>' : '') +
+      (isAvailable && countdown ? '<p class="camp-capacity-countdown" data-camp-countdown data-close-at="' + cohort.checkout_close_at + '">' + countdown + '</p>' : '') +
+      (availability ? '<p class="camp-capacity-places">' + availability + '</p>' : '') + action + '</article>';
+
+    startCountdown(root);
 
     root.querySelectorAll('[data-waitlist-cohort]').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -112,6 +126,24 @@ window.CampCapacityWidget = (function () {
         if (select) select.value = link.getAttribute('data-waitlist-cohort');
       });
     });
+  }
+
+  function startCountdown(root) {
+    if (typeof root.querySelector !== 'function' || typeof window.setInterval !== 'function') return;
+    if (root.campCountdownTimer) window.clearInterval(root.campCountdownTimer);
+    const node = root.querySelector('[data-camp-countdown]');
+    if (!node) return;
+    root.campCountdownTimer = window.setInterval(function () {
+      const label = countdownLabel(node.getAttribute('data-close-at'), Date.now());
+      if (label) {
+        node.textContent = label;
+        return;
+      }
+      
+      window.clearInterval(root.campCountdownTimer);
+      root.campCountdownTimer = null;
+      init(root);
+    }, 60000);
   }
 
   async function init(root, options) {
@@ -125,19 +157,7 @@ window.CampCapacityWidget = (function () {
       const timer = setTimeout(function () { controller.abort(); }, timeoutMs);
       let response;
       try {
-        // Ask for five, not three.
-        //
-        // Two reasons, and the second one is a latent bug rather than a preference.
-        //
-        // 1. get_camp_capacity defaults to coalesce(p_limit, 3), and there are five open cohorts. At limit=3 a
-        //    family who wants a later date cannot see that it exists.
-        // 2. The landing page and this checkout MUST request the same window. The checkout resolves ?cohort=N by
-        //    searching the list the feed returns; a cohort outside that window is not found and it silently
-        //    falls back to the soonest camp. That is the same class of failure as the missing /checkout: the
-        //    buyer picks one camp and pays on a page describing another. Raising one side without the other
-        //    re-creates it for camps 4 and 5 in the list.
-        //
-        // Keep these two numbers equal. The feed caps at 10.
+        
         response = await fetchImpl(feedUrl + '?limit=5', { signal: controller.signal, headers: { Accept: 'application/json', apikey: CAMP_CAPACITY_ANON_KEY, Authorization: 'Bearer ' + CAMP_CAPACITY_ANON_KEY } });
       } finally {
         clearTimeout(timer);
@@ -145,7 +165,7 @@ window.CampCapacityWidget = (function () {
       if (!response.ok) throw new Error('capacity feed returned ' + response.status);
       const body = await response.json();
       if (!body || !Array.isArray(body.cohorts) || body.cohorts.length === 0) throw new Error('capacity feed shape invalid');
-      renderCohorts(root, body.cohorts);
+      renderCohorts(root, body.cohorts, settings.nowMs);
       return 'ready';
     } catch (error) {
       renderFallback(root);
@@ -228,8 +248,7 @@ function campSetCurrency(currency, save) {
 function formatPriceNum(num) {
   const n = Math.abs(parseFloat(String(num).replace(/[^0-9.-]/g, '')));
   if (Number.isNaN(n)) return num;
-  // Cents are rendered only when the amount actually has them. String(39.5) is "39.5", which would put
-  // "$39.5/mo" on the page. Whole amounts stay whole, so $690 does not become $690.00.
+  
   const hasCents = Math.round(n * 100) % 100 !== 0;
   const s = n.toLocaleString('en-US', {
     minimumFractionDigits: hasCents ? 2 : 0,
@@ -384,11 +403,6 @@ function campInjectToggles() {
   campUpdateToggleUI(document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD');
 }
 
-// UNUSED, and deliberately left in place. This date is long past and neither landing variant contains
-// any of the five countdown element ids (#hero-countdown, #hero-days, #hero-hours, #hero-minutes,
-// #hero-seconds), so updateCountdown() writes nothing and its interval clears itself on the first tick.
-// If you add a countdown block to a camp page, set this from the cohort feed FIRST. Left as-is it would
-// immediately render "Applications are now closed" to every buyer.
 const COUNTDOWN_DEADLINE = new Date('2026-03-31T23:59:00+11:00').getTime();
 
 function toggleModal(modalId, show) {

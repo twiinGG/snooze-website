@@ -67,7 +67,7 @@ assert.doesNotMatch(await render(full(15)), /href="#waitlist-section"/);
 
 // 4. The override must never touch an OPEN cohort, which still goes straight to checkout.
 const openHtml = await render(open(15));
-assert.match(openHtml, /Choose Camp #15/);
+assert.match(openHtml, /Join Camp #15/);
 assert.match(openHtml, /offers\/(K3Y6FEKX|46Bz9tk6)/);
 assert.doesNotMatch(openHtml, /Waitlist/);
 // Deliberately asserts the ABSENCE of a count now. This line used to assert
