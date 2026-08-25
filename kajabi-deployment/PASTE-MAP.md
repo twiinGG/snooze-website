@@ -1,7 +1,11 @@
 # Kajabi paste map (source of truth)
 
-**Updated:** 2026-08-08
-**Last live verify:** **2026-08-17** (ME-010), the two identity-capture paste targets only. Site header
+**Updated:** 2026-08-25
+**Last live verify:** **2026-08-25**, the six Camp Snooze landing paste targets (hero next-camp
+banner): both landing custom-code blocks plus Custom CSS and JS on themes `2164288957` and
+`2164775842`, each confirmed by cache-busted curl with every non-blank repo line present, and a live
+DOM read showing the hero and the capacity card on the same date from the same feed. Earlier entry:
+**2026-08-17** (ME-010), the two identity-capture paste targets only. Site header
 and checkout Header both re-pasted and confirmed live by cache-busted read: `SnoozeCheckoutIdentity`
 present, `function gaSessionId` present, the fixed `match(/^s?(\d+)/)` session id parse present, and the
 old `return segs[2]` absent, on both `/catnapping` and a live offer checkout. Checkout Footer confirmed
