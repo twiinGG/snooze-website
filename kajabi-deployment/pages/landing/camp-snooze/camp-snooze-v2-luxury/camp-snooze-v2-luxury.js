@@ -49,6 +49,7 @@ window.CampCapacityWidget = (function () {
 
   function renderFallback(root) {
     root.dataset.capacityState = 'fallback';
+    renderHeroNext(null);
     root.innerHTML = '<div class="camp-capacity-neutral"><p>Live availability is taking a moment to update. You can still continue to checkout.</p>' +
       '<a href="' + CAMP_CURRENCY_CONFIG.usdCheckoutUrl + '" class="btn-camp dynamic-cta" data-checkout>Continue to Camp Checkout</a></div>';
     const currency = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
@@ -89,6 +90,19 @@ window.CampCapacityWidget = (function () {
     }) || cohorts[0];
   }
 
+  function renderHeroNext(cohort) {
+    if (typeof document.querySelector !== 'function') return;
+    const host = document.querySelector('[data-camp-hero-next]');
+    if (!host) return;
+    const target = host.querySelector ? host.querySelector('[data-camp-hero-next-date]') : null;
+    if (!cohort || !cohort.start_date || !target) {
+      host.hidden = true;
+      return;
+    }
+    target.textContent = 'Next Camp starts on ' + dateLabel(cohort.start_date);
+    host.hidden = false;
+  }
+
   function renderCohorts(root, cohorts, nowMs) {
     root.dataset.capacityState = 'ready';
     const cohort = chooseCohort(cohorts);
@@ -118,6 +132,7 @@ window.CampCapacityWidget = (function () {
       (isAvailable && countdown ? '<p class="camp-capacity-countdown" data-camp-countdown data-close-at="' + cohort.checkout_close_at + '">' + countdown + '</p>' : '') +
       (availability ? '<p class="camp-capacity-places">' + availability + '</p>' : '') + action + '</article>';
 
+    renderHeroNext(cohort);
     startCountdown(root);
 
     root.querySelectorAll('[data-waitlist-cohort]').forEach(function (link) {

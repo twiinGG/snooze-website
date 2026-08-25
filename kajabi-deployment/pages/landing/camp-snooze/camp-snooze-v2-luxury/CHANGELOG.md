@@ -4,6 +4,66 @@
 
 ---
 
+## [2026-08-25] - Next Camp Date In The Hero
+
+Kade, 2026-08-25: "right now, there is no idea when the next camp starts until
+you get down to the bottom." The only start date on the page was inside the
+capacity card below the fold, so a visitor who read the hero and left never saw
+one.
+
+### Added
+- **Hero next-camp banner** on both the landing page and the waitlist variant:
+  "Next Camp starts on <date>" with "Spots strictly limited" beneath it, sitting
+  above the hero CTA.
+- **`renderHeroNext(cohort)`** in `camp-snooze-v2-luxury.js`, called from
+  `renderCohorts`. It reads `start_date` off the same chosen cohort the capacity
+  card renders and formats it with the same `dateLabel`, so the hero and the card
+  can never print different dates. No hardcoded date anywhere.
+- **`.camp-hero-next`** styles in `camp-snooze-v2-luxury.css` (gold-bordered
+  cream banner, heading font, uppercase scarcity line).
+
+### Behaviour
+- The banner ships `hidden` and is only revealed once a date is in hand, so a
+  slow or failed feed shows nothing rather than an empty frame.
+- `renderFallback` calls `renderHeroNext(null)`, which re-hides it. The widget
+  re-inits every 60 seconds, so without this a date could outlive the card it
+  came from.
+- It follows auto-advance: when the soonest camp is full or closed, the hero
+  prints the date of the camp actually being sold.
+
+### Tests
+- `tests/camp-hero-next.test.mjs`: banner date matches the capacity card, follows
+  auto-advance to camp 16, stays hidden when `start_date` is null, re-hides on a
+  feed failure. All five existing camp tests still pass.
+
+### Deploy
+- **Shipped live 2026-08-25.** All four rows pasted and verified:
+  `P3-CAMP-LANDING-HTML`, `P3-CAMP-WAITLIST-HTML`, `P3-CAMP-LANDING-CSS`,
+  `P3-CAMP-LANDING-JS`. CSS and JS on both the landing theme `2164288957` and the
+  waitlist theme `2164775842`; six fields in total.
+- Verified by cache-busted curl on both public URLs (0 missing repo lines each,
+  excepting the pre-existing Cloudflare `mailto:` rewrite in one FAQ answer) plus a
+  live DOM read: the hero printed "Next Camp starts on Monday 31 Aug 2026" and the
+  capacity card printed "Starts Monday 31 Aug 2026", the same date from the same feed.
+- Pre-images were captured as full-page curls of both public URLs and used for the
+  both-direction diff, but are **not committed**: a whole rendered page carries the
+  inlined Supabase anon key and third-party base64, which trips `detect-secrets`. The
+  committed `_live-preimages` files are field captures, not page renders.
+- **The first Save click was a silent no-op** on the landing page block: correct
+  length and hash in the editor, Save reading enabled in the DOM, click reporting
+  success, live unchanged. Re-running `emit_paste_js.py` unchanged and clicking Save
+  by ref landed it. This is the WS-006 failure mode; every later field was confirmed
+  by `saveDisabled: true` before moving on.
+- **The JS shipped twice.** The first paste carried comments, which the
+  `no-comments-in-paste-targets` hook rejected at commit time (Kade's rule, same day:
+  paste targets ship comment-free, reasoning goes to `notes/`). The reasoning was moved
+  to `notes/camp-snooze-v2-luxury.js.NOTES.md` via `scripts/kajabi/extract-comments.mjs`
+  and the stripped file re-pasted on both themes. On the landing theme, two clean pastes
+  left Save disabled; focusing the editor and inserting-then-removing a newline dirtied
+  the form without changing the value (length stayed 25,393).
+
+---
+
 ## [2026-08-25] - One Camp, With a Deadline
 
 Kade, 2026-08-25: "in giving all the options for booking camp snooze we have
