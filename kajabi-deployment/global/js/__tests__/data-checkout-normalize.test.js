@@ -100,7 +100,7 @@ assert(
   'site-header-page-scripts.html does not blindly overwrite every [data-checkout] href'
 );
 assert(
-  globalsSrc.indexOf('Snooze Currency Toggle Engine') !== -1 &&
+  globalsSrc.indexOf('window.setCurrency = function') !== -1 &&
     globalsSrc.indexOf('__snoozeCurrencyToggle__') !== -1,
   'site-header-page-scripts.html bundles the currency toggle'
 );

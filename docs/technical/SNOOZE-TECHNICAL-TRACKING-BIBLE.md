@@ -1,12 +1,12 @@
 # Snooze Technical Architecture: Tracking & Performance
 
-**Version:** 4.0 (ME-006 measurement stack review, every claim re-verified against live APIs)
-**Date:** August 6, 2026
+**Version:** 4.1 (August 27 attribution reconciliation)
+**Date:** August 27, 2026
 **Status:** Live
-**Last Updated:** August 6, 2026 - ME-006 read the live state from the Meta, GA4, GTM, Kajabi and Stape
-APIs and corrected every claim below that turned out to be configuration belief rather than measured
-fact. Four statements in v3.0 were wrong and are marked inline. Full evidence:
-`docs/projects/measurement/4_working/2026-08-06-stack-review/`.
+**Last Updated:** August 27, 2026. Live reconciliation confirmed web GTM version
+59, server GTM version 15, direct n8n order dispatch and the existing Stape
+controls. Full current state:
+`docs/projects/measurement/4_working/2026-08-16-order-tracking-consolidation/00-STATE-OF-TRACKING.md`.
 **Tech Stack:** Kajabi, Google Tag Manager (Web + Server), Stape.io, Meta CAPI, GA4
 **Maintainers:** Sally & Kade
 
@@ -36,6 +36,23 @@ fact. Four statements in v3.0 were wrong and are marked inline. Full evidence:
 > Current register, root cause and evidence:
 > `docs/projects/measurement/4_working/2026-08-16-order-tracking-consolidation/`. Read
 > `00-STATE-OF-TRACKING.md` first.
+
+> ## AMENDMENT, August 27 2026: browser attribution continuity
+>
+> Currency engines do not emit `currency_change` while selecting the initial or
+> remembered currency. A completed visitor change emits one event with
+> `previous_currency`, `currency` and `surface`. Currency-specific checkout
+> rewrites preserve inbound `utm_*`, `fbclid`, `gclid` and cohort parameters;
+> destination parameters win on conflicts and keys do not duplicate.
+>
+> Internal CTA context belongs in `surface`, `placement`, `button_text` and
+> `destination`, not in acquisition UTMs. The August 27 Camp repair follows this
+> rule. It changes no GTM, checkout header, checkout footer, Stape power-up,
+> purchase, renewal, Meta CAPI or Google Ads route.
+>
+> The durable conversion ledger gains an additive, PII-free `identity_source`
+> field for new dispatches only. Values are `checkout_identity_capture`,
+> `fallback` or `lookup_failed`; old rows stay null.
 
 ---
 
