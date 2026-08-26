@@ -71,7 +71,12 @@ price. The `.camp-currency-toggle-wrap` CSS rule is kept — the waitlist varian
 
 ## Analytics
 
-- `currency_change` event pushed to `window.dataLayer` when user switches currency (for GTM).
+- Initialisation never pushes `currency_change`.
+- One `currency_change` event is pushed to `window.dataLayer` after a completed,
+  explicit change. It carries `previous_currency`, `currency` and
+  `surface: camp_snooze_sleep_coaching`.
+- AUD and USD checkout rewrites preserve inbound `utm_*`, `fbclid`, `gclid` and
+  cohort parameters. Existing destination parameters win and keys do not duplicate.
 - GTM can use `snooze_currency_preference` in localStorage for event context.
 
 ---

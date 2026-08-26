@@ -233,6 +233,9 @@ function campSetCurrency(currency, save) {
   if (currency !== 'USD' && currency !== 'AUD') {
     currency = CAMP_CURRENCY_CONFIG.defaultCurrency;
   }
+  const previousCurrency = document.body.classList.contains('currency-mode-aud')
+    ? 'AUD'
+    : (document.body.classList.contains('currency-mode-usd') ? 'USD' : null);
   document.body.classList.remove('currency-mode-usd', 'currency-mode-aud');
   document.body.classList.add('currency-mode-' + currency.toLowerCase());
 
@@ -250,11 +253,13 @@ function campSetCurrency(currency, save) {
   campUpdateToggleUI(currency);
   document.body.classList.add('currency-loaded');
 
-  if (window.dataLayer) {
+  if (save && previousCurrency && previousCurrency !== currency && window.dataLayer) {
     try {
       window.dataLayer.push({
         event: 'currency_change',
-        currency_preference: currency
+        previous_currency: previousCurrency,
+        currency: currency,
+        surface: 'camp_snooze_sleep_coaching'
       });
     } catch (e) {}
   }
@@ -284,18 +289,25 @@ function campUpdatePrices(currency) {
 
 function campUpdateLinks(currency) {
   const url = currency === 'AUD' ? CAMP_CURRENCY_CONFIG.audCheckoutUrl : CAMP_CURRENCY_CONFIG.usdCheckoutUrl;
+  const inbound = new URL(window.location.href).searchParams;
   document.querySelectorAll('.dynamic-cta, [data-checkout]').forEach(function (btn) {
     if (!btn.getAttribute('data-original-href')) {
       btn.setAttribute('data-original-href', btn.getAttribute('href') || '');
     }
+    const destination = new URL(url, window.location.href);
     const cohort = btn.getAttribute('data-cohort');
-    if (cohort) {
-      const cohortUrl = new URL(url, window.location.href);
-      cohortUrl.searchParams.set('cohort', cohort);
-      btn.setAttribute('href', cohortUrl.toString());
-    } else {
-      btn.setAttribute('href', url);
-    }
+    if (cohort) destination.searchParams.set('cohort', cohort);
+
+    inbound.forEach(function (value, key) {
+      const preserve = key.indexOf('utm_') === 0 ||
+        key === 'fbclid' || key === 'gclid' ||
+        key === 'cohort' || key.indexOf('cohort_') === 0;
+      if (preserve && !destination.searchParams.has(key)) {
+        destination.searchParams.set(key, value);
+      }
+    });
+
+    btn.setAttribute('href', destination.toString());
   });
 }
 

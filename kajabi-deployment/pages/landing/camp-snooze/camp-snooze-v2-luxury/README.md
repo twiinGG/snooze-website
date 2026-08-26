@@ -114,6 +114,11 @@ Dynamic prices use `data-usd` and `data-aud` attributes on `.dynamic-price` elem
 Default currency auto-detects from the visitor's timezone (Australia/* -> AUD, all others -> USD).
 Preference is persisted in localStorage under the key `snooze_currency_preference`.
 
+The page does not emit `currency_change` during initialisation. It emits one event
+only after a visitor completes a real change, with `previous_currency`, `currency`
+and `surface`. Checkout rewrites preserve inbound `utm_*`, `fbclid`, `gclid` and
+cohort parameters. Parameters already present on the checkout destination win.
+
 ---
 
 ## Countdown timer

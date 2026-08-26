@@ -4,6 +4,26 @@
 
 ---
 
+## [2026-08-27] - Paid Attribution Continuity
+
+### Fixed
+- Currency initialisation no longer emits `currency_change`. A real completed
+  change emits exactly one event with `previous_currency`, `currency` and the
+  Camp surface.
+- Currency-specific checkout rewrites retain inbound Meta and Google campaign
+  parameters plus cohort context. Checkout destination parameters win on a
+  conflict and query keys never duplicate.
+- Camp internal links do not introduce `landing-page / cta` acquisition UTMs.
+
+### Tests
+- Added focused coverage for initialisation, real changes, event properties,
+  AUD and USD checkout rewriting, destination precedence and duplicate keys.
+- All seven Camp suites pass.
+
+### Scope
+- No GTM, checkout tracking, purchase, renewal, Meta CAPI or Google Ads route
+  changed.
+
 ## [2026-08-25] - Next Camp Date In The Hero
 
 Kade, 2026-08-25: "right now, there is no idea when the next camp starts until
