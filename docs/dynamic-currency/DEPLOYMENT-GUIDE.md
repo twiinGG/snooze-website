@@ -2,7 +2,14 @@
 
 **Date:** December 30, 2025  
 **Version:** 2.0 (Merged Implementation)  
-**Status:** Ready for Deployment
+**Status:** Superseded deployment procedure. Technical behaviour remains historical context.
+
+> Do not follow the separate paste steps below. The current one-file contract is
+> [`../../kajabi-deployment/global/html/site-header-page-scripts.html`](../../kajabi-deployment/global/html/site-header-page-scripts.html)
+> for Header Page Scripts and
+> [`../../kajabi-deployment/global/css/theme-custom-code.css`](../../kajabi-deployment/global/css/theme-custom-code.css)
+> for website theme CSS. See
+> [`../technical/CODE-SURFACE-CONTRACT.md`](../technical/CODE-SURFACE-CONTRACT.md).
 
 ---
 

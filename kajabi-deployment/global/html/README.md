@@ -10,7 +10,7 @@ Shared HTML fragments injected site-wide via Kajabi.
 
 The membership release changes the desktop and mobile Membership links to `/snooze-membership`, sends explicit trial CTAs to `mqQikDM7` and removes the expired founding-member banner. Paste this file only after `/snooze-membership` is published and tested as a draft.
 
-**Note:** `toggleSnoozeMenu()` is defined in `global/js/snooze-globals.js` (site header script), not inline here.
+**Note:** `toggleSnoozeMenu()` is defined in the single Header Page Scripts file, [`site-header-page-scripts.html`](./site-header-page-scripts.html), not inline here. `global/js/snooze-globals.js` is a deprecated pointer and is never pasted.
 
 **Branding source:** Snooze logotype (coral) SVG originates from `docs/branding/Snooze Logotype - coral.svg`.
 
@@ -30,7 +30,7 @@ This is a sync source. Website pages carry the footer inline inside their page w
 
 **Deployment location:** Kajabi Settings → Site Details → Header Page Scripts
 
-This script must run in the `<head>` before DOM ready to prevent flash of wrong currency on page load. It reads `snooze_currency_preference` from `localStorage`, auto-detects via timezone if no preference is saved, and adds `currency-aud-selected` and `currency-loaded` classes to `document.documentElement`.
+This is a testable mirror, not a separate paste target. Its full contents are already embedded in [`site-header-page-scripts.html`](./site-header-page-scripts.html), which is the only file pasted into Header Page Scripts. It runs in the `<head>` before DOM ready to prevent flash of wrong currency on page load.
 
 ---
 

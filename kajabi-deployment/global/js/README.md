@@ -4,17 +4,17 @@
 
 ---
 
-## theme-custom-code.js — website Theme Custom JavaScript only
+## theme-custom-code.js — website-wide Theme Custom JavaScript
 
 **Kajabi field:** Theme Custom Code → JS (`settings-js-input`).
 
 **Paste rule:** Copy the full contents of `theme-custom-code.js` only. Whole-field overwrite. Do not append other files.
 
-That file is the `#home-page` helpers only (age tabs, FAQ accordion, and related). After the 2026-07-27 split it must **not** contain GTM, Stape, currency toggle, or `[data-checkout]` helpers. Those live in Header Page Scripts ([`../html/site-header-page-scripts.html`](../html/site-header-page-scripts.html)).
+Kajabi loads this field across every website page. The current payload contains `#home-page` helpers (age tabs, FAQ accordion and related behaviour) with a wrapper guard, so it exits safely on other website pages. After the 2026-07-27 split it must **not** contain GTM, Stape, currency toggle or `[data-checkout]` helpers. Those need website and landing-page coverage, so they live once in Header Page Scripts ([`../html/site-header-page-scripts.html`](../html/site-header-page-scripts.html)).
 
 **Do not paste:** [`snooze-globals.js`](./snooze-globals.js) (stub pointer), [`currency-toggle.js`](./currency-toggle.js) (test extract only).
 
-**FOUC prevention** ([`../html/currency-toggle-fouc.html`](../html/currency-toggle-fouc.html)) still goes in Site Details → Header Page Scripts. That is a separate head field, not Custom JavaScript.
+**FOUC prevention** ([`../html/currency-toggle-fouc.html`](../html/currency-toggle-fouc.html)) is a testable mirror already embedded in the single [`../html/site-header-page-scripts.html`](../html/site-header-page-scripts.html) paste file. Never append it separately in Kajabi.
 
 **Authoritative surface map:** [`KAJABI-SURFACE-CODE-SETUP.md`](../../../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)  
 **Contract:** [`CODE-SURFACE-CONTRACT.md`](../../../docs/technical/CODE-SURFACE-CONTRACT.md)
@@ -35,7 +35,7 @@ Regression: `node __tests__/data-checkout-normalize.test.js`
 
 ### Currency extract for unit tests
 
-`currency-toggle.js` is kept in sync by `__tests__/sync-currency-toggle-extract.js` from the marked block in the currency paste source. After the 2026-07-27 split, currency logic lives in Header Page Scripts, not `theme-custom-code.js`; re-point that extract script before relying on `--check`.
+`currency-toggle.js` is kept in sync by `__tests__/sync-currency-toggle-extract.js` from the currency block in the Header Page Scripts file. After the 2026-07-27 split, currency logic lives in Header Page Scripts, not `theme-custom-code.js`. The `--check` command is a required drift guard.
 
 ```bash
 node __tests__/sync-currency-toggle-extract.js

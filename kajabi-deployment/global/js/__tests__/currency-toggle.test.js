@@ -66,6 +66,8 @@ function loadToggle() {
     console: console,
     localStorage: { getItem: () => null, setItem: noop },
     Intl: Intl,
+    URL: URL,
+    URLSearchParams: URLSearchParams,
     setTimeout: setTimeout,
     clearTimeout: clearTimeout
   };
@@ -86,6 +88,7 @@ function loadToggle() {
 
 const toggle = loadToggle();
 const rewrite = toggle.rewriteCheckoutUrl;
+const preserveInboundAttribution = toggle.preserveInboundAttribution;
 const CONFIG = toggle.CONFIG;
 
 // Test fixtures. Six representative URLs covering Snooze Access variant
@@ -193,6 +196,38 @@ if (unchanged === 'https://www.joinsnooze.com/offers/UNKNOWN_OFFER/checkout') {
 } else {
   failed += 1;
   console.log('FAIL  unknown offer must round-trip unchanged, got: ' + unchanged);
+}
+
+const attributed = preserveInboundAttribution(
+  'https://www.joinsnooze.com/offers/vYgCNgJz/checkout?variant=161175&cohort=destination',
+  'https://www.joinsnooze.com/camp-snooze?utm_source=meta&utm_medium=paid_social&fbclid=fb-123&gclid=g-456&cohort=inbound&cohort_name=august'
+);
+const attributedUrl = new URL(attributed);
+const attributionOk = attributedUrl.searchParams.get('utm_source') === 'meta' &&
+  attributedUrl.searchParams.get('utm_medium') === 'paid_social' &&
+  attributedUrl.searchParams.get('fbclid') === 'fb-123' &&
+  attributedUrl.searchParams.get('gclid') === 'g-456' &&
+  attributedUrl.searchParams.get('cohort') === 'destination' &&
+  attributedUrl.searchParams.get('cohort_name') === 'august';
+if (attributionOk) {
+  passed += 1;
+  console.log('PASS  inbound paid attribution survives checkout rewriting and destination params win');
+} else {
+  failed += 1;
+  console.log('FAIL  inbound paid attribution was not preserved: ' + attributed);
+}
+
+const deduped = new URL(preserveInboundAttribution(
+  'https://www.joinsnooze.com/offers/vYgCNgJz/checkout?utm_source=destination&utm_source=duplicate',
+  'https://www.joinsnooze.com/?utm_source=meta&utm_source=second'
+));
+if (deduped.searchParams.getAll('utm_source').length === 1 &&
+    deduped.searchParams.get('utm_source') === 'destination') {
+  passed += 1;
+  console.log('PASS  attribution query keys never duplicate');
+} else {
+  failed += 1;
+  console.log('FAIL  attribution query keys duplicated: ' + deduped.toString());
 }
 
 // Config sanity. The legacy 6iRarwak entry must NOT be present in the
@@ -303,7 +338,8 @@ tier2PendingSlugs.forEach(function (slug) {
   const sandbox = {
     window: {}, document: fakeDoc, console: console,
     localStorage: { getItem: () => null, setItem: noop },
-    Intl: Intl, setTimeout: setTimeout, clearTimeout: clearTimeout
+    Intl: Intl, URL: URL, URLSearchParams: URLSearchParams,
+    setTimeout: setTimeout, clearTimeout: clearTimeout
   };
   sandbox.window.document = sandbox.document;
   sandbox.window.localStorage = sandbox.localStorage;
@@ -450,6 +486,8 @@ tier2PendingSlugs.forEach(function (slug) {
     console: console,
     localStorage: { getItem: function () { return null; }, setItem: noop },
     Intl: Intl,
+    URL: URL,
+    URLSearchParams: URLSearchParams,
     setTimeout: setTimeout,
     clearTimeout: clearTimeout
   };

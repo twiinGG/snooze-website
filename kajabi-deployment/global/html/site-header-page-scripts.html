@@ -1591,6 +1591,39 @@ document.addEventListener('DOMContentLoaded', function() {
     return changed ? newLink : originalHref;
   }
 
+  function preserveInboundAttribution(destinationHref, inboundHref) {
+    if (!destinationHref) return destinationHref;
+
+    try {
+      const destination = new URL(destinationHref, window.location.href);
+      const inbound = new URL(inboundHref || window.location.href, window.location.href);
+
+      Array.from(destination.searchParams.keys()).forEach(function(key) {
+        const preserve = key.indexOf('utm_') === 0 ||
+          key === 'fbclid' || key === 'gclid' ||
+          key === 'cohort' || key.indexOf('cohort_') === 0;
+        if (preserve) {
+          destination.searchParams.set(key, destination.searchParams.get(key));
+        }
+      });
+
+      inbound.searchParams.forEach(function(value, key) {
+        const preserve = key.indexOf('utm_') === 0 ||
+          key === 'fbclid' || key === 'gclid' ||
+          key === 'cohort' || key.indexOf('cohort_') === 0;
+
+        if (preserve && !destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
+      });
+
+      return destination.toString();
+    } catch (e) {
+      logWarning('Failed to preserve inbound attribution on checkout link');
+      return destinationHref;
+    }
+  }
+
   function updateLinks(currency) {
     const buttons = document.querySelectorAll('.dynamic-cta, [data-checkout], .pricing-card a, .hero-cta');
     let updatedCount = 0;
@@ -1610,7 +1643,8 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
         }
 
-        const newLink = rewriteCheckoutUrl(originalHref, currency);
+        const rewrittenLink = rewriteCheckoutUrl(originalHref, currency);
+        const newLink = preserveInboundAttribution(rewrittenLink, window.location.href);
         const linkChanged = newLink !== btn.getAttribute('href');
 
         if (linkChanged) {
@@ -1893,6 +1927,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof window !== 'undefined') {
     window.__snoozeCurrencyToggle__ = {
       rewriteCheckoutUrl: rewriteCheckoutUrl,
+      preserveInboundAttribution: preserveInboundAttribution,
       CONFIG: CONFIG,
       createToggleButton: createToggleButton,
       updateToggleUI: updateToggleUI

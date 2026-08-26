@@ -16,21 +16,23 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const BUNDLE = path.join(ROOT, '..', 'html', 'site-header-page-scripts.html');
 const EXTRACT = path.join(ROOT, 'currency-toggle.js');
-const MARKER = '<!-- ===== Snooze Currency Toggle Engine';
-const END_MARKER = '<!-- ===== Currency FOUC prevention';
+const SIGNATURE = "<script>\n(function() {\n  'use strict';\n\n  const CONFIG = {";
+const END_MARKER = '\n</script>';
 
 function extractCurrencyBlock(bundle) {
-  const start = bundle.indexOf(MARKER);
+  const start = bundle.indexOf(SIGNATURE);
   if (start === -1) {
-    throw new Error('Currency toggle marker missing from site-header-page-scripts.html');
+    throw new Error('Currency toggle signature missing from site-header-page-scripts.html');
   }
-  let rest = bundle.slice(bundle.indexOf('\n', start) + 1);
-  const end = rest.indexOf(END_MARKER);
+  const nextStart = bundle.indexOf(SIGNATURE, start + SIGNATURE.length);
+  if (nextStart !== -1) {
+    throw new Error('Multiple currency toggle signatures found in site-header-page-scripts.html');
+  }
+  const end = bundle.indexOf(END_MARKER, start);
   if (end === -1) {
     throw new Error('Currency toggle end marker missing from site-header-page-scripts.html');
   }
-  rest = rest.slice(0, end);
-  return rest.replace(/\s+$/, '') + '\n';
+  return bundle.slice(start, end + END_MARKER.length).replace(/\s+$/, '') + '\n';
 }
 
 const checkOnly = process.argv.includes('--check');

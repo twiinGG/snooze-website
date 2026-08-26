@@ -22,9 +22,9 @@
       'omMcVgAi': 'JfeoXoKn',
       '2150311631': '2151262014', // Nap Transition Guide      $27  -> A$39
       '32DbWDyP': 'xGVQ2zfC',
-      '2149700088': '2151262016', // PUBCS01 Signature Consult $650 -> A$975
+      '2149700088': '2151262016', // PUBCS01 Signature Consult $690 -> A$997
       '4zHPSRCs': 'wgqokagt',
-      '2149700039': '2151262017', // PUBCS02 45min Follow-up   $390 -> A$590
+      '2149700039': '2151262017', // PUBCS02 Follow-up Consult $397 -> A$597
       'jRxWAnVo': 'd5HsPDpJ',
       '2149839927': '2151262018', // PUBCS03 2-Week Transform  $3,500 -> A$5,250
       'mwiSia6A': 'ZYWF7eY8'
@@ -124,13 +124,14 @@
           ? window.location.pathname
           : '';
         window.dataLayer = window.dataLayer || [];
+        const surfaceValue = pageWrapper
+          ? pageWrapper.id.replace(/-page$/, '')
+          : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown');
         window.dataLayer.push({
           'event': 'currency_change',
           'previous_currency': previousCurrency,
           'currency': currency,
-          'surface': pageWrapper
-            ? pageWrapper.id.replace(/-page$/, '')
-            : (pathname === '/' ? 'homepage' : pathname.replace(/^\/+|\/+$/g, '') || 'unknown')
+          'surface': String(surfaceValue).replace(/-/g, '_')
         });
       } catch (e) {
         logError('Failed to push currency_change event', e);
@@ -222,6 +223,39 @@
     return changed ? newLink : originalHref;
   }
 
+  function preserveInboundAttribution(destinationHref, inboundHref) {
+    if (!destinationHref) return destinationHref;
+
+    try {
+      const destination = new URL(destinationHref, window.location.href);
+      const inbound = new URL(inboundHref || window.location.href, window.location.href);
+
+      Array.from(destination.searchParams.keys()).forEach(function(key) {
+        const preserve = key.indexOf('utm_') === 0 ||
+          key === 'fbclid' || key === 'gclid' ||
+          key === 'cohort' || key.indexOf('cohort_') === 0;
+        if (preserve) {
+          destination.searchParams.set(key, destination.searchParams.get(key));
+        }
+      });
+
+      inbound.searchParams.forEach(function(value, key) {
+        const preserve = key.indexOf('utm_') === 0 ||
+          key === 'fbclid' || key === 'gclid' ||
+          key === 'cohort' || key.indexOf('cohort_') === 0;
+
+        if (preserve && !destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
+      });
+
+      return destination.toString();
+    } catch (e) {
+      logWarning('Failed to preserve inbound attribution on checkout link');
+      return destinationHref;
+    }
+  }
+
   function updateLinks(currency) {
     const buttons = document.querySelectorAll('.dynamic-cta, [data-checkout], .pricing-card a, .hero-cta');
     let updatedCount = 0;
@@ -241,7 +275,8 @@
           return;
         }
 
-        const newLink = rewriteCheckoutUrl(originalHref, currency);
+        const rewrittenLink = rewriteCheckoutUrl(originalHref, currency);
+        const newLink = preserveInboundAttribution(rewrittenLink, window.location.href);
         const linkChanged = newLink !== btn.getAttribute('href');
 
         if (linkChanged) {
@@ -524,6 +559,7 @@
   if (typeof window !== 'undefined') {
     window.__snoozeCurrencyToggle__ = {
       rewriteCheckoutUrl: rewriteCheckoutUrl,
+      preserveInboundAttribution: preserveInboundAttribution,
       CONFIG: CONFIG,
       createToggleButton: createToggleButton,
       updateToggleUI: updateToggleUI
