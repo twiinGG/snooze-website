@@ -134,6 +134,8 @@ window.CampCapacityWidget = (function () {
 
     renderHeroNext(cohort);
     startCountdown(root);
+    const currency = document.body.classList.contains('currency-mode-aud') ? 'AUD' : 'USD';
+    campUpdateLinks(currency);
 
     root.querySelectorAll('[data-waitlist-cohort]').forEach(function (link) {
       link.addEventListener('click', function () {

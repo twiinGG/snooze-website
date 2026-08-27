@@ -4,6 +4,16 @@
 
 ---
 
+## [2026-08-27] - Capacity Card Attribution Follow-up
+
+### Fixed
+- Re-applies the current currency and inbound acquisition parameters after the
+  asynchronous capacity card renders, so its generated checkout CTA retains
+  Meta UTMs, click IDs and the destination cohort.
+
+### Tests
+- Adds a regression test for the late-rendered checkout link.
+
 ## [2026-08-27] - Paid Attribution Continuity
 
 ### Fixed

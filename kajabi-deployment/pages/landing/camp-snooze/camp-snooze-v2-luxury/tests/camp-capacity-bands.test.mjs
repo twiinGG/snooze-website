@@ -10,10 +10,11 @@ globalThis.window = {
   fetch: globalThis.fetch,
   dataLayer: [],
 };
+let dynamicCheckoutLinks = [];
 globalThis.document = {
   body: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
   addEventListener: () => {},
-  querySelectorAll: () => [],
+  querySelectorAll: (selector) => selector === '.dynamic-cta, [data-checkout]' ? dynamicCheckoutLinks : [],
   querySelector: () => null,
 };
 
@@ -83,5 +84,22 @@ assert.doesNotMatch(full, /data-checkout/);
 // A camp nobody can buy must not advertise a deadline; the waitlist is the only action left.
 assert.doesNotMatch(full, /Intake closes/);
 assert.doesNotMatch(full, /camp-capacity-countdown/);
+
+const dynamicAttributes = new Map([
+  ['href', 'https://www.joinsnooze.com/offers/46Bz9tk6/checkout?cohort=15'],
+  ['data-cohort', '15'],
+]);
+dynamicCheckoutLinks = [{
+  getAttribute: (name) => dynamicAttributes.has(name) ? dynamicAttributes.get(name) : null,
+  setAttribute: (name, value) => dynamicAttributes.set(name, value),
+}];
+window.location.href = 'https://www.joinsnooze.com/camp-snooze-sleep-coaching' +
+  '?utm_source=meta&utm_medium=paid_social&fbclid=capacity-card-test';
+await render('open', 15);
+const dynamicCheckout = new URL(dynamicAttributes.get('href'));
+assert.equal(dynamicCheckout.searchParams.get('utm_source'), 'meta');
+assert.equal(dynamicCheckout.searchParams.get('utm_medium'), 'paid_social');
+assert.equal(dynamicCheckout.searchParams.get('fbclid'), 'capacity-card-test');
+assert.equal(dynamicCheckout.searchParams.get('cohort'), '15');
 
 console.log('CAPACITY BANDS PASSED: open prints nothing, filling has no number, low prints the true count and pluralises, full routes to the waitlist');
