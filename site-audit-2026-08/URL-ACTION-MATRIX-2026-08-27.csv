@@ -1,0 +1,46 @@
+url,current_state,proposed_action,target_or_role,priority,evidence_or_condition
+https://www.joinsnooze.com/,live sitemap,KEEP,Primary brand and routing page,P0,Clarity top page with 500 sessions in 30 days
+https://www.joinsnooze.com/which-is-right-for-us,live sitemap,KEEP,Universal decision hub,P0,New since June and returns 200
+https://www.joinsnooze.com/newborn-baby-sleep-help,live sitemap,KEEP,Age intent hub,P1,Core age architecture
+https://www.joinsnooze.com/3-4-month-baby-sleep-help,live sitemap,KEEP,Age intent hub,P1,Core age architecture
+https://www.joinsnooze.com/5-12-month-baby-sleep-help,live sitemap,KEEP,Age intent hub,P0,341 Clarity sessions in 30 days
+https://www.joinsnooze.com/toddler-sleep-help,live sitemap,KEEP,Age intent hub,P1,133 Clarity sessions in 30 days
+https://www.joinsnooze.com/bedtime-battles,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/catnapping,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/early-rising,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/nap-transitions,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/night-wakings,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/sleep-regressions,live sitemap,KEEP,Problem intent hub,P1,New since June and returns 200
+https://www.joinsnooze.com/snooze-membership,live sitemap,KEEP,Primary ongoing offer,P0,156 Clarity sessions in 30 days
+https://www.joinsnooze.com/camp-snooze-sleep-coaching,live sitemap,KEEP,Higher-support cohort offer,P0,361 Clarity sessions in 30 days
+https://www.joinsnooze.com/one-on-one-sleep-consultations,live sitemap,KEEP,High-intent support offer,P0,130 Clarity sessions in 30 days
+https://www.joinsnooze.com/3-4-month-baby-sleep-course,live sitemap,KEEP,Standalone course,P1,Supports age-specific buyer intent
+https://www.joinsnooze.com/5-12-month-baby-sleep-course,live sitemap,KEEP,Standalone course,P0,June GA4 showed the strongest checkout feeder
+https://www.joinsnooze.com/newborn-sleep-guide,live sitemap,KEEP,Standalone guide,P1,Low-ticket offer and membership feeder
+https://www.joinsnooze.com/toddler-toolkit,live sitemap,KEEP,Standalone product,P1,Supports toddler intent
+https://www.joinsnooze.com/store,live sitemap,KEEP,Offer catalogue,P1,Use as browse destination rather than primary decision page
+https://www.joinsnooze.com/the-snooze-method,live sitemap,KEEP,Method and trust pillar,P1,New since June and returns 200
+https://www.joinsnooze.com/about-sally,live sitemap,KEEP,Expertise and trust pillar,P1,Use Sally's approved positioning
+https://www.joinsnooze.com/reviews,live sitemap,KEEP,Central proof library,P0,New since June and returns 200
+https://www.joinsnooze.com/press,live sitemap,KEEP,Authority and press proof,P2,New since June and returns 200
+https://www.joinsnooze.com/the-sleep-concierge-faq,live sitemap,KEEP,Objection and policy hub,P1,New since June and returns 200
+https://www.joinsnooze.com/asksally,live sitemap,KEEP,Lead capture and editorial entry,P1,New since June and returns 200
+https://www.joinsnooze.com/newsletters/ask-sally,live sitemap,KEEP,Ask Sally archive,P2,New since June and returns 200
+https://www.joinsnooze.com/blog,live sitemap,KEEP,Organic content hub,P1,Article schema still absent on sampled post
+https://www.joinsnooze.com/baby-sleep-glossary,live sitemap,KEEP,Canonical glossary,P1,FAQPage and DefinedTermSet schema now live
+https://www.joinsnooze.com/snooze-library,live sitemap,KEEP,Public library explanation or member route,P1,Confirm purpose is distinct from authenticated /library
+https://www.joinsnooze.com/about,redirect in June,REDIRECT,https://www.joinsnooze.com/about-sally,P1,Consolidate authority signals
+https://www.joinsnooze.com/author/sally-woods,live in June but absent from sitemap,KEEP,Author entity page,P1,Retain for article authorship and strengthen biography links
+https://www.joinsnooze.com/privacy,404,REDIRECT,https://www.joinsnooze.com/privacy-policy,P0,Still 404 on August 27
+https://www.joinsnooze.com/sleep-glossary,404,REDIRECT,https://www.joinsnooze.com/baby-sleep-glossary,P0,Still 404 and heavily referenced in repo
+https://www.joinsnooze.com/snooze-method,404,REDIRECT,https://www.joinsnooze.com/the-snooze-method,P0,Live canonical replacement now exists
+https://www.joinsnooze.com/snooze,404,REDIRECT,https://www.joinsnooze.com/snooze-membership,P0,Legacy membership shorthand
+https://www.joinsnooze.com/snooze-village,404,REDIRECT,https://www.joinsnooze.com/snooze-membership,P1,Use public membership page rather than a gated community URL
+https://www.joinsnooze.com/get-great-baby-sleep,404 repo build,RETIRE OR CAMPAIGN-GATE,https://www.joinsnooze.com/which-is-right-for-us,P1,Keep dark only if a future campaign has an approved deployment
+https://www.joinsnooze.com/account,404 in June,RETIRE,Use /login and /library,P2,System URL with no active public role
+https://www.joinsnooze.com/llms.txt,404,CREATE,AI crawler discovery file,P2,Still 404 on August 27
+https://www.joinsnooze.com/blog?tag=5-12+months,live sitemap,MERGE TAG TAXONOMY,One canonical age label,P2,Tag sitemap contains overlapping age labels
+https://www.joinsnooze.com/blog?tag=5+month+to+2+years,live sitemap,MERGE TAG TAXONOMY,One canonical age label,P2,Overlaps 5 to 12 months and toddler intent
+https://www.joinsnooze.com/3-4-month-masterclass-replay,live sitemap,KEEP WITH INDEX REVIEW,Campaign replay,P2,Confirm evergreen value and indexing intent
+https://www.joinsnooze.com/ask-ty,live sitemap,KEEP BUT NOINDEX,Conversion confirmation,P1,Thank-you page should not compete in search
+https://www.joinsnooze.com/free-4-month-regression-masterclass-signup,live sitemap,KEEP WITH CAMPAIGN REVIEW,Lead capture,P2,Thin page in June audit

@@ -1,0 +1,555 @@
+url,path,query,in_live_sitemap,in_june_inventory,repo_reference_count,june_http_status,june_page_type,june_drift_verdict,june_source_file,inventory_note
+https://www.joinsnooze.com/,/,,true,true,974,200,homepage,drifted,apps/snooze-website/archive/website/home/snooze-home-page-blocks.html,
+https://www.joinsnooze.com//fail,//fail,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month,/3-4-month,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-baby-sleep-course,/3-4-month-baby-sleep-course,,true,true,252,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/product-pages/3-4-month-course/3-4-month-course-landing-page.html,
+https://www.joinsnooze.com/3-4-month-baby-sleep-course-OLD,/3-4-month-baby-sleep-course-OLD,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions,/3-4-month-baby-sleep-course-terms-and-conditions,,true,true,26,200,legal,drifted,apps/snooze-website/kajabi-deployment/pages/website/legal/3-4-month-course-terms-and-conditions.html,
+https://www.joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions</loc,/3-4-month-baby-sleep-course-terms-and-conditions</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-baby-sleep-course</loc,/3-4-month-baby-sleep-course</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-baby-sleep-help,/3-4-month-baby-sleep-help,,true,true,626,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/age-pages/3-4-month-page-complete.html,
+https://www.joinsnooze.com/3-4-month-baby-sleep-help</loc,/3-4-month-baby-sleep-help</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-masterclass-replay,/3-4-month-masterclass-replay,,true,true,29,200,landing,live_only,,
+https://www.joinsnooze.com/3-4-month-masterclass-replay</loc,/3-4-month-masterclass-replay</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-4-month-sleep-training-masterclass-replay-offer,/3-4-month-sleep-training-masterclass-replay-offer,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/3-to-2-nap-transition-guide,/3-to-2-nap-transition-guide,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/4-month-sleep-regression-survival-guide,/4-month-sleep-regression-survival-guide,,true,true,42,200,landing,live_only,,
+https://www.joinsnooze.com/4-month-sleep-regression-survival-guide</loc,/4-month-sleep-regression-survival-guide</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/5-12-month-baby-sleep-course,/5-12-month-baby-sleep-course,,true,true,247,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/product-pages/5-12-month-course/5-12-month-guide-landing-page.html,
+https://www.joinsnooze.com/5-12-month-baby-sleep-course</loc,/5-12-month-baby-sleep-course</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/5-12-month-baby-sleep-guide,/5-12-month-baby-sleep-guide,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/5-12-month-baby-sleep-guide-the-sleep-concierge-BACKUP,/5-12-month-baby-sleep-guide-the-sleep-concierge-BACKUP,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/5-12-month-baby-sleep-help,/5-12-month-baby-sleep-help,,true,true,631,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/age-pages/5-12-month-page-complete.html,
+https://www.joinsnooze.com/5-12-month-baby-sleep-help</loc,/5-12-month-baby-sleep-help</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/7-day-trial-thank-you,/7-day-trial-thank-you,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/</loc,/</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/<path,/<path,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/TEMPLATE3-4-sleep-masterclass-replay,/TEMPLATE3-4-sleep-masterclass-replay,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/about,/about,,false,true,9,200,page,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/about-sally,/about-sally,,true,true,950,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/about-sally/about-sally.html,
+https://www.joinsnooze.com/about-sally</loc,/about-sally</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/account,/account,,false,true,19,404,account,no_source_in_repo,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/ask-ty,/ask-ty,,true,false,13,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/ask-ty</loc,/ask-ty</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/asksally,/asksally,,true,false,16,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/asksally</loc,/asksally</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/author/sally-woods,/author/sally-woods,,false,true,451,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/author-sally-woods/ask-sally-page.html,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/author/sally-woods</loc,/author/sally-woods</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/baby-sleep-glossary,/baby-sleep-glossary,,true,true,607,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/glossary/bundle/sleep-glossary.html,
+https://www.joinsnooze.com/baby-sleep-glossary</loc,/baby-sleep-glossary</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/baby-sleep-help,/baby-sleep-help,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/bedtime-battles,/bedtime-battles,,true,false,502,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/bedtime-battles</loc,/bedtime-battles</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blank,/blank,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blank-page,/blank-page,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blank-page-6ec11abd-96da-4b7e-a118-120219692b94,/blank-page-6ec11abd-96da-4b7e-a118-120219692b94,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog,/blog,,true,true,780,200,blog_index,drifted,apps/snooze-website/kajabi-deployment/pages/website/blog-index/blog-index.html,
+https://www.joinsnooze.com/blog?tag=5+month+to+2+years,/blog,tag=5+month+to+2+years,true,false,246,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=5+month+to+2+years&_cb=1786199769500,/blog,tag=5+month+to+2+years&_cb=1786199769500,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=5+month+to+2+years&_cb=1786322790719,/blog,tag=5+month+to+2+years&_cb=1786322790719,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=5+month+to+2+years</loc,/blog,tag=5+month+to+2+years</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=5-12+months,/blog,tag=5-12+months,true,false,222,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=5-12+months&_cb=1786199765807,/blog,tag=5-12+months&_cb=1786199765807,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=5-12+months&_cb=1786322786377,/blog,tag=5-12+months&_cb=1786322786377,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=5-12+months</loc,/blog,tag=5-12+months</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=fourth+trimester,/blog,tag=fourth+trimester,true,false,250,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=fourth+trimester&_cb=1786199767655,/blog,tag=fourth+trimester&_cb=1786199767655,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=fourth+trimester&_cb=1786322788663,/blog,tag=fourth+trimester&_cb=1786322788663,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=fourth+trimester</loc,/blog,tag=fourth+trimester</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=infants,/blog,tag=infants,true,false,222,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=infants&_cb=1786199775122,/blog,tag=infants&_cb=1786199775122,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=infants&_cb=1786322796838,/blog,tag=infants&_cb=1786322796838,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=infants</loc,/blog,tag=infants</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=naps,/blog,tag=naps,true,false,222,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=naps&_cb=1786199765807,/blog,tag=naps&_cb=1786199765807,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=naps&_cb=1786322786378,/blog,tag=naps&_cb=1786322786378,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=naps</loc,/blog,tag=naps</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=product+reviews,/blog,tag=product+reviews,true,false,249,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=product+reviews&_cb=1786199765807,/blog,tag=product+reviews&_cb=1786199765807,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=product+reviews&_cb=1786322788663,/blog,tag=product+reviews&_cb=1786322788663,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=product+reviews</loc,/blog,tag=product+reviews</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+environment,/blog,tag=sleep+environment,true,false,224,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=sleep+environment&_cb=1786199775123,/blog,tag=sleep+environment&_cb=1786199775123,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+environment&_cb=1786322798939,/blog,tag=sleep+environment&_cb=1786322798939,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+environment</loc,/blog,tag=sleep+environment</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+products,/blog,tag=sleep+products,true,false,222,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=sleep+products&_cb=1786199775123,/blog,tag=sleep+products&_cb=1786199775123,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+products&_cb=1786322798939,/blog,tag=sleep+products&_cb=1786322798939,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+products</loc,/blog,tag=sleep+products</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+regressions,/blog,tag=sleep+regressions,true,false,230,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=sleep+regressions&_cb=1786199767655,/blog,tag=sleep+regressions&_cb=1786199767655,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+regressions&_cb=1786322790718,/blog,tag=sleep+regressions&_cb=1786322790718,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+regressions</loc,/blog,tag=sleep+regressions</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+safety,/blog,tag=sleep+safety,true,false,231,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=sleep+safety&_cb=1786199776866,/blog,tag=sleep+safety&_cb=1786199776866,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+safety&_cb=1786322798939,/blog,tag=sleep+safety&_cb=1786322798939,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=sleep+safety</loc,/blog,tag=sleep+safety</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=transitions,/blog,tag=transitions,true,false,224,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/blog?tag=transitions&_cb=1786199776867,/blog,tag=transitions&_cb=1786199776867,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=transitions&_cb=1786322798940,/blog,tag=transitions&_cb=1786322798940,false,false,48,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog?tag=transitions</loc,/blog,tag=transitions</loc,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/$1,/blog/$1,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/*,/blog/*,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/4-month-regression-or-progression,/blog/4-month-regression-or-progression,,true,true,127,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/4-month-regression-or-progression</loc,/blog/4-month-regression-or-progression</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling,/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling,,true,true,124,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling</loc,/blog/7-tips-for-maintaining-you-babys-sleep-while-travelling</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/:arg,/blog/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/all-about-the-8-10-month-sleep-regression,/blog/all-about-the-8-10-month-sleep-regression,,true,true,126,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/all-about-the-8-10-month-sleep-regression</loc,/blog/all-about-the-8-10-month-sleep-regression</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/baby-catnaps-tips-guide,/blog/baby-catnaps-tips-guide,,true,true,131,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/baby-catnaps-tips-guide</loc,/blog/baby-catnaps-tips-guide</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules,/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules,,true,true,139,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules</loc,/blog/baby-sleep-schedule-wake-windows-vs-clock-schedules</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you,/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you,,true,true,121,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you</loc,/blog/babyzen-yoyo-travel-stroller-review-you-can-stop-googling-now-this-is-the-stroller-for-you</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/create-meaningful-morning-rituals-for-baby,/blog/create-meaningful-morning-rituals-for-baby,,true,true,107,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/create-meaningful-morning-rituals-for-baby</loc,/blog/create-meaningful-morning-rituals-for-baby</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/cubo-ai-smart-baby-monitor-review-with-discount,/blog/cubo-ai-smart-baby-monitor-review-with-discount,,true,true,125,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/cubo-ai-smart-baby-monitor-review-with-discount</loc,/blog/cubo-ai-smart-baby-monitor-review-with-discount</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/developing-positive-cot-association-with-your-baby,/blog/developing-positive-cot-association-with-your-baby,,true,true,115,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/developing-positive-cot-association-with-your-baby</loc,/blog/developing-positive-cot-association-with-your-baby</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby,/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby,,true,true,131,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby</loc,/blog/dr-harvey-karps-5-ss-to-soothe-your-crying-baby</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/dressing-baby-for-bedtime,/blog/dressing-baby-for-bedtime,,true,true,133,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/dressing-baby-for-bedtime</loc,/blog/dressing-baby-for-bedtime</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/glow-dreaming-white-noise-review,/blog/glow-dreaming-white-noise-review,,true,true,130,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/glow-dreaming-white-noise-review</loc,/blog/glow-dreaming-white-noise-review</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/guide-to-self-settling-sleep-cycles,/blog/guide-to-self-settling-sleep-cycles,,true,true,158,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/guide-to-self-settling-sleep-cycles</loc,/blog/guide-to-self-settling-sleep-cycles</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/how-to-do-skin-to-skin-without-breastfeeding,/blog/how-to-do-skin-to-skin-without-breastfeeding,,true,true,121,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/how-to-do-skin-to-skin-without-breastfeeding</loc,/blog/how-to-do-skin-to-skin-without-breastfeeding</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits,/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits,,true,true,125,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits</loc,/blog/how-to-make-change-when-the-4-month-sleep-regressions-hits</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/how-to-manage-your-babys-reflux-and-sleep,/blog/how-to-manage-your-babys-reflux-and-sleep,,true,true,115,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/how-to-manage-your-babys-reflux-and-sleep</loc,/blog/how-to-manage-your-babys-reflux-and-sleep</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/my-honest-snoo-experience-and-review,/blog/my-honest-snoo-experience-and-review,,true,true,113,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/my-honest-snoo-experience-and-review</loc,/blog/my-honest-snoo-experience-and-review</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/my-snoo-review,/blog/my-snoo-review,,true,true,128,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/my-snoo-review</loc,/blog/my-snoo-review</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/mystery-of-missing-third-nap-early-rising,/blog/mystery-of-missing-third-nap-early-rising,,true,true,121,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/mystery-of-missing-third-nap-early-rising</loc,/blog/mystery-of-missing-third-nap-early-rising</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/navigating-childcare-and-your-childs-sleep-routine,/blog/navigating-childcare-and-your-childs-sleep-routine,,true,true,143,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/navigating-childcare-and-your-childs-sleep-routine</loc,/blog/navigating-childcare-and-your-childs-sleep-routine</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/navigating-split-nights-a-guide-for-parents,/blog/navigating-split-nights-a-guide-for-parents,,true,true,136,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/navigating-split-nights-a-guide-for-parents</loc,/blog/navigating-split-nights-a-guide-for-parents</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/newborn-babys-and-naps,/blog/newborn-babys-and-naps,,true,true,129,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/newborn-babys-and-naps</loc,/blog/newborn-babys-and-naps</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester,/blog/newborn-sleep-and-the-fourth-trimester,,true,true,126,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/newborn-sleep-and-the-fourth-trimester</loc,/blog/newborn-sleep-and-the-fourth-trimester</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/search,/blog/search,,false,false,98,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/shifting-your-babys-bedtime-for-daylight-savings,/blog/shifting-your-babys-bedtime-for-daylight-savings,,true,true,123,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/shifting-your-babys-bedtime-for-daylight-savings</loc,/blog/shifting-your-babys-bedtime-for-daylight-savings</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/should-we-discourage-babys-thumb-and-finger-sucking,/blog/should-we-discourage-babys-thumb-and-finger-sucking,,true,true,121,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/should-we-discourage-babys-thumb-and-finger-sucking</loc,/blog/should-we-discourage-babys-thumb-and-finger-sucking</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/sick-babies-and-sleep,/blog/sick-babies-and-sleep,,true,true,117,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/sick-babies-and-sleep</loc,/blog/sick-babies-and-sleep</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/stop-4-month-babies-sleep-regression-fear,/blog/stop-4-month-babies-sleep-regression-fear,,true,true,112,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/stop-4-month-babies-sleep-regression-fear</loc,/blog/stop-4-month-babies-sleep-regression-fear</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/stop-swaddle-time-for-your-baby,/blog/stop-swaddle-time-for-your-baby,,true,true,135,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/stop-swaddle-time-for-your-baby</loc,/blog/stop-swaddle-time-for-your-baby</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/supporting-parents-of-rainbow-babies,/blog/supporting-parents-of-rainbow-babies,,true,true,103,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/supporting-parents-of-rainbow-babies</loc,/blog/supporting-parents-of-rainbow-babies</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/the-power-of-calm-but-awake-for-babies,/blog/the-power-of-calm-but-awake-for-babies,,true,true,120,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/the-power-of-calm-but-awake-for-babies</loc,/blog/the-power-of-calm-but-awake-for-babies</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/tips-for-managing-baby-early-wake-ups,/blog/tips-for-managing-baby-early-wake-ups,,true,true,163,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/tips-for-managing-baby-early-wake-ups</loc,/blog/tips-for-managing-baby-early-wake-ups</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1,/blog/transitioning-your-baby-from-2-naps-to-1,,true,true,124,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/transitioning-your-baby-from-2-naps-to-1</loc,/blog/transitioning-your-baby-from-2-naps-to-1</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/what-are-assisted-sleep-associations,/blog/what-are-assisted-sleep-associations,,true,true,124,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/what-are-assisted-sleep-associations</loc,/blog/what-are-assisted-sleep-associations</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/when-to-lower-the-cot-mattress,/blog/when-to-lower-the-cot-mattress,,true,true,100,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/when-to-lower-the-cot-mattress</loc,/blog/when-to-lower-the-cot-mattress</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge,/blog/why-am-i-the-sleep-concierge,,true,true,117,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/why-am-i-the-sleep-concierge</loc,/blog/why-am-i-the-sleep-concierge</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it,/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it,,true,true,115,200,blog_post,live_only,,
+https://www.joinsnooze.com/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it</loc,/blog/will-my-baby-cry-when-making-sleep-changes-lets-talk-about-it</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/blog</loc,/blog</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-confirm,/camp-confirm,,false,false,36,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze,/camp-snooze,,false,false,24,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze-agreement,/camp-snooze-agreement,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze-sleep-coaching,/camp-snooze-sleep-coaching,,true,true,680,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html,
+https://www.joinsnooze.com/camp-snooze-sleep-coaching-WAITLIST,/camp-snooze-sleep-coaching-WAITLIST,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze-sleep-coaching</loc,/camp-snooze-sleep-coaching</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze-waitlist-1,/camp-snooze-waitlist-1,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/camp-snooze-waitlist-thank-you,/camp-snooze-waitlist-thank-you,,false,false,41,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/catnapping,/catnapping,,true,false,527,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/catnapping-guide-ready,/catnapping-guide-ready,,false,false,112,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/catnapping</loc,/catnapping</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/cdn-cgi/l/email-protection,/cdn-cgi/l/email-protection,,false,true,41,404,page,no_source_in_repo,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/coaching,/coaching,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/confirmation,/confirmation,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/consultations,/consultations,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/contact,/contact,,true,true,679,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/contact/contact-page-complete.html,
+https://www.joinsnooze.com/contact</loc,/contact</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/day-pass,/day-pass,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/double_opt_ins/<token,/double_opt_ins/<token,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/downloadable-free-sleep-guides,/downloadable-free-sleep-guides,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/downloads/*,/downloads/*,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/downloads/baby-sleep-guide-5-to-12-months,/downloads/baby-sleep-guide-5-to-12-months,,false,true,4,200,download_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/downloads/catnapping-guide,/downloads/catnapping-guide,,false,true,3,200,download_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/downloads/newborn-sleep-guide-by-the-sleep-concierge,/downloads/newborn-sleep-guide-by-the-sleep-concierge,,false,true,2,200,download_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies,/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies,,false,true,3,200,download_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/early-rising,/early-rising,,true,false,522,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/early-rising</loc,/early-rising</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/early-snooze-access,/early-snooze-access,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/[CODE,/email-campaign/[CODE,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMCR01,/email-campaign/eMCR01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMES01,/email-campaign/eMES01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMGN01,/email-campaign/eMGN01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMGN02,/email-campaign/eMGN02,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMMS04,/email-campaign/eMMS04,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMMS05,/email-campaign/eMMS05,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMOP01,/email-campaign/eMOP01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMRP01,/email-campaign/eMRP01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMRP02,/email-campaign/eMRP02,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMRP03,/email-campaign/eMRP03,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMRP04,/email-campaign/eMRP04,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMRP05,/email-campaign/eMRP05,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMSS01,/email-campaign/eMSS01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMWL01,/email-campaign/eMWL01,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/email-campaign/eMWL02,/email-campaign/eMWL02,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/encore-page-1714377471_1_,/encore-page-1714377471_1_,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/encore-page-1714377471_1_-1,/encore-page-1714377471_1_-1,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/fail,/fail,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2148526865/form_submissions,/forms/2148526865/form_submissions,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2148526865/thank_you,/forms/2148526865/thank_you,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2148553166/form_submissions,/forms/2148553166/form_submissions,,false,false,12,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2148722040/form_submissions,/forms/2148722040/form_submissions,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2148759012/form_submissions,/forms/2148759012/form_submissions,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149074056/form_submissions,/forms/2149074056/form_submissions,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149143926/form_submissions,/forms/2149143926/form_submissions,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149246740,/forms/2149246740,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149639447/form_submissions,/forms/2149639447/form_submissions,,false,false,16,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149692312/form_submissions,/forms/2149692312/form_submissions,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149692312/thank_you,/forms/2149692312/thank_you,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/2149699093,/forms/2149699093,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/<FORM_ID,/forms/<FORM_ID,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/forms/<id,/forms/<id,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/free-4-month-regression-masterclass-signup,/free-4-month-regression-masterclass-signup,,true,true,9,200,landing,live_only,,
+https://www.joinsnooze.com/free-4-month-regression-masterclass-signup</loc,/free-4-month-regression-masterclass-signup</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/get-great-baby-sleep,/get-great-baby-sleep,,false,true,3,404,page,in_repo_not_deployed,apps/snooze-website/kajabi-deployment/pages/landing/cold-traffic-landing-page/cold-traffic-landing-page-blocks.html,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/joinus,/joinus,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/joinus-96bca3d4-dfa2-4576-be27-f384026f3a58,/joinus-96bca3d4-dfa2-4576-be27-f384026f3a58,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/library,/library,,false,false,182,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/linked,/linked,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/links,/links,,true,true,70,200,page,live_only,,
+https://www.joinsnooze.com/links-OLD,/links-OLD,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/links</loc,/links</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/login,/login,,false,true,809,200,account,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/member_dashboard/announcements,/member_dashboard/announcements,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/member_dashboard/members,/member_dashboard/members,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/member_invite/<token,/member_invite/<token,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/membership-welcome,/membership-welcome,,false,false,95,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/missing,/missing,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/nap-transition-mini-guide-ready,/nap-transition-mini-guide-ready,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/nap-transitions,/nap-transitions,,true,false,504,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/nap-transitions</loc,/nap-transitions</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newborn-baby-sleep-help,/newborn-baby-sleep-help,,true,true,620,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/age-pages/newborn-page-complete.html,
+https://www.joinsnooze.com/newborn-baby-sleep-help</loc,/newborn-baby-sleep-help</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newborn-guide-preview-ready,/newborn-guide-preview-ready,,false,false,12,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newborn-sleep-guide,/newborn-sleep-guide,,true,true,240,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/product-pages/newborn-guide/newborn-guide-landing-page.html,
+https://www.joinsnooze.com/newborn-sleep-guide</loc,/newborn-sleep-guide</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newsletters/:arg,/newsletters/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newsletters/:arg/posts/:arg,/newsletters/:arg/posts/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newsletters/:arg/subscribe,/newsletters/:arg/subscribe,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newsletters/ask-sally,/newsletters/ask-sally,,true,false,128,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/newsletters/ask-sally</loc,/newsletters/ask-sally</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/newsletters/the-snooze-news,/newsletters/the-snooze-news,,true,true,137,200,page,live_only,,
+https://www.joinsnooze.com/newsletters/the-snooze-news</loc,/newsletters/the-snooze-news</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/night-wakings,/night-wakings,,true,false,139,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/night-wakings</loc,/night-wakings</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers,/offers,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/$s/checkout,/offers/$s/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/$slug/checkout,/offers/$slug/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2150754998/checkout,/offers/2150754998/checkout,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2150884129/checkout,/offers/2150884129/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2151256977/checkout,/offers/2151256977/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2x5pbQJB,/offers/2x5pbQJB,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2x92uaLF,/offers/2x92uaLF,,false,false,21,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/2x92uaLF/checkout,/offers/2x92uaLF/checkout,,false,false,19,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/32DbWDyP,/offers/32DbWDyP,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/32DbWDyP/checkout,/offers/32DbWDyP/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/46Bz9tk6,/offers/46Bz9tk6,,false,false,18,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/46Bz9tk6/checkout,/offers/46Bz9tk6/checkout,,false,false,34,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/4B2KqanY,/offers/4B2KqanY,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/4HQjFJGC,/offers/4HQjFJGC,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/4HQjFJGC/checkout,/offers/4HQjFJGC/checkout,,false,true,2,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/4zHPSRCs,/offers/4zHPSRCs,,false,true,625,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/4zHPSRCs/checkout,/offers/4zHPSRCs/checkout,,false,false,357,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/5FLmy2xB,/offers/5FLmy2xB,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/5Uehzn4W,/offers/5Uehzn4W,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/5iPzBvFL,/offers/5iPzBvFL,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/5xL3NaRf,/offers/5xL3NaRf,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/5xL3NaRf/checkout,/offers/5xL3NaRf/checkout,,false,true,4,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/68PWsB2o,/offers/68PWsB2o,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/6iRarwak,/offers/6iRarwak,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/6iRarwak/checkout,/offers/6iRarwak/checkout,,false,true,116,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/6pLo2b9D,/offers/6pLo2b9D,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/87T3tJht,/offers/87T3tJht,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/8SL8r5sC/checkout,/offers/8SL8r5sC/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/9DFJSwVD,/offers/9DFJSwVD,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/9DFJSwVD/checkout,/offers/9DFJSwVD/checkout,,false,true,13,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/9mzbf4xN,/offers/9mzbf4xN,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/<slug,/offers/<slug,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/<token,/offers/<token,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/CGTRcseX,/offers/CGTRcseX,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/D6VzM2mN,/offers/D6VzM2mN,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/D6VzM2mN/checkout,/offers/D6VzM2mN/checkout,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/DFMu5rtg,/offers/DFMu5rtg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Dd6b7dUB,/offers/Dd6b7dUB,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/ENhg45mj/checkout,/offers/ENhg45mj/checkout,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/EUEk3whL,/offers/EUEk3whL,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/EUEk3whL/checkout,/offers/EUEk3whL/checkout,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/EuZPFtcp,/offers/EuZPFtcp,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/F7XLcGJM,/offers/F7XLcGJM,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FRs7rsLE,/offers/FRs7rsLE,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FkZfbT25/checkout,/offers/FkZfbT25/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FktmJAvJ,/offers/FktmJAvJ,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FktmJAvJ/checkout,/offers/FktmJAvJ/checkout,,false,true,12,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/FwisMwa6,/offers/FwisMwa6,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FwisMwa6/checkout,/offers/FwisMwa6/checkout,,false,false,11,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/FzsLSoVM,/offers/FzsLSoVM,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/GZSKdL2o,/offers/GZSKdL2o,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/HbGyz97H,/offers/HbGyz97H,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/HbGyz97H/checkout,/offers/HbGyz97H/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Hgr5xH6C,/offers/Hgr5xH6C,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/JfeoXoKn/checkout,/offers/JfeoXoKn/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/JqoPWuzv/checkout,/offers/JqoPWuzv/checkout,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/K3Y6FEKX,/offers/K3Y6FEKX,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/K3Y6FEKX/checkout,/offers/K3Y6FEKX/checkout,,false,true,67,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/KFNBAmEL,/offers/KFNBAmEL,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Ktxk9mvE,/offers/Ktxk9mvE,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Ktxk9mvE/checkout,/offers/Ktxk9mvE/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/LFzsPFnL,/offers/LFzsPFnL,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Lzouupsm,/offers/Lzouupsm,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Lzouupsm/checkout,/offers/Lzouupsm/checkout,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/McZNg2md,/offers/McZNg2md,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/N8v8eFEe,/offers/N8v8eFEe,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/N8v8eFEe/checkout,/offers/N8v8eFEe/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Ns7oyaiw,/offers/Ns7oyaiw,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/PCMU7AAN,/offers/PCMU7AAN,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/QH9tuWDh,/offers/QH9tuWDh,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/RYNTpuCL,/offers/RYNTpuCL,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Rm5MRm4o,/offers/Rm5MRm4o,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/SiiVEJuS,/offers/SiiVEJuS,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/SiiVEJuS/checkout,/offers/SiiVEJuS/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/SjYAcLsa,/offers/SjYAcLsa,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Sr6KzShx,/offers/Sr6KzShx,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Sr6KzShx/checkout,/offers/Sr6KzShx/checkout,,false,false,14,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/TXwe2YyX,/offers/TXwe2YyX,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/UNKNOWN_OFFER/checkout,/offers/UNKNOWN_OFFER/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/V3TDhqqJ,/offers/V3TDhqqJ,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Vyn7pGT2,/offers/Vyn7pGT2,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/W2PyqL2X,/offers/W2PyqL2X,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/W2PyqL2X/checkout,/offers/W2PyqL2X/checkout,,false,true,26,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/WDreB7Fp,/offers/WDreB7Fp,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/Wys2BLLm,/offers/Wys2BLLm,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/ZAgz2oKU,/offers/ZAgz2oKU,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/ZYWF7eY8/checkout,/offers/ZYWF7eY8/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/ZvzAZKqz,/offers/ZvzAZKqz,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[ID,/offers/[ID,,false,false,7,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[OFFER-ID,/offers/[OFFER-ID,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[SIGNATURE-CONSULT-CHECKOUT,/offers/[SIGNATURE-CONSULT-CHECKOUT,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[UPCR04-ID,/offers/[UPCR04-ID,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[UPSELL-COURSE-MEMBERSHIP,/offers/[UPSELL-COURSE-MEMBERSHIP,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[UPSELL-GUIDE-MEMBERSHIP,/offers/[UPSELL-GUIDE-MEMBERSHIP,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[UPSELL-MEMB-CONSULT-SIG,/offers/[UPSELL-MEMB-CONSULT-SIG,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[YOUR_OFFER_ID,/offers/[YOUR_OFFER_ID,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[alternate-offer-id,/offers/[alternate-offer-id,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/[offer-id,/offers/[offer-id,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/azdqxZuK/checkout,/offers/azdqxZuK/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bEsVXFXG,/offers/bEsVXFXG,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bEsVXFXG/checkout,/offers/bEsVXFXG/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bFxLg2uz,/offers/bFxLg2uz,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bFxLg2uz/checkout,/offers/bFxLg2uz/checkout,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bdowWALq,/offers/bdowWALq,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bsAYfac2,/offers/bsAYfac2,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/bsAYfac2/checkout,/offers/bsAYfac2/checkout,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/d2mfX4Yu,/offers/d2mfX4Yu,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/d5HsPDpJ/checkout,/offers/d5HsPDpJ/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/dRN7QR7k,/offers/dRN7QR7k,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/dk25rdGU,/offers/dk25rdGU,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/dk25rdGU/checkout,/offers/dk25rdGU/checkout,,false,false,9,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/eeJ8piUD,/offers/eeJ8piUD,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/f2d5qiYK,/offers/f2d5qiYK,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/fPYjsLLg,/offers/fPYjsLLg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/fTEDFmLK,/offers/fTEDFmLK,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/fhuXVKZu,/offers/fhuXVKZu,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/igbTdRbk,/offers/igbTdRbk,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/igbTdRbk/checkout,/offers/igbTdRbk/checkout,,false,true,7,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/isghquPM,/offers/isghquPM,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/jRxWAnVo,/offers/jRxWAnVo,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/jRxWAnVo/checkout,/offers/jRxWAnVo/checkout,,false,true,18,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/maowxKB6,/offers/maowxKB6,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/maowxKB6/checkout,/offers/maowxKB6/checkout,,false,false,7,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/mffDSF9r,/offers/mffDSF9r,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/mqQikDM7,/offers/mqQikDM7,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/mqQikDM7/checkout,/offers/mqQikDM7/checkout,,false,false,162,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/muRW6ug5,/offers/muRW6ug5,,false,true,7,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/muRW6ug5/checkout,/offers/muRW6ug5/checkout,,false,true,14,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/mwiSia6A,/offers/mwiSia6A,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/mwiSia6A/checkout,/offers/mwiSia6A/checkout,,false,true,18,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/mzwFzpg5/checkout,/offers/mzwFzpg5/checkout,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/oLDvUbq7,/offers/oLDvUbq7,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/oLoKxRHv,/offers/oLoKxRHv,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/oQb5iyoz,/offers/oQb5iyoz,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/oiC5AotD,/offers/oiC5AotD,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/omMcVgAi,/offers/omMcVgAi,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/omMcVgAi/checkout,/offers/omMcVgAi/checkout,,false,true,19,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/original/checkout,/offers/original/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/p9DgfUso,/offers/p9DgfUso,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/pRcRVDD2/checkout,/offers/pRcRVDD2/checkout,,false,false,7,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/pRcRVDD2/checkout</p,/offers/pRcRVDD2/checkout</p,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/ppb7mdjf/checkout,/offers/ppb7mdjf/checkout,,false,false,8,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/qF6AHo46,/offers/qF6AHo46,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/rJSMgzJi,/offers/rJSMgzJi,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/rJSMgzJi/checkout,/offers/rJSMgzJi/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/rMyxuFzu,/offers/rMyxuFzu,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/rVuLzkZa,/offers/rVuLzkZa,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/rVuLzkZa/checkout,/offers/rVuLzkZa/checkout,,false,false,7,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/s3e5DDm6,/offers/s3e5DDm6,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/source/checkout,/offers/source/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/tCKG4pcN,/offers/tCKG4pcN,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/uxWnEfFg,/offers/uxWnEfFg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/uxWnEfFg/checkout,/offers/uxWnEfFg/checkout,,false,true,2,200,checkout,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/vYgCNgJz,/offers/vYgCNgJz,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/vYgCNgJz/checkout,/offers/vYgCNgJz/checkout,,false,false,105,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/vYgCNgJz/checkout\,/offers/vYgCNgJz/checkout\,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wesGUFkc,/offers/wesGUFkc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wesGUFkc/checkout,/offers/wesGUFkc/checkout,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wgqokagt/checkout,/offers/wgqokagt/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wjaRujJb,/offers/wjaRujJb,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wozo6eEx,/offers/wozo6eEx,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/wv6T6M2o,/offers/wv6T6M2o,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/xGVQ2zfC/checkout,/offers/xGVQ2zfC/checkout,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/xLM8G8GA,/offers/xLM8G8GA,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/xyz,/offers/xyz,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/z63s9VaR,/offers/z63s9VaR,,false,true,306,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/z63s9VaR/c,/offers/z63s9VaR/c,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/z63s9VaR/checkout,/offers/z63s9VaR/checkout,,false,false,336,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/z63s9VaR/checkout\,/offers/z63s9VaR/checkout\,,false,false,19,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/zAybiDqh,/offers/zAybiDqh,,false,true,3,200,checkout,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/offers/zGs5CzuR,/offers/zGs5CzuR,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/zpzY6p9F,/offers/zpzY6p9F,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/zs2zLeUw,/offers/zs2zLeUw,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/zs2zLeUw/checkout,/offers/zs2zLeUw/checkout,,false,false,9,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/zzFAKE99/checkout,/offers/zzFAKE99/checkout,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/{live[,/offers/{live[,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/offers/{slug,/offers/{slug,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/old-path,/old-path,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/one-on-one-consultations,/one-on-one-consultations,,false,false,9,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/one-on-one-sleep-coaching-the-sleep-concierge-copy-1,/one-on-one-sleep-coaching-the-sleep-concierge-copy-1,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/one-on-one-sleep-consultations,/one-on-one-sleep-consultations,,true,true,673,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/consultations/one-on-one-consultations-page.html,
+https://www.joinsnooze.com/one-on-one-sleep-consultations</loc,/one-on-one-sleep-consultations</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/page,/page,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/pages/:arg,/pages/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/pages/not_found,/pages/not_found,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/pass,/pass,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/password/new,/password/new,,false,true,31,200,account,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/press,/press,,true,false,124,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/press</loc,/press</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/privacy,/privacy,,false,true,3,404,legal,no_source_in_repo,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/privacy-policy,/privacy-policy,,true,true,225,200,legal,in_sync,apps/snooze-website/kajabi-deployment/pages/website/privacy-policy/privacy-policy.html,
+https://www.joinsnooze.com/privacy-policy</loc,/privacy-policy</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/product/5-12-Month-Baby-Sleep-Guide,/product/5-12-Month-Baby-Sleep-Guide,,false,false,61,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/product/5-12-Month-Baby-Sleep-Guide-ARCHIVED,/product/5-12-Month-Baby-Sleep-Guide-ARCHIVED,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/product/5-12-Month-Baby-Sleep-Guide-OLD,/product/5-12-Month-Baby-Sleep-Guide-OLD,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/product/catnapping-guide-free,/product/catnapping-guide-free,,false,false,15,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/product/downloadable-sleep-guide-fourth-trimester-OLD,/product/downloadable-sleep-guide-fourth-trimester-OLD,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/*,/products/*,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/3-4-month-4hr-feeds-free-module,/products/3-4-month-4hr-feeds-free-module,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/3-4-month-4hr-feeds-free-module/categories/2159312498/posts/2194391112,/products/3-4-month-4hr-feeds-free-module/categories/2159312498/posts/2194391112,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/3-4-month-baby-sleep-course,/products/3-4-month-baby-sleep-course,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge,/products/3-4-month-baby-sleep-course-by-the-sleep-concierge,,false,true,17,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/5-12-month-sleep-schedules-free-module,/products/5-12-month-sleep-schedules-free-module,,false,false,13,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/5-12-month-sleep-training-course,/products/5-12-month-sleep-training-course,,false,true,23,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c,/products/88d5fab2-212c-4d84-8fcd-8aa5c4d9ce0c,,false,false,10,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/<anything,/products/<anything,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/[product-slug,/products/[product-slug,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/camp-snooze-program,/products/camp-snooze-program,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2,/products/communities/v2,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze,/products/communities/v2/snooze,,false,true,504,200,community,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/communities/v2/snooze/access-group/bff898d3-f79c-47bc-b65f-b68bb1553111/coaching,/products/communities/v2/snooze/access-group/bff898d3-f79c-47bc-b65f-b68bb1553111/coaching,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/access-group/fe5784cb-26d1-4e72-b347-546873b02359/coaching,/products/communities/v2/snooze/access-group/fe5784cb-26d1-4e72-b347-546873b02359/coaching,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/channel/<channel_uuid,/products/communities/v2/snooze/channel/<channel_uuid,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/coaching,/products/communities/v2/snooze/coaching,,false,false,14,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/home,/products/communities/v2/snooze/home,,false,false,29,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/library,/products/communities/v2/snooze/library,,false,true,58,200,community,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/communities/v2/snooze/library</a,/products/communities/v2/snooze/library</a,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/library\nSnooze,/products/communities/v2/snooze/library\nSnooze,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/meetups/recordings,/products/communities/v2/snooze/meetups/recordings,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0,/products/communities/v2/snooze/resource/9f86d81f-18f7-494e-bad0-60ead4a4fde0,,false,true,1,200,community,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/communities/v2/snooze</a,/products/communities/v2/snooze</a,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/communities/v2/snooze\n\nHere,/products/communities/v2/snooze\n\nHere,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2,/products/e54a281b-c3cd-45e6-a18c-3bfff7cc54e2,,false,false,14,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/e78214b0-16a4-45a1-bf3d-c77b8f19839c,/products/e78214b0-16a4-45a1-bf3d-c77b8f19839c,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/products/newborn-sleep-guide,/products/newborn-sleep-guide,,false,true,20,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/settling-techniques-module-from-snooze-by-the-sleep-concierge,/products/settling-techniques-module-from-snooze-by-the-sleep-concierge,,false,true,1,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/the-snooze-method,/products/the-snooze-method,,false,true,6,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/the-snooze-method-5-12-month-sleep,/products/the-snooze-method-5-12-month-sleep,,false,true,1,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/toddler-toolkit,/products/toddler-toolkit,,false,true,24,200,product_access,redirect,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/products/welcome-to-camp,/products/welcome-to-camp,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/recommended-products,/recommended-products,,true,true,181,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/recommended-products/recommended-products-complete.html,
+https://www.joinsnooze.com/recommended-products</loc,/recommended-products</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/resource_redirect/offers/W2PyqL2X,/resource_redirect/offers/W2PyqL2X,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/reviews,/reviews,,true,false,543,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/reviews</loc,/reviews</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/robots.txt,/robots.txt,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/service,/service,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/settings/cards,/settings/cards,,false,false,39,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/shop,/shop,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/sitemap.xml,/sitemap.xml,,false,false,6,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/sleep-glossary,/sleep-glossary,,false,true,248,404,landing,in_repo_not_deployed,apps/snooze-website/kajabi-deployment/pages/website/glossary/bundle/sleep-glossary.html,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/sleep-regressions,/sleep-regressions,,true,false,509,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/sleep-regressions</loc,/sleep-regressions</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/sleep-term-glossary,/sleep-term-glossary,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze,/snooze,,false,true,17,404,page,no_source_in_repo,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/snooze-access,/snooze-access,,false,false,103,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-access</loc,/snooze-access</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-assets-page,/snooze-assets-page,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-home-testing,/snooze-home-testing,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-library,/snooze-library,,true,true,288,200,page,redirect,,
+https://www.joinsnooze.com/snooze-library-home,/snooze-library-home,,false,false,5,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-library</loc,/snooze-library</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-membership,/snooze-membership,,true,false,600,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/snooze-membership</loc,/snooze-membership</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-method,/snooze-method,,false,true,13,404,landing,in_repo_not_deployed,apps/snooze-website/kajabi-deployment/pages/website/snooze-method/snooze-method-page-complete.html,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/snooze-redirect,/snooze-redirect,,false,false,13,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-social-terms-and-conditions,/snooze-social-terms-and-conditions,,true,true,41,200,legal,in_sync,apps/snooze-website/kajabi-deployment/pages/website/legal/snooze-social-terms-and-conditions.html,
+https://www.joinsnooze.com/snooze-social-terms-and-conditions</loc,/snooze-social-terms-and-conditions</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-social-welcome,/snooze-social-welcome,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/snooze-village,/snooze-village,,false,true,1,404,page,no_source_in_repo,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/snooze-waitlist,/snooze-waitlist,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/store,/store,,true,true,543,200,page,in_sync,apps/snooze-website/kajabi-deployment/pages/website/store/store-page.html,
+https://www.joinsnooze.com/store/:arg,/store/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/store</loc,/store</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/terms,/terms,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/terms-conditions,/terms-conditions,,true,true,227,200,legal,in_sync,apps/snooze-website/kajabi-deployment/pages/website/terms-conditions/terms-conditions.html,
+https://www.joinsnooze.com/terms-conditions/</span,/terms-conditions/</span,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/terms-conditions</loc,/terms-conditions</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/testing-page,/testing-page,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thank-you-snooze-founder,/thank-you-snooze-founder,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thank_you/46Bz9tk6,/thank_you/46Bz9tk6,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thank_you/:arg,/thank_you/:arg,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thankyou/2x92uaLF,/thankyou/2x92uaLF,,false,false,29,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thankyou/[slug,/thankyou/[slug,,false,false,4,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/thankyou/lmcr08-access,/thankyou/lmcr08-access,,false,true,27,200,page,live_only,,"Not in current sitemap; verify redirect, access gate or retirement"
+https://www.joinsnooze.com/thankyou/lmcr08-access</loc,/thankyou/lmcr08-access</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/the-sleep-concierge-faq,/the-sleep-concierge-faq,,true,false,480,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/the-sleep-concierge-faq</loc,/the-sleep-concierge-faq</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/the-snooze-method,/the-snooze-method,,true,false,548,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/the-snooze-method</loc,/the-snooze-method</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/the-snooze-social-membership,/the-snooze-social-membership,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/toddler-sleep-help,/toddler-sleep-help,,true,true,628,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/age-pages/toddler-page-complete.html,
+https://www.joinsnooze.com/toddler-sleep-help</loc,/toddler-sleep-help</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/toddler-toolkit,/toddler-toolkit,,true,true,241,200,landing,in_sync,apps/snooze-website/kajabi-deployment/pages/website/product-pages/toddler-toolkit/toddler-toolkit-landing-page.html,
+https://www.joinsnooze.com/toddler-toolkit-sample-ready,/toddler-toolkit-sample-ready,,false,false,10,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/toddler-toolkit</loc,/toddler-toolkit</loc,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/travel-sleep-guide,/travel-sleep-guide,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/travel-sleep-guide-ready,/travel-sleep-guide-ready,,false,false,3,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/trial-welcome,/trial-welcome,,false,false,89,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/watch-the-sleep-training-masterclass-live,/watch-the-sleep-training-masterclass-live,,false,false,2,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/which-is-right-for-us,/which-is-right-for-us,,true,false,505,,,,,Added to sitemap after June audit
+https://www.joinsnooze.com/which-is-right-for-us</loc,/which-is-right-for-us</loc,,false,false,1,,,,,Repository reference only; verify before reuse
+https://www.joinsnooze.com/your-survival-guide-is-on-its-way,/your-survival-guide-is-on-its-way,,false,false,2,,,,,Repository reference only; verify before reuse
