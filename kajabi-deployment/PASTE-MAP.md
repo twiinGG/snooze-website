@@ -1,7 +1,13 @@
 # Kajabi paste map (source of truth)
 
-**Updated:** 2026-08-25
-**Last live verify:** **2026-08-25**, the six Camp Snooze landing paste targets (hero next-camp
+**Updated:** August 27, 2026
+**Last live verify:** **August 27, 2026**, the site-wide Header Page Scripts field, website theme CSS,
+website theme JavaScript and primary Camp theme CSS and JavaScript were read from Kajabi and
+compared against their complete single-file repo paste targets. All five match byte-for-byte.
+The primary Camp JavaScript is `website-v1.5.4`, 26,158 characters, SHA-256
+`02e75084c92c02f7e06261512142733c7bd9649982828226332b2aa8cacb3d89`. A cache-busted live Meta
+journey retained acquisition parameters through the capacity CTA and checkout, kept one GA4 client
+and session id and produced no duplicate browser events. Earlier entry: **2026-08-25**, the six Camp Snooze landing paste targets (hero next-camp
 banner): both landing custom-code blocks plus Custom CSS and JS on themes `2164288957` and
 `2164775842`, each confirmed by cache-busted curl with every non-blank repo line present, and a live
 DOM read showing the hero and the capacity card on the same date from the same feed. Earlier entry:
@@ -44,13 +50,13 @@ Authoritative detail:
 
 ### Membership release changes
 
-| # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo (2026-07-27) | Re-paste? |
+| # | Kajabi location | Admin path | Canonical file(s) | Reaches | Live vs repo | Re-paste? |
 |---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/…/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **Drift measured line by line 2026-08-16, 22 of 480 substantive lines:** ME-007's surface, currency and cta_click fixes, and the Cookie Keeper loader. **No membership CTA drift remains** | **Yes, ready now.** The old "with the membership release" gate is retired, see the note below |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
-| A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH** (`#home-page` helpers only) | No |
-| A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **The old "MATCH, loader only" note was WRONG, see the warning below.** Repo file rebuilt 2026-08-16 from the live field: loader plus Meta Advanced Matching plus UTM attribution capture. **Checkout identity capture inlined as a fourth block 2026-08-16 (ME-009)**, so the repo file is now AHEAD of live | **Yes.** Read the live field first and diff BOTH directions; the repo file should differ from live by exactly the identity block |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **DELIBERATELY CLEARED 2026-08-16 (ME-009), re-verified empty 2026-08-17 (ME-010).** The field is empty on purpose. It previously held the order-bound purchase script, which had never fired. Purchase is now owned by the server-side n8n path | **NEVER.** Pasting it back re-creates a second purchase emitter beside the server-side path and double counts every order. Row **P3** used to contradict this and told a reader there were 90 lines to keep; that row is now closed and points here |
+| A1 | Settings → Site Details → **Header Page Scripts** | [`Site Details`](https://app.kajabi.com/admin/sites/2148291177/edit/site-details) | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **MATCH, read back August 27, 2026:** 82,632 chars, SHA-256 `4313067418d8dfdd09ec25d1faa804b50ccce96d6a6ab88a15573626b5ba2de4` | No |
+| A2 | Customizer → Theme Custom Code → **CSS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **MATCH, read back August 27, 2026:** 398,570 chars, SHA-256 `8ebddbcfb8dff988f6bbb704f4a677f7f10c2ed53daca47c04d0b272d326a862` | No |
+| A3 | Customizer → Theme Custom Code → **JS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH, read back August 27, 2026:** 4,325 chars, SHA-256 `30766a6563fbae2db479832c3ede9df6201af489dd16c1957f8284856e2311d5`. This field applies across website pages and exits safely without `#home-page` | No |
+| A4 | Settings → Checkout → **Header tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **MATCH and protected:** loader, Meta matching, UTM capture and identity capture. Unchanged by the August 27 campaign repair | No |
+| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **DELIBERATELY CLEARED 2026-08-16 (ME-009), re-verified empty 2026-08-17 (ME-010).** The field is empty on purpose. It previously held the order-bound purchase script, which had never fired. Purchase is now owned by the server-side n8n path | **NEVER.** Pasting it back re-creates a second purchase emitter beside the server-side path and double counts every order. Row **P3** used to contradict this and told a reader there were 90 lines to keep; that row is now closed and points here |
 | A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
 
 ### A4: the "loader only" note was wrong, and a paste from the old repo file would have deleted live code
@@ -94,9 +100,9 @@ Keeper loader. **Not one line of membership CTA drift remains.**
 
 Re-run the check before pasting, because it costs nothing and this note will age too.
 
-### A1: further DRIFT, 2026-08-18, dead program-level Camp offer removed from the currency mapping
+### A1: historical drift from August 18, closed August 27, 2026
 
-**DRIFT.** Camp 15 launch repo cleanup. The currency-toggle script embedded in this file mapped the
+Camp 15 launch repo cleanup found that the currency-toggle script embedded in this file mapped the
 program-level Camp pair, offer `2151342069` to `2151342068` and checkout token `JqoPWuzv` to `mzwFzpg5`,
 and carried `2151342068` in `audOfferIds`. That pair was **deleted** in Kajabi on August 17 to 18, 2026
 (not merely unpublished); see `docs/strategy/paid-scaling/4_working/2026-08-organic-harvest/DECISIONS-2026-08-17-KADE.md`
@@ -105,9 +111,10 @@ the live destination, so the dead entries were removed rather than remapped. The
 [`global/js/currency-toggle.js`](./global/js/currency-toggle.js) (not a paste target, test extract only
 per §E) got the identical edit so the two stay in sync.
 
-**Not yet pasted.** Whole-field overwrite of Settings → Site Details → Header Page Scripts
-(`/admin/sites/2148291177/edit/site-details`) from this file. Verify by cache-busted curl that the served
-script no longer contains `mzwFzpg5`, `JqoPWuzv`, or `2151342068`, and still contains `46Bz9tk6`.
+**Closed August 27, 2026.** The complete Header Page Scripts field was reconciled in both directions,
+pasted once and read back after leaving and reopening [`Site Details`](https://app.kajabi.com/admin/sites/2148291177/edit/site-details).
+It now matches the single repo paste target byte-for-byte. The public Camp journey still uses
+`46Bz9tk6` for AUD and no longer carries the deleted mappings.
 
 ### A2: two things that will waste your time if you do not know them
 
@@ -208,11 +215,11 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 
 | # | Kajabi location | Admin path | Canonical file | Reaches | Live vs repo | Action |
 |---|---|---|---|---|---|---|
-| A1 | Settings → Site Details → **Header Page Scripts** | `/admin/sites/2148291177/edit/site-details` | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **DRIFT, measured 2026-08-16:** ME-007's three header-script fixes and the Cookie Keeper loader only. The membership CTA work is already live | **Yes, ready now** |
-| A2 | Customizer → Theme Custom Code → **CSS** | website theme `settings-css-input` | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | CNG-002 re-pasted 2026-08-08 after dead `#catnapping-guide-ready-page` rules removed (verified MATCH that day: 374,958 chars, 2276 braces, sha256 `441a908ceb452dc3`). Repo also contains `#snooze-membership-page` System Initialization not yet in that live paste | **Yes, before membership page preview** |
-| A3 | Customizer → Theme Custom Code → **JS** | website theme `settings-js-input` | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **DONE** | No |
-| A4 | Settings → Checkout → **Header tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **DRIFT 2026-08-16:** Cookie Keeper loader in repo, not live. Repo file also rebuilt to hold the full live field | **Yes** (see P7 for AM) |
-| A5 | Settings → Checkout → **Footer tracking code** | `/admin/sites/2148291177/edit/checkout-settings` | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **CLEARED 2026-08-16**, verified by a cache-busted read: `AUD_OFFER_IDS` absent from the live checkout. Re-verified absent **2026-08-17** | **NEVER.** See the warning below |
+| A1 | Settings → Site Details → **Header Page Scripts** | [`Site Details`](https://app.kajabi.com/admin/sites/2148291177/edit/site-details) | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Website + landing pages | **MATCH, read back August 27, 2026:** SHA-256 `4313067418d8dfdd09ec25d1faa804b50ccce96d6a6ab88a15573626b5ba2de4` | No |
+| A2 | Customizer → Theme Custom Code → **CSS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **MATCH, read back August 27, 2026:** SHA-256 `8ebddbcfb8dff988f6bbb704f4a677f7f10c2ed53daca47c04d0b272d326a862` | No |
+| A3 | Customizer → Theme Custom Code → **JS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH, read back August 27, 2026:** SHA-256 `30766a6563fbae2db479832c3ede9df6201af489dd16c1957f8284856e2311d5` | No |
+| A4 | Settings → Checkout → **Header tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **MATCH and protected:** loader, Meta matching, UTM capture and identity capture | No |
+| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **CLEARED 2026-08-16**, verified by a cache-busted read: `AUD_OFFER_IDS` absent from the live checkout. Re-verified absent **2026-08-17** | **NEVER.** See the warning below |
 
 ### A4 note
 
@@ -417,7 +424,7 @@ step 2 is what keeps the window between them down to the two renames rather than
 | P3-CAMP-LANDING-HTML | **IN SYNC, pasted and verified live 2026-08-25** (hero next-camp date banner; earlier that day, single-intake urgency change) | Primary camp page custom-code block | ["Welcome to Camp Snooze", page `2151771543`](https://app.kajabi.com/admin/landing_pages/2151771543/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching` | [`camp-snooze-landing-page-blocks.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html) |
 | P3-CAMP-WAITLIST-HTML | **IN SYNC, pasted and verified live 2026-08-25** (hero next-camp date banner). Backup surface. Live had drifted: the cohort select read "starts August 31, 2026" and "dates to be confirmed" for camps 16 and 17 | Waitlist variant custom-code block | ["Join the Camp Snooze Waitlist", page `2151845416`](https://app.kajabi.com/admin/landing_pages/2151845416/edit), measured 2026-08-22 on `/camp-snooze-sleep-coaching-WAITLIST` | [`camp-snooze-landing-page-blocks-waitlist.html`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks-waitlist.html) |
 | P3-CAMP-LANDING-CSS | **IN SYNC, pasted and verified live 2026-08-25** (`.camp-hero-next` styles) on both the landing theme `2164288957` and the waitlist theme `2164775842` | Camp landing theme Custom CSS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.css`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.css) |
-| P3-CAMP-LANDING-JS | **IN SYNC, pasted and verified live 2026-08-25** (`renderHeroNext`) on both the landing theme `2164288957` and the waitlist theme `2164775842`. The waitlist theme was two fixes behind: `audCheckoutUrl` without `/checkout` and `?limit=3` | Camp landing theme Custom JS | [Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
+| P3-CAMP-LANDING-JS | **PRIMARY IN SYNC, pasted and read back August 27, 2026:** `website-v1.5.4`, 26,158 chars, SHA-256 `02e75084c92c02f7e06261512142733c7bd9649982828226332b2aa8cacb3d89`. Live Meta-path proof covered no initialisation event, one valid completed currency event and attribution retention on the late-rendered capacity CTA. The parked waitlist theme remains at its separately verified August 25 state and was outside this repair allowlist | Camp landing theme Custom JS | [primary Camp theme `2164288957`](https://app.kajabi.com/admin/themes/2164288957/settings/edit), [parked waitlist theme `2164775842`](https://app.kajabi.com/admin/themes/2164775842/settings/edit) | [`camp-snooze-v2-luxury.js`](./pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js) |
 | P3-CAMP-CHECKOUT-HTML | **IN SYNC, re-pasted and verified live 2026-08-25** (Intake Closes row) | Checkout custom-code block below the form | [USD offer `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD offer `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit) | [`camp-snooze-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html) |
 | P3-CAMP-MEMBER-CHECKOUT-HTML | **IN SYNC, re-pasted and verified live 2026-08-25** (Intake Closes row) | Member checkout custom-code block below the form | [USD member offer `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member offer `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-member-checkout-blocks.html`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html) |
 | P3-CAMP-CHECKOUT-CSS | **IN SYNC, read back 2026-08-21** | Each offer theme Custom CSS | [USD `2150884129`](https://app.kajabi.com/admin/offers/2150884129/edit), [AUD `2150946767`](https://app.kajabi.com/admin/offers/2150946767/edit), [USD member `2150947919`](https://app.kajabi.com/admin/offers/2150947919/edit), [AUD member `2151264520`](https://app.kajabi.com/admin/offers/2151264520/edit) | [`camp-snooze-v2-checkout.css`](./pages/checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.css) |
