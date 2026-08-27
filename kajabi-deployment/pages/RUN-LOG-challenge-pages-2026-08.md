@@ -43,3 +43,31 @@ Status: deployed and verified.
 - Release tags: `website-v1.5.5`, `website-v1.5.6`
 - Local model review: `qwen3.8-fast` bulk pass, reconciled with `qwen3.8-agent` and deterministic checks.
 - Pre-deployment public HTML backups remain local under `kajabi-deployment/_live-preimages/challenge-pages/2026-08-27-pre/`. They were excluded from git because the generated Kajabi HTML triggered the secret and comment protections.
+
+## Resource-form correction, August 28, 2026
+
+Status: deployed and verified.
+
+### Changes shipped
+
+- Expanded the shared `.snooze-form-embed` selector to Bedtime Battles, Early Rising, Night Wakings and Sleep Regressions. The page section now owns the heading and lead copy on every challenge and age page.
+- Replaced the stale newsletter title and subtitle on the seven resource forms with resource-specific fallback copy.
+- Reduced the [Sleep Training Masterclass form 2148636994](https://app.kajabi.com/admin/forms/2148636994/edit) to name and email, changed its button to "Watch the free masterclass" and preserved its replay redirect.
+- Left the intentional [newsletter form 2148722040](https://app.kajabi.com/admin/forms/2148722040/edit) and [contact form 2148762495](https://app.kajabi.com/admin/forms/2148762495/edit) unchanged.
+
+### Completion-path verification
+
+- All seven resource forms are single opt-in and send to a named custom completion page.
+- Course samples send to login-aware access pages whose guest action starts password setup.
+- Catnapping and Nap Transitions send to direct-download pages. Both public PDF endpoints returned HTTP 200.
+- Sleep Regressions sends directly to the public masterclass replay. It intentionally has no offer grant or member login step.
+- Existing form automations and completion-page selections were inspected but not changed.
+- No live test contact was created in this correction. The confirmation used current Kajabi settings, live embed payloads and HTTP checks of every destination.
+
+### Render and release evidence
+
+- All six challenge pages and all four age pages render one live form with two visible fields, a resource-specific button, hidden duplicate form chrome and no horizontal overflow.
+- Mobile check at 390 px: Bedtime Battles form 302 px wide, duplicate title `display: none`, two fields and the correct sample button.
+- Live CSS read-back: 399,960 chars, 2449 balanced brace pairs and an exact normalized hash match with the repo source.
+- Release commit: `629a186da`
+- Release tag: `website-v1.5.7`
