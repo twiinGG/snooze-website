@@ -12541,23 +12541,23 @@ body.currency-loaded .dynamic-cta {
   text-underline-offset: 2px;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed {
   margin: 24px auto 0;
   max-width: 480px;
   text-align: left;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed #kajabi-form,
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form--inline {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed #kajabi-form,
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form--inline {
   width: 100%;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form__title,
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form__subtitle {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form__title,
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form__subtitle {
   display: none;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed fieldset {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed fieldset {
   border: 0;
   margin: 0;
   padding: 0;
@@ -12566,12 +12566,12 @@ body.currency-loaded .dynamic-cta {
   gap: 12px;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form__form-item {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form__form-item {
   margin: 0;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed input[type="text"],
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed input[type="email"] {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed input[type="text"],
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed input[type="email"] {
   width: 100%;
   padding: 14px 16px;
   border: 2px solid var(--c-beige, #F2EDEA);
@@ -12582,14 +12582,14 @@ body.currency-loaded .dynamic-cta {
   color: var(--c-text, #161E2A);
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed input[type="text"]:focus,
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed input[type="email"]:focus {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed input[type="text"]:focus,
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed input[type="email"]:focus {
   outline: none;
   border-color: var(--c-coral, #F43357);
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form__btn,
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed button[type="submit"] {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form__btn,
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed button[type="submit"] {
   width: 100%;
   min-height: 48px;
   padding: 14px 28px;
@@ -12603,8 +12603,8 @@ body.currency-loaded .dynamic-cta {
   cursor: pointer;
 }
 
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed .kajabi-form__btn:hover,
-:is(#catnapping-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page, #nap-transitions-page) .snooze-form-embed button[type="submit"]:hover {
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed .kajabi-form__btn:hover,
+:is(#bedtime-battles-page, #catnapping-page, #early-rising-page, #nap-transitions-page, #night-wakings-page, #sleep-regressions-page, #age-newborn-page, #age-toddler-page, #age-3-4-month-page, #age-5-12-month-page) .snooze-form-embed button[type="submit"]:hover {
   background: var(--c-coral-hover, #D62646);
   border-color: var(--c-coral-hover, #D62646);
 }

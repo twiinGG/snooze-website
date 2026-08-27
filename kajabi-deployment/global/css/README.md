@@ -63,7 +63,7 @@ Visible FAQ companion for the FAQPage schema on challenge pages, first used on `
 
 ### Kajabi form embed in a capture section (`.snooze-form-embed`), added 2026-08
 
-Scoped `#catnapping-page .snooze-form-embed`, for the inline Kajabi form embed that replaced the PWYW checkout CTA on `/catnapping` (form `2148526865`). Two things it does that are not obvious from the rules: it hides `.kajabi-form__title` and `.kajabi-form__subtitle`, because the embed ships its own stale "JOIN THE NEWSLETTER" heading and the section's own `<h2>` and `.guide-lead` own the copy; and it restyles the Kajabi inputs and submit button to match `.btn`. Extend this pattern for any new page that embeds a form, rather than adding a second one. Context: `docs/projects/catnapping-guide/00-overview.md`.
+Scoped through one `:is()` selector to the challenge and age pages that carry resource forms. It hides `.kajabi-form__title` and `.kajabi-form__subtitle`, because each section's own `<h2>` and lead paragraph own the pitch, then restyles the Kajabi inputs and submit button to match `.btn`. Keep every new resource-form page in this selector. The native Kajabi title and subtitle still need resource-specific fallback copy so a missed wrapper cannot expose newsletter language again. Context: `docs/projects/catnapping-guide/00-overview.md`.
 
 ### Temporary / experimental CSS
 
