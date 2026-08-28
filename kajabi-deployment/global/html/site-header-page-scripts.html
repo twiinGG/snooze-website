@@ -591,6 +591,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ].some(identifier => href.indexOf(identifier) > -1);
   };
 
+  const isTrackedCta = link => link && link.dataset && link.dataset.snoozeEvent;
+
   captureAttribution();
 
   const membershipPage = document.getElementById('snooze-membership-page');
@@ -617,7 +619,15 @@ document.addEventListener("DOMContentLoaded", () => {
         link.closest('.btn-primary') ||
         link.closest('.cta-btn');
 
-    if (isMembershipCta(href)) {
+    if (isTrackedCta(link)) {
+      trackEvent('conversion', link.dataset.snoozeEvent, buttonText, {
+        surface: eventSurface(link),
+        placement: eventPlacement(link),
+        button_text: buttonText,
+        destination: destinationPath(href),
+        currency: activeCurrency()
+      });
+    } else if (isMembershipCta(href)) {
       trackEvent('conversion', 'membership_cta_click', buttonText, {
         surface: eventSurface(link),
         placement: eventPlacement(link),
