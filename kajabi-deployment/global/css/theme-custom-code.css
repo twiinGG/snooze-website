@@ -11813,8 +11813,10 @@
 #home-page .home-card-label { color: #D62646; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 #home-page .home-router-card strong { font-family: 'Playfair Display',serif; font-size: 1.25rem; }
 #home-page .home-challenge-link { margin-top: 28px; }
-#home-page .home-program-card { padding: 28px; border: 1px solid #F2EDEA; border-radius: 20px; background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-#home-page .home-program-card a { color: #D62646; font-weight: 600; }
+#home-page .home-program-card { display: block; padding: 28px; border: 1px solid #F2EDEA; border-radius: 20px; background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.05); color: inherit; text-decoration: none; transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+#home-page .home-program-card:hover { border-color: #F43357; box-shadow: 0 8px 28px rgba(214,38,70,0.14); transform: translateY(-2px); }
+#home-page .home-program-card:focus-visible { outline: 3px solid #F43357; outline-offset: 3px; }
+#home-page .home-program-link { color: #D62646; font-weight: 600; }
 #home-page .home-program-featured { border-top: 4px solid #F43357; }
 #home-page .home-preview-grid,
 #home-page .home-sally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
