@@ -591,6 +591,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ].some(identifier => href.indexOf(identifier) > -1);
   };
 
+  const isCampCta = href => href && href.indexOf('/camp-snooze-sleep-coaching') > -1;
   const isTrackedCta = link => link && link.dataset && link.dataset.snoozeEvent;
 
   captureAttribution();
@@ -619,8 +620,9 @@ document.addEventListener("DOMContentLoaded", () => {
         link.closest('.btn-primary') ||
         link.closest('.cta-btn');
 
-    if (isTrackedCta(link)) {
-      trackEvent('conversion', link.dataset.snoozeEvent, buttonText, {
+    if (isTrackedCta(link) || isCampCta(href)) {
+      const eventName = isTrackedCta(link) ? link.dataset.snoozeEvent : 'camp_cta_click';
+      trackEvent('conversion', eventName, buttonText, {
         surface: eventSurface(link),
         placement: eventPlacement(link),
         button_text: buttonText,
