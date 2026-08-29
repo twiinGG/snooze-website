@@ -6,6 +6,9 @@ agent-browser eval -> page. No model context ever carries the content.
 
 Usage (always via shell substitution inside agent-browser eval):
 
+  # TinyMCE rich text (website-page "Text" blocks):
+  #   ... emit_paste_js.py FILE --target tinymce
+
   # Ace editor (theme custom code, page custom-code blocks):
   agent-browser --session phase5 eval "$(python3 apps/snooze-website/scripts/emit_paste_js.py FILE --target ace)"
 
@@ -27,9 +30,10 @@ import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument("file")
-parser.add_argument("--target", choices=["ace", "textarea"], default="ace")
+parser.add_argument("--target", choices=["ace", "textarea", "tinymce"], default="ace")
 parser.add_argument("--index", type=int, default=0, help="ace editor index on page (0-based)")
 parser.add_argument("--selector", default="", help="CSS selector (textarea target)")
+parser.add_argument("--editor-id", default="", help="TinyMCE editor id (tinymce target); defaults to the only editor on the page")
 args = parser.parse_args()
 
 content = open(args.file, encoding="utf-8").read()
@@ -56,6 +60,26 @@ if args.target == "ace":
   ed.remove('left');
   const v = ed.getValue();
   return JSON.stringify({{ok: v.length === {expected}, length: v.length, expected: {expected}, sha256prefix: '{sha}', editors: els.length}});
+}})()
+"""
+elif args.target == "tinymce":
+    # Kajabi website-page "Text" blocks are TinyMCE rich-text, not Ace. The backing
+    # textarea is not what the builder saves from, so writing it directly is a no-op.
+    # Go through the editor API, then fire the dirty keystroke so Save enables.
+    eid = json.dumps(args.editor_id)
+    js = f"""
+(() => {{
+  if (typeof window.tinymce === 'undefined') return JSON.stringify({{ok:false, error:'tinymce not on page'}});
+  const wanted = {eid};
+  const eds = window.tinymce.editors || [];
+  const ed = wanted ? window.tinymce.get(wanted) : (eds.length === 1 ? eds[0] : null);
+  if (!ed) return JSON.stringify({{ok:false, error:'editor not resolved', editors: eds.map(e=>e.id)}});
+  ed.setContent({payload}, {{format:'raw'}});
+  ed.undoManager.add();
+  ed.fire('change');
+  ed.fire('input');
+  const v = ed.getContent({{format:'raw'}});
+  return JSON.stringify({{ok: v.length === {expected}, length: v.length, expected: {expected}, sha256prefix: '{sha}', editor: ed.id}});
 }})()
 """
 else:

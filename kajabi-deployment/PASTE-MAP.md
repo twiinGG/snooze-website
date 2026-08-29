@@ -87,6 +87,22 @@ overwrite**, and read the field itself rather than trusting a "MATCH" note writt
 **Still open:** the UTM attribution capture block has no owner document and no test. It reached
 production without ever entering git.
 
+### Legal and policy pages (added 2026-08-29)
+
+These had **no row in this map at all** until August 29, 2026, which is why establishing what owned `/terms-conditions` needed a live fetch.
+
+| # | Kajabi location | Admin path | Canonical file | Reaches | Live vs repo | Re-paste? |
+|---|---|---|---|---|---|---|
+| L1 | Website theme -> Terms page -> **Text** block (TinyMCE) | [theme `2156873377`, file `2931909141`](https://app.kajabi.com/admin/themes/2156873377/settings/edit?theme_file_id=2931909141) | [`pages/website/terms-conditions/PASTE-terms-conditions-block.html`](./pages/website/terms-conditions/PASTE-terms-conditions-block.html) | [`/terms-conditions`](https://www.joinsnooze.com/terms-conditions) | **MATCH, pasted and verified August 29, 2026.** 23,695 chars. Sections 5A (consults) and 5B (Camp) added, dual currency corrected | No |
+| L2 | Website theme -> FAQs page -> **Custom Code** block (Ace) | [theme `2156873377`, file `2948173435`](https://app.kajabi.com/admin/themes/2156873377/settings/edit?theme_file_id=2948173435) | [`pages/website/faq/the-sleep-concierge-faq-page-complete.html`](./pages/website/faq/the-sleep-concierge-faq-page-complete.html) | [`/the-sleep-concierge-faq`](https://www.joinsnooze.com/the-sleep-concierge-faq) | **MATCH, pasted and verified August 29, 2026.** 36,609 chars, both JSON-LD blocks valid | No |
+| L3 | Website theme -> Privacy Policy page | website page `2156730062` | not captured | `/privacy-policy` | **Unknown.** No repo paste target exists | Capture before any edit |
+
+**The Terms page is TinyMCE, not Ace.** Its backing `<textarea>` is not what the builder saves from, so writing the textarea directly is a silent no-op. Use `emit_paste_js.py --target tinymce`, added the same day. TinyMCE also normalises a literal U+00A0 to `&nbsp;`, so expect a small length delta on the verify and check it is only that.
+
+Pre-images for both live in [`_live-preimages/terms-conditions/`](./_live-preimages/terms-conditions/) and [`_live-preimages/faq/`](./_live-preimages/faq/).
+
+**Checkout policy blocks** are a separate family and are mapped in their own files, not here: [`pages/checkout/consults/README.md`](./pages/checkout/consults/README.md) covers 17 consult checkouts, [`pages/checkout/camp/README.md`](./pages/checkout/camp/README.md) covers 6 Camp checkouts. All 23 are written through the Kajabi MCP `update_theme_content`, not through the browser.
+
 ### A1: the "membership release" gate is retired, 2026-08-16
 
 Rows A1 carried "Yes, with the membership release" from 2026-07-27. **That gate is stale and has
