@@ -202,7 +202,7 @@ This project integrates closely with:
 
 **Current plan:** `../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`
 
-### Phase 1: Navigation System ✅ COMPLETE
+### Phase 1: Navigation System — historical December 2025 completion record
 **Date Completed:** December 3, 2025  
 **Completion Report:** `docs/PHASE-1-COMPLETION-REPORT.md`
 
@@ -215,7 +215,7 @@ This project integrates closely with:
 
 **Deployment authority:** See `kajabi-deployment/PASTE-MAP.md` and `docs/DEPLOYMENT-CHECKLIST.md`. `kajabi-deployment/DEPLOYMENT-GUIDE.md` is archived history.
 
-### Phase 2: Landing Page Harmonization ✅ COMPLETE
+### Phase 2: Landing Page Harmonization — historical December 2025 completion record
 **Date Completed:** December 04, 2025  
 **Completion Report:** `docs/PHASE-2-COMPLETION-REPORT.md`
 
@@ -237,10 +237,10 @@ This project integrates closely with:
 - `kajabi-deployment/phase1-navigation-footer.css` - Custom header logo styling
 - `docs/branding/BRANDING-ASSETS-REFERENCE.md` - New branding documentation
 
-### Goals
+### Historical goals and recorded status
 1. ✅ Create unified navigation system
 2. ✅ Harmonize landing page with Library, Method, and Toolkit
-3. ⏳ Implement context-aware CTAs (new visitor, logged-in non-member, Snooze member) - In progress
+3. Historical plan left context-aware CTAs incomplete; current role/state acceptance belongs to SAR-003 and ONB-001
 4. ✅ Standardize checkout URLs
 5. ✅ Premium experience throughout
 
@@ -253,9 +253,11 @@ This project integrates closely with:
 ## Landing Pages
 
 ### Main Landing Page
-**Status:** ✅ Complete & Ready for Deployment  
-**Current Version:** 2.30 (Best Practices Implementation - Sticky CTA, Mobile Optimization)  
+**Status:** Historical v2.30 artifact; not current deployment authority
+**Current Version:** 2.30 (Best Practices Implementation - Sticky CTA, Mobile Optimization)
 **Location:** `kajabi-deployment/landing-page/`
+
+Do not infer live parity or deployment readiness from this version label. Resolve the current surface through `kajabi-deployment/PASTE-MAP.md`, compare source to a fresh full-field preimage and follow the August 2026 SAR stream that owns the requested journey.
 
 ### Quick Start
 - **For NEW SESSIONS:** Point AI to `kajabi-deployment/landing-page/README.md` + state your goal
@@ -267,9 +269,9 @@ This project integrates closely with:
 - **HTML:** `kajabi-deployment/landing-page/kajabi-html-blocks.html` - Version 2.10
 
 ### Cold Traffic Landing Page
-**Status:** ✅ Complete & Ready for Deployment  
-**Purpose:** Primary destination for paid cold traffic ads (Meta, etc.)  
-**URL:** `/get-great-baby-sleep`  
+**Status:** Historical artifact; `/get-great-baby-sleep` is 404 on August 29, 2026 and remains under the SAR URL-matrix retire-or-campaign-gate action
+**Historical purpose:** Primary destination for paid cold traffic ads (Meta, etc.)
+**URL:** `/get-great-baby-sleep`
 **Location:** `kajabi-deployment/pages/cold-traffic-landing-page/`
 
 **SEO Settings:**
@@ -432,15 +434,17 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 - Verify CTAs and navigation
 
 ### 4. Deployment
-- Deploy to Kajabi
-- Test on live site
-- Monitor user behavior
+- Use `kajabi-deployment/PASTE-MAP.md` to resolve the exact canonical source and field.
+- Run `docs/DEPLOYMENT-CHECKLIST.md`, capture the full preimage and obtain the required exact approval.
+- Save serially under the named external-resource lock, then cache-bust the paired live verification and record rollback evidence.
 
 ---
 
 ## Success Criteria
 
-### Connected Experience MVP
+### Connected Experience MVP — historical self-reported outcomes
+
+These checkboxes preserve the December 2025 project record; they are not current production acceptance. The August 2026 SAR master plan and run logs decide live status. In particular, fresh SAR-003 evidence confirms the native route but finds unresolved native-header keyboard defects, and ONB-001 remains the authority for authenticated Library/Village/Camp states.
 - [x] Create unified navigation system (Phase 1 Complete)
 - [ ] New visitors can navigate from any page to checkout
 - [ ] Logged-in non-members see appropriate teasers and upgrade CTAs
