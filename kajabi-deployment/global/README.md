@@ -10,6 +10,8 @@ Every global surface pastes as a WHOLE-FIELD OVERWRITE from the repo file(s) bel
 - [`css/theme-custom-code.css`](./css/theme-custom-code.css) → website theme Custom Code CSS ([`css/snooze-unified-theme.css`](./css/snooze-unified-theme.css) is legacy; not a paste source until reconciled)
 - [`js/theme-custom-code.js`](./js/theme-custom-code.js) → website theme Custom Code JS (`#home-page` helpers only; not GTM)
 
+Proposed, not deployed: [`js/native-header-accessibility.js`](./js/native-header-accessibility.js) repairs keyboard semantics and mobile action order for the native Header. It must be composed into A1 only after a fresh whole-field preimage/diff and exact approval; it is not a standalone paste target.
+
 Short checkout pointer: [`checkout-tracking/README.md`](./checkout-tracking/README.md).
 
 Procedure per paste: fresh pre-image → diff (merge new live drift into the canonical file FIRST, commit) → overwrite → byte-compare read-back → curl sentinel (browser for checkouts; curl is 403). See [`CODE-SURFACE-CONTRACT.md`](../../docs/technical/CODE-SURFACE-CONTRACT.md).
