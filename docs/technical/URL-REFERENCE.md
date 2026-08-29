@@ -59,9 +59,9 @@
 
 - **URL:** `https://joinsnooze.com/snooze-library`
 - **Path:** `/snooze-library`
-- **Status:** ✅ Working
-- **Type:** Public Library URL
-- **Description:** Public-facing library page URL (available via website)
+- **Status:** 🔒 Authenticated-only curated page; anonymous requests correctly route to `/login`; logged-in source/live parity remains unverified
+- **Type:** Curated member Library URL
+- **Description:** Canonical page named “the Snooze Library.” Kajabi `/library` is the separate system product utility and must not replace or redirect this route.
 
 - **URL:** `https://www.joinsnooze.com/baby-sleep-glossary`
 - **Path:** `/baby-sleep-glossary`
@@ -489,8 +489,8 @@
 
 - **URL:** `https://joinsnooze.com/snooze-library`
 - **Path:** `/snooze-library`
-- **Status:** 🔄 Needs Redirect → `/products/communities/v2/snooze/library`
-- **Type:** Legacy URL
+- **Status:** 🔒 KEEP — authenticated-only curated Snooze Library; logged-in source/live parity remains unverified
+- **Type:** Curated member Library URL; do not redirect to the community library or system `/library`
 
 ---
 
@@ -754,7 +754,7 @@ After migration to `joinsnooze.com`, all URLs will need to be updated:
    - `/privacy` → `/privacy-policy` (not actionable)
    - `/about` → `/about-sally` (not actionable)
    - `/snooze-village` → `/products/communities/v2/snooze` (already fixed in code, redirect not actionable for now)
-   - **Note:** `/snooze-library` is a valid public-facing URL - no redirect needed
+   - **Note:** `/snooze-library` is the valid authenticated-only curated Library URL - no redirect needed; `/library` remains the system product utility
    - **Note:** `/products/*` URLs are correct internal product access URLs - do NOT redirect these
 
 3. **External Link Verification** (2 links remaining)
@@ -768,6 +768,4 @@ After migration to `joinsnooze.com`, all URLs will need to be updated:
 
 **Last Verified:** December 18, 2025  
 **Next Review:** After deploying fixes and getting offer IDs
-
-
 

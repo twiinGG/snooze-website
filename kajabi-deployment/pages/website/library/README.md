@@ -2,7 +2,9 @@
 
 **Version:** 2.0 (Learning Design Aligned)  
 **Date:** November 2025  
-**Status:** Ready for Deployment
+**Status:** Authenticated-only candidate; logged-in compare and approval required before deployment
+
+> **Current execution authority (2026-08-29):** the ratified target is `/snooze-library`, while Kajabi's `/library` remains the separate system product utility. `PASTE-MAP.md` row `LIB` controls deployment status: `TO DO (confirm first)`. Do not infer live parity from this source or paste it before a complete authenticated editor preimage, two-way diff, member-copy approval and exact mutation approval.
 
 ---
 
