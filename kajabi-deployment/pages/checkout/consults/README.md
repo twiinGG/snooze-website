@@ -46,7 +46,7 @@ Timeframes approved by Kade, August 29, 2026.
 1. **`KAJABI-OFFERS-REGISTRY.md` records the USD follow-up as `2149700039` / `jRxWAnVo`. That offer does not exist** (`get_offer` returns "Offer not found"). The live USD follow-up is **`2150591419` / `5xL3NaRf`**. The dead token was also a live link in the USD Signature checkout's "book here". Corrected and pushed.
 2. **The 2-Week price in the registry is wrong.** $2,800 / A$3,970 are the **member** offers. The public 2-Week is **$3,500 USD / A$5,250**, which matches the consultations page.
 3. **The AUD follow-up is attached to the wrong product.** `2151262017` links product `2148688072`, "1:1 Consult with Sally - Snooze Member Special", on a non-member offer.
-4. **Add-on Week `2150720647` has zero products attached.** A purchase grants nothing.
+4. **Add-on Week `2150720647` has zero products attached, and that looks deliberate,** not broken. It extends a support period the buyer already bought, so no new grant is needed. See the registry note before "fixing" it.
 
 ## Still open, needs Sally
 
