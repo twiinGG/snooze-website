@@ -269,7 +269,7 @@ Do not infer live parity or deployment readiness from this version label. Resolv
 - **HTML:** `kajabi-deployment/landing-page/kajabi-html-blocks.html` - Version 2.10
 
 ### Cold Traffic Landing Page
-**Status:** Historical artifact; `/get-great-baby-sleep` is 404 on August 29, 2026 and remains under the SAR URL-matrix retire-or-campaign-gate action
+**Status:** Historical artifact; `/get-great-baby-sleep` is an intentionally dark 404 on August 29, 2026 and the SAR URL-matrix campaign-gate branch is complete. Do not publish it without a new approved campaign/deployment packet.
 **Historical purpose:** Primary destination for paid cold traffic ads (Meta, etc.)
 **URL:** `/get-great-baby-sleep`
 **Location:** `kajabi-deployment/pages/cold-traffic-landing-page/`
