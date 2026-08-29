@@ -10286,6 +10286,137 @@
   #ask-sally-page .btn { width: 100%; }
 }
 
+#snooze-village-page {
+  --c-coral: #F43357;
+  --c-coral-hover: #D62646;
+  --c-navy: #1F293B;
+  --c-cream: #FAF7F4;
+  --c-beige: #F2EDEA;
+  --c-white: #FFFFFF;
+  --c-text: #161E2A;
+  --c-muted: #64748B;
+  --font-body: 'Poppins', sans-serif;
+  --font-head: 'Playfair Display', serif;
+  --radius: 20px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
+  --ring: 0 0 0 4px rgba(244,51,87,0.18);
+  width: 100%; overflow-x: hidden; font-family: var(--font-body); color: var(--c-text); line-height: 1.6; background: var(--c-cream); isolation: isolate;
+}
+#snooze-village-page *, #snooze-village-page *::before, #snooze-village-page *::after { box-sizing: border-box; }
+#snooze-village-page img { max-width: 100%; height: auto; display: block; }
+#snooze-village-page a { text-decoration: none; transition: 0.25s ease; }
+#snooze-village-page h1, #snooze-village-page h2, #snooze-village-page h3, #snooze-village-page h4 { font-family: var(--font-head); color: var(--c-navy); line-height: 1.15; margin: 0 0 1rem; }
+#snooze-village-page h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+#snooze-village-page h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
+#snooze-village-page h3 { font-size: clamp(1.2rem, 2.4vw, 1.65rem); }
+#snooze-village-page p { margin: 0 0 1rem; }
+#snooze-village-page .snooze-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
+#snooze-village-page .snooze-section { padding: clamp(64px, 8vw, 104px) 0; }
+#snooze-village-page .bg-white { background: var(--c-white); }
+#snooze-village-page .bg-cream { background: var(--c-cream); }
+#snooze-village-page .text-center { text-align: center; }
+#snooze-village-page .max-800 { max-width: 800px; margin-left: auto; margin-right: auto; }
+#snooze-village-page .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 14px 30px; border: 0; border-radius: 9999px; background: var(--c-coral-hover); color: #fff; font-weight: 650; box-shadow: 0 6px 18px rgba(214,38,70,0.22); }
+#snooze-village-page .btn:hover { background: #B91F3B; color: #fff; transform: translateY(-2px); }
+#snooze-village-page a:focus-visible { outline: 3px solid var(--c-coral); outline-offset: 4px; }
+#snooze-village-page .hero-wrap { padding: 48px 0 72px; }
+#snooze-village-page .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+#snooze-village-page .steps-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 30px; margin-top: 40px; }
+#snooze-village-page .step-card { background: #fff; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-card); }
+#snooze-village-page .snooze-section, #snooze-village-page .village-hero, #snooze-village-page .village-final { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+
+#snooze-village-page .village-hero { position: relative; overflow: hidden; padding: clamp(56px,8vw,110px) 0; background: var(--c-cream); }
+#snooze-village-page .village-hero::before { content: ''; position: absolute; width: 520px; height: 520px; border-radius: 50%; right: -170px; top: -210px; background: #F8DCE1; opacity: 0.72; }
+#snooze-village-page .village-hero-grid { position: relative; display: grid; grid-template-columns: minmax(0,0.92fr) minmax(420px,1.08fr); gap: clamp(44px,7vw,96px); align-items: center; }
+#snooze-village-page .village-kicker { margin: 0 0 14px; color: #B91F3B; font-size: 0.78rem; font-weight: 750; letter-spacing: 0.14em; }
+#snooze-village-page .village-lead { max-width: 630px; color: #465164; font-size: clamp(1.05rem,1.6vw,1.2rem); }
+#snooze-village-page .village-actions { display: flex; align-items: center; gap: 22px; margin-top: 28px; }
+#snooze-village-page .village-text-link { color: var(--c-navy); font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+#snooze-village-page .village-trial-note { margin-top: 13px; color: var(--c-muted); font-size: 0.84rem; }
+#snooze-village-page .village-hero-showcase { position: relative; min-height: 570px; display: grid; place-items: center; }
+#snooze-village-page .village-phone { position: relative; z-index: 2; width: min(310px,72vw); min-height: 525px; padding: 18px; border: 8px solid var(--c-navy); border-radius: 42px; background: #fff; box-shadow: 0 26px 60px rgba(31,41,59,0.22); transform: rotate(1.5deg); }
+#snooze-village-page .village-phone-top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 5px 4px 20px; font-size: 0.8rem; }
+#snooze-village-page .village-phone-top span:first-child { justify-self: end; width: 42px; height: 5px; border-radius: 9px; background: var(--c-navy); }
+#snooze-village-page .village-post, #snooze-village-page .village-reply { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0; }
+#snooze-village-page .village-post p, #snooze-village-page .village-reply p { padding: 13px; border-radius: 14px 14px 14px 4px; background: var(--c-beige); font-size: 0.82rem; line-height: 1.45; }
+#snooze-village-page .village-reply { justify-content: flex-end; align-items: flex-end; }
+#snooze-village-page .village-reply p { max-width: 78%; border-radius: 14px 14px 4px 14px; background: #F8DCE1; }
+#snooze-village-page .village-avatar { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--c-navy); color: #fff; font-weight: 700; }
+#snooze-village-page .village-avatar-parent { background: #B91F3B; }
+#snooze-village-page .village-phone-nav { position: absolute; inset: auto 18px 18px; display: grid; grid-template-columns: repeat(3,1fr); padding-top: 14px; border-top: 1px solid #E7E2DE; color: var(--c-muted); font-size: 0.68rem; text-align: center; }
+#snooze-village-page .village-phone-nav .is-active { color: #B91F3B; font-weight: 700; }
+#snooze-village-page .village-shelf { position: absolute; z-index: 3; display: flex; gap: 12px; }
+#snooze-village-page .village-shelf-top { top: 22px; left: -4px; }
+#snooze-village-page .village-shelf-bottom { right: -6px; bottom: 18px; }
+#snooze-village-page .village-mini-card { width: 160px; min-height: 112px; padding: 16px; border: 1px solid #E7E2DE; border-radius: 16px; background: #fff; box-shadow: var(--shadow-pop); transform: rotate(-3deg); }
+#snooze-village-page .village-mini-card:nth-child(2) { transform: rotate(3deg); }
+#snooze-village-page .village-mini-card-featured { background: var(--c-navy); border-color: var(--c-navy); color: #fff; }
+#snooze-village-page .village-mini-card span, #snooze-village-page .village-course-card span { display: block; margin-bottom: 8px; color: #B91F3B; font-size: 0.66rem; font-weight: 750; letter-spacing: 0.11em; }
+#snooze-village-page .village-mini-card-featured span { color: #FF9AAA; }
+#snooze-village-page .village-mini-card strong, #snooze-village-page .village-mini-card small { display: block; }
+#snooze-village-page .village-mini-card strong { line-height: 1.25; }
+#snooze-village-page .village-mini-card small { margin-top: 6px; opacity: 0.72; }
+#snooze-village-page .village-section-heading { max-width: 760px; margin-bottom: 44px; }
+#snooze-village-page .village-section-heading > p:last-child { color: var(--c-muted); font-size: 1.06rem; }
+#snooze-village-page .village-course-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+#snooze-village-page .village-course-card { overflow: hidden; border: 1px solid #E7E2DE; border-radius: 18px; background: #fff; box-shadow: var(--shadow-soft); }
+#snooze-village-page .village-course-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+#snooze-village-page .village-course-card > div { padding: 22px; }
+#snooze-village-page .village-course-card h3 { font-size: 1.35rem; }
+#snooze-village-page .village-course-card p { color: var(--c-muted); font-size: 0.9rem; }
+#snooze-village-page .village-guides { background: var(--c-navy); color: #fff; }
+#snooze-village-page .village-guides h2, #snooze-village-page .village-guides h3 { color: #fff; }
+#snooze-village-page .village-guides .village-kicker { color: #FF9AAA; }
+#snooze-village-page .village-guides .village-section-heading > p:last-child { color: #D8DEE7; }
+#snooze-village-page .village-guides-grid { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); gap: clamp(48px,8vw,110px); align-items: start; }
+#snooze-village-page .village-guide-stack { border-top: 1px solid rgba(255,255,255,0.22); }
+#snooze-village-page .village-guide-stack article { display: grid; grid-template-columns: 44px 0.7fr 1fr; gap: 18px; align-items: center; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.22); }
+#snooze-village-page .village-guide-stack span { color: #FF9AAA; font-weight: 700; }
+#snooze-village-page .village-guide-stack h3, #snooze-village-page .village-guide-stack p { margin: 0; }
+#snooze-village-page .village-guide-stack p { color: #D8DEE7; font-size: 0.9rem; }
+#snooze-village-page .village-support-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+#snooze-village-page .village-support-card { min-height: 370px; padding: 30px; border: 1px solid #E7E2DE; border-radius: 20px; background: var(--c-cream); }
+#snooze-village-page .village-support-card-dark { background: #F8DCE1; }
+#snooze-village-page .village-support-number { display: block; margin-bottom: 48px; color: #B91F3B; font-weight: 750; }
+#snooze-village-page .village-support-card > p { color: var(--c-muted); }
+#snooze-village-page .village-support-card > small { display: inline-block; padding-top: 10px; color: var(--c-navy); font-weight: 650; }
+#snooze-village-page .village-session-preview { margin-top: 28px; padding: 18px; border-radius: 14px; background: #fff; box-shadow: var(--shadow-soft); }
+#snooze-village-page .village-session-preview span, #snooze-village-page .village-session-preview strong, #snooze-village-page .village-session-preview small { display: block; }
+#snooze-village-page .village-session-preview span { color: #B91F3B; font-size: 0.65rem; font-weight: 750; letter-spacing: 0.1em; }
+#snooze-village-page .village-session-preview small { color: var(--c-muted); }
+#snooze-village-page .village-stage-track { display: flex; align-items: center; gap: 7px; margin-top: 36px; font-size: 0.67rem; font-weight: 650; }
+#snooze-village-page .village-stage-track i { flex: 1; height: 2px; background: #E7B7C0; }
+#snooze-village-page .village-final { background: #F8DCE1; }
+#snooze-village-page .village-final-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 50px; align-items: center; }
+#snooze-village-page .village-final-inner h2 { max-width: 720px; }
+#snooze-village-page .village-final-action { text-align: center; }
+#snooze-village-page .village-final-action p { margin-top: 10px; color: var(--c-muted); font-size: 0.8rem; }
+@media (max-width: 900px) {
+  #snooze-village-page .village-hero-grid, #snooze-village-page .village-guides-grid { grid-template-columns: 1fr; }
+  #snooze-village-page .village-course-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #snooze-village-page .village-support-grid { grid-template-columns: 1fr; }
+  #snooze-village-page .village-support-card { min-height: auto; }
+  #snooze-village-page .village-support-number { margin-bottom: 28px; }
+}
+@media (max-width: 620px) {
+  #snooze-village-page .snooze-container { padding: 0 18px; }
+  #snooze-village-page .btn { width: 100%; }
+  #snooze-village-page .village-actions { align-items: stretch; flex-direction: column; gap: 14px; text-align: center; }
+  #snooze-village-page .village-hero-showcase { min-height: 550px; }
+  #snooze-village-page .village-mini-card { width: 132px; padding: 13px; }
+  #snooze-village-page .village-shelf-top { left: 0; }
+  #snooze-village-page .village-shelf-bottom { right: 0; }
+  #snooze-village-page .village-course-grid { grid-template-columns: 1fr; }
+  #snooze-village-page .village-guide-stack article { grid-template-columns: 34px 1fr; }
+  #snooze-village-page .village-guide-stack p { grid-column: 2; }
+  #snooze-village-page .village-final-inner { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #snooze-village-page *, #snooze-village-page *::before, #snooze-village-page *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
 #store-page-v2 {
 
   --c-coral: #F43357;
