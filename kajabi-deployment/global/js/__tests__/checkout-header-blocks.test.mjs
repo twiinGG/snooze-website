@@ -50,6 +50,15 @@ for (const [name, marker] of BLOCKS) {
   assert(html.includes(marker), `checkout header still contains the ${name} block`);
 }
 
+for (const [name, source] of [['checkout header', html], ['site header', siteHtml]]) {
+  assert(source.includes('function loadSnoozeTrackingContainer()'), `${name} owns a named Stape loader`);
+  assert(source.includes('if (document.body)'), `${name} does not execute the Stape loader before body exists`);
+  assert(
+    source.includes("document.addEventListener('DOMContentLoaded', loadSnoozeTrackingContainer, { once: true })"),
+    `${name} defers the Stape loader exactly once when body is absent`,
+  );
+}
+
 // Every block must be inside a script tag and every script tag must parse.
 const scripts = [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)];
 assert(scripts.length >= 3, 'checkout header has at least three script tags');
