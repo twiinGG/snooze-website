@@ -1,8 +1,7 @@
 function() {
-  // AUD checkout slugs (live, Kajabi 2026-07-11). Keep in sync with
-  // kajabi-checkout-tracking.js AUD_OFFER_SLUGS. Old bFxLg2uz/SiiVEJuS retired.
   var audOfferSlugs = ['vYgCNgJz', 'Sr6KzShx', '46Bz9tk6', 'ENhg45mj', 'FkZfbT25',
-    '8SL8r5sC', 'azdqxZuK', 'JfeoXoKn', 'xGVQ2zfC', 'wgqokagt', 'd5HsPDpJ', 'ZYWF7eY8'];
+    '8SL8r5sC', 'azdqxZuK', 'JfeoXoKn', 'xGVQ2zfC', 'wgqokagt', 'd5HsPDpJ', 'ZYWF7eY8',
+    'wesGUFkc'];
   var currentPath = window.location.pathname;
 
   for (var i = 0; i < audOfferSlugs.length; i++) {
