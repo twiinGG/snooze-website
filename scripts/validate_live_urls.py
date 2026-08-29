@@ -94,7 +94,9 @@ class Fetcher:
 
     def head_or_get(self, url: str) -> dict[str, Any]:
         result = self._fetch("HEAD", url)
-        if result["error"] and result["status"] in (0, 405, 403):
+        # Kajabi can return 404 to HEAD for a route that serves 200 to GET.
+        # A failing HEAD is therefore not authoritative for link validity.
+        if result["error"] or result["status"] >= 400:
             return self._fetch("GET", url)
         return result
 

@@ -60,7 +60,7 @@ Paste schema snippets in this order for the Phase 5 GEO deploy:
 3. `blog-schema-paste.html`
 
 `schema-organization.html` owns `https://www.joinsnooze.com/#organization`.
-`schema-person-sally.html` owns `https://www.joinsnooze.com/author/sally-woods#person`.
+`schema-person-sally.html` owns `https://www.joinsnooze.com/about-sally#person`.
 BlogPosting author references must use the same Person `@id`.
 
 For flat URLs that belong to a hub, add a visible line near the page intro:

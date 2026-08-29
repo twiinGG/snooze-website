@@ -5,7 +5,7 @@
 **@id contracts (do not break):**
 
 - Organization: `https://www.joinsnooze.com/#organization`
-- Person: `https://www.joinsnooze.com/author/sally-woods#person`
+- Person: `https://www.joinsnooze.com/about-sally#person`
 - WebSite: `https://www.joinsnooze.com/#website`
 
 ## Optional sameAs additions (edit `schema-organization.html` in a future PR)

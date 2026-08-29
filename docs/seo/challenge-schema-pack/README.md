@@ -21,7 +21,7 @@
 Global header scripts (paste order from `kajabi-deployment/global/html/README.md`):
 
 1. `schema-organization.html` owns `https://www.joinsnooze.com/#organization`
-2. `schema-person-sally.html` owns `https://www.joinsnooze.com/author/sally-woods#person`
+2. `schema-person-sally.html` owns `https://www.joinsnooze.com/about-sally#person`
 3. `blog-schema-paste.html` for `/blog/*`
 
 Challenge page schema in this pack **references those `@id` values**. It does not redefine Organization or Person.
@@ -50,5 +50,5 @@ Do **not** inject a second `<title>` or meta description in page HTML if the pan
 - [ ] Rich Results Test: FAQPage (+ breadcrumbs if claimed)
 - [ ] View-source: single title + single meta description
 - [ ] FAQ schema `name`/`text` match visible FAQ exactly
-- [ ] Person `@id` is `…/author/sally-woods#person` (matches global)
+- [ ] Person `@id` is `…/about-sally#person` (matches global)
 - [ ] Free guide + membership CTAs still work
