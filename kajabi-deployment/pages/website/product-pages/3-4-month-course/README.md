@@ -15,7 +15,7 @@ Deployable Kajabi custom-code page (Resource-Focused design, dark Snooze theme).
 
 ## Includes / shared assets
 
-- Navigation: include from `../navigation.html`
+- Navigation: Kajabi native Header; do not insert the historical custom navigation (PASTE-MAP A6/A7)
 - Footer: include from `../footer.html`
 - Styles: `global/css/snooze-unified-theme.css`
 - JavaScript (`toggleCourseModule` module accordion): `global/js/snooze-globals.js`

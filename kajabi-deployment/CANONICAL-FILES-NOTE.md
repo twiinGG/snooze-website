@@ -1,7 +1,14 @@
-# Canonical Files Reference
+# Archived Canonical Files Reference
 
 **Date:** January 2025  
-**Purpose:** Ensure all complete page files reference canonical navigation and footer files
+**Status:** ARCHIVED — historical reference only; unsafe as a current deployment runbook
+
+**Purpose:** Preserve the January 2025 embedded-navigation/footer convention
+
+> **Do not execute the instructions below.** The named `pages/navigation.html` and
+> `pages/footer.html` paths do not exist in the current tree, and the live site uses Kajabi's native
+> Header. Current authority is [`PASTE-MAP.md`](./PASTE-MAP.md), including A6 for the native
+> `Start Here` field and A7's prohibition on deploying the historical custom navigation.
 
 ---
 
@@ -76,4 +83,3 @@ Replace the entire footer section (from `<!-- SECTION X: FOOTER -->` through the
 ---
 
 **Note:** The user will manually copy the code from canonical files to the complete page files. This document serves as a reference for which files need updating and where to get the canonical code.
-

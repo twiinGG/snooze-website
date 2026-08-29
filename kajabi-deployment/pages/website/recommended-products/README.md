@@ -168,7 +168,6 @@ Genuine instructions relocated here:
 
 - File contains all sections merged. Deploy as a single Code Block in Kajabi.
 - Styling comes from `snooze-unified-theme.css`. Deploy CSS to: Kajabi Settings → Website → Theme → Custom CSS.
-- Navigation: if using global navigation, add the navigation Code Block separately above this block.
+- Navigation: use the Kajabi native Header; do not add the retired custom navigation Code Block (PASTE-MAP A6/A7).
 - Footer: the file includes an inline footer (Snooze Clean Footer). If switching to a global footer block, remove the `<footer>` element from the bottom of this file.
 - "The Snooze Method" nav link in the footer Explore column is intentionally hidden from launch. The commented-out `<li><a href="/the-snooze-method">The Snooze Method</a></li>` has been removed; restore it manually when the page is ready to go live.
-

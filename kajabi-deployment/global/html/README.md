@@ -6,9 +6,9 @@ Shared HTML fragments injected site-wide via Kajabi.
 
 ## navigation.html
 
-**Deployment:** Paste into Kajabi > Website > Theme > Navigation custom code block (or equivalent global header injection point).
+**Status:** Historical source only. **Do not paste.** PASTE-MAP A7 assigns it no deployment target.
 
-The membership release changes the desktop and mobile Membership links to `/snooze-membership`, sends explicit trial CTAs to `mqQikDM7` and removes the expired founding-member banner. Paste this file only after `/snooze-membership` is published and tested as a draft.
+The live site uses Kajabi's native Header. Its canonical CTA field record is [`../native-header-call-to-action.json`](../native-header-call-to-action.json) under PASTE-MAP A6. This historical file retains an alternative structure and route for recovery/review evidence only; it must be rebuilt and explicitly approved before any future activation.
 
 **Note:** `toggleSnoozeMenu()` is defined in the single Header Page Scripts file, [`site-header-page-scripts.html`](./site-header-page-scripts.html), not inline here. `global/js/snooze-globals.js` is a deprecated pointer and is never pasted.
 

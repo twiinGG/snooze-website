@@ -1,8 +1,12 @@
-# Connected Experience MVP - Complete Plan
+# Archived Connected Experience MVP Plan
 
 **Date:** December 2025  
-**Status:** Ready for Implementation  
+**Status:** ARCHIVED — historical navigation plan; do not execute as current deployment authority
+
 **Goal:** Create unified navigation and premium user experience across all Snooze pages before domain migration
+
+> The live site now uses Kajabi's native Header. PASTE-MAP A6/A7 supersedes every custom-navigation
+> file or paste instruction below.
 
 **Note:** This is a local copy for quick reference. The source of truth is:  
 `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
@@ -461,4 +465,3 @@ Create a unified navigation and CTA system that intelligently routes users based
 2. **Phase 11-15:** Domain Migration (after MVP is complete)
 
 **Current Focus:** Complete Phase 1-10 (Connected Experience MVP) before moving to domain migration.
-

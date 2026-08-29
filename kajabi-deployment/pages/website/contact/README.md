@@ -54,11 +54,10 @@ The contact page provides a way for users to get in touch with questions or feed
 2. Find or create the Contact page (`/contact`)
 3. Set page type to **Website Page**
 
-### Step 2: Add Navigation
+### Step 2: Verify Native Header
 
-1. Add a code block at the top of the page
-2. Copy code from `pages/navigation.html`
-3. Paste into the code block
+1. Do not add a custom navigation code block.
+2. Verify the Kajabi native Header CTA against PASTE-MAP A6 and `global/native-header-call-to-action.json`.
 
 ### Step 3: Add Hero Section
 
@@ -147,7 +146,7 @@ The page is fully responsive and includes:
 
 ## Links & References
 
-- **Navigation:** `pages/navigation.html` (canonical file)
+- **Navigation:** Kajabi native Header; canonical CTA record `global/native-header-call-to-action.json`
 - **Footer:** `pages/footer.html` (canonical file)
 - **Global CSS:** `global/css/snooze-unified-theme.css`
 - **Live Page:** https://joinsnooze.com/contact
@@ -177,6 +176,6 @@ Removed all HTML comments from `contact-page-complete.html` (8 comments: header 
 Genuine instructions relocated here:
 
 - Version: 1.0. Date: January 2025.
-- Navigation: do NOT embed navigation code in this file. Insert the canonical navigation Code Block from `pages/navigation.html` separately above this block in Kajabi.
+- Navigation: do not embed or separately insert custom navigation. The Kajabi native Header is authoritative under PASTE-MAP A6.
 - Footer: do NOT embed footer code in this file. Insert the canonical footer Code Block from `pages/footer.html` separately below this block in Kajabi.
 - Kajabi form embed: the form at `https://joinsnooze.com/forms/2148762495/embed.js` is included in Section 2. Replace this script src with the current form embed URL if the form ID changes.

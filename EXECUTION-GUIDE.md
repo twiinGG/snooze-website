@@ -1,9 +1,13 @@
-# Snooze Website - Complete Execution Guide
+# Archived Snooze Website Execution Guide
 
 **Purpose:** Complete guide for executing all remaining phases in a new development session.
 
 **Last Updated:** January 2025  
-**Status:** Phase 1 Complete, CSS Consolidated, Ready for Phase 2 Implementation
+**Status:** ARCHIVED — January 2025 execution history; do not use as current deployment authority
+
+> Current authority is `kajabi-deployment/PASTE-MAP.md` plus `docs/DEPLOYMENT-CHECKLIST.md`.
+> The custom navigation and archived deployment-guide instructions below are retired; the live site
+> uses Kajabi's native Header under PASTE-MAP A6/A7.
 
 ---
 
@@ -174,7 +178,7 @@ Please:
 - `kajabi-deployment/snooze-landing-pages.css` (landing pages)
 - `kajabi-deployment/js/snooze-globals-site-header.js` (site header JS)
 
-**Deployment:** See `kajabi-deployment/DEPLOYMENT-GUIDE.md` ⭐ **SINGLE SOURCE OF TRUTH**
+**Historical deployment reference:** `kajabi-deployment/DEPLOYMENT-GUIDE.md` is archived; do not execute it.
 
 ### Phase 2: Landing Page Harmonization
 **Status:** ✅ Complete (December 4, 2025)  
@@ -552,4 +556,3 @@ Before starting, verify:
 ---
 
 **All context is documented. Use the Quick Start Prompt above to begin execution in a new session.**
-

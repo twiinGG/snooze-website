@@ -130,7 +130,7 @@ Do not build or publish `/start-snooze` until the identity and field write proof
 
 1. For a future approved revision, verify the existing live `/snooze-membership` page with a cache-busted request and an incognito browser before writing.
 2. Capture its preimage, paste the approved complete block and verify the public page again.
-3. Paste `global/html/navigation.html` and verify desktop and mobile menus.
+3. Do not paste `global/html/navigation.html`. Verify the native Header against PASTE-MAP A6 and `global/native-header-call-to-action.json`, then run the desktop/mobile role matrix.
 4. Deploy the changed inline footer sources as each website page is touched. The new page and homepage already contain the canonical footer.
 5. Paste the simplified homepage.
 6. Verify the homepage trial CTA uses `mqQikDM7` before currency mapping.

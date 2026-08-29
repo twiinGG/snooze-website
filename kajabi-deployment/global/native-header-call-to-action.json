@@ -1,0 +1,11 @@
+{
+  "surface": "Kajabi Website theme native Header > Call to action",
+  "theme_id": "2156873377",
+  "block_id": "1767079787493",
+  "button_text": "Start Here",
+  "button_action": "url",
+  "url": "/snooze-membership",
+  "open_new_tab": false,
+  "verified_live_at": "2026-08-29",
+  "decision_record": "docs/projects/site-audit-remediation/runs/SAR-003-NATIVE-ROUTE-DECISION-AND-VERIFICATION-2026-08-29.md"
+}

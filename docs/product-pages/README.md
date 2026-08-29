@@ -111,10 +111,9 @@ For each product page:
 1. **Open the product page in Kajabi** (or create new page)
 2. **Add Code Blocks in this order:**
 
-   **Block 1: Navigation**
-   - Add new Code Block at the very top
-   - Copy contents from `../navigation.html`
-   - Paste into Code Block
+   **Native Header verification**
+   - Do not add a custom navigation Code Block
+   - Verify the Kajabi native Header against `kajabi-deployment/PASTE-MAP.md` A6 and `global/native-header-call-to-action.json`
 
    **Block 2: Hero Section**
    - Add new Code Block after navigation
@@ -232,9 +231,9 @@ These pages implement Phase 6 strategy:
 ## Related Files
 
 - **Components:** `../../components/`
-- **Navigation:** `../navigation.html`
+- **Navigation:** Kajabi native Header; see `../../kajabi-deployment/PASTE-MAP.md` A6/A7
 - **Footer:** `../footer.html`
-- **Deployment Guide:** `../DEPLOYMENT-GUIDE.md`
+- **Deployment authority:** `../../kajabi-deployment/PASTE-MAP.md` plus `../DEPLOYMENT-CHECKLIST.md`
 - **URL Reference:** `../../docs/technical/URL-REFERENCE.md`
 - **Pricing Strategy:** `../../docs/strategy/SNOOZE-PRICING-STRATEGY.md`
 
@@ -261,4 +260,3 @@ Before publishing each page:
 
 **Last Updated:** December 2025  
 **Status:** Ready for Implementation
-

@@ -43,15 +43,15 @@ This project manages the complete development of the Snooze website, including:
 ```
 projects/snooze-website/
 ├── README.md                          # This file - project overview
-├── EXECUTION-GUIDE.md                 # Complete guide for new sessions ⭐
+├── EXECUTION-GUIDE.md                 # Archived January 2025 execution history
 ├── PROJECT-STRUCTURE.md               # Detailed project structure
 │
 ├── docs/
 │   ├── planning/                      # Strategic planning documents
-│   │   ├── CONNECTED-EXPERIENCE-MVP-PLAN.md
+│   │   ├── CONNECTED-EXPERIENCE-MVP-PLAN.md # Archived pre-migration plan
 │   │   ├── SITE-ARCHITECTURE.md
 │   │   ├── HOMEPAGE-SPEC.md
-│   │   └── PLANS-INDEX.md
+│   │   └── PLANS-INDEX.md             # Archived pre-migration index
 │   ├── migration/                     # Domain migration documentation
 │   │   ├── KAJABI-MIGRATION-CHECKLIST.md
 │   │   ├── REDIRECT-MAPPING.md
@@ -70,7 +70,7 @@ projects/snooze-website/
 │   │   └── [other landing page docs]
 │   ├── PHASE-1-COMPLETION-REPORT.md   # Phase 1 completion report
 │   ├── PHASE-2-COMPLETION-REPORT.md   # Phase 2 completion report
-│   ├── HOLISTIC-SITE-TRANSFORMATION-PLAN.md
+│   ├── HOLISTIC-SITE-TRANSFORMATION-PLAN.md # Archived January 2025 plan
 │   └── README.md                      # Documentation index
 │
 ├── scripts/                           # Development & utility scripts
@@ -86,7 +86,8 @@ projects/snooze-website/
 │       └── review_toddler_toolkit_with_gemini.py
 │
 ├── kajabi-deployment/                 # Ready-to-deploy Kajabi files
-│   ├── DEPLOYMENT-GUIDE.md           # ⭐ SINGLE SOURCE OF TRUTH - Complete deployment guide
+│   ├── PASTE-MAP.md                  # Current Kajabi field/file authority
+│   ├── DEPLOYMENT-GUIDE.md           # Archived December 2025 history; do not execute
 │   ├── MIGRATION-CHECKLIST.md         # Landing page migration checklist
 │   │
 │   ├── global/                        # Global theme files (one-time setup)
@@ -96,8 +97,8 @@ projects/snooze-website/
 │   │       └── snooze-globals.js         # ⭐ Global JS (all website pages)
 │   │
 │   ├── pages/                         # Page HTML blocks
-│   │   ├── navigation.html            # Navigation Code Block ⭐
 │   │   ├── footer.html                # Footer Code Block ⭐
+│   │   ├── website/                   # Website bodies; site navigation is the native Header
 │   │   ├── landing-page-blocks.html   # Landing page HTML sections
 │   │   ├── library-page/              # Library page sections
 │   │   │   ├── section-01-title.html
@@ -191,12 +192,15 @@ This project integrates closely with:
 
 ---
 
-## Current Phase: Connected Experience MVP
+## Historical Phase: Connected Experience MVP
 
-**Status:** Phase 2 Complete ✅ - Landing Page Harmonization Ready for Deployment  
-**Primary Plan:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`  
-**Local Copy:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md`  
-**Plans Index:** `docs/planning/PLANS-INDEX.md` (all related plans)
+**Status:** Archived; replaced by the August 2026 SAR master execution plan
+
+**Historical plan:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
+
+**Archived local copy:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md`
+
+**Current plan:** `../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`
 
 ### Phase 1: Navigation System ✅ COMPLETE
 **Date Completed:** December 3, 2025  
@@ -209,7 +213,7 @@ This project integrates closely with:
 - ✅ Self-contained files ready for Kajabi deployment
 - ✅ Mobile-responsive with overlay menu
 
-**Deployment Files:** See `kajabi-deployment/DEPLOYMENT-GUIDE.md` ⭐ **SINGLE SOURCE OF TRUTH**
+**Deployment authority:** See `kajabi-deployment/PASTE-MAP.md` and `docs/DEPLOYMENT-CHECKLIST.md`. `kajabi-deployment/DEPLOYMENT-GUIDE.md` is archived history.
 
 ### Phase 2: Landing Page Harmonization ✅ COMPLETE
 **Date Completed:** December 04, 2025  
@@ -223,13 +227,13 @@ This project integrates closely with:
 - ✅ Premium design and messaging throughout
 - ✅ Context-aware CTAs with signposting fallback
 - ✅ Integrated official Snooze branding assets (logotype, logo, favicon)
-- ✅ Resolved header system conflicts (custom site header as primary)
+- Historical result: custom site header was primary in December 2025; the current live site uses Kajabi's native Header under PASTE-MAP A6/A7
 - ✅ Implemented global checkout URL management (`window.SNOOZE_CHECKOUT_URL`)
 
 **Files Updated:**
 - `kajabi-deployment/landing-page/kajabi-html-blocks.html` - Logo, pricing, checkout URL
 - `kajabi-deployment/landing-page/kajabi-custom-css.css` - SVG logo styling, header controls
-- `kajabi-deployment/navigation-code-block.html` - Custom header logo
+- Historical: `kajabi-deployment/navigation-code-block.html` - retired custom-header record; live navigation now uses the Kajabi native Header under PASTE-MAP A6
 - `kajabi-deployment/phase1-navigation-footer.css` - Custom header logo styling
 - `docs/branding/BRANDING-ASSETS-REFERENCE.md` - New branding documentation
 
@@ -241,8 +245,8 @@ This project integrates closely with:
 5. ✅ Premium experience throughout
 
 ### Next Steps
-- Deploy Phase 2 updates to Kajabi landing page
-- Begin Phase 3: Age-Specific Pages Enhancement
+- Historical December 2025 next steps are superseded.
+- Continue from the August 2026 SAR master execution plan.
 
 ---
 
@@ -255,7 +259,7 @@ This project integrates closely with:
 
 ### Quick Start
 - **For NEW SESSIONS:** Point AI to `kajabi-deployment/landing-page/README.md` + state your goal
-- **For DEPLOYMENT:** Follow `kajabi-deployment/landing-page/DEPLOYMENT-GUIDE.md`
+- **For deployment:** Start with `kajabi-deployment/PASTE-MAP.md` and `docs/DEPLOYMENT-CHECKLIST.md`; page-specific guides are subordinate
 
 ### Key Files
 - **CSS:** `kajabi-deployment/landing-page/kajabi-custom-css.css` - Version 2.30
@@ -279,7 +283,8 @@ This project integrates closely with:
 - Age-specific content section
 - Social proof focused on emotional transformation
 
-**Deployment:** See `kajabi-deployment/DEPLOYMENT-GUIDE.md` Section 3.1  
+**Deployment:** Use `kajabi-deployment/PASTE-MAP.md` plus `docs/DEPLOYMENT-CHECKLIST.md`; the old deployment guide is archived
+
 **Documentation:** `kajabi-deployment/pages/cold-traffic-landing-page/README.md`
 
 ### Course Content
@@ -373,12 +378,13 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 
 ## Documentation Index
 
-### Execution Guide
-- **EXECUTION-GUIDE.md** ⭐ **Complete guide for new sessions** - Includes ready-to-use prompt
+### Current execution
+- **SAR master plan:** `../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`
+- **EXECUTION-GUIDE.md:** archived January 2025 history; do not execute
 
 ### Planning Documents
-- **Plans Index:** `docs/planning/PLANS-INDEX.md` - Reference to all project plans
-- **MVP Plan:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md` - Complete implementation plan
+- **Plans Index:** `docs/planning/PLANS-INDEX.md` - archived pre-migration index
+- **MVP Plan:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md` - archived implementation plan
   - **Source:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
 - **Site Architecture:** `docs/planning/SITE-ARCHITECTURE.md` - Information architecture
 - **Homepage Spec:** `docs/planning/HOMEPAGE-SPEC.md` - Homepage evolution plan
@@ -397,7 +403,7 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 
 ### Landing Page Documentation
 - **Landing Page README:** `kajabi-deployment/landing-page/README.md` ⭐
-- **Deployment Guide:** `kajabi-deployment/landing-page/DEPLOYMENT-GUIDE.md`
+- **Historical landing-page guide:** `kajabi-deployment/landing-page/DEPLOYMENT-GUIDE.md`; current authority remains PASTE-MAP/checklist
 - **Project Objectives:** `docs/landing-page/PROJECT-OBJECTIVES.md`
 - **Technical Reference:** `docs/landing-page/SNOOZE-TECHNICAL-REFERENCE.md`
 
@@ -411,7 +417,7 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 
 ### 1. Planning
 - Review strategic documents in `docs/strategy/`
-- Check MVP plan in `docs/planning/`
+- Start with the August 2026 SAR master execution plan; use `docs/planning/` only as historical context
 - Understand user journeys and requirements
 
 ### 2. Content Generation
@@ -460,8 +466,8 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 
 1. **Read the Overview**
    - This README
-   - `EXECUTION-GUIDE.md` ⭐ **START HERE for new sessions**
-   - `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md`
+   - `../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md` — current execution authority
+   - `kajabi-deployment/PASTE-MAP.md` — current Kajabi field/file authority
    - `docs/strategy/SNOOZE-TONE-OF-VOICE.md`
 
 2. **Set Up Environment**
@@ -474,10 +480,10 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
    - Check related projects
    - Understand Kajabi deployment process
 
-4. **Start with MVP**
-   - Begin with Phase 1: Navigation System
-   - Use content generation script for all copy
-   - Review against Tone of Voice guide
+4. **Follow the SAR sequence**
+   - Preserve the ratified native Header and commercial architecture
+   - Stop at every recorded human gate
+   - Do not start experiments until SAR-002 passes
 
 ---
 
@@ -497,12 +503,15 @@ SUPABASE_ANON_KEY=your_key_here        # For knowledge base queries
 
 ## Status & Progress
 
-**Current Phase:** Connected Experience MVP - Phase 2 Complete ✅  
-**Phase 1 Status:** Navigation System Complete - Ready for Deployment (December 3, 2025)  
-**Phase 2 Status:** Landing Page Harmonization Complete (December 4, 2025)  
-**Next Milestone:** Phase 2 Deployment to Kajabi, then Phase 3 Implementation  
-**Blockers:** None  
-**Last Updated:** December 4, 2025
+**Current phase:** August 2026 SAR execution
+
+**Current plan:** `../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`
+
+**Measurement gate:** FAIL; SAR-006 experiments remain blocked
+
+**Historical phase:** Connected Experience MVP Phase 2 completed in December 2025 and is archived
+
+**Last updated:** August 29, 2026
 
 ---
 

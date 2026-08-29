@@ -60,13 +60,13 @@ Related paid funnel (quiz → sales): `pages/landing/snooze-access-paidads/`. Sa
 `projects/snooze-website/kajabi-deployment/pages/cold-traffic-landing-page/cold-traffic-landing-page-blocks.html`
 
 ### Deployment Steps
-See main `DEPLOYMENT-GUIDE.md` for complete instructions.
+Use [`../../../PASTE-MAP.md`](../../../PASTE-MAP.md) and [`../../../../docs/DEPLOYMENT-CHECKLIST.md`](../../../../docs/DEPLOYMENT-CHECKLIST.md). The root deployment guide is archived history.
 
 **Quick Steps:**
 1. Create new Website Page in Kajabi
 2. Set URL slug: `get-great-baby-sleep`
 3. Set SEO title and description (see above)
-4. Add Navigation Code Block (first)
+4. Do not add a navigation Code Block; verify the native Header against PASTE-MAP A6
 5. Add Code Blocks from `cold-traffic-landing-page-blocks.html` in order
 6. Add Footer Code Block (last)
 7. Save and publish
@@ -74,7 +74,7 @@ See main `DEPLOYMENT-GUIDE.md` for complete instructions.
 ### Dependencies
 - ✅ Global CSS: `global/css/snooze-unified-theme.css` (already deployed)
 - ✅ Global JS: `global/js/snooze-globals.js` (already deployed)
-- ✅ Navigation: `pages/navigation.html`
+- ✅ Navigation: Kajabi native Header; canonical CTA values in `global/native-header-call-to-action.json`
 - ✅ Footer: `pages/footer.html`
 
 ---
@@ -147,4 +147,3 @@ All on-page prices are **NON-CANONICAL founding/launch prices**. AUD is computed
 ---
 
 **Last Updated:** January 2025
-

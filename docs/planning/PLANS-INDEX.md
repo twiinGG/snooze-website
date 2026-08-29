@@ -1,15 +1,19 @@
-# Project Plans Index
+# Archived Project Plans Index
 
 **Purpose:** Reference guide to all planning documents related to the Snooze Website project.
 
+**Status:** ARCHIVED — these pre-migration plans are historical. Current execution authority is
+`../../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`.
+
 ---
 
-## Primary Plan
+## Historical Primary Plan
 
 ### Connected Experience MVP & Domain Migration
 **Location:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`  
 **Local Copy:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md`  
-**Status:** Active - Planning Complete, Ready for Implementation  
+**Status:** Archived; do not execute
+
 **Scope:** 
 - Connected Experience MVP (Phases 1-10)
 - Domain Migration (Phases 11-15)
@@ -69,41 +73,40 @@ Connected Experience MVP Plan (Primary)
 ## How to Use Plans
 
 ### For Implementation
-1. **Start with Primary Plan:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
-2. **Reference Related Plans:** Check related plans for specific components
-3. **Follow Local Copy:** Use `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md` for quick reference
+1. Start with the August 2026 SAR master execution plan linked above.
+2. Use the plans below only as historical context.
+3. Do not revive retired custom-navigation or deployment instructions.
 
 ### For Planning
-1. **Review All Plans:** Understand full scope of related work
-2. **Check Dependencies:** See how plans relate to each other
-3. **Update Plans:** Keep plans synchronized as work progresses
+1. Read the current SAR plan linked above.
+2. Use this index to understand historical dependencies only.
+3. Do not update or execute these superseded plans as current authority.
 
 ### For New Contributors
-1. **Read Primary Plan First:** Understand overall scope
-2. **Check Related Plans:** Understand component details
-3. **Reference Local Docs:** Use organized documentation in `docs/`
+1. Read the current SAR plan linked at the top of this archived index.
+2. Use these plans only to understand historical context.
+3. Do not execute their retired deployment or navigation instructions.
 
 ---
 
 ## Plan Status Tracking
 
-### Active Plans
-- ✅ **Connected Experience MVP** - Planning complete, ready for implementation
+### Historical plan statuses
+- Archived: **Connected Experience MVP** - superseded by the SAR master execution plan
 - ✅ **Library Page Learning Design** - Structure defined, implementation in progress
 - ✅ **Snooze Method Course** - Content development in progress
 - ✅ **Tone of Voice Enhancement** - Complete, guides all content
 
 ### Plan Updates
-- Plans in `.cursor/plans/` are the source of truth
-- Local copies in `docs/planning/` are for quick reference
-- Keep both synchronized when making updates
+- `.cursor/plans/` and the copies here are historical, not current deployment authority.
+- Preserve them for context; do not synchronize new execution changes into them.
 
 ---
 
 ## Quick Links
 
-- **Primary Plan:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
-- **Local Copy:** `docs/planning/CONNECTED-EXPERIENCE-MVP-PLAN.md`
+- **Current SAR plan:** `../../../docs/projects/site-audit-remediation/SAR-MASTER-EXECUTION-PLAN-2026-08-29.md`
+- **Archived pre-migration plan:** `.cursor/plans/snooze-website-development-domain-migration-2259a5de.plan.md`
 - **Library Plan:** `.cursor/plans/library-page-learning-design-alignment-f3926ef1.plan.md`
 - **Method Plan:** `.cursor/plans/snooze-method-foundational-course-3756557f.plan.md`
 - **Voice Plan:** `.cursor/plans/tone-of-voice-document-enhancement-27b24c5c.plan.md`
@@ -111,4 +114,3 @@ Connected Experience MVP Plan (Primary)
 ---
 
 **Last Updated:** December 2025
-

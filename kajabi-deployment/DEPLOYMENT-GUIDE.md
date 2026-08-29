@@ -9,7 +9,9 @@
 > and Kajabi locations. Current deployment authority is
 > [`PASTE-MAP.md`](./PASTE-MAP.md), [`DEPLOYMENT-CHECKLIST.md`](../docs/DEPLOYMENT-CHECKLIST.md)
 > and the applicable repository `AGENTS.md`. Where this archived guide conflicts with any of those
-> sources, the current sources win. The body is retained unchanged as historical evidence.
+> sources, the current sources win. In particular, `pages/navigation.html` does not exist and is
+> not a current paste target; A6/A7 in PASTE-MAP govern the native Header and historical custom
+> navigation. The body is retained unchanged as historical evidence.
 
 ---
 

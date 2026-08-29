@@ -34,12 +34,11 @@ The About Sally page consists of 5 separate section files:
 4. Set page title: "About Sally | Snooze"
 5. Set meta description: "Meet Sally Woods, certified sleep consultant and former paediatric nurse behind Snooze. Learn about The Snooze Method and evidence-based sleep help for tired parents."
 
-### Step 2: Add Navigation Component
+### Step 2: Verify Native Header
 
-1. Add Code Block at the very top of the page
-2. Copy contents from: `kajabi-deployment/pages/navigation.html`
-3. Paste into Code Block
-4. Save
+1. Do not add a custom navigation Code Block.
+2. Verify the Kajabi native Header CTA against PASTE-MAP A6 and `global/native-header-call-to-action.json`.
+3. Continue without a Header save when the field already matches.
 
 ### Step 3: Add Page Content
 
