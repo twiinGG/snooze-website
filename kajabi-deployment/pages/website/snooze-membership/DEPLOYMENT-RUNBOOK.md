@@ -1,9 +1,9 @@
 # Snooze Membership release runbook
 
 **Owner:** Kade  
-**Prepared:** August 08, 2026  
+**Prepared:** August 08, 2026; reconciled August 29, 2026
 **Release tag:** `website-vX.Y.Z` at deploy time  
-**Live state:** Not deployed
+**Live state:** `/snooze-membership` is live. This runbook governs only a future approved change.
 
 ## Approval and access gates
 
@@ -11,7 +11,7 @@ Complete these gates before the first Kajabi write:
 
 - Approve the member-facing page, checkout, thank-you and lifecycle drafts.
 - Open real headed Chrome at `about:blank`, complete human Kajabi login and attach through the documented CDP flow.
-- Open the staged ME-006 GTM workspace. Record its workspace ID and current version.
+- For any measurement change, open the named SAR-002 workspace and record its workspace ID and current version. Do not infer that the historical ME-006 workspace remains current.
 - Confirm a second person can perform the checkout and tracking review.
 - Confirm the root environment validator passes. The repo build passed by mapping the umbrella `SUPABASE_ANON_KEY` value to the validator's `SUPABASE_KEY` compatibility name.
 
@@ -25,7 +25,7 @@ Capture lossless preimages before editing each field:
 2. Website theme CSS field
 3. Website navigation custom-code block
 4. Settings Site Details Header Page Scripts
-5. Settings Checkout Footer tracking code
+5. Settings Checkout Footer tracking code: capture the empty field as the protected baseline and verify it remains empty
 6. USD offer `2150887297` HTML, CSS and JavaScript fields
 7. AUD offer `2151254578` HTML, CSS and JavaScript fields
 8. Current trial thank-you page
@@ -55,16 +55,21 @@ npx --yes htmlhint --rules tag-pair,attr-no-duplication,id-unique,src-not-empty 
 npx --yes stylelint --config apps/snooze-website/scripts/stylelint-kajabi.json apps/snooze-website/kajabi-deployment/pages/checkout/7-day-trial-membership/shared/checkout.css apps/snooze-website/kajabi-deployment/pages/landing/7-day-trial-thank-you/thank-you-page.css apps/snooze-website/kajabi-deployment/global/css/theme-custom-code.css
 ```
 
+The historical checkout-tracking file remains testable because it documents the retired browser
+emitter. Passing its syntax or unit tests does **not** make it a paste target. The Checkout Footer
+tracking code must remain empty unless a new, explicitly approved architecture replaces the
+server-side purchase path.
+
 The generic file-mode link checker treats root-relative Kajabi routes as local files. Check links against the unpublished preview in a headed browser, then repeat against the public origin after publication.
 
 Block release on a placeholder, broken internal link, missing required environment variable or failing scoped test.
 
-## Draft page creation
+## Future approved page revision
 
-1. Create a Kajabi Website Page with slug `/snooze-membership` and keep it unpublished.
-2. Enter every page setting from `page-metadata.md`.
-3. Add one full-width, flush custom-code section.
-4. Paste `snooze-membership-page.html` with `scripts/emit_paste_js.py`.
+1. Read the live `/snooze-membership` page and capture a lossless preimage before editing.
+2. Confirm its settings against `page-metadata.md` and record any drift before changing it.
+3. Confirm the existing full-width, flush custom-code section is the intended target.
+4. After member-facing copy and the exact Kajabi mutation are approved, paste the complete `snooze-membership-page.html` with `scripts/emit_paste_js.py`.
 5. Paste the complete shared `global/css/theme-custom-code.css` into the website theme CSS field.
 6. Save, reload and read the values back.
 7. Preview logged out at 320px, 390px, 768px and 1440px.
@@ -90,23 +95,23 @@ Deploy the USD and AUD twins in one maintenance window. If either side fails val
 9. Confirm required payment, tax and terms fields remain visible.
 10. Test browser autofill, card entry, Apple Pay and Google Pay where Kajabi supports them.
 
-## Checkout order tracking cutover
+## Protected checkout order tracking verification
 
-Coordinate this step with the staged ME-006 GTM workspace.
+Purchase is owned by the server-side n8n path. The Kajabi Checkout Footer tracking field was
+deliberately cleared and must remain empty. Do not restore
+`global/js/kajabi-checkout-tracking.js`; doing so creates a second purchase emitter whose order ID
+cannot deduplicate against the server-side payment-transaction ID.
 
-1. Paste `global/js/kajabi-checkout-tracking.js` into Settings Checkout Footer tracking code.
-2. Confirm both trial offers have `inject_footer_tracking_code` enabled.
-3. Disable the legacy GTM Custom HTML source that independently emits `begin_checkout` on these checkouts. Keep one canonical `begin_checkout` source.
-4. Publish the matching GTM mappings only after Preview shows the expected dataLayer events.
-5. Start one USD trial and one AUD trial with new logged-out test customers.
-6. Confirm each order emits one `trial_started` and no `purchase`.
-7. Complete one paid test transaction with value greater than zero.
-8. Confirm it emits one `purchase` with the exact value and currency.
-9. Complete or inspect an unrelated zero-value claim and confirm `free_claim` only.
-10. Reload each confirmation page and confirm order deduplication.
-11. Retire the legacy URL-only Purchase trigger only after the order-bound event passes.
+1. Read back Settings → Checkout → Footer tracking code and record that it is empty.
+2. Verify the server-side workflow, current analytics mappings and current workspace/version before proposing a change.
+3. Reconcile stuck dispatches and conversion receipts under SAR-002 without changing GTM, Kajabi or n8n state.
+4. If a measurement mutation is required, prepare its exact target, preimage, rollback and controlled-alert test for human approval.
+5. After that separate approval, execute one mutation at a time and verify one USD trial and one AUD trial emit `trial_started` without `purchase`.
+6. Verify one approved paid test transaction produces exactly one purchase receipt with the exact value and currency.
+7. Verify a zero-value claim produces `free_claim` only and that confirmation-page reloads do not duplicate receipts.
 
-DebugView, GTM Preview, browser network requests and Meta Events Manager must agree. Check that no browser and server duplicate remains.
+DebugView, GTM Preview, browser network requests, the server-side dispatch record and Meta Events
+Manager must agree. The checkout footer staying empty is part of the acceptance evidence.
 
 ## Onboarding and lifecycle activation
 
@@ -123,14 +128,14 @@ Do not build or publish `/start-snooze` until the identity and field write proof
 
 ## Publication order
 
-1. Publish `/snooze-membership`.
-2. Verify the public page with a cache-busted request and an incognito browser.
+1. For a future approved revision, verify the existing live `/snooze-membership` page with a cache-busted request and an incognito browser before writing.
+2. Capture its preimage, paste the approved complete block and verify the public page again.
 3. Paste `global/html/navigation.html` and verify desktop and mobile menus.
 4. Deploy the changed inline footer sources as each website page is touched. The new page and homepage already contain the canonical footer.
 5. Paste the simplified homepage.
 6. Verify the homepage trial CTA uses `mqQikDM7` before currency mapping.
 7. Verify all changed membership discovery links route to `/snooze-membership`.
-8. Tag the exact deployed commit as `website-vX.Y.Z` and push the tag.
+8. Commit and tag the exact deployed state as `website-vX.Y.Z`. Push the commit or tag only when separately authorised.
 
 ## Release acceptance
 
