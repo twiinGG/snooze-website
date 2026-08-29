@@ -11,17 +11,18 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
 
 DEFAULT_URL_FILE = Path(__file__).with_name("live-urls-phase5.txt")
+DEFAULT_SITEMAP_URL = "https://www.joinsnooze.com/sitemap.xml"
 TIMEOUT_SECONDS = 20
 RETRIES = 2
 DEFAULT_LOGIN_GATED_PREFIXES = (
     "/offers/",
-    "/account",
     "/products/communities/",
     "/login",
 )
@@ -205,6 +206,28 @@ def load_urls(path: Path) -> list[str]:
     return urls
 
 
+def parse_sitemap_urls(xml_text: str) -> list[str]:
+    root = ET.fromstring(xml_text)
+    namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+    return sorted(
+        {
+            strip_fragment((node.text or "").strip())
+            for node in root.findall(f"{namespace}url/{namespace}loc")
+            if (node.text or "").strip()
+        }
+    )
+
+
+def load_sitemap_urls(url: str, fetcher: Fetcher) -> list[str]:
+    result = fetcher.get(url)
+    if result["status"] != 200:
+        raise RuntimeError(f"sitemap returned HTTP {result['status']}: {url}")
+    urls = parse_sitemap_urls(result["body"])
+    if not urls:
+        raise RuntimeError(f"sitemap contains no URL entries: {url}")
+    return urls
+
+
 def is_same_host_link(base_url: str, href: str) -> str | None:
     href = href.strip()
     if not href or href.startswith(("#", "mailto:", "tel:", "sms:", "javascript:")):
@@ -215,6 +238,8 @@ def is_same_host_link(base_url: str, href: str) -> str | None:
     if resolved_parts.scheme not in ("http", "https"):
         return None
     if resolved_parts.netloc.lower() != base_parts.netloc.lower():
+        return None
+    if resolved_parts.path == "/cdn-cgi/l/email-protection":
         return None
     return strip_fragment(resolved)
 
@@ -448,8 +473,8 @@ def run_self_test() -> int:
             """
             <html><body>
             <a href="/linked">Linked</a>
+            <a href="/cdn-cgi/l/email-protection#abc">Protected email</a>
             <a href="/offers/z63s9VaR">Membership</a>
-            <a href="/account">Account</a>
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
@@ -505,13 +530,26 @@ def run_self_test() -> int:
     results = run_validation([passing_url, failing_url], fetcher)
     print_report(results)
     pass_ok = results[0]["passed"]
-    warn_ok = len(results[0]["warnings"]) == 2 and all(
+    warn_ok = len(results[0]["warnings"]) == 1 and all(
         "bot-blocked or login-gated" in warning for warning in results[0]["warnings"]
     )
     fail_ok = not results[1]["passed"] and any(
         "registered nurse" in reason for reason in results[1]["reasons"]
     )
-    if pass_ok and warn_ok and fail_ok:
+    sitemap_ok = parse_sitemap_urls(
+        """<?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url><loc>https://www.joinsnooze.com/b</loc></url>
+          <url><loc>https://www.joinsnooze.com/a#fragment</loc></url>
+        </urlset>"""
+    ) == [
+        "https://www.joinsnooze.com/a",
+        "https://www.joinsnooze.com/b",
+    ]
+    account_not_gated = not is_login_gated_path(
+        "https://www.joinsnooze.com/account", DEFAULT_LOGIN_GATED_PREFIXES
+    )
+    if pass_ok and warn_ok and fail_ok and sitemap_ok and account_not_gated:
         print("SELF-TEST PASS")
         return 0
     print("SELF-TEST FAIL")
@@ -536,6 +574,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Write a machine-readable JSON report to this path.",
     )
     parser.add_argument(
+        "--sitemap-url",
+        default=None,
+        help=(
+            "Validate every URL in a live sitemap instead of the URL file. "
+            f"Use {DEFAULT_SITEMAP_URL} for the full Snooze public graph."
+        ),
+    )
+    parser.add_argument(
         "--self-test",
         action="store_true",
         help="Run embedded parser and validator fixtures without live requests.",
@@ -557,14 +603,21 @@ def main() -> int:
     args = parser.parse_args()
     if args.self_test:
         return run_self_test()
-    if not args.url_file.exists():
-        print(f"URL file not found: {args.url_file}", file=sys.stderr)
-        return 2
-    urls = load_urls(args.url_file)
-    if not urls:
-        print(f"No URLs found in {args.url_file}", file=sys.stderr)
-        return 2
     fetcher = Fetcher()
+    if args.sitemap_url:
+        try:
+            urls = load_sitemap_urls(args.sitemap_url, fetcher)
+        except (RuntimeError, ET.ParseError) as exc:
+            print(f"Unable to load sitemap: {exc}", file=sys.stderr)
+            return 2
+    else:
+        if not args.url_file.exists():
+            print(f"URL file not found: {args.url_file}", file=sys.stderr)
+            return 2
+        urls = load_urls(args.url_file)
+        if not urls:
+            print(f"No URLs found in {args.url_file}", file=sys.stderr)
+            return 2
     login_gated_prefixes = (
         tuple(args.login_gated_prefixes)
         if args.login_gated_prefixes
