@@ -2,7 +2,7 @@
 
 **Date:** January 2026  
 **Purpose:** Complete setup instructions for the 7-day full access trial offer  
-**Status:** Ready for Implementation
+**Status:** Implemented; canonical prices locked in `docs/operations/KAJABI-OFFERS-REGISTRY.md`
 
 ---
 
@@ -43,26 +43,20 @@ This offer provides a 7-day full access trial of the Snooze membership. After du
 
 ## Step 3: Configure Pricing & Billing
 
-### Pricing Options
+### Locked Pricing Options
 
-You have two options for how the trial converts:
+Do not recreate these offers from the older core-offer totals. The canonical
+`PUBMS02` trial pair was live-read and locked in the operations registry:
 
-**Option A: Single Pricing Option (Recommended)**
-- **Quarterly Option:**
-  - Price: $197 USD per 3 months
-  - Billing Cycle: Quarterly
-  - First Payment Date: 7 days after trial start (automatic conversion)
-  - Recurring: Yes (every 3 months)
+| Cadence | USD | AUD |
+|---|---:|---:|
+| Monthly | $79 | A$119 |
+| Quarterly | $198 | A$297 |
+| Annual | $660 | A$996 |
 
-- **Annual Option:**
-  - Price: $657 USD per year
-  - Billing Cycle: Annual
-  - First Payment Date: 7 days after trial start (automatic conversion)
-  - Recurring: Yes (every year)
-
-**Option B: Default to Quarterly**
-- Set only quarterly pricing option
-- Annual option can be offered as an upgrade later
+Every cadence starts billing seven days after signup unless cancelled. The
+quarterly variant is the stored offer default; current public checkout UX may
+present monthly first without changing that offer-level default.
 
 ---
 
@@ -311,8 +305,8 @@ offer. The landing-page currency widget was removed from the checkout HTML.
 
 | Currency | Code | Offer ID | Slug | Checkout URL | Status |
 |----------|------|----------|------|--------------|--------|
-| USD | PUBMS02_USD | `2150887297` | `mqQikDM7` | https://www.joinsnooze.com/offers/mqQikDM7/checkout | published, 3 variants ($79/$197/$657, 7-day trial) |
-| AUD | PUBMS02_AUD | `2151254578` | `Sr6KzShx` | https://www.joinsnooze.com/offers/Sr6KzShx/checkout | published; variants ($119/$299/$997, 7-day trial) |
+| USD | PUBMS02_USD | `2150887297` | `mqQikDM7` | https://www.joinsnooze.com/offers/mqQikDM7/checkout | published, 3 variants ($79/$198/$660, 7-day trial) |
+| AUD | PUBMS02_AUD | `2151254578` | `Sr6KzShx` | https://www.joinsnooze.com/offers/Sr6KzShx/checkout | published, 3 variants (A$119/A$297/A$996, 7-day trial) |
 
 Both currency checkout pages are in this bundle: `usd/checkout-blocks.html` and
 `aud/checkout-blocks.html`, each with a reciprocal cross-currency link.

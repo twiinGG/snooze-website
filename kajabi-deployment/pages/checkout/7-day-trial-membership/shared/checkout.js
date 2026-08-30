@@ -4,13 +4,13 @@
   const PLAN_CONFIG = {
     USD: {
       monthly: { variantId: '160544', plan: 'monthly', cadence: 'monthly', amount: 79, disclosure: '$79 monthly' },
-      quarterly: { variantId: '64815', plan: 'quarterly', cadence: 'every_3_months', amount: 197, disclosure: '$197 every 3 months' },
-      annual: { variantId: '64816', plan: 'annual', cadence: 'yearly', amount: 657, disclosure: '$657 yearly' }
+      quarterly: { variantId: '64815', plan: 'quarterly', cadence: 'every_3_months', amount: 198, disclosure: '$198 every 3 months' },
+      annual: { variantId: '64816', plan: 'annual', cadence: 'yearly', amount: 660, disclosure: '$660 yearly' }
     },
     AUD: {
       monthly: { variantId: '160790', plan: 'monthly', cadence: 'monthly', amount: 119, disclosure: 'A$119 monthly' },
-      quarterly: { variantId: '160791', plan: 'quarterly', cadence: 'every_3_months', amount: 299, disclosure: 'A$299 every 3 months' },
-      annual: { variantId: '160792', plan: 'annual', cadence: 'yearly', amount: 997, disclosure: 'A$997 yearly' }
+      quarterly: { variantId: '160791', plan: 'quarterly', cadence: 'every_3_months', amount: 297, disclosure: 'A$297 every 3 months' },
+      annual: { variantId: '160792', plan: 'annual', cadence: 'yearly', amount: 996, disclosure: 'A$996 yearly' }
     }
   };
   const ATTRIBUTION_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];

@@ -59,26 +59,26 @@ assert('every AUD pricing card suppresses the redundant A prefix', (membership.m
 assert('currency engine honours per-price symbol overrides', headerScripts.includes('symbolOverride !== null ? symbolOverride'));
 assert('quarterly card retains the original featured treatment', membership.includes('membership-price-card membership-price-card-highlight'));
 assert('monthly card says cancel anytime', membership.includes('<p class="membership-saving">Cancel anytime</p>'));
-assert('quarterly card says save 17%', membership.includes('<p class="membership-saving">Save 17%</p>'));
-assert('annual card says save 31%', membership.includes('<p class="membership-saving">Save 31%</p>'));
+assert('quarterly card avoids a cross-currency percentage claim', membership.includes('<p class="membership-saving">Flexible 3-month billing</p>'));
+assert('annual card says save 30%', membership.includes('<p class="membership-saving">Save 30%</p>'));
 assert('pricing cards omit currency-specific savings copy', !/Save \d+% in USD|Save \d+% in AUD/.test(membership));
-assert('pricing cards omit old billed totals', !/data-usd="(?:197|657)"|data-aud="(?:299|997)"/.test(membership));
+assert('pricing cards omit non-canonical trial totals', !/data-usd="(?:197|657)"|data-aud="(?:299|997)"/.test(membership));
 
 assert('membership page links payment settings', membership.includes('https://www.joinsnooze.com/settings/cards'));
 assert('membership page states login is required', /Login required/i.test(membership));
 assert('membership page does not select a pricing variant', !/[?&]variant=/.test(membership));
 assert('navigation removes the expired launch banner', !navigation.includes('sn-launch-banner'));
 
-const initIndex = themeCss.indexOf('SNOOZE MEMBERSHIP PAGE - SYSTEM INITIALIZATION');
-const pageStyleIndex = themeCss.indexOf('SNOOZE MEMBERSHIP PAGE - PAGE-SPECIFIC STYLES');
-assert('membership System Initialization exists', initIndex >= 0);
-assert('System Initialization comes before page styles', initIndex >= 0 && pageStyleIndex > initIndex);
+const membershipBaseIndex = themeCss.indexOf('#snooze-membership-page {');
+const membershipPriceCardIndex = themeCss.indexOf('#snooze-membership-page .membership-price-card {');
+assert('membership base scope exists', membershipBaseIndex >= 0);
+assert('membership base scope comes before component styles', membershipBaseIndex >= 0 && membershipPriceCardIndex > membershipBaseIndex);
 assert('shared CSS scope includes the membership wrapper', themeCss.includes('#snooze-membership-page'));
 
 assert('membership view_item is implemented', headerScripts.includes("trackEvent('ecommerce', 'view_item'"));
 assert('currency change includes previous currency', headerScripts.includes("'previous_currency': previousCurrency"));
 assert('currency change includes current currency', headerScripts.includes("'currency': currency"));
-assert('currency change includes surface', headerScripts.includes("'surface': pageWrapper"));
+assert('currency change derives a normalized surface', headerScripts.includes("'surface': String(surfaceValue).replace(/-/g, '_')"));
 
 const currentSurfaceText = [membership, home, navigation].join('\n').toLowerCase();
 ['weekly live group coaching', '24/7 support', 'snooze social', 'choose your plan after the trial', 'money-back guarantee'].forEach(phrase => {

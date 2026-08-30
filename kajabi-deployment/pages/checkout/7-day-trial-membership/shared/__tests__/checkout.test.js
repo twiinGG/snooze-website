@@ -6,6 +6,8 @@ const path = require('path');
 const vm = require('vm');
 
 const source = fs.readFileSync(path.resolve(__dirname, '..', 'checkout.js'), 'utf8');
+const usdBlock = fs.readFileSync(path.resolve(__dirname, '..', '..', 'usd', 'checkout-blocks.html'), 'utf8');
+const audBlock = fs.readFileSync(path.resolve(__dirname, '..', '..', 'aud', 'checkout-blocks.html'), 'utf8');
 let passed = 0;
 let failed = 0;
 
@@ -32,6 +34,9 @@ function element(attributes, text) {
     closest: function() { return this; }
   };
 }
+
+assert('USD block declares the USD trial offer identity', /id="snooze-custom-checkout"[^>]*data-offer-id="2150887297"[^>]*data-currency="USD"/.test(usdBlock));
+assert('AUD block declares the AUD trial offer identity', /id="snooze-custom-checkout"[^>]*data-offer-id="2151254578"[^>]*data-currency="AUD"/.test(audBlock));
 
 function run(currency, offerId, initialOption, nextOption) {
   const dataLayer = [];
@@ -104,8 +109,8 @@ const usdAnnual = element({ 'data-variant-id': '64816' }, 'Annual');
 const usd = run('USD', '2150887297', usdMonthly, usdAnnual);
 assert('USD checkout emits begin_checkout once', usd.dataLayer.filter(event => event.event === 'begin_checkout').length === 1);
 assert('USD annual maps the canonical variant', usd.dataLayer[1].variant_id === '64816');
-assert('USD annual maps amount and cadence', usd.dataLayer[1].amount === 657 && usd.dataLayer[1].cadence === 'yearly');
-assert('selected plan disclosure updates', usd.copy === 'After your 7-day trial: $657 yearly.');
+assert('USD annual maps amount and cadence', usd.dataLayer[1].amount === 660 && usd.dataLayer[1].cadence === 'yearly');
+assert('selected plan disclosure updates', usd.copy === 'After your 7-day trial: $660 yearly.');
 assert('selection mutations deduplicate', usd.dataLayer.filter(event => event.event === 'pricing_option_selected').length === 1);
 assert('destination query survives currency switch', usd.href.indexOf('coupon=keep') > -1);
 assert('existing destination UTM is not overwritten', usd.href.indexOf('utm_source=partner') > -1 && usd.href.indexOf('utm_source=meta') === -1);
@@ -117,16 +122,16 @@ const audMonthly = element({ 'data-pricing-option-id': '160790' }, 'Monthly');
 const audQuarterly = element({ 'data-pricing-option-id': '160791' }, 'Quarterly');
 const aud = run('AUD', '2151254578', audMonthly, audQuarterly);
 assert('AUD quarterly maps the canonical variant', aud.dataLayer[1].variant_id === '160791');
-assert('AUD quarterly maps amount and currency', aud.dataLayer[1].amount === 299 && aud.dataLayer[1].currency === 'AUD');
-assert('AUD disclosure uses A$ amount', aud.copy === 'After your 7-day trial: A$299 every 3 months.');
+assert('AUD quarterly maps amount and currency', aud.dataLayer[1].amount === 297 && aud.dataLayer[1].currency === 'AUD');
+assert('AUD disclosure uses A$ amount', aud.copy === 'After your 7-day trial: A$297 every 3 months.');
 
 const mappingCases = [
   ['USD monthly', 'USD', '2150887297', element({ 'data-variant-id': '64816' }, 'Annual'), element({ 'data-variant-id': '160544' }, 'Monthly'), '160544', 79],
-  ['USD quarterly', 'USD', '2150887297', element({ 'data-variant-id': '160544' }, 'Monthly'), element({ 'data-variant-id': '64815' }, 'Quarterly'), '64815', 197],
-  ['USD annual', 'USD', '2150887297', element({ 'data-variant-id': '160544' }, 'Monthly'), element({ 'data-variant-id': '64816' }, 'Annual'), '64816', 657],
+  ['USD quarterly', 'USD', '2150887297', element({ 'data-variant-id': '160544' }, 'Monthly'), element({ 'data-variant-id': '64815' }, 'Quarterly'), '64815', 198],
+  ['USD annual', 'USD', '2150887297', element({ 'data-variant-id': '160544' }, 'Monthly'), element({ 'data-variant-id': '64816' }, 'Annual'), '64816', 660],
   ['AUD monthly', 'AUD', '2151254578', element({ 'data-variant-id': '160792' }, 'Annual'), element({ 'data-variant-id': '160790' }, 'Monthly'), '160790', 119],
-  ['AUD quarterly', 'AUD', '2151254578', element({ 'data-variant-id': '160790' }, 'Monthly'), element({ 'data-variant-id': '160791' }, 'Quarterly'), '160791', 299],
-  ['AUD annual', 'AUD', '2151254578', element({ 'data-variant-id': '160790' }, 'Monthly'), element({ 'data-variant-id': '160792' }, 'Annual'), '160792', 997]
+  ['AUD quarterly', 'AUD', '2151254578', element({ 'data-variant-id': '160790' }, 'Monthly'), element({ 'data-variant-id': '160791' }, 'Quarterly'), '160791', 297],
+  ['AUD annual', 'AUD', '2151254578', element({ 'data-variant-id': '160790' }, 'Monthly'), element({ 'data-variant-id': '160792' }, 'Annual'), '160792', 996]
 ];
 mappingCases.forEach(function(testCase) {
   const result = run(testCase[1], testCase[2], testCase[3], testCase[4]);
