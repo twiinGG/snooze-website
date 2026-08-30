@@ -36,7 +36,7 @@ Challenge pages share one content shape. Use when adding FAQ + schema to:
 - `BreadcrumbList` (Home → Find the right sleep help → This challenge)
 - Reference global `@id`s:
   - Organization: `https://www.joinsnooze.com/#organization`
-  - Person: `https://www.joinsnooze.com/author/sally-woods#person`
+  - Person: `https://www.joinsnooze.com/about-sally#person`
   - WebSite: `https://www.joinsnooze.com/#website`
 
 ## FAQ rules

@@ -32,7 +32,7 @@ Genuine instructions relocated here:
 
 - Styling comes from `snooze-unified-theme.css` (global CSS file).
 - Deploy CSS to: Kajabi Settings → Website → Theme → Custom CSS.
-- Navigation: insert code from `navigation-code-block.html` before the hero section.
+- Navigation: use the Kajabi native Header; do not insert the retired custom navigation (PASTE-MAP A6/A7).
 - Footer: insert code from `footer.html` after the hero section.
 - Context-aware CTA component: insert after the hero section.
 

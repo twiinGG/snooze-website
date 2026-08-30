@@ -1,6 +1,6 @@
 # Kajabi paste map (source of truth)
 
-**Updated:** August 27, 2026
+**Updated:** August 29, 2026
 **Last live verify:** **August 27, 2026**, the site-wide Header Page Scripts field, website theme CSS,
 website theme JavaScript and primary Camp theme CSS and JavaScript were read from Kajabi and
 compared against their complete single-file repo paste targets. All five match byte-for-byte.
@@ -38,6 +38,12 @@ old `return segs[2]` absent, on both `/catnapping` and a live offer checkout. Ch
 
 Git is the source of truth. Kajabi is the render surface. **One repo file per paste target.** Never compose a field from two files at paste time. Edit the canonical file in git, then whole-field overwrite.
 
+> **This map identifies surfaces; it does not grant write authority.** Status notes age, and historical
+> rollout steps remain only as evidence. Before every future Kajabi or analytics mutation, run the named
+> preflight, reconcile live state in both directions, capture a lossless preimage, obtain approval for the
+> exact target and value, save serially, verify cache-busted live output and retain the rollback. A row
+> marked ahead, drift or paste never overrides those gates.
+
 Authoritative detail:
 - Contract: [`CODE-SURFACE-CONTRACT.md`](../docs/technical/CODE-SURFACE-CONTRACT.md)
 - Surface rules: [`KAJABI-SURFACE-CODE-SETUP.md`](../docs/technical/KAJABI-SURFACE-CODE-SETUP.md)
@@ -46,7 +52,7 @@ Authoritative detail:
 
 ---
 
-## 0. Status board (2026-08-08)
+## 0. Status board (2026-08-08 baseline, reconciled 2026-08-29)
 
 ### Membership release changes
 
@@ -56,8 +62,9 @@ Authoritative detail:
 | A2 | Customizer → Theme Custom Code → **CSS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **MATCH, read back August 28, 2026:** 399,905 source chars, SHA-256 `85cbf54a401de1f68a3010d6e4ee731c2ee918ffdaaa5c5cdb1f65e29a8a39a4` | No |
 | A3 | Customizer → Theme Custom Code → **JS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH, read back August 27, 2026:** 4,325 chars, SHA-256 `30766a6563fbae2db479832c3ede9df6201af489dd16c1957f8284856e2311d5`. This field applies across website pages and exits safely without `#home-page` | No |
 | A4 | Settings → Checkout → **Header tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (when inject_header is true) | **MATCH and protected:** loader, Meta matching, UTM capture and identity capture. Unchanged by the August 27 campaign repair | No |
-| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (when inject_footer is true) | **DELIBERATELY CLEARED 2026-08-16 (ME-009), re-verified empty 2026-08-17 (ME-010).** The field is empty on purpose. It previously held the order-bound purchase script, which had never fired. Purchase is now owned by the server-side n8n path | **NEVER.** Pasting it back re-creates a second purchase emitter beside the server-side path and double counts every order. Row **P3** used to contradict this and told a reader there were 90 lines to keep; that row is now closed and points here |
-| A6 | Website theme → **Navigation custom-code block** | website theme navigation section | [`global/html/navigation.html`](./global/html/navigation.html) | Website pages | Repo points Membership to `/snooze-membership`, uses the trial checkout and removes the expired launch banner | **Yes, after the membership page is published** |
+| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | **No paste target.** [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) is historical rollback/test evidence only | Every checkout (when inject_footer is true) | **DELIBERATELY CLEARED 2026-08-16 (ME-009), re-verified empty 2026-08-17 (ME-010).** The field is empty on purpose. It previously held the order-bound purchase script, which had never fired. Purchase is now owned by the server-side n8n path | **NEVER.** Pasting it back re-creates a second purchase emitter beside the server-side path and double counts every order. Row **P3** used to contradict this and told a reader there were 90 lines to keep; that row is now closed and points here |
+| A6 | Website theme → Header → **Call to action** | [live website theme](https://app.kajabi.com/admin/themes/2156873377/settings/edit#/sections/header/blocks/1767079787493) | [`global/native-header-call-to-action.json`](./global/native-header-call-to-action.json) | Website pages using the native Header | **MATCH, read back August 29, 2026:** `Start Here`, URL action, `/snooze-membership`, same-tab. This is the ratified public-header source of truth | **No current write.** The chosen state is already live. Any later change needs the shared-theme lock, field preimage, exact approval, serial save and all-breakpoint verification |
+| A7 | Historical custom navigation source | **No current paste target** | [`global/html/navigation.html`](./global/html/navigation.html) | None | Dormant alternative navigation; its `Start here` route and structure are not the live native Header | **DO NOT PASTE.** It is retained as historical/source evidence, not deployment authority. Rebuild and approve against A6 before any future activation |
 
 ### A4: the "loader only" note was wrong, and a paste from the old repo file would have deleted live code
 
@@ -192,9 +199,12 @@ Verified after clearing by a cache-busted read of the live checkout: `AUD_OFFER_
 
 ### Checkout header compose order (A4)
 
-**That claim was wrong and is corrected here.** The repo file holds four script blocks as of 2026-08-16: the GTM/Stape loader, Meta Advanced Matching (`window.SnoozeMetaMatch`), the UTM attribution capture, and the checkout identity capture (`window.SnoozeCheckoutIdentity`). The first three were rebuilt from a live read; the fourth is new and is not live yet. **Read the live field and diff both directions before any overwrite.** Checking that repo lines appear in live detects additions only and is blind to deletions, which on 2026-08-16 nearly deleted two live blocks.
+**That claim was wrong and is corrected here.** The repo file holds four script blocks: the GTM/Stape loader, Meta Advanced Matching (`window.SnoozeMetaMatch`), the UTM attribution capture, and the checkout identity capture (`window.SnoozeCheckoutIdentity`). The first three were rebuilt from a live read and the fourth subsequently shipped; all four matched live on August 27, 2026. **Read the live field and diff both directions before any approved overwrite.** Checking that repo lines appear in live detects additions only and is blind to deletions, which on 2026-08-16 nearly deleted two live blocks.
 
-Optional intended upgrade (not live yet): after the loader, append [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) with its comment header stripped, so `fbq` exists when Advanced Matching runs. That would be a deliberate new paste, not a restore.
+Historical note: Meta Advanced Matching later shipped inline as part of the protected four-block A4
+file. The standalone [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js)
+remains a fragment, not a paste target. Do not append it or overwrite A4 without an approved,
+whole-field change and a fresh two-way diff.
 
 Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking/README.md).
 
@@ -202,32 +212,33 @@ Short pointer: [`global/checkout-tracking/README.md`](./global/checkout-tracking
 
 | # | Status | What to do | Where | Repo / replacement text |
 |---|---|---|---|---|
-| **P5** | **DONE** (closed 2026-08-09) | Fix banned Store copy | superseded: `/store` is no longer the native-builder page this row described | `Weekly group coaching and replays` returns 0 on live `/store` and 0 in [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html), verified 2026-08-09. The StoreV2 deploy replaced the text block this row pointed at |
+| **P5** | **DONE** (closed 2026-08-09) | Nothing; preserve as completed evidence | superseded: `/store` is no longer the native-builder page this row described | `Weekly group coaching and replays` returns 0 on live `/store` and 0 in [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html), verified 2026-08-09. The StoreV2 deploy replaced the text block this row pointed at |
 | **P3** | **CLOSED, NEVER PASTE** (2026-08-16, re-verified 2026-08-17) | Nothing. The field stays empty | **Settings → Checkout** → **Footer tracking code** | See **row A5** and the warning below it. [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) is **NOT a paste target**. ME-009 cleared this field on purpose because it held an order-bound purchase emitter that had never fired, and purchase is now owned by the server-side n8n path. Pasting it back creates a second purchase emitter and double counts every order. Verified empty by a cache-busted read of a live checkout on **2026-08-17**: `AUD_OFFER_IDS` absent |
 | **LIB** | **TO DO (confirm first)** | Logged-in compare before any paste | <https://www.joinsnooze.com/snooze-library> · page **2156716053** (`authenticated_only`) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) · Public verify blocked (403) |
 | **P6** | **HOLD** | Pull day-pass theme css+js from live before editing | Day-pass offer theme CSS + JS fields | Missing under [`pages/checkout/day-pass-offer/`](./pages/checkout/day-pass-offer/) |
-| **P7** | **HOLD** | Advanced Matching not shipping | **Settings → Checkout** → **Header tracking code** | Inline [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) into [`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git first; then one overwrite. Do not append a second file. |
+| **P7** | **SUPERSEDED** | Nothing; Advanced Matching is already inline in the protected four-block A4 field | **Settings → Checkout** → **Header tracking code** | A4 matched the complete repo target on August 27. The standalone [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) is not a paste target |
 
 ### DONE (live MATCH; do not re-paste)
 
 | # | Status | Surface | Evidence (2026-07-31) |
 |---|---|---|---|
-| **P1** | **RE-CHECKED 2026-08-13 (WS-006)** | Theme CSS (A2) | The `.snooze-faq` and `#catnapping-page .snooze-form-embed` blocks named in the 2026-07-31 note **did ship** with the `/catnapping` deploy. Re-measured 2026-08-13 by extracting the live inline style block from the rendered `/catnapping` page and diffing against the repo after comment and whitespace normalization: **11247 non-blank repo lines, 15 missing from live**, and all 15 are the WS-006 widening of the form-embed selector from `#catnapping-page` to an `:is()` list covering the five capture pages. A2 is otherwise in sync. Re-paste with the WS-006 age-page deploy. |
+| **P1** | **DONE; superseded by fresh A2 evidence** | Theme CSS (A2) | The August 13 WS-006 note required a paired paste at that time. A2 was subsequently read back and matched byte-for-byte on August 28, 2026. No current write is authorised |
 | **P2** | **DONE** | Consultations | Book CTAs have **no** `data-checkout` (membership "Join" links still correctly use it). Credentials/prices present. |
 | **P4** | **DONE** | Membership checkouts USD/AUD | MCP themes `2163485833` / `2166694709` block `1767316681231`: cleaned benefits; no "Weekly live group coaching" / "24/7"; USD says USD; AUD says AUD. |
 | **A1** | **DONE** | Header Page Scripts | `keepOfferUrl` / `isPlaceholderHref` live on home; `GTM-KNRTH6P` ×1. |
 | **A3** | **DONE** | Theme JS | Helpers present on home. |
-| **A4** | **DONE** | Checkout header loader | GTM/Stape loader MATCH; inject_header **true**. |
+| **A4** | **DONE** | Protected four-block checkout header | GTM/Stape loader, Meta matching, UTM capture and identity capture MATCH; inject_header **true**. |
 | **Home** | **DONE** | Home body | No banned "Weekly Live Coaching" / "24/7 support". |
 | **About** | **DONE** | About Sally | H1 "Hi, I'm Sally"; former paediatric nurse; `/snooze-library` present. |
 | **Method** | **DONE** | The Snooze Method | H1 "The Snooze Methodology". |
 
-**Only mandatory live write right now:** P5 Store text.
+**No live write is authorised by this status board.** P5 is complete. Every future write requires a
+fresh preflight, preimage, exact mutation approval, rollback and cache-busted verification.
 
 | Page | Canonical file | Kajabi target | Release state |
 |---|---|---|---|
-| Homepage | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | Existing homepage full-page custom-code block | Repo update, paste after membership page publication |
-| Snooze Membership | [`pages/website/snooze-membership/snooze-membership-page.html`](./pages/website/snooze-membership/snooze-membership-page.html) | New Website Page at `/snooze-membership`, one full-width flush custom-code block | New draft page |
+| Homepage | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | Existing homepage full-page custom-code block | Live; verify against repo before proposing any future revision |
+| Snooze Membership | [`pages/website/snooze-membership/snooze-membership-page.html`](./pages/website/snooze-membership/snooze-membership-page.html) | Existing Website Page at `/snooze-membership`, one full-width flush custom-code block | Live; member-facing revisions remain approval-gated |
 
 The trial confirmation page and lifecycle email paste targets are documented in [`pages/checkout/7-day-trial-membership/README.md`](./pages/checkout/7-day-trial-membership/README.md) and its [`emails/README.md`](./pages/checkout/7-day-trial-membership/emails/README.md). They are member-facing drafts and require approval before activation.
 
@@ -241,12 +252,14 @@ The trial confirmation page and lifecycle email paste targets are documented in 
 | A2 | Customizer → Theme Custom Code → **CSS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Website pages only | **MATCH, read back August 28, 2026:** SHA-256 `85cbf54a401de1f68a3010d6e4ee731c2ee918ffdaaa5c5cdb1f65e29a8a39a4` | No |
 | A3 | Customizer → Theme Custom Code → **JS** | [website theme `2156873377`](https://app.kajabi.com/admin/themes/2156873377/settings/edit) | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Website pages only | **MATCH, read back August 27, 2026:** SHA-256 `30766a6563fbae2db479832c3ede9df6201af489dd16c1957f8284856e2311d5` | No |
 | A4 | Settings → Checkout → **Header tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Every checkout (inject_header true) | **MATCH and protected:** loader, Meta matching, UTM capture and identity capture | No |
-| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Every checkout (inject_footer true) | **CLEARED 2026-08-16**, verified by a cache-busted read: `AUD_OFFER_IDS` absent from the live checkout. Re-verified absent **2026-08-17** | **NEVER.** See the warning below |
+| A5 | Settings → Checkout → **Footer tracking code** | [`Checkout Settings`](https://app.kajabi.com/admin/sites/2148291177/edit/checkout-settings) | **No paste target.** [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) is historical rollback/test evidence only | Every checkout (inject_footer true) | **CLEARED 2026-08-16**, verified by a cache-busted read: `AUD_OFFER_IDS` absent from the live checkout. Re-verified absent **2026-08-17** | **NEVER.** See the warning below |
 
 ### A4 note
 
-Live header = GTM/Stape loader only. **Do not re-paste to sync.**
-Meta Advanced Matching: inline the fragment into [`checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git, then overwrite A4 once. [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) is **not** a paste target.
+Live header is the protected four-block A4 target: GTM/Stape loader, Meta Advanced Matching, UTM
+attribution capture and checkout identity capture. It matched the complete repo file on August 27,
+2026. **Do not re-paste to sync.** [`meta-advanced-matching.js`](./global/js/meta-advanced-matching.js)
+is a historical fragment, not a paste target.
 
 ---
 
@@ -256,12 +269,13 @@ Enter customizer via <https://app.kajabi.com/admin/sites/2148291177/themes> → 
 
 | Page | Live URL | Page settings | Custom Code field | Repo file | Action |
 |---|---|---|---|---|---|
-| Home | <https://www.joinsnooze.com> | [2154679189](https://app.kajabi.com/admin/website_pages/2154679189/edit) | Section **`1768118757163`** Full Page | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | **Repo update; paste after membership page publication** |
+| Home | <https://www.joinsnooze.com> | [2154679189](https://app.kajabi.com/admin/website_pages/2154679189/edit) | Section **`1768118757163`** Full Page | [`pages/website/home/home-page.html`](./pages/website/home/home-page.html) | **Live; no current write. Re-verify before an approved future revision** |
 | About Sally | <https://www.joinsnooze.com/about-sally> | [2154679198](https://app.kajabi.com/admin/website_pages/2154679198/edit) | Whole-page custom code (confirm H1 before edit) | [`pages/website/about-sally/about-sally.html`](./pages/website/about-sally/about-sally.html) | **DONE** |
 | 1:1 Consultations | <https://www.joinsnooze.com/one-on-one-sleep-consultations> | [2155283958](https://app.kajabi.com/admin/website_pages/2155283958/edit) | Section/block **`1765189516514`** only | [`pages/website/consultations/one-on-one-consultations-page.html`](./pages/website/consultations/one-on-one-consultations-page.html) | **DONE** |
 | Snooze Library | <https://www.joinsnooze.com/snooze-library> | [2156716053](https://app.kajabi.com/admin/website_pages/2156716053/edit) | That page’s Custom Code block(s) | [`pages/website/library/library-page.html`](./pages/website/library/library-page.html) | **TO DO: confirm logged-in** |
 | Store | <https://www.joinsnooze.com/store> | [2154679200](https://app.kajabi.com/admin/website_pages/2154679200/edit) | Custom-code page, wrapper `#store-page-v2` | [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html) | **DONE** (verified live 2026-08-09) |
-| Reviews | <https://www.joinsnooze.com/reviews> | see page settings | That page's Custom Code block | [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | row added 2026-08-09; live state not re-verified |
+| Reviews | <https://www.joinsnooze.com/reviews> | [Website page list](https://app.kajabi.com/admin/sites/2148291177/website_pages); exact page ID unresolved | Section **`1781002775044`**, block **`1781002775044_0`** | [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | **Live wrapper and 164-review schema verified 2026-08-29. Local-only Organization `@id` correction remains gated; capture the exact full-field preimage and approval before any write** |
+| Newborn Sleep Guide | <https://www.joinsnooze.com/newborn-sleep-guide> | [Website page list](https://app.kajabi.com/admin/sites/2148291177/website_pages); exact page ID unresolved | Section **`1765089660523`**, block **`1765056711075_0`** | [`pages/website/product-pages/newborn-guide/newborn-guide-landing-page.html`](./pages/website/product-pages/newborn-guide/newborn-guide-landing-page.html) | **Live footer still links `Your Account` to 404 `/account`; canonical source uses `/library`. Capture the exact full-field preimage and approval before any write** |
 
 Guide / age / product pages under [`pages/website/`](./pages/website/) use the same shared theme CSS/JS (A2/A3). Paste each page’s own custom-code file only when that page’s body changed.
 
@@ -270,7 +284,7 @@ Guide / age / product pages under [`pages/website/`](./pages/website/) use the s
 | Row | What this file said | What live actually serves | Evidence |
 |---|---|---|---|
 | Store | Native builder, no wholesale HTML file | Custom-code page, wrapper `#store-page-v2`, matching [`pages/website/StoreV2/store-page-v2.html`](./pages/website/StoreV2/store-page-v2.html) at **357 of 357 non-blank lines, 0 missing** | Cache-busted `curl` 2026-08-09 |
-| Reviews | no row at all | Repo source exists at [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | Repo read; live state not re-verified, so the row says so |
+| Reviews | no row at all | Repo source exists at [`pages/website/reviews-page/src/reviews-page.html`](./pages/website/reviews-page/src/reviews-page.html) | Historical 2026-08-09 correction; superseded by the fresh 2026-08-29 rendered evidence and exact block IDs in the current matrix above |
 | P5 Store copy | TO DO | The banned phrase returns 0 live and 0 in the repo source | Cache-busted `curl` 2026-08-09 |
 
 `DEAD-END-REGISTER.md` D5, written 2026-08-09, records live `/store` as wrapper `#store-page` matching `store-live-twin.html` at 98%, and recommends deploying StoreV2. **That deploy has since happened**, so D5's finding and its recommendation are both closed. Neither [`pages/website/store/store-page.html`](./pages/website/store/store-page.html) nor [`pages/website/store/store-live-twin.html`](./pages/website/store/store-live-twin.html) matches live any more (both 138 of ~385 lines, and both still use the dead `#store-page` wrapper, for which the shared theme carries zero rules). Retiring those two files is a WS-001 task, not done here.
@@ -303,17 +317,21 @@ Pull from live before inventing files. Coverage: [`WS-001 overview`](../../../do
 
 ### C1. Camp confirm page, and the paired offer redirect
 
-**New in PM-006, 2026-08-21. Three paste targets and one Kajabi setting change, and the verification only
-passes when all four are live.** Half of this shipped alone would leave either a page nobody reaches or six
-offers pointing at nothing.
+> **Historical PM-006 execution record, not current write authority.** The state labels below were
+> captured August 21–26 and must be freshly reconciled before any proposal. A future change requires
+> the named preflight, preimages, exact-mutation approval, paired rollback and live verification.
+
+PM-006 introduced three paste targets and one Kajabi setting change, and verification only passed when
+all four were live. Half of that paired release would have left either a page nobody reached or six offers
+pointing at nothing.
 
 Source: [`pages/landing/camp-snooze-confirm/`](./pages/landing/camp-snooze-confirm/). One repo file per
 field, whole-field overwrite, never composed at paste time.
 
 | # | Kajabi target | Canonical file | State |
 |---|---|---|---|
-| C1a | The landing page's single full-width, flush custom-code block | [`camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | **AHEAD OF LIVE, needs paste 2026-08-26** (camp-component redesign, `How to get ready for Camp`, app block above the fold). Live currently holds the 2026-08-25 version, diffed both directions and byte-identical to the previous repo file |
-| C1b | That landing page theme's **Custom CSS** field | [`camp-confirm-page.css`](./pages/landing/camp-snooze-confirm/camp-confirm-page.css) | **AHEAD OF LIVE, needs paste 2026-08-26** (rewritten on the camp landing palette and components). stylelint clean against `scripts/stylelint-kajabi.json` |
+| C1a | The landing page's single full-width, flush custom-code block | [`camp-confirm-page.html`](./pages/landing/camp-snooze-confirm/camp-confirm-page.html) | **UNVERIFIED LOCAL-ONLY CLAIM dated 2026-08-26; no write authorised.** At that time the repo held a camp-component redesign while live held the August 25 version. Reconcile both directions before proposing a paired change |
+| C1b | That landing page theme's **Custom CSS** field | [`camp-confirm-page.css`](./pages/landing/camp-snooze-confirm/camp-confirm-page.css) | **UNVERIFIED LOCAL-ONLY CLAIM dated 2026-08-26; no write authorised.** At that time the repo held a palette/component rewrite. Reconcile before proposing a paired change |
 | C1c | That landing page theme's **Custom JavaScript** field | [`camp-confirm-page.js`](./pages/landing/camp-snooze-confirm/camp-confirm-page.js) | **IN SYNC, verified live 2026-08-26** by both-direction diff. Unchanged by the 2026-08-26 redesign: every id the script binds to was preserved, and its 53 assertions still pass |
 | C1d | `post_purchase.preference` on **six** camp offers, switched from `custom_message` to `landing_page` pointing at this page | Not a repo file. Kajabi setting | **Done.** All six read `preference: landing_page`, `landing_page_id: 2152228966`, verified 2026-08-26. The dormant `body` on all six was also rewritten date-free that day, see C1e |
 
@@ -396,10 +414,12 @@ brand-new buyer reaches this page with no session and sees the sign-in state rat
 Check it before concluding the page is broken, because the symptom is a sign-in prompt rather than an
 error.
 
-### P3 Camp capacity and waitlist paste queue
+### P3 Camp capacity and waitlist rollout record
 
-Every row below is **DRIFT, repo ahead of live, August 18, 2026**. Paste the
-whole field from this branch after the migration and Edge Function are live.
+> **Historical record, closed by the later per-row live evidence. Do not execute the rollout steps
+> below.** Every row was marked repo-ahead-of-live on August 18, 2026, then the later rows record the
+> paired pastes and read-backs completed August 21–27. Fresh evidence and exact-mutation approval are
+> required before any future Camp write.
 
 **CORRECTED 2026-08-21, page ids and source files both moved.** Two things in the original row were
 wrong by the time anyone came to paste it.
@@ -590,12 +610,11 @@ Verified from a logged-out browser on all four public checkouts, cache-busted:
 - Our total still equals Kajabi's own button: `Pay $690.00 USD` and `Pay $878.00 AUD` read beside it.
 - `15 families per camp` present on all four. The "15 of 15 places remain" line is gone.
 
-#### The cohort rollover re-paste, 2026-08-21
+#### Historical cohort rollover re-paste, completed and superseded
 
-Three of those rows changed again on 2026-08-21 and the live surfaces are now behind the repo by
-more than the capacity number. **P3-CAMP-CHECKOUT-HTML, P3-CAMP-MEMBER-CHECKOUT-HTML and
-P3-CAMP-CHECKOUT-JS all need re-pasting together.** The HTML alone is inert without the JS, and the
-JS alone has nothing to write into.
+Three of those rows changed again on 2026-08-21 and were re-pasted and verified by August 25–27, as
+the later evidence rows record. The paired-deploy rule remains valid: checkout HTML, member checkout
+HTML and checkout JS form one rollback unit. This paragraph does not authorise a new paste.
 
 What changed and why it cannot wait past 2026-08-30:
 
@@ -613,8 +632,8 @@ What changed and why it cannot wait past 2026-08-30:
 
 The static text left in the HTML is the fallback for a dead feed, so it must stay accurate. It reads
 Camp Snooze #15, Monday 31 August 2026, Friday 28 August 2026, in the same `en-AU` shape the
-formatter emits. **Once Camp 15 has started, that fallback is itself stale and the HTML rows need
-another paste with Camp 16's values.**
+formatter emits. That fallback was time-bound. Its current value must be reconciled against live and
+the cohort source before any exact, approval-gated change is proposed.
 
 Regression cover: `pages/checkout/camp-snooze-v2-luxury/tests/camp-checkout-cohort-summary.test.mjs`.
 
@@ -645,7 +664,7 @@ Per offer family: html + css + js into **that offer’s** theme Custom Code / CS
 | Family | html | css | js | Action |
 |---|---|---|---|---|
 | [`1-month-free-membership`](./pages/checkout/1-month-free-membership/) | yes | yes | yes | Only if that family’s files changed |
-| [`7-day-trial-membership`](./pages/checkout/7-day-trial-membership/) | yes | yes | yes | **Repo changed; deploy USD and AUD twins together** |
+| [`7-day-trial-membership`](./pages/checkout/7-day-trial-membership/) | yes | yes | yes | **Local/live state requires reconciliation; if a change is approved, USD and AUD twins are one deploy and rollback unit** |
 | [`bau-membership-checkout`](./pages/checkout/bau-membership-checkout/) | yes | yes | yes | **DONE (P4)** live cleaned |
 | [`camp-snooze-v2-luxury`](./pages/checkout/camp-snooze-v2-luxury/) | yes | yes | yes | Only if changed |
 | [`day-pass-offer`](./pages/checkout/day-pass-offer/) | yes | **no** | **no** | **HOLD (P6)** pull css+js first |
@@ -679,7 +698,7 @@ Verification: course consumption pages are behind auth, so `curl` cannot reach t
 | [`global/js/snooze-globals.js`](./global/js/snooze-globals.js) | Stub pointer only |
 | [`global/js/currency-toggle.js`](./global/js/currency-toggle.js) | Test extract only |
 | [`global/js/gtm-variables.js`](./global/js/gtm-variables.js) | GTM UI variables |
-| [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) | Fragment; inline into checkout-header HTML before shipping |
+| [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) | Historical fragment/test extract; the protected A4 file already contains the live inline block. Not a paste target |
 | [`global/css/snooze-unified-theme.css`](./global/css/snooze-unified-theme.css) | Historical; paste [`theme-custom-code.css`](./global/css/theme-custom-code.css) instead |
 | [`global/html/footer.html`](./global/html/footer.html) | Sync source copied inline into page HTML |
 
@@ -687,14 +706,19 @@ Verification: course consumption pages are behind auth, so `curl` cannot reach t
 
 ## F. Verification rules
 
+This table maps canonical sources to surfaces; it does **not** authorise a write. Before any future
+paste, require the applicable preflight, a fresh two-way diff, a preimage, exact-mutation approval,
+serial save, rollback and cache-busted verification.
+
 | Concern | Edit this file | Paste here |
 |---|---|---|
 | Site GTM / Stape / schema / currency toggle (site + landing) | [`global/html/site-header-page-scripts.html`](./global/html/site-header-page-scripts.html) | Settings → Site Details → Header Page Scripts |
-| Checkout GTM / Stape loader | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | Settings → Checkout → Header tracking code |
-| Checkout Meta Advanced Matching | Inline [`global/js/meta-advanced-matching.js`](./global/js/meta-advanced-matching.js) into [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) in git first | Settings → Checkout → Header tracking code, as one whole-field overwrite |
-| Checkout purchase / InitiateCheckout dataLayer | [`global/js/kajabi-checkout-tracking.js`](./global/js/kajabi-checkout-tracking.js) | Settings → Checkout → Footer tracking code |
+| Protected four-block checkout header | [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html) | **No current paste.** If an exact change is approved, Settings → Checkout → Header tracking code is one whole-field overwrite |
+| Checkout Meta Advanced Matching | Already inline in [`global/html/checkout-header-tracking.html`](./global/html/checkout-header-tracking.html); standalone fragment is test/history only | **No current paste.** Verify as part of the protected four-block checkout header |
+| Checkout purchase receipt | **None.** The server-side n8n path is authoritative; `global/js/kajabi-checkout-tracking.js` is historical test/reference code only | **Do not paste.** Settings → Checkout → Footer tracking code must remain empty; see row A5 |
 | Shared website CSS | [`global/css/theme-custom-code.css`](./global/css/theme-custom-code.css) | Theme Custom Code → CSS |
-| Website navigation | [`global/html/navigation.html`](./global/html/navigation.html) | Website theme navigation custom-code block |
+| Native website Header CTA | [`global/native-header-call-to-action.json`](./global/native-header-call-to-action.json) | Website theme → Header → Call to action; exact field values only, under A6 gates |
+| Historical custom navigation | [`global/html/navigation.html`](./global/html/navigation.html) | **No current paste target. Do not deploy; see A7** |
 | Home-page JS helpers | [`global/js/theme-custom-code.js`](./global/js/theme-custom-code.js) | Theme Custom Code → JS |
 | One landing page look/feel | [`pages/landing/`](./pages/landing/) | That landing page’s own theme fields |
 | One checkout layout/copy | [`pages/checkout/`](./pages/checkout/) | That offer’s theme fields |

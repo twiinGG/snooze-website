@@ -1,8 +1,13 @@
-# Snooze Site Transformation - Holistic Execution Plan
+# Archived Snooze Site Transformation - Holistic Execution Plan
 
 **Date:** January 2025  
-**Status:** Ready for Implementation (Phase 1 Complete, CSS Consolidated, Hero Sections Ready)  
+**Status:** ARCHIVED — historical transformation record; do not execute as a current deployment runbook
+
 **Approach:** Site-wide holistic transformation for consistent, connected experience with data-driven content priorities
+
+> Current authority is `kajabi-deployment/PASTE-MAP.md` plus `docs/DEPLOYMENT-CHECKLIST.md`.
+> Every `navigation-code-block.html` and archived `DEPLOYMENT-GUIDE.md` instruction below is retired;
+> the live site uses the Kajabi native Header under PASTE-MAP A6/A7.
 
 ---
 

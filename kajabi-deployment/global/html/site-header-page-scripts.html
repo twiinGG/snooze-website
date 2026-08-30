@@ -38,7 +38,14 @@
 
   } else {
     console.log('Snooze: Commerce Page - Loading Full Tracking');
+    function loadSnoozeTrackingContainer() {
     !function(){"use strict";function l(e){for(var t=e,r=0,n=document.cookie.split(";");r<n.length;r++){var o=n[r].split("=");if(o[0].trim()===t)return o[1]}}function s(e){return localStorage.getItem(e)}function u(e){return window[e]}function A(e,t){e=document.querySelector(e);return t?null==e?void 0:e.getAttribute(t):null==e?void 0:e.textContent}var e=window,t=document,r="script",n="dataLayer",o="https://ss.joinsnooze.com",a="https://load.ss.joinsnooze.com",i="2ostmfzxzts",c="9r2=GhBHPy4rQD89Ji4wTDZLAk5GVElcAgNJGRsTFgkIAhsJEVQbFQs%3D",g="stapeUserId",v="",E="",d=!1;try{var d=!!g&&(m=navigator.userAgent,!!(m=new RegExp("Version/([0-9._]+)(.*Mobile)?.*Safari.*").exec(m)))&&16.4<=parseFloat(m[1]),f="stapeUserId"===g,I=d&&!f?function(e,t,r){void 0===t&&(t="");var n={cookie:l,localStorage:s,jsVariable:u,cssSelector:A},t=Array.isArray(t)?t:[t];if(e&&n[e])for(var o=n[e],a=0,i=t;a<i.length;a++){var c=i[a],c=r?o(c,r):o(c);if(c)return c}else console.warn("invalid uid source",e)}(g,v,E):void 0;d=d&&(!!I||f)}catch(e){console.error(e)}var m=e,g=(m[n]=m[n]||[],m[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"}),t.getElementsByTagName(r)[0]),v=I?"&bi="+encodeURIComponent(I):"",E=t.createElement(r),f=(d&&(i=8<i.length?i.replace(/([a-z]{8}$)/,"kp$1"):"kp"+i),!d&&a?a:o);E.async=!0,E.src=f+"/"+i+".js?"+c+v,null!=(e=g.parentNode)&&e.insertBefore(E,g)}();
+    }
+    if (document.body) {
+      loadSnoozeTrackingContainer();
+    } else {
+      document.addEventListener('DOMContentLoaded', loadSnoozeTrackingContainer, { once: true });
+    }
   }
 </script>
 
@@ -1414,8 +1421,8 @@ document.addEventListener('DOMContentLoaded', function() {
       '37262': '161175', // quarterly: USD $197 -> AUD $299
       '37263': '161176', // yearly:    USD $657 -> AUD $997
       '160544': '160790', // monthly:   USD $79  -> AUD $119
-      '64815': '160791',  // quarterly: USD $197 -> AUD $299
-      '64816': '160792'   // yearly:    USD $657 -> AUD $997
+      '64815': '160791',  // trial quarterly: USD $198 -> AUD $297
+      '64816': '160792'   // trial yearly:    USD $660 -> AUD $996
     },
     audOfferIds: ['2150946767', '2151256977', '2151254578',
       '2151262009', '2151262011', '2151262012', '2151262013',
@@ -2014,7 +2021,7 @@ body.currency-loaded .dynamic-cta {
       "image": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/5a0acc0-1-35b-0af-fbf7748ab0a_Snooze_x_TSC_-_coral_web.png",
       "description": "Evidence-based baby and toddler sleep guidance for modern parents. The Snooze Method helps tired families reduce night wakes and build settled sleep, through courses, memberships and one-on-one consultations.",
       "founder": {
-        "@id": "https://www.joinsnooze.com/author/sally-woods#person"
+        "@id": "https://www.joinsnooze.com/about-sally#person"
       },
       "areaServed": "AU",
       "sameAs": [
@@ -2033,7 +2040,7 @@ body.currency-loaded .dynamic-cta {
     },
     {
       "@type": "Person",
-      "@id": "https://www.joinsnooze.com/author/sally-woods#person",
+      "@id": "https://www.joinsnooze.com/about-sally#person",
       "name": "Sally Woods",
       "url": "https://www.joinsnooze.com/about-sally",
       "mainEntityOfPage": "https://www.joinsnooze.com/about-sally",
@@ -2129,7 +2136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     url,
     author: {
       '@type': 'Person',
-      '@id': 'https://www.joinsnooze.com/author/sally-woods#person',
+      '@id': 'https://www.joinsnooze.com/about-sally#person',
       name: 'Sally Woods',
       url: 'https://www.joinsnooze.com/about-sally'
     },

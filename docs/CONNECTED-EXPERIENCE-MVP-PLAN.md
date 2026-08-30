@@ -1,8 +1,12 @@
-# Connected Experience MVP - Complete Plan
+# Archived Connected Experience MVP Plan
 
 **Date:** January 2025  
-**Status:** Ready for Implementation  
+**Status:** ARCHIVED — historical navigation plan; do not execute as current deployment authority
+
 **Goal:** Create unified navigation and premium user experience across all Snooze pages before domain migration
+
+> The live site now uses Kajabi's native Header. PASTE-MAP A6/A7 supersedes every custom-navigation
+> file or paste instruction below.
 
 > **Correction 2026-06-29 (LMCR04 funnel remediation, P2-9):** all checkout CTAs in this plan were updated from the retired draft offer slug `6iRarwak` to the canonical USD membership slug `z63s9VaR` (offer 2150754998). `6iRarwak` (offer 2150812784) is a retired/draft founding offer; do not use. AUD twin is `vYgCNgJz` (offer 2151256977; updated 2026-06-30 from the deleted `bEsVXFXG`/2151212200). See `course-free-modules-conversion/docs/LMCR04-FUNNEL-REMEDIATION-PLAN.md`.
 
@@ -454,7 +458,5 @@ Create a unified navigation and CTA system that intelligently routes users based
 2. **Phase 11-15:** Domain Migration (after MVP is complete)
 
 **Current Focus:** Complete Phase 1-10 (Connected Experience MVP) before moving to domain migration.
-
-
 
 

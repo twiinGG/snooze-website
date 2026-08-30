@@ -86,7 +86,7 @@ The page is a landing page, so it does NOT load `snooze-unified-theme.css`. The 
 | Curated candidate | <https://www.joinsnooze.com/snooze-library> · [page settings](https://app.kajabi.com/admin/website_pages/2156716053/edit) |
 | System auto-products page | <https://www.joinsnooze.com/library> · [page settings](https://app.kajabi.com/admin/website_pages/2154679192/edit) |
 
-- [ ] Resolve the two-surface model (next session), then paste into the chosen surface.
+- [x] Two-surface model resolved July 4–5, 2026. `/snooze-library` is the authenticated-only curated target and `/library` remains the system utility. The paste is still unperformed and separately gated on a logged-in comparison, complete preimage and exact approval.
 - [ ] Verify after paste: "Age-Based Courses and Guides" heading; Live Sessions card says masterclasses and coaching; "One-on-One Support" card; NO "On-Demand Webinars" coming-soon card; Snooze Bot still Coming Soon; caps perk intact.
 
 ---
@@ -130,4 +130,3 @@ Ruling: Store V2 deploys by REPLACING [/store](https://www.joinsnooze.com/store)
 - [ ] Log the deploy in the deployment log: pages changed, tag, deployer, validator.
 - [ ] Update [07-implementation-plan.md](../../../docs/projects/copy-uplift/07-implementation-plan.md) §12 with what shipped and when.
 - [ ] GEO re-check after About Sally + consultations land: ask Gemini/ChatGPT "Is Sally Woods a registered nurse?" over the following weeks and confirm the non-practising framing wins.
-

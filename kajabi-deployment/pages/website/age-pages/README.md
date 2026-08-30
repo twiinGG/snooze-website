@@ -7,9 +7,9 @@
 
 ## ⭐ Complete Deployment Instructions
 
-**See:** `../DEPLOYMENT-GUIDE.md` ⭐ **SINGLE SOURCE OF TRUTH** for complete deployment instructions.
+**Current authority:** [`../../../PASTE-MAP.md`](../../../PASTE-MAP.md) and [`../../../../docs/DEPLOYMENT-CHECKLIST.md`](../../../../docs/DEPLOYMENT-CHECKLIST.md). The root deployment guide is archived history, not an executable source.
 
-**See:** `../../docs/HOLISTIC-SITE-TRANSFORMATION-PLAN.md` for detailed age page transformation process.
+**Historical design context:** [`../../../../docs/HOLISTIC-SITE-TRANSFORMATION-PLAN.md`](../../../../docs/HOLISTIC-SITE-TRANSFORMATION-PLAN.md) is archived and its custom-navigation paste steps are retired.
 
 ---
 
@@ -93,7 +93,7 @@ Inline comments were stripped from the four complete HTML files (deployable Kaja
 
 ### Toddler page only: required canonical inserts
 The toddler file carried two "IMPORTANT" build instructions that were section-marker comments:
-- **Navigation:** insert navigation code from the canonical file `kajabi-deployment/pages/navigation.html` (top of body, before the hero).
+- **Navigation:** do not insert a custom navigation block. The live site uses Kajabi's native Header; verify its CTA against PASTE-MAP A6 and `global/native-header-call-to-action.json`.
 - **Footer:** insert footer code from the canonical file `kajabi-deployment/pages/footer.html` (end of body).
 
 The other three pages already include a full hero and the clean footer markup inline.

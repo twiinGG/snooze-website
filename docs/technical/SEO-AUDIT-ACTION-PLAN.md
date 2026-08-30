@@ -2,7 +2,11 @@
 
 **Date Created:** January 2025  
 **Source:** `docs/technical/issues_overview_report.csv`  
-**Status:** In Progress
+**Status:** ARCHIVED — January 2025 audit history; do not use as current deployment authority
+
+> Current navigation authority is `kajabi-deployment/PASTE-MAP.md` A6/A7. The live site uses the
+> native Header; `pages/navigation.html` does not exist and `global/html/navigation.html` is not a
+> deployment or rollback target.
 
 Use this checklist to track progress on fixing SEO issues identified by Screaming Frog audit.
 
@@ -148,7 +152,7 @@ Use this checklist to track progress on fixing SEO issues identified by Screamin
 - [ ] Fix broken internal links
   - [ ] Update links to correct URLs in HTML files
     - Footer: `pages/footer.html`
-    - Navigation: `pages/navigation.html`
+    - Navigation: Kajabi native Header; verify `kajabi-deployment/global/native-header-call-to-action.json`
     - Age pages: All files in `pages/age-pages/`
   - [ ] Remove links to deleted pages
   - [ ] Add 301 redirects where needed (in Kajabi: Settings → Redirects)
@@ -687,7 +691,7 @@ These issues may require URL changes and 301 redirects. Evaluate each case caref
 
 ### Canonical Files (Footer & Navigation)
 - ✅ Created canonical footer file: `pages/footer.html` (source of truth for all footers)
-- ✅ Created canonical navigation file: `pages/navigation.html` (source of truth for all navigation)
+- Superseded: the January 2025 `pages/navigation.html` convention is no longer authoritative; PASTE-MAP A6/native Header is current
 - ✅ Removed embedded footer/navigation from complete page files (replaced with comments referencing canonical files)
 - ✅ Footer alignment guide created: `FOOTER-ALIGNMENT-GUIDE.md`
 - ✅ Canonical files reference guide created: `CANONICAL-FILES-NOTE.md`
@@ -786,4 +790,3 @@ Save all exports to: `docs/technical/screaming-frog-exports/`
 
 **Last Updated:** January 2025  
 **Next Review:** After next dev session
-

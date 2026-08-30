@@ -47,6 +47,7 @@ Use a single, unique wrapper ID on each Website Page body container. All page sp
 - Recommended Products: `#recommended-products-page`
 - Snooze Method (Website Page): `#snooze-method-page`
 - Snooze Membership (Website Page): `#snooze-membership-page` (added August 2026; complete System Initialization block in `kajabi-deployment/global/css/theme-custom-code.css`, followed by page-specific membership styles. One full-width, flush custom-code block with the canonical footer inline.)
+- Snooze Village visual showcase (Website Page): `#snooze-village-page` (added August 2026; complete System Initialization block in `kajabi-deployment/global/css/theme-custom-code.css`, followed by page-specific showcase styles.)
 - Age Page - Newborn: `#age-newborn-page`
 - Age Page - 3-4 Month: `#age-3-4-month-page`
 - Age Page - 5-12 Month: `#age-5-12-month-page`

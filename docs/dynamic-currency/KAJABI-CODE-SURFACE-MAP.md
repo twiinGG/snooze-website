@@ -38,7 +38,7 @@ follow-up lookups too). The July 1 failure lacked the dirty-keystroke step.
 | Checkout z63s9VaR (USD core) | Own theme 2163485833, section `1744906803654`/`1767316681231` (3,729 B) | MCP full-block PROVEN | **DIVERGED** — live copy still "Weekly live group coaching" + "24/7 support" (banned language); repo's newer file not deployed |
 | Checkout vYgCNgJz (AUD core) | Own theme 2166694709, byte-identical block to z63s9VaR (3,729 B) | MCP full-block PROVEN | **DIVERGED + live bug**: AUD checkout displays "all prices are in USD"; no toggle/twin-link live |
 | Checkout mqQikDM7 (USD trial) | Own theme 2164307125, block (4,183 B) | MCP full-block PROVEN | **MATCH** — byte-identical to repo, twin-link correct |
-| Checkout Sr6KzShx (AUD trial) | Own theme 2166681818, block (4,191 B) | MCP full-block PROVEN | **MATCH** — byte-identical to repo, twin-link correct |
+| Checkout Sr6KzShx (AUD trial) | Own theme 2166681818, block (4,191 B) | MCP full-block PROVEN | **DIVERGED + live identity defect** — isolated local source now declares AUD offer `2151254578` and currency `AUD`; the live block still declares the USD twin and requires a separately approved serial deployment |
 
 ## 2. Per-page detail
 
@@ -111,8 +111,8 @@ follow-up lookups too). The July 1 failure lacked the dirty-keystroke step.
 - Pricing confirmed correct at the offer-record level regardless of the stale checkout copy: USD core variants $79/mo, $197/qtr, $657/yr; AUD core variants (161174/161175/161176) $119/$299/$997 AUD — matches the canonical pairing in repo memory exactly.
 
 ### Checkout mqQikDM7 (USD trial) and Sr6KzShx (AUD trial)
-- Offer ids 2150887297 (theme 2164307125) and 2151254578 (theme 2166681818). Both checkout code blocks are **byte-identical to their repo counterparts** (`7-day-trial-membership/usd/checkout-blocks.html` and `.../aud/checkout-blocks.html`) — these two are the only surfaces in the entire census that are cleanly deployed and matching.
-- Both carry a correct static twin-link to the paired offer slug, and the swap-verify question from the spec is resolved definitively: **no swap** — mqQikDM7 is USD ($79/$197/$657), Sr6KzShx is AUD ($119/$299/$997), exactly matching the repo's own file/folder naming and README.
+- Offer ids 2150887297 (theme 2164307125) and 2151254578 (theme 2166681818). The USD checkout block matches its repository identity. The live AUD block still declares the USD offer/currency; the isolated repository source corrects that identity and is local-only until a separately approved serial deployment.
+- Both carry a static twin-link to the paired offer slug. The native offers themselves are not swapped: mqQikDM7 is USD ($79/$198/$660), Sr6KzShx is AUD (A$119/A$297/A$996), matching the locked `PUBMS02` registry entry.
 
 ## 3. Drift register — CMS-only code that must be preserved in every future merge
 

@@ -1,32 +1,7 @@
-/**
- * SNOOZE BLOG SCHEMA (BlogPosting JSON-LD)
- * site-audit-2026-06, Wave 1 item 3 (Jun 9, 2026)
- *
- * Emits BlogPosting JSON-LD on every Kajabi blog post from the page's own DOM.
- * One deploy covers all 36 posts (the blog is CMS-only with no per-post repo
- * template). The script self-gates to /blog/<slug> pages and no-ops elsewhere.
- *
- * Location: Kajabi Settings > Site details > Page scripts > Header Page Scripts
- * (Kajabi has no site-wide footer-scripts field; see help.kajabi.com add-custom-code).
- * Wrap in <script>...</script> and paste below existing header code. Uses
- * DOMContentLoaded so it is safe in <head>. Source of truth is this file
- * in git (kept as plain .js so it lints and node --check passes).
- *
- * Selectors verified against the live blog DOM on Jun 9, 2026:
- *   title  .blog-post-body__title
- *   date   .blog-post-body__date   (e.g. "Sep 29, 2024")
- *   image  meta property og:image
- *   author Sally Woods  (the site's sole author; /author/sally-woods)
- *
- * After paste: validate with Google Rich Results Test + Schema.org validator,
- * then re-crawl a sample post (crawl_page.py --force) and confirm jsonld_types
- * includes BlogPosting.
- */
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   const path = location.pathname.replace(/\/+$/, '');
-  // Only blog posts: /blog/<slug>. The /blog index and non-blog pages are skipped.
   if (path.indexOf('/blog/') !== 0 || path === '/blog') return;
   if (document.querySelector('script[data-snooze-schema="blogposting"]')) return;
 
@@ -42,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!s) return '';
     const d = new Date(s);
     if (Number.isNaN(d.getTime())) return '';
-    // Build from LOCAL components. The displayed date is a calendar date with no
-    // time; toISOString() would shift it across the UTC boundary in many zones.
     const mm = String(d.getMonth() + 1).padStart(2, '0');
     const dd = String(d.getDate()).padStart(2, '0');
     return `${d.getFullYear()}-${mm}-${dd}`;
@@ -64,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     url,
     author: {
       '@type': 'Person',
-      '@id': 'https://www.joinsnooze.com/author/sally-woods#person',
+      '@id': 'https://www.joinsnooze.com/about-sally#person',
       name: 'Sally Woods',
       url: 'https://www.joinsnooze.com/about-sally'
     },

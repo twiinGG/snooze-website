@@ -1,178 +1,26 @@
-<!-- ============================================================
-     SNOOZE REVIEWS PAGE  (#reviews-page)
-     Generated from the Member Feedback & Wins corpus (164 public reviews).
-     Styles: global/css/snooze-unified-theme.css  (#reviews-page block).
-     DRAFT: review before Kajabi paste (RUNBOOK Wave 3 #20 / #18 gate).
-     Kajabi page SEO settings (set in CMS, not here):
-       Title: "Snooze Reviews | Real Baby Sleep Results | The Sleep Concierge"
-       Meta:  "Read 164+ verified reviews from parents who used Snooze to help their
-               baby sleep through the night, self-settle and nap better. Membership,
-               courses, 1:1 consults and Camp Snooze."
-     ============================================================ -->
-     
-# Reviews Page & Notion Automation Project
+# Reviews page
 
-**Status:** v1 BUILT (2026-06-09) — awaiting sign-off before Kajabi paste
-**Priority:** High
-**Phase:** Build
-**Created:** November 1, 2025
+Updated: 2026-08-29
 
-> **v1 build (Wave 3 social-proof sprint):** `src/reviews-page.html` generated from the
-> Member Feedback & Wins corpus (164 Public reviews) by
-> `site-audit-2026-06/wave-3-social-proof/scripts/gen_reviews_page.py`. Pre-rendered cards
-> (SEO-crawlable, Option C), service sections, filters (service/age/rating/search), JSON-LD
-> Review schema. Styles live in the universal theme (`global/css/snooze-unified-theme.css`,
-> `#reviews-page` block), not a separate components.css. Reusable compact/mini components
-> (brief Phase 4) and product-page embeds (Phase 5) remain TODO. Re-run the generator to
-> refresh from Notion.
+Status: **LIVE rendered page verified; one local-only schema identity correction remains gated**
 
----
+The public [Reviews page](https://www.joinsnooze.com/reviews) renders the `#reviews-page` wrapper and 164-review structured data. The canonical page-body source is [`src/reviews-page.html`](./src/reviews-page.html); its page-specific CSS and JavaScript are embedded in that file or provided by the shared theme. Do not expect the obsolete standalone component/data files named by the original 2025 brief.
 
-## 🎯 Project Overview
+The live aggregate Organization node lacks `@id`. The canonical source now adds `https://www.joinsnooze.com/#organization`, and local JSON-LD validation passes. This one-line correction is **not live** and must not be pasted from repository evidence alone.
 
-Build a filterable reviews page integrated with Notion to display direct review text (not iframes) for SEO optimization and trust building. Includes reusable review components for product pages and checkout.
+## Kajabi target and current gate
 
-### Objectives
-1. **SEO Optimization** - Direct review text on site (not iframe) for better rankings
-2. **Trust Building** - Display authentic, filtered reviews
-3. **Reusability** - Components embeddable on product pages and checkout
+- Public URL: <https://www.joinsnooze.com/reviews>
+- Website page list: <https://app.kajabi.com/admin/sites/2148291177/website_pages>
+- Rendered section ID: `1781002775044`
+- Rendered block ID: `1781002775044_0`
+- Exact Kajabi page ID: unresolved; do not guess it
+- Exact editor-field preimage/hash: unresolved because authenticated Chrome control failed with `Invalid browser service environment`
 
----
+Before any write, acquire the shared Kajabi page lock, identify the exact page from the page list, capture the complete Custom Code field and its character count/hash, compare that preimage with the canonical source, obtain approval for the exact semantic diff, and create the required checkpoint commit. Save only this page block, then read it back and cache-bust the public URL. Acceptance requires the Organization node to retain the visible 164-review aggregate and gain the canonical `@id`, with no rendering, filtering, link or schema regression. Rollback is restoration of the captured full-field preimage followed by the same readback and public checks.
 
-## 📁 Project Structure
+The exact execution packet is [`SAR-005-PAGE-FIX-PREFLIGHT-2026-08-29.md`](../../../../../../docs/projects/site-audit-remediation/runs/SAR-005-PAGE-FIX-PREFLIGHT-2026-08-29.md).
 
-```
-reviews-page/
-├── README.md              # This file
-├── docs/                  # Documentation
-│   └── REVIEWS-PAGE-DEVELOPMENT-BRIEF.md
-└── src/                   # Source code (when development starts)
-    ├── reviews-page.html
-    ├── reviews-components.css
-    ├── reviews-components.js
-    └── notion-reviews.json
-```
+## Historical scope
 
-**Note:** Notion project management tools are in `../notion-project-management/`
-
----
-
-## 📋 Key Files
-
-### Documentation
-- **`docs/REVIEWS-PAGE-DEVELOPMENT-BRIEF.md`** - Complete development brief with all requirements, technical architecture, and implementation steps
-
-### Source Code (To Be Created)
-- **`src/reviews-page.html`** - Reviews page HTML structure
-- **`src/reviews-components.css`** - Reviews page and component styles
-- **`src/reviews-components.js`** - Reviews filtering and display logic
-- **`src/notion-reviews.json`** - Exported reviews data (if using Option C)
-
----
-
-## 🚀 Getting Started
-
-### 1. Create Notion Project Page
-
-Use the Notion Project Management tools to create this project's Notion page:
-- See `../notion-project-management/` for Notion project creation tools
-- See `../notion-project-management/docs/NOTION-SETUP.md` for setup instructions
-
-### 2. Review Development Brief
-
-Read `docs/REVIEWS-PAGE-DEVELOPMENT-BRIEF.md` for complete requirements.
-
-### 3. Start Development
-
-Follow the 7-phase implementation plan in the brief:
-1. Notion Database Setup
-2. Data Export/Integration
-3. Reviews Page Development
-4. Reusable Components
-5. Integration Points
-6. SEO Optimization
-7. Testing & Launch
-
----
-
-## 📊 Progress Tracking
-
-### Phase 1: Notion Database Setup
-- [ ] Verify current Notion database structure
-- [ ] Add required fields (Product Tags, Baby Age, Sleep Issue, etc.)
-- [ ] Update existing reviews with new field data
-- [ ] Set up "Publish Approved" workflow
-- [ ] Test data structure
-
-### Phase 2: Data Export/Integration
-- [ ] Choose integration method (Option A/B/C)
-- [ ] Set up automation (Zapier/N8N) if using Option A/C
-- [ ] Create JSON export format
-- [ ] Test data fetching
-- [ ] Set up caching/refresh schedule
-
-### Phase 3: Reviews Page Development
-- [ ] Create HTML structure
-- [ ] Design CSS for reviews page
-- [ ] Build JavaScript filtering logic
-- [ ] Implement search functionality
-- [ ] Add pagination/infinite scroll
-- [ ] Make responsive (mobile-friendly)
-- [ ] Test all filters and interactions
-
-### Phase 4: Reusable Components
-- [ ] Create full review card component
-- [ ] Create compact review card component
-- [ ] Create mini badge component
-- [ ] Add component JavaScript loader
-- [ ] Test components in different contexts
-
-### Phase 5: Integration
-- [ ] Update hero section link
-- [ ] Embed on product pages (if applicable)
-- [ ] Add to checkout pages
-- [ ] Replace static testimonials in carousel
-- [ ] Test all integration points
-
-### Phase 6: SEO Optimization
-- [ ] Add structured data (JSON-LD) for reviews
-- [ ] Optimize meta tags for reviews page
-- [ ] Add schema.org Review markup
-- [ ] Ensure reviews are crawlable
-- [ ] Test SEO implementation
-
-### Phase 7: Testing & Launch
-- [ ] Test on desktop (Chrome, Safari, Firefox)
-- [ ] Test on mobile (iOS, Android)
-- [ ] Test filtering functionality
-- [ ] Test search functionality
-- [ ] Verify Notion sync is working
-- [ ] Check page load performance
-- [ ] Deploy to Kajabi
-- [ ] Monitor and iterate
-
----
-
-## 🔗 Related Resources
-
-### Notion Databases
-- **Reviews Database:** `24f33898b6c2817cbfa3cab91a68b9e9` (Member Feedback & Wins)
-- **Projects Database:** `25433898b6c2815987ddd1d32b353d7f` (Snooze Projects)
-
-### Related Projects
-- **Notion Project Management:** `../notion-project-management/` - Tools for managing Notion project pages
-- **Main Project README:** `../../MAIN-README.md`
-
----
-
-## 📝 Notes
-
-- This project is isolated in `reviews-page/` for discrete development
-- All project-specific files live here, separate from main landing page code
-- When ready for deployment, files will be moved to `kajabi-deployment/`
-- See main README for project management workflow
-
----
-
-**Last Updated:** November 1, 2025
-
+The original development brief and seven-phase checklist describe the November 2025 proposal. They are historical context, not current production evidence or acceptance criteria. Reusable compact/mini components, automated Notion refresh and checkout embeds remain separate work unless a ratified SAR recommendation explicitly brings them into scope.

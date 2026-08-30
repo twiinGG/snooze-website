@@ -54,7 +54,7 @@ joinsnooze.com/product/* → joinsnooze.com/library
 ```
 joinsnooze.com/ → joinsnooze.com/
 joinsnooze.com/snooze → joinsnooze.com/
-joinsnooze.com/snooze-library → joinsnooze.com/library
+joinsnooze.com/snooze-library → KEEP (authenticated-only curated Snooze Library; do not redirect to system /library)
 joinsnooze.com/snooze-waitlist → joinsnooze.com/
 ```
 
@@ -114,4 +114,3 @@ joinsnooze.com/snooze-waitlist → joinsnooze.com/
 - `curl -I [URL]` to check status code
 - Browser redirect checker
 - Google Search Console (after launch)
-

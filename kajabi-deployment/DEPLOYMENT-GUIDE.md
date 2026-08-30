@@ -1,9 +1,17 @@
 # Snooze Website - Complete Deployment Guide
 
 **Date:** December 05, 2025  
-**Status:** Single Source of Truth for All Deployment  
-**Purpose:** Complete guide for deploying all Snooze website components to Kajabi  
+**Status:** ARCHIVED — historical reference only; unsafe as a current deployment runbook
+**Purpose:** Preserve the December 2025 deployment history
 **Note:** Landing page CSS has been merged into global CSS using Gemini 3 Pro
+
+> **Do not execute the instructions below.** They reference retired files, routes, checkout slugs
+> and Kajabi locations. Current deployment authority is
+> [`PASTE-MAP.md`](./PASTE-MAP.md), [`DEPLOYMENT-CHECKLIST.md`](../docs/DEPLOYMENT-CHECKLIST.md)
+> and the applicable repository `AGENTS.md`. Where this archived guide conflicts with any of those
+> sources, the current sources win. In particular, `pages/navigation.html` does not exist and is
+> not a current paste target; A6/A7 in PASTE-MAP govern the native Header and historical custom
+> navigation. The body is retained unchanged as historical evidence.
 
 ---
 
@@ -337,6 +345,5 @@ This is set in the Site Header JavaScript and can be updated site-wide by changi
 
 ---
 
-**Last Updated:** January 2025  
-**Status:** Single Source of Truth - All deployment instructions consolidated here
-
+**Last Updated:** Archived August 29, 2026; body last represented the December 2025 process
+**Status:** Historical evidence only — do not use for deployment
