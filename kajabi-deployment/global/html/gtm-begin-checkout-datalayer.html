@@ -1,13 +1,5 @@
 <script>
 (function waitForOffer() {
-  var offerToken = (window.CLIENT_INFO && window.CLIENT_INFO.offer_token) || '';
-  var CUSTOM_BEGIN_CHECKOUT_SLUGS = ['mqQikDM7', 'Sr6KzShx'];
-  for (var customIndex = 0; customIndex < CUSTOM_BEGIN_CHECKOUT_SLUGS.length; customIndex++) {
-    if (offerToken === CUSTOM_BEGIN_CHECKOUT_SLUGS[customIndex] || window.location.pathname.indexOf(CUSTOM_BEGIN_CHECKOUT_SLUGS[customIndex]) > -1) {
-      return;
-    }
-  }
-
   var priceEl = document.querySelector("#offer-price");
   var titleEl = document.querySelector("#offer-title");
 
@@ -21,9 +13,9 @@
     // offer not on this list.
     var AUD_OFFER_SLUGS = [
       'vYgCNgJz', 'Sr6KzShx', '46Bz9tk6', 'ENhg45mj', 'FkZfbT25', '8SL8r5sC',
-      'azdqxZuK', 'JfeoXoKn', 'xGVQ2zfC', 'wgqokagt', 'd5HsPDpJ', 'ZYWF7eY8',
-      'wesGUFkc'
+      'azdqxZuK', 'JfeoXoKn', 'xGVQ2zfC', 'wgqokagt', 'd5HsPDpJ', 'ZYWF7eY8'
     ];
+    var offerToken = (window.CLIENT_INFO && window.CLIENT_INFO.offer_token) || '';
     var isAudOffer = false;
     for (var i = 0; i < AUD_OFFER_SLUGS.length; i++) {
       if (offerToken === AUD_OFFER_SLUGS[i] || window.location.pathname.indexOf(AUD_OFFER_SLUGS[i]) > -1) {
