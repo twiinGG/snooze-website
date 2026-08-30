@@ -24,6 +24,7 @@ function assert(name, condition, detail) {
 function element(attributes, text) {
   const values = Object.assign({}, attributes || {});
   return {
+    nodeType: 1,
     innerText: text || '',
     textContent: text || '',
     value: values.value || '',
@@ -31,7 +32,11 @@ function element(attributes, text) {
     setAttribute: function(key, value) { values[key] = String(value); },
     addEventListener: function() {},
     querySelector: function() { return null; },
-    closest: function() { return this; }
+    matches: function(selector) {
+      return (selector.indexOf('[data-variant-id]') > -1 && !!values['data-variant-id']) ||
+        (selector.indexOf('[data-pricing-option-id]') > -1 && !!values['data-pricing-option-id']);
+    },
+    closest: function(selector) { return this.matches(selector) ? this : null; }
   };
 }
 
@@ -41,13 +46,30 @@ assert('AUD block declares the AUD trial offer identity', /id="snooze-custom-che
 function run(currency, offerId, initialOption, nextOption) {
   const dataLayer = [];
   const listeners = {};
-  const copy = { textContent: '' };
+  let mutationCallback = null;
+  let disclosureWrites = 0;
+  let disclosureText = '';
+  const copy = {
+    nodeType: 1,
+    matches: function() { return false; },
+    closest: function() { return null; },
+    querySelector: function() { return null; }
+  };
+  Object.defineProperty(copy, 'textContent', {
+    get: function() { return disclosureText; },
+    set: function(value) {
+      disclosureWrites += 1;
+      disclosureText = String(value);
+      if (mutationCallback) {
+        mutationCallback([{ type: 'childList', target: copy, addedNodes: [], removedNodes: [] }]);
+      }
+    }
+  });
   const disclosure = { querySelector: function() { return copy; } };
   const currencyLink = element({ href: currency === 'USD'
     ? 'https://www.joinsnooze.com/offers/Sr6KzShx/checkout?coupon=keep&utm_source=partner'
     : 'https://www.joinsnooze.com/offers/mqQikDM7/checkout?coupon=keep&utm_source=partner' });
   let selected = initialOption;
-  let mutationCallback = null;
   const wrapper = {
     getAttribute: function(key) {
       if (key === 'data-currency') return currency;
@@ -96,12 +118,17 @@ function run(currency, offerId, initialOption, nextOption) {
     selected = nextOption;
     listeners.click({ target: { closest: function() { return nextOption; } } });
     if (mutationCallback) {
-      mutationCallback();
-      mutationCallback();
+      mutationCallback([{ type: 'attributes', target: nextOption }]);
+      mutationCallback([{ type: 'attributes', target: nextOption }]);
     }
   }
 
-  return { dataLayer: dataLayer, copy: copy.textContent, href: currencyLink.getAttribute('href') };
+  return {
+    dataLayer: dataLayer,
+    copy: copy.textContent,
+    disclosureWrites: disclosureWrites,
+    href: currencyLink.getAttribute('href')
+  };
 }
 
 const usdMonthly = element({ 'data-variant-id': '160544' }, 'Monthly');
@@ -111,6 +138,7 @@ assert('USD checkout emits begin_checkout once', usd.dataLayer.filter(event => e
 assert('USD annual maps the canonical variant', usd.dataLayer[1].variant_id === '64816');
 assert('USD annual maps amount and cadence', usd.dataLayer[1].amount === 660 && usd.dataLayer[1].cadence === 'yearly');
 assert('selected plan disclosure updates', usd.copy === 'After your 7-day trial: $660 yearly.');
+assert('selection mutations do not rewrite an unchanged disclosure', usd.disclosureWrites === 2, 'writes=' + usd.disclosureWrites);
 assert('selection mutations deduplicate', usd.dataLayer.filter(event => event.event === 'pricing_option_selected').length === 1);
 assert('destination query survives currency switch', usd.href.indexOf('coupon=keep') > -1);
 assert('existing destination UTM is not overwritten', usd.href.indexOf('utm_source=partner') > -1 && usd.href.indexOf('utm_source=meta') === -1);
@@ -124,6 +152,7 @@ const aud = run('AUD', '2151254578', audMonthly, audQuarterly);
 assert('AUD quarterly maps the canonical variant', aud.dataLayer[1].variant_id === '160791');
 assert('AUD quarterly maps amount and currency', aud.dataLayer[1].amount === 297 && aud.dataLayer[1].currency === 'AUD');
 assert('AUD disclosure uses A$ amount', aud.copy === 'After your 7-day trial: A$297 every 3 months.');
+assert('AUD selection mutations do not rewrite an unchanged disclosure', aud.disclosureWrites === 2, 'writes=' + aud.disclosureWrites);
 
 const mappingCases = [
   ['USD monthly', 'USD', '2150887297', element({ 'data-variant-id': '64816' }, 'Annual'), element({ 'data-variant-id': '160544' }, 'Monthly'), '160544', 79],
@@ -137,6 +166,7 @@ mappingCases.forEach(function(testCase) {
   const result = run(testCase[1], testCase[2], testCase[3], testCase[4]);
   const selection = result.dataLayer.filter(event => event.event === 'pricing_option_selected')[0];
   assert(testCase[0] + ' variant and amount are canonical', selection.variant_id === testCase[5] && selection.amount === testCase[6]);
+  assert(testCase[0] + ' mutation feedback remains bounded', result.disclosureWrites === 2, 'writes=' + result.disclosureWrites);
 });
 
 const checkoutRoot = path.resolve(__dirname, '..', '..');

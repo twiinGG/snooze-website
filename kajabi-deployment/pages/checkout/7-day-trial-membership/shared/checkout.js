@@ -75,7 +75,8 @@
     const disclosure = document.querySelector('[data-selected-plan-disclosure]');
     const copy = disclosure && disclosure.querySelector('[data-selected-plan-copy]');
     if (!copy || !plan) return;
-    copy.textContent = 'After your 7-day trial: ' + plan.disclosure + '.';
+    const nextText = 'After your 7-day trial: ' + plan.disclosure + '.';
+    if (copy.textContent !== nextText) copy.textContent = nextText;
   }
 
   function syncSelection(emitEvent) {
@@ -117,9 +118,33 @@
   function moveDisclosureNearPayment(context) {
     const disclosure = context.wrapper.querySelector('[data-selected-plan-disclosure]');
     const paymentButton = document.querySelector('button[type="submit"], input[type="submit"], .checkout-submit, [data-checkout-submit]');
-    if (disclosure && paymentButton && paymentButton.parentNode) {
+    if (disclosure && paymentButton && paymentButton.parentNode && disclosure.nextSibling !== paymentButton) {
       paymentButton.parentNode.insertBefore(disclosure, paymentButton);
     }
+  }
+
+  function isPricingOption(node) {
+    return !!(node && node.nodeType === 1 && (
+      (node.matches && node.matches(OPTION_SELECTOR)) ||
+      (node.closest && node.closest(OPTION_SELECTOR))
+    ));
+  }
+
+  function containsPricingOption(node) {
+    return !!(node && node.nodeType === 1 && (
+      isPricingOption(node) ||
+      (node.querySelector && node.querySelector(OPTION_SELECTOR))
+    ));
+  }
+
+  function mutationTouchesPricing(mutation) {
+    if (!mutation) return false;
+    if (mutation.type === 'attributes') return isPricingOption(mutation.target);
+    if (mutation.type !== 'childList') return false;
+    if (isPricingOption(mutation.target)) return true;
+    const changedNodes = Array.prototype.slice.call(mutation.addedNodes || [])
+      .concat(Array.prototype.slice.call(mutation.removedNodes || []));
+    return changedNodes.some(containsPricingOption);
   }
 
   function scrollToCheckout(event) {
@@ -173,7 +198,15 @@
     }, true);
 
     if (typeof MutationObserver !== 'undefined') {
-      const observer = new MutationObserver(function() { syncSelection(true); });
+      let syncScheduled = false;
+      const observer = new MutationObserver(function(mutations) {
+        if (!Array.prototype.some.call(mutations || [], mutationTouchesPricing) || syncScheduled) return;
+        syncScheduled = true;
+        window.setTimeout(function() {
+          syncScheduled = false;
+          syncSelection(true);
+        }, 0);
+      });
       observer.observe(document.body, { attributes: true, attributeFilter: ['class', 'aria-checked', 'checked'], childList: true, subtree: true });
     }
   }
