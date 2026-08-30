@@ -3,11 +3,13 @@
 
   const PLAN_CONFIG = {
     USD: {
+      offerCode: 'PUBMS02_USD',
       monthly: { variantId: '160544', plan: 'monthly', cadence: 'monthly', amount: 79, disclosure: '$79 monthly' },
       quarterly: { variantId: '64815', plan: 'quarterly', cadence: 'every_3_months', amount: 198, disclosure: '$198 every 3 months' },
       annual: { variantId: '64816', plan: 'annual', cadence: 'yearly', amount: 660, disclosure: '$660 yearly' }
     },
     AUD: {
+      offerCode: 'PUBMS02_AUD',
       monthly: { variantId: '160790', plan: 'monthly', cadence: 'monthly', amount: 119, disclosure: 'A$119 monthly' },
       quarterly: { variantId: '160791', plan: 'quarterly', cadence: 'every_3_months', amount: 297, disclosure: 'A$297 every 3 months' },
       annual: { variantId: '160792', plan: 'annual', cadence: 'yearly', amount: 996, disclosure: 'A$996 yearly' }
@@ -31,7 +33,8 @@
     return {
       wrapper: wrapper,
       currency: currency,
-      offerId: String(wrapper.getAttribute('data-offer-id') || '')
+      offerId: String(wrapper.getAttribute('data-offer-id') || ''),
+      offerCode: PLAN_CONFIG[currency].offerCode
     };
   }
 
@@ -90,6 +93,7 @@
       pushEvent({
         event: 'pricing_option_selected',
         offer_id: context.offerId,
+        offer_code: context.offerCode,
         variant_id: plan.variantId,
         plan: plan.plan,
         cadence: plan.cadence,
@@ -163,15 +167,29 @@
   function init() {
     const context = checkoutContext();
     if (!context) return;
+    const initialPlan = planFromOption(selectedOption(), context.currency) || PLAN_CONFIG[context.currency].monthly;
 
     if (!window.__snoozeTrialBeginCheckoutFired) {
       window.__snoozeTrialBeginCheckoutFired = true;
       pushEvent({
         event: 'begin_checkout',
         offer_id: context.offerId,
+        offer_code: context.offerCode,
         currency: context.currency,
+        value: initialPlan.amount,
         checkout_mode: '7_day_trial',
-        surface: 'trial_checkout'
+        surface: 'trial_checkout',
+        ecommerce: {
+          currency: context.currency,
+          value: initialPlan.amount,
+          items: [{
+            item_id: context.offerCode,
+            item_name: 'The Snooze Membership - 7 Day Trial',
+            item_variant: initialPlan.plan,
+            price: initialPlan.amount,
+            quantity: 1
+          }]
+        }
       });
     }
 

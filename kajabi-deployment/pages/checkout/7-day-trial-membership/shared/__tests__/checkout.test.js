@@ -135,6 +135,8 @@ const usdMonthly = element({ 'data-variant-id': '160544' }, 'Monthly');
 const usdAnnual = element({ 'data-variant-id': '64816' }, 'Annual');
 const usd = run('USD', '2150887297', usdMonthly, usdAnnual);
 assert('USD checkout emits begin_checkout once', usd.dataLayer.filter(event => event.event === 'begin_checkout').length === 1);
+assert('USD begin_checkout carries the canonical offer code', usd.dataLayer[0].offer_code === 'PUBMS02_USD');
+assert('USD begin_checkout carries one canonical ecommerce item', usd.dataLayer[0].value === 79 && usd.dataLayer[0].ecommerce.currency === 'USD' && usd.dataLayer[0].ecommerce.value === 79 && usd.dataLayer[0].ecommerce.items.length === 1 && usd.dataLayer[0].ecommerce.items[0].item_id === 'PUBMS02_USD' && usd.dataLayer[0].ecommerce.items[0].price === 79);
 assert('USD annual maps the canonical variant', usd.dataLayer[1].variant_id === '64816');
 assert('USD annual maps amount and cadence', usd.dataLayer[1].amount === 660 && usd.dataLayer[1].cadence === 'yearly');
 assert('selected plan disclosure updates', usd.copy === 'After your 7-day trial: $660 yearly.');
@@ -149,6 +151,9 @@ assert('query parameters are not duplicated', (usd.href.match(/utm_source=/g) ||
 const audMonthly = element({ 'data-pricing-option-id': '160790' }, 'Monthly');
 const audQuarterly = element({ 'data-pricing-option-id': '160791' }, 'Quarterly');
 const aud = run('AUD', '2151254578', audMonthly, audQuarterly);
+assert('AUD checkout emits begin_checkout once', aud.dataLayer.filter(event => event.event === 'begin_checkout').length === 1);
+assert('AUD begin_checkout carries the canonical offer code', aud.dataLayer[0].offer_code === 'PUBMS02_AUD');
+assert('AUD begin_checkout carries one canonical ecommerce item', aud.dataLayer[0].value === 119 && aud.dataLayer[0].ecommerce.currency === 'AUD' && aud.dataLayer[0].ecommerce.value === 119 && aud.dataLayer[0].ecommerce.items.length === 1 && aud.dataLayer[0].ecommerce.items[0].item_id === 'PUBMS02_AUD' && aud.dataLayer[0].ecommerce.items[0].price === 119);
 assert('AUD quarterly maps the canonical variant', aud.dataLayer[1].variant_id === '160791');
 assert('AUD quarterly maps amount and currency', aud.dataLayer[1].amount === 297 && aud.dataLayer[1].currency === 'AUD');
 assert('AUD disclosure uses A$ amount', aud.copy === 'After your 7-day trial: A$297 every 3 months.');
@@ -167,6 +172,19 @@ mappingCases.forEach(function(testCase) {
   const selection = result.dataLayer.filter(event => event.event === 'pricing_option_selected')[0];
   assert(testCase[0] + ' variant and amount are canonical', selection.variant_id === testCase[5] && selection.amount === testCase[6]);
   assert(testCase[0] + ' mutation feedback remains bounded', result.disclosureWrites === 2, 'writes=' + result.disclosureWrites);
+});
+
+const initialPlanCases = [
+  ['USD monthly initial', 'USD', '2150887297', element({ 'data-variant-id': '160544' }, 'Monthly'), 'PUBMS02_USD', 79, 'monthly'],
+  ['USD quarterly initial', 'USD', '2150887297', element({ 'data-variant-id': '64815' }, 'Quarterly'), 'PUBMS02_USD', 198, 'quarterly'],
+  ['USD annual initial', 'USD', '2150887297', element({ 'data-variant-id': '64816' }, 'Annual'), 'PUBMS02_USD', 660, 'annual'],
+  ['AUD monthly initial', 'AUD', '2151254578', element({ 'data-pricing-option-id': '160790' }, 'Monthly'), 'PUBMS02_AUD', 119, 'monthly'],
+  ['AUD quarterly initial', 'AUD', '2151254578', element({ 'data-pricing-option-id': '160791' }, 'Quarterly'), 'PUBMS02_AUD', 297, 'quarterly'],
+  ['AUD annual initial', 'AUD', '2151254578', element({ 'data-pricing-option-id': '160792' }, 'Annual'), 'PUBMS02_AUD', 996, 'annual']
+];
+initialPlanCases.forEach(function(testCase) {
+  const beginCheckout = run(testCase[1], testCase[2], testCase[3], null).dataLayer[0];
+  assert(testCase[0] + ' begin_checkout uses the selected plan', beginCheckout.offer_code === testCase[4] && beginCheckout.value === testCase[5] && beginCheckout.ecommerce.value === testCase[5] && beginCheckout.ecommerce.items[0].item_variant === testCase[6]);
 });
 
 const checkoutRoot = path.resolve(__dirname, '..', '..');
