@@ -552,9 +552,13 @@
 - **Type:** Legal/Policy Page
 - **Description:** Terms and Conditions for all Snooze services
 
-- **URL:** `https://thesleepconcierge.mykajabi.com/3-4-month-baby-sleep-course-terms-and-conditions`
-- **Status:** ❓ Unknown (may return 429 - rate limiting, verify manually)
-- **Type:** Course-specific Terms
+- **URL:** `https://joinsnooze.com/3-4-month-baby-sleep-course-terms-and-conditions`
+- **Status:** ❌ **Deleted 30 August 2026, returns 404 by decision.** Course terms are now section 5 of `/terms-conditions`
+- **Type:** Course-specific Terms (retired)
+
+- **URL:** `https://joinsnooze.com/snooze-social-terms-and-conditions`
+- **Status:** ❌ **Deleted 30 August 2026, returns 404 by decision.** Snooze Social terms are now section 6 of `/terms-conditions`. It had 3 clicks and 70 impressions in the 1 August GSC pull, at average position 5.3; that traffic is gone rather than redirected
+- **Type:** Legacy membership Terms (retired)
 
 ### Email Protection (Cloudflare)
 - **URL:** `https://joinsnooze.com/cdn-cgi/l/email-protection`
