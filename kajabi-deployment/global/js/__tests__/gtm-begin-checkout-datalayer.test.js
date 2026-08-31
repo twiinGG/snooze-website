@@ -46,7 +46,7 @@ function run(slug, price) {
 
 const camp = run('wesGUFkc', 'A$997.00');
 assert('Camp payment-plan emits once', camp.length === 1);
-assert('Camp payment-plan remains unchanged from live GTM preimage', camp[0].ecommerce.currency === 'USD');
+assert('Camp payment-plan reports AUD (SAR-002 currency correction)', camp[0].ecommerce.currency === 'AUD');
 assert('Camp payment-plan preserves numeric value', camp[0].ecommerce.value === 997);
 
 const ordinaryUsd = run('ordinaryUsdFixture', '$197.00');
