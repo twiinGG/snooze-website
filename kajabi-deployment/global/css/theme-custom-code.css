@@ -12946,3 +12946,46 @@ body.currency-loaded .dynamic-cta {
 .blog-post-body__tags .tag:hover{background:#F43357!important;color:#FFFFFF!important}
 .sidebar-categories__link{color:#1F293B!important;font-size:.95rem}
 .sidebar-categories__link:hover{color:#F43357!important}
+.snz-post{max-width:40rem;margin:0 auto}
+.snz-post h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.22;color:#1F293B;margin:2em 0 .55em;text-wrap:balance}
+.snz-post ul,.snz-post ol{margin:0 0 1.4em;padding-left:1.35em}
+.snz-post li{margin-bottom:.42em}
+.snz-post li::marker{color:#F43357}
+.snz-post hr{border:0;border-top:1px solid #E4DDD8;margin:2.4em 0 1.6em}
+.snz-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin:0 0 1.4em!important}
+.snz-signoff{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.3rem;color:#F43357;margin:1.6em 0 0!important}
+.snz-note{font-size:.9rem;line-height:1.62;color:#7C8A98}
+.snz-post--sally .snz-eyebrow{color:#F43357}
+.snz-ask{background:#FFE7EA;border-radius:20px;padding:24px 26px;margin:0 0 1.9em}
+.snz-ask__label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#F43357;font-weight:600;margin:0 0 .6em!important}
+.snz-ask q,.snz-ask p:last-child{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.45;color:#1F293B;quotes:none;margin:0!important}
+.snz-post--sally blockquote{border-left:2px solid #F43357;padding:.1em 0 .1em 1.15em;font-style:italic;color:#1F293B;margin:1.6em 0}
+.snz-schedule{list-style:none!important;padding:20px 22px!important;background:#FAF7F4;border-radius:12px;margin:0 0 1.6em!important}
+.snz-schedule li{display:grid;grid-template-columns:8.5em 1fr;gap:12px;padding:7px 0;border-bottom:1px solid #E4DDD8;font-size:.95rem;margin:0!important}
+.snz-schedule li:last-child{border-bottom:0}
+.snz-schedule b{font-weight:500;color:#F43357;font-variant-numeric:tabular-nums}
+.snz-post--answers{counter-reset:qa}
+.snz-post--answers .snz-eyebrow{color:#7C8A98}
+.snz-post--answers h2{counter-increment:qa;display:grid;grid-template-columns:1.9em 1fr;gap:2px 12px;font-size:1.4rem;padding-top:1.1em;border-top:1px solid #E4DDD8}
+.snz-post--answers h2::before{content:counter(qa);font-family:'Poppins',sans-serif;font-weight:500;font-size:.8rem;color:#7C8A98;padding-top:.55em}
+.snz-post--answers h2+p{grid-column:2;font-size:1.1rem;color:#1F293B;border-left:2px solid #7C8A98;padding-left:1.1em;margin-left:.2em}
+.snz-reviewed{font-size:.85rem;color:#7C8A98;font-style:italic;margin-bottom:2.2em!important}
+.snz-post--tested .snz-eyebrow{color:#1F293B}
+.snz-verdict{display:grid;grid-template-columns:8.2em 1fr;gap:10px 16px;background:#F2EDEA;border-radius:20px;padding:22px 24px;margin:0 0 1.9em;font-size:.95rem;line-height:1.6}
+.snz-verdict dt{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7C8A98;font-weight:600;padding-top:.28em}
+.snz-verdict dd{margin:0;color:#1F293B}
+.snz-disclosure{font-size:.85rem;line-height:1.6;color:#7C8A98;background:#FAF7F4;border-radius:12px;padding:14px 16px;margin:1.9em 0 0!important}
+.snz-post--camp .snz-eyebrow{color:#A8791B}
+.snz-facts{list-style:none!important;padding:20px 22px!important;background:#FAF7F4;border-radius:12px;margin:0 0 1.9em!important}
+.snz-facts li{display:grid;grid-template-columns:5.5em 1fr;gap:14px;padding:8px 0;border-bottom:1px solid #E4DDD8;font-size:.95rem;margin:0!important}
+.snz-facts li:last-child{border-bottom:0}
+.snz-facts b{font-weight:600;color:#A8791B}
+.snz-day{font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#A8791B;margin:2.1em 0 .5em!important}
+.snz-camp-body,.snz-baby{border-left:2px solid #FFC107;padding-left:22px;margin:0 0 1.8em}
+.snz-baby{margin-bottom:2em}
+.snz-ba{list-style:none!important;padding:16px 20px!important;background:#FAF7F4;border-radius:12px;margin:0 0 1.1em!important;font-size:.95rem}
+.snz-ba li{display:grid;grid-template-columns:5.2em 1fr;gap:14px;padding:7px 0;border-bottom:1px solid #E4DDD8;margin:0!important}
+.snz-ba li:last-child{border-bottom:0}
+.snz-ba b{font-weight:600;color:#7C8A98;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.2em}
+.snz-meta{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7C8A98;font-weight:600;margin:0 0 .7em!important}
+.snz-lede{font-size:1.15rem;line-height:1.65;color:#1F293B}
