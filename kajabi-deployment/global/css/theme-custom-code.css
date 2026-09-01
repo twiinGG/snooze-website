@@ -12932,7 +12932,8 @@ body.currency-loaded .dynamic-cta {
 #section-1735840246714 h2,#section-1735840246714 h2 a,#section-1735840246714 h2 span{color:#1F293B!important;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.2}
 #section-1735840246714 h2 a{text-decoration:none;border-bottom:2px solid #F43357;padding-bottom:2px}
 #section-1735840246714 p,#section-1735840246714 p span{color:#161E2A!important;font-size:1rem;line-height:1.7}
-#section-1735840246714 p a,#section-1735840246714 p a span{color:#F43357!important;font-weight:500}
+#section-1735840246714 p a:not([href*="/offers/"]),#section-1735840246714 p a:not([href*="/offers/"]) span{color:#F43357!important;font-weight:500}
+#section-1735840246714 a[href*="/offers/"],#section-1735840246714 a[href*="/offers/"] span{color:#FFFFFF!important;font-weight:600}
 #section-1735840246714 .image__image{border-radius:20px}
 #section-1735840246714 hr{border:0;border-top:1px solid #E4DDD8;margin:2.5rem auto;max-width:40rem}
 #section-1735840246714 h3{color:#1F293B!important;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.24;max-width:34rem;margin-left:auto;margin-right:auto}
