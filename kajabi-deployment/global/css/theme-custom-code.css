@@ -12927,3 +12927,22 @@ body.currency-loaded .dynamic-cta {
   #snooze-method-page .snooze-method-hero { padding: 64px 0 48px; }
   #snooze-method-page .principles-grid { grid-template-columns: 1fr; }
 }
+
+#section-1735840246714{background:#FAF7F4;padding-top:2.5rem;padding-bottom:2.5rem}
+#section-1735840246714 h2,#section-1735840246714 h2 a,#section-1735840246714 h2 span{color:#1F293B!important;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.2}
+#section-1735840246714 h2 a{text-decoration:none;border-bottom:2px solid #F43357;padding-bottom:2px}
+#section-1735840246714 p,#section-1735840246714 p span{color:#161E2A!important;font-size:1rem;line-height:1.7}
+#section-1735840246714 p a,#section-1735840246714 p a span{color:#F43357!important;font-weight:500}
+#section-1735840246714 .image__image{border-radius:20px}
+#section-1735840246714 hr{border:0;border-top:1px solid #E4DDD8;margin:2.5rem auto;max-width:40rem}
+#section-1735840246714 h3{color:#1F293B!important;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.24;max-width:34rem;margin-left:auto;margin-right:auto}
+#section-1735840246714 h3+p{max-width:34rem;margin-left:auto;margin-right:auto}
+#section-1735840246714 a[href*="/offers/"]{background:#F43357!important;border-radius:9999px!important;padding:16px 34px!important;font-size:1rem}
+#section-1735840246714 a[href*="/offers/"]:hover{background:#D62646!important}
+.blog-post-body__content{max-width:40rem;font-size:1.0625rem;line-height:1.78}
+.blog-post-body__content>p{margin:0 0 1.15em}
+.blog-post-body__tags{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0 1.5rem}
+.blog-post-body__tags .tag{background:#FFE7EA!important;color:#1F293B!important;font-size:.72rem!important;font-weight:500;letter-spacing:.04em;text-transform:capitalize;padding:5px 12px!important;border-radius:9999px;text-decoration:none}
+.blog-post-body__tags .tag:hover{background:#F43357!important;color:#FFFFFF!important}
+.sidebar-categories__link{color:#1F293B!important;font-size:.95rem}
+.sidebar-categories__link:hover{color:#F43357!important}
