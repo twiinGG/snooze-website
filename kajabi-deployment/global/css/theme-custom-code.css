@@ -12990,3 +12990,22 @@ body.currency-loaded .dynamic-cta {
 .snz-ba b{font-weight:600;color:#7C8A98;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.2em}
 .snz-meta{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7C8A98;font-weight:600;margin:0 0 .7em!important}
 .snz-lede{font-size:1.15rem;line-height:1.65;color:#1F293B}
+.blog-post-body__content h2,.blog-post-body__content h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1F293B;line-height:1.22;text-wrap:balance}
+.blog-post-body__content h2{font-size:1.6rem;margin:2em 0 .55em}
+.blog-post-body__content h3{font-size:1.25rem;margin:1.8em 0 .5em}
+.blog-post-body__content h2:first-child,.blog-post-body__content h3:first-child{margin-top:0}
+.blog-post-body__content ul,.blog-post-body__content ol{margin:0 0 1.4em;padding-left:1.35em}
+.blog-post-body__content li{margin-bottom:.42em;padding-left:.15em}
+.blog-post-body__content li::marker{color:#F43357}
+.blog-post-body__content strong,.blog-post-body__content b{font-weight:600;color:#1F293B}
+.blog-post-body__content a{color:#F43357;text-decoration-thickness:1px;text-underline-offset:2px}
+.blog-post-body__content hr{border:0;border-top:1px solid #E4DDD8;margin:2.4em 0 1.6em}
+.blog-post-body__content blockquote{margin:1.6em 0;padding:.1em 0 .1em 1.15em;border-left:2px solid #F43357;font-style:italic;color:#1F293B}
+.blog-post-body__content blockquote p:last-child{margin-bottom:0}
+.blog-post-body__content img{max-width:100%;height:auto;border-radius:20px;margin:1.6em 0}
+.blog-post-body__content>p:first-child{margin-top:0}
+.blog-post-body__title{font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.1;max-width:40rem}
+.blog-post-body__date{font-size:.85rem;color:#7C8A98;letter-spacing:.02em}
+.blog-post-body__content table{width:100%;border-collapse:collapse;margin:0 0 1.6em;font-size:.95rem}
+.blog-post-body__content th,.blog-post-body__content td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid #E4DDD8;vertical-align:top}
+.blog-post-body__content th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#7C8A98;font-weight:600}
