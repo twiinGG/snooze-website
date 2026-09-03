@@ -25,16 +25,12 @@ const TOGGLE_PATH = path.resolve(__dirname, '..', 'currency-toggle.js');
 // Instrumented files to simulate (Phase 3). Relative to kajabi-deployment.
 const FILES = [
   'pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html',
-  'pages/checkout/camp-snooze-v2-luxury/camp-snooze-bundle-checkout-blocks.html',
   'pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html',
-  'pages/checkout/camp-snooze-v2-luxury/camp-snooze-multiples-checkout-blocks.html',
-  'pages/checkout/camp-snooze-v2-luxury/camp-snooze-multiples-bundle-checkout-blocks.html',
   'pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html',
   'pages/website/product-pages/3-4-month-course/3-4-month-course-landing-page.html',
   'pages/website/product-pages/5-12-month-course/5-12-month-guide-landing-page.html',
   'pages/website/product-pages/newborn-guide/newborn-guide-landing-page.html',
   'pages/website/product-pages/toddler-toolkit/toddler-toolkit-landing-page.html',
-  'pages/website/product-pages/snooze-method/snooze-method-landing-page.html',
   'pages/website/StoreV2/store-page-v2.html',
   'pages/website/store/store-page.html',
   'pages/website/consultations/one-on-one-consultations-page.html',
