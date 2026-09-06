@@ -11,6 +11,7 @@ Custom checkout-page code blocks for the Camp Snooze V2 offers. Each HTML file i
 | `camp-snooze-member-checkout-blocks.html` | Existing-member checkout: members buying Camp Snooze at member price | `[YOUR_OFFER_ID]` - set to the actual member-only Camp Snooze offer ID before deploy |
 | `camp-snooze-multiples-bundle-checkout-blocks.html` | Multiples (twins+) member bundle: Camp Snooze Multiples ($585 member rate) + Snooze Membership ($197) = $782 | Multiples Bundle offer |
 | `camp-snooze-checkout-blocks.html` | Standalone Camp Snooze checkout | - |
+| `camp-snooze-one-time-aud-checkout-blocks.html` | AUD one-time Camp checkout with 31 days of included Membership access and no recurring charge | `Zah9rwru` |
 | `camp-snooze-multiples-checkout-blocks.html` | Standalone Multiples checkout | - |
 | `camp-snooze-v2-checkout.css` | Shared stylesheet for all variants | - |
 | `camp-snooze-v2-checkout.js` | Shared JavaScript for all variants | - |
@@ -36,6 +37,7 @@ If the feed fails, it shows a neutral status and does not disable checkout.
 
 - `camp-snooze-member-checkout-blocks.html` still carries a `[YOUR_OFFER_ID]` placeholder for the member-only Camp Snooze offer. Replace it with the live offer ID before deploying.
 - Offer/product codes are canonical in the Kajabi registry (Google Sheet workbook `1-pDIlV7CFQ_RlI0e9uFBAwdZwZaaQaLKaKpUhZNmzjg`, synced to `docs/operations/KAJABI-OFFERS-REGISTRY.md`). Do not hardcode new codes here.
+- `camp-snooze-one-time-aud-checkout-blocks.html` is the launch source for [EXP_CM01_AUD `2151378119`](https://app.kajabi.com/admin/offers/2151378119/edit). It deliberately removes the source offer's month-two charge and states the separate 31-day grant. It retains the live cohort feed, member-price route, booking policy, consent and site-wide checkout tracking injection.
 - `camp-snooze-checkout-blocks.html` targets offer ID `muRW6ug5` (standalone non-member Camp Snooze). The "Switch to Member Pricing" upgrade link points to offer `K3Y6FEKX` checkout.
 - `camp-snooze-multiples-checkout-blocks.html` targets the Multiples standalone offer (ID `Lzouupsm`). The AUD variant of this offer was pending at time of last edit; verify the AUD offer ID is live before deploying to an AUD audience. The upgrade link also uses `Lzouupsm` for the member-pricing path; confirm a separate member-rate Multiples offer exists if needed.
 - Multiples pricing: $1,035 USD / $1,563 AUD (1.5x the standard rate). Member saving shown as $450 USD / $680 AUD; member price shown as $585 USD / $883 AUD.

@@ -5,7 +5,7 @@ const CAMP_CHECKOUT_ANON_KEY = window.SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3d3dvc29hZmNzdXBlYnBhbmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMzIzODksImV4cCI6MjA2NTkwODM4OX0.YZZoJZ7CZjypFdm5cbUb3UUC1w0bOW2ei2ih8kBTaMQ'; 
 
 const CAMP_CHECKOUT_CURRENCY_CONFIG = {
-  audOfferKeys: ['46Bz9tk6', 'ENhg45mj'],
+  audOfferKeys: ['46Bz9tk6', 'ENhg45mj', 'Zah9rwru'],
   usdOfferKeys: ['K3Y6FEKX', 'rVuLzkZa'],
   defaultCurrency: 'USD',
   memberCheckoutUrl: {
