@@ -2,7 +2,7 @@
 
 **Date:** January 2026  
 **Purpose:** Complete setup instructions for the 7-day full access trial offer  
-**Status:** Implemented; canonical prices locked in `docs/operations/KAJABI-OFFERS-REGISTRY.md`
+**Status:** Historical setup with September 11, 2026 eligibility amendments. Verify live settings before release. Read pricing from the canonical offer Sheet and synced registry.
 
 ---
 
@@ -173,15 +173,13 @@ Create an email campaign in Kajabi Marketing → Email Campaigns:
 
 **Campaign Name:** "7 Day Trial Lifecycle"
 
-Add an **Offer is purchased** subscribe trigger for each authorised trial
-offer. The same confirmed offer purchase must also add the
-`7-day-trial-started` tag. Do not trigger the sequence from the tag itself.
+Replace direct purchase-to-sequence enrollment with the eligibility process for purchases after the rollout cutoff. Enroll each approved purchase once in its currency lifecycle, using the triggering purchase currency. Preserve the existing flow for each grandfathered purchase. Pending and rejected purchases must not enter welcome, nurture, conversion or cancellation-save messaging. Apply any trial-history marker only after the first eligible trial is claimed under a resolved customer identity. Current ownership and tags alone cannot establish eligibility.
 
 **Emails in Sequence:**
 1. **Day 0 welcome** - Use content from `emails/welcome-email.html`
    - Subject: "You&rsquo;re in. Start here"
    - Preview Text: "Choose your baby&rsquo;s stage and take one clear first step."
-   - Delay: Day 0, immediately after the offer purchase subscribes the contact
+   - Delay: after eligibility approval; keep the original purchase deadline for billing reminders
 
 2. **Day 2 first action** - Use content from `emails/day-2-3-checkin-email.html`
    - Subject: "Your first Snooze step"
@@ -337,8 +335,11 @@ canonical repo sources:
 ## Notes
 
 - This trial offer should be separate from the core membership offer
-- Users can only use the trial once (Kajabi will prevent duplicate purchases of the same offer)
-- Consider adding a note in the offer description about one trial per customer
+- One eligible trial per resolved person across both currencies. Same-offer duplicate-purchase controls do not establish historical eligibility or prevent cross-currency attempts.
+- Use the eligibility notice in both checkout blocks. Previous membership and Camp access exclude a customer; standalone guides and free samples do not.
+- Shared checkout JavaScript does not enforce eligibility. Verified purchase history and purchase-specific billing/access handling are release dependencies.
+- Returning customers use the existing contact page until the monthly rejoin offer and redemption control pass testing. Do not add an invented checkout URL.
+- Send rejection copy only after verifying removal of the new trial access and prevention of its scheduled charge. Retain unrelated paid and Camp access.
 - Monitor conversion rates and adjust email timing/content as needed
 
 ---

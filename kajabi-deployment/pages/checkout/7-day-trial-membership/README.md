@@ -2,7 +2,7 @@
 
 **Location:** `kajabi-deployment/pages/checkout/7-day-trial-membership/`
 **Purpose:** Complete setup for the 7-day full access trial of The Snooze Membership, in both currencies
-**Status:** Live (USD + AUD offers published)
+**Status:** USD and AUD offers are published. September 11, 2026 eligibility copy is a local draft pending coordinated release.
 
 ---
 
@@ -43,7 +43,7 @@ published landing page.
 > + `shared/checkout.js` into that offer's Custom CSS / JS. See `KAJABI-OFFER-SETUP.md` Step 6.
 
 ### Email Templates
-- **`emails/welcome-email.html`** - Welcome email (send immediately after trial signup)
+- **`emails/welcome-email.html`** - Welcome email (send after eligibility approval)
 - **`emails/day-2-3-checkin-email.html`** - Check-in email (send 2 days after signup)
 - **`emails/day-4-5-checkin-email.html`** - Check-in email (send 4 days after signup)
 - **`emails/trial-ended-followup-email.html`** - Follow-up email (send 8 days after signup, if they didn't convert)
@@ -75,7 +75,7 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 3. **Configure Trial Settings:** Set 7-day trial period and auto-conversion
 4. **Set Up Checkout Page:** Use the checkout HTML, CSS, and JS files
 5. **Set Up Thank You Page:** Deploy the complete `pages/landing/7-day-trial-thank-you/` bundle
-6. **Configure Email Sequence:** Set the offer post-purchase email to None, subscribe both offers to one lifecycle sequence and add the `7-day-trial-started` tag on purchase
+6. **Configure Email Sequence:** Audit native notifications and route new purchases through eligibility before enrollment in the correct currency lifecycle; preserve purchases before the rollout cutoff
 
 ---
 
@@ -103,12 +103,10 @@ This 7-day trial offer provides full access to the Snooze membership for 7 days.
 
 ## Email Sequence
 
-Both trial offers subscribe purchasers to the same `7 Day Trial Lifecycle`
-sequence. The offer purchase also adds the `7-day-trial-started` tag. The
-offer-level post-purchase email is set to None.
+For purchases after the recorded rollout cutoff, eligibility approval must precede enrollment in the currency-specific lifecycle. Pending or rejected purchases receive no trial onboarding. Audit offer-level and native notifications separately. Preserve grandfathered purchase flows. This is the target configuration, not a verified live state.
 
 1. **Welcome Email** (Day 0 - Immediate)
-   - Sent immediately after trial signup
+   - Sent once after eligibility approval; billing timing remains tied to the original purchase
    - Introduces trial and next steps
    - Links to Library, Village, and Coaching
 
@@ -128,7 +126,7 @@ offer-level post-purchase email is set to None.
 4. **Trial Ended Follow-Up** (Day 8+)
    - Sent 8 days after signup (after trial ended)
    - Only sends if they didn't convert to paid membership
-   - Offers special incentive to join
+   - Remains parked; eligibility rejections must not enter cancellation recovery
    - Asks for feedback
 
 ---
@@ -158,7 +156,7 @@ Before going live, test:
 - [ ] Trial signup works (no payment required)
 - [ ] Checkout page displays correctly
 - [ ] Thank you page displays after signup
-- [ ] Welcome email sends immediately
+- [ ] Welcome email sends once after eligibility approval; pending and rejected purchases receive no trial nurture
 - [ ] User has full access to membership content
 - [ ] Day 2-3 check-in email sends after 2 days
 - [ ] Day 4-5 check-in email sends after 4 days
@@ -187,3 +185,9 @@ If you have questions about setup or need help customizing any of the content, r
 
 **Last Updated:** August 8, 2026
 **Status:** Repo-ready; paired Kajabi deployment and live browser validation required
+
+## September 11, 2026 eligibility release
+
+The checkout notice excludes previous full membership, trial and Camp access while preserving guide-only and free-sample eligibility. Both currencies use the existing contact page for returning customers until a verified rejoin offer exists. This contact route does not yet advertise or issue the discount. Replace it with the tested currency-specific rejoin route in the coordinated release.
+
+The notice is informational. Shared checkout JavaScript performs no identity lookup or eligibility enforcement. Release requires the eligibility workflow, billing and access verification and approved customer messaging described in `docs/projects/trial-conversion-7day/4_working/2026-09-11-trial-exclusion-and-rejoin-plan.md`. New trial rejection remains disabled until that release passes its tests.

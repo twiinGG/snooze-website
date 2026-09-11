@@ -36,16 +36,21 @@ function sha256(buffer) {
 }
 
 assert('CSS remains byte-identical to the live rollback preimage', css.equals(cssPreimage));
-assert('USD HTML remains byte-identical to the live rollback preimage', usdBlock.equals(usdPreimage));
+// TCV-002 adds an eligibility notice. Keep the earlier checkout regression
+// contract for everything outside that intentional copy addition.
+function withoutEligibility(block) {
+  return block.toString('utf8').replace(/  <div class="trial-eligibility"[^>]*>[\s\S]*?  <\/div>\n\n/, '');
+}
+assert('USD HTML outside eligibility remains identical to the rollback preimage', withoutEligibility(usdBlock) === usdPreimage.toString('utf8'));
 assert('CSS preimage remains the locked 5,545-byte baseline', cssPreimage.length === 5545);
 assert('CSS preimage hash remains locked', sha256(cssPreimage) === '3027431009d2c3233e05d6ab9b2e7c22b0f6ae2a81f9b8de8640a303686c6eed'); // pragma: allowlist secret
 assert('JavaScript preimage hash remains locked', sha256(jsPreimage) === 'd28da4a31302ee0ace9a3e7d51365f0667d802fa2ed54f6febfd3236d9b58a2e'); // pragma: allowlist secret
 assert('USD HTML preimage hash remains locked', sha256(usdPreimage) === 'd45afdd4062264b6c7e95f5847774f47b7c9b83f0f1c9f0193b89e31a3b45429'); // pragma: allowlist secret
 assert('AUD HTML preimage hash remains locked', sha256(audPreimage) === 'a830ea90b4454510b2b9f1c95099d25c3f3295f41eb95307c444ce0fd2d0f63a'); // pragma: allowlist secret
 
-const audLines = audBlock.toString('utf8').split('\n');
+const audLines = withoutEligibility(audBlock).split('\n');
 const audPreimageLines = audPreimage.toString('utf8').split('\n');
-assert('AUD HTML changes only its non-visual root identity attributes', audLines.slice(1).join('\n') === audPreimageLines.slice(1).join('\n'));
+assert('AUD HTML outside eligibility changes only its non-visual root identity attributes', audLines.slice(1).join('\n') === audPreimageLines.slice(1).join('\n'));
 assert('AUD root identity is canonical', /data-offer-id="2151254578"[^>]*data-currency="AUD"/.test(audLines[0]));
 assert('JavaScript is separate from its rollback preimage', Buffer.from(source).equals(jsPreimage) === false);
 assert('JavaScript has no content, style, class or node-tree mutation', !/(textContent\s*=|innerHTML\s*=|outerHTML\s*=|appendChild\s*\(|insertBefore\s*\(|replaceChild\s*\(|classList\.(?:add|remove|toggle)\s*\(|\.style\.)/.test(source));
