@@ -26,6 +26,7 @@ const identityFragment = path.join(deployRoot, 'global', 'js', 'checkout-identit
 
 const html = fs.readFileSync(headerFile, 'utf8');
 const siteHtml = fs.readFileSync(siteHeaderFile, 'utf8');
+const browserState = fs.readFileSync(path.join(deployRoot, 'global', 'js', 'paid-touch-browser-state.js'), 'utf8').trim();
 
 let checks = 0;
 let failures = 0;
@@ -49,6 +50,8 @@ const BLOCKS = [
 for (const [name, marker] of BLOCKS) {
   assert(html.includes(marker), `checkout header still contains the ${name} block`);
 }
+assert(html.includes(browserState), 'checkout header contains the versioned WS3 browser state source');
+assert(siteHtml.includes(browserState), 'site header contains the versioned WS3 browser state source');
 
 for (const [name, source] of [['checkout header', html], ['site header', siteHtml]]) {
   assert(source.includes('function loadSnoozeTrackingContainer()'), `${name} owns a named Stape loader`);

@@ -94,6 +94,9 @@ expectState('Timed persisted fbc evidence', timedCookie, { first: 'instagram', l
 const ambiguousClicks = journey({ occurred_at: '2026-09-14T11:00:00.000Z', fbclid: 'meta-click', gclid: 'google-click' });
 expectState('Simultaneous Meta and Google click IDs', ambiguousClicks, { first: null, latestPaid: null, final: null, assist: true, deterministic: false });
 assert.deepEqual(attributionVerdict(ambiguousClicks, policy).paid_assist_platforms, ['google', 'meta']);
+const ambiguousFullTuple = journey({ ...meta, occurred_at: '2026-09-14T11:00:00.000Z', fbclid: 'meta-click', gclid: 'google-click' });
+expectState('Simultaneous click IDs with full UTM', ambiguousFullTuple, { first: null, latestPaid: null, final: null, assist: true, deterministic: false });
+assert.deepEqual(attributionVerdict(ambiguousFullTuple, policy).paid_assist_platforms, ['google', 'meta']);
 
 const nextWindowPolicy = { ...policy, reference_at: '2026-09-15T12:00:00.000Z' };
 const firstAfterExpiry = applyTouch(boundary, { ...instagram, occurred_at: '2026-09-15T12:00:00.000Z' }, nextWindowPolicy);
