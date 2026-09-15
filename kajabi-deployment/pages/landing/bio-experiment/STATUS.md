@@ -1,17 +1,24 @@
-# Bio layout release status
+# Bio comparison release status
 
-Prepared September 15, 2026. Owner: Kade Greenland.
+Owner: Kade Greenland. Updated September 15, 2026.
 
-Kajabi save verified: the draft's stored code matches `simple.html` byte for byte, has a single code block in render order and has empty theme CSS/JS because the block is self-contained. Draft remains unpublished and hidden from search engines. Local rendering was verified; the authenticated Kajabi draft preview still needs a visual check before publishing. Code commit: `c899cf0bb`; local release tag: `website-v1.6.9`. No remote push performed.
+## Corrected scope
 
-The simple layout, instrumented control and router are built in the repo. Kajabi draft: [Snooze Links | Simple layout](https://app.kajabi.com/admin/landing_pages/2152274281/edit), page `2152274281`, theme `2167551580`. Source control: [Links V2](https://app.kajabi.com/admin/landing_pages/2151798718/edit), page `2151798718`, theme `2164471690`.
+The alternate page reproduces the content and layout shown in Kade's Linktree screenshot: Sally's profile image, headline, description, four cards and Facebook/Instagram/email/TikTok icons. The cards are Camp Snooze, full membership access, Nap Trapped merchandise and ShopMy, in that order. The screenshot controls visible copy and ordering; current Linktree supplies actual destination and image URLs.
 
-Current release boundary: prepare and populate the alternate page for review. The live `/links`, Linktree and platform bios are unchanged. The `/bio` router is a prepared artifact, not a live route. See `apps/snooze-website/src/bio-experiment/README.md` for the compact business record and `measurement.md` for GA4 setup.
+The earlier version incorrectly retained the 14 links from /links. That interpretation is superseded. This now compares two complete pages with different menus, so a result cannot isolate layout as the cause.
 
-Checks: control source matches stored Kajabi HTML, CSS and JS; 14 destination URLs, order and visible wording match across variants; six routing/tracking tests pass; no placeholders; mobile 320/390 and tablet 768 have no horizontal overflow; desktop preview checked; automated accessibility check reported zero violations. Environment validator passes using the existing SUPABASE_ANON_KEY as its expected SUPABASE_KEY alias. No Supabase calls or credentials are needed by these static pages.
+## Review locations
 
-Public destination checks: 12 unique URLs returned HTTP 200. The existing trial checkout returned a Cloudflare block in automated HTTP and browser checks; this is not proof of a broken offer. Verify that inherited checkout manually from an authenticated/normal browser before activation. No transaction was attempted.
+- [Kajabi alternate draft](https://app.kajabi.com/admin/landing_pages/2152274281/edit): page 2152274281, theme 2167551580.
+- [Existing Links V2](https://app.kajabi.com/admin/landing_pages/2151798718/edit): page 2151798718, theme 2164471690.
+- Local preview: preview/simple.html in this directory.
+- Source: apps/snooze-website/src/bio-experiment/.
 
-Activation requirements: populate and verify draft; install GTM/GA4 event mapping; verify early clicks during the existing 1.5-second tracking delay; confirm Clarity stays excluded on both variants; check inherited checkout; publish pages and control instrumentation; then change bio addresses. These are concrete measurement/navigation dependencies, not an invitation to expand into unrelated funnel changes.
+The alternate remains unpublished and hidden from search engines. Existing /links, Linktree and social bios remain unchanged. The /bio router and instrumented control are prepared artifacts, not activated routes.
 
-Rollback: previous platform bio URLs and preserved original theme in `kajabi-deployment/_live-preimages/bio-layout-2026-09-15/links-theme.json`. No paid services or offers changed.
+## Measurement and activation
+
+See the source README and measurement.md for the whole-page comparison, primary main-link measure and secondary Snooze offer measures. Configure the existing GTM/GA4 route before collecting experiment traffic. Verify early clicks during its 1.5-second delay, Clarity exclusion, destination behavior and authenticated Kajabi preview before publishing. The inherited control trial checkout blocked automated browsers with Cloudflare; it needs a normal-browser check, not an assumed broken-offer verdict.
+
+Rollback: restore previous platform bio URLs. The original /links theme preimage is kajabi-deployment/_live-preimages/bio-layout-2026-09-15/links-theme.json. No offer, payment or paid service changes.

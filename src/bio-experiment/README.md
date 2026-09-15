@@ -1,12 +1,12 @@
-# Bio layout experiment
+# Bio page experiment
 
 Owner: Kade Greenland. Prepared September 15, 2026.
 
-Pathway: Acquisition. Outcome: determine whether a simpler list helps social visitors choose a useful Snooze destination. Planning procedure: `docs/operations/BUSINESS-DEVELOPMENT-PLANNING.md`.
+Pathway: Acquisition. Outcome: compare the current custom page with a hosted copy of the actual Linktree page. Planning procedure: `docs/operations/BUSINESS-DEVELOPMENT-PLANNING.md`.
 
 ## Current release
 
-Duplicate the existing `/links` content into a single-column Linktree-style layout at `/links-simple`. Keep wording, destination URLs and order consistent. The live Linktree has a different five-button menu; this release copies its layout pattern rather than that menu, so the experiment can isolate presentation. The control source matched Kajabi's stored HTML, CSS and JS on September 15, 2026.
+Recreate the actual Linktree content and layout at `/links-simple`: its profile photo, title, description, social links and four main destinations (Camp, full-access membership, merchandise and ShopMy). Compare it with the existing `/links` page. Different menus are intentional. This tests the whole page; any effect cannot be attributed to layout alone. The control source matched Kajabi's stored HTML, CSS and JS on September 15, 2026.
 
 The shared `/bio` router assigns visitors 50/50 and remembers their version in local storage. Both variants emit the same view and link events through the existing dataLayer. No new tracking vendor, price, trial term or checkout change. No Clarity script is added. Existing global scripts already treat paths containing `/links` and `/bio` as fast pages.
 
@@ -31,15 +31,15 @@ node --test apps/snooze-website/src/bio-experiment/experiment.test.cjs
 | `control.html` | `/links` landing page, complete code block, only when activating |
 | `router.html` | `/bio` landing page, complete code block |
 
-The simple page has its own System Initialization CSS in `simple.css`, scoped to `#links-simple-page`. Landing pages use their own theme, so no shared website CSS edit is needed. Preserve the link hub's compact social footer on both variants to keep the content constant.
+The simple page has its own System Initialization CSS in `simple.css`, scoped to `#links-simple-page`. Landing pages use their own theme, so no shared website CSS edit is needed. Its social links follow the actual Linktree page.
 
 ## Measurement and decision
 
-Hypothesis: the flat list changes the proportion of visits that choose a destination compared with the current hero, age tiles and cards.
+Hypothesis: the Linktree page's content and presentation change the proportion of observed visitors who choose a main destination compared with `/links`.
 
-Primary: page views with at least one onward link click / experiment page views. Use `first_click=true` to avoid counting multiple clicks within one view. This is a per-view rate; it is not a unique-person conversion rate.
+Primary: distinct observed users with at least one enrolled main destination click / distinct observed users with an enrolled page view, by variant over the same period. Exclude social, email and home/brand navigation. Count age-help pages and the podcast on control, and all four main cards on simple. Apply this same main-destination definition to both pages. These are analytics-observed users, not known unique people across devices.
 
-Secondary: first clicks by destination, plus views with a direct offer click (`membership_trial`, `camp`, `consultation`). Age-help clicks remain visible and count toward the primary measure. The `commercial` field specifically marks direct offer links, not every page that might eventually lead to a sale. Compare Instagram and TikTok separately as well as the combined randomized sample.
+Secondary: first-click events per page view, first choices by destination and Snooze direct-offer clicks. `first_click=true` identifies the first tracked click within one page load, including social/email; it is not the primary unique-user measure. The `commercial` field marks Snooze Camp, membership and direct consultation links. Merchandise and ShopMy remain noncommercial for this Snooze-specific measure but count toward the primary measure. Compare Instagram and TikTok separately as well as the combined randomized sample.
 
 Checkout starts, trial starts and first paid charges need verified GA4 session joins and commerce reconciliation before they can support a sales conclusion. Two prior GA4 trial events had broken attribution; they are not a reliable baseline. Linktree's 92.9% is total clicks divided by views and is not the same measure as this primary metric.
 

@@ -31,7 +31,7 @@ const pages = {
 await mkdir(path.join(output, 'preview'), { recursive: true });
 for (const [name, fragment] of Object.entries(pages)) {
   await writeFile(path.join(output, name + '.html'), fragment + '\n');
-  const title = name === 'simple' ? 'Snooze Links | Simple layout' : name === 'control' ? 'Snooze Links | Current layout' : 'Snooze Bio';
+  const title = name === 'simple' ? 'Better sleep starts here | The Sleep Concierge' : name === 'control' ? 'Snooze Links | Current layout' : 'Snooze Bio';
   await writeFile(path.join(output, 'preview', name + '.html'), '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>' + title + '</title></head><body style="margin:0">' + fragment + '</body></html>\n');
 }
 console.log('Built control, simple and router Kajabi fragments with local previews.');

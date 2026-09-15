@@ -39,11 +39,18 @@ Register event-scoped custom dimensions for all seven keys in [GA4 property 4017
 
 Compare only events with `experiment_id=bio_layout_v1` and `experiment_enrolled=true`. Direct visits are observational traffic. Preview mode emits no experiment events. Split results by variant and inspect source/medium and mobile traffic separately.
 
-Primary measure: distinct observed users with an enrolled commercial `bio_link_click`, divided by distinct observed users with an enrolled `bio_experiment_view`, for each variant in the same period. Use event conditions to build those user sets. Summing clicks or dividing click events by view events measures clicks per view, not unique visitor click-through rate.
+Primary measure: distinct observed users with at least one enrolled main destination `bio_link_click`, divided by distinct observed users with an enrolled `bio_experiment_view`, for each variant in the same period. Exclude social, email and home/brand navigation. Use event conditions to build those user sets. Do not require `commercial=true` for the primary measure.
+
+| Variant | Main destination `link_id` allowlist |
+|---|---|
+| `control` | `membership_trial`, `newborn`, `age_3_4`, `age_5_12`, `toddler`, `camp`, `consultation`, `podcast` |
+| `simple` | `camp`, `membership`, `merch`, `shopmy` |
+
+Secondary: `first_click=true` events divided by enrolled page views, plus first choices by destination and Snooze direct-offer clicks. The first-click rate includes social/email as well as main destinations. Summing clicks or dividing click events by view events does not measure unique-user click-through rate.
 
 `first_click` and `first_commercial_click` reset per page load. They describe the first choice on that page load, not the first choice across the user's experiment history. Variant persistence applies to a browser and origin, not a person across devices or separate social-app browsers. Blocked storage allows repeat allocation; disclose this limitation.
 
-Report age-help destination choices individually alongside trial, Camp and consultations. Document which IDs carry `commercial=true` before interpreting the primary result. Compare only the same link inventory and definitions across variants.
+`commercial=true` marks Snooze Camp, membership and direct consultation links. Merchandise and ShopMy carry `commercial=false`; both still count as main destinations. Report link choices individually. Different menus and layouts are intentional: simple recreates the actual Linktree page, while control retains `/links`. Results compare the complete pages and cannot isolate a layout effect.
 
 Checkout starts and trial starts can be explored with ordered user/session funnels beginning at the enrolled variant event. These page scripts do not attach experiment parameters to downstream purchases. Do not claim paid conversion attribution until the actual downstream join is verified.
 

@@ -8,21 +8,21 @@
   --c-white: #fff;
   --c-text: #161e2a;
   --c-muted: #526174;
-  --font-body: 'Poppins', Arial, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
   --font-head: 'Playfair Display', Georgia, serif;
   --radius: 10px;
   --radius-lg: 16px;
   --shadow-card: 0 2px 8px rgba(31, 41, 59, .04);
   --shadow-soft: 0 1px 4px rgba(31, 41, 59, .04);
   font-family: var(--font-body);
-  color: var(--c-text);
+  color: #000;
   font-size: 16px;
   line-height: 1.5;
   position: relative;
   isolation: isolate;
   width: 100%;
   min-height: 100vh;
-  background: #ebeef1;
+  background: #eceef1;
   -webkit-text-size-adjust: 100%;
 }
 #links-simple-page *,
@@ -60,55 +60,21 @@
 #links-simple-page .step-card { padding: 20px; border-radius: var(--radius); background: var(--c-white); box-shadow: var(--shadow-card); }
 #links-simple-page .full-bleed { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); }
 
-/* Page styles: centered profile and equal-weight, single-column links. */
-#links-simple-page .lt-background { position: absolute; inset: 0; background: #ebeef1; z-index: -1; }
-#links-simple-page .lt-shell { width: min(100%, 680px); margin-inline: auto; padding: 44px 20px 40px; }
+/* Linktree screenshot replica: profile, four links and social icons. */
+#links-simple-page .lt-shell { width: min(100%, 680px); margin-inline: auto; padding: 104px 14px 96px; }
 #links-simple-page .lt-header { text-align: center; }
-#links-simple-page .lt-brand { display: inline-flex; flex-direction: column; align-items: center; gap: 16px; max-width: 100%; }
-#links-simple-page .lt-logo { width: 80px; height: 80px; color: var(--c-coral); }
-#links-simple-page .lt-logo svg { display: block; width: 100%; height: 100%; }
-#links-simple-page .lt-kicker { font-family: var(--font-body); font-size: 21px; font-weight: 700; text-wrap: balance; }
-#links-simple-page .lt-hero { margin-top: 10px; text-align: center; }
-#links-simple-page .lt-hero-eyebrow { margin: 0 auto 26px; max-width: 440px; font-size: 16px; text-wrap: balance; }
-#links-simple-page :is(.lt-primary, .lt-tile, .lt-card) {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  min-height: 64px;
-  padding: 16px 22px;
-  border: 1px solid rgba(31, 41, 59, .06);
-  border-radius: var(--radius);
-  background: var(--c-white);
-  color: var(--c-navy);
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.4;
-  font-weight: 600;
-  box-shadow: var(--shadow-soft);
-  overflow-wrap: anywhere;
-  transition: transform .15s ease, border-color .15s ease;
-}
-#links-simple-page :is(.lt-primary, .lt-tile, .lt-card):hover { transform: translateY(-1px); border-color: var(--c-navy); }
-#links-simple-page .lt-trial-terms { margin: 10px auto 0; max-width: 420px; color: var(--c-muted); font-size: 12px; line-height: 1.5; }
-#links-simple-page .lt-links { display: grid; gap: 12px; margin-top: 24px; }
-#links-simple-page .lt-age { display: grid; gap: 12px; }
-#links-simple-page .lt-section-title { font-size: 14px; font-weight: 600; text-align: center; }
-#links-simple-page .lt-tiles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
-#links-simple-page .lt-card-title { display: block; }
-#links-simple-page .lt-card-desc { display: block; margin-top: 4px; font-size: 12px; color: var(--c-muted); font-weight: 400; }
-#links-simple-page .lt-card-arrow { display: none; }
-#links-simple-page .lt-footer { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-#links-simple-page .lt-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 8px; font-size: 14px; font-weight: 600; }
-#links-simple-page .lt-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-#links-simple-page .lt-social { display: inline-flex; justify-content: center; align-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--c-navy); }
-#links-simple-page .lt-social svg { width: 24px; height: 24px; fill: currentColor; }
-#links-simple-page .lt-social:hover { background: var(--c-beige); }
-@media (max-width: 360px) {
-  #links-simple-page .lt-shell { padding-inline: 16px; }
-  #links-simple-page .lt-kicker { font-size: 19px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  #links-simple-page :is(.lt-primary, .lt-tile, .lt-card) { transition: none; }
-  #links-simple-page :is(.lt-primary, .lt-tile, .lt-card):hover { transform: none; }
-}
+#links-simple-page .lt-avatar { display: block; width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 50%; object-fit: cover; }
+#links-simple-page .lt-header h1 { margin: 0; font-family: var(--font-body); font-size: 26px; font-weight: 700; line-height: 1.3; color: #000; }
+#links-simple-page .lt-header p { margin: 6px auto 0; max-width: 560px; font-size: 16px; font-weight: 500; line-height: 1.5; color: #000; }
+#links-simple-page .lt-links { display: grid; gap: 14px; margin-top: 34px; }
+#links-simple-page .lt-card { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) 24px; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 8px; border: 0; border-radius: 8px; background: #fff; color: #000; text-align: center; font-size: 16px; font-weight: 500; line-height: 1.25; transition: transform .15s ease; }
+#links-simple-page .lt-card img { display: block; width: 48px; height: 48px; border-radius: 4px; object-fit: cover; }
+#links-simple-page .lt-card span { padding-block: 4px; }
+#links-simple-page .lt-card:hover { transform: scale(1.015); }
+#links-simple-page .lt-socials { display: flex; justify-content: center; gap: 4px; margin-top: 28px; }
+#links-simple-page .lt-social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #000; }
+#links-simple-page .lt-social svg { width: 32px; height: 32px; fill: currentColor; }
+#links-simple-page .lt-social:hover { transform: scale(1.075); }
+@media (min-width: 600px) { #links-simple-page .lt-shell { padding-inline: 20px; } }
+@media (max-width: 360px) { #links-simple-page .lt-header h1 { font-size: 22px; } #links-simple-page .lt-card { grid-template-columns: 40px minmax(0, 1fr) 12px; gap: 8px; } #links-simple-page .lt-card img { width: 40px; height: 40px; } }
+@media (prefers-reduced-motion: reduce) { #links-simple-page :is(.lt-card, .lt-social) { transition: none; } #links-simple-page :is(.lt-card, .lt-social):hover { transform: none; } }
