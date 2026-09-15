@@ -2,11 +2,11 @@
 
 Owner: Kade Greenland. Updated September 15, 2026.
 
-Correction verified: Kajabi draft code matches the corrected repo artifact byte for byte. Local preview loads all five images, shows exactly four main cards and has no horizontal overflow at 320px or 428px. Six routing/tracking tests and placeholder scan pass. Implementation commit: a301a73f6; local release tag: website-v1.6.10. Authenticated Kajabi visual preview remains an activation check.
+Sally's latest menu copied: six main cards in order, with current live Linktree destinations and thumbnails. All seven images load in the local mobile preview, with no horizontal overflow at 428px. Placeholder scan passes. The revised draft requires a fresh persisted-code comparison before handoff.
 
 ## Corrected scope
 
-The alternate page reproduces the content and layout shown in Kade's Linktree screenshot: Sally's profile image, headline, description, four cards and Facebook/Instagram/email/TikTok icons. The cards are Camp Snooze, full membership access, Nap Trapped merchandise and ShopMy, in that order. The screenshot controls visible copy and ordering; current Linktree supplies actual destination and image URLs.
+The alternate page reproduces the content and layout shown in Kade's Linktree screenshot: Sally's profile image, headline, description, six cards and Facebook/Instagram/email/TikTok icons. The cards are Join Snooze, Camp Snooze (October 5th), sleep guides, consultation with Sally, Nap Trapped merchandise and ShopMy, in that order. The screenshot controls visible copy and ordering; current Linktree supplies actual destination and image URLs.
 
 The earlier version incorrectly retained the 14 links from /links. That interpretation is superseded. This now compares two complete pages with different menus, so a result cannot isolate layout as the cause.
 

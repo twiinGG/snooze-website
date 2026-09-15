@@ -44,13 +44,13 @@ Primary measure: distinct observed users with at least one enrolled main destina
 | Variant | Main destination `link_id` allowlist |
 |---|---|
 | `control` | `membership_trial`, `newborn`, `age_3_4`, `age_5_12`, `toddler`, `camp`, `consultation`, `podcast` |
-| `simple` | `camp`, `membership`, `merch`, `shopmy` |
+| `simple` | `membership`, `camp`, `guides`, `consultation`, `merch`, `shopmy` |
 
 Secondary: `first_click=true` events divided by enrolled page views, plus first choices by destination and Snooze direct-offer clicks. The first-click rate includes social/email as well as main destinations. Summing clicks or dividing click events by view events does not measure unique-user click-through rate.
 
 `first_click` and `first_commercial_click` reset per page load. They describe the first choice on that page load, not the first choice across the user's experiment history. Variant persistence applies to a browser and origin, not a person across devices or separate social-app browsers. Blocked storage allows repeat allocation; disclose this limitation.
 
-`commercial=true` marks Snooze Camp, membership and direct consultation links. Merchandise and ShopMy carry `commercial=false`; both still count as main destinations. Report link choices individually. Different menus and layouts are intentional: simple recreates the actual Linktree page, while control retains `/links`. Results compare the complete pages and cannot isolate a layout effect.
+`commercial=true` marks Snooze Camp, membership, the guides shop and direct consultation links. Merchandise and ShopMy carry `commercial=false`; both still count as main destinations. Report link choices individually. Different menus and layouts are intentional: simple recreates the actual Linktree page, while control retains `/links`. Results compare the complete pages and cannot isolate a layout effect.
 
 Checkout starts and trial starts can be explored with ordered user/session funnels beginning at the enrolled variant event. These page scripts do not attach experiment parameters to downstream purchases. Do not claim paid conversion attribution until the actual downstream join is verified.
 
