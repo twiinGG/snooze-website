@@ -10,21 +10,21 @@
   --c-white: #fff;
   --c-text: #161e2a;
   --c-muted: #526174;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   --font-head: 'Playfair Display', Georgia, serif;
-  --radius: 10px;
+  --radius: 20px;
   --radius-lg: 16px;
   --shadow-card: 0 2px 8px rgba(31, 41, 59, .04);
   --shadow-soft: 0 1px 4px rgba(31, 41, 59, .04);
   font-family: var(--font-body);
-  color: #000;
+  color: var(--c-text);
   font-size: 16px;
   line-height: 1.5;
   position: relative;
   isolation: isolate;
   width: 100%;
   min-height: 100vh;
-  background: #eceef1;
+  background: var(--c-cream);
   -webkit-text-size-adjust: 100%;
 }
 #links-simple-page *,
@@ -38,7 +38,7 @@
 }
 #links-simple-page p { margin: 0; }
 #links-simple-page a { color: inherit; text-decoration: none; }
-#links-simple-page a:focus-visible { outline: 3px solid var(--c-navy); outline-offset: 4px; }
+#links-simple-page a:focus-visible { outline: 3px solid var(--c-coral); outline-offset: 4px; }
 #links-simple-page .snooze-container { width: min(100% - 32px, 680px); margin-inline: auto; }
 #links-simple-page .snooze-section { width: 100%; padding-block: 32px; }
 #links-simple-page .bg-white { background: var(--c-white); }
@@ -62,57 +62,71 @@
 #links-simple-page .step-card { padding: 20px; border-radius: var(--radius); background: var(--c-white); box-shadow: var(--shadow-card); }
 #links-simple-page .full-bleed { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); }
 
-/* Linktree screenshot replica: profile, four links and social icons. */
-#links-simple-page .lt-shell { width: min(100%, 680px); margin-inline: auto; padding: 104px 14px 96px; }
+/* Snooze profile and six simple routes. */
+#links-simple-page .lt-shell { width: min(100%, 560px); margin-inline: auto; padding: 28px 20px 40px; }
+#links-simple-page .lt-skip { position: absolute; z-index: 2; left: 16px; top: 8px; min-height: 44px; padding: 12px 16px; border-radius: 12px; background: var(--c-white); transform: translateY(-160%); }
+#links-simple-page .lt-skip:focus { transform: none; }
 #links-simple-page .lt-header { text-align: center; }
-#links-simple-page .lt-avatar { display: block; width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 50%; object-fit: cover; }
-#links-simple-page .lt-header h1 { margin: 0; font-family: var(--font-body); font-size: 26px; font-weight: 700; line-height: 1.3; color: #000; }
-#links-simple-page .lt-header p { margin: 6px auto 0; max-width: 560px; font-size: 16px; font-weight: 500; line-height: 1.5; color: #000; }
-#links-simple-page .lt-links { display: grid; gap: 14px; margin-top: 34px; }
-#links-simple-page .lt-card { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) 24px; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 8px; border: 0; border-radius: 8px; background: #fff; color: #000; text-align: center; font-size: 16px; font-weight: 500; line-height: 1.25; transition: transform .15s ease; }
-#links-simple-page .lt-card img { display: block; width: 48px; height: 48px; border-radius: 4px; object-fit: cover; }
-#links-simple-page .lt-card span { padding-block: 4px; }
-#links-simple-page .lt-card:hover { transform: scale(1.015); }
-#links-simple-page .lt-socials { display: flex; justify-content: center; gap: 4px; margin-top: 28px; }
-#links-simple-page .lt-social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #000; }
-#links-simple-page .lt-social svg { width: 32px; height: 32px; fill: currentColor; }
-#links-simple-page .lt-social:hover { transform: scale(1.075); }
-@media (min-width: 600px) { #links-simple-page .lt-shell { padding-inline: 20px; } }
-@media (max-width: 360px) { #links-simple-page .lt-header h1 { font-size: 22px; } #links-simple-page .lt-card { grid-template-columns: 40px minmax(0, 1fr) 12px; gap: 8px; } #links-simple-page .lt-card img { width: 40px; height: 40px; } }
-@media (prefers-reduced-motion: reduce) { #links-simple-page :is(.lt-card, .lt-social) { transition: none; } #links-simple-page :is(.lt-card, .lt-social):hover { transform: none; } }
+#links-simple-page .lt-avatar { display: block; width: 64px; height: 64px; margin: 0 auto 12px; border-radius: 50%; object-fit: cover; }
+#links-simple-page .lt-header .lt-brand { margin: 0 0 8px; color: var(--c-muted); font-size: 12px; font-weight: 500; }
+#links-simple-page .lt-header h1 { font-family: var(--font-head); font-size: clamp(28px, 7vw, 36px); font-weight: 600; line-height: 1.2; color: var(--c-navy); }
+#links-simple-page .lt-header > p:last-child { margin: 10px auto 0; max-width: 430px; font-size: 14px; line-height: 1.5; color: var(--c-muted); }
+#links-simple-page .lt-links { display: grid; gap: 10px; margin-top: 24px; }
+#links-simple-page .lt-card { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: center; gap: 14px; width: 100%; min-height: 84px; padding: 14px; border: 1px solid var(--c-beige); border-radius: var(--radius); background: var(--c-white); color: var(--c-navy); text-align: left; transition: background-color .15s ease; }
+#links-simple-page .lt-card img, #links-simple-page .lt-guide-icon { display: block; width: 52px; height: 52px; border-radius: 12px; object-fit: contain; }
+#links-simple-page .lt-card[data-bio-link-id="consultation"] img { object-fit: cover; }
+#links-simple-page .lt-card-copy { min-width: 0; }
+#links-simple-page .lt-card-title { display: block; font-size: 16px; font-weight: 600; line-height: 1.35; }
+#links-simple-page .lt-card-desc { display: block; margin-top: 4px; font-size: 12px; font-weight: 400; line-height: 1.5; color: var(--c-muted); }
+#links-simple-page .lt-card:hover { background: #fffaf7; }
+#links-simple-page .lt-more-heading { margin: 28px 0 0; font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--c-muted); }
+#links-simple-page .lt-links-more { margin-top: 10px; }
+#links-simple-page .lt-links-more .lt-card { background: transparent; }
+#links-simple-page .lt-links-more .lt-card:hover { background: var(--c-white); }
+#links-simple-page .lt-socials { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+#links-simple-page .lt-social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--c-navy); }
+#links-simple-page .lt-social svg { width: 26px; height: 26px; fill: currentColor; }
+#links-simple-page .lt-social:hover { background: var(--c-beige); }
+@media (max-width: 360px) { #links-simple-page .lt-shell { padding-inline: 16px; } #links-simple-page .lt-card { gap: 12px; padding: 12px; } }
+@media (prefers-reduced-motion: reduce) { #links-simple-page .lt-card { transition: none; } }
 
 </style>
 <div id="links-simple-page" data-bio-variant="simple">
+  <a class="lt-skip" href="#lt-main-links">Skip to sleep support links</a>
   <main class="lt-shell">
     <header class="lt-header">
-      <img class="lt-avatar" src="https://ugc.production.linktr.ee/0a2be567-97f3-4672-8ec8-3c95e1dc1bbe_Snooze-260424-Photo-SallySelfie-BrandStory-003.png?io=true&amp;size=avatar-v3_0" alt="Sally, The Sleep Concierge" width="96" height="96" fetchpriority="high">
-      <h1>Better sleep starts here 💤</h1>
+      <img class="lt-avatar" src="https://ugc.production.linktr.ee/0a2be567-97f3-4672-8ec8-3c95e1dc1bbe_Snooze-260424-Photo-SallySelfie-BrandStory-003.png?io=true&amp;size=avatar-v3_0" alt="Sally, The Sleep Concierge" width="64" height="64" loading="eager" decoding="async" fetchpriority="high">
+      <p class="lt-brand">Snooze by The Sleep Concierge</p>
+      <h1>Better sleep starts here</h1>
       <p>Evidence-based, responsive sleep support for families from newborn to toddler.</p>
     </header>
-    <nav class="lt-links" aria-label="Sally's links">
+    <nav id="lt-main-links" class="lt-links" aria-label="Sleep support" tabindex="-1">
       <a class="lt-card" data-bio-link-id="membership" data-bio-commercial="true" href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/91f94c9d-c00c-44e3-95fe-07d0799ea84c_5a0acc0-1-35b-0af-fbf7748ab0a-Snooze-x-TSC---coral-web.jpeg?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>💤 Join Snooze: Baby Sleep Support App</span>
+        <svg class="lt-guide-icon" viewBox="0 0 52 52" width="52" height="52" aria-hidden="true" focusable="false"><rect width="52" height="52" rx="12" fill="#f2edea"/><path d="M33 34a14 14 0 0 1-15-21 14 14 0 1 0 15 21Z" fill="none" stroke="#1f293b" stroke-width="1.5" stroke-linejoin="round"/><path d="m35 13 1.5 4.5L41 19l-4.5 1.5L35 25l-1.5-4.5L29 19l4.5-1.5Z" fill="#d62646"/></svg>
+        <span class="lt-card-copy"><span class="lt-card-title">Snooze membership</span><span class="lt-card-desc">Sleep courses and ongoing support</span></span>
       </a>
       <a class="lt-card" data-bio-link-id="camp" data-bio-commercial="true" href="https://www.joinsnooze.com/camp-snooze-sleep-coaching" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/2e75abf9-30ea-4552-85c7-9cb158895b7f_Camp-Snooze-Banner.ai--1-.png?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>⛺ Camp Snooze: Next Camp October 5th</span>
+        <img src="https://ugc.production.linktr.ee/2e75abf9-30ea-4552-85c7-9cb158895b7f_Camp-Snooze-Banner.ai--1-.png?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="52" height="52" loading="lazy" decoding="async">
+        <span class="lt-card-copy"><span class="lt-card-title">Camp Snooze</span><span class="lt-card-desc">Group sleep coaching · Next camp <span style="white-space: nowrap">5 October</span></span></span>
       </a>
       <a class="lt-card" data-bio-link-id="guides" data-bio-commercial="true" href="https://www.joinsnooze.com/store" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/d50fb5bd-7125-4d03-9ee4-d740f695b91e_5a0acc0-1-35b-0af-fbf7748ab0a-Snooze-x-TSC---coral-web.jpeg?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>👶 Shop Baby + Toddler Sleep Guides</span>
+        <svg class="lt-guide-icon" viewBox="0 0 52 52" width="52" height="52" aria-hidden="true" focusable="false"><rect width="52" height="52" rx="12" fill="#f2edea"/><path d="M26 16c-5-3-10-3-16-2v24c6-1 11-1 16 2 5-3 10-3 16-2V14c-6-1-11-1-16 2Zm0 0v24M15 21h6m-6 6h6m10-6h6m-6 6h6" fill="none" stroke="#1f293b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="lt-card-copy"><span class="lt-card-title">Baby &amp; toddler sleep guides</span><span class="lt-card-desc">Browse sleep guides by age</span></span>
       </a>
       <a class="lt-card" data-bio-link-id="consultation" data-bio-commercial="true" href="https://www.joinsnooze.com/one-on-one-sleep-consultations" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/4966cbf9-10c2-4ef9-8a91-6c791b44690b_6b7e8b7-dfae-84ae-646c-4f722f1fcca-d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpeg?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>Book a 1:1 Virtual Consultation with Sally</span>
+        <img src="https://ugc.production.linktr.ee/4966cbf9-10c2-4ef9-8a91-6c791b44690b_6b7e8b7-dfae-84ae-646c-4f722f1fcca-d1279c01-16a1-4f4c-87ba-70e1fe3588f0.jpeg?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="52" height="52" loading="lazy" decoding="async">
+        <span class="lt-card-copy"><span class="lt-card-title">1:1 consultation with Sally</span><span class="lt-card-desc">Personal sleep support for your family</span></span>
       </a>
+    </nav>
+    <h2 class="lt-more-heading" id="lt-more-heading">More from Sally</h2>
+    <nav class="lt-links lt-links-more" aria-labelledby="lt-more-heading">
       <a class="lt-card" data-bio-link-id="merch" data-bio-commercial="false" href="https://store.naptrappedpodcast.com/?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio&amp;fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnj6zLRnkoC1tzfuij9CAV_6DpT8UwPDhQu_jCn-VdWJqEq1n5xPcSIxR-QZo_aem_Jy-ua77B312OvNFVEl-olg" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/707fbfb1-e2b0-4b47-96a7-43671bb7c42d_Nap-Trapped-Logo---4-3.webp?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>Nap Trapped Shop | Caps &amp; Limited Merch – Nap Trapped Merch</span>
+        <img src="https://ugc.production.linktr.ee/707fbfb1-e2b0-4b47-96a7-43671bb7c42d_Nap-Trapped-Logo---4-3.webp?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="52" height="52" loading="lazy" decoding="async">
+        <span class="lt-card-copy"><span class="lt-card-title">Nap Trapped shop</span><span class="lt-card-desc">Caps and podcast merchandise</span></span>
       </a>
       <a class="lt-card" data-bio-link-id="shopmy" data-bio-commercial="false" href="https://shopmy.us/swoods" target="_blank" rel="noopener">
-        <img src="https://ugc.production.linktr.ee/63db2ae1-f735-4bdb-a02b-17776281ed46_Screenshot-2026-04-14-at-1.32.42pm.png?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="48" height="48">
-        <span>ShopMy Baby, Toddler and Home 'Must Haves'</span>
+        <img src="https://ugc.production.linktr.ee/63db2ae1-f735-4bdb-a02b-17776281ed46_Screenshot-2026-04-14-at-1.32.42pm.png?io=true&amp;size=thumbnail-stack_v1_0" alt="" width="52" height="52" loading="lazy" decoding="async">
+        <span class="lt-card-copy"><span class="lt-card-title">Sally’s favourite finds</span><span class="lt-card-desc">Baby, toddler and home picks on ShopMy</span></span>
       </a>
     </nav>
     <nav class="lt-socials" aria-label="Sally's social links">

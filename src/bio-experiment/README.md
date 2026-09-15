@@ -6,7 +6,7 @@ Pathway: Acquisition. Outcome: compare the current custom page with a hosted cop
 
 ## Current release
 
-Recreate Sally's updated Linktree content and layout at `/links-simple`: its profile photo, title, description, social links and six main destinations (membership, Camp, sleep guides, consultation, merchandise and ShopMy). Compare it with the existing `/links` page. Different menus are intentional. This tests the whole page; any effect cannot be attributed to layout alone. The control source matched Kajabi's stored HTML, CSS and JS on September 15, 2026.
+Refine Sally's updated six-link menu at `/links-simple` with Snooze's cream/navy palette, compact profile header, left-aligned titles and short descriptions. Keep all destinations and their order. Prioritise four sleep-support choices, then group merchandise and ShopMy under More from Sally. Use lightweight moon and guide icons in place of cropped or duplicate logo thumbnails. No new scripts, font downloads or tracking vendors. Compare it with the existing `/links` page. Different menus are intentional. This tests the whole page; any effect cannot be attributed to layout alone. The control source matched Kajabi's stored HTML, CSS and JS on September 15, 2026.
 
 The shared `/bio` router assigns visitors 50/50 and remembers their version in local storage. Both variants emit the same view and link events through the existing dataLayer. No new tracking vendor, price, trial term or checkout change. No Clarity script is added. Existing global scripts already treat paths containing `/links` and `/bio` as fast pages.
 

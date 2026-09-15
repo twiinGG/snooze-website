@@ -2,11 +2,11 @@
 
 Owner: Kade Greenland. Updated September 15, 2026.
 
-Sally's latest menu copied: six main cards in order, with current live Linktree destinations and thumbnails. All seven images load in the local mobile preview, with no horizontal overflow at 428px. Placeholder scan passes. The revised draft requires a fresh persisted-code comparison before handoff.
+Sally's six-link menu now uses Snooze's cream/navy palette, compact header, left-aligned titles and concise descriptions. The four sleep-support options come first, with merchandise and ShopMy grouped under More from Sally. Moon and book icons replace cropped or duplicate logo thumbnails. No new scripts or font downloads. Local mobile accessibility checks passed, including 320px overflow and 44px touch targets. The revised draft requires a fresh persisted-code comparison before handoff.
 
 ## Corrected scope
 
-The alternate page reproduces the content and layout shown in Kade's Linktree screenshot: Sally's profile image, headline, description, six cards and Facebook/Instagram/email/TikTok icons. The cards are Join Snooze, Camp Snooze (October 5th), sleep guides, consultation with Sally, Nap Trapped merchandise and ShopMy, in that order. The screenshot controls visible copy and ordering; current Linktree supplies actual destination and image URLs.
+The alternate retains the screenshot's simple six-card layout and destination order, with branded presentation and clearer labels requested after the duplicate was created. The cards are Snooze membership, Camp Snooze (5 October), sleep guides, consultation with Sally, Nap Trapped merchandise and ShopMy, in that order. The guides destination was verified to include age-based guides. The membership link remains the inherited USD checkout, with no price or offer changes.
 
 The earlier version incorrectly retained the 14 links from /links. That interpretation is superseded. This now compares two complete pages with different menus, so a result cannot isolate layout as the cause.
 
