@@ -1,0 +1,114 @@
+/* System Initialization: standalone Kajabi landing page, no shared theme required. */
+#links-simple-page {
+  --c-coral: #f43357;
+  --c-coral-hover: #d62646;
+  --c-navy: #1f293b;
+  --c-cream: #faf7f4;
+  --c-beige: #f2edea;
+  --c-white: #fff;
+  --c-text: #161e2a;
+  --c-muted: #526174;
+  --font-body: 'Poppins', Arial, sans-serif;
+  --font-head: 'Playfair Display', Georgia, serif;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow-card: 0 2px 8px rgba(31, 41, 59, .04);
+  --shadow-soft: 0 1px 4px rgba(31, 41, 59, .04);
+  font-family: var(--font-body);
+  color: var(--c-text);
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  background: #ebeef1;
+  -webkit-text-size-adjust: 100%;
+}
+#links-simple-page *,
+#links-simple-page *::before,
+#links-simple-page *::after { box-sizing: border-box; }
+#links-simple-page :is(h1, h2, h3, h4) {
+  font-family: var(--font-head);
+  color: var(--c-navy);
+  line-height: 1.25;
+  margin: 0;
+}
+#links-simple-page p { margin: 0; }
+#links-simple-page a { color: inherit; text-decoration: none; }
+#links-simple-page a:focus-visible { outline: 3px solid var(--c-navy); outline-offset: 4px; }
+#links-simple-page .snooze-container { width: min(100% - 32px, 680px); margin-inline: auto; }
+#links-simple-page .snooze-section { width: 100%; padding-block: 32px; }
+#links-simple-page .bg-white { background: var(--c-white); }
+#links-simple-page .bg-cream { background: var(--c-cream); }
+#links-simple-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--c-coral-hover);
+  color: var(--c-white);
+  font: inherit;
+  font-weight: 600;
+}
+#links-simple-page .btn-outline { background: transparent; border-color: var(--c-navy); color: var(--c-navy); }
+#links-simple-page .hero-wrap { padding-block: 32px; }
+#links-simple-page :is(.hero-grid, .steps-grid) { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+#links-simple-page .step-card { padding: 20px; border-radius: var(--radius); background: var(--c-white); box-shadow: var(--shadow-card); }
+#links-simple-page .full-bleed { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); }
+
+/* Page styles: centered profile and equal-weight, single-column links. */
+#links-simple-page .lt-background { position: absolute; inset: 0; background: #ebeef1; z-index: -1; }
+#links-simple-page .lt-shell { width: min(100%, 680px); margin-inline: auto; padding: 44px 20px 40px; }
+#links-simple-page .lt-header { text-align: center; }
+#links-simple-page .lt-brand { display: inline-flex; flex-direction: column; align-items: center; gap: 16px; max-width: 100%; }
+#links-simple-page .lt-logo { width: 80px; height: 80px; color: var(--c-coral); }
+#links-simple-page .lt-logo svg { display: block; width: 100%; height: 100%; }
+#links-simple-page .lt-kicker { font-family: var(--font-body); font-size: 21px; font-weight: 700; text-wrap: balance; }
+#links-simple-page .lt-hero { margin-top: 10px; text-align: center; }
+#links-simple-page .lt-hero-eyebrow { margin: 0 auto 26px; max-width: 440px; font-size: 16px; text-wrap: balance; }
+#links-simple-page :is(.lt-primary, .lt-tile, .lt-card) {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 16px 22px;
+  border: 1px solid rgba(31, 41, 59, .06);
+  border-radius: var(--radius);
+  background: var(--c-white);
+  color: var(--c-navy);
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  overflow-wrap: anywhere;
+  transition: transform .15s ease, border-color .15s ease;
+}
+#links-simple-page :is(.lt-primary, .lt-tile, .lt-card):hover { transform: translateY(-1px); border-color: var(--c-navy); }
+#links-simple-page .lt-trial-terms { margin: 10px auto 0; max-width: 420px; color: var(--c-muted); font-size: 12px; line-height: 1.5; }
+#links-simple-page .lt-links { display: grid; gap: 12px; margin-top: 24px; }
+#links-simple-page .lt-age { display: grid; gap: 12px; }
+#links-simple-page .lt-section-title { font-size: 14px; font-weight: 600; text-align: center; }
+#links-simple-page .lt-tiles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+#links-simple-page .lt-card-title { display: block; }
+#links-simple-page .lt-card-desc { display: block; margin-top: 4px; font-size: 12px; color: var(--c-muted); font-weight: 400; }
+#links-simple-page .lt-card-arrow { display: none; }
+#links-simple-page .lt-footer { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+#links-simple-page .lt-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 8px; font-size: 14px; font-weight: 600; }
+#links-simple-page .lt-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+#links-simple-page .lt-social { display: inline-flex; justify-content: center; align-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--c-navy); }
+#links-simple-page .lt-social svg { width: 24px; height: 24px; fill: currentColor; }
+#links-simple-page .lt-social:hover { background: var(--c-beige); }
+@media (max-width: 360px) {
+  #links-simple-page .lt-shell { padding-inline: 16px; }
+  #links-simple-page .lt-kicker { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #links-simple-page :is(.lt-primary, .lt-tile, .lt-card) { transition: none; }
+  #links-simple-page :is(.lt-primary, .lt-tile, .lt-card):hover { transform: none; }
+}
