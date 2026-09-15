@@ -2,6 +2,8 @@
 
 Owner: Kade Greenland. Updated September 15, 2026.
 
+Correction verified: Kajabi draft code matches the corrected repo artifact byte for byte. Local preview loads all five images, shows exactly four main cards and has no horizontal overflow at 320px or 428px. Six routing/tracking tests and placeholder scan pass. Implementation commit: a301a73f6; local release tag: website-v1.6.10. Authenticated Kajabi visual preview remains an activation check.
+
 ## Corrected scope
 
 The alternate page reproduces the content and layout shown in Kade's Linktree screenshot: Sally's profile image, headline, description, four cards and Facebook/Instagram/email/TikTok icons. The cards are Camp Snooze, full membership access, Nap Trapped merchandise and ShopMy, in that order. The screenshot controls visible copy and ordering; current Linktree supplies actual destination and image URLs.
