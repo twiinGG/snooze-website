@@ -2,7 +2,7 @@
 
 Owner: Kade Greenland. Updated September 15, 2026.
 
-Sally's six-link menu now uses Snooze's cream/navy palette, compact header, left-aligned titles and concise descriptions. The four sleep-support options come first, with merchandise and ShopMy grouped under More from Sally. Moon and book icons replace cropped or duplicate logo thumbnails. No new scripts or font downloads. Local mobile accessibility checks passed, including 320px overflow and 44px touch targets. The revised draft requires a fresh persisted-code comparison before handoff.
+Sally's six-link menu now uses Snooze's cream/navy palette, compact header, left-aligned titles and concise descriptions. The four sleep-support options come first, with merchandise and ShopMy grouped under More from Sally. Moon and book icons replace cropped or duplicate logo thumbnails. No new scripts or font downloads. Local mobile checks passed at 320px and 390px, including overflow and 44px touch targets. Six tracking tests, placeholder scanning and environment validation passed. Release website-v1.6.12 was saved to the existing Kajabi draft on September 15, 2026. Fresh persisted-code comparison matched the repository artifact exactly. Authenticated Kajabi visual preview remains a pre-publication check.
 
 ## Corrected scope
 
