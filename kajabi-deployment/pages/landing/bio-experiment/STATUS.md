@@ -17,10 +17,16 @@ The earlier version incorrectly retained the 14 links from /links. That interpre
 - Local preview: preview/simple.html in this directory.
 - Source: apps/snooze-website/src/bio-experiment/.
 
-The alternate remains unpublished and hidden from search engines. Existing /links, Linktree and social bios remain unchanged. The /bio router and instrumented control are prepared artifacts, not activated routes.
+The alternate is published at [joinsnooze.com/links-simple](https://www.joinsnooze.com/links-simple) and remains hidden from search engines. Existing /links, Linktree and social bios remain unchanged. The /bio router and instrumented control are prepared artifacts, not activated routes.
+
+## Live verification, September 15, 2026
+
+User authorised publication, merge and push. Merged origin/main without conflicts and preserved unrelated local edits. Release website-v1.6.13 corrects a nested main landmark introduced by Kajabi's outer page wrapper. Fresh API reads confirm published status and exact stored-code equality with the repository artifact. SHA-256: `111c8c5c626a55047a669cbe304525401f592bb4157d9cbe5b7742df52161081`.
+
+The public URL returns HTTP 200. All nonblank source lines match live HTML after decoding Cloudflare's email-protection URL. The browser restores the exact mailto destination. Kajabi/Cloudflare inject platform markup, so the complete response is not byte-identical to the source fragment. Live checks: six cards, five loaded images, cream background, no overflow at 320px, 390px or 1440px, one main landmark and zero scoped axe violations. No Clarity network requests observed. Six automated tests and placeholder scan passed. No checkout transaction performed.
 
 ## Measurement and activation
 
-See the source README and measurement.md for the whole-page comparison, primary main-link measure and secondary Snooze offer measures. Configure the existing GTM/GA4 route before collecting experiment traffic. Verify early clicks during its 1.5-second delay, Clarity exclusion, destination behavior and authenticated Kajabi preview before publishing. The inherited control trial checkout blocked automated browsers with Cloudflare; it needs a normal-browser check, not an assumed broken-offer verdict.
+See the source README and measurement.md for the whole-page comparison, primary main-link measure and secondary Snooze offer measures. Configure the existing GTM/GA4 route before collecting experiment traffic. Verify early clicks during its 1.5-second delay and destination behavior before switching bios. Automated checkout verification is limited by Cloudflare; this is not evidence of a broken offer. Publishing the alternate alone does not activate the experiment.
 
 Rollback: restore previous platform bio URLs. The original /links theme preimage is kajabi-deployment/_live-preimages/bio-layout-2026-09-15/links-theme.json. No offer, payment or paid service changes.
