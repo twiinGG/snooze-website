@@ -35,7 +35,12 @@ function sha256(buffer) {
   return crypto.createHash('sha256').update(buffer).digest('hex');
 }
 
-assert('CSS remains byte-identical to the live rollback preimage', css.equals(cssPreimage));
+assert('CSS preserves the complete live rollback preimage before the mobile fix', css.subarray(0, cssPreimage.length).equals(cssPreimage));
+assert('CSS adds a 320px order-summary layout after the rollback preimage',
+  css.length > cssPreimage.length &&
+  css.toString('utf8').includes('@media (max-width: 360px)') &&
+  css.toString('utf8').includes('.embedded-checkout-price-summary .offer-summary') &&
+  css.toString('utf8').includes('grid-template-columns: 4rem minmax(0, 1fr)'));
 // TCV-002 adds an eligibility notice. Keep the earlier checkout regression
 // contract for everything outside that intentional copy addition.
 function withoutEligibility(block) {
