@@ -263,3 +263,29 @@
     display: block;
   }
 }
+
+@media (max-width: 360px) {
+  .embedded-checkout-price-summary .offer-summary {
+    display: grid !important;
+    grid-template-columns: 4rem minmax(0, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .embedded-checkout-price-summary .offer-summary > div:first-child {
+    width: 4rem !important;
+  }
+
+  .embedded-checkout-price-summary .offer-summary > pds-box:nth-of-type(1) {
+    min-width: 0 !important;
+  }
+
+  .embedded-checkout-price-summary .offer-summary > pds-box:last-child {
+    grid-column: 2;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+  }
+
+  .embedded-checkout-price-summary .offer-summary > pds-box:last-child pds-text {
+    text-align: left !important;
+  }
+}
