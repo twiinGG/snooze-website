@@ -1,0 +1,300 @@
+#get-started-page {
+  --sgs-cream: #FBF7F0;
+  --sgs-text: #1F293B;
+  --sgs-text-muted: #6b7280;
+  --sgs-accent: #F43357;
+  --sgs-accent-hover: #D62646;
+  --sgs-border: #E5E7EB;
+  --sgs-font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sgs-font-heading: 'Playfair Display', Georgia, serif;
+  --sgs-max-width: 640px;
+  --sgs-radius: 16px;
+  background: var(--sgs-cream);
+  color: var(--sgs-text);
+  font-family: var(--sgs-font-body);
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24px 16px 48px;
+}
+
+#get-started-page *,
+#get-started-page *::before,
+#get-started-page *::after {
+  box-sizing: border-box;
+}
+
+#get-started-page .sgs-screen {
+  max-width: var(--sgs-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#get-started-page .sgs-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sgs-accent);
+  margin: 0;
+}
+
+#get-started-page .sgs-title {
+  font-family: var(--sgs-font-heading);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--sgs-text);
+  margin: 0;
+}
+
+#get-started-page .sgs-helper,
+#get-started-page .sgs-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--sgs-text-muted);
+  margin: 0;
+}
+
+#get-started-page .sgs-credential {
+  font-size: 0.9375rem;
+  color: var(--sgs-text);
+  margin: 0;
+}
+
+#get-started-page .sgs-progress {
+  width: 100%;
+  height: 4px;
+  background: var(--sgs-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#get-started-page .sgs-progress__fill {
+  height: 100%;
+  background: var(--sgs-accent);
+  transition: width 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #get-started-page .sgs-progress__fill {
+    transition: none;
+  }
+}
+
+#get-started-page .sgs-step-of {
+  font-size: 0.8125rem;
+  color: var(--sgs-text-muted);
+  margin: 0;
+}
+
+#get-started-page .sgs-back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--sgs-text-muted);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+#get-started-page .sgs-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#get-started-page .sgs-chip {
+  flex: 1 1 100%;
+  width: 100%;
+  padding: 16px 20px;
+  border: 1.5px solid var(--sgs-border);
+  border-radius: var(--sgs-radius);
+  background: #ffffff;
+  color: var(--sgs-text);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+#get-started-page .sgs-chip:hover {
+  border-color: var(--sgs-accent);
+}
+
+#get-started-page .sgs-chip--selected {
+  border-color: var(--sgs-accent);
+  background: #FFF1F3;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  #get-started-page .sgs-chip {
+    flex: 1 1 calc(50% - 6px);
+    width: auto;
+  }
+}
+
+#get-started-page .sgs-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  color: var(--sgs-text-muted);
+}
+
+#get-started-page .sgs-cta {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--sgs-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#get-started-page .sgs-cta:hover {
+  background: var(--sgs-accent-hover);
+}
+
+#get-started-page .sgs-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#get-started-page .sgs-cta--outline {
+  background: transparent;
+  color: var(--sgs-accent);
+  border: 1.5px solid var(--sgs-accent);
+}
+
+#get-started-page .sgs-cta--sticky {
+  position: sticky;
+  bottom: 16px;
+  align-self: stretch;
+  width: 100%;
+}
+
+#get-started-page .sgs-building-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#get-started-page .sgs-building-list li {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--sgs-border);
+}
+
+#get-started-page .sgs-form-embed {
+  background: #ffffff;
+  border-radius: var(--sgs-radius);
+  padding: 16px;
+  border: 1px solid var(--sgs-border);
+}
+
+#get-started-page .sgs-email-fallback {
+  font-size: 0.9375rem;
+  color: var(--sgs-text-muted);
+}
+
+#get-started-page .sgs-privacy {
+  font-size: 0.8125rem;
+  color: var(--sgs-text-muted);
+}
+
+#get-started-page .sgs-plan-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+#get-started-page .sgs-plan-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#get-started-page .sgs-prepared-by {
+  font-size: 0.875rem;
+  color: var(--sgs-text-muted);
+  margin: 0;
+}
+
+#get-started-page .sgs-safety {
+  background: #FFF7E6;
+  border: 1px solid #F5C36B;
+  border-radius: var(--sgs-radius);
+  padding: 16px;
+}
+
+#get-started-page .sgs-reflection {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+#get-started-page .sgs-join {
+  background: #ffffff;
+  border: 2px solid var(--sgs-accent);
+  border-radius: var(--sgs-radius);
+  padding: 24px;
+  text-align: center;
+}
+
+#get-started-page .sgs-join--secondary {
+  border-color: var(--sgs-border);
+}
+
+#get-started-page .sgs-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+#get-started-page .sgs-card {
+  background: #ffffff;
+  border: 1px solid var(--sgs-border);
+  border-radius: var(--sgs-radius);
+  padding: 16px;
+}
+
+#get-started-page .sgs-card--expanded {
+  border-color: var(--sgs-accent);
+}
+
+#get-started-page .sgs-badge {
+  display: inline-block;
+  background: var(--sgs-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+#get-started-page .sgs-screen--killed {
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding-top: 64px;
+}
+
+#get-started-page .sgs-screen--killed a {
+  color: var(--sgs-accent);
+  font-weight: 600;
+}

@@ -1,0 +1,1515 @@
+[
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:contact_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "contact_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:day_night_mixup|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "day_night_mixup"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:overtired|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "overtired"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:contact_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "contact_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:day_night_mixup|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "day_night_mixup"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:overtired|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "overtired"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m3_4|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "m3_4"
+      ],
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:nap_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "nap_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8"
+      ],
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:nap_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "nap_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m9_12|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m9_12"
+      ],
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:nap_refusal|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "nap_refusal"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:cot_to_bed|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "cot_to_bed"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:cosleeping_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "cosleeping_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24|struggles:bedtime_battles+night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24"
+      ],
+      "struggles": [
+        "bedtime_battles",
+        "night_wakes"
+      ],
+      "primary_struggle": "bedtime_battles",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:nap_refusal|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "nap_refusal"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:cot_to_bed|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "cot_to_bed"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:cosleeping_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "cosleeping_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:y2_3|struggles:bedtime_battles+night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "y2_3"
+      ],
+      "struggles": [
+        "bedtime_battles",
+        "night_wakes"
+      ],
+      "primary_struggle": "bedtime_battles",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:contact_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "contact_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:day_night_mixup|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "day_night_mixup"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:overtired|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "overtired"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn+m3_4|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn",
+        "m3_4"
+      ],
+      "top_of_mind": "newborn",
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "short_naps"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:feed_to_sleep|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "feed_to_sleep"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:nap_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "nap_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:no_routine|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "no_routine"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m5_8+m9_12|struggles:night_wakes+short_naps|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "baby",
+    "answers": {
+      "age": [
+        "m5_8",
+        "m9_12"
+      ],
+      "top_of_mind": "m5_8",
+      "struggles": [
+        "night_wakes",
+        "short_naps"
+      ],
+      "primary_struggle": "night_wakes",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:bedtime_battles|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "bedtime_battles"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:early_rising|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "early_rising"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:nap_refusal|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "nap_refusal"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:cot_to_bed|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "cot_to_bed"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:cosleeping_transition|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "cosleeping_transition"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:regression|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "regression"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:m12_24+y2_3|struggles:bedtime_battles+night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:none",
+    "group": "toddler",
+    "answers": {
+      "age": [
+        "m12_24",
+        "y2_3"
+      ],
+      "top_of_mind": "m12_24",
+      "struggles": [
+        "bedtime_battles",
+        "night_wakes"
+      ],
+      "primary_struggle": "bedtime_battles",
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:predictable_day|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "predictable_day",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:confident_bedtime|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "confident_bedtime",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:feel_myself|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "feel_myself",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:partner_aligned|help_style:quick_answers|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "partner_aligned",
+      "help_style": "quick_answers",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:keep_on_track|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "keep_on_track",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:one_on_one|safety:none",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "one_on_one",
+      "safety": [
+        "none"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:feeding_weight",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "feeding_weight"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:health",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "health"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:sleep_safety",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "sleep_safety"
+      ]
+    }
+  },
+  {
+    "id": "age:newborn|struggles:night_wakes|outcome:sleep_tonight|help_style:quick_answers|safety:parent_struggling",
+    "group": "baby_young",
+    "answers": {
+      "age": [
+        "newborn"
+      ],
+      "struggles": [
+        "night_wakes"
+      ],
+      "outcome": "sleep_tonight",
+      "help_style": "quick_answers",
+      "safety": [
+        "parent_struggling"
+      ]
+    }
+  }
+]

@@ -44,7 +44,7 @@
     if (enabled === false) return 'disabled';
     if (!state) return 'start';
     if (state.completed === true || state.email_captured === true) return 'see_plan';
-    if (typeof state.step === 'number' && state.step > 0) return 'in_progress';
+    if (state.step !== null && state.step !== undefined && state.step !== '') return 'in_progress';
     if (state.answers && Object.keys(state.answers).length > 0) return 'in_progress';
     return 'start';
   }
@@ -88,7 +88,7 @@
     if (enabled === false) return false;
     if (pathname === PAGE_PATH) return false;
     if (!state) return false;
-    var inProgress = typeof state.step === 'number' && state.step > 0;
+    var inProgress = state.step !== null && state.step !== undefined && state.step !== '';
     var done = state.completed === true || state.email_captured === true;
     return inProgress || done;
   }

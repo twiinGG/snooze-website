@@ -15,6 +15,7 @@
     "restart": "Start over"
   },
   "screens": {
+    "empathy": { "title": "You're not alone in this", "helper": "Plenty of families are working through exactly this." },
     "age": { "title": "How old is your little one?", "helper": "Choose every age that applies." },
     "top_of_mind": { "title": "Which one is top of mind right now?", "helper": "Pick the age you want this plan to focus on." },
     "struggles": { "title": "What's going on at the moment?", "helper": "Choose everything that fits." },
