@@ -41,9 +41,10 @@
   },
   "camp": {
     "url": "/camp-snooze-sleep-coaching",
-    "from_price_usd": 690.0,
-    "from_price_aud": 119.0,
-    "offer_id_aud": "2150946767"
+    "from_price_usd": null,
+    "from_price_aud": null,
+    "offer_id_aud": "2150946767",
+    "_price_note": "Camp is presented at its own total price on the Camp page (copy-uplift 07 section 15); the plan card links there and shows no price."
   },
   "consult": {
     "url": "/one-on-one-sleep-consultations",

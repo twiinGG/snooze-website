@@ -784,8 +784,13 @@
         var input = form.querySelector('[name="' + fieldName + '"]');
         if (input) {
           input.value = fieldValueFor(fieldName);
-          var wrapper = input.closest ? input.closest('.formkit-field, .field, div') : null;
-          if (wrapper) wrapper.style.display = 'none';
+          // Make the answer field a true hidden input. Never hide an ancestor div:
+          // on Kajabi's markup the nearest div can be the whole form.
+          try { input.type = 'hidden'; } catch (e) { input.style.display = 'none'; }
+          var wrapper = input.closest ? input.closest('.form-group, .text-field, .formkit-field, .field') : null;
+          if (wrapper && !wrapper.querySelector('input[type="email"]')) wrapper.style.display = 'none';
+          var label = form.querySelector('label[for="' + input.id + '"]');
+          if (input.id && label) label.style.display = 'none';
         }
       }
 
