@@ -1,0 +1,53 @@
+{
+  "_generated_from": "docs/operations/KAJABI-OFFERS-REGISTRY.md",
+  "_generated_at": "2026-09-25",
+  "snooze": {
+    "usd": {
+      "offer_id": "2150754998",
+      "monthly": {
+        "variant": "68112",
+        "price": 79.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2150754998/checkout?variant=68112"
+      },
+      "quarterly": {
+        "variant": "37262",
+        "price": 197.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2150754998/checkout?variant=37262"
+      },
+      "annual": {
+        "variant": "37263",
+        "price": 657.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2150754998/checkout?variant=37263"
+      }
+    },
+    "aud": {
+      "offer_id": "2151256977",
+      "monthly": {
+        "variant": "161174",
+        "price": 119.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2151256977/checkout?variant=161174"
+      },
+      "quarterly": {
+        "variant": "161175",
+        "price": 297.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2151256977/checkout?variant=161175"
+      },
+      "annual": {
+        "variant": "161176",
+        "price": 997.0,
+        "checkout_url": "https://www.joinsnooze.com/offers/2151256977/checkout?variant=161176"
+      }
+    }
+  },
+  "camp": {
+    "url": "/camp-snooze-sleep-coaching",
+    "from_price_usd": 690.0,
+    "from_price_aud": 119.0,
+    "offer_id_aud": "2150946767"
+  },
+  "consult": {
+    "url": "/one-on-one-sleep-consultations",
+    "price_usd": 690.0,
+    "price_aud": 997.0
+  }
+}

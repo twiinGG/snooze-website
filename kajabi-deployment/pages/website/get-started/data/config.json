@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "kajabi_form_id": "{{KAJABI_FORM_ID}}",
+  "form_field_names": {
+    "age_band": "{{FIELD_age_band}}",
+    "primary_struggle": "{{FIELD_primary_struggle}}",
+    "help_style": "{{FIELD_help_style}}",
+    "start_here_title": "{{FIELD_start_here_title}}",
+    "start_here_url": "{{FIELD_start_here_url}}",
+    "resume_token": "{{FIELD_resume_token}}"
+  },
+  "n8n_webhook_url": "https://n8n.khorus.ai/webhook/snooze-access-quiz"
+}
