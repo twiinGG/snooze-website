@@ -1,0 +1,210 @@
+{
+  "_status": "reviewed-by-opus-2026-09-25",
+  "_note": "Mapping of age-group struggles to membership products. All products are included in PUBMS01 (Snooze Membership). Validate URLs and 'why' statements before publishing. GD-CATNAP age coverage not explicitly stated in registry; defaulted to CR-5-12MO for baby short_naps.",
+  "baby_young": {
+    "night_wakes": {
+      "title": "3-4 Month Sleep Course",
+      "product_code": "CR-3-4MO",
+      "url": "https://joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge",
+      "format": "Course",
+      "minutes": null,
+      "why": "Step-by-step sleep training designed for 3-4 month babies experiencing night wakings"
+    },
+    "short_naps": {
+      "title": "3-4 Month Sleep Course",
+      "product_code": "CR-3-4MO",
+      "url": "https://joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge",
+      "format": "Course",
+      "minutes": null,
+      "why": "Teaches nap lengthening and foundational sleep training for 3-4 month babies"
+    },
+    "contact_naps": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Newborn settling guide includes techniques for managing contact sleep and safe sleep alternatives"
+    },
+    "feed_to_sleep": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Covers feeding-to-sleep associations and gentle strategies for newborns"
+    },
+    "day_night_mixup": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Foundational guide for establishing day-night rhythm and realistic wake windows in newborns"
+    },
+    "overtired": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Teaches recognizing overtired signs and optimal wake windows for newborns"
+    },
+    "no_routine": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Newborns benefit from flexible settling techniques before formal routines; this guide shows how"
+    },
+    "_default": {
+      "title": "Newborn Sleep Guide",
+      "product_code": "GD-NB",
+      "url": "https://joinsnooze.com/products/newborn-sleep-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Start with the Newborn Sleep Guide for foundational understanding of early infant sleep"
+    }
+  },
+  "baby": {
+    "night_wakes": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Comprehensive sleep training course with step-by-step guidance for night wakings in 5-12 month babies"
+    },
+    "short_naps": {
+      "title": "Catnapping Guide",
+      "product_code": "GD-CATNAP",
+      "url": "https://joinsnooze.com/downloads/catnapping-guide",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Short naps from 6 months are exactly what the Catnapping Guide covers; pair with the 5-12 Month Course for the full day."
+    },
+    "feed_to_sleep": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Addresses feeding-to-sleep associations and sleep training at the 5-12 month stage"
+    },
+    "early_rising": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Includes troubleshooting strategies for managing early rising in 5-12 month babies"
+    },
+    "nap_transition": {
+      "title": "Nap Transition Guide",
+      "product_code": "GD-NT",
+      "url": "https://joinsnooze.com/downloads/the-roadmap-to-a-smooth-3-to-2-nap-transition-6-9-month-old-babies",
+      "format": "Guide",
+      "minutes": null,
+      "why": "Focused mini-guide specifically for navigating the 3-to-2 nap transition"
+    },
+    "bedtime_battles": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Covers bedtime routines, settling challenges, and resistance at 5-12 months"
+    },
+    "regression": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Includes guidance on understanding and navigating sleep regressions in 5-12 month babies"
+    },
+    "no_routine": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "6 comprehensive modules on building sustainable routines for 5-12 month babies"
+    },
+    "_default": {
+      "title": "5-12 Month Sleep Training Course",
+      "product_code": "CR-5-12MO",
+      "url": "https://joinsnooze.com/products/5-12-month-sleep-training-course",
+      "format": "Course",
+      "minutes": null,
+      "why": "Start with the comprehensive 5-12 Month Sleep Training Course for this age range"
+    }
+  },
+  "toddler": {
+    "bedtime_battles": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "7-module course with dedicated guidance on managing bedtime battles and boundary-setting for toddlers"
+    },
+    "night_wakes": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Covers continued night wakings and co-sleeping transitions for 12+ month children"
+    },
+    "early_rising": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Includes evidence-based strategies for managing early rising in toddlers 12+ months"
+    },
+    "nap_refusal": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Addresses nap refusal and guides the 2-to-1 nap transition for toddlers"
+    },
+    "cot_to_bed": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Dedicated module on the big bed transition for toddlers moving from cot to bed"
+    },
+    "cosleeping_transition": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Covers co-sleeping alternatives and gentle transition strategies for independent sleep"
+    },
+    "regression": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Includes guidance on 18-month and 2-year regressions and age-appropriate responses"
+    },
+    "_default": {
+      "title": "Toddler Toolkit",
+      "product_code": "CR-TODDLER",
+      "url": "https://joinsnooze.com/products/toddler-toolkit",
+      "format": "Course",
+      "minutes": null,
+      "why": "Start with the Toddler Toolkit for comprehensive 12+ month sleep guidance"
+    }
+  }
+}

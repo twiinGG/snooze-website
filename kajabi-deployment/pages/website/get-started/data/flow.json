@@ -1,0 +1,118 @@
+{
+  "$schema": "./flow.schema.json",
+  "version": 1,
+  "storage_key": "snooze_get_started_v1",
+  "page_path": "/get-started",
+  "age_bands": [
+    { "id": "newborn", "group": "baby_young", "months": [0, 3] },
+    { "id": "m3_4", "group": "baby_young", "months": [3, 5] },
+    { "id": "m5_8", "group": "baby", "months": [5, 9] },
+    { "id": "m9_12", "group": "baby", "months": [9, 13] },
+    { "id": "m12_24", "group": "toddler", "months": [12, 24] },
+    { "id": "y2_3", "group": "toddler", "months": [24, 36] }
+  ],
+  "screens": [
+    {
+      "id": "welcome",
+      "type": "intro",
+      "progress": false,
+      "cta_key": "welcome.cta"
+    },
+    {
+      "id": "age",
+      "type": "multi",
+      "min": 1,
+      "options": ["newborn", "m3_4", "m5_8", "m9_12", "m12_24", "y2_3"],
+      "extra_toggle": "multiples"
+    },
+    {
+      "id": "top_of_mind",
+      "type": "single",
+      "show_if": { "answer": "age", "count_gte": 2 },
+      "options_from": "age"
+    },
+    {
+      "id": "struggles",
+      "type": "multi",
+      "min": 1,
+      "options_by_group": {
+        "baby_young": ["night_wakes", "short_naps", "contact_naps", "feed_to_sleep", "day_night_mixup", "overtired", "no_routine"],
+        "baby": ["night_wakes", "short_naps", "feed_to_sleep", "early_rising", "nap_transition", "bedtime_battles", "regression", "no_routine"],
+        "toddler": ["bedtime_battles", "night_wakes", "early_rising", "nap_refusal", "cot_to_bed", "cosleeping_transition", "regression"]
+      }
+    },
+    {
+      "id": "primary_struggle",
+      "type": "single",
+      "show_if": { "answer": "struggles", "count_gte": 2 },
+      "options_from": "struggles",
+      "default_if_hidden": { "from": "struggles", "pick": "first" }
+    },
+    {
+      "id": "empathy",
+      "type": "interstitial",
+      "progress": true
+    },
+    {
+      "id": "outcome",
+      "type": "single",
+      "options": ["sleep_tonight", "predictable_day", "confident_bedtime", "feel_myself", "partner_aligned"]
+    },
+    {
+      "id": "help_style",
+      "type": "single",
+      "options": ["quick_answers", "keep_on_track", "one_on_one"]
+    },
+    {
+      "id": "safety",
+      "type": "multi",
+      "min": 1,
+      "exclusive_option": "none",
+      "options": ["feeding_weight", "health", "sleep_safety", "parent_struggling", "none"],
+      "red_flags": ["feeding_weight", "health", "sleep_safety", "parent_struggling"]
+    },
+    {
+      "id": "building",
+      "type": "building",
+      "progress": false,
+      "auto_advance_ms": 3200
+    },
+    {
+      "id": "email",
+      "type": "email",
+      "progress": true
+    },
+    {
+      "id": "plan",
+      "type": "plan",
+      "progress": false,
+      "terminal": true
+    }
+  ],
+  "plan_layout": {
+    "primary": "snooze",
+    "support_cards": ["camp", "consult"],
+    "highlight_by_help_style": {
+      "quick_answers": null,
+      "keep_on_track": "camp",
+      "one_on_one": "consult"
+    },
+    "safety_route": {
+      "when_any_red_flag": true,
+      "show_safety_note": true,
+      "highlight": "consult",
+      "snooze_position": "secondary",
+      "suppress_sections": ["right_now"]
+    }
+  },
+  "events": {
+    "start": "get_started_start",
+    "step": "get_started_step",
+    "resume": "get_started_resume",
+    "email_captured": "get_started_email_captured",
+    "email_captured_alias": "generate_lead",
+    "plan_viewed": "get_started_plan_viewed",
+    "option_click": "get_started_option_click",
+    "safety_route": "get_started_safety_route"
+  }
+}
