@@ -621,6 +621,7 @@
       root.innerHTML = '';
       var wrap = el('div', { class: 'sgs-screen sgs-screen--intro' }, []);
       var heading = el('h1', { class: 'sgs-title', text: copy.welcome.title });
+      if (copy.plan && copy.plan.photo_url) wrap.appendChild(el('img', { src: copy.plan.photo_url, alt: 'Sally Woods, The Sleep Concierge', class: 'sgs-welcome-photo' }));
       wrap.appendChild(el('p', { class: 'sgs-eyebrow', text: copy.welcome.eyebrow }));
       wrap.appendChild(heading);
       wrap.appendChild(el('p', { class: 'sgs-body', text: copy.welcome.body }));
@@ -664,7 +665,6 @@
         chip.setAttribute('data-option-index', String(position + 1));
 
         function handleOptionClick() {
-          pushEvent(flow.events.option_click, { offer: optionId });
           if (isMulti) {
             currentSelected = toggleMultiAnswer(screen, currentSelected, optionId);
             answer(screen.id, currentSelected);
@@ -770,11 +770,20 @@
       focusHeading(heading);
 
       if (!config.enabled || !config.kajabi_form_id || config.kajabi_form_id.indexOf('{{') === 0) {
+        // No form configured: never strand the visitor on an empty screen.
+        embedHost.style.display = 'none';
+        fallback.style.display = 'block';
         return;
       }
 
       var script = document.createElement('script');
       script.src = 'https://www.joinsnooze.com/forms/' + config.kajabi_form_id + '/embed.js';
+      script.onerror = function () {
+        if (settled) return;
+        settled = true;
+        embedHost.style.display = 'none';
+        fallback.style.display = 'block';
+      };
       embedHost.appendChild(script);
 
       var settled = false;
@@ -839,6 +848,7 @@
       window.setTimeout(function () {
         if (settled) return;
         observer.disconnect();
+        embedHost.style.display = 'none';
         fallback.style.display = 'block';
       }, 6000);
     }
@@ -913,7 +923,9 @@
 
       var joinBlock = el('div', { class: 'sgs-join' + (model.snooze_position === 'secondary' ? ' sgs-join--secondary' : '') }, []);
       joinBlock.appendChild(el('h3', { text: copy.plan.join.title }));
-      var price = el('p', { class: 'sgs-price', text: model.snooze.currency.toUpperCase() + ' ' + model.snooze.price + copy.plan.join.price_suffix });
+      if (copy.plan.join.body) joinBlock.appendChild(el('p', { class: 'sgs-body', text: copy.plan.join.body }));
+      var symbol = model.snooze.currency === 'aud' ? 'A$' : 'US$';
+      var price = el('p', { class: 'sgs-price', text: symbol + model.snooze.price + copy.plan.join.price_suffix });
       joinBlock.appendChild(price);
       joinBlock.appendChild(el('p', { text: copy.plan.join.guarantee }));
       var joinCta = el('a', { href: model.snooze.checkout_url, 'data-offer': 'snooze', class: 'sgs-cta' }, []);

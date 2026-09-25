@@ -1,129 +1,162 @@
 {
-  "_status": "placeholder",
-  "_note": "Draft placeholder copy for GS-001. Every value here is neutral filler text so the engine and tests can run. The copywriter replaces every value; voice must follow SLEEP-CONCIERGE-VOICE-MODULE.md (W12) and sally-verbatim-bank.md.",
+  "_status": "draft-opus-edited-2026-09-25 (pending Sally approval, G2)",
+  "_note": "GS-001 copy pack. Voice per SLEEP-CONCIERGE-VOICE-MODULE.md (W12) and sally-verbatim-bank.json. Verbatim bank quotes are recorded in _sources below by key path. Camp verbatim is pending (see plan.cards.camp._camp_note); Camp copy here uses only the approved Camp program vocabulary, never an invented quote.",
   "welcome": {
     "eyebrow": "Get started",
-    "title": "Let's find your plan",
-    "body": "Answer a few quick questions about your baby's sleep and I'll put together a plan just for you.",
-    "credential": "Sally, certified sleep consultant and former paediatric nurse",
-    "cta": "Start"
+    "title": "Hi, I'm Sally, The Sleep Concierge",
+    "body": "Tell me what's happening at night and I'll point you to exactly what helps. I am also first and foremost a mother and I know exactly what it feels like.",
+    "credential": "Internationally certified sleep consultant and former paediatric nurse",
+    "cta": "Let's get started"
   },
   "resume": {
     "title": "Pick up where you left off?",
-    "body": "You started this a little while ago. Want to continue, or start fresh?",
+    "body": "Your answers are saved. Want to pick up where you left off, or start fresh?",
     "continue": "Continue",
     "restart": "Start over"
   },
   "screens": {
-    "empathy": { "title": "You're not alone in this", "helper": "Plenty of families are working through exactly this." },
-    "age": { "title": "How old is your little one?", "helper": "Choose every age that applies." },
-    "top_of_mind": { "title": "Which one is top of mind right now?", "helper": "Pick the age you want this plan to focus on." },
-    "struggles": { "title": "What's going on at the moment?", "helper": "Choose everything that fits." },
-    "primary_struggle": { "title": "If we fixed one thing first, what would it be?", "helper": "Pick the one that matters most right now." },
-    "outcome": { "title": "What would make the biggest difference?", "helper": "Choose what you want most." },
-    "help_style": { "title": "How do you like to be supported?", "helper": "Pick the style that fits you best." },
-    "safety": { "title": "Anything else going on I should know about?", "helper": "Choose everything that applies, or none." },
-    "building": { "title": "Building your plan", "helper": "This will only take a moment." },
-    "email": { "title": "Where should I send your plan?", "helper": "Pop in your email and I'll save it for you." },
-    "plan": { "title": "Your plan", "helper": "Here's what I'd suggest." }
+    "empathy": {
+      "title": "I know how hard it is",
+      "helper": "You are not alone in this."
+    },
+    "age": {
+      "title": "First, how old is your little one?",
+      "helper": "Choose every age that applies."
+    },
+    "top_of_mind": {
+      "title": "Which one is top of mind right now?",
+      "helper": "Pick the age you want this plan to focus on."
+    },
+    "struggles": {
+      "title": "What's going on at the moment?",
+      "helper": "Choose everything that fits."
+    },
+    "primary_struggle": {
+      "title": "If we fixed one thing first, what would it be?",
+      "helper": "Pick the one that matters most right now."
+    },
+    "outcome": {
+      "title": "What would make the biggest difference?",
+      "helper": "Choose what you want most right now."
+    },
+    "help_style": {
+      "title": "What kind of help feels right?",
+      "helper": "There's no wrong answer. Snooze includes quick answers either way."
+    },
+    "safety": {
+      "title": "Before I put your plan together, is any of this on your mind?",
+      "helper": "Choose everything that applies, or none. There's no wrong answer here."
+    },
+    "building": {
+      "title": "Building your plan",
+      "helper": "This will only take a moment."
+    },
+    "email": {
+      "title": "Where should I send your plan?",
+      "helper": "Pop in your email and I'll save it for you."
+    },
+    "plan": {
+      "title": "Your plan",
+      "helper": "Here's what I'd suggest."
+    }
   },
   "options": {
     "age": {
-      "newborn": "Newborn (0 to 3 months)",
-      "m3_4": "3 to 4 months",
-      "m5_8": "5 to 8 months",
-      "m9_12": "9 to 12 months",
-      "m12_24": "12 to 24 months",
-      "y2_3": "2 to 3 years",
+      "newborn": "Newborn (0–3 months)",
+      "m3_4": "3–4 months",
+      "m5_8": "5–8 months",
+      "m9_12": "9–12 months",
+      "m12_24": "12–24 months",
+      "y2_3": "2–3 years",
       "extra_toggle": {
         "multiples": "I'm asking about multiples (twins or more)"
       }
     },
     "struggles": {
-      "night_wakes": "Frequent night wakes",
+      "night_wakes": "Waking lots overnight",
       "short_naps": "Short naps",
-      "contact_naps": "Contact naps only",
-      "feed_to_sleep": "Falls asleep feeding",
+      "contact_naps": "Only sleeps on me",
+      "feed_to_sleep": "Feeds to sleep",
       "day_night_mixup": "Day and night mixed up",
-      "overtired": "Overtired and wired",
+      "overtired": "Overtired and hard to settle",
       "no_routine": "No routine yet",
-      "early_rising": "Early morning waking",
-      "nap_transition": "Nap transition trouble",
+      "early_rising": "Up too early",
+      "nap_transition": "Nap transition",
       "bedtime_battles": "Bedtime battles",
-      "regression": "Sleep regression",
+      "regression": "A regression",
       "nap_refusal": "Refusing naps",
-      "cot_to_bed": "Moving from cot to bed",
-      "cosleeping_transition": "Moving out of co-sleeping"
+      "cot_to_bed": "Cot to big bed",
+      "cosleeping_transition": "Moving out of our bed"
     },
     "outcome": {
       "sleep_tonight": "Better sleep tonight",
       "predictable_day": "A predictable day",
-      "confident_bedtime": "A confident bedtime",
+      "confident_bedtime": "Confidence at bedtime",
       "feel_myself": "Feeling like myself again",
-      "partner_aligned": "Being aligned with my partner"
+      "partner_aligned": "Being on the same page as my partner"
     },
     "help_style": {
       "quick_answers": "Quick answers when I need them",
-      "keep_on_track": "Something to keep me on track",
-      "one_on_one": "One-on-one support"
+      "keep_on_track": "Someone to keep me on track",
+      "one_on_one": "One-on-one care for our family"
     },
     "safety": {
-      "feeding_weight": "A feeding or weight concern",
-      "health": "A health concern",
-      "sleep_safety": "A sleep safety concern",
-      "parent_struggling": "I'm struggling myself",
+      "feeding_weight": "A feeding or weight worry",
+      "health": "A health concern (reflux, breathing, illness)",
+      "sleep_safety": "Questions about safe sleep",
+      "parent_struggling": "I'm really struggling myself",
       "none": "None of these"
     }
   },
   "empathy": {
-    "title": "You're not alone in this",
-    "body": "Plenty of families are working through exactly this. Let's find what actually helps.",
+    "title": "I know how hard it is",
+    "body": "This is not because you've done anything wrong and it's not because your baby's doing anything wrong. You are not alone in this.",
     "cta": "Continue"
   },
   "building": {
-    "title": "Building your plan",
+    "title": "I'm putting your plan together…",
     "items": [
-      "Looking at your baby's age",
-      "Matching it to what's going on",
-      "Picking the right next step"
+      "Looking at your little one's age",
+      "Matching it to what's going on at night",
+      "Choosing where I'd start"
     ]
   },
   "email": {
     "title": "Where should I send your plan?",
-    "body": "Pop in your email and I'll save your plan so you can come back to it any time.",
-    "privacy": "See our privacy notice.",
-    "fallback": "That's taking longer than expected. See my plan without saving.",
-    "skip": "See my plan without saving"
+    "body": "I'll save your plan here so you can find it any time, with no pressure to join anything yet.",
+    "privacy": "I'll only use this to send your plan and a few helpful follow-ups. Unsubscribe any time.",
+    "fallback": "That's taking a moment to load. You can still see your plan without saving it.",
+    "skip": "See my plan without saving it"
   },
   "plan": {
-    "header": "Here's your plan",
-    "prepared_by": "Prepared by Sally",
-    "photo_url": "https://www.joinsnooze.com/assets/sally-headshot.jpg",
+    "header": "Your Snooze plan",
+    "prepared_by": "Prepared for you by Sally, The Sleep Concierge",
+    "photo_url": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2163331541/settings_images/d2fd0d-c6d4-0e1-01ad-1b846f205d8f_0d8c4d39-2879-4edf-a15a-152aea38e84f.png",
     "reflection": {
-      "baby_young": "At this age, sleep is still finding its rhythm for {age_label}.",
-      "baby": "At this age, {age_label} can build real, predictable sleep.",
-      "toddler": "At this age, {age_label} sleep is about routine and boundaries."
+      "baby_young": "At {age_label}, this is a lovely age to start. In my words: it's more sleep shaping at this age than the sleep training element.",
+      "baby": "At {age_label}, the day matters as much as the night. We always bang on about it: 75% of sleep training is the work in the day.",
+      "toddler": "At {age_label}, it's about a routine they can count on and boundaries you can hold. My mantra is assisted days, independent nights."
     },
     "reflection_struggle": {
-      "night_wakes": "Frequent night wakes like {struggle_label} are common and fixable.",
-      "short_naps": "Short naps like {struggle_label} usually come down to a few key things.",
-      "contact_naps": "Contact naps like {struggle_label} can be shifted gently.",
-      "feed_to_sleep": "Falling asleep feeding, like {struggle_label}, is a habit we can change.",
-      "day_night_mixup": "A day and night mixup like {struggle_label} sorts out with the right pattern.",
-      "overtired": "Overtiredness like {struggle_label} responds well to timing changes.",
-      "no_routine": "No routine yet, like {struggle_label}, is the easiest thing to build from scratch.",
-      "early_rising": "Early rising like {struggle_label} usually has a clear cause.",
-      "nap_transition": "Nap transitions like {struggle_label} just need the right timing.",
-      "bedtime_battles": "Bedtime battles like {struggle_label} usually ease with a few tweaks.",
-      "regression": "A regression like {struggle_label} is temporary and manageable.",
-      "nap_refusal": "Nap refusal like {struggle_label} often has a simple fix.",
-      "cot_to_bed": "Moving from cot to bed, like {struggle_label}, goes smoother with a plan.",
-      "cosleeping_transition": "Moving out of co-sleeping, like {struggle_label}, works best gradually."
+      "night_wakes": "{struggle_label} is one of the most common things parents tell me about, and there's usually more we can shift than it feels like at 3am.",
+      "short_naps": "{struggle_label} are so often about timing, and timing is something we can work on together.",
+      "contact_naps": "{struggle_label} can be shifted gently, at a pace you're comfortable with.",
+      "feed_to_sleep": "{struggle_label} is a habit, not a problem you caused, and habits can change.",
+      "day_night_mixup": "{struggle_label} is very normal early on, and the right day rhythm helps it settle.",
+      "overtired": "{struggle_label} often eases with small changes to timing through the day.",
+      "no_routine": "{struggle_label} is a great place to start, because we get to build it the right way from the beginning.",
+      "early_rising": "{struggle_label} usually has a reason behind it, and we'll look at the whole day to find it.",
+      "nap_transition": "{struggle_label} is a tricky patch, and getting the timing right makes it much smoother.",
+      "bedtime_battles": "{struggle_label} are exhausting, and a predictable routine is where we start.",
+      "regression": "{struggle_label} can knock everyone around. It's not because you've done anything wrong.",
+      "nap_refusal": "{struggle_label} is so common at this age, and it's often about timing rather than your little one being difficult.",
+      "cot_to_bed": "{struggle_label} goes more smoothly with a plan and a bit of patience.",
+      "cosleeping_transition": "{struggle_label} works best gradually, at a pace that suits your family."
     },
     "right_now_title": "Right now",
     "in_the_moment": {
       "title": "When you're in it",
-      "body": "Here's what to try tonight."
+      "body": "The Snooze Specialists and I are in the forum Monday to Friday answering your sleep questions. You won't be guessing on your own."
     },
     "next_up": {
       "title": "Next up",
@@ -134,64 +167,69 @@
       }
     },
     "for_you": {
-      "sleep_tonight": "Here's what helps you sleep better tonight too.",
-      "predictable_day": "Here's how to get a more predictable day for yourself as well.",
-      "confident_bedtime": "Here's how to feel confident at bedtime yourself.",
-      "feel_myself": "Here's what helps you feel like yourself again.",
-      "partner_aligned": "Here's how to get aligned with your partner."
+      "title": "For you",
+      "sleep_tonight": "You told me more sleep tonight matters most. Your start-here step is the one change I'd make first, so tonight has the best chance.",
+      "predictable_day": "You told me a predictable day matters most. The day work comes first in Snooze, so you'll know what's coming and when.",
+      "confident_bedtime": "You told me confidence at bedtime matters most. You'll know exactly what to do, and you can ask us when you're unsure.",
+      "feel_myself": "You told me feeling like yourself again matters most. Better sleep for them is where that starts, and you're allowed to want this for you too.",
+      "partner_aligned": "You told me being on the same page as your partner matters most. Your plan is easy to share, so you're both doing the same thing."
     },
     "join": {
       "title": "Join Snooze",
+      "body": "Everything you need, plus live support, for as long as you're in that season.",
       "price_suffix": "/month",
-      "guarantee": "Cancel any time.",
+      "guarantee": "Try Snooze for 7 days. If it's not right for your family, email us within 7 days of joining for a full refund.",
       "cta": "Join Snooze"
     },
     "next_steps": {
       "title": "What happens after you join",
       "snooze": [
-        "You'll get instant access to your age-matched course",
-        "You'll join The Snooze Members community",
-        "You'll get ongoing support as things change"
+        "You'll get instant access, and your start-here lessons are waiting on your dashboard.",
+        "Ask your first question in the forum. The Snooze Specialists and I are there Monday to Friday.",
+        "First night might look messy. It's not fun, but it's absolutely possible, and you won't be doing it alone.",
+        "Not right for your family within 7 days? Email us for a full refund."
       ]
     },
-    "more_support_title": "Want more hands-on support?",
+    "more_support_title": "I don't think you need more tips right now. You need support around this.",
     "recommended_badge": "Recommended for you",
     "cards": {
       "camp": {
         "title": "Camp Snooze",
-        "body": "An intensive, guided reset with live support.",
-        "cta": "See Camp Snooze",
+        "body": "Group accountability and support over two weeks.",
+        "cta": "See the next Camp",
         "url_key": "camp",
+        "_camp_note": "[camp-verbatim-pending]",
         "next_steps": [
-          "Join the next Camp Snooze intake",
-          "Follow the guided daily plan",
-          "Get live support along the way"
+          "Watch for your cohort's roll call date.",
+          "Start your sleep logs so the team can see what's happening at your place.",
+          "Work through week one, nights and routine, then week two, naps and troubleshooting."
         ]
       },
       "consult": {
         "title": "One-on-one consult",
-        "body": "A private session with a certified sleep consultant.",
+        "body": "One-on-one care, personalised specifically for you and your family.",
         "cta": "Book a consult",
         "url_key": "consult",
         "next_steps": [
-          "Book your session",
-          "Get a plan built around your family",
-          "Follow up with direct support"
+          "Book a time that suits you.",
+          "I'll already have your answers from Get started, so we skip the repeat questions.",
+          "Have your call with me or one of my Snooze Specialists.",
+          "Get your plan, personalised for your family."
         ]
       }
     },
     "safety": {
       "title": "A quick note first",
       "note": {
-        "feeding_weight": "If you have a feeding or weight concern, please check in with your doctor or child health nurse first.",
-        "health": "If you have a health concern, please check in with your doctor first.",
-        "sleep_safety": "If you have a sleep safety concern, please review current safe sleep guidance and check in with your doctor.",
-        "parent_struggling": "If you're struggling yourself, please know support is available."
+        "feeding_weight": "A feeding or weight worry is worth talking through with your GP, paediatrician or child health nurse: they're the right people for this one. A consult with me can help with the sleep side alongside that.",
+        "health": "A health concern like reflux, breathing or illness is one to talk through with your GP, paediatrician or child health nurse first. A consult with me can help with the sleep side alongside that.",
+        "sleep_safety": "Questions about safe sleep are worth talking through with your GP, paediatrician or child health nurse, who can look at your specific setup. A consult with me can help with the sleep side alongside that.",
+        "parent_struggling": "Thank you for telling me. You are not alone in this. Please talk to your GP about how you're feeling, or call one of the lines below. That support matters as much as the sleep. A consult with me can help with the sleep side alongside it."
       },
       "support_lines": [
-        "PANDA: 1300 726 306",
-        "Perinatal Anxiety & Depression Australia (PANDA)",
-        "In an emergency, call 000 (Australia) or your local emergency number"
+        "PANDA National Helpline (Australia): 1300 726 306",
+        "Postpartum Support International HelpLine (US): 1-800-944-4773",
+        "If you or your baby are in danger, call 000 (Australia) or 911 (US)"
       ]
     }
   },
@@ -199,12 +237,27 @@
     "start": "Get started",
     "continue": "Continue where you left off",
     "see_plan": "See your plan",
-    "welcome_back": "Pick up where you left off?",
-    "welcome_back_link": "Continue"
+    "welcome_back": "Welcome back, your plan is waiting",
+    "welcome_back_link": "See your plan"
   },
   "common": {
     "continue": "Continue",
     "back": "Back",
     "step_of": "Step {step} of {total}"
+  },
+  "_sources": {
+    "welcome.body": "#84",
+    "resume.body": "#52",
+    "building.title": "#57",
+    "plan.reflection.baby_young": "#71",
+    "plan.reflection.baby": "#64",
+    "plan.reflection.toddler": "#106",
+    "plan.in_the_moment.body": "#38 (adapted)",
+    "plan.join.body": "#108",
+    "plan.more_support_title": "#111",
+    "plan.next_steps.snooze[2]": [
+      "#78",
+      "#79"
+    ]
   }
 }

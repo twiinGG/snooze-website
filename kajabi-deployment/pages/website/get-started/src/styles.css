@@ -298,3 +298,6 @@
   color: var(--sgs-accent);
   font-weight: 600;
 }
+
+#get-started-page [tabindex="-1"]:focus { outline: none; }
+#get-started-page .sgs-welcome-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 16px; }
