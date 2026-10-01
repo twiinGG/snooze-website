@@ -44,12 +44,13 @@ function isDirect(touch) {
 function externalTouch(touch) {
   const clickPlatforms = currentClickPlatforms(touch);
   if (clickPlatforms.length > 1) return null;
-  if (!isDirect(touch)) return { ...tupleFrom(touch), occurred_at: touch.occurred_at };
+  if (!isDirect(touch)) return { ...tupleFrom(touch), utm_id: clean(touch.utm_id), occurred_at: touch.occurred_at };
   if (clickPlatforms.length !== 1) return null;
   return {
     ...tupleFrom(touch),
     utm_source: clickPlatforms[0],
     utm_medium: 'unresolved_paid_click',
+    utm_id: clean(touch.utm_id),
     occurred_at: touch.occurred_at,
   };
 }
@@ -113,7 +114,8 @@ function applyTouch(state, arrival, policy) {
       occurred_at: arrival.occurred_at,
       platform: clean(registration.platform) || clean(arrival.utm_source),
       campaign_id: clean(registration.campaign_id),
-      ad_id: clean(registration.ad_id),
+      utm_id: clean(arrival.utm_id),
+      ad_id: clean(arrival.utm_id) || clean(registration.ad_id),
     };
     const current = next.latest_registered_paid_touch;
     if (!current || occurredAt > timestamp(current.occurred_at)) {
@@ -187,7 +189,7 @@ const paidTouchContract = { UTM_KEYS, sameTuple, exactRegistration };
   'use strict';
   var STATE_KEY = 'snooze_paid_touch_state_v1';
   var LEGACY_KEYS = ['snooze_utm_attribution', 'snooze_attribution_first_touch', 'snooze_attribution_current_touch'];
-  var TOUCH_KEYS = UTM_KEYS.concat(['fbclid', 'fbc', 'gclid', '_gcl_aw', 'occurred_at', 'click_occurred_at', 'platform', 'campaign_id', 'ad_id']);
+  var TOUCH_KEYS = UTM_KEYS.concat(['utm_id', 'fbclid', 'fbc', 'gclid', '_gcl_aw', 'occurred_at', 'click_occurred_at', 'platform', 'campaign_id', 'ad_id']);
   var RETENTION_MS = 30 * 24 * 60 * 60 * 1000;
   function store() { try { return root.localStorage; } catch (e) { return null; } }
   function read(key) {
@@ -255,7 +257,7 @@ const paidTouchContract = { UTM_KEYS, sameTuple, exactRegistration };
     var found = false;
     try {
       var params = new URLSearchParams(root.location && root.location.search || '');
-      UTM_KEYS.concat(['fbclid', 'gclid']).forEach(function (key) {
+      UTM_KEYS.concat(['utm_id', 'fbclid', 'gclid']).forEach(function (key) {
         var value = params.get(key);
         if (value !== null && value !== '') { result[key] = value; found = true; }
       });
@@ -797,7 +799,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dataLayer.push(payload);
   };
 
-  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'fbclid', 'gclid'];
 
   const captureAttribution = () => {
     try {

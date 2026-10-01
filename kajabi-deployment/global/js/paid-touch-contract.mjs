@@ -48,12 +48,13 @@ function isDirect(touch) {
 function externalTouch(touch) {
   const clickPlatforms = currentClickPlatforms(touch);
   if (clickPlatforms.length > 1) return null;
-  if (!isDirect(touch)) return { ...tupleFrom(touch), occurred_at: touch.occurred_at };
+  if (!isDirect(touch)) return { ...tupleFrom(touch), utm_id: clean(touch.utm_id), occurred_at: touch.occurred_at };
   if (clickPlatforms.length !== 1) return null;
   return {
     ...tupleFrom(touch),
     utm_source: clickPlatforms[0],
     utm_medium: 'unresolved_paid_click',
+    utm_id: clean(touch.utm_id),
     occurred_at: touch.occurred_at,
   };
 }
@@ -123,7 +124,8 @@ export function applyTouch(state, arrival, policy) {
       occurred_at: arrival.occurred_at,
       platform: clean(registration.platform) || clean(arrival.utm_source),
       campaign_id: clean(registration.campaign_id),
-      ad_id: clean(registration.ad_id),
+      utm_id: clean(arrival.utm_id),
+      ad_id: clean(arrival.utm_id) || clean(registration.ad_id),
     };
     const current = next.latest_registered_paid_touch;
     if (!current || occurredAt > timestamp(current.occurred_at)) {
