@@ -385,12 +385,14 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
 
 ### Event Match Quality, measured 2026-08-06
 
+This is the 6 August EMQ read. InitiateCheckout email coverage was 6.1% in that read. The ME-012 baseline is about 4–6% (1 October 2026 audit).
+
 Dataset `449153684613893` ("TSC Kajabi"), window 2026-07-09 to 2026-08-06.
 
 | Event | EMQ | Match keys and coverage |
 |---|---|---|
 | Purchase | **6.9** | em 100, ip 100, ua 100, fbp 100, fn 100, ln 100 |
-| InitiateCheckout | 6.2 | em 6.1, ip 100, ua 100, fbp 100, zip 6.1, country 6.1, fn 6.1, ct 6.1, fbc 39.4 |
+| InitiateCheckout | 6.2 | em 6.1%, ip 100, ua 100, fbp 100, zip 6.1, country 6.1, fn 6.1, ct 6.1, fbc 39.4 |
 | ViewContent | 6.1 | ip 100, ua 100, fbp 100, fbc 36.2 (no email at all) |
 | PageView | 6.0 | em 4.2, ip 100, ua 100, fbp 100, zip 2.8, country 2.8, fn 4.2, ct 2.8, fbc 21.6 |
 
@@ -532,3 +534,19 @@ for guidance.
 ---
 
 **End of Documentation**
+
+
+## ME-012 architecture (1 October 2026)
+
+The current live routes have one sender per destination:
+
+- **Meta Purchase and StartTrial:** n8n Conversions API (CAPI) from the Kajabi order workflow.
+- **GA4 order events:** n8n Measurement Protocol (MP) from that workflow.
+- **Google Ads:** n8n Data Manager. The workflow polls final processing status before settling the ledger. Email uploads require `paid_media.google_ads_settings.email_uploads_enabled`; the gate is on.
+- **InitiateCheckout:** browser tag 122 sends the Meta event. GA4 tag 127 feeds Stape `FB SS CAPI`, which sends its server copy. Browser and server copies share `{{Unique Event ID}}`; Meta deduplicates on that event ID.
+
+Tag 122 advanced matching has been on since web GTM version 66. The shared event ID maintains browser/server deduplication. The 6 August 2026 EMQ read measured 6.1% email coverage for InitiateCheckout. The 1 October audit baseline is **about 4–6% (1 October 2026 audit)**.
+
+Google enhanced conversions for leads sends email as SHA-256 hex when email upload is enabled by the settings gate. Attribution captures `utm_id` into `ad_id`; `v_order_attribution` matches ad id first.
+
+Monitoring runs `tracking-health` on Navi. Failure handoffs go to the Navi inbox. The Hermes job is `655a32304afe` (Snooze Analytics Ops daily sync). The Chessy job `15b43d4554bc` is paused. Full live-state evidence: [ME-012 run log](../../../../docs/projects/measurement/4_working/2026-10-01-tracking-closure/RUN-LOG.md).
