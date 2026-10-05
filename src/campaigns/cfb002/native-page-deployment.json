@@ -1,0 +1,200 @@
+{
+  "status": "saved_draft_receiving_snapshot_no_functional_release",
+  "body_source_commit": "fb8c6c854",
+  "body_source_tag": "website-v1.6.15",
+  "settings_snapshot_timing": "Captured and versioned in closeout after source-tagged body transfer; do not claim these receiving settings were committed before transfer.",
+  "pages": [
+    {
+      "key": "registration",
+      "page_id": 2152311965,
+      "admin_url": "https://app.kajabi.com/admin/landing_pages/2152311965/edit",
+      "theme_id": 2167775115,
+      "source_body": "design/preview/registration.html",
+      "extraction": "innerbody only, preserving bytes",
+      "content_for_index": [
+        "cfb002-body"
+      ],
+      "section": {
+        "type": "section",
+        "settings": {
+          "full_width": true,
+          "direction": "vertical",
+          "align": "stretch",
+          "position": "stretch",
+          "gap": "0",
+          "padding_mobile": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "padding_desktop": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          }
+        },
+        "block_order": [
+          "cfb002-html"
+        ],
+        "block": {
+          "id": "cfb002-html",
+          "type": "code"
+        }
+      },
+      "native_header_footer_hidden": true,
+      "native_header_footer_hide_on_desktop_mobile": true,
+      "preserve_existing_floating_agent": true,
+      "parent_status": "draft",
+      "publish_at": null,
+      "form_count": 0,
+      "preimage_receipt": ".tmp/cfb002-platform/theme-2167775115-preimage.json",
+      "final_receipt": ".tmp/cfb002-platform/theme-2167775115-final.json"
+    },
+    {
+      "key": "joining",
+      "page_id": 2152311966,
+      "admin_url": "https://app.kajabi.com/admin/landing_pages/2152311966/edit",
+      "theme_id": 2167775116,
+      "source_body": "design/preview/joining.html",
+      "extraction": "innerbody only, preserving bytes",
+      "content_for_index": [
+        "cfb002-body"
+      ],
+      "section": {
+        "type": "section",
+        "settings": {
+          "full_width": true,
+          "direction": "vertical",
+          "align": "stretch",
+          "position": "stretch",
+          "gap": "0",
+          "padding_mobile": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "padding_desktop": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          }
+        },
+        "block_order": [
+          "cfb002-html"
+        ],
+        "block": {
+          "id": "cfb002-html",
+          "type": "code"
+        }
+      },
+      "native_header_footer_hidden": true,
+      "native_header_footer_hide_on_desktop_mobile": true,
+      "preserve_existing_floating_agent": true,
+      "parent_status": "draft",
+      "publish_at": null,
+      "form_count": 0,
+      "preimage_receipt": ".tmp/cfb002-platform/theme-2167775116-preimage.json",
+      "final_receipt": ".tmp/cfb002-platform/theme-2167775116-final.json"
+    },
+    {
+      "key": "replay",
+      "page_id": 2152311967,
+      "admin_url": "https://app.kajabi.com/admin/landing_pages/2152311967/edit",
+      "theme_id": 2167775117,
+      "source_body": "design/preview/replay.html",
+      "extraction": "innerbody only, preserving bytes",
+      "content_for_index": [
+        "cfb002-body"
+      ],
+      "section": {
+        "type": "section",
+        "settings": {
+          "full_width": true,
+          "direction": "vertical",
+          "align": "stretch",
+          "position": "stretch",
+          "gap": "0",
+          "padding_mobile": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "padding_desktop": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          }
+        },
+        "block_order": [
+          "cfb002-html"
+        ],
+        "block": {
+          "id": "cfb002-html",
+          "type": "code"
+        }
+      },
+      "native_header_footer_hidden": true,
+      "native_header_footer_hide_on_desktop_mobile": true,
+      "preserve_existing_floating_agent": true,
+      "parent_status": "draft",
+      "publish_at": null,
+      "form_count": 0,
+      "preimage_receipt": ".tmp/cfb002-platform/theme-2167775117-preimage.json",
+      "final_receipt": ".tmp/cfb002-platform/theme-2167775117-final.json"
+    },
+    {
+      "key": "camp-booking",
+      "page_id": 2152312516,
+      "admin_url": "https://app.kajabi.com/admin/landing_pages/2152312516/edit",
+      "theme_id": 2167778152,
+      "source_body": "design/preview/camp-booking.html",
+      "extraction": "innerbody only, preserving bytes",
+      "content_for_index": [
+        "cfb002-body"
+      ],
+      "section": {
+        "type": "section",
+        "settings": {
+          "full_width": true,
+          "direction": "vertical",
+          "align": "stretch",
+          "position": "stretch",
+          "gap": "0",
+          "padding_mobile": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "padding_desktop": {
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0"
+          }
+        },
+        "block_order": [
+          "cfb002-html"
+        ],
+        "block": {
+          "id": "cfb002-html",
+          "type": "code"
+        }
+      },
+      "native_header_footer_hidden": true,
+      "native_header_footer_hide_on_desktop_mobile": true,
+      "preserve_existing_floating_agent": true,
+      "parent_status": "draft",
+      "publish_at": null,
+      "form_count": 0,
+      "preimage_receipt": ".tmp/cfb002-platform/theme-2167778152-preimage.json",
+      "final_receipt": ".tmp/cfb002-platform/theme-2167778152-final.json"
+    }
+  ]
+}

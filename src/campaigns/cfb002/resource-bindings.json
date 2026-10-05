@@ -31,5 +31,11 @@
   "replay_contains_code_verified": false,
   "recurring_terms_verified": false,
   "recurring_offer_terms": null,
-  "booking_authorization_url": null
+  "booking_authorization_url": null,
+  "booking_draft_url": "https://www.joinsnooze.com/camp-2026-10-19-booking",
+  "booking_draft_admin_url": "https://app.kajabi.com/admin/landing_pages/2152312516/edit",
+  "platform_draft_status": "four_designed_pages_saved_draft_no_live_signup_or_payment",
+  "account_timezone_observed": "Melbourne",
+  "saved_form_configuration_verified": true,
+  "saved_form_configuration_receipt": ".tmp/cfb002-platform/form-consent-readback.json"
 }
