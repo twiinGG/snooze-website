@@ -122,7 +122,7 @@ Repo sources: `pages/website/blog-index/`, `blog-search/`, `newsletter/`, `newsl
 
 All content and code must follow `~/KhorusOS/system/AI-WRITING-RULES.md` (base layer) and `docs/brand/SNOOZE-TONE-OF-VOICE-v1.2.md` (brand voice). See root AGENTS.md section 7 for full details.
 
-**Sally positioning (factual-accuracy rule):** Sally is an "internationally certified sleep consultant and former paediatric nurse". NEVER frame her as a current, practising, or registered nurse; "former" is mandatory whenever the nursing background is mentioned. Use "Access with the Snooze Membership" not "Lifetime access" in marketing/SEO copy. Canonical doc: `docs/brand/SALLY-POSITIONING.md`.
+**Sally positioning (factual-accuracy rule):** Sally is an "internationally certified sleep consultant and former paediatric nurse". NEVER frame her as a current, practising, or registered nurse; "former" is mandatory whenever the nursing background is mentioned. Use "Access with Snooze" not "Lifetime access" in marketing/SEO copy. Canonical doc: `docs/brand/SALLY-POSITIONING.md`.
 
 ### Free Module Bundle File Naming
 
@@ -304,3 +304,7 @@ URL by hand, and never invent a pattern that is not in this table or in a tool r
 
 **These are for the human to click.** The agent still must not auto-navigate them: `open`, `goto` and
 `reload` on `app.kajabi.com` return HTTP 406 and burn the window.
+
+## Snooze support naming
+
+Use [Snooze support positioning](../../docs/brand/SNOOZE-SUPPORT-POSITIONING.md). The paid offer is Snooze. Sell baby sleep support from Sally, The Sleep Concierge and her team of specialists. Guides and courses have no separate website price or purchase route. Full resources may become lead magnets later. Preserve accurate renewal/payment disclosures, technical identifiers, historical evidence and existing customer entitlements.

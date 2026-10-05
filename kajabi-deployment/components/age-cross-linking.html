@@ -3,10 +3,10 @@
 <section class="snooze-age-crosslinks">
   <div class="snooze-container">
     <h2 class="snooze-section-title">All Age Guides Available</h2>
-    <p class="snooze-section-intro">Snooze covers every stage from newborn through toddler. All guides are included in your membership.</p>
-    
+    <p class="snooze-section-intro">Snooze covers every stage from newborn through toddler. All guides are included in Snooze.</p>
+
     <div class="snooze-age-grid">
-      
+
       <div class="snooze-age-card" data-age="newborn">
         <div class="snooze-age-badge">0-3 Months</div>
         <h3>Newborn Sleep Help</h3>
@@ -45,9 +45,9 @@
     </div>
 
     <div class="snooze-age-cta">
-      <p class="snooze-age-cta-text">All guides included in Snooze membership</p>
+      <p class="snooze-age-cta-text">All guides included in Snooze</p>
       <a href="https://joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary dynamic-cta" data-checkout>
-        Join the Snooze membership to Access All Guides
+        Join Snooze to Access All Guides
       </a>
     </div>
   </div>
@@ -189,16 +189,16 @@
   .snooze-age-crosslinks {
     padding: 3rem 1.5rem;
   }
-  
+
   .snooze-section-title {
     font-size: 1.75rem;
   }
-  
+
   .snooze-age-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .snooze-age-card {
     padding: 1.5rem;
   }
@@ -210,7 +210,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var currentPath = window.location.pathname;
     var currentAge = '';
-    
+
     if (currentPath.indexOf('newborn') !== -1) {
       currentAge = 'newborn';
     } else if (currentPath.indexOf('3-4-month') !== -1) {
@@ -220,7 +220,7 @@
     } else if (currentPath.indexOf('toddler') !== -1) {
       currentAge = 'toddler';
     }
-    
+
     if (currentAge) {
       var currentCard = document.querySelector('[data-age="' + currentAge + '"]');
       if (currentCard) {

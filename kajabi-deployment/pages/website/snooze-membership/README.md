@@ -1,5 +1,7 @@
 # Snooze Membership website page
 
+**Current offer language (October 05, 2026):** [Snooze support positioning](/Users/kadegreenland/Snooze-OS/docs/brand/SNOOZE-SUPPORT-POSITIONING.md) replaces older paid-offer naming and standalone guide/course sales instructions. The paid offer is Snooze. Guides and courses are included resources. Historical prices and live-state captures below are evidence; the source changes have not been deployed.
+
 Paste `snooze-membership-page.html` into one full-width, flush custom-code section on the Kajabi Website Page at `/snooze-membership`. The wrapper is `#snooze-membership-page`. Native website navigation renders above the block. The canonical footer is copied inline at the bottom.
 
 Enter the page title, description, canonical URL and social-sharing values from [`page-metadata.md`](./page-metadata.md) through the Kajabi Website Page settings. Do not add metadata tags to the custom-code block.

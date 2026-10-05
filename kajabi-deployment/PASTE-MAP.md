@@ -1,5 +1,7 @@
 # Kajabi paste map (source of truth)
 
+**Current offer language (October 05, 2026):** [Snooze support positioning](/Users/kadegreenland/Snooze-OS/docs/brand/SNOOZE-SUPPORT-POSITIONING.md) replaces older paid-offer naming and standalone guide/course sales instructions. The paid offer is Snooze. Guides and courses are included resources. Historical prices and live-state captures below are evidence; the source changes have not been deployed.
+
 **Updated:** August 29, 2026
 **Last live verify:** **August 27, 2026**, the site-wide Header Page Scripts field, website theme CSS,
 website theme JavaScript and primary Camp theme CSS and JavaScript were read from Kajabi and

@@ -1,8 +1,8 @@
 <section class="snooze-whats-included">
  <div class="snooze-container">
   <h2 class="snooze-section-title">What's in Snooze</h2>
-  <p class="snooze-section-intro">This resource is included in your Snooze membership, along with everything else you need for great sleep.</p>
-  
+  <p class="snooze-section-intro">This resource is included in Snooze, along with everything else you need for great sleep.</p>
+
   <div class="snooze-included-grid">
    <div class="snooze-included-card">
     <div class="snooze-card-icon">
@@ -138,16 +138,16 @@
  .snooze-whats-included {
   padding: 3rem 1.5rem;
  }
- 
+
  .snooze-section-title {
   font-size: 1.75rem;
  }
- 
+
  .snooze-included-grid {
   grid-template-columns: 1fr;
   gap: 1.5rem;
  }
- 
+
  .snooze-included-card {
   padding: 1.5rem;
  }
@@ -161,7 +161,7 @@
  } else {
   initCTA();
  }
- 
+
  function initCTA() {
   var ctaContainer = document.getElementById('snooze-whats-included-cta');
   if (!ctaContainer) return;
@@ -170,12 +170,12 @@
   if (typeof window.SnoozeUserDetection !== 'undefined') {
    userStatus = window.SnoozeUserDetection.getUserStatus();
   }
-  
+
   var checkoutURL = window.SNOOZE_CHECKOUT_URL || 'https://joinsnooze.com/offers/z63s9VaR/checkout';
   var libraryURL = window.SNOOZE_LIBRARY_URL || '/snooze-library';
-  
+
   var ctaHTML = '';
-  
+
   if (userStatus === 'snooze-member') {
    ctaHTML = `<a href="${libraryURL}" class="snooze-btn-primary">Go to Library</a>`;
   } else if (userStatus === 'logged-in-non-member') {
@@ -183,7 +183,7 @@
   } else {
    ctaHTML = `<a href="${checkoutURL}" class="snooze-btn-primary">Join Snooze</a>`;
   }
-  
+
   ctaContainer.innerHTML = ctaHTML;
  }
 })();

@@ -1,64 +1,21 @@
 <section class="snooze-value-comparison">
   <div class="snooze-container">
-    <h2 class="snooze-section-title">Get This + Everything Else</h2>
-    <p class="snooze-section-intro">For just a little more than a single course, you get access to everything in Snooze.</p>
-    
-    <div class="snooze-comparison-grid">
-      <div class="snooze-comparison-card snooze-comparison-individual">
-        <div class="snooze-comparison-header">
-          <h3>Individual Course</h3>
-          <div class="snooze-price">
-            <span class="snooze-price-amount" data-product-price="$117"><span class="dynamic-price" data-usd="117" data-aud="179">$117</span></span>
-            <span class="snooze-price-note">one-time</span>
-          </div>
-        </div>
-        <ul class="snooze-comparison-features">
-          <li><i class="fa-solid fa-check"></i> This course only</li>
-          <li><i class="fa-solid fa-check"></i> Full access to this course</li>
-          <li><i class="fa-solid fa-xmark"></i> No access to other age guides</li>
-          <li><i class="fa-solid fa-xmark"></i> No Library access</li>
-          <li><i class="fa-solid fa-xmark"></i> No Village community</li>
-          <li><i class="fa-solid fa-xmark"></i> No live sessions</li>
-        </ul>
-      </div>
-
-      <div class="snooze-comparison-vs">
-        <div class="snooze-vs-line"></div>
-        <div class="snooze-vs-text">vs</div>
-        <div class="snooze-vs-line"></div>
-      </div>
-
+    <h2 class="snooze-section-title">Baby sleep support inside Snooze</h2>
+    <p class="snooze-section-intro">Join Snooze for baby sleep support from Sally, The Sleep Concierge and her team of specialists.</p>
+    <div class="snooze-comparison-grid" style="grid-template-columns: minmax(0, 640px); justify-content: center;">
       <div class="snooze-comparison-card snooze-comparison-membership">
-        <div class="snooze-comparison-badge">Best Value</div>
-        <div class="snooze-comparison-header">
-          <h3>Snooze Membership</h3>
-          <div class="snooze-price">
-            <span class="snooze-price-amount"><span class="dynamic-price" data-usd="147" data-aud="222">$147</span></span>
-            <span class="snooze-price-period">/quarter</span>
-            <span class="snooze-price-note">Launch pricing</span>
-          </div>
-        </div>
+        <div class="snooze-comparison-header"><h3>Snooze</h3></div>
         <ul class="snooze-comparison-features">
-          <li><i class="fa-solid fa-check"></i> This course included</li>
-          <li><i class="fa-solid fa-check"></i> All age guides (newborn through toddler)</li>
-          <li><i class="fa-solid fa-check"></i> Complete Library access</li>
-          <li><i class="fa-solid fa-check"></i> The Village community</li>
-          <li><i class="fa-solid fa-check"></i> Live sessions with the Snooze Specialists</li>
-          <li><i class="fa-solid fa-check"></i> Member pricing on consultations</li>
+          <li><i class="fa-solid fa-check"></i> Support using the guides and courses</li>
+          <li><i class="fa-solid fa-check"></i> The Snooze Library</li>
+          <li><i class="fa-solid fa-check"></i> The Snooze Village community</li>
+          <li><i class="fa-solid fa-check"></i> Sessions with the Snooze Specialists</li>
         </ul>
         <div class="snooze-comparison-cta">
-          <a href="https://www.joinsnooze.com/offers/z63s9VaR/checkout" class="snooze-btn-primary snooze-btn-large dynamic-cta" data-checkout>
-            Join Snooze
-          </a>
-          <p class="snooze-comparison-note">For just $30 more, you get everything</p>
+          <a href="/snooze-membership" class="snooze-btn-primary snooze-btn-large">Join Snooze</a>
+          <p class="snooze-comparison-note">Guides and courses are included in Snooze.</p>
         </div>
       </div>
-    </div>
-
-    <div class="snooze-value-message">
-      <p><strong>Individual courses:</strong> $117-$129 each</p>
-      <p><strong>Snooze Membership:</strong> $147/quarter (Launch) - Get all courses + Library + Village + Live Sessions</p>
-      <p class="snooze-value-highlight">For just $30 more than a single course, you get everything.</p>
     </div>
   </div>
 </section>
@@ -268,17 +225,17 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .snooze-comparison-vs {
     flex-direction: row;
     padding: 1rem 0;
   }
-  
+
   .snooze-vs-line {
     width: 60px;
     height: 2px;
   }
-  
+
   .snooze-comparison-card {
     padding: 2rem;
   }
@@ -288,30 +245,17 @@
   .snooze-value-comparison {
     padding: 3rem 1.5rem;
   }
-  
+
   .snooze-section-title {
     font-size: 1.75rem;
   }
-  
+
   .snooze-price-amount {
     font-size: 2rem;
   }
-  
+
   .snooze-comparison-card {
     padding: 1.5rem;
   }
 }
 </style>
-
-<script>
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    var priceElement = document.querySelector('[data-product-price]');
-    if (priceElement && !priceElement.querySelector('.dynamic-price')) {
-      var price = priceElement.getAttribute('data-product-price');
-      priceElement.textContent = price;
-    }
-  });
-})();
-</script>
-

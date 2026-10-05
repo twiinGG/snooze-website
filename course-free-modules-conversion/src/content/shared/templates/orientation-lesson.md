@@ -23,7 +23,7 @@ My goal for this module is simple: to give you a real, high-value solution for t
 Most parents start with one urgent sleep issue. But as you’ll soon find out, baby sleep isn’t static. It changes with travel, illness, regressions, and as your baby grows into new stages.
 
 - **The Full Course** is for when you want the complete, step-by-step roadmap for this specific age stage.
-- **Snooze Membership** is for when you want *ongoing* support. It includes all our courses, plus the community and coaching to guide you through every change that comes next.
+- **Snooze** is for when you want *ongoing* support. It includes all our courses, plus the community and coaching to guide you through every change that comes next.
 
 For now, let’s get stuck into **[Specific Issue]**.
 

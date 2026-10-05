@@ -1,5 +1,7 @@
 # Newborn Sleep Guide - Product Landing Page
 
+**Current offer language (October 05, 2026):** [Snooze support positioning](/Users/kadegreenland/Snooze-OS/docs/brand/SNOOZE-SUPPORT-POSITIONING.md) replaces older paid-offer naming and standalone guide/course sales instructions. The paid offer is Snooze. Guides and courses are included resources. Historical prices and live-state captures below are evidence; the source changes have not been deployed.
+
 Deployable Kajabi custom-code page (Resource-Focused design, dark Snooze theme).
 
 ## Deployment

@@ -911,9 +911,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const membershipPage = document.getElementById('snooze-membership-page');
   if (membershipPage && !window.__snoozeMembershipViewItemFired) {
     window.__snoozeMembershipViewItemFired = true;
-    trackEvent('ecommerce', 'view_item', 'Snooze Membership', {
+    trackEvent('ecommerce', 'view_item', 'Snooze', {
       item_id: 'snooze_membership',
-      item_name: 'Snooze Membership',
+      item_name: 'Snooze',
       currency: activeCurrency(),
       surface: 'snooze_membership'
     });

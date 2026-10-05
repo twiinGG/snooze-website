@@ -30,7 +30,7 @@ assert('membership CTA carries placement', tracker.indexOf('placement: eventPlac
 assert('membership CTA carries button text', tracker.indexOf('button_text: buttonText') > -1);
 assert('membership CTA carries active currency', tracker.indexOf('currency: activeCurrency()') > -1);
 assert('membership page emits canonical view_item', tracker.indexOf("'view_item'") > -1);
-assert('view_item carries item identity', tracker.indexOf("item_id: 'snooze_membership'") > -1 && tracker.indexOf("item_name: 'Snooze Membership'") > -1);
+assert('view_item carries item identity', tracker.indexOf("item_id: 'snooze_membership'") > -1 && tracker.indexOf("item_name: 'Snooze'") > -1);
 assert('view_item is guarded once per page load', tracker.indexOf('__snoozeMembershipViewItemFired') > -1);
 assert('click helper does not assign a CTA value', !/\bvalue\s*:/.test(tracker));
 assert('fake landing-page UTMs are removed', tracker.indexOf("utm_source', 'landing-page") === -1);

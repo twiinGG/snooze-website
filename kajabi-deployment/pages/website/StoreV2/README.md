@@ -1,5 +1,7 @@
 # Store Page V2 - Support Map
 
+**Current offer language (October 05, 2026):** [Snooze support positioning](/Users/kadegreenland/Snooze-OS/docs/brand/SNOOZE-SUPPORT-POSITIONING.md) replaces older paid-offer naming and standalone guide/course sales instructions. The paid offer is Snooze. Guides and courses are included resources. Historical prices and live-state captures below are evidence; the source changes have not been deployed.
+
 Deployable Kajabi custom code for the Snooze store page. Paste `store-page-v2.html` into the page's custom code block. `Copy.md` holds the source copy and layout rationale.
 
 ## Page wrapper

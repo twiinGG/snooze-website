@@ -1,6 +1,6 @@
 {
   "_status": "reviewed-by-opus-2026-09-25",
-  "_note": "Mapping of age-group struggles to membership products. All products are included in PUBMS01 (Snooze Membership). Validate URLs and 'why' statements before publishing. GD-CATNAP age coverage not explicitly stated in registry; defaulted to CR-5-12MO for baby short_naps.",
+  "_note": "Mapping of age-group struggles to membership products. All products are included in PUBMS01 (Snooze). Validate URLs and 'why' statements before publishing. GD-CATNAP age coverage not explicitly stated in registry; defaulted to CR-5-12MO for baby short_naps.",
   "baby_young": {
     "night_wakes": {
       "title": "3-4 Month Sleep Course",
