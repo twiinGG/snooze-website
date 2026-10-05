@@ -1,0 +1,109 @@
+{
+  "title": "How to sleep train your baby: a practical starting point for parents of babies 4 months plus",
+  "emails": [
+    {
+      "key": "invitation",
+      "subject": "A free baby sleep webinar with Sally this Wednesday",
+      "preview": "Wednesday October 07 at 11 am Melbourne time. Parents of babies 4 months plus.",
+      "schedule": "operator_selected_before_webinar",
+      "audience": "consented_teaching_invitation_audience",
+      "paragraphs": ["Join Sally for a free webinar: How to sleep train your baby: a practical starting point for parents of babies 4 months plus.", "We meet on Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes: 35 minutes of teaching, 5 minutes about Camp Snooze and 10 minutes for questions.", "Sally is an internationally certified sleep consultant and former paediatric nurse. She'll also introduce Camp Snooze, which starts Monday October 19.", "Register below to receive your joining details."],
+      "cta": {"resource": "registration_url", "label": "Register for the free webinar"}
+    },
+    {
+      "key": "confirmation",
+      "subject": "You're registered for Wednesday's baby sleep webinar",
+      "preview": "Wednesday October 07, 11 to 11:50 am Melbourne time. Your joining details are here.",
+      "schedule": "once_on_valid_registration",
+      "audience": "confirmed_session_registrants",
+      "paragraphs": ["You're registered for How to sleep train your baby: a practical starting point for parents of babies 4 months plus.", "Join us on Wednesday October 07 at 11 am Melbourne time. We'll finish at 11:50 am.", "We'll spend 35 minutes on teaching, 5 minutes explaining Camp Snooze and 10 minutes on questions. Camp starts Monday October 19.", "Use the same email address you registered with when you join. If your meeting account uses a different email, please contact us so we can reconcile your attendance.", "People who attend this session can book Camp from Thursday October 08 at 8 am Melbourne time. Registering or watching the replay alone does not qualify for that early access."],
+      "cta": {"resource": "thank_you_url", "label": "Your joining and calendar details"}
+    },
+    {
+      "key": "reminder_tuesday",
+      "subject": "Your baby sleep webinar is tomorrow at 11 am",
+      "preview": "Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes.",
+      "schedule": "2026-10-06T11:00:00+11:00",
+      "audience": "confirmed_session_registrants_registered_before_send",
+      "paragraphs": ["Our free baby sleep webinar is tomorrow, Wednesday October 07 at 11 am Melbourne time.", "Allow 50 minutes for Sally's teaching, a short introduction to Camp Snooze and questions. Your joining link and calendar details are below."],
+      "cta": {"resource": "thank_you_url", "label": "Your webinar details"}
+    },
+    {
+      "key": "reminder_one_hour",
+      "subject": "We start in one hour: your baby sleep webinar",
+      "preview": "Join Sally at 11 am Melbourne time today, Wednesday October 07.",
+      "schedule": "2026-10-07T10:00:00+11:00",
+      "audience": "confirmed_session_registrants_registered_before_send",
+      "paragraphs": ["We start at 11 am Melbourne time today, Wednesday October 07. We'll finish at 11:50 am.", "Join using the email address you registered with. If you use a different meeting email, please contact us so we can reconcile your attendance."],
+      "cta": {"resource": "room_url", "label": "Join the webinar"}
+    },
+    {
+      "key": "reminder_start",
+      "subject": "We're starting: join Sally's baby sleep webinar",
+      "preview": "Wednesday October 07 at 11 am Melbourne time. Join us here.",
+      "schedule": "2026-10-07T11:00:00+11:00",
+      "audience": "confirmed_session_registrants_registered_before_send",
+      "paragraphs": ["We're starting our free baby sleep webinar at 11 am Melbourne time today, Wednesday October 07.", "Join us for Sally's teaching and a short introduction to Camp Snooze, followed by questions. We'll finish at 11:50 am."],
+      "cta": {"resource": "room_url", "label": "Join the webinar"}
+    },
+    {
+      "key": "replay",
+      "subject": "Your baby sleep webinar replay is ready",
+      "preview": "Catch up on Sally's session and the introduction to Camp Snooze.",
+      "schedule": "after_processed_recording_is_published",
+      "audience": "confirmed_session_registrants",
+      "paragraphs": ["The replay of How to sleep train your baby: a practical starting point for parents of babies 4 months plus is ready.", "You can watch it until the expiry time shown on the replay page.", "Camp Snooze starts Monday October 19. People who attended the live session can book from Thursday October 08 at 8 am Melbourne time. Waitlisters can book from Friday October 09 at 8 am. Public booking opens Monday October 12 at 8 am.", "Watching the replay alone does not qualify for Thursday access. We'll send the right booking details when your access opens."],
+      "cta": {"resource": "replay_url", "label": "Watch the webinar replay"}
+    },
+    {
+      "key": "attendee_opening",
+      "subject": "Your Camp Snooze early access is open",
+      "preview": "For people who attended Wednesday's webinar. Camp starts Monday October 19.",
+      "schedule": "2026-10-08T08:00:00+11:00",
+      "audience": "verified_session_attendees_without_cohort_purchase",
+      "paragraphs": ["Thanks for joining Wednesday's webinar. Your early access to Camp Snooze is open.", "Camp starts Monday October 19. The booking page has the current options and payment terms.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
+      "cta": {"resource": "attendee_sales_url", "label": "View Camp Snooze booking options"}
+    },
+    {
+      "key": "waitlist_opening",
+      "subject": "Camp Snooze booking is open for the waitlist",
+      "preview": "Camp starts Monday October 19. Your waitlist access opens today.",
+      "schedule": "2026-10-09T08:00:00+11:00",
+      "audience": "actual_waitlisters_without_cohort_purchase_or_prior_attendee_opening_send",
+      "paragraphs": ["You're on the Camp Snooze waitlist, and your booking access is open.", "Camp starts Monday October 19. The booking page has the current options and payment terms.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
+      "cta": {"resource": "waitlist_sales_url", "label": "View Camp Snooze booking options"}
+    },
+    {
+      "key": "public_opening",
+      "subject": "Camp Snooze starts Monday October 19: booking is open",
+      "preview": "Bookings close Wednesday October 14 at 11:59 pm Melbourne time.",
+      "schedule": "2026-10-12T08:00:00+11:00",
+      "audience": "consented_camp_sales_audience_without_cohort_purchase_or_prior_opening_send",
+      "paragraphs": ["Booking is open for Camp Snooze starting Monday October 19.", "If you're considering Camp after Sally's webinar, you can view the current booking options and payment terms below.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
+      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+    },
+    {
+      "key": "practical_followup",
+      "subject": "Camp Snooze booking details for Monday October 19",
+      "preview": "The booking page has the current options and payment terms.",
+      "schedule": "2026-10-13T11:00:00+11:00",
+      "audience": "consented_camp_sales_audience_without_cohort_purchase",
+      "paragraphs": ["If you're deciding whether to join Camp Snooze, the booking page has the current options and payment terms for the Camp starting Monday October 19.", "Bookings close tomorrow, Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first. If you've already booked this Camp, your onboarding messages will explain your next steps."],
+      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+    },
+    {
+      "key": "final_day",
+      "subject": "Camp Snooze bookings close tonight at 11:59 pm",
+      "preview": "Wednesday October 14, Melbourne time. Camp starts Monday October 19.",
+      "schedule": "2026-10-14T19:00:00+11:00",
+      "audience": "consented_camp_sales_audience_without_cohort_purchase",
+      "paragraphs": ["Bookings for Camp Snooze starting Monday October 19 close tonight, Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first.", "The booking page has the current options and payment terms. If you're joining this Camp, please complete your booking before the cutoff."],
+      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+    }
+  ],
+  "organic": {
+    "social_post": "Free webinar with Sally: How to sleep train your baby: a practical starting point for parents of babies 4 months plus. Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes for teaching, a short introduction to Camp Snooze and questions. Register through the webinar link in our bio.",
+    "story_frames": ["Free baby sleep webinar with Sally. For parents of babies 4 months plus.", "Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes.", "Teaching, an introduction to Camp Snooze and time for questions. Register through the webinar link."],
+    "community_invitation": "Sally is presenting a free baby sleep webinar on Wednesday October 07 at 11 am Melbourne time, for parents of babies 4 months plus. Allow 50 minutes for teaching, a short introduction to Camp Snooze and questions. You're welcome to join us. Register through the webinar registration link."
+  }
+}

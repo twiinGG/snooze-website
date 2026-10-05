@@ -207,3 +207,7 @@ See the `#ask-sally-page` System Initialization block (added January 2026) in `s
 - Which landing pages must continue to use the unified CSS, if any.
 - Which Website Pages can be normalized to the shared design system without custom styles.
 - Whether to split the unified CSS into multiple files once scoping is complete.
+
+## CFB-002 prepared landing wrappers (October 05, 2026)
+
+`#cfb002-registration-page`, `#cfb002-thank-you-page` and `#cfb002-replay-page` are prepared landing-page wrappers. Each uses its own landing theme and a complete inline System Initialization block before page-specific rules. They do not inherit website-theme CSS. Source: `apps/snooze-website/src/campaigns/cfb002/prepare.py`. Generated blocks include the canonical inline footer and its styles. These registrations record source preparation, not publication or rendered verification.

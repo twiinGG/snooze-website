@@ -1,0 +1,21 @@
+{
+  "source_state": "prepared_local_drafts",
+  "release_state": "held",
+  "published": false,
+  "scheduled": false,
+  "behavior_verified": false,
+  "registration_release_required_proofs": [
+    "room_guest_join_verified",
+    "room_recording_verified",
+    "room_attendance_route_verified",
+    "registration_flow_verified",
+    "consent_handling_verified",
+    "confirmation_delivery_verified",
+    "registration_route_verified",
+    "thank_you_route_verified"
+  ],
+  "scope": "registration_release_only",
+  "proof_policy": "Set a proof only after actual behavior is recorded in root QA and resource map. This manifest does not prove platform behavior. Sales eligibility, cutoff, suppression and fulfillment have separate root QA gates. Replay has actual publication, media, review and 72-hour expiry requirements.",
+  "rendered_assets": ["copy/invitation.html"],
+  "render_policy": "Rendering local HTML does not authorize publication, prove route availability or schedule a send. Run the release gate and root deployment checks before publishing registration or invitations."
+}
