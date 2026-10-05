@@ -1,0 +1,34 @@
+{
+  "campaign": "cfb002",
+  "owner": "Kade",
+  "email_sends_allowed": false,
+  "resources": {
+    "registration_form": {
+      "id": "2149743605",
+      "admin_url": "https://app.kajabi.com/admin/forms/2149743605/edit",
+      "preimage_observed": {
+        "opt_in": "double",
+        "custom_confirmation_email": false,
+        "team_notification": false,
+        "third_party_provider": false
+      },
+      "desired": {
+        "opt_in": "single",
+        "custom_confirmation_email": false,
+        "team_notification": false,
+        "third_party_provider": false,
+        "email_actions_armed": false,
+        "marketing_consent": "explicit native consent control required before registration activation"
+      },
+      "live_submission_allowed": false,
+      "rollback": "Restore captured scoped settings only after later explicit email-authorisation; restoring double opt-in arms mail and is prohibited during this run. Never touch unrelated forms."
+    },
+    "registration_workflow": {
+      "id": "1075728",
+      "admin_url": "https://app.kajabi.com/admin/workflows/1075728/edit",
+      "desired_status": "draft",
+      "email_actions_armed": false,
+      "direct_form_event_action": "Inspect and isolate native direct actions before any live submission; no contact enrollment or paid grants in this build."
+    }
+  }
+}
