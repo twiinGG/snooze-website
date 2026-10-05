@@ -20,6 +20,8 @@ One named server: `cfb002-preview`, `http://127.0.0.1:8762`, Python process star
 
 Generate previews with `python3 apps/snooze-website/src/campaigns/cfb002/design/build_review.py`. These are explicit readiness states with no invented form, room, video or payment URL. They are review artefacts, not deployment authorisation.
 
+For other environments, pass `--media-dir /path/to/external-media` to select the diagram destination. The default preserves the existing Mac media library. `--output` independently selects the HTML directory. Help output and temporary-directory generation of all six pages plus the SVG were verified; the temporary files were removed.
+
 | Surface | Local preview | Desktop and mobile | Accessibility |
 |---|---|---|---|
 | Registration | [Preview](http://127.0.0.1:8762/registration.html) | 1440 × 1000 and 390 × 844, pass | axe 4.12.1: 0 violations |

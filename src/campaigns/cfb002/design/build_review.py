@@ -66,6 +66,7 @@ def diagram(path):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=HERE/'preview')
+    parser.add_argument('--media-dir',type=Path,default=MEDIA,help='Directory for the generated SVG; defaults to the existing external media library')
     args=parser.parse_args()
     copy=json.loads((HERE.parent/'campaign-copy.json').read_text())
     # Review previews use no live credentials, forms, payment route or media.
@@ -80,9 +81,10 @@ def main():
     args.output.mkdir(parents=True,exist_ok=True)
     for name,fragment in pages.items():
         (args.output/f'{name}.html').write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CFB-002 review: {name}</title><style>body{{margin:0}}</style></head><body>{fragment}</body></html>')
-    MEDIA.mkdir(parents=True,exist_ok=True)
-    diagram(MEDIA/'CFB-002-build-flow.svg')
-    print(json.dumps({'preview_directory':str(args.output),'diagram':str(MEDIA/'CFB-002-build-flow.svg'),'state':'readiness_only_no_live_form_room_or_checkout'},indent=2))
+    media_dir=args.media_dir.expanduser()
+    media_dir.mkdir(parents=True,exist_ok=True)
+    diagram(media_dir/'CFB-002-build-flow.svg')
+    print(json.dumps({'preview_directory':str(args.output),'diagram':str(media_dir/'CFB-002-build-flow.svg'),'state':'readiness_only_no_live_form_room_or_checkout'},indent=2))
 
 
 if __name__=='__main__':
