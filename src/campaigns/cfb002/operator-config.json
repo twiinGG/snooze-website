@@ -18,7 +18,13 @@
         "team_notification": false,
         "third_party_provider": false,
         "email_actions_armed": false,
-        "marketing_consent": "explicit native consent control required before registration activation"
+        "marketing_consent": {
+          "type": "Checkbox",
+          "label": "I agree to receive webinar details and Camp Snooze emails from Sally. I can unsubscribe at any time.",
+          "required": false,
+          "default_checked": false,
+          "registration_without_consent": "No marketing eligibility without verified explicit consent"
+        }
       },
       "live_submission_allowed": false,
       "rollback": "Restore captured scoped settings only after later explicit email-authorisation; restoring double opt-in arms mail and is prohibited during this run. Never touch unrelated forms."
