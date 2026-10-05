@@ -1,109 +1,326 @@
 {
-  "title": "How to sleep train your baby: a practical starting point for parents of babies 4 months plus",
+  "title": "Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus.",
+  "timezone": "Australia/Melbourne",
+  "timezone_label": "AEDT (GMT+11)",
+  "source": {
+    "document_url": "https://docs.google.com/document/d/1L9uR3vizFeBEAXCbLiLTS1bNk0-A1sFQxsioYT7_NWw/edit",
+    "corrections": [
+      {
+        "paragraph": "P00217",
+        "from": "Ymy webinar details",
+        "to": "My webinar details",
+        "authority": "Kade editing-errors instruction; native Doc corrected with revision guard"
+      }
+    ],
+    "trusted_read_receipt": ".tmp/cfb002-native-read-01/manifest.json (private, immutable revision and hashes)"
+  },
   "emails": [
     {
       "key": "invitation",
+      "review_email_number": 1,
       "subject": "A free baby sleep webinar with Sally this Wednesday",
-      "preview": "Wednesday October 07 at 11 am Melbourne time. Parents of babies 4 months plus.",
+      "preview": "Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Parents of babies 4 months plus.",
       "schedule": "operator_selected_before_webinar",
-      "audience": "consented_teaching_invitation_audience",
-      "paragraphs": ["Join Sally for a free webinar: How to sleep train your baby: a practical starting point for parents of babies 4 months plus.", "We meet on Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes: 35 minutes of teaching, 5 minutes about Camp Snooze and 10 minutes for questions.", "Sally is an internationally certified sleep consultant and former paediatric nurse. She'll also introduce Camp Snooze, which starts Monday October 19.", "Register below to receive your joining details."],
-      "cta": {"resource": "registration_url", "label": "Register for the free webinar"}
+      "schedule_note": "Before webinar; operator selects after signup passes",
+      "audience": "Consented teaching invitation audience. Existing buyers may receive the teaching invitation where appropriate.",
+      "paragraphs": [
+        "Join me for a free webinar:",
+        "Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus.",
+        "It’s live on Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Allow 50 minutes: 35 minutes of teaching, 5 minutes about Camp Snooze and 10 minutes for your questions.",
+        "I’ve helped thousands of families around the world. In this session, I’ll explain how the daytime routine connects to overnight sleep, where sleep training fits and how to approach changes with a clear plan. I’ll also introduce Camp Snooze, which starts Monday Oct 19, 2026, and explain the support available as you put the plan into practice.",
+        "Register below to receive your joining details."
+      ],
+      "cta": {
+        "resource": "registration_url",
+        "label": "Register for the free webinar",
+        "review_destination": "[CTA destination https://www.joinsnooze.com/webinar-2026-10-07 | allocated draft route](https://www.joinsnooze.com/webinar-2026-10-07)"
+      },
+      "source_paragraphs": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "confirmation",
+      "review_email_number": 2,
       "subject": "You're registered for Wednesday's baby sleep webinar",
-      "preview": "Wednesday October 07, 11 to 11:50 am Melbourne time. Your joining details are here.",
+      "preview": "Wednesday Oct 7, 2026, 11 to 11:50 am AEDT (GMT+11). Your joining details are here.",
       "schedule": "once_on_valid_registration",
-      "audience": "confirmed_session_registrants",
-      "paragraphs": ["You're registered for How to sleep train your baby: a practical starting point for parents of babies 4 months plus.", "Join us on Wednesday October 07 at 11 am Melbourne time. We'll finish at 11:50 am.", "We'll spend 35 minutes on teaching, 5 minutes explaining Camp Snooze and 10 minutes on questions. Camp starts Monday October 19.", "Use the same email address you registered with when you join. If your meeting account uses a different email, please contact us so we can reconcile your attendance.", "People who attend this session can book Camp from Thursday October 08 at 8 am Melbourne time. Registering or watching the replay alone does not qualify for that early access."],
-      "cta": {"resource": "thank_you_url", "label": "Your joining and calendar details"}
+      "schedule_note": "Immediately after valid registration",
+      "audience": "Confirmed registrants for this dated session.",
+      "paragraphs": [
+        "You're registered for Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus.",
+        "Join me on Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). I’ll finish at 11:50 am.",
+        "I’ll spend 35 minutes teaching, 5 minutes explaining Camp Snooze and 10 minutes answering your questions. Camp starts Monday Oct 19, 2026.",
+        "I’ll show the early booking code at the end of the webinar. Keep it handy if you’d like to join Camp. You can also find it in the recording once I release it.",
+        "Camp booking opens Thursday Oct 8, 2026 at 8 am AEDT (GMT+11) with that code. If you watch the replay, you can use the same code once the recording is released and booking has opened."
+      ],
+      "cta": {
+        "resource": "thank_you_url",
+        "label": "Your joining and calendar details",
+        "review_destination": "[CTA destination https://www.joinsnooze.com/webinar-2026-10-07-join | allocated draft route](https://www.joinsnooze.com/webinar-2026-10-07-join)"
+      },
+      "source_paragraphs": [
+        196,
+        197,
+        198,
+        199,
+        200
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "reminder_tuesday",
+      "review_email_number": 3,
       "subject": "Your baby sleep webinar is tomorrow at 11 am",
-      "preview": "Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes.",
+      "preview": "Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Allow 50 minutes.",
       "schedule": "2026-10-06T11:00:00+11:00",
-      "audience": "confirmed_session_registrants_registered_before_send",
-      "paragraphs": ["Our free baby sleep webinar is tomorrow, Wednesday October 07 at 11 am Melbourne time.", "Allow 50 minutes for Sally's teaching, a short introduction to Camp Snooze and questions. Your joining link and calendar details are below."],
-      "cta": {"resource": "thank_you_url", "label": "Your webinar details"}
+      "schedule_note": "Tuesday Oct 6, 2026 at 11 am",
+      "audience": "Confirmed registrants who registered before this send time.",
+      "paragraphs": [
+        "My free baby sleep webinar is tomorrow, Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11).",
+        "Allow 50 minutes for my teaching, a short introduction to Camp Snooze and your questions. Your joining link and calendar details are below. I’ll share the early booking code at the end."
+      ],
+      "cta": {
+        "resource": "thank_you_url",
+        "label": "My webinar details",
+        "review_destination": "[CTA destination https://www.joinsnooze.com/webinar-2026-10-07-join | allocated draft route](https://www.joinsnooze.com/webinar-2026-10-07-join)"
+      },
+      "source_paragraphs": [
+        215,
+        216
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "reminder_one_hour",
-      "subject": "We start in one hour: your baby sleep webinar",
-      "preview": "Join Sally at 11 am Melbourne time today, Wednesday October 07.",
+      "review_email_number": 4,
+      "subject": "I start in one hour: your baby sleep webinar",
+      "preview": "Join me at 11 am AEDT (GMT+11) today, Wednesday Oct 7, 2026.",
       "schedule": "2026-10-07T10:00:00+11:00",
-      "audience": "confirmed_session_registrants_registered_before_send",
-      "paragraphs": ["We start at 11 am Melbourne time today, Wednesday October 07. We'll finish at 11:50 am.", "Join using the email address you registered with. If you use a different meeting email, please contact us so we can reconcile your attendance."],
-      "cta": {"resource": "room_url", "label": "Join the webinar"}
+      "schedule_note": "Wednesday Oct 7, 2026 at 10 am",
+      "audience": "Confirmed registrants who registered before this send time.",
+      "paragraphs": [
+        "I start at 11 am AEDT (GMT+11) today, Wednesday Oct 7, 2026. I’ll finish at 11:50 am.",
+        "I’ll share the Camp Snooze early booking code at the end of the session. You’ll also find it in the recording once it’s released."
+      ],
+      "cta": {
+        "resource": "room_url",
+        "label": "Join the webinar",
+        "review_destination": "CTA destination: pending verified room link."
+      },
+      "source_paragraphs": [
+        231,
+        232
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "reminder_start",
-      "subject": "We're starting: join Sally's baby sleep webinar",
-      "preview": "Wednesday October 07 at 11 am Melbourne time. Join us here.",
+      "review_email_number": 5,
+      "subject": "I’m starting: join my baby sleep webinar",
+      "preview": "Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Join me here.",
       "schedule": "2026-10-07T11:00:00+11:00",
-      "audience": "confirmed_session_registrants_registered_before_send",
-      "paragraphs": ["We're starting our free baby sleep webinar at 11 am Melbourne time today, Wednesday October 07.", "Join us for Sally's teaching and a short introduction to Camp Snooze, followed by questions. We'll finish at 11:50 am."],
-      "cta": {"resource": "room_url", "label": "Join the webinar"}
+      "schedule_note": "Wednesday Oct 7, 2026 at 11 am",
+      "audience": "Confirmed registrants who registered before this send time.",
+      "paragraphs": [
+        "I’m starting my free baby sleep webinar at 11 am AEDT (GMT+11) today, Wednesday Oct 7, 2026.",
+        "Join me for practical teaching and a short introduction to Camp Snooze, followed by your questions. I’ll finish at 11:50 am and share the early booking code at the end."
+      ],
+      "cta": {
+        "resource": "room_url",
+        "label": "Join the webinar",
+        "review_destination": "CTA destination: pending verified room link."
+      },
+      "source_paragraphs": [
+        247,
+        248
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "replay",
+      "review_email_number": 6,
       "subject": "Your baby sleep webinar replay is ready",
-      "preview": "Catch up on Sally's session and the introduction to Camp Snooze.",
+      "preview": "Catch up on my teaching and find the Camp Snooze early booking code.",
       "schedule": "after_processed_recording_is_published",
-      "audience": "confirmed_session_registrants",
-      "paragraphs": ["The replay of How to sleep train your baby: a practical starting point for parents of babies 4 months plus is ready.", "You can watch it until the expiry time shown on the replay page.", "Camp Snooze starts Monday October 19. People who attended the live session can book from Thursday October 08 at 8 am Melbourne time. Waitlisters can book from Friday October 09 at 8 am. Public booking opens Monday October 12 at 8 am.", "Watching the replay alone does not qualify for Thursday access. We'll send the right booking details when your access opens."],
-      "cta": {"resource": "replay_url", "label": "Watch the webinar replay"}
+      "schedule_note": "Only after processed recording is published; target Wednesday Oct 7, 2026 at 8 pm",
+      "audience": "Confirmed registrants; the released replay includes the early booking code.",
+      "paragraphs": [
+        "My webinar replay is ready: Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus.",
+        "You can watch it until the expiry time shown on the replay page.",
+        "My next Camp Snooze starts Monday Oct 19, 2026. Booking opens Thursday Oct 8, 2026 at 8 am AEDT (GMT+11) with the code I share at the end of the webinar. Waitlist booking opens Friday Oct 9, 2026 at 8 am. Public booking opens Monday Oct 12, 2026 at 8 am.",
+        "You’ll find the early booking code at the end of this recording. Use it once booking has opened. The booking page explains the setup fee and ongoing monthly payments."
+      ],
+      "cta": {
+        "resource": "replay_url",
+        "label": "Watch the webinar replay",
+        "review_destination": "[CTA destination https://www.joinsnooze.com/webinar-2026-10-07-replay | allocated draft route](https://www.joinsnooze.com/webinar-2026-10-07-replay)"
+      },
+      "source_paragraphs": [
+        263,
+        264,
+        265,
+        266
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
-      "key": "attendee_opening",
+      "key": "code_opening",
+      "review_email_number": 7,
       "subject": "Your Camp Snooze early access is open",
-      "preview": "For people who attended Wednesday's webinar. Camp starts Monday October 19.",
+      "preview": "Use the code from my webinar. Camp starts Monday Oct 19, 2026.",
       "schedule": "2026-10-08T08:00:00+11:00",
-      "audience": "verified_session_attendees_without_cohort_purchase",
-      "paragraphs": ["Thanks for joining Wednesday's webinar. Your early access to Camp Snooze is open.", "Camp starts Monday October 19. The booking page has the current options and payment terms.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
-      "cta": {"resource": "attendee_sales_url", "label": "View Camp Snooze booking options"}
+      "schedule_note": "Thursday Oct 8, 2026 at 8 am",
+      "audience": "Consented webinar registrants without a purchase for this Camp. Do not include the code in the email; it is shown in the session or released recording.",
+      "paragraphs": [
+        "I’ve opened early booking for Camp Snooze. Use the code I shared at the end of my webinar. If you missed it live, you’ll find the code in the recording once it’s released.",
+        "My next Camp starts Monday Oct 19, 2026. The booking page explains the setup fee, ongoing monthly payment and support included.",
+        "Bookings close Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11), unless places fill first."
+      ],
+      "cta": {
+        "resource": "code_sales_url",
+        "label": "View Camp Snooze booking options",
+        "review_destination": "CTA destination: pending verified code-gated recurring Camp booking URL."
+      },
+      "source_paragraphs": [
+        282,
+        283,
+        284
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "waitlist_opening",
+      "review_email_number": 8,
       "subject": "Camp Snooze booking is open for the waitlist",
-      "preview": "Camp starts Monday October 19. Your waitlist access opens today.",
+      "preview": "Camp starts Monday Oct 19, 2026. Your waitlist access opens today.",
       "schedule": "2026-10-09T08:00:00+11:00",
-      "audience": "actual_waitlisters_without_cohort_purchase_or_prior_attendee_opening_send",
-      "paragraphs": ["You're on the Camp Snooze waitlist, and your booking access is open.", "Camp starts Monday October 19. The booking page has the current options and payment terms.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
-      "cta": {"resource": "waitlist_sales_url", "label": "View Camp Snooze booking options"}
+      "schedule_note": "Friday Oct 9, 2026 at 8 am",
+      "audience": "Actual waitlisters without a Camp purchase or an earlier webinar-code opening send.",
+      "paragraphs": [
+        "I’ve opened Camp Snooze booking for my waitlist. You can book your place now.",
+        "My next Camp starts Monday Oct 19, 2026. The booking page explains the setup fee, ongoing monthly payment and support included.",
+        "Bookings close Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11), unless places fill first."
+      ],
+      "cta": {
+        "resource": "waitlist_sales_url",
+        "label": "View Camp Snooze booking options",
+        "review_destination": "CTA destination: pending verified waitlist sales url."
+      },
+      "source_paragraphs": [
+        300,
+        301,
+        302
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "public_opening",
-      "subject": "Camp Snooze starts Monday October 19: booking is open",
-      "preview": "Bookings close Wednesday October 14 at 11:59 pm Melbourne time.",
+      "review_email_number": 9,
+      "subject": "Camp Snooze starts Monday Oct 19, 2026: booking is open",
+      "preview": "Bookings close Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11).",
       "schedule": "2026-10-12T08:00:00+11:00",
-      "audience": "consented_camp_sales_audience_without_cohort_purchase_or_prior_opening_send",
-      "paragraphs": ["Booking is open for Camp Snooze starting Monday October 19.", "If you're considering Camp after Sally's webinar, you can view the current booking options and payment terms below.", "Bookings close Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first."],
-      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+      "schedule_note": "Monday Oct 12, 2026 at 8 am",
+      "audience": "Consented applicable sales audience without a Camp purchase or an earlier opening send.",
+      "paragraphs": [
+        "I’ve opened booking for Camp Snooze starting Monday Oct 19, 2026.",
+        "If you’d like my help putting a sleep plan into practice after the webinar, you can read about Camp Snooze and the recurring payment terms below.",
+        "Bookings close Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11), unless places fill first."
+      ],
+      "cta": {
+        "resource": "public_sales_url",
+        "label": "View Camp Snooze booking options",
+        "review_destination": "CTA destination: pending verified public sales url."
+      },
+      "source_paragraphs": [
+        318,
+        319,
+        320
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "practical_followup",
-      "subject": "Camp Snooze booking details for Monday October 19",
+      "review_email_number": 10,
+      "subject": "Camp Snooze booking details for Monday Oct 19, 2026",
       "preview": "The booking page has the current options and payment terms.",
       "schedule": "2026-10-13T11:00:00+11:00",
-      "audience": "consented_camp_sales_audience_without_cohort_purchase",
-      "paragraphs": ["If you're deciding whether to join Camp Snooze, the booking page has the current options and payment terms for the Camp starting Monday October 19.", "Bookings close tomorrow, Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first. If you've already booked this Camp, your onboarding messages will explain your next steps."],
-      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+      "schedule_note": "Tuesday Oct 13, 2026 at 11 am",
+      "audience": "Consented applicable sales audience without a purchase for this Camp.",
+      "paragraphs": [
+        "If you’re deciding whether to join my next Camp Snooze, the booking page explains the support included, setup fee and ongoing monthly payment. Camp starts Monday Oct 19, 2026.",
+        "I’m closing bookings tomorrow, Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11), unless places fill first. If you’ve already booked, I’ll send your next steps through your onboarding messages."
+      ],
+      "cta": {
+        "resource": "public_sales_url",
+        "label": "View Camp Snooze booking options",
+        "review_destination": "CTA destination: pending verified public sales url."
+      },
+      "source_paragraphs": [
+        336,
+        337
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     },
     {
       "key": "final_day",
+      "review_email_number": 11,
       "subject": "Camp Snooze bookings close tonight at 11:59 pm",
-      "preview": "Wednesday October 14, Melbourne time. Camp starts Monday October 19.",
+      "preview": "Wednesday Oct 14, 2026, AEDT (GMT+11). Camp starts Monday Oct 19, 2026.",
       "schedule": "2026-10-14T19:00:00+11:00",
-      "audience": "consented_camp_sales_audience_without_cohort_purchase",
-      "paragraphs": ["Bookings for Camp Snooze starting Monday October 19 close tonight, Wednesday October 14 at 11:59 pm Melbourne time, unless places fill first.", "The booking page has the current options and payment terms. If you're joining this Camp, please complete your booking before the cutoff."],
-      "cta": {"resource": "public_sales_url", "label": "View Camp Snooze booking options"}
+      "schedule_note": "Wednesday Oct 14, 2026 at 7 pm",
+      "audience": "Consented applicable sales audience without a purchase for this Camp.",
+      "paragraphs": [
+        "I’m closing bookings for Camp Snooze starting Monday Oct 19, 2026 tonight, Wednesday Oct 14, 2026 at 11:59 pm AEDT (GMT+11), unless places fill first.",
+        "The booking page explains the setup fee and ongoing monthly payments. If you’d like to join me for this Camp, please complete your booking before the cutoff."
+      ],
+      "cta": {
+        "resource": "public_sales_url",
+        "label": "View Camp Snooze booking options",
+        "review_destination": "CTA destination: pending verified public sales url."
+      },
+      "source_paragraphs": [
+        353,
+        354
+      ],
+      "status": "draft",
+      "enabled": false,
+      "send_at": null
     }
   ],
   "organic": {
-    "social_post": "Free webinar with Sally: How to sleep train your baby: a practical starting point for parents of babies 4 months plus. Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes for teaching, a short introduction to Camp Snooze and questions. Register through the webinar link in our bio.",
-    "story_frames": ["Free baby sleep webinar with Sally. For parents of babies 4 months plus.", "Wednesday October 07 at 11 am Melbourne time. Allow 50 minutes.", "Teaching, an introduction to Camp Snooze and time for questions. Register through the webinar link."],
-    "community_invitation": "Sally is presenting a free baby sleep webinar on Wednesday October 07 at 11 am Melbourne time, for parents of babies 4 months plus. Allow 50 minutes for teaching, a short introduction to Camp Snooze and questions. You're welcome to join us. Register through the webinar registration link."
-  }
+    "social_post": "Join me for a free webinar: Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus. I’m live on Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Allow 50 minutes for teaching, a short introduction to Camp Snooze and your questions. Register through the webinar link in my bio.",
+    "story_frames": [
+      "Join my free baby sleep webinar. For parents of babies 4 months plus.",
+      "Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Allow 50 minutes.",
+      "I’ll teach, explain Camp Snooze and answer your questions. Register through the webinar link."
+    ],
+    "community_invitation": "I’m teaching a free webinar: Get better baby sleep: The Sleep Concierge’s successful sleep training method for parents of babies 4 months plus. Join me on Wednesday Oct 7, 2026 at 11 am AEDT (GMT+11). Allow 50 minutes for teaching, a short introduction to Camp Snooze and your questions. Register through the webinar registration link."
+  },
+  "presenter_wording": "“My next Camp Snooze starts Monday Oct 19, 2026. Here is your early booking code, which will also be in the recording when I release it. Use it to book from Thursday Oct 8, 2026 at 8 am AEDT (GMT+11). Waitlist booking opens Friday Oct 9, 2026 at 8 am and public booking opens Monday Oct 12, 2026 at 8 am. I’m closing bookings Wednesday Oct 14, 2026 at 11:59 pm, unless places fill first. The booking page explains the setup fee and ongoing monthly payments.”"
 }
