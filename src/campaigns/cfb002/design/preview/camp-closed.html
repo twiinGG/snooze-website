@@ -1,0 +1,277 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CFB-002 review: camp-closed</title><style>body{margin:0}</style></head><body><style>/* System Initialization: complete and scoped to each CFB-002 landing wrapper. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+#cfb002-camp-booking-page { --sn-coral:#f43357; --sn-coral-hover:#d62646; --sn-navy:#1f293b; --sn-cream:#faf7f4; --sn-white:#fff; --sn-text-dark:#161e2a; --sn-text-light:#a9b7c9; --sn-font-body:'Poppins',Arial,sans-serif; --sn-font-heading:'Playfair Display',Georgia,serif; --sn-max-width:1200px; --sn-radius:20px; --sn-shadow:0 12px 32px rgba(31,41,59,.07); margin:0; width:100%; color:var(--sn-navy); background:var(--sn-cream); font:400 16px/1.75 var(--sn-font-body); text-align:left; -webkit-font-smoothing:antialiased; }
+#cfb002-camp-booking-page *, #cfb002-camp-booking-page *::before, #cfb002-camp-booking-page *::after { box-sizing:border-box; }
+#cfb002-camp-booking-page h1, #cfb002-camp-booking-page h2, #cfb002-camp-booking-page h3, #cfb002-camp-booking-page h4 { color:var(--sn-navy); font-family:var(--sn-font-heading); font-weight:500; line-height:1.2; margin:0 0 20px; }
+#cfb002-camp-booking-page h1 { font-size:clamp(40px,5.2vw,68px); letter-spacing:-1.7px; }
+#cfb002-camp-booking-page h2 { font-size:clamp(30px,3.2vw,42px); letter-spacing:-.7px; }
+#cfb002-camp-booking-page h3 { font-size:25px; } #cfb002-camp-booking-page h4 { font-size:20px; }
+#cfb002-camp-booking-page p { margin:0 0 20px; } #cfb002-camp-booking-page a { color:inherit; } #cfb002-camp-booking-page strong { font-weight:600; }
+#cfb002-camp-booking-page img { max-width:100%; height:auto; display:block; }
+#cfb002-camp-booking-page .snooze-container { max-width:var(--sn-max-width); padding:0 32px; margin:0 auto; width:100%; }
+#cfb002-camp-booking-page .snooze-section { padding:80px 0; } #cfb002-camp-booking-page .bg-white { background:var(--sn-white); }
+#cfb002-camp-booking-page .hero-wrap { padding:72px 0 80px; width:100%; max-width:none; }
+#cfb002-camp-booking-page .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:72px; align-items:center; }
+#cfb002-camp-booking-page .steps-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; padding:0; margin:0; list-style:none; }
+#cfb002-camp-booking-page .step-card { background:var(--sn-white); border:1px solid #e7e0da; border-radius:var(--sn-radius); padding:28px; }
+#cfb002-camp-booking-page .btn { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:14px 25px; border:2px solid var(--sn-coral-hover); border-radius:999px; background:var(--sn-coral-hover); color:#fff; font:600 15px/1.4 var(--sn-font-body); text-align:center; text-decoration:none; cursor:pointer; transition:background .15s; }
+#cfb002-camp-booking-page .btn:hover { background:#b9203d; border-color:#b9203d; }
+#cfb002-camp-booking-page .btn-outline { background:transparent; color:var(--sn-navy); border-color:#d3c9c2; }
+#cfb002-camp-booking-page .btn-outline:hover { background:#f1e9e3; border-color:var(--sn-navy); }
+#cfb002-camp-booking-page :focus-visible { outline:3px solid var(--sn-navy); outline-offset:5px; }
+#cfb002-camp-booking-page .snooze-footer-clean :focus-visible { outline-color:#fff; }
+#cfb002-camp-booking-page > section, #cfb002-camp-booking-page > main, #cfb002-camp-booking-page main > section { width:100%; max-width:none; margin-left:0; margin-right:0; }
+/* Page-specific styles: existing Snooze palette, typography and portrait. */
+#cfb002-camp-booking-page .cfb-header { border-bottom:1px solid #e6dfd9; padding:17px 0; }
+#cfb002-camp-booking-page .cfb-header .snooze-container { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+#cfb002-camp-booking-page .cfb-wordmark { font:700 39px/1.15 var(--sn-font-heading); letter-spacing:-2px; text-decoration:none; }
+#cfb002-camp-booking-page .cfb-header-note { font-size:12px; color:#50596a; }
+#cfb002-camp-booking-page .cfb-eyebrow { font-size:12px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:#9d2540; margin-bottom:18px; }
+#cfb002-camp-booking-page .cfb-title-detail { display:block; font:400 clamp(21px,2.1vw,27px)/1.5 var(--sn-font-body); letter-spacing:-.4px; margin-top:24px; }
+#cfb002-camp-booking-page .cfb-lead { font-size:18px; line-height:1.8; max-width:660px; }
+#cfb002-camp-booking-page .cfb-date { display:flex; align-items:center; gap:18px; margin:28px 0; }
+#cfb002-camp-booking-page .cfb-date p { margin:0; font-size:14px; }
+#cfb002-camp-booking-page .cfb-calendar-day { display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff; border:1px solid #eadbd5; border-radius:13px; min-width:65px; height:77px; color:#9d2540; font-size:11px; letter-spacing:1px; line-height:1.3; }
+#cfb002-camp-booking-page .cfb-calendar-day strong { font:500 32px/1.2 var(--sn-font-heading); color:var(--sn-navy); }
+#cfb002-camp-booking-page .cfb-portrait { margin:0; position:relative; padding:0 0 24px; }
+#cfb002-camp-booking-page .cfb-portrait img { border-radius:48% 48% 25px 25px; background:#f2e7df; width:100%; }
+#cfb002-camp-booking-page .cfb-portrait figcaption { position:relative; width:85%; margin:-48px auto 0; padding:17px 25px; background:#fff; border:1px solid #e7e0da; border-radius:16px; box-shadow:var(--sn-shadow); font:500 27px/1.4 var(--sn-font-heading); }
+#cfb002-camp-booking-page .cfb-portrait figcaption span { display:block; font:400 12px/1.7 var(--sn-font-body); letter-spacing:.5px; }
+#cfb002-camp-booking-page .cfb-two-col { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+#cfb002-camp-booking-page .cfb-form-panel, #cfb002-camp-booking-page .cfb-soft-card { background:var(--sn-cream); border:1px solid #e6ddd6; border-radius:var(--sn-radius); padding:36px; }
+#cfb002-camp-booking-page .cfb-agenda { margin:30px 0 0; }
+#cfb002-camp-booking-page .cfb-agenda div { display:flex; gap:24px; padding:14px 0; border-top:1px solid #e6dfd9; }
+#cfb002-camp-booking-page .cfb-agenda dt { font-weight:600; color:#9d2540; width:68px; flex-shrink:0; }
+#cfb002-camp-booking-page .cfb-agenda dd { margin:0; }
+#cfb002-camp-booking-page .cfb-notice { display:flex; align-items:flex-start; gap:14px; padding:22px; background:#fff; border:1px solid #dad3cc; border-radius:14px; text-align:left; }
+#cfb002-camp-booking-page .cfb-notice .cfb-notice-title { font:600 16px/1.5 var(--sn-font-body); margin:0 0 8px; }
+#cfb002-camp-booking-page .cfb-notice p { font-size:14px; margin:0; }
+#cfb002-camp-booking-page .cfb-status-dot { width:9px; height:9px; border-radius:50%; background:#9d2540; margin-top:7px; flex-shrink:0; }
+#cfb002-camp-booking-page .cfb-small { font-size:13px; line-height:1.8; color:#50596a; margin-top:20px; }
+#cfb002-camp-booking-page .cfb-section-intro { max-width:740px; margin:0 auto 40px; text-align:center; }
+#cfb002-camp-booking-page .cfb-step-number { color:#9d2540; font-size:12px; font-weight:600; display:block; margin-bottom:22px; }
+#cfb002-camp-booking-page .cfb-schedule p { font-size:14px; } #cfb002-camp-booking-page .cfb-schedule p:last-child { margin-bottom:0; }
+#cfb002-camp-booking-page .cfb-cutoff { font-size:13px; text-align:center; margin:28px auto 0; max-width:830px; }
+#cfb002-camp-booking-page .cfb-narrow { max-width:850px; text-align:center; } #cfb002-camp-booking-page .cfb-narrow .cfb-lead { margin-left:auto; margin-right:auto; }
+#cfb002-camp-booking-page .cfb-session-card { margin:40px auto 0; padding:30px; background:#fff; border:1px solid #e7e0da; border-radius:var(--sn-radius); box-shadow:var(--sn-shadow); }
+#cfb002-camp-booking-page .cfb-session-card .cfb-date { justify-content:center; margin-top:0; text-align:left; }
+#cfb002-camp-booking-page .cfb-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
+#cfb002-camp-booking-page .cfb-calendar-actions { margin-top:18px; }
+#cfb002-camp-booking-page .cfb-text-link { text-underline-offset:5px; text-decoration-thickness:1px; }
+#cfb002-camp-booking-page .cfb-player-container { max-width:1000px; margin:40px auto 0; }
+#cfb002-camp-booking-page .cfb-player-wrap { overflow:hidden; border-radius:18px; background:var(--sn-navy); }
+#cfb002-camp-booking-page .cfb-player { width:100%; aspect-ratio:16/9; border:0; display:block; }
+#cfb002-camp-booking-page .cfb-expiry { text-align:center; font-size:13px; margin:18px 0 0; }
+#cfb002-camp-booking-page .cfb-price-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:850px; margin:auto; }
+#cfb002-camp-booking-page .cfb-price-card { border:1px solid #e0d7cf; border-radius:var(--sn-radius); padding:30px; }
+#cfb002-camp-booking-page .cfb-price-card h3 { font-size:36px; } #cfb002-camp-booking-page .cfb-price-card h3 span { font:400 14px var(--sn-font-body); }
+#cfb002-camp-booking-page .cfb-monthly { font-size:18px; } #cfb002-camp-booking-page .cfb-price-card .btn { width:100%; margin-top:14px; }
+#cfb002-camp-booking-page .cfb-native-form label { display:block; font-size:14px; font-weight:500; }
+#cfb002-camp-booking-page .cfb-native-form input:not([type=checkbox]):not([type=hidden]):not([type=radio]), #cfb002-camp-booking-page .cfb-native-form select { width:100%; max-width:100%; min-height:48px; border:1px solid #b5aba2; border-radius:8px; background:#fff; color:var(--sn-navy); padding:10px 13px; font:400 16px var(--sn-font-body); }
+#cfb002-camp-booking-page .cfb-native-form button, #cfb002-camp-booking-page .cfb-native-form input[type=submit] { min-height:48px; max-width:100%; white-space:normal; }
+#cfb002-camp-booking-page .cfb-skip { position:absolute; top:-100px; left:20px; padding:12px 20px; background:#fff; z-index:100; }
+#cfb002-camp-booking-page .cfb-skip:focus { top:10px; }
+@media(max-width:800px) {
+ #cfb002-camp-booking-page .hero-grid { gap:32px; grid-template-columns:1fr 0.8fr; }
+ #cfb002-camp-booking-page .cfb-two-col { gap:32px; }
+ #cfb002-camp-booking-page .steps-grid { gap:14px; } #cfb002-camp-booking-page .step-card { padding:20px; }
+}
+@media(max-width:620px) {
+ #cfb002-camp-booking-page .snooze-container { padding:0 22px; }
+ #cfb002-camp-booking-page .snooze-section { padding:48px 0; } #cfb002-camp-booking-page .hero-wrap { padding:42px 0 48px; }
+ #cfb002-camp-booking-page .hero-grid, #cfb002-camp-booking-page .cfb-two-col, #cfb002-camp-booking-page .steps-grid, #cfb002-camp-booking-page .cfb-price-grid { grid-template-columns:1fr; gap:30px; }
+ #cfb002-camp-booking-page .cfb-header-note { max-width:135px; text-align:right; font-size:10px; }
+ #cfb002-camp-booking-page h1 { letter-spacing:-1px; }
+ #cfb002-camp-booking-page .cfb-title-detail { font-size:21px; }
+ #cfb002-camp-booking-page .cfb-lead { font-size:16px; }
+ #cfb002-camp-booking-page .cfb-portrait { max-width:350px; width:100%; margin:10px auto 0; }
+ #cfb002-camp-booking-page .cfb-form-panel, #cfb002-camp-booking-page .cfb-soft-card, #cfb002-camp-booking-page .cfb-session-card { padding:24px; }
+ #cfb002-camp-booking-page .cfb-actions .btn { width:100%; }
+ #cfb002-camp-booking-page .cfb-date { gap:13px; } #cfb002-camp-booking-page .cfb-date p { font-size:12px; }
+ #cfb002-camp-booking-page .cfb-narrow { text-align:left; } #cfb002-camp-booking-page .cfb-session-card .cfb-date { justify-content:flex-start; }
+ #cfb002-camp-booking-page .cfb-section-intro { text-align:left; }
+ #cfb002-camp-booking-page .cfb-cutoff { text-align:left; }
+ #cfb002-camp-booking-page .cfb-notice { padding:18px; }
+ #cfb002-camp-booking-page .cfb-price-card { padding:24px; }
+}
+@media(prefers-reduced-motion:reduce) { #cfb002-camp-booking-page * { transition:none !important; scroll-behavior:auto !important; } }
+
+   #cfb002-camp-booking-page .snooze-footer-clean {
+     background-color: var(--sn-navy);
+     color: var(--sn-white);
+     padding: 60px 0 30px;
+     font-family: var(--sn-font-body);
+     margin-top: auto;
+   }
+
+   #cfb002-camp-booking-page .sf-container {
+     max-width: var(--sn-max-width);
+     margin: 0 auto;
+     padding: 0 24px;
+   }
+
+   #cfb002-camp-booking-page .sf-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 40px;
+     margin-bottom: 60px;
+   }
+
+   @media (min-width: 768px) {
+     #cfb002-camp-booking-page .sf-grid { grid-template-columns: 1.5fr repeat(4, 1fr); gap: 30px; }
+   }
+
+   #cfb002-camp-booking-page .sf-col { text-align: left; }
+   #cfb002-camp-booking-page .sf-logo {
+     margin-bottom: 16px;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+   }
+   #cfb002-camp-booking-page .sf-logo a {
+     text-decoration: none;
+     display: inline-block;
+     line-height: 1;
+   }
+   #cfb002-camp-booking-page .sf-logo svg {
+     height: auto;
+     max-height: 52px;
+     width: 150px;
+     display: block !important;
+     flex-shrink: 0;
+   }
+   #cfb002-camp-booking-page .sf-logo a svg {
+     visibility: visible !important;
+     opacity: 1 !important;
+   }
+   #cfb002-camp-booking-page .sf-logo-text { font-family: var(--sn-font-heading); font-size: 24px; color: var(--sn-white); display: block; margin-bottom: 16px; }
+   #cfb002-camp-booking-page .sf-tagline { color: var(--sn-text-light); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; }
+   #cfb002-camp-booking-page .sf-socials { display: flex; gap: 16px; justify-content: flex-start; }
+   #cfb002-camp-booking-page .sf-social-link { color: var(--sn-white); font-size: 13px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
+   #cfb002-camp-booking-page .sf-social-link:hover { opacity: 1; color: var(--sn-coral); }
+   #cfb002-camp-booking-page .sf-heading { color: #F43357 !important; font-size: 16px; font-weight: 600; margin: 0 0 20px 0; font-family: var(--sn-font-heading); }
+   #cfb002-camp-booking-page .sf-links { list-style: none; padding: 0; margin: 0; }
+   #cfb002-camp-booking-page .sf-links li { margin-bottom: 12px; text-align: left; }
+   #cfb002-camp-booking-page .sf-links a { color: var(--sn-text-light); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+   #cfb002-camp-booking-page .sf-links a:hover { color: var(--sn-coral); }
+   #cfb002-camp-booking-page .sf-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
+   #cfb002-camp-booking-page .sf-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; margin: 0; }
+
+   @media (max-width: 767px) {
+     #cfb002-camp-booking-page .snooze-footer-clean { padding: 40px 0 20px; }
+     #cfb002-camp-booking-page .sf-container { padding: 0 20px; }
+     #cfb002-camp-booking-page .sf-grid { gap: 24px; margin-bottom: 32px; }
+     #cfb002-camp-booking-page .sf-logo svg {
+       max-height: 40px !important;
+       width: 120px !important;
+     }
+     #cfb002-camp-booking-page .sf-logo-text { font-size: 20px; margin-bottom: 12px; }
+     #cfb002-camp-booking-page .sf-tagline { font-size: 13px; margin-bottom: 16px; }
+     #cfb002-camp-booking-page .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+     #cfb002-camp-booking-page .sf-social-link { font-size: 12px; }
+     #cfb002-camp-booking-page .sf-heading { font-size: 14px; margin-bottom: 12px; }
+     #cfb002-camp-booking-page .sf-links li { margin-bottom: 8px; }
+     #cfb002-camp-booking-page .sf-links a { font-size: 13px; }
+     #cfb002-camp-booking-page .sf-bottom { padding-top: 20px; }
+     #cfb002-camp-booking-page .sf-bottom p { font-size: 11px; }
+   }
+
+/* Scoped accessibility contrast and wrapping overrides. */
+#cfb002-camp-booking-page .sf-bottom p { color: #b8c3d1; }
+#cfb002-camp-booking-page .sf-heading { color: #ff7892 !important; }
+#cfb002-camp-booking-page .sf-grid { overflow-wrap: anywhere; }
+</style>
+<div id="cfb002-camp-booking-page">
+<a class="cfb-skip" href="#cfb-main">Skip to content</a>
+<header class="cfb-header"><div class="snooze-container"><a class="cfb-wordmark" href="https://www.joinsnooze.com/" aria-label="Snooze home">snooze.</a><span class="cfb-header-note">With Sally, The Sleep Concierge</span></div></header>
+<main id="cfb-main"><section class="hero-wrap"><div class="snooze-container cfb-narrow"><p class="cfb-eyebrow">Camp Snooze · Starts Monday October 19, 2026</p><h1>Let’s put your sleep<br>plan into practice.</h1><p class="cfb-lead">Join me in Camp Snooze for support as you work through your baby’s sleep plan.</p></div></section><section class="snooze-section bg-white"><div class="snooze-container"><div class="cfb-section-intro"><p class="cfb-eyebrow">Your booking details</p><h2>Bookings have closed</h2><div class="cfb-notice" role="status"><span class="cfb-status-dot" aria-hidden="true"></span><div><p class="cfb-notice-title"><strong>Bookings have closed</strong></p><p>New bookings for Camp starting Monday October 19, 2026 have closed.</p></div></div></div><p class="cfb-small">The setup fee and ongoing monthly payment will be shown here when booking is available. This Camp offers recurring payments in AUD and USD.</p><p class="cfb-cutoff">Bookings close Wednesday October 14, 2026 at exactly 11:59 pm AEDT (GMT+11), unless places fill first.</p></div></section><section class="snooze-section"><div class="snooze-container"><div class="cfb-section-intro"><p class="cfb-eyebrow">October 2026</p><h2>When you can book.</h2></div><ol class="steps-grid cfb-schedule">
+<li class="step-card"><span class="cfb-step-number">01</span><h3>Webinar code</h3><p>Thursday October 08<br><strong>8 am AEDT (GMT+11)</strong></p><p>Use the code I share at the end of the webinar or in the released recording.</p></li>
+<li class="step-card"><span class="cfb-step-number">02</span><h3>Camp waitlist</h3><p>Friday October 09<br><strong>8 am AEDT (GMT+11)</strong></p><p>Booking opens for families already on my Camp waitlist.</p></li>
+<li class="step-card"><span class="cfb-step-number">03</span><h3>Public booking</h3><p>Monday October 12<br><strong>8 am AEDT (GMT+11)</strong></p><p>Everyone can book if places remain.</p></li>
+</ol><p class="cfb-cutoff">All dates are in 2026. Bookings close Wednesday October 14, 2026 at exactly 11:59 pm AEDT (GMT+11), unless places fill first.</p></div></section></main>
+<footer class="snooze-footer-clean">
+  <div class="sf-container">
+    <div class="sf-grid">
+
+      <div class="sf-col sf-brand-col">
+        <div class="sf-logo">
+          <a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" viewBox="0 0 750 262.499992" height="52" preserveAspectRatio="xMidYMid meet" version="1.0" style="max-height: 52px;">
+              <path fill="#ffffff" d="M 68.695312 184.851562 C 62.671875 184.851562 56.769531 183.949219 50.992188 182.148438 C 45.277344 180.40625 40.835938 178.542969 37.667969 176.558594 L 34.871094 182.894531 L 27.605469 182.894531 L 26.390625 148.136719 L 33.195312 148.136719 C 34.125 150.933594 35.679688 154.101562 37.851562 157.640625 C 40.027344 161.121094 42.511719 164.257812 45.308594 167.050781 C 48.226562 169.847656 51.550781 172.207031 55.277344 174.132812 C 59.066406 176.058594 63.105469 177.023438 67.390625 177.023438 C 73.046875 177.023438 77.238281 175.933594 79.972656 173.761719 C 82.765625 171.523438 84.164062 168.109375 84.164062 163.511719 C 84.164062 161.027344 83.542969 158.976562 82.300781 157.359375 C 81.058594 155.746094 79.351562 154.347656 77.175781 153.167969 C 74.753906 151.925781 72.082031 150.871094 69.164062 150 C 66.304688 149.128906 62.765625 148.074219 58.539062 146.832031 C 54.316406 145.589844 50.679688 144.347656 47.636719 143.105469 C 44.65625 141.800781 41.550781 139.78125 38.320312 137.046875 C 35.523438 134.625 33.289062 131.707031 31.609375 128.289062 C 29.933594 124.871094 29.09375 120.804688 29.09375 116.082031 C 29.09375 107.324219 32.757812 100.242188 40.089844 94.835938 C 47.480469 89.433594 57.140625 86.730469 69.070312 86.730469 C 74.722656 86.730469 79.910156 87.320312 84.628906 88.5 C 89.414062 89.617188 93.421875 90.859375 96.652344 92.226562 L 98.609375 86.730469 L 105.6875 86.730469 L 107.179688 118.503906 L 100.5625 118.503906 C 98.390625 112.042969 94.664062 106.484375 89.382812 101.824219 C 84.101562 97.105469 78.417969 94.742188 72.332031 94.742188 C 67.546875 94.742188 63.789062 95.738281 61.054688 97.726562 C 58.320312 99.714844 56.957031 102.476562 56.957031 106.019531 C 56.957031 110.738281 58.945312 114.15625 62.917969 116.269531 C 66.957031 118.378906 72.578125 120.367188 79.785156 122.230469 C 90.90625 125.089844 99.042969 129.003906 104.199219 133.972656 C 109.355469 138.878906 111.933594 145.15625 111.933594 152.796875 C 111.933594 162.984375 107.925781 170.871094 99.910156 176.464844 C 91.960938 182.054688 81.554688 184.851562 68.695312 184.851562 Z M 242.578125 181.679688 L 186.480469 181.679688 L 186.480469 174.878906 C 187.660156 174.753906 189.089844 174.601562 190.765625 174.414062 C 192.445312 174.226562 193.71875 173.917969 194.585938 173.480469 C 195.890625 172.796875 196.824219 171.804688 197.382812 170.5 C 197.941406 169.195312 198.222656 167.269531 198.222656 164.722656 L 198.222656 121.113281 C 198.222656 114.777344 197.042969 110.023438 194.679688 106.855469 C 192.382812 103.625 188.964844 102.011719 184.429688 102.011719 C 181.945312 102.011719 179.617188 102.382812 177.441406 103.128906 C 175.332031 103.875 173.25 104.960938 171.199219 106.390625 C 169.398438 107.632812 167.9375 108.90625 166.820312 110.210938 C 165.765625 111.515625 164.863281 112.664062 164.117188 113.660156 L 164.117188 163.699219 C 164.117188 165.871094 164.429688 167.703125 165.050781 169.195312 C 165.671875 170.625 166.695312 171.710938 168.125 172.457031 C 169.117188 173.015625 170.359375 173.511719 171.851562 173.949219 C 173.34375 174.382812 174.800781 174.691406 176.230469 174.878906 L 176.230469 181.679688 L 119.578125 181.679688 L 119.578125 174.878906 C 121.128906 174.753906 122.683594 174.601562 124.234375 174.414062 C 125.851562 174.164062 127.21875 173.855469 128.335938 173.480469 C 130.324219 172.796875 131.691406 171.742188 132.4375 170.3125 C 133.179688 168.882812 133.554688 167.019531 133.554688 164.722656 L 133.554688 110.492188 C 133.554688 108.566406 133.058594 106.671875 132.0625 104.808594 C 131.070312 102.945312 129.765625 101.421875 128.148438 100.242188 C 127.03125 99.496094 125.601562 98.875 123.863281 98.378906 C 122.1875 97.878906 120.324219 97.539062 118.273438 97.351562 L 118.273438 90.550781 L 162.71875 88.128906 L 164.117188 89.527344 L 164.117188 103.035156 L 164.492188 103.035156 C 166.230469 101.484375 168.34375 99.621094 170.828125 97.445312 C 173.3125 95.273438 175.609375 93.5 177.722656 92.132812 C 180.019531 90.644531 183.035156 89.371094 186.761719 88.3125 C 190.488281 87.257812 194.464844 86.730469 198.6875 86.730469 C 208.8125 86.730469 216.390625 89.617188 221.425781 95.394531 C 226.515625 101.109375 229.066406 108.722656 229.066406 118.226562 L 229.066406 163.882812 C 229.066406 166.183594 229.40625 168.015625 230.089844 169.382812 C 230.773438 170.75 232.046875 171.835938 233.910156 172.644531 C 234.902344 173.078125 236.117188 173.511719 237.542969 173.949219 C 239.035156 174.382812 240.710938 174.691406 242.578125 174.878906 Z M 342.65625 100.242188 C 347.253906 104.527344 350.761719 109.652344 353.1875 115.617188 C 355.609375 121.578125 356.820312 128.039062 356.820312 134.996094 C 356.820312 141.894531 355.609375 148.414062 353.1875 154.566406 C 350.828125 160.652344 347.347656 165.871094 342.75 170.21875 C 337.839844 174.878906 331.972656 178.453125 325.140625 180.9375 C 318.367188 183.421875 310.601562 184.664062 301.84375 184.664062 C 294.261719 184.664062 287.277344 183.578125 280.878906 181.402344 C 274.542969 179.226562 268.917969 175.964844 264.011719 171.617188 C 259.292969 167.457031 255.5625 162.332031 252.832031 156.242188 C 250.097656 150.09375 248.730469 143.230469 248.730469 135.648438 C 248.730469 128.195312 249.910156 121.578125 252.269531 115.800781 C 254.691406 109.964844 258.296875 104.777344 263.078125 100.242188 C 267.675781 95.894531 273.328125 92.539062 280.039062 90.179688 C 286.808594 87.753906 294.355469 86.542969 302.683594 86.542969 C 311.378906 86.542969 319.019531 87.753906 325.605469 90.179688 C 332.25 92.539062 337.933594 95.894531 342.65625 100.242188 Z M 318.800781 164.816406 C 320.167969 161.335938 321.164062 157.113281 321.785156 152.144531 C 322.46875 147.171875 322.808594 141.394531 322.808594 134.8125 C 322.808594 130.464844 322.5 125.492188 321.875 119.902344 C 321.257812 114.3125 320.324219 109.902344 319.082031 106.671875 C 317.589844 102.757812 315.511719 99.683594 312.839844 97.445312 C 310.230469 95.210938 306.90625 94.089844 302.867188 94.089844 C 298.457031 94.089844 294.917969 95.300781 292.246094 97.726562 C 289.636719 100.148438 287.617188 103.285156 286.1875 107.136719 C 284.886719 110.675781 283.984375 114.839844 283.488281 119.621094 C 282.992188 124.34375 282.742188 129.28125 282.742188 134.4375 C 282.742188 141.210938 282.957031 146.832031 283.394531 151.304688 C 283.828125 155.714844 284.886719 160.15625 286.5625 164.628906 C 287.988281 168.480469 290.039062 171.523438 292.710938 173.761719 C 295.382812 175.996094 298.769531 177.117188 302.867188 177.117188 C 306.597656 177.117188 309.792969 176.089844 312.464844 174.039062 C 315.136719 171.929688 317.25 168.855469 318.800781 164.816406 Z M 460.160156 100.242188 C 464.757812 104.527344 468.269531 109.652344 470.691406 115.617188 C 473.113281 121.578125 474.324219 128.039062 474.324219 134.996094 C 474.324219 141.894531 473.113281 148.414062 470.691406 154.566406 C 468.332031 160.652344 464.851562 165.871094 460.253906 170.21875 C 455.347656 174.878906 449.476562 178.453125 442.644531 180.9375 C 435.871094 183.421875 428.105469 184.664062 419.347656 184.664062 C 411.769531 184.664062 404.78125 183.578125 398.382812 181.402344 C 392.046875 179.226562 386.425781 175.964844 381.515625 171.617188 C 376.796875 167.457031 373.070312 162.332031 370.335938 156.242188 C 367.601562 150.09375 366.234375 143.230469 366.234375 135.648438 C 366.234375 128.195312 367.414062 121.578125 369.777344 115.800781 C 372.199219 109.964844 375.800781 104.777344 380.585938 100.242188 C 385.183594 95.894531 390.832031 92.539062 397.542969 90.179688 C 404.316406 87.753906 411.863281 86.542969 420.1875 86.542969 C 428.882812 86.542969 436.523438 87.753906 443.109375 90.179688 C 449.757812 92.539062 455.441406 95.894531 460.160156 100.242188 Z M 436.304688 164.816406 C 437.675781 161.335938 438.667969 157.113281 439.289062 152.144531 C 439.972656 147.171875 440.3125 141.394531 440.3125 134.8125 C 440.3125 130.464844 440.003906 125.492188 439.382812 119.902344 C 438.761719 114.3125 437.828125 109.902344 436.585938 106.671875 C 435.097656 102.757812 433.015625 99.683594 430.34375 97.445312 C 427.734375 95.210938 424.410156 94.089844 420.375 94.089844 C 415.960938 94.089844 412.421875 95.300781 409.75 97.726562 C 407.140625 100.148438 405.121094 103.285156 403.695312 107.136719 C 402.390625 110.675781 401.488281 114.839844 400.992188 119.621094 C 400.496094 124.34375 400.246094 129.28125 400.246094 134.4375 C 400.246094 141.210938 400.464844 146.832031 400.898438 151.304688 C 401.332031 155.714844 402.390625 160.15625 404.066406 164.628906 C 405.496094 168.480469 407.546875 171.523438 410.214844 173.761719 C 412.886719 175.996094 416.273438 177.117188 420.375 177.117188 C 424.101562 177.117188 427.300781 176.089844 429.972656 174.039062 C 432.644531 171.929688 434.753906 168.855469 436.304688 164.816406 Z M 572.914062 181.679688 L 481.222656 181.679688 L 481.222656 175.253906 L 534.710938 97.726562 C 527.320312 97.726562 520.671875 97.820312 514.769531 98.003906 C 508.867188 98.191406 504.210938 98.9375 500.792969 100.242188 C 499.613281 100.675781 498.027344 102.945312 496.039062 107.042969 C 494.113281 111.082031 492.59375 115.304688 491.472656 119.714844 L 484.859375 119.714844 L 484.859375 89.246094 L 571.515625 89.246094 L 571.515625 95.023438 L 517.84375 173.203125 C 519.335938 173.203125 521.511719 173.234375 524.367188 173.296875 C 527.226562 173.355469 529.957031 173.386719 532.566406 173.386719 C 535.609375 173.386719 538.871094 173.328125 542.351562 173.203125 C 545.828125 173.015625 548.53125 172.796875 550.457031 172.550781 C 553.003906 172.238281 555.023438 171.371094 556.515625 169.941406 C 558.066406 168.511719 559.28125 166.804688 560.148438 164.816406 C 560.957031 163.015625 562.011719 160.3125 563.316406 156.710938 C 564.621094 153.042969 565.613281 149.78125 566.296875 146.925781 L 572.914062 146.925781 Z M 679.144531 159.410156 C 676.972656 162.953125 674.328125 166.304688 671.222656 169.476562 C 668.179688 172.582031 664.703125 175.253906 660.789062 177.488281 C 656.625 179.847656 652.402344 181.621094 648.113281 182.800781 C 643.890625 184.042969 639.015625 184.664062 633.488281 184.664062 C 624.292969 184.664062 616.339844 183.359375 609.632812 180.75 C 602.984375 178.140625 597.484375 174.628906 593.140625 170.21875 C 588.789062 165.808594 585.527344 160.621094 583.355469 154.660156 C 581.242188 148.632812 580.1875 142.109375 580.1875 135.089844 C 580.1875 128.753906 581.335938 122.699219 583.632812 116.921875 C 585.996094 111.082031 589.316406 105.894531 593.605469 101.359375 C 597.828125 96.949219 603.140625 93.375 609.539062 90.644531 C 616 87.910156 623.207031 86.542969 631.15625 86.542969 C 639.855469 86.542969 646.996094 87.601562 652.585938 89.710938 C 658.179688 91.824219 662.808594 94.742188 666.472656 98.472656 C 670.011719 102.011719 672.589844 106.203125 674.207031 111.050781 C 675.820312 115.832031 676.628906 120.867188 676.628906 126.144531 L 676.628906 132.203125 L 613.636719 132.203125 C 613.636719 144.9375 616.09375 154.628906 621 161.273438 C 625.90625 167.921875 633.703125 171.246094 644.386719 171.246094 C 650.226562 171.246094 655.476562 169.660156 660.136719 166.492188 C 664.796875 163.261719 668.769531 159.195312 672.0625 154.285156 Z M 643.550781 124.003906 C 643.550781 120.273438 643.363281 116.453125 642.992188 112.542969 C 642.617188 108.628906 641.964844 105.429688 641.03125 102.945312 C 639.976562 100.023438 638.519531 97.820312 636.652344 96.328125 C 634.851562 94.835938 632.554688 94.089844 629.757812 94.089844 C 624.972656 94.089844 621.152344 96.515625 618.296875 101.359375 C 615.4375 106.203125 613.886719 113.875 613.636719 124.375 Z M 728.722656 166.214844 C 728.722656 171.121094 726.886719 175.375 723.222656 178.980469 C 719.621094 182.582031 715.332031 184.382812 710.363281 184.382812 C 705.332031 184.382812 700.984375 182.613281 697.320312 179.074219 C 693.714844 175.46875 691.914062 171.183594 691.914062 166.214844 C 691.914062 161.242188 693.714844 156.957031 697.320312 153.355469 C 700.984375 149.6875 705.332031 147.855469 710.363281 147.855469 C 715.332031 147.855469 719.621094 149.6875 723.222656 153.355469 C 726.886719 157.019531 728.722656 161.304688 728.722656 166.214844 Z M 728.722656 166.214844 " fill-opacity="1" fill-rule="nonzero"/>
+            </svg>
+          </a>
+        </div>
+        <p class="sf-tagline">Everything you need for great baby sleep,<br>all in one place.</p>
+        <div class="sf-socials">
+          <a href="https://www.instagram.com/thesleepconcierge/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sf-social-link"
+             aria-label="Instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@thesleepconcierge" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sf-social-link"
+             aria-label="TikTok">TikTok</a>
+          <a href="https://www.facebook.com/thesleepconcierge" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sf-social-link"
+             aria-label="Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="sf-col">
+        <h4 class="sf-heading">Sleep Help</h4>
+        <ul class="sf-links">
+          <li><a href="/newborn-baby-sleep-help">Newborn Sleep Help</a></li>
+          <li><a href="/3-4-month-baby-sleep-help">3-4 Month Sleep Help</a></li>
+          <li><a href="/5-12-month-baby-sleep-help">5-12 Month Sleep Help</a></li>
+          <li><a href="/toddler-sleep-help">Toddler Sleep Help</a></li>
+          <li><a href="/baby-sleep-glossary">Sleep Glossary</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="sf-col">
+        <h4 class="sf-heading">Programs</h4>
+        <ul class="sf-links">
+          <li><a href="/snooze-membership">Snooze</a></li>
+          <li><a href="/store">Courses &amp; Guides</a></li>
+          <li><a href="/camp-snooze-sleep-coaching">Camp Snooze</a></li>
+          <li><a href="/one-on-one-sleep-consultations">Consultations</a></li>
+        </ul>
+      </div>
+
+      <div class="sf-col">
+        <h4 class="sf-heading">Members</h4>
+        <ul class="sf-links">
+          <li><a href="/snooze-library">Library Access</a></li>
+          <li><a href="https://www.joinsnooze.com/products/communities/v2/snooze">Snooze Village</a></li>
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/library">Your Account</a></li>
+        </ul>
+      </div>
+
+      <div class="sf-col">
+        <h4 class="sf-heading">Company &amp; Support</h4>
+        <ul class="sf-links">
+          <li><a href="/about-sally">About Sally</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/the-snooze-method">The Snooze Method</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/terms-conditions">Terms</a></li>
+          <li><a href="/privacy-policy">Privacy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sf-bottom">
+      <p>&copy; 2026 Snooze by The Sleep Concierge. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script>(function(){const root=document.getElementById("cfb002-camp-booking-page");const logo=root.querySelector(".sf-logo a");if(logo)logo.setAttribute("aria-label","Snooze home");root.querySelectorAll(".sf-heading").forEach(function(heading){heading.setAttribute("aria-level","2");});})();</script></body></html>

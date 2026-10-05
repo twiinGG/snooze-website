@@ -1,21 +1,45 @@
 {
   "source_state": "prepared_local_drafts",
-  "release_state": "held",
+  "release_state": "held_for_platform_proofs",
   "published": false,
   "scheduled": false,
   "behavior_verified": false,
+  "email_actions_enabled": false,
+  "email_sends_allowed": false,
   "registration_release_required_proofs": [
     "room_guest_join_verified",
+    "room_guest_privacy_verified",
+    "room_observe_only_chat_verified",
     "room_recording_verified",
-    "room_attendance_route_verified",
     "registration_flow_verified",
     "consent_handling_verified",
-    "confirmation_delivery_verified",
+    "no_email_side_effects_verified",
     "registration_route_verified",
     "thank_you_route_verified"
   ],
-  "scope": "registration_release_only",
-  "proof_policy": "Set a proof only after actual behavior is recorded in root QA and resource map. This manifest does not prove platform behavior. Sales eligibility, cutoff, suppression and fulfillment have separate root QA gates. Replay has actual publication, media, review and 72-hour expiry requirements.",
-  "rendered_assets": ["copy/invitation.html"],
-  "render_policy": "Rendering local HTML does not authorize publication, prove route availability or schedule a send. Run the release gate and root deployment checks before publishing registration or invitations."
+  "sales_release_required_proofs": [
+    "code_gate_authorization_verified",
+    "code_gate_final_payment_verified",
+    "direct_checkout_bypass_blocked_verified",
+    "waitlist_trusted_state_verified",
+    "capacity_atomic_reservation_verified",
+    "accepted_inflight_protection_verified",
+    "recurring_terms_verified"
+  ],
+  "rendered_assets": [
+    "copy/invitation.html",
+    "copy/confirmation.html",
+    "copy/reminder_tuesday.html",
+    "copy/reminder_one_hour.html",
+    "copy/reminder_start.html",
+    "copy/replay.html",
+    "copy/code_opening.html",
+    "copy/waitlist_opening.html",
+    "copy/public_opening.html",
+    "copy/practical_followup.html",
+    "copy/final_day.html"
+  ],
+  "proof_policy": "Declared proofs require receiving-system evidence. Local fixture policy is not deployed enforcement. All email actions remain disabled, no delivery tests or send schedules.",
+  "replay_policy": "72 hours from actual reviewed publication; no actual recording yet; removal at media origin required",
+  "release_boundary": "October 07, 2026 webinar and October 19, 2026 Camp; no new spend or DNS; email actions disabled"
 }

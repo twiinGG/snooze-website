@@ -1,0 +1,97 @@
+{
+  "status": "local_contract_not_deployed",
+  "owner": "Kade Greenland",
+  "release_boundary": "October 07, 2026 webinar and October 19, 2026 Camp, all email actions disabled",
+  "current_supported_routes": {
+    "proposal": "POST /proposals",
+    "decision": "POST /approvals/:id/decide",
+    "checkout_authorization": null,
+    "final_payment_intercept": null
+  },
+  "required_capability": "propose_cfb002_booking_control",
+  "capability_registered": false,
+  "human_approval_required": true,
+  "proposal_submitted": false,
+  "actor_id": null,
+  "tenant_id": "snooze",
+  "correlation_id": "cfb002-20261005-camp18-controls",
+  "blocking_dependency": "A registered, approved server operation and supported Kajabi/provider final-payment interception that disables every campaign direct-checkout bypass. Generic proposal approval and post-payment capacity sync do not create that interception.",
+  "required_adapter_contract": {
+    "identity": "Authenticated server-resolved contact identity; never a client attendance/waitlist/purchased flag",
+    "clock": "Authoritative server UTC clock",
+    "offer_allowlist": "Fresh verified registry/Kajabi AUD and USD recurring offers only; setup, monthly, renewal and cancellation disclosures",
+    "code": "Private server secret/digest; no code in page source, JavaScript, URLs or emails",
+    "state": "Fresh complete commerce/cohort and waitlist fetch-back, revision checked within serializable capacity reservation",
+    "capacity": "One durable transaction across authorization, payment start and accepted ledger. SQLite here is a local fixture only.",
+    "payment_start": "Revalidate server stage, code/waitlist access, offer terms, reserved capacity and exact cutoff at the irreversible payment boundary",
+    "reconciliation": "Provider/Kajabi fetch-back verified attempt, contact, offer, currency and setup/monthly amounts; accept or release only a verified final outcome",
+    "inflight": "A payment begun before close retains its reserved place while pending. Authorization alone does not permit payment after close.",
+    "audit": "Declared registered actor, correlation_id, tenant_id, source, confidence and expiry; approval queue and action audit through Memory API",
+    "client_access": "Browser uses existing front door, never directly calls Memory API",
+    "replay": "Review real recording including closing code, publish actual timestamp, enforce origin access for 72 hours and revoke all raw media paths at expiry",
+    "email": "No transports, schedules or email actions enabled. Eligibility evaluation cannot write a delivered ledger.",
+    "registered_identity": "Dedicated registered capability and policy, human approval and scoped executor; no borrowing another agent JWT or browser bypass",
+    "abuse_protection": "Server code-attempt throttle and reservation limits per authenticated contact and trusted edge IP; no code/existence oracle; production parameters require operator approval"
+  },
+  "proposal_body": {
+    "action_type": "cfb002_booking_control",
+    "approval_required": true,
+    "source": "CFB-002 reviewed native setup Doc and local source acceptance",
+    "confidence": 1,
+    "expiry": "2026-10-14T12:59:00Z",
+    "rationale": "Prevent pre-opening, wrong stage, invalid code, direct URL, stale tab, oversold capacity and post-cutoff payments without changing existing entitlements or prices.",
+    "proposed_payload": {
+      "cohort_start": "2026-10-19",
+      "cohort_number": 18,
+      "code_open_at": "2026-10-07T21:00:00Z",
+      "waitlist_open_at": "2026-10-08T21:00:00Z",
+      "public_open_at": "2026-10-11T21:00:00Z",
+      "close_at": "2026-10-14T12:59:00Z",
+      "code_secret_ref": null,
+      "approved_recurring_offer_ids": [
+        "2150946767",
+        "2150884129"
+      ],
+      "confirmed_capacity": 15,
+      "email_actions_enabled": false,
+      "preserve_accepted_and_inflight": true,
+      "preserve_existing_entitlements": true,
+      "deployment_target": null,
+      "offer_readbacks": [
+        {
+          "id": "2150946767",
+          "admin_url": "https://app.kajabi.com/admin/offers/2150946767/edit",
+          "currency": "AUD",
+          "setup": "$937.50 AUD",
+          "monthly": "$59.50 AUD",
+          "interval": "month",
+          "receipt_path": ".tmp/cfb002-platform/2150946767-readback.json",
+          "execution_revalidation_required": true,
+          "renewal_and_cancellation_disclosures_verified": false
+        },
+        {
+          "id": "2150884129",
+          "admin_url": "https://app.kajabi.com/admin/offers/2150884129/edit",
+          "currency": "USD",
+          "setup": "$650.50 USD",
+          "monthly": "$39.50 USD",
+          "interval": "month",
+          "receipt_path": ".tmp/cfb002-platform/2150884129-readback.json",
+          "execution_revalidation_required": true,
+          "renewal_and_cancellation_disclosures_verified": false
+        }
+      ],
+      "expected_state_preconditions": {
+        "cohort_number": 18,
+        "start_date": "2026-10-19",
+        "access_friday_date": "2026-10-16",
+        "seat_cap": 15,
+        "checkout_open_at": null,
+        "checkout_close_at": "2026-10-15T12:59:59+00:00",
+        "purchase_count": "re-fetch and reconcile; never assume zero from remaining capacity",
+        "on_mismatch": "abort without mutation",
+        "preimage_receipt": "project CANONICAL-CHANGE-PROPOSAL fresh public feed read at October 05, 2026 10:44 pm AEDT"
+      }
+    }
+  }
+}
