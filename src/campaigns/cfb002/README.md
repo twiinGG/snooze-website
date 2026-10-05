@@ -1,5 +1,7 @@
 # CFB-002 campaign source preparation
 
+**Release held after review:** [Kade’s October 05 review decisions](../../../../../docs/projects/camp-full-funnel-buildout/4_working/2026-10-05-cfb002/REVIEW-DECISIONS.md) supersede this source’s title, attendance gate and payment scope. Reconcile drafts, renderer guards and bindings to shared-code access and recurring-only sales before deployment. The code below still implements the earlier preparation contract.
+
 This source prepares the October 07 webinar and October 19 Camp sales copy. It does not create contacts, send email, schedule a campaign or enforce checkout eligibility. Kade owns setup and operation. The release boundary is the [CFB-002 kickoff](../../../../../docs/projects/camp-full-funnel-buildout/CFB-002-KICKOFF-webinar-and-staged-camp-sales-2026-10-05.md). Planning follows [Business development planning](../../../../../docs/operations/BUSINESS-DEVELOPMENT-PLANNING.md).
 
 `preparation-manifest.json` records prepared local drafts with release held. Rendering means source exists locally. Saved means Kajabi persisted it. Published means the public route serves it. Scheduled means the platform has confirmed the future send/control. Behavior-verified means approved test evidence proves the effect. No stage implies the next one.
