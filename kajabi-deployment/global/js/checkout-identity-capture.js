@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var ENDPOINT = 'https://n8n.khorus.ai/webhook/snooze-checkout-identity';
+  var ENDPOINT = 'https://ss.joinsnooze.com/snooze-checkout-identity';
   var UTM_STORAGE_KEY = 'snooze_utm_attribution';
   var FIRST_TOUCH_KEY = 'snooze_attribution_first_touch';
   var CURRENT_TOUCH_KEY = 'snooze_attribution_current_touch';
@@ -162,6 +162,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
         keepalive: true,
+        credentials: 'include',
         mode: 'cors'
       }).catch(function () {});
     } catch (e) {}
