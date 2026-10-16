@@ -1,0 +1,223 @@
+{
+  "id": 462675,
+  "name": "Camp Snooze - Post Purchase Flow - Welcome Email and tags",
+  "status": "published",
+  "paused": false,
+  "pause_source": null,
+  "paused_at": null,
+  "version": 5,
+  "trigger_summary": "Multiple Triggers",
+  "all_trigger_descriptions": [
+    "Offer is purchased: Camp Snooze",
+    "Offer is purchased: Camp Snooze",
+    "Tag is added: manualadd"
+  ],
+  "full_action_description": "Add a tag: Snooze-Member",
+  "flow_count": 1,
+  "total_enrolled": 72,
+  "is_publishable": true,
+  "errors": [],
+  "published_at": "2026-01-29T13:07:28Z",
+  "created_at": "2026-01-29T13:07:28Z",
+  "updated_at": "2026-05-12T13:10:42Z",
+  "admin_url": "https://app.kajabi.com/admin/workflows/462675/edit",
+  "structure": {
+    "nodes": [
+      {
+        "id": 3282535,
+        "canvas_id": "node-81748670-8269-4f45-9135-6ad02905a4ca",
+        "type": "then",
+        "options": {
+          "recipients": ""
+        },
+        "filters": {},
+        "errors": [],
+        "position": {
+          "x": 440,
+          "y": 250
+        }
+      },
+      {
+        "id": 3282536,
+        "canvas_id": "node-182dd838-5bde-4df5-9477-1e3ba6b09cd9",
+        "type": "action",
+        "trigger_or_action_type": "Automation::Actions::ContactTagAdd",
+        "resource": {
+          "resource_type": "ContactTag",
+          "resource_id": 2149969315,
+          "resource_name": "Snooze-Member"
+        },
+        "options": {
+          "recipients": ""
+        },
+        "filters": {},
+        "name": "Add a tag",
+        "errors": [],
+        "position": {
+          "x": 325,
+          "y": 314
+        }
+      },
+      {
+        "id": 3282537,
+        "canvas_id": "node-640bb288-b20d-4d98-a1f7-4129c746843d",
+        "type": "action",
+        "trigger_or_action_type": "Automation::Actions::ContactTagAdd",
+        "resource": {
+          "resource_type": "ContactTag",
+          "resource_id": 2149994840,
+          "resource_name": "Camp Snoozer"
+        },
+        "options": {
+          "recipients": ""
+        },
+        "filters": {},
+        "name": "Add a Tag",
+        "errors": [],
+        "position": {
+          "x": 325,
+          "y": 504
+        }
+      },
+      {
+        "id": 3282538,
+        "canvas_id": "node-1cbf6636-880f-488e-99eb-b2a21c02104e",
+        "type": "action",
+        "trigger_or_action_type": "Automation::Actions::EmailSend",
+        "options": {
+          "body": "<div style=\"font-family: Arial, Helvetica, sans-serif; line-height: 1.8; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;\">\n<p>Hi {{first_name}},<br /><br /></p>\n<p>Welcome to Snooze + Camp Snooze! 🏕️<br /><br /></p>\n<p>Your Snooze membership will start the Friday before camp begins. We need you to complete a couple of things before then.</p>\n<p>&nbsp;</p>\n<p>Here's what to do first:<br /><br /></p>\n<p><strong>1. Download the Kajabi App for the Best Snooze Experience</strong></p>\n<p><br /> Access all your Snooze resources on-the-go with the Kajabi app:<br /><br /></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://apps.apple.com/us/app/kajabi/id1485646310\" style=\"display: inline-block; padding: 0.75rem 1.5rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; margin-right: 10px;\">📱 Download for iOS</a></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://play.google.com/store/apps/details?id=kajabi.kajabiapp&amp;pcampaignid=web_share\" style=\"display: inline-block; padding: 0.75rem 1.5rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;\">📱 Download for Android</a></p>\n<p style=\"font-size: 0.95rem; color: #7c8a98;\">Once downloaded, log in with your email and password to access all your Snooze content.<br /><br /></p>\n<p><strong>2. Complete Your Camp Snooze Intake Form <span style=\"color: #ff0000;\">IMPORTANT</span></strong></p>\n<p><br /> Please complete your intake form as soon as possible. Sally and Bec use this information to create your personalised sleep plan for camp.<br /><br /></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://forms.gle/JxzVuV4LBdjRvkZf6\" style=\"display: inline-block; padding: 1rem 2rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;\">Complete Your Intake Form &rarr;</a></p>\n<p style=\"text-align: center; margin-top: 0;\"><a href=\"https://forms.gle/JxzVuV4LBdjRvkZf6\" style=\"color: #2d5016; font-weight: 600;\">https://forms.gle/JxzVuV4LBdjRvkZf6</a></p>\n<p><strong>3. What Happens Next for Camp Snooze</strong><br /><br /></p>\n<ul style=\"color: #1f293b; line-height: 2; margin-top: 0;\">\n<li><strong>A couple of&nbsp;days before camp:</strong> You'll receive your packing list and custom sleep schedule</li>\n<li><strong>Before camp starts:</strong> You'll get access to Snooze&nbsp;and the private Camp Snooze&nbsp;channel for your intake</li>\n<li><strong>When camp begins:</strong> Join the live&nbsp;calls and get dedicated support as you implement your plan</li>\n<li><strong>Each morning during camp:</strong> Daily roll call at 10-11am AEDT / 8-9pm ET (recordings available)</li>\n</ul>\n<p>We'll send you all the details and camp plan&nbsp;closer to your camp start date.<br /><br /></p>\n<p><strong>Questions?</strong><br />For the best&nbsp;support, email <a href=\"mailto:sally@joinsnooze.com\" style=\"color: #2d5016; font-weight: 600;\">sally@joinsnooze.com</a>&nbsp;and we can help answer any questions in the meantime. We're here to help.<br /><br /></p>\n<p>See you in Snooze and at camp roll call on Day 1! 🏕️<br /><br /></p>\n<p>Sally + Bec<br /> The Sleep Concierge</p>\n</div>",
+          "subject": "Subject",
+          "recipients": "",
+          "recipient_option": "contact"
+        },
+        "filters": {},
+        "name": "Send an email",
+        "errors": [],
+        "position": {
+          "x": 325,
+          "y": 694
+        }
+      },
+      {
+        "id": 3282539,
+        "canvas_id": "node-end",
+        "type": "end",
+        "options": {
+          "recipients": ""
+        },
+        "filters": {},
+        "errors": [],
+        "position": {
+          "x": 432,
+          "y": 897
+        }
+      },
+      {
+        "id": 3282532,
+        "canvas_id": "node-1",
+        "type": "lead",
+        "trigger_or_action_type": "Automation::Triggers::OfferPurchased",
+        "resource": {
+          "resource_type": "Offer",
+          "resource_id": 2150946767,
+          "resource_name": "P_CM01_AUD - Camp (AUD)"
+        },
+        "options": {
+          "recipients": "",
+          "offer_variant_id": null
+        },
+        "filters": {},
+        "name": "Offer is purchased",
+        "errors": [],
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 3282533,
+        "canvas_id": "node-0659dcfe-130a-4727-94c4-033dfa728da7",
+        "type": "lead",
+        "trigger_or_action_type": "Automation::Triggers::OfferPurchased",
+        "resource": {
+          "resource_type": "Offer",
+          "resource_id": 2150884129,
+          "resource_name": "P_CM01_USD - Camp (USD)"
+        },
+        "options": {
+          "recipients": "",
+          "offer_variant_id": null
+        },
+        "filters": {},
+        "name": "Offer is purchased",
+        "errors": [],
+        "position": {
+          "x": 325,
+          "y": 0
+        }
+      },
+      {
+        "id": 3282534,
+        "canvas_id": "node-951b3a92-ab8a-4395-8482-fc02b84c06f5",
+        "type": "lead",
+        "trigger_or_action_type": "Automation::Triggers::ContactTagAdded",
+        "resource": {
+          "resource_type": "ContactTag",
+          "resource_id": 2150170801,
+          "resource_name": "manualadd"
+        },
+        "options": {},
+        "filters": {},
+        "name": "Tag is added",
+        "errors": [],
+        "position": {
+          "x": 650,
+          "y": 0
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": 2352764,
+        "source_node_id": 3282538,
+        "target_node_id": 3282539
+      },
+      {
+        "id": 2352765,
+        "source_node_id": 3282536,
+        "target_node_id": 3282537
+      },
+      {
+        "id": 2352766,
+        "source_node_id": 3282537,
+        "target_node_id": 3282538
+      },
+      {
+        "id": 2352767,
+        "source_node_id": 3282532,
+        "target_node_id": 3282535
+      },
+      {
+        "id": 2352768,
+        "source_node_id": 3282533,
+        "target_node_id": 3282535
+      },
+      {
+        "id": 2352769,
+        "source_node_id": 3282535,
+        "target_node_id": 3282536
+      },
+      {
+        "id": 2352770,
+        "source_node_id": 3282534,
+        "target_node_id": 3282535
+      }
+    ]
+  },
+  "links": {
+    "edit": {
+      "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=462675&resource_type=Automation&view=edit",
+      "hint": "Open this automation in the visual builder"
+    }
+  }
+}

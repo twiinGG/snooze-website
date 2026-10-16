@@ -1,0 +1,35 @@
+{
+  "site_id": "2148291177",
+  "automation_id": "462675",
+  "steps": [
+    {
+      "action": {
+        "type": "Automation::Actions::ContactTagAdd",
+        "resource_id": "2149969315",
+        "options": {
+          "recipients": ""
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "Automation::Actions::ContactTagAdd",
+        "resource_id": "2149994840",
+        "options": {
+          "recipients": ""
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "Automation::Actions::EmailSend",
+        "options": {
+          "body": "<div style=\"font-family: Arial, Helvetica, sans-serif; line-height: 1.8; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;\">\n<p>Hi {{first_name}},<br /><br /></p>\n<p>Welcome to Snooze + Camp Snooze! 🏕️<br /><br /></p>\n<p>Your Snooze membership will start the Friday before camp begins. We need you to complete a couple of things before then.</p>\n<p>&nbsp;</p>\n<p>Here's what to do first:<br /><br /></p>\n<p><strong>1. Download the Kajabi App for the Best Snooze Experience</strong></p>\n<p><br /> Access all your Snooze resources on-the-go with the Kajabi app:<br /><br /></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://apps.apple.com/us/app/kajabi/id1485646310\" style=\"display: inline-block; padding: 0.75rem 1.5rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; margin-right: 10px;\">📱 Download for iOS</a></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://play.google.com/store/apps/details?id=kajabi.kajabiapp&amp;pcampaignid=web_share\" style=\"display: inline-block; padding: 0.75rem 1.5rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;\">📱 Download for Android</a></p>\n<p style=\"font-size: 0.95rem; color: #7c8a98;\">Once downloaded, log in with your email and password to access all your Snooze content.<br /><br /></p>\n<p><strong>2. Complete Your Camp Snooze Intake Form <span style=\"color: #ff0000;\">IMPORTANT</span></strong></p>\n<p><br /> Please complete your intake form as soon as possible. Sally and Bec use this information to create your personalised sleep plan for camp.<br /><br /></p>\n<p style=\"text-align: center; margin: 20px 0;\"><a href=\"https://forms.gle/JxzVuV4LBdjRvkZf6\" style=\"display: inline-block; padding: 1rem 2rem; background: #2D5016; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;\">Complete Your Intake Form &rarr;</a></p>\n<p style=\"text-align: center; margin-top: 0;\"><a href=\"https://forms.gle/JxzVuV4LBdjRvkZf6\" style=\"color: #2d5016; font-weight: 600;\">https://forms.gle/JxzVuV4LBdjRvkZf6</a></p>\n<p><strong>3. What Happens Next for Camp Snooze</strong><br /><br /></p>\n<ul style=\"color: #1f293b; line-height: 2; margin-top: 0;\">\n<li><strong>A couple of&nbsp;days before camp:</strong> You'll receive your packing list and custom sleep schedule</li>\n<li><strong>Before camp starts:</strong> You'll get access to Snooze&nbsp;and the private Camp Snooze&nbsp;channel for your intake</li>\n<li><strong>When camp begins:</strong> Join the live&nbsp;calls and get dedicated support as you implement your plan</li>\n<li><strong>Each morning during camp:</strong> Daily roll call at 10-11am AEDT / 8-9pm ET (recordings available)</li>\n</ul>\n<p>We'll send you all the details and camp plan&nbsp;closer to your camp start date.<br /><br /></p>\n<p><strong>Questions?</strong><br />For the best&nbsp;support, email <a href=\"mailto:sally@joinsnooze.com\" style=\"color: #2d5016; font-weight: 600;\">sally@joinsnooze.com</a>&nbsp;and we can help answer any questions in the meantime. We're here to help.<br /><br /></p>\n<p>See you in Snooze and at camp roll call on Day 1! 🏕️<br /><br /></p>\n<p>Sally + Bec<br /> The Sleep Concierge</p>\n</div>",
+          "subject": "Subject",
+          "recipients": "",
+          "recipient_option": "contact"
+        }
+      }
+    }
+  ]
+}

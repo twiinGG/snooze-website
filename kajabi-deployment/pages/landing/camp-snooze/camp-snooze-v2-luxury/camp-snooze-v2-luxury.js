@@ -27,7 +27,7 @@ window.CampCapacityWidget = (function () {
   function dateLabel(value) {
     if (!value) return 'Dates to be confirmed';
     const parts = new Intl.DateTimeFormat('en-AU', {
-      timeZone: 'Etc/GMT-10',
+      timeZone: 'Australia/Melbourne',
       weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'
     }).formatToParts(new Date(value + 'T00:00:00+10:00'));
     const get = function (type) {
@@ -59,7 +59,7 @@ window.CampCapacityWidget = (function () {
   function closeLabel(value) {
     if (!value) return '';
     const parts = new Intl.DateTimeFormat('en-AU', {
-      timeZone: 'Etc/GMT-10',
+      timeZone: 'Australia/Melbourne',
       weekday: 'long', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true
     }).formatToParts(new Date(value));
     const get = function (type) {
@@ -69,7 +69,7 @@ window.CampCapacityWidget = (function () {
     const month = CAMP_MONTHS[parseInt(get('month'), 10) - 1] || get('month');
     const period = (get('dayPeriod') || '').toLowerCase().replace(/\s|\./g, '');
     return get('weekday') + ' ' + parseInt(get('day'), 10) + ' ' + month +
-      ', ' + parseInt(get('hour'), 10) + ':' + get('minute') + period + ' AEST';
+      ', ' + parseInt(get('hour'), 10) + ':' + get('minute') + period + (new Intl.DateTimeFormat('en', { timeZone: 'Australia/Melbourne', timeZoneName: 'shortOffset' }).formatToParts(new Date(value)).some(function (part) { return part.type === 'timeZoneName' && part.value === 'GMT+11'; }) ? ' AEDT / UTC+11' : ' AEST / UTC+10');
   }
 
   function countdownLabel(value, nowMs) {

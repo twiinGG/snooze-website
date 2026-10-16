@@ -50,7 +50,7 @@ function campCheckoutFormatCohortDate(value) {
   if (!value) return 'date to be confirmed';
   
   return new Intl.DateTimeFormat('en-AU', {
-    timeZone: 'Etc/GMT-10',
+    timeZone: 'Australia/Melbourne',
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
   }).format(new Date(value + 'T00:00:00+10:00'));
 }
@@ -58,10 +58,10 @@ function campCheckoutFormatCohortDate(value) {
 function campCheckoutFormatCloseAt(value) {
   if (!value) return '';
   return new Intl.DateTimeFormat('en-AU', {
-    timeZone: 'Etc/GMT-10',
+    timeZone: 'Australia/Melbourne',
     weekday: 'long', day: 'numeric', month: 'long',
     hour: 'numeric', minute: '2-digit', hour12: true
-  }).format(new Date(value)) + ' AEST';
+  }).format(new Date(value)) + (new Intl.DateTimeFormat('en', { timeZone: 'Australia/Melbourne', timeZoneName: 'shortOffset' }).formatToParts(new Date(value)).some(function (part) { return part.type === 'timeZoneName' && part.value === 'GMT+11'; }) ? ' AEDT / UTC+11' : ' AEST / UTC+10');
 }
 
 function campCheckoutRenderCohortText(cohort) {

@@ -78,8 +78,15 @@ await window.CampCheckoutCapacity.init(root, {
     { cohort_number: 16, title: 'Camp Snooze #16', start_date: '2026-09-14', access_friday: '2026-09-11', checkout_close_at: '2026-09-10T13:59:59.000Z', seats_remaining: 15, seat_cap: 15, state: 'open' }
   ])
 });
-assert.equal(dom['[data-camp-cohort-close]'][0].textContent, 'Thursday 10 September at 11:59 pm AEST');
+assert.equal(dom['[data-camp-cohort-close]'][0].textContent, 'Thursday 10 September at 11:59 pm AEST / UTC+10');
 assert.match(root.innerHTML, /Intake closes Thursday 10 September/);
+await window.CampCheckoutCapacity.init(root, {
+  fetchImpl: feedReturning([
+    { cohort_number: 16, title: 'Camp Snooze #16', start_date: '2026-09-14', access_friday: '2026-09-11', checkout_close_at: '2026-10-22T13:59:59.000Z', seats_remaining: 15, seat_cap: 15, state: 'open' }
+  ])
+});
+assert.equal(dom['[data-camp-cohort-close]'][0].textContent, 'Friday 23 October at 12:59 am AEDT / UTC+11');
+assert.match(root.innerHTML, /Intake closes Friday 23 October/);
 
 // Case 2b: 'filling' says so without a number.
 await window.CampCheckoutCapacity.init(root, {

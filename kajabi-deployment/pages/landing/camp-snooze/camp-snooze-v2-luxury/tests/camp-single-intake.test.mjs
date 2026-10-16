@@ -80,19 +80,16 @@ assert.match(minutes, /Closes in 40 minutes/);
 const past = await render([cohort(16, 'open', { checkout_close_at: '2026-08-24T12:00:00+10:00' })], now);
 assert.doesNotMatch(past, /camp-capacity-countdown/);
 
-// A camp closing inside Melbourne's AEDT window still reads AEST, and reads the true instant.
-// Camp 19 closes 2026-10-22T13:59:59Z, which is 23:59 AEST and 00:59 AEDT the next day. The label must
-// follow the stored offset, not the reader's calendar, or the page and the feed disagree by an hour for
-// half the year.
+// Show the stored deadline in Melbourne's actual timezone without moving the cutoff.
+// 2026-10-22T13:59:59Z is 00:59 AEDT the next day. The label must
+// convert the stored instant, including the local date rollover.
 const summer = await render([cohort(19, 'open', {
   start_date: '2026-10-26',
   access_friday: '2026-10-23',
   checkout_close_at: '2026-10-22T13:59:59.000Z',
 })], Date.parse('2026-10-20T12:00:00+10:00'));
-assert.match(summer, /Intake closes Thursday 22 Oct, 11:59pm AEST/);
+assert.match(summer, /Intake closes Friday 23 Oct, 12:59am AEDT \/ UTC\+11/);
 assert.doesNotMatch(summer, /Melbourne/);
-// The close line names the Thursday, never the Friday it becomes on an AEDT clock. "23 Oct" does
-// appear on the card, as the access Friday, so this checks the close line itself.
-assert.doesNotMatch(summer, /Intake closes Friday/);
+assert.doesNotMatch(summer, /Intake closes Thursday/);
 
 console.log('SINGLE INTAKE PASSED: one card from a five-cohort feed, auto-advance past full and closed camps, waitlist when nothing is sellable, countdown scaled to days/hours/minutes');

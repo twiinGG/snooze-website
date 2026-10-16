@@ -69,7 +69,7 @@ assert.doesNotMatch(low4, /Only 5 places left/);
 // An open camp names the deadline and how long is left on it. Both come from checkout_close_at, which
 // the feed is already enforcing, so the card cannot promise a window the checkout will not honour.
 const openCard = await render('open', 15);
-assert.match(openCard, /Intake closes Thursday 27 Aug, 11:59pm AEST/);
+assert.match(openCard, /Intake closes Thursday 27 Aug, 11:59pm AEST \/ UTC\+10/);
 assert.match(openCard, /Closes in 2 days/);
 assert.match(openCard, /Snooze access opens Friday 28 Aug 2026/);
 
