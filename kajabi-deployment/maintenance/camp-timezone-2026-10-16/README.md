@@ -2,7 +2,7 @@
 
 Date: October 16, 2026
 Owner: Kade Greenland
-Release: website-v1.6.17
+Releases: website-v1.6.17 and website-v1.6.18
 
 Scope: Kade requested a scan and correction of current Camp times to AEDT / UTC+11. This routine repair preserves stored UTC booking cutoffs, scheduled event times, pricing and entitlements. Bec prepares and shares plans; Louise sends them from Sally's email. Existing delivered emails cannot be edited.
 
@@ -19,7 +19,7 @@ Scope: Kade requested a scan and correction of current Camp times to AEDT / UTC+
 | [Additional checkout](https://app.kajabi.com/admin/offers/2151114090/edit) | 2165706743 |
 | [One-time AUD checkout](https://app.kajabi.com/admin/offers/2151378119/edit) | 2167449280 |
 
-Welcome automation copy: [non-member, 462675](https://app.kajabi.com/admin/sites/2148291177/workflows/462675) and [member, 463141](https://app.kajabi.com/admin/sites/2148291177/workflows/463141). Replace only the ordered action chain's existing email body wording. Preserve triggers, enrollment ledgers and published status.
+Welcome automation copy: [non-member, 462675](https://app.kajabi.com/admin/workflows/462675/edit) and [member, 463141](https://app.kajabi.com/admin/workflows/463141/edit). The API refused both edits without mutation. The admin editor was used to replace only the existing email's timezone text. Readback verified preserved trigger resources, node identities, edge connections and published status. The editor normalised HTML whitespace and explicit simple-email publication options. API chain payloads are review records, not a supported execution route for these workflows.
 
 ## Implementation and validation
 
