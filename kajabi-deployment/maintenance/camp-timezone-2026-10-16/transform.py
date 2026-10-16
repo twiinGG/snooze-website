@@ -21,7 +21,9 @@ def transform(value):
             .replace('10-11am AEST', '10-11am AEDT / UTC+11')
             .replace('10-11am AEDT)', '10-11am AEDT / UTC+11)')
             .replace('10-11am AEDT,', '10-11am AEDT / UTC+11,')
-            .replace('the Thursday before camp, 11:59pm AEST', 'See the live booking deadline'))
+            .replace('the Thursday before camp, 11:59pm AEST', 'See the live booking deadline')
+            .replace('Thursday 11:59pm:', 'Intake closes:')
+            .replace('Intake closes, the day before access opens', 'See the live booking deadline below'))
 
 
 if __name__ == '__main__':
