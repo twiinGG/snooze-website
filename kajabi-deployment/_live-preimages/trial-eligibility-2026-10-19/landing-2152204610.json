@@ -1,0 +1,903 @@
+{
+  "theme": {
+    "id": 2167131187,
+    "name": "<user-supplied>Encore</user-supplied>",
+    "version": "2.14.9",
+    "themeable_type": "LandingPage",
+    "themeable_id": 2152204610,
+    "updated_at": "2026-08-08T21:37:38Z"
+  },
+  "available_section_types": [],
+  "skill": null,
+  "guidance": "To update content, call update_theme_content with a partial settings hash containing only the sections/keys you want to change. Unchanged sections are preserved automatically via deep merge. Schema defaults are NOT copied onto each section: a single top-level `_defaults` map carries them, emitted once per type. Section defaults are keyed by the section type; block defaults are keyed `\"<section type>/<block type>\"` (block types are only unique within a section, so the parent section type disambiguates them). Each section's own `settings` hash holds only its explicit user choices. To read an effective value, check the section's or block's own `settings.<key>` first; if the key isn't there, fall back to `_defaults.<section type>.<key>` for a section, or `_defaults[\"<section type>/<block type>\"].<key>` for a block. When writing back via update_theme_content, omit the `_defaults` map \u2014 it is response-only metadata and is stripped on write so defaults aren't accidentally pinned as explicit choices (which would break theme version upgrades that change defaults). To make a default an explicit choice (e.g. lock `image_width` at its current default), copy the key from the matching `_defaults` entry into that section's (or block's) `settings` in your update payload.",
+  "settings": {
+    "use_background_image": false,
+    "btn_width": "auto",
+    "btn_style": "solid",
+    "btn_size": "small",
+    "btn_border_radius": "15",
+    "btn_text_color": "#ffffff",
+    "font_weight_body": "400",
+    "line_height_body": "1.6",
+    "font_weight_heading": "700",
+    "line_height_heading": "1",
+    "color_heading": "#2d2d2d",
+    "color_body": "#2d2d2d",
+    "color_body_secondary": "#2d2d2d",
+    "color_placeholder": "#acacac",
+    "font_size_h1_desktop": "56px",
+    "font_size_h2_desktop": "28px",
+    "font_size_h3_desktop": "21px",
+    "font_size_h4_desktop": "20px",
+    "font_size_h5_desktop": "20px",
+    "font_size_h6_desktop": "16px",
+    "font_size_body_desktop": "16px",
+    "font_size_h1_mobile": "32px",
+    "font_size_h2_mobile": "24px",
+    "font_size_h3_mobile": "21px",
+    "font_size_h4_mobile": "20px",
+    "font_size_h5_mobile": "18px",
+    "font_size_h6_mobile": "16px",
+    "font_size_body_mobile": "12px",
+    "error_message_text_color": "#ffffff",
+    "error_message_background_color": "#7d251c",
+    "show_guides": false,
+    "show_grid": false,
+    "css": "#catnapping-guide-ready-page {\n\n  --sn-coral: #F43357;\n  --sn-font-body: 'Poppins', sans-serif;\n  --sn-font-heading: 'Playfair Display', serif;\n  --sn-max-width: 1200px;\n  --sn-navy: #1F293B;\n  --sn-text-light: #94A3B8;\n  --sn-white: #FFFFFF;\n\n  --c-coral: #F43357;\n  --c-coral-hover: #D62646;\n  --c-navy: #1F293B;\n  --c-cream: #FAF7F4;\n  --c-beige: #F2EDEA;\n  --c-white: #FFFFFF;\n  --c-sage: #7C8A98;\n  --c-yellow: #FFC107;\n  --c-text: #161E2A;\n  --c-muted: #64748B;\n\n  --font-body: 'Poppins', sans-serif;\n  --font-head: 'Playfair Display', serif;\n\n  --radius: 20px;\n  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);\n  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);\n  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);\n  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);\n\n  width: 100%;\n  overflow-x: hidden;\n  font-family: var(--font-body);\n  color: var(--c-text);\n  line-height: 1.6;\n  background: var(--c-cream);\n  isolation: isolate;\n}\n\n#catnapping-guide-ready-page *,\n#catnapping-guide-ready-page *::before,\n#catnapping-guide-ready-page *::after { box-sizing: border-box; }\n#catnapping-guide-ready-page img { max-width: 100%; height: auto; display: block; }\n#catnapping-guide-ready-page a { text-decoration: none; transition: 0.3s ease; }\n\n#catnapping-guide-ready-page h1, #catnapping-guide-ready-page h2, #catnapping-guide-ready-page h3, #catnapping-guide-ready-page h4 {\n  font-family: var(--font-head);\n  color: var(--c-navy);\n  line-height: 1.2;\n  margin-bottom: 1rem;\n}\n#catnapping-guide-ready-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }\n#catnapping-guide-ready-page h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }\n#catnapping-guide-ready-page h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }\n\n#catnapping-guide-ready-page .snooze-container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 24px;\n  width: 100%;\n}\n#catnapping-guide-ready-page .snooze-section { padding: 72px 0; }\n#catnapping-guide-ready-page .bg-white { background: var(--c-white); }\n#catnapping-guide-ready-page .bg-cream { background: var(--c-cream); }\n#catnapping-guide-ready-page .text-center { text-align: center; }\n#catnapping-guide-ready-page .max-800 { max-width: 800px; margin: 0 auto; }\n\n#catnapping-guide-ready-page .btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 32px;\n  background: var(--c-coral);\n  color: white;\n  font-weight: 600;\n  border-radius: 50px;\n  border: none;\n  cursor: pointer;\n  min-height: 48px;\n  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);\n  letter-spacing: 0.1px;\n}\n#catnapping-guide-ready-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }\n#catnapping-guide-ready-page .btn-outline {\n  background: transparent;\n  border: 1px solid rgba(244, 51, 87, 0.45);\n  color: var(--c-coral);\n  box-shadow: none;\n}\n#catnapping-guide-ready-page .btn-outline:hover {\n  background: rgba(244, 51, 87, 0.08);\n  border-color: rgba(244, 51, 87, 0.7);\n  color: var(--c-coral);\n}\n\n#catnapping-guide-ready-page .hero-wrap {\n  padding-top: 56px;\n  padding-bottom: 40px;\n}\n\n#catnapping-guide-ready-page .steps-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 30px;\n  margin-top: 40px;\n}\n#catnapping-guide-ready-page .step-card {\n  background: white;\n  padding: 30px;\n  border-radius: var(--radius);\n  text-align: center;\n  box-shadow: var(--shadow-card);\n  border: 1px solid rgba(15, 23, 42, 0.06);\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n#catnapping-guide-ready-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }\n\n#catnapping-guide-ready-page .snooze-section,\n#catnapping-guide-ready-page .snooze-footer {\n  width: 100vw;\n  margin-left: calc(50% - 50vw);\n  margin-right: calc(50% - 50vw);\n}\n\n@media (max-width: 768px) {\n  #catnapping-guide-ready-page .snooze-section { padding: 56px 0; }\n  #catnapping-guide-ready-page .btn { width: 100%; }\n}\n\n#catnapping-guide-ready-page .cgr-hero-lead {\n  font-size: 1.1rem;\n  color: var(--c-muted);\n  margin: 0 auto 28px;\n  max-width: 640px;\n}\n\n#catnapping-guide-ready-page .cgr-trial-note {\n  font-size: 0.9rem;\n  color: var(--c-muted);\n  margin: 18px auto 0;\n  max-width: 640px;\n}\n\n#catnapping-guide-ready-page .cgr-preview {\n  margin: 40px auto 0;\n  border: 1px solid var(--c-beige);\n  border-radius: var(--radius);\n  overflow: hidden;\n  background: var(--c-white);\n  box-shadow: var(--shadow-card);\n}\n#catnapping-guide-ready-page .cgr-preview iframe {\n  display: block;\n  width: 100%;\n  height: 640px;\n  border: none;\n}\n@media (max-width: 600px) {\n  #catnapping-guide-ready-page .cgr-preview iframe { height: 420px; }\n}\n\n#catnapping-guide-ready-page .cgr-age-question {\n  margin: 0 auto;\n  max-width: 640px;\n  border: none;\n  padding: 0;\n}\n#catnapping-guide-ready-page .cgr-age-legend {\n  font-family: var(--font-head);\n  color: var(--c-navy);\n  font-size: clamp(1.2rem, 3vw, 1.6rem);\n  font-weight: 600;\n  margin-bottom: 20px;\n  padding: 0;\n  text-align: center;\n  width: 100%;\n}\n#catnapping-guide-ready-page .cgr-age-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 14px;\n}\n#catnapping-guide-ready-page .cgr-age-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 56px;\n  padding: 14px 18px;\n  background: var(--c-white);\n  border: 2px solid var(--c-beige);\n  border-radius: 14px;\n  color: var(--c-navy);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;\n}\n#catnapping-guide-ready-page .cgr-age-btn:hover,\n#catnapping-guide-ready-page .cgr-age-btn:focus-visible {\n  border-color: var(--c-coral);\n  box-shadow: var(--ring);\n  transform: translateY(-2px);\n}\n@media (max-width: 600px) {\n  #catnapping-guide-ready-page .cgr-age-grid {\n    grid-template-columns: 1fr;\n  }\n  #catnapping-guide-ready-page .cgr-age-btn {\n    width: 100%;\n  }\n}\n\n#catnapping-guide-ready-page .cgr-next-lead {\n  font-size: 1.05rem;\n  color: var(--c-text);\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n#catnapping-guide-ready-page .cgr-membership-lead {\n  font-size: 1.05rem;\n  color: var(--c-text);\n  max-width: 720px;\n  margin: 0 auto 28px;\n}\n\n   .snooze-footer-clean {\n     background-color: var(--sn-navy);\n     color: var(--sn-white);\n     padding: 60px 0 30px;\n     font-family: var(--sn-font-body);\n     margin-top: auto;\n   }\n\n   .sf-container {\n     max-width: var(--sn-max-width);\n     margin: 0 auto;\n     padding: 0 24px;\n   }\n\n   .sf-grid {\n     display: grid;\n     grid-template-columns: 1fr;\n     gap: 40px;\n     margin-bottom: 60px;\n   }\n\n   @media (min-width: 768px) {\n     .sf-grid { grid-template-columns: 1.5fr repeat(4, 1fr); gap: 30px; }\n   }\n\n   .sf-col { text-align: left; }\n   .sf-logo {\n     margin-bottom: 16px;\n     display: flex;\n     justify-content: flex-start;\n     align-items: center;\n   }\n   .sf-logo a {\n     text-decoration: none;\n     display: inline-block;\n     line-height: 1;\n   }\n   .sf-logo svg {\n     height: auto;\n     max-height: 52px;\n     width: 150px;\n     display: block !important;\n     flex-shrink: 0;\n   }\n   .sf-logo a svg {\n     visibility: visible !important;\n     opacity: 1 !important;\n   }\n   .sf-logo-text { font-family: var(--sn-font-heading); font-size: 24px; color: var(--sn-white); display: block; margin-bottom: 16px; }\n   .sf-tagline { color: var(--sn-text-light); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; }\n   .sf-socials { display: flex; gap: 16px; justify-content: flex-start; }\n   .sf-social-link { color: var(--sn-white); font-size: 13px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }\n   .sf-social-link:hover { opacity: 1; color: var(--sn-coral); }\n   .sf-heading { color: #F43357 !important; font-size: 16px; font-weight: 600; margin: 0 0 20px 0; font-family: var(--sn-font-heading); }\n   .sf-links { list-style: none; padding: 0; margin: 0; }\n   .sf-links li { margin-bottom: 12px; text-align: left; }\n   .sf-links a { color: var(--sn-text-light); text-decoration: none; font-size: 14px; transition: color 0.2s; }\n   .sf-links a:hover { color: var(--sn-coral); }\n   .sf-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }\n   .sf-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; margin: 0; }\n\n   @media (max-width: 767px) {\n     .snooze-footer-clean { padding: 40px 0 20px; }\n     .sf-container { padding: 0 20px; }\n     .sf-grid { gap: 24px; margin-bottom: 32px; }\n     .sf-logo svg {\n       max-height: 40px !important;\n       width: 120px !important;\n     }\n     .sf-logo-text { font-size: 20px; margin-bottom: 12px; }\n     .sf-tagline { font-size: 13px; margin-bottom: 16px; }\n     .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: flex-start; }\n     .sf-social-link { font-size: 12px; }\n     .sf-heading { font-size: 14px; margin-bottom: 12px; }\n     .sf-links li { margin-bottom: 8px; }\n     .sf-links a { font-size: 13px; }\n     .sf-bottom { padding-top: 20px; }\n     .sf-bottom p { font-size: 11px; }\n   }\n",
+    "js": "\n  document.addEventListener('DOMContentLoaded', function() {\n\n  // Scope all selectors to the Home V2 wrapper so global injection is safe\n  const wrapper = document.getElementById('home-page');\n  if (!wrapper) return; // Exit if wrapper not found\n\n  // 1. AGE & STAGE TABS LOGIC\n  const ageBtns = wrapper.querySelectorAll('.age-btn');\n  const ageContents = wrapper.querySelectorAll('.age-content');\n\n  if(ageBtns.length > 0) {\n    ageBtns.forEach(btn => {\n      btn.addEventListener('click', () => {\n        // Remove active class from all buttons and contents\n        ageBtns.forEach(b => { b.classList.remove('active'); });\n        ageContents.forEach(c => { c.classList.remove('active'); });\n\n        // Add active to clicked button\n        btn.classList.add('active');\n        \n        // Show corresponding content\n        const targetId = btn.getAttribute('data-age');\n        const targetContent = document.getElementById(targetId);\n        if(targetContent) {\n           targetContent.classList.add('active');\n        }\n      });\n    });\n  }\n\n  // 2. FAQ ACCORDION LOGIC\n  const faqs = wrapper.querySelectorAll('.faq-head');\n  \n  faqs.forEach(head => {\n    head.addEventListener('click', () => {\n      const body = head.nextElementSibling;\n      const icon = head.querySelector('i');\n      if (!body) return;\n      \n      // Close other open items (cleaner, more premium)\n      faqs.forEach(otherHead => {\n        if (otherHead === head) return;\n        const otherBody = otherHead.nextElementSibling;\n        const otherIcon = otherHead.querySelector('i');\n        if (otherBody && otherBody.classList.contains('open')) {\n          otherBody.style.maxHeight = null;\n          otherBody.classList.remove('open');\n        }\n        if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';\n      });\n\n      // Toggle current\n      if(body.style.maxHeight) {\n        body.style.maxHeight = null;\n        body.classList.remove('open');\n        icon.style.transform = 'rotate(0deg)';\n      } else {\n        body.style.maxHeight = body.scrollHeight + \"px\";\n        body.classList.add('open');\n        icon.style.transform = 'rotate(180deg)';\n      }\n    });\n  });\n\n  // 3. STICKY BAR SCROLL LOGIC\n  const stickyBar = wrapper.querySelector('#sticky-bar');\n  const pricingSection = wrapper.querySelector('#pricing');\n  \n  if(stickyBar && pricingSection) {\n    window.addEventListener('scroll', () => {\n      const pricingTop = pricingSection.getBoundingClientRect().top;\n      const windowHeight = window.innerHeight;\n      const scrollY = window.scrollY;\n\n      // Show sticky bar if scrolled past 600px AND pricing section is NOT in view\n      if (scrollY > 600 && pricingTop > windowHeight) {\n        stickyBar.classList.add('visible');\n        document.body.classList.add('sticky-cta-visible');\n      } else {\n        stickyBar.classList.remove('visible');\n        document.body.classList.remove('sticky-cta-visible');\n      }\n    });\n  }\n\n  // 4. SMOOTH SCROLL ANCHOR LINKS (scoped to wrapper)\n  wrapper.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {\n    anchor.addEventListener('click', function (e) {\n      e.preventDefault();\n      const targetId = this.getAttribute('href');\n      if(targetId === '#') return;\n\n      const target = wrapper.querySelector(targetId);\n      if(target) {\n        target.scrollIntoView({\n          behavior: 'smooth',\n          block: 'start'\n        });\n      }\n    });\n  });\n\n  // 5. TESTIMONIAL CAROUSEL AUTO-SCROLL\n  const carouselInner = wrapper.querySelector('.carousel-inner-full');\n  if(carouselInner) {\n    let scrollPosition = 0;\n    const scrollSpeed = 0.5; // pixels per frame\n    let isScrolling = false;\n    \n    function autoScroll() {\n      if(isScrolling) return;\n      \n      const maxScroll = carouselInner.scrollWidth - carouselInner.clientWidth;\n      if(scrollPosition >= maxScroll) {\n        scrollPosition = 0; // Reset to start\n      } else {\n        scrollPosition += scrollSpeed;\n      }\n      \n      carouselInner.scrollLeft = scrollPosition;\n      requestAnimationFrame(autoScroll);\n    }\n    \n    // Pause on hover\n    carouselInner.addEventListener('mouseenter', () => { isScrolling = true; });\n    carouselInner.addEventListener('mouseleave', () => { isScrolling = false; autoScroll(); });\n    \n    // Start auto-scroll\n    autoScroll();\n  }\n\n});\n",
+    "color_primary": "#f43357",
+    "btn_background_color": "#f43357",
+    "font_family_body": "Poppins",
+    "font_family_heading": "Playfair Display",
+    "favicon": "file-uploads/themes/2156873377/settings_images/4b6b581-fc2-a3c4-e1c-e5a8c17001ca_6a94d241-e92f-46fd-a22a-5da426782f0b.png",
+    "background_color": "#faf7f4",
+    "background_image": "",
+    "about_disabled": false,
+    "contact_disabled": false,
+    "content_for_index": [
+      "1786139396072"
+    ],
+    "brand": {
+      "primary_color": "#f43357",
+      "accent_color": "#f43357",
+      "logo": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+      "favicon": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/2c74-00f-a2aa-e5d-442be45717a2_TSC_-_Favicon_Coral.png",
+      "font_family_heading": "Playfair Display",
+      "font_family_body": "Poppins",
+      "social": {
+        "facebook": null,
+        "instagram": null,
+        "x": null,
+        "youtube": null,
+        "linkedin": null,
+        "tiktok": null
+      }
+    },
+    "_defaults": {
+      "section": {
+        "bg_type": "none",
+        "bg_position": "center",
+        "background_fixed": "false",
+        "hide_on_desktop": "false",
+        "vertical": "center",
+        "horizontal": "center",
+        "equal_height": "false",
+        "hide_on_mobile": "false",
+        "reveal_units": "seconds"
+      },
+      "section/code": {
+        "width": "6",
+        "code": "<!-- Code Goes Here -->",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "left",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "left",
+        "animation_type": "none",
+        "animation_direction": "none",
+        "delay": "0",
+        "duration": "0",
+        "reveal_units": "seconds"
+      },
+      "header": {
+        "cart": "false",
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "background_color": "#FFFFFF",
+        "position": "static",
+        "sticky": "false",
+        "hide_on_desktop": "false",
+        "horizontal": "between",
+        "hide_on_mobile": "false",
+        "close_on_scroll": "true",
+        "mobile_menu_text_alignment": "left"
+      },
+      "header/logo": {
+        "logo_type": "image",
+        "image_alt": "Header logo",
+        "logo_width": "50",
+        "logo_text": "Encore",
+        "alignment": "left",
+        "stretch": "false"
+      },
+      "header/menu": {
+        "menu": "main-menu",
+        "alignment": "right",
+        "stretch": "true"
+      },
+      "header/user": {
+        "language_login": "Log In",
+        "language_logout": "Logout",
+        "language_settings": "Settings",
+        "language_library": "My Library",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "alignment": "left",
+        "user_dropdown_menu_alignment": "left",
+        "stretch": "false"
+      },
+      "header/dropdown": {
+        "trigger": "Dropdown",
+        "menu": "main-menu",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "dropdown_menu_alignment": "left",
+        "alignment": "left",
+        "show_icon": "true",
+        "stretch": "false"
+      },
+      "header/cta": {
+        "btn_text": "Call to action",
+        "stretch": "false",
+        "alignment": "left"
+      },
+      "footer": {
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "hide_on_desktop": "false",
+        "vertical_layout": "false",
+        "hide_on_mobile": "false"
+      },
+      "footer/copyright": {
+        "copyright": "Kajabi"
+      },
+      "footer/link_list": {
+        "menu": "main-menu",
+        "vertical": "row",
+        "new_tab": "false",
+        "text_align": "right",
+        "mobile_text_align": "center"
+      },
+      "footer/social_icons": {
+        "new_tab": "false"
+      },
+      "exit_pop": {
+        "modal_edit": "false",
+        "enable_modal": "false",
+        "frequency": "0",
+        "popup_reveal": "0",
+        "vertical": "start",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "exit_pop/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "image_align_desktop": "flex-start",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "image_align_mobile": "flex-start",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step": {
+        "two_step_edit": "false",
+        "vertical": "top",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "two_step/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "image_align_desktop": "flex-start",
+        "hide_on_desktop": "false",
+        "make_flush": "false",
+        "make_block": "false",
+        "image_align_mobile": "flex-start",
+        "hide_on_mobile": "false",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step/form": {
+        "width": "12",
+        "text": "<h4>Join Our Free Trial</h4><p>Get started today before this once in a lifetime opportunity expires.</p>",
+        "disclaimer_text_color": "#888",
+        "input_label": "placeholder",
+        "inline": "false",
+        "btn_text": "Submit",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "center",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "center"
+      }
+    },
+    "sections": {
+      "1786139396072": {
+        "name": "Custom Code",
+        "type": "section",
+        "hidden": "false",
+        "hideable": true,
+        "saveable": true,
+        "settings": {
+          "bg_type": "none",
+          "bg_position": "center",
+          "background_fixed": false,
+          "hide_on_desktop": false,
+          "vertical": "center",
+          "horizontal": "center",
+          "equal_height": false,
+          "hide_on_mobile": false,
+          "reveal_units": "seconds",
+          "padding_desktop": {
+            "left": "0",
+            "top": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "full_width": true,
+          "padding_mobile": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "blocks": {
+          "1783490623335_0": {
+            "id": "1783490623335_0",
+            "name": "Custom Code",
+            "hidden": "false",
+            "type": "code",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "schemaName": "Custom Code",
+            "sectionId": "1786139396072",
+            "sectionType": "section",
+            "settings": {
+              "width": "12",
+              "code": "<div id=\"catnapping-guide-ready-page\">\n\n<section class=\"hero-wrap\">\n  <div class=\"snooze-container text-center max-800\">\n    <h1>You're in.<br>Here's your catnapping guide.</h1>\n    <p class=\"cgr-hero-lead\">Everything below is yours to keep. Save it, print it, or read it right here.</p>\n\n    <a class=\"btn\" href=\"https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the guide</a>\n  </div>\n</section>\n\n<section class=\"snooze-section bg-white\">\n  <div class=\"snooze-container text-center max-800\">\n    <div class=\"cgr-preview\">\n      <iframe src=\"https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf\" title=\"Catnapping guide preview\" loading=\"lazy\"></iframe>\n    </div>\n  </div>\n</section>\n\n<section class=\"snooze-section bg-white\">\n  <div class=\"snooze-container text-center max-800\">\n    <h2>What comes next</h2>\n    <p class=\"cgr-next-lead\">Over the next few days I will send you three short emails: age-by-age nap norms so you can tell normal from a problem, why short naps happen and the first change to make. I will also tell you about the Snooze Membership, because it is what I would point you to next. Read it or ignore it, the guide is yours either way.</p>\n  </div>\n</section>\n\n<section class=\"snooze-section bg-cream\">\n  <div class=\"snooze-container text-center max-800\">\n    <h2>When one guide is not enough</h2>\n    <p class=\"cgr-membership-lead\">Short naps are usually a symptom of a day that no longer fits. The Snooze Membership has the full age-by-age plans, the courses and Sally's coaching, and this catnapping guide is already part of it.</p>\n    <a class=\"btn-outline btn\" href=\"https://www.joinsnooze.com/offers/mqQikDM7/checkout\">Start the 7 day trial</a>\n    <p class=\"cgr-trial-note\">The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.</p>\n  </div>\n</section>\n\n<footer class=\"snooze-footer-clean\">\n  <div class=\"sf-container\">\n    <div class=\"sf-grid\">\n\n      <div class=\"sf-col sf-brand-col\">\n        <div class=\"sf-logo\">\n          <a href=\"/\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"150\" viewBox=\"0 0 750 262.499992\" height=\"52\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.0\" style=\"max-height: 52px;\">\n              <path fill=\"#ffffff\" d=\"M 68.695312 184.851562 C 62.671875 184.851562 56.769531 183.949219 50.992188 182.148438 C 45.277344 180.40625 40.835938 178.542969 37.667969 176.558594 L 34.871094 182.894531 L 27.605469 182.894531 L 26.390625 148.136719 L 33.195312 148.136719 C 34.125 150.933594 35.679688 154.101562 37.851562 157.640625 C 40.027344 161.121094 42.511719 164.257812 45.308594 167.050781 C 48.226562 169.847656 51.550781 172.207031 55.277344 174.132812 C 59.066406 176.058594 63.105469 177.023438 67.390625 177.023438 C 73.046875 177.023438 77.238281 175.933594 79.972656 173.761719 C 82.765625 171.523438 84.164062 168.109375 84.164062 163.511719 C 84.164062 161.027344 83.542969 158.976562 82.300781 157.359375 C 81.058594 155.746094 79.351562 154.347656 77.175781 153.167969 C 74.753906 151.925781 72.082031 150.871094 69.164062 150 C 66.304688 149.128906 62.765625 148.074219 58.539062 146.832031 C 54.316406 145.589844 50.679688 144.347656 47.636719 143.105469 C 44.65625 141.800781 41.550781 139.78125 38.320312 137.046875 C 35.523438 134.625 33.289062 131.707031 31.609375 128.289062 C 29.933594 124.871094 29.09375 120.804688 29.09375 116.082031 C 29.09375 107.324219 32.757812 100.242188 40.089844 94.835938 C 47.480469 89.433594 57.140625 86.730469 69.070312 86.730469 C 74.722656 86.730469 79.910156 87.320312 84.628906 88.5 C 89.414062 89.617188 93.421875 90.859375 96.652344 92.226562 L 98.609375 86.730469 L 105.6875 86.730469 L 107.179688 118.503906 L 100.5625 118.503906 C 98.390625 112.042969 94.664062 106.484375 89.382812 101.824219 C 84.101562 97.105469 78.417969 94.742188 72.332031 94.742188 C 67.546875 94.742188 63.789062 95.738281 61.054688 97.726562 C 58.320312 99.714844 56.957031 102.476562 56.957031 106.019531 C 56.957031 110.738281 58.945312 114.15625 62.917969 116.269531 C 66.957031 118.378906 72.578125 120.367188 79.785156 122.230469 C 90.90625 125.089844 99.042969 129.003906 104.199219 133.972656 C 109.355469 138.878906 111.933594 145.15625 111.933594 152.796875 C 111.933594 162.984375 107.925781 170.871094 99.910156 176.464844 C 91.960938 182.054688 81.554688 184.851562 68.695312 184.851562 Z M 242.578125 181.679688 L 186.480469 181.679688 L 186.480469 174.878906 C 187.660156 174.753906 189.089844 174.601562 190.765625 174.414062 C 192.445312 174.226562 193.71875 173.917969 194.585938 173.480469 C 195.890625 172.796875 196.824219 171.804688 197.382812 170.5 C 197.941406 169.195312 198.222656 167.269531 198.222656 164.722656 L 198.222656 121.113281 C 198.222656 114.777344 197.042969 110.023438 194.679688 106.855469 C 192.382812 103.625 188.964844 102.011719 184.429688 102.011719 C 181.945312 102.011719 179.617188 102.382812 177.441406 103.128906 C 175.332031 103.875 173.25 104.960938 171.199219 106.390625 C 169.398438 107.632812 167.9375 108.90625 166.820312 110.210938 C 165.765625 111.515625 164.863281 112.664062 164.117188 113.660156 L 164.117188 163.699219 C 164.117188 165.871094 164.429688 167.703125 165.050781 169.195312 C 165.671875 170.625 166.695312 171.710938 168.125 172.457031 C 169.117188 173.015625 170.359375 173.511719 171.851562 173.949219 C 173.34375 174.382812 174.800781 174.691406 176.230469 174.878906 L 176.230469 181.679688 L 119.578125 181.679688 L 119.578125 174.878906 C 121.128906 174.753906 122.683594 174.601562 124.234375 174.414062 C 125.851562 174.164062 127.21875 173.855469 128.335938 173.480469 C 130.324219 172.796875 131.691406 171.742188 132.4375 170.3125 C 133.179688 168.882812 133.554688 167.019531 133.554688 164.722656 L 133.554688 110.492188 C 133.554688 108.566406 133.058594 106.671875 132.0625 104.808594 C 131.070312 102.945312 129.765625 101.421875 128.148438 100.242188 C 127.03125 99.496094 125.601562 98.875 123.863281 98.378906 C 122.1875 97.878906 120.324219 97.539062 118.273438 97.351562 L 118.273438 90.550781 L 162.71875 88.128906 L 164.117188 89.527344 L 164.117188 103.035156 L 164.492188 103.035156 C 166.230469 101.484375 168.34375 99.621094 170.828125 97.445312 C 173.3125 95.273438 175.609375 93.5 177.722656 92.132812 C 180.019531 90.644531 183.035156 89.371094 186.761719 88.3125 C 190.488281 87.257812 194.464844 86.730469 198.6875 86.730469 C 208.8125 86.730469 216.390625 89.617188 221.425781 95.394531 C 226.515625 101.109375 229.066406 108.722656 229.066406 118.226562 L 229.066406 163.882812 C 229.066406 166.183594 229.40625 168.015625 230.089844 169.382812 C 230.773438 170.75 232.046875 171.835938 233.910156 172.644531 C 234.902344 173.078125 236.117188 173.511719 237.542969 173.949219 C 239.035156 174.382812 240.710938 174.691406 242.578125 174.878906 Z M 342.65625 100.242188 C 347.253906 104.527344 350.761719 109.652344 353.1875 115.617188 C 355.609375 121.578125 356.820312 128.039062 356.820312 134.996094 C 356.820312 141.894531 355.609375 148.414062 353.1875 154.566406 C 350.828125 160.652344 347.347656 165.871094 342.75 170.21875 C 337.839844 174.878906 331.972656 178.453125 325.140625 180.9375 C 318.367188 183.421875 310.601562 184.664062 301.84375 184.664062 C 294.261719 184.664062 287.277344 183.578125 280.878906 181.402344 C 274.542969 179.226562 268.917969 175.964844 264.011719 171.617188 C 259.292969 167.457031 255.5625 162.332031 252.832031 156.242188 C 250.097656 150.09375 248.730469 143.230469 248.730469 135.648438 C 248.730469 128.195312 249.910156 121.578125 252.269531 115.800781 C 254.691406 109.964844 258.296875 104.777344 263.078125 100.242188 C 267.675781 95.894531 273.328125 92.539062 280.039062 90.179688 C 286.808594 87.753906 294.355469 86.542969 302.683594 86.542969 C 311.378906 86.542969 319.019531 87.753906 325.605469 90.179688 C 332.25 92.539062 337.933594 95.894531 342.65625 100.242188 Z M 318.800781 164.816406 C 320.167969 161.335938 321.164062 157.113281 321.785156 152.144531 C 322.46875 147.171875 322.808594 141.394531 322.808594 134.8125 C 322.808594 130.464844 322.5 125.492188 321.875 119.902344 C 321.257812 114.3125 320.324219 109.902344 319.082031 106.671875 C 317.589844 102.757812 315.511719 99.683594 312.839844 97.445312 C 310.230469 95.210938 306.90625 94.089844 302.867188 94.089844 C 298.457031 94.089844 294.917969 95.300781 292.246094 97.726562 C 289.636719 100.148438 287.617188 103.285156 286.1875 107.136719 C 284.886719 110.675781 283.984375 114.839844 283.488281 119.621094 C 282.992188 124.34375 282.742188 129.28125 282.742188 134.4375 C 282.742188 141.210938 282.957031 146.832031 283.394531 151.304688 C 283.828125 155.714844 284.886719 160.15625 286.5625 164.628906 C 287.988281 168.480469 290.039062 171.523438 292.710938 173.761719 C 295.382812 175.996094 298.769531 177.117188 302.867188 177.117188 C 306.597656 177.117188 309.792969 176.089844 312.464844 174.039062 C 315.136719 171.929688 317.25 168.855469 318.800781 164.816406 Z M 460.160156 100.242188 C 464.757812 104.527344 468.269531 109.652344 470.691406 115.617188 C 473.113281 121.578125 474.324219 128.039062 474.324219 134.996094 C 474.324219 141.894531 473.113281 148.414062 470.691406 154.566406 C 468.332031 160.652344 464.851562 165.871094 460.253906 170.21875 C 455.347656 174.878906 449.476562 178.453125 442.644531 180.9375 C 435.871094 183.421875 428.105469 184.664062 419.347656 184.664062 C 411.769531 184.664062 404.78125 183.578125 398.382812 181.402344 C 392.046875 179.226562 386.425781 175.964844 381.515625 171.617188 C 376.796875 167.457031 373.070312 162.332031 370.335938 156.242188 C 367.601562 150.09375 366.234375 143.230469 366.234375 135.648438 C 366.234375 128.195312 367.414062 121.578125 369.777344 115.800781 C 372.199219 109.964844 375.800781 104.777344 380.585938 100.242188 C 385.183594 95.894531 390.832031 92.539062 397.542969 90.179688 C 404.316406 87.753906 411.863281 86.542969 420.1875 86.542969 C 428.882812 86.542969 436.523438 87.753906 443.109375 90.179688 C 449.757812 92.539062 455.441406 95.894531 460.160156 100.242188 Z M 436.304688 164.816406 C 437.675781 161.335938 438.667969 157.113281 439.289062 152.144531 C 439.972656 147.171875 440.3125 141.394531 440.3125 134.8125 C 440.3125 130.464844 440.003906 125.492188 439.382812 119.902344 C 438.761719 114.3125 437.828125 109.902344 436.585938 106.671875 C 435.097656 102.757812 433.015625 99.683594 430.34375 97.445312 C 427.734375 95.210938 424.410156 94.089844 420.375 94.089844 C 415.960938 94.089844 412.421875 95.300781 409.75 97.726562 C 407.140625 100.148438 405.121094 103.285156 403.695312 107.136719 C 402.390625 110.675781 401.488281 114.839844 400.992188 119.621094 C 400.496094 124.34375 400.246094 129.28125 400.246094 134.4375 C 400.246094 141.210938 400.464844 146.832031 400.898438 151.304688 C 401.332031 155.714844 402.390625 160.15625 404.066406 164.628906 C 405.496094 168.480469 407.546875 171.523438 410.214844 173.761719 C 412.886719 175.996094 416.273438 177.117188 420.375 177.117188 C 424.101562 177.117188 427.300781 176.089844 429.972656 174.039062 C 432.644531 171.929688 434.753906 168.855469 436.304688 164.816406 Z M 572.914062 181.679688 L 481.222656 181.679688 L 481.222656 175.253906 L 534.710938 97.726562 C 527.320312 97.726562 520.671875 97.820312 514.769531 98.003906 C 508.867188 98.191406 504.210938 98.9375 500.792969 100.242188 C 499.613281 100.675781 498.027344 102.945312 496.039062 107.042969 C 494.113281 111.082031 492.59375 115.304688 491.472656 119.714844 L 484.859375 119.714844 L 484.859375 89.246094 L 571.515625 89.246094 L 571.515625 95.023438 L 517.84375 173.203125 C 519.335938 173.203125 521.511719 173.234375 524.367188 173.296875 C 527.226562 173.355469 529.957031 173.386719 532.566406 173.386719 C 535.609375 173.386719 538.871094 173.328125 542.351562 173.203125 C 545.828125 173.015625 548.53125 172.796875 550.457031 172.550781 C 553.003906 172.238281 555.023438 171.371094 556.515625 169.941406 C 558.066406 168.511719 559.28125 166.804688 560.148438 164.816406 C 560.957031 163.015625 562.011719 160.3125 563.316406 156.710938 C 564.621094 153.042969 565.613281 149.78125 566.296875 146.925781 L 572.914062 146.925781 Z M 679.144531 159.410156 C 676.972656 162.953125 674.328125 166.304688 671.222656 169.476562 C 668.179688 172.582031 664.703125 175.253906 660.789062 177.488281 C 656.625 179.847656 652.402344 181.621094 648.113281 182.800781 C 643.890625 184.042969 639.015625 184.664062 633.488281 184.664062 C 624.292969 184.664062 616.339844 183.359375 609.632812 180.75 C 602.984375 178.140625 597.484375 174.628906 593.140625 170.21875 C 588.789062 165.808594 585.527344 160.621094 583.355469 154.660156 C 581.242188 148.632812 580.1875 142.109375 580.1875 135.089844 C 580.1875 128.753906 581.335938 122.699219 583.632812 116.921875 C 585.996094 111.082031 589.316406 105.894531 593.605469 101.359375 C 597.828125 96.949219 603.140625 93.375 609.539062 90.644531 C 616 87.910156 623.207031 86.542969 631.15625 86.542969 C 639.855469 86.542969 646.996094 87.601562 652.585938 89.710938 C 658.179688 91.824219 662.808594 94.742188 666.472656 98.472656 C 670.011719 102.011719 672.589844 106.203125 674.207031 111.050781 C 675.820312 115.832031 676.628906 120.867188 676.628906 126.144531 L 676.628906 132.203125 L 613.636719 132.203125 C 613.636719 144.9375 616.09375 154.628906 621 161.273438 C 625.90625 167.921875 633.703125 171.246094 644.386719 171.246094 C 650.226562 171.246094 655.476562 169.660156 660.136719 166.492188 C 664.796875 163.261719 668.769531 159.195312 672.0625 154.285156 Z M 643.550781 124.003906 C 643.550781 120.273438 643.363281 116.453125 642.992188 112.542969 C 642.617188 108.628906 641.964844 105.429688 641.03125 102.945312 C 639.976562 100.023438 638.519531 97.820312 636.652344 96.328125 C 634.851562 94.835938 632.554688 94.089844 629.757812 94.089844 C 624.972656 94.089844 621.152344 96.515625 618.296875 101.359375 C 615.4375 106.203125 613.886719 113.875 613.636719 124.375 Z M 728.722656 166.214844 C 728.722656 171.121094 726.886719 175.375 723.222656 178.980469 C 719.621094 182.582031 715.332031 184.382812 710.363281 184.382812 C 705.332031 184.382812 700.984375 182.613281 697.320312 179.074219 C 693.714844 175.46875 691.914062 171.183594 691.914062 166.214844 C 691.914062 161.242188 693.714844 156.957031 697.320312 153.355469 C 700.984375 149.6875 705.332031 147.855469 710.363281 147.855469 C 715.332031 147.855469 719.621094 149.6875 723.222656 153.355469 C 726.886719 157.019531 728.722656 161.304688 728.722656 166.214844 Z M 728.722656 166.214844 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/>\n            </svg>\n          </a>\n        </div>\n        <p class=\"sf-tagline\">Everything you need for great baby sleep,<br>all in one place.</p>\n        <div class=\"sf-socials\">\n          <a href=\"https://www.instagram.com/thesleepconcierge/\"\n             target=\"_blank\"\n             rel=\"noopener noreferrer\"\n             class=\"sf-social-link\"\n             aria-label=\"Instagram\">Instagram</a>\n          <a href=\"https://www.tiktok.com/@thesleepconcierge\"\n             target=\"_blank\"\n             rel=\"noopener noreferrer\"\n             class=\"sf-social-link\"\n             aria-label=\"TikTok\">TikTok</a>\n          <a href=\"https://www.facebook.com/thesleepconcierge\"\n             target=\"_blank\"\n             rel=\"noopener noreferrer\"\n             class=\"sf-social-link\"\n             aria-label=\"Facebook\">Facebook</a>\n        </div>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Sleep Help</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/newborn-baby-sleep-help\">Newborn Sleep Help</a></li>\n          <li><a href=\"/3-4-month-baby-sleep-help\">3-4 Month Sleep Help</a></li>\n          <li><a href=\"/5-12-month-baby-sleep-help\">5-12 Month Sleep Help</a></li>\n          <li><a href=\"/toddler-sleep-help\">Toddler Sleep Help</a></li>\n          <li><a href=\"/baby-sleep-glossary\">Sleep Glossary</a></li>\n          <li><a href=\"/blog\">Blog</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Programs</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/snooze-membership\">Snooze Membership</a></li>\n          <li><a href=\"/store\">Courses &amp; Guides</a></li>\n          <li><a href=\"/camp-snooze-sleep-coaching\">Camp Snooze</a></li>\n          <li><a href=\"/one-on-one-sleep-consultations\">Consultations</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Members</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/snooze-library\">Library Access</a></li>\n          <li><a href=\"https://www.joinsnooze.com/products/communities/v2/snooze\">Snooze Village</a></li>\n          <li><a href=\"/login\">Log In</a></li>\n          <li><a href=\"/library\">Your Account</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Company &amp; Support</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/about-sally\">About Sally</a></li>\n          <li><a href=\"/reviews\">Reviews</a></li>\n          <li><a href=\"/the-snooze-method\">The Snooze Method</a></li>\n          <li><a href=\"/contact\">Contact</a></li>\n          <li><a href=\"/terms-conditions\">Terms</a></li>\n          <li><a href=\"/privacy-policy\">Privacy</a></li>\n        </ul>\n      </div>\n\n    </div>\n\n    <div class=\"sf-bottom\">\n      <p>&copy; 2026 Snooze by The Sleep Concierge. All rights reserved.</p>\n    </div>\n  </div>\n</footer>\n\n<script>\n(function () {\n  var LEAD_KEY = 'cng002_lead_fired';\n\n  try {\n    if (window.localStorage.getItem(LEAD_KEY)) { return; }\n  } catch (e) {\n  }\n\n  var params = new URLSearchParams(window.location.search);\n  var email = params.get('email') || params.get('contact_email') || '';\n\n  if (email && email.indexOf('@') > -1) {\n    try { window.localStorage.setItem('lead_email', email.trim().toLowerCase()); } catch (e) {}\n  }\n\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({\n    event: 'generate_lead',\n    lead_source: 'catnapping_guide',\n    content_name: 'catnapping_guide',\n    content_category: 'lead_magnet',\n    form_id: '2148526865',\n    value: 0,\n    currency: 'AUD'\n  });\n\n  try { window.localStorage.setItem(LEAD_KEY, '1'); } catch (e) {}\n})();\n</script>\n\n</div>",
+              "border_width": "4",
+              "border_radius": "4",
+              "hide_on_desktop": false,
+              "text_align": "left",
+              "make_flush": true,
+              "make_block": false,
+              "hide_on_mobile": false,
+              "mobile_text_align": "left",
+              "animation_type": "none",
+              "animation_direction": "none",
+              "delay": "0",
+              "duration": "0",
+              "reveal_units": "seconds"
+            }
+          }
+        },
+        "block_order": [
+          "1783490623335_0"
+        ],
+        "blank": null
+      },
+      "header": {
+        "name": "Header",
+        "type": "header",
+        "blocks": {
+          "1555988494486": {
+            "id": "1555988494486",
+            "name": "Logo",
+            "type": "logo",
+            "hidden": "false",
+            "settings": {
+              "logo": "file-uploads/sites/2148291177/images/727863300824056a83b8f5fd0f880de7.png",
+              "stretch": false,
+              "alignment": "left",
+              "image_alt": "Snooze Logo",
+              "logo_text": "Sleep Concierge - Expert Baby Sleep Support",
+              "logo_type": "image",
+              "logo_width": "200",
+              "logo_text_color": "#f7a292"
+            },
+            "sectionId": "header",
+            "schemaName": "Logo",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          },
+          "1607554198094": {
+            "id": "1607554198094",
+            "name": "Main Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "stretch": false,
+              "alignment": "center"
+            },
+            "sectionId": "header",
+            "schemaName": "Menu",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          },
+          "1718599174110": {
+            "type": "user",
+            "name": "User Menu",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "header",
+            "settings": {
+              "text_color": "#595959",
+              "background_color": "#FFFFFF",
+              "language_login": "Member login",
+              "language_logout": "Logout",
+              "language_settings": "Settings",
+              "language_library": "My Library",
+              "user_dropdown_menu_alignment": "left",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1718599174110",
+            "schemaName": "User dropdown",
+            "sectionType": "header",
+            "hideable": true
+          },
+          "1767078477372": {
+            "type": "dropdown",
+            "name": "Sleep Help",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Sleep Help",
+              "menu": "9poNSX6H",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1767078477372",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1767079787493": {
+            "type": "cta",
+            "name": "Call to action",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "btn_text": "Join Snooze",
+              "btn_action": "https://www.joinsnooze.com/offers/z63s9VaR",
+              "new_tab": "",
+              "btn_width": "auto",
+              "btn_style": "",
+              "btn_size": "small",
+              "btn_border_radius": "25",
+              "btn_text_color": "",
+              "btn_background_color": "",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1767079787493",
+            "schemaName": "Call to action",
+            "sectionType": "header"
+          },
+          "1783564100201": {
+            "type": "dropdown",
+            "name": "Programs",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Programs",
+              "menu": "k2fFKm4U",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1783564100201",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1783564100202": {
+            "type": "dropdown",
+            "name": "Why Snooze",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Why Snooze",
+              "menu": "zCDtFR3W",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1783564100202",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1783564100203": {
+            "id": "1783564100203",
+            "name": "Blog Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "BxDzS8fq",
+              "new_tab": false,
+              "stretch": false,
+              "alignment": "center"
+            },
+            "sectionId": "header",
+            "schemaName": "Menu",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "sticky": false,
+          "position": "static",
+          "horizontal": "center",
+          "text_color": "#1f293b",
+          "hide_on_mobile": false,
+          "close_on_scroll": true,
+          "hamburger_color": "#1f293b",
+          "hide_on_desktop": false,
+          "background_color": "",
+          "font_size_mobile": "16px",
+          "font_size_desktop": "14px",
+          "sticky_text_color": "#ff644a",
+          "sticky_hamburger_color": "",
+          "sticky_background_color": "",
+          "mobile_header_text_color": "",
+          "mobile_menu_text_alignment": "center",
+          "mobile_header_background_color": "",
+          "cart": false
+        },
+        "block_order": [
+          "1555988494486",
+          "1767078477372",
+          "1783564100201",
+          "1607554198094",
+          "1783564100202",
+          "1783564100203",
+          "1767079787493",
+          "1718599174110"
+        ],
+        "hideable": true,
+        "saveable": true
+      },
+      "footer": {
+        "name": "Footer",
+        "type": "footer",
+        "blocks": {
+          "1555988525205": {
+            "name": "Copyright",
+            "type": "copyright",
+            "hidden": "false",
+            "settings": {
+              "copyright": " The Sleep Concierge"
+            },
+            "id": "1555988525205",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Copyright",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1602193175296": {
+            "name": "Link List",
+            "type": "link_list",
+            "hidden": "false",
+            "settings": {
+              "menu": "2dL9DzzU",
+              "new_tab": false,
+              "vertical": "column",
+              "link_color": "",
+              "text_align": "left",
+              "mobile_text_align": "center"
+            },
+            "id": "1602193175296",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Link List",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1607561009889": {
+            "name": "Social Icons",
+            "type": "social_icons",
+            "hidden": "false",
+            "settings": {
+              "new_tab": false,
+              "social_icon_link_yelp": "",
+              "social_icon_link_slack": "",
+              "social_icon_link_vimeo": "",
+              "social_icon_link_flickr": "",
+              "social_icon_link_github": "",
+              "social_icon_link_itunes": "",
+              "social_icon_link_medium": "",
+              "social_icon_link_tiktok": "https://www.tiktok.com/@thesleepconcierge",
+              "social_icon_link_tumblr": "",
+              "social_icons_text_color": "#fffbf5",
+              "social_icon_link_spotify": "",
+              "social_icon_link_twitter": "",
+              "social_icon_link_youtube": "",
+              "social_icon_link_dribbble": "",
+              "social_icon_link_facebook": "",
+              "social_icon_link_linkedin": "",
+              "social_icon_link_podcasts": "",
+              "social_icon_link_instagram": "https://www.instagram.com/thesleepconcierge",
+              "social_icon_link_pinterest": "",
+              "social_icon_link_soundcloud": "",
+              "social_icon_background_style": "",
+              "social_icons_background_color": "#fffbf5"
+            },
+            "id": "1607561009889",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Social Icons",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1722697240868": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "S8etzdXL",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "column",
+              "text_align": "left",
+              "mobile_text_align": "center"
+            },
+            "id": "1722697240868",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1730279993182": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "row",
+              "text_align": "right",
+              "mobile_text_align": "center"
+            },
+            "id": "1730279993182",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "text_color": "#fffbf5",
+          "hide_on_mobile": true,
+          "hide_on_desktop": true,
+          "vertical_layout": false,
+          "background_color": "#1f293b",
+          "font_size_mobile": "12px",
+          "font_size_desktop": "12px",
+          "copyright_text_color": "",
+          "powered_by_text_color": "#898989"
+        },
+        "block_order": [
+          "1607561009889",
+          "1602193175296",
+          "1722697240868",
+          "1555988525205",
+          "1730279993182"
+        ],
+        "hideable": true,
+        "saveable": true
+      },
+      "exit_pop": {
+        "name": "Exit Popup",
+        "type": "exit_pop",
+        "blocks": {
+          "1585757552293": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "file-uploads/themes/2156873377/settings_images/21700ac-32ed-c8a8-2a88-56c13d1d6e_The_Sleep_Concierge_Black_Friday_Sale.png",
+              "width": "12",
+              "new_tab": false,
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "/store",
+              "make_block": false,
+              "make_flush": false,
+              "border_type": "none",
+              "image_first": false,
+              "image_width": "",
+              "border_color": "",
+              "border_width": "0",
+              "overlay_text": "Click Here For Better Sleep!",
+              "border_radius": "0",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": true,
+              "hide_on_mobile": false,
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": false,
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "center",
+              "overlay_text_color": "",
+              "image_align_desktop": "center",
+              "always_show_on_mobile": false,
+              "overlay_background_color": "#fff"
+            },
+            "id": "1585757552293",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Image",
+            "sectionId": "exit_pop",
+            "sectionType": "exit_pop"
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "frequency": "0",
+          "horizontal": "left",
+          "make_flush": false,
+          "modal_edit": false,
+          "enable_modal": false,
+          "popup_reveal": "3",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757552293"
+        ]
+      },
+      "two_step": {
+        "name": "Two Step Optin",
+        "type": "two_step",
+        "blocks": {
+          "1585757540189": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "",
+              "width": "12",
+              "new_tab": "false",
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "",
+              "make_block": "false",
+              "make_flush": "false",
+              "border_type": "none",
+              "image_first": "false",
+              "image_width": "",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": "false",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "flex-start",
+              "overlay_text_color": "",
+              "image_align_desktop": "flex-start",
+              "always_show_on_mobile": "false",
+              "overlay_background_color": "#fff"
+            }
+          },
+          "1585757543890": {
+            "name": "Form",
+            "type": "form",
+            "hidden": "false",
+            "settings": {
+              "form": "",
+              "text": "<h4>Join Our Free Trial</h4>\r\n<p>Get started today with a free trial of the Snooze membership.</p>",
+              "width": "12",
+              "inline": "false",
+              "btn_text": "Submit",
+              "thank_you": "",
+              "box_shadow": "none",
+              "make_block": "false",
+              "make_flush": "false",
+              "text_align": "center",
+              "border_type": "none",
+              "input_label": "placeholder",
+              "border_color": "",
+              "border_width": "4",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "btn_text_color": "",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "disclaimer_text": "",
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "btn_border_radius": "",
+              "mobile_text_align": "center",
+              "btn_background_color": "",
+              "disclaimer_text_color": "#888"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "horizontal": "left",
+          "make_flush": "false",
+          "two_step_edit": "false",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757540189",
+          "1585757543890"
+        ]
+      }
+    }
+  },
+  "page": {
+    "id": 2152204610,
+    "title": "<user-supplied>Here's Your Free Catnapping Guide</user-supplied>",
+    "path": "catnapping-guide-ready",
+    "status": "published",
+    "page_title": "<user-supplied>Here's Your Free Catnapping Guide</user-supplied>",
+    "page_description": "<user-supplied>Your free catnapping guide is ready to download, plus what Sally will send you next.</user-supplied>",
+    "page_image": "file-uploads/sites/2148291177/images/7d34f62-0c2a-3f06-0e04-a5707ec454a_catnapping.jpg",
+    "publish_at": "2026-08-07T22:03:11Z",
+    "hide_from_search_engines": true,
+    "form_count": 0,
+    "attached_forms": [],
+    "post_purchase_offers": [],
+    "active_theme_id": 2167131187,
+    "public_url": "https://www.joinsnooze.com/catnapping-guide-ready",
+    "admin_url": "https://app.kajabi.com/admin/landing_pages/2152204610/edit",
+    "created_at": "2026-08-07T21:49:54Z",
+    "updated_at": "2026-08-08T21:37:38Z",
+    "links": {
+      "edit": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=2152204610&resource_type=LandingPage&view=edit",
+        "hint": "Edit this landing page's title, URL path, and publishing settings"
+      },
+      "customize": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?landing_page_id=2152204610&resource_type=LandingPage&view=customize",
+        "hint": "Open the Theme Builder to customize this landing page's design and layout"
+      },
+      "stats": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=2152204610&resource_type=LandingPage&view=stats",
+        "hint": "View analytics, views, opt-ins, and conversion data for this landing page"
+      }
+    }
+  }
+}

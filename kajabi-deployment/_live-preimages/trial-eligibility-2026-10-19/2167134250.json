@@ -1,0 +1,871 @@
+{
+  "theme": {
+    "id": 2167134250,
+    "name": "<user-supplied>Encore</user-supplied>",
+    "version": "2.14.9",
+    "themeable_type": "LandingPage",
+    "themeable_id": 2152205145,
+    "updated_at": "2026-08-13T20:40:18Z"
+  },
+  "available_section_types": [],
+  "skill": null,
+  "guidance": "To update content, call update_theme_content with a partial settings hash containing only the sections/keys you want to change. Unchanged sections are preserved automatically via deep merge. Schema defaults are NOT copied onto each section: a single top-level `_defaults` map carries them, emitted once per type. Section defaults are keyed by the section type; block defaults are keyed `\"<section type>/<block type>\"` (block types are only unique within a section, so the parent section type disambiguates them). Each section's own `settings` hash holds only its explicit user choices. To read an effective value, check the section's or block's own `settings.<key>` first; if the key isn't there, fall back to `_defaults.<section type>.<key>` for a section, or `_defaults[\"<section type>/<block type>\"].<key>` for a block. When writing back via update_theme_content, omit the `_defaults` map \u2014 it is response-only metadata and is stripped on write so defaults aren't accidentally pinned as explicit choices (which would break theme version upgrades that change defaults). To make a default an explicit choice (e.g. lock `image_width` at its current default), copy the key from the matching `_defaults` entry into that section's (or block's) `settings` in your update payload.",
+  "settings": {
+    "use_background_image": false,
+    "btn_width": "auto",
+    "btn_style": "solid",
+    "btn_size": "small",
+    "btn_border_radius": "15",
+    "btn_text_color": "#ffffff",
+    "font_weight_body": "400",
+    "line_height_body": "1.6",
+    "font_weight_heading": "700",
+    "line_height_heading": "1",
+    "color_heading": "#2d2d2d",
+    "color_body": "#2d2d2d",
+    "color_body_secondary": "#2d2d2d",
+    "color_placeholder": "#acacac",
+    "font_size_h1_desktop": "56px",
+    "font_size_h2_desktop": "28px",
+    "font_size_h3_desktop": "21px",
+    "font_size_h4_desktop": "20px",
+    "font_size_h5_desktop": "20px",
+    "font_size_h6_desktop": "16px",
+    "font_size_body_desktop": "16px",
+    "font_size_h1_mobile": "32px",
+    "font_size_h2_mobile": "24px",
+    "font_size_h3_mobile": "21px",
+    "font_size_h4_mobile": "20px",
+    "font_size_h5_mobile": "18px",
+    "font_size_h6_mobile": "16px",
+    "font_size_body_mobile": "12px",
+    "error_message_text_color": "#ffffff",
+    "error_message_background_color": "#7d251c",
+    "show_guides": false,
+    "show_grid": false,
+    "css": "@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');\n\n#sn-trial-thank-you-page {\n  --sn-ty-coral: #f43357;\n  --sn-ty-coral-dark: #b51f3a;\n  --sn-ty-navy: #1f293b;\n  --sn-ty-ink: #273244;\n  --sn-ty-muted: #5f6f82;\n  --sn-ty-cream: #faf7f4;\n  --sn-ty-blush: #f9ecef;\n  --sn-ty-line: #eadde0;\n  --sn-ty-white: #ffffff;\n  --sn-ty-font-body: 'Poppins', Arial, sans-serif;\n  --sn-ty-font-head: 'Playfair Display', Georgia, serif;\n  --sn-ty-focus: 0 0 0 4px rgba(244, 51, 87, 0.2);\n\n  position: relative;\n  width: 100vw;\n  min-height: 100vh;\n  margin-inline: calc(50% - 50vw);\n  overflow: hidden;\n  background: var(--sn-ty-white);\n  color: var(--sn-ty-ink);\n  font-family: var(--sn-ty-font-body);\n  font-size: 16px;\n  line-height: 1.65;\n  isolation: isolate;\n}\n\n#sn-trial-thank-you-page *,\n#sn-trial-thank-you-page *::before,\n#sn-trial-thank-you-page *::after {\n  box-sizing: border-box;\n}\n\n#sn-trial-thank-you-page a {\n  color: inherit;\n  text-decoration: none;\n}\n\n#sn-trial-thank-you-page p,\n#sn-trial-thank-you-page h1,\n#sn-trial-thank-you-page h2 {\n  margin: 0;\n}\n\n#sn-trial-thank-you-page h1,\n#sn-trial-thank-you-page h2 {\n  color: var(--sn-ty-navy);\n  font-family: var(--sn-ty-font-head);\n  font-weight: 700;\n  letter-spacing: -0.025em;\n  line-height: 1.08;\n  text-wrap: balance;\n}\n\n#sn-trial-thank-you-page .sn-ty-container {\n  width: min(100% - 40px, 1160px);\n  margin-inline: auto;\n}\n\n#sn-trial-thank-you-page .sn-ty-skip {\n  position: fixed;\n  z-index: 20;\n  inset-block-start: 12px;\n  inset-inline-start: 12px;\n  padding: 10px 16px;\n  border-radius: 999px;\n  background: var(--sn-ty-navy);\n  color: var(--sn-ty-white);\n  font-weight: 700;\n  transform: translateY(-160%);\n  transition: transform 180ms ease-out;\n}\n\n#sn-trial-thank-you-page .sn-ty-skip:focus {\n  transform: translateY(0);\n}\n\n#sn-trial-thank-you-page .sn-ty-header {\n  border-block-end: 1px solid var(--sn-ty-line);\n  background: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-header-inner {\n  display: flex;\n  min-height: 92px;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n}\n\n#sn-trial-thank-you-page .sn-ty-brand {\n  display: inline-flex;\n  flex-direction: column;\n  align-items: flex-start;\n  line-height: 1;\n}\n\n#sn-trial-thank-you-page .sn-ty-wordmark {\n  color: var(--sn-ty-coral-dark);\n  font-family: var(--sn-ty-font-head);\n  font-size: 2.5rem;\n  font-weight: 700;\n  letter-spacing: -0.04em;\n}\n\n#sn-trial-thank-you-page .sn-ty-brandline {\n  margin-block-start: 4px;\n  color: var(--sn-ty-coral-dark);\n  font-size: 0.85rem;\n}\n\n#sn-trial-thank-you-page .sn-ty-header-status {\n  display: inline-flex;\n  min-height: 40px;\n  align-items: center;\n  padding-inline: 16px;\n  border-radius: 999px;\n  background: var(--sn-ty-blush);\n  color: var(--sn-ty-coral-dark);\n  font-size: 0.85rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-header-status::before {\n  width: 8px;\n  height: 8px;\n  margin-inline-end: 8px;\n  border-radius: 50%;\n  background: var(--sn-ty-coral-dark);\n  content: '';\n}\n\n#sn-trial-thank-you-page .sn-ty-hero {\n  padding-block: clamp(56px, 8vw, 96px);\n  background: var(--sn-ty-cream);\n}\n\n#sn-trial-thank-you-page .sn-ty-hero-grid {\n  display: grid;\n  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);\n  align-items: center;\n  gap: clamp(40px, 7vw, 88px);\n}\n\n#sn-trial-thank-you-page .sn-ty-kicker {\n  display: inline-flex;\n  margin-block-end: 20px;\n  padding: 8px 14px;\n  border-radius: 999px;\n  background: var(--sn-ty-coral-dark);\n  color: var(--sn-ty-white);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-hero h1 {\n  max-width: 760px;\n  font-size: clamp(3rem, 6vw, 4.8rem);\n}\n\n#sn-trial-thank-you-page .sn-ty-lead {\n  max-width: 66ch;\n  margin-block-start: 24px;\n  color: var(--sn-ty-ink);\n  font-size: clamp(1.05rem, 1.6vw, 1.22rem);\n  text-wrap: pretty;\n}\n\n#sn-trial-thank-you-page .sn-ty-hero-button {\n  display: inline-flex;\n  min-height: 52px;\n  margin-block-start: 28px;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 24px;\n  border-radius: 999px;\n  background: var(--sn-ty-coral-dark);\n  color: var(--sn-ty-white);\n  font-weight: 700;\n  transition: background-color 180ms ease-out, transform 180ms ease-out;\n}\n\n#sn-trial-thank-you-page .sn-ty-hero-button:hover {\n  transform: translateY(-2px);\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-panel {\n  padding: 32px;\n  border-radius: 20px;\n  background: var(--sn-ty-navy);\n  color: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-number {\n  font-family: var(--sn-ty-font-head);\n  font-size: clamp(3rem, 5vw, 3.5rem);\n  font-weight: 700;\n  line-height: 0.9;\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-label {\n  margin-block: 8px 16px;\n  color: var(--sn-ty-white);\n  font-size: 1rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-panel > div p:last-child {\n  color: var(--sn-ty-white);\n  font-size: 1rem;\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-panel > a {\n  display: inline-flex;\n  margin-block-start: 24px;\n  color: var(--sn-ty-white);\n  font-weight: 700;\n  text-decoration: underline;\n  text-decoration-color: var(--sn-ty-coral);\n  text-decoration-thickness: 2px;\n  text-underline-offset: 5px;\n}\n\n#sn-trial-thank-you-page .sn-ty-trial-panel > small {\n  display: block;\n  margin-block-start: 8px;\n  color: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-steps {\n  border-block: 1px solid var(--sn-ty-line);\n  background: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-steps ol {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin: 0;\n  padding: 24px 0;\n  list-style: none;\n}\n\n#sn-trial-thank-you-page .sn-ty-steps li {\n  display: flex;\n  min-width: 0;\n  align-items: center;\n  gap: 12px;\n  padding-inline: 24px;\n}\n\n#sn-trial-thank-you-page .sn-ty-steps li + li {\n  border-inline-start: 1px solid var(--sn-ty-line);\n}\n\n#sn-trial-thank-you-page .sn-ty-steps li > span {\n  display: grid;\n  width: 32px;\n  height: 32px;\n  flex: 0 0 auto;\n  place-items: center;\n  border-radius: 50%;\n  background: var(--sn-ty-blush);\n  color: var(--sn-ty-coral-dark);\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-path-section {\n  padding-block: clamp(64px, 9vw, 112px);\n}\n\n#sn-trial-thank-you-page .sn-ty-section-heading {\n  max-width: 720px;\n  margin-inline: auto;\n  text-align: center;\n}\n\n#sn-trial-thank-you-page .sn-ty-section-heading h2 {\n  font-size: clamp(2.25rem, 4.5vw, 3.8rem);\n}\n\n#sn-trial-thank-you-page .sn-ty-section-heading p {\n  margin-block-start: 16px;\n  color: var(--sn-ty-muted);\n  font-size: 1.02rem;\n}\n\n#sn-trial-thank-you-page .sn-ty-paths {\n  display: grid;\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 16px;\n  margin-block-start: 40px;\n}\n\n#sn-trial-thank-you-page .sn-ty-path {\n  display: flex;\n  min-width: 0;\n  min-height: 248px;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 28px 24px 24px;\n  border: 2px solid var(--sn-ty-line);\n  border-radius: 12px;\n  background: var(--sn-ty-white);\n  text-align: start;\n  transition: border-color 180ms ease-out, background-color 180ms ease-out, transform 180ms ease-out;\n}\n\n#sn-trial-thank-you-page .sn-ty-path:hover {\n  border-color: var(--sn-ty-coral);\n  transform: translateY(-3px);\n}\n\n#sn-trial-thank-you-page .sn-ty-path:focus-visible,\n#sn-trial-thank-you-page .sn-ty-hero-button:focus-visible,\n#sn-trial-thank-you-page .sn-ty-button:focus-visible,\n#sn-trial-thank-you-page .sn-ty-text-link:focus-visible,\n#sn-trial-thank-you-page .sn-ty-brand:focus-visible,\n#sn-trial-thank-you-page .sn-ty-trial-panel > a:focus-visible,\n#sn-trial-thank-you-page .sn-ty-inline-link:focus-visible,\n#sn-trial-thank-you-page .sn-ty-app-actions a:focus-visible,\n#sn-trial-thank-you-page .sn-ty-footer a:focus-visible {\n  outline: none;\n  box-shadow: var(--sn-ty-focus);\n}\n\n#sn-trial-thank-you-page .sn-ty-path[aria-current='true'] {\n  border-color: var(--sn-ty-coral);\n  background: var(--sn-ty-blush);\n}\n\n#sn-trial-thank-you-page .sn-ty-age {\n  color: var(--sn-ty-coral-dark);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-path > strong {\n  margin-block-start: 18px;\n  color: var(--sn-ty-navy);\n  font-family: var(--sn-ty-font-head);\n  font-size: 1.65rem;\n  line-height: 1.15;\n}\n\n#sn-trial-thank-you-page .sn-ty-path-copy {\n  margin-block-start: 12px;\n  color: var(--sn-ty-muted);\n  font-size: 1rem;\n}\n\n#sn-trial-thank-you-page .sn-ty-path-action {\n  margin-block-start: auto;\n  padding-block-start: 24px;\n  color: var(--sn-ty-coral-dark);\n  font-size: 0.85rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-result {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 32px;\n  margin-block-start: 32px;\n  padding: 32px;\n  border-radius: 20px;\n  background: var(--sn-ty-navy);\n  color: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-result[hidden] {\n  display: none !important;\n}\n\n#sn-trial-thank-you-page .sn-ty-result-label {\n  margin-block-end: 8px;\n  color: var(--sn-ty-white);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-result h2 {\n  color: var(--sn-ty-white);\n  font-size: clamp(1.75rem, 3vw, 2.4rem);\n}\n\n#sn-trial-thank-you-page .sn-ty-result h2:focus {\n  outline: none;\n}\n\n#sn-trial-thank-you-page .sn-ty-result h2 + p {\n  margin-block-start: 10px;\n  color: var(--sn-ty-white);\n}\n\n#sn-trial-thank-you-page .sn-ty-result-actions {\n  display: flex;\n  min-width: 250px;\n  flex-direction: column;\n  align-items: stretch;\n  gap: 14px;\n}\n\n#sn-trial-thank-you-page .sn-ty-button {\n  display: inline-flex;\n  min-height: 52px;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 22px;\n  border-radius: 999px;\n  background: var(--sn-ty-coral-dark);\n  color: var(--sn-ty-white);\n  font-weight: 700;\n  text-align: center;\n  transition: background-color 180ms ease-out, transform 180ms ease-out;\n}\n\n#sn-trial-thank-you-page .sn-ty-button:hover {\n  transform: translateY(-2px);\n}\n\n#sn-trial-thank-you-page .sn-ty-text-link {\n  color: var(--sn-ty-white);\n  font-size: 0.85rem;\n  font-weight: 600;\n  text-align: center;\n  text-decoration: underline;\n  text-underline-offset: 4px;\n}\n\n#sn-trial-thank-you-page .sn-ty-inline-link {\n  color: var(--sn-ty-coral-dark);\n  font-weight: 700;\n  text-decoration: underline;\n  text-underline-offset: 3px;\n}\n\n#sn-trial-thank-you-page .sn-ty-app {\n  padding-block: 0 clamp(64px, 9vw, 112px);\n}\n\n#sn-trial-thank-you-page .sn-ty-app-card {\n  display: grid;\n  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);\n  align-items: center;\n  gap: clamp(28px, 5vw, 64px);\n  padding: clamp(28px, 5vw, 52px);\n  border-radius: 20px;\n  background: var(--sn-ty-blush);\n}\n\n#sn-trial-thank-you-page .sn-ty-app-label {\n  margin-block-end: 10px;\n  color: var(--sn-ty-coral-dark);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n\n#sn-trial-thank-you-page .sn-ty-app-copy h2 {\n  font-size: clamp(1.9rem, 3.5vw, 2.8rem);\n}\n\n#sn-trial-thank-you-page .sn-ty-app-copy h2 + p {\n  max-width: 66ch;\n  margin-block-start: 14px;\n  color: var(--sn-ty-muted);\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions {\n  display: grid;\n  gap: 12px;\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions a {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 8px;\n  transition: transform 180ms ease-out;\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions a:hover {\n  transform: translateY(-2px);\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions img {\n  display: block;\n  max-width: 100%;\n  height: auto;\n  object-fit: contain;\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions a[data-app-platform='ios'] img {\n  width: 180px;\n}\n\n#sn-trial-thank-you-page .sn-ty-app-actions a[data-app-platform='android'] img {\n  width: 200px;\n}\n\n#sn-trial-thank-you-page .sn-ty-footer {\n  border-block-start: 1px solid var(--sn-ty-line);\n  background: var(--sn-ty-cream);\n}\n\n#sn-trial-thank-you-page .sn-ty-footer-inner {\n  display: flex;\n  min-height: 112px;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-align: center;\n}\n\n#sn-trial-thank-you-page .sn-ty-footer p {\n  color: var(--sn-ty-muted);\n}\n\n#sn-trial-thank-you-page .sn-ty-footer a {\n  color: var(--sn-ty-coral-dark);\n  font-weight: 700;\n  text-decoration: underline;\n  text-underline-offset: 4px;\n}\n\n@media (max-width: 900px) {\n  #sn-trial-thank-you-page .sn-ty-hero-grid {\n    grid-template-columns: 1fr;\n    gap: 40px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-trial-panel {\n    display: grid;\n    grid-template-columns: auto minmax(0, 1fr);\n    align-items: center;\n    column-gap: 24px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-trial-panel > a,\n  #sn-trial-thank-you-page .sn-ty-trial-panel > small {\n    grid-column: 2;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-paths {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  #sn-trial-thank-you-page .sn-ty-app-card {\n    grid-template-columns: 1fr;\n  }\n}\n\n@media (max-width: 640px) {\n  #sn-trial-thank-you-page .sn-ty-container {\n    width: min(100% - 32px, 1160px);\n  }\n\n  #sn-trial-thank-you-page .sn-ty-header-inner {\n    min-height: 80px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-brandline {\n    font-size: 0.85rem;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-header-status {\n    min-height: 36px;\n    padding-inline: 12px;\n    font-size: 0.85rem;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-hero {\n    padding-block: 48px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-hero h1 {\n    font-size: clamp(2.65rem, 12vw, 3.7rem);\n  }\n\n  #sn-trial-thank-you-page .sn-ty-hero-button {\n    width: 100%;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-trial-panel {\n    display: block;\n    padding: 28px 24px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-steps ol {\n    grid-template-columns: 1fr;\n    padding-block: 12px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-steps li {\n    padding: 12px 4px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-steps li + li {\n    border-block-start: 1px solid var(--sn-ty-line);\n    border-inline-start: 0;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-path-section {\n    padding-block: 64px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-paths {\n    grid-template-columns: 1fr;\n    margin-block-start: 32px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-path {\n    min-height: 214px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-result {\n    grid-template-columns: 1fr;\n    padding: 28px 24px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-result-actions {\n    min-width: 0;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-app {\n    padding-block-end: 64px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-app-card {\n    padding: 28px 24px;\n  }\n\n  #sn-trial-thank-you-page .sn-ty-footer-inner {\n    flex-direction: column;\n    padding-block: 24px;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  #sn-trial-thank-you-page *,\n  #sn-trial-thank-you-page *::before,\n  #sn-trial-thank-you-page *::after {\n    scroll-behavior: auto !important;\n    transition-duration: 0.01ms !important;\n  }\n}\n\n@media (forced-colors: active) {\n  #sn-trial-thank-you-page .sn-ty-path,\n  #sn-trial-thank-you-page .sn-ty-trial-panel,\n  #sn-trial-thank-you-page .sn-ty-result,\n  #sn-trial-thank-you-page .sn-ty-button {\n    border: 2px solid CanvasText;\n  }\n}\n",
+    "js": "(function () {\n  'use strict';\n\n  var root = document.getElementById('sn-trial-thank-you-page');\n  if (!root || root.getAttribute('data-sn-bound') === 'true') return;\n\n  var paths = Array.prototype.slice.call(root.querySelectorAll('.sn-ty-path'));\n  var result = root.querySelector('#sn-ty-result');\n  var title = root.querySelector('#sn-ty-result-title');\n  var action = root.querySelector('#sn-ty-result-action');\n  var resultLink = root.querySelector('#sn-ty-result-link');\n  var villageLink = root.querySelector('#sn-ty-village-link');\n\n  if (!paths.length || !result || !title || !action || !resultLink) return;\n  root.setAttribute('data-sn-bound', 'true');\n\n  function emit(eventName, details) {\n    var payload = Object.assign({ event: eventName, surface: 'trial_thank_you' }, details || {});\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push(payload);\n  }\n\n  function selectPath(path, event) {\n    var destination = path.getAttribute('href');\n    var ageBand = path.getAttribute('data-age-band');\n    var pathTitle = path.getAttribute('data-title');\n    var pathAction = path.getAttribute('data-action');\n\n    if (!destination || !ageBand || !pathTitle || !pathAction) return;\n    if (event) event.preventDefault();\n\n    paths.forEach(function (item) {\n      item.setAttribute('aria-current', item === path ? 'true' : 'false');\n    });\n\n    title.textContent = 'Start with the ' + pathTitle;\n    action.textContent = pathAction;\n    resultLink.href = destination;\n    result.hidden = false;\n\n    emit('onboarding_path_selected', {\n      age_band: ageBand,\n      destination: destination\n    });\n\n    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    result.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest' });\n    title.focus({ preventScroll: true });\n  }\n\n  paths.forEach(function (path) {\n    path.setAttribute('aria-current', 'false');\n    path.addEventListener('click', function (event) {\n      selectPath(path, event);\n    });\n  });\n\n  if (villageLink) {\n    villageLink.addEventListener('click', function () {\n      emit('village_cta_click', { placement: 'trial_thank_you_age_path' });\n    });\n  }\n}());\n",
+    "color_primary": "#f43357",
+    "btn_background_color": "#f43357",
+    "font_family_body": "Poppins",
+    "font_family_heading": "Playfair Display",
+    "favicon": "file-uploads/themes/2156873377/settings_images/4b6b581-fc2-a3c4-e1c-e5a8c17001ca_6a94d241-e92f-46fd-a22a-5da426782f0b.png",
+    "background_color": "#faf7f4",
+    "background_image": "",
+    "about_disabled": false,
+    "contact_disabled": false,
+    "content_for_index": [
+      "1786139396072"
+    ],
+    "brand": {
+      "primary_color": "#f43357",
+      "accent_color": "#f43357",
+      "logo": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+      "favicon": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/2c74-00f-a2aa-e5d-442be45717a2_TSC_-_Favicon_Coral.png",
+      "font_family_heading": "Playfair Display",
+      "font_family_body": "Poppins",
+      "social": {
+        "facebook": null,
+        "instagram": null,
+        "x": null,
+        "youtube": null,
+        "linkedin": null,
+        "tiktok": null
+      }
+    },
+    "_defaults": {
+      "section": {
+        "bg_type": "none",
+        "bg_position": "center",
+        "background_fixed": "false",
+        "hide_on_desktop": "false",
+        "vertical": "center",
+        "horizontal": "center",
+        "equal_height": "false",
+        "hide_on_mobile": "false",
+        "reveal_units": "seconds"
+      },
+      "section/code": {
+        "width": "6",
+        "code": "<!-- Code Goes Here -->",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "left",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "left",
+        "animation_type": "none",
+        "animation_direction": "none",
+        "delay": "0",
+        "duration": "0",
+        "reveal_units": "seconds"
+      },
+      "header": {
+        "cart": "false",
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "background_color": "#FFFFFF",
+        "position": "static",
+        "sticky": "false",
+        "hide_on_desktop": "false",
+        "horizontal": "between",
+        "hide_on_mobile": "false",
+        "close_on_scroll": "true",
+        "mobile_menu_text_alignment": "left"
+      },
+      "header/logo": {
+        "logo_type": "image",
+        "image_alt": "Header logo",
+        "logo_width": "50",
+        "logo_text": "Encore",
+        "alignment": "left",
+        "stretch": "false"
+      },
+      "header/menu": {
+        "menu": "main-menu",
+        "alignment": "right",
+        "stretch": "true"
+      },
+      "header/user": {
+        "language_login": "Log In",
+        "language_logout": "Logout",
+        "language_settings": "Settings",
+        "language_library": "My Library",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "alignment": "left",
+        "user_dropdown_menu_alignment": "left",
+        "stretch": "false"
+      },
+      "header/dropdown": {
+        "trigger": "Dropdown",
+        "menu": "main-menu",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "dropdown_menu_alignment": "left",
+        "alignment": "left",
+        "show_icon": "true",
+        "stretch": "false"
+      },
+      "header/cta": {
+        "btn_text": "Call to action",
+        "stretch": "false",
+        "alignment": "left"
+      },
+      "footer": {
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "hide_on_desktop": "false",
+        "vertical_layout": "false",
+        "hide_on_mobile": "false"
+      },
+      "footer/copyright": {
+        "copyright": "Kajabi"
+      },
+      "footer/link_list": {
+        "menu": "main-menu",
+        "vertical": "row",
+        "new_tab": "false",
+        "text_align": "right",
+        "mobile_text_align": "center"
+      },
+      "footer/social_icons": {
+        "new_tab": "false"
+      },
+      "exit_pop": {
+        "modal_edit": "false",
+        "enable_modal": "false",
+        "frequency": "0",
+        "popup_reveal": "0",
+        "vertical": "start",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "exit_pop/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "image_align_desktop": "flex-start",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "image_align_mobile": "flex-start",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step": {
+        "two_step_edit": "false",
+        "vertical": "top",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "two_step/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "image_align_desktop": "flex-start",
+        "hide_on_desktop": "false",
+        "make_flush": "false",
+        "make_block": "false",
+        "image_align_mobile": "flex-start",
+        "hide_on_mobile": "false",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step/form": {
+        "width": "12",
+        "text": "<h4>Join Our Free Trial</h4><p>Get started today before this once in a lifetime opportunity expires.</p>",
+        "disclaimer_text_color": "#888",
+        "input_label": "placeholder",
+        "inline": "false",
+        "btn_text": "Submit",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "center",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "center"
+      }
+    },
+    "sections": {
+      "1786139396072": {
+        "name": "Custom Code",
+        "type": "section",
+        "hidden": "false",
+        "hideable": true,
+        "saveable": true,
+        "settings": {
+          "bg_type": "none",
+          "bg_position": "center",
+          "background_fixed": false,
+          "hide_on_desktop": false,
+          "vertical": "center",
+          "horizontal": "center",
+          "equal_height": false,
+          "hide_on_mobile": false,
+          "reveal_units": "seconds",
+          "padding_desktop": {
+            "left": "0",
+            "top": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "full_width": true,
+          "padding_mobile": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "blocks": {
+          "1783490623335_0": {
+            "id": "1783490623335_0",
+            "name": "Custom Code",
+            "hidden": "false",
+            "type": "code",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "schemaName": "Custom Code",
+            "sectionId": "1786139396072",
+            "sectionType": "section",
+            "settings": {
+              "width": "12",
+              "code": "<div id=\"sn-trial-thank-you-page\">\n  <a class=\"sn-ty-skip\" href=\"#sn-ty-main\">Skip to your next step</a>\n\n  <header class=\"sn-ty-header\">\n    <div class=\"sn-ty-container sn-ty-header-inner\">\n      <a class=\"sn-ty-brand\" href=\"https://www.joinsnooze.com\" aria-label=\"Snooze by The Sleep Concierge home\">\n        <span class=\"sn-ty-wordmark\">snooze.</span>\n        <span class=\"sn-ty-brandline\">by The Sleep Concierge</span>\n      </a>\n      <span class=\"sn-ty-header-status\">Trial confirmed</span>\n    </div>\n  </header>\n\n  <main id=\"sn-ty-main\">\n    <section class=\"sn-ty-hero\" aria-labelledby=\"sn-ty-title\">\n      <div class=\"sn-ty-container sn-ty-hero-grid\">\n        <div class=\"sn-ty-hero-copy\">\n          <p class=\"sn-ty-kicker\">Welcome to Snooze</p>\n          <h1 id=\"sn-ty-title\">Your 7-day trial starts now.</h1>\n          <p class=\"sn-ty-lead\">You have full access to the Snooze Library and Snooze Village. Choose your baby&rsquo;s stage and take one clear first step. You can use Snooze on the web or in the Kajabi app.</p>\n          <a class=\"sn-ty-hero-button\" href=\"#sn-ty-path-title\">Choose your starting point</a>\n        </div>\n\n        <aside class=\"sn-ty-trial-panel\" aria-label=\"Trial details\">\n          <div class=\"sn-ty-trial-number\" aria-hidden=\"true\">7</div>\n          <div>\n            <p class=\"sn-ty-trial-label\">days of full access</p>\n            <p>Your selected plan begins after your trial unless you cancel before the first charge.</p>\n          </div>\n          <a href=\"https://www.joinsnooze.com/settings/cards\">Manage payment settings <span aria-hidden=\"true\">&rarr;</span></a>\n          <small>Login required</small>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"sn-ty-steps\" aria-label=\"What to do next\">\n      <div class=\"sn-ty-container\">\n        <ol>\n          <li><span>1</span><strong>Choose a stage</strong></li>\n          <li><span>2</span><strong>Open your starting point</strong></li>\n          <li><span>3</span><strong>Ask for help in the Village</strong></li>\n        </ol>\n      </div>\n    </section>\n\n    <section class=\"sn-ty-path-section\" aria-labelledby=\"sn-ty-path-title\">\n      <div class=\"sn-ty-container\">\n        <div class=\"sn-ty-section-heading\">\n          <h2 id=\"sn-ty-path-title\">Choose your baby&rsquo;s stage</h2>\n        </div>\n\n        <div class=\"sn-ty-paths\" aria-label=\"Choose your baby&rsquo;s stage\">\n          <a class=\"sn-ty-path\" href=\"https://www.joinsnooze.com/products/newborn-sleep-guide\" data-age-band=\"newborn\" data-title=\"Newborn Sleep Guide\" data-action=\"Open the guide and start with the introduction.\">\n            <span class=\"sn-ty-age\">0&ndash;3 months</span>\n            <strong>Newborn</strong>\n            <span class=\"sn-ty-path-copy\">Start with the Newborn Sleep Guide.</span>\n            <span class=\"sn-ty-path-action\">Choose this stage <span aria-hidden=\"true\">&rarr;</span></span>\n          </a>\n\n          <a class=\"sn-ty-path\" href=\"https://www.joinsnooze.com/products/3-4-month-baby-sleep-course-by-the-sleep-concierge\" data-age-band=\"3_4_months\" data-title=\"3&ndash;4 Month Sleep Course\" data-action=\"Open the course and begin with the first lesson.\">\n            <span class=\"sn-ty-age\">3&ndash;4 months</span>\n            <strong>3&ndash;4 months</strong>\n            <span class=\"sn-ty-path-copy\">Start with the 3&ndash;4 Month Sleep Course.</span>\n            <span class=\"sn-ty-path-action\">Choose this stage <span aria-hidden=\"true\">&rarr;</span></span>\n          </a>\n\n          <a class=\"sn-ty-path\" href=\"https://www.joinsnooze.com/products/5-12-month-sleep-training-course\" data-age-band=\"5_12_months\" data-title=\"5&ndash;12 Month Sleep Course\" data-action=\"Open the course and begin with the first lesson.\">\n            <span class=\"sn-ty-age\">5&ndash;12 months</span>\n            <strong>5&ndash;12 months</strong>\n            <span class=\"sn-ty-path-copy\">Start with the 5&ndash;12 Month Sleep Course.</span>\n            <span class=\"sn-ty-path-action\">Choose this stage <span aria-hidden=\"true\">&rarr;</span></span>\n          </a>\n\n          <a class=\"sn-ty-path\" href=\"https://www.joinsnooze.com/products/toddler-toolkit\" data-age-band=\"toddler\" data-title=\"Toddler Toolkit\" data-action=\"Open the toolkit and begin with the first lesson.\">\n            <span class=\"sn-ty-age\">12+ months</span>\n            <strong>Toddler</strong>\n            <span class=\"sn-ty-path-copy\">Start with the Toddler Toolkit.</span>\n            <span class=\"sn-ty-path-action\">Choose this stage <span aria-hidden=\"true\">&rarr;</span></span>\n          </a>\n        </div>\n\n        <section id=\"sn-ty-result\" class=\"sn-ty-result\" hidden aria-live=\"polite\" aria-labelledby=\"sn-ty-result-title\">\n          <div>\n            <p class=\"sn-ty-result-label\">Your starting point</p>\n            <h2 id=\"sn-ty-result-title\" tabindex=\"-1\"></h2>\n            <p id=\"sn-ty-result-action\"></p>\n          </div>\n          <div class=\"sn-ty-result-actions\">\n            <a id=\"sn-ty-result-link\" class=\"sn-ty-button\" href=\"https://www.joinsnooze.com/snooze-library\">Open your starting point</a>\n            <a id=\"sn-ty-village-link\" class=\"sn-ty-text-link\" href=\"https://www.joinsnooze.com/products/communities/v2/snooze\">Ask in the Snooze Village <span aria-hidden=\"true\">&rarr;</span></a>\n          </div>\n        </section>\n      </div>\n    </section>\n\n    <section class=\"sn-ty-app\" aria-labelledby=\"sn-ty-app-title\">\n      <div class=\"sn-ty-container\">\n        <div class=\"sn-ty-app-card\">\n          <div class=\"sn-ty-app-copy\">\n            <p class=\"sn-ty-app-label\">Snooze on your phone</p>\n            <h2 id=\"sn-ty-app-title\">Many members prefer the Kajabi app.</h2>\n            <p>Use it to open your courses, visit the Snooze Village and keep Snooze close when you need it. Download Kajabi, then sign in with the same email and password you used at checkout.</p>\n          </div>\n          <div class=\"sn-ty-app-actions\" aria-label=\"Download the Kajabi app\">\n            <a href=\"https://apps.apple.com/us/app/kajabi/id1485646310\" target=\"_blank\" rel=\"noopener\" data-app-platform=\"ios\" aria-label=\"Download Kajabi on the App Store\">\n              <img src=\"https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg\" alt=\"Download on the App Store\" loading=\"lazy\" />\n            </a>\n            <a href=\"https://play.google.com/store/apps/details?id=kajabi.kajabiapp\" target=\"_blank\" rel=\"noopener\" data-app-platform=\"android\" aria-label=\"Get Kajabi on Google Play\">\n              <img src=\"https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png\" alt=\"Get it on Google Play\" loading=\"lazy\" />\n            </a>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n\n  <footer class=\"sn-ty-footer\">\n    <div class=\"sn-ty-container sn-ty-footer-inner\">\n      <p>Need help accessing your account?</p>\n      <a href=\"mailto:support@sleepconcierge.com.au\">support@sleepconcierge.com.au</a>\n    </div>\n  </footer>\n</div>\n",
+              "border_width": "4",
+              "border_radius": "4",
+              "hide_on_desktop": false,
+              "text_align": "left",
+              "make_flush": true,
+              "make_block": false,
+              "hide_on_mobile": false,
+              "mobile_text_align": "left",
+              "animation_type": "none",
+              "animation_direction": "none",
+              "delay": "0",
+              "duration": "0",
+              "reveal_units": "seconds"
+            }
+          }
+        },
+        "block_order": [
+          "1783490623335_0"
+        ],
+        "blank": null
+      },
+      "header": {
+        "name": "Header",
+        "type": "header",
+        "blocks": {
+          "1555988494486": {
+            "id": "1555988494486",
+            "name": "Logo",
+            "type": "logo",
+            "hidden": "false",
+            "settings": {
+              "logo": "file-uploads/sites/2148291177/images/727863300824056a83b8f5fd0f880de7.png",
+              "stretch": false,
+              "alignment": "left",
+              "image_alt": "Snooze Logo",
+              "logo_text": "Sleep Concierge - Expert Baby Sleep Support",
+              "logo_type": "image",
+              "logo_width": "200",
+              "logo_text_color": "#f7a292"
+            },
+            "sectionId": "header",
+            "schemaName": "Logo",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          },
+          "1607554198094": {
+            "id": "1607554198094",
+            "name": "Main Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "stretch": false,
+              "alignment": "center"
+            },
+            "sectionId": "header",
+            "schemaName": "Menu",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          },
+          "1718599174110": {
+            "type": "user",
+            "name": "User Menu",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "header",
+            "settings": {
+              "text_color": "#595959",
+              "background_color": "#FFFFFF",
+              "language_login": "Member login",
+              "language_logout": "Logout",
+              "language_settings": "Settings",
+              "language_library": "My Library",
+              "user_dropdown_menu_alignment": "left",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1718599174110",
+            "schemaName": "User dropdown",
+            "sectionType": "header",
+            "hideable": true
+          },
+          "1767078477372": {
+            "type": "dropdown",
+            "name": "Sleep Help",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Sleep Help",
+              "menu": "9poNSX6H",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1767078477372",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1767079787493": {
+            "type": "cta",
+            "name": "Call to action",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "btn_text": "Join Snooze",
+              "btn_action": "https://www.joinsnooze.com/offers/z63s9VaR",
+              "new_tab": "",
+              "btn_width": "auto",
+              "btn_style": "",
+              "btn_size": "small",
+              "btn_border_radius": "25",
+              "btn_text_color": "",
+              "btn_background_color": "",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1767079787493",
+            "schemaName": "Call to action",
+            "sectionType": "header"
+          },
+          "1783564100201": {
+            "type": "dropdown",
+            "name": "Programs",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Programs",
+              "menu": "k2fFKm4U",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1783564100201",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1783564100202": {
+            "type": "dropdown",
+            "name": "Why Snooze",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Why Snooze",
+              "menu": "zCDtFR3W",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1783564100202",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1783564100203": {
+            "id": "1783564100203",
+            "name": "Blog Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "BxDzS8fq",
+              "new_tab": false,
+              "stretch": false,
+              "alignment": "center"
+            },
+            "sectionId": "header",
+            "schemaName": "Menu",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "sticky": false,
+          "position": "static",
+          "horizontal": "center",
+          "text_color": "#1f293b",
+          "hide_on_mobile": true,
+          "close_on_scroll": true,
+          "hamburger_color": "#1f293b",
+          "hide_on_desktop": true,
+          "background_color": "",
+          "font_size_mobile": "16px",
+          "font_size_desktop": "14px",
+          "sticky_text_color": "#ff644a",
+          "sticky_hamburger_color": "",
+          "sticky_background_color": "",
+          "mobile_header_text_color": "",
+          "mobile_menu_text_alignment": "center",
+          "mobile_header_background_color": "",
+          "cart": false
+        },
+        "block_order": [
+          "1555988494486",
+          "1767078477372",
+          "1783564100201",
+          "1607554198094",
+          "1783564100202",
+          "1783564100203",
+          "1767079787493",
+          "1718599174110"
+        ],
+        "hideable": true,
+        "saveable": true,
+        "blank": null
+      },
+      "footer": {
+        "name": "Footer",
+        "type": "footer",
+        "blocks": {
+          "1555988525205": {
+            "name": "Copyright",
+            "type": "copyright",
+            "hidden": "false",
+            "settings": {
+              "copyright": " The Sleep Concierge"
+            },
+            "id": "1555988525205",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Copyright",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1602193175296": {
+            "name": "Link List",
+            "type": "link_list",
+            "hidden": "false",
+            "settings": {
+              "menu": "2dL9DzzU",
+              "new_tab": false,
+              "vertical": "column",
+              "link_color": "",
+              "text_align": "left",
+              "mobile_text_align": "center"
+            },
+            "id": "1602193175296",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Link List",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1607561009889": {
+            "name": "Social Icons",
+            "type": "social_icons",
+            "hidden": "false",
+            "settings": {
+              "new_tab": false,
+              "social_icon_link_yelp": "",
+              "social_icon_link_slack": "",
+              "social_icon_link_vimeo": "",
+              "social_icon_link_flickr": "",
+              "social_icon_link_github": "",
+              "social_icon_link_itunes": "",
+              "social_icon_link_medium": "",
+              "social_icon_link_tiktok": "https://www.tiktok.com/@thesleepconcierge",
+              "social_icon_link_tumblr": "",
+              "social_icons_text_color": "#fffbf5",
+              "social_icon_link_spotify": "",
+              "social_icon_link_twitter": "",
+              "social_icon_link_youtube": "",
+              "social_icon_link_dribbble": "",
+              "social_icon_link_facebook": "",
+              "social_icon_link_linkedin": "",
+              "social_icon_link_podcasts": "",
+              "social_icon_link_instagram": "https://www.instagram.com/thesleepconcierge",
+              "social_icon_link_pinterest": "",
+              "social_icon_link_soundcloud": "",
+              "social_icon_background_style": "",
+              "social_icons_background_color": "#fffbf5"
+            },
+            "id": "1607561009889",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Social Icons",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1722697240868": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "S8etzdXL",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "column",
+              "text_align": "left",
+              "mobile_text_align": "center"
+            },
+            "id": "1722697240868",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1730279993182": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "row",
+              "text_align": "right",
+              "mobile_text_align": "center"
+            },
+            "id": "1730279993182",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "text_color": "#fffbf5",
+          "hide_on_mobile": true,
+          "hide_on_desktop": true,
+          "vertical_layout": false,
+          "background_color": "#1f293b",
+          "font_size_mobile": "12px",
+          "font_size_desktop": "12px",
+          "copyright_text_color": "",
+          "powered_by_text_color": "#898989"
+        },
+        "block_order": [
+          "1607561009889",
+          "1602193175296",
+          "1722697240868",
+          "1555988525205",
+          "1730279993182"
+        ],
+        "hideable": true,
+        "saveable": true
+      },
+      "exit_pop": {
+        "name": "Exit Popup",
+        "type": "exit_pop",
+        "blocks": {
+          "1585757552293": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "file-uploads/themes/2156873377/settings_images/21700ac-32ed-c8a8-2a88-56c13d1d6e_The_Sleep_Concierge_Black_Friday_Sale.png",
+              "width": "12",
+              "new_tab": false,
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "/store",
+              "make_block": false,
+              "make_flush": false,
+              "border_type": "none",
+              "image_first": false,
+              "image_width": "",
+              "border_color": "",
+              "border_width": "0",
+              "overlay_text": "Click Here For Better Sleep!",
+              "border_radius": "0",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": true,
+              "hide_on_mobile": false,
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": false,
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "center",
+              "overlay_text_color": "",
+              "image_align_desktop": "center",
+              "always_show_on_mobile": false,
+              "overlay_background_color": "#fff"
+            },
+            "id": "1585757552293",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Image",
+            "sectionId": "exit_pop",
+            "sectionType": "exit_pop"
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "frequency": "0",
+          "horizontal": "left",
+          "make_flush": false,
+          "modal_edit": false,
+          "enable_modal": false,
+          "popup_reveal": "3",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757552293"
+        ]
+      },
+      "two_step": {
+        "name": "Two Step Optin",
+        "type": "two_step",
+        "blocks": {
+          "1585757540189": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "",
+              "width": "12",
+              "new_tab": "false",
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "",
+              "make_block": "false",
+              "make_flush": "false",
+              "border_type": "none",
+              "image_first": "false",
+              "image_width": "",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": "false",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "flex-start",
+              "overlay_text_color": "",
+              "image_align_desktop": "flex-start",
+              "always_show_on_mobile": "false",
+              "overlay_background_color": "#fff"
+            }
+          },
+          "1585757543890": {
+            "name": "Form",
+            "type": "form",
+            "hidden": "false",
+            "settings": {
+              "form": "",
+              "text": "<h4>Join Our Free Trial</h4>\r\n<p>Get started today with a free trial of the Snooze membership.</p>",
+              "width": "12",
+              "inline": "false",
+              "btn_text": "Submit",
+              "thank_you": "",
+              "box_shadow": "none",
+              "make_block": "false",
+              "make_flush": "false",
+              "text_align": "center",
+              "border_type": "none",
+              "input_label": "placeholder",
+              "border_color": "",
+              "border_width": "4",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "btn_text_color": "",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "disclaimer_text": "",
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "btn_border_radius": "",
+              "mobile_text_align": "center",
+              "btn_background_color": "",
+              "disclaimer_text_color": "#888"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "horizontal": "left",
+          "make_flush": "false",
+          "two_step_edit": "false",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757540189",
+          "1585757543890"
+        ]
+      }
+    }
+  }
+}
