@@ -13,6 +13,12 @@ const pure = fs.readFileSync(new URL('../paid-touch-contract.mjs', import.meta.u
   .split('\n').filter((line) => line.trim()).map((line) => line.trimEnd()).join('\n');
 const generated = source.split("void 'BEGIN GENERATED REDUCER';\n")[1].split("\n  void 'END GENERATED REDUCER';")[0].trim();
 assert.equal(generated, pure.trim(), 'browser reducer bytes are generated from the shared contract');
+// Keep the fixture's retained and expired touches relative to a stable clock.
+const fixtureNow = Date.parse('2026-09-15T10:00:00.000Z');
+class FixtureDate extends Date {
+  constructor(...args) { super(...(args.length ? args : [fixtureNow])); }
+  static now() { return fixtureNow; }
+}
 const values = new Map([
   ['snooze_attribution_first_touch', JSON.stringify({ utm_source: 'instagram', utm_medium: 'social', occurred_at: '2026-09-14T10:00:00.000Z' })],
   ['snooze_attribution_current_touch', JSON.stringify({ utm_source: 'instagram', utm_medium: 'social', occurred_at: '2026-09-14T10:00:00.000Z' })],
@@ -24,7 +30,7 @@ const window = {
     setItem: (key, value) => values.set(key, value),
   },
 };
-const sandbox = { window, URLSearchParams, Date, Number, Object, String, Array, JSON, RegExp };
+const sandbox = { window, URLSearchParams, Date: FixtureDate, Number, Object, String, Array, JSON, RegExp };
 vm.runInNewContext(source, sandbox);
 assert.doesNotThrow(() => vm.runInNewContext(source, sandbox), 'loading both paste targets does not collide');
 
@@ -84,7 +90,7 @@ const isolatedWindow = {
   location: { search: '' },
   localStorage: { getItem: (key) => isolatedValues.get(key) || null, setItem: (key, value) => isolatedValues.set(key, value) },
 };
-const isolatedSandbox = { window: isolatedWindow, URLSearchParams, Date, Number, Object, String, Array, JSON, RegExp };
+const isolatedSandbox = { window: isolatedWindow, URLSearchParams, Date: FixtureDate, Number, Object, String, Array, JSON, RegExp };
 vm.runInNewContext(source, isolatedSandbox);
 assert.equal(isolatedWindow.SnoozePaidTouchBrowser.read().first_touch, null, 'read prunes expired state without URL or legacy input');
 const isolatedCapture = isolatedWindow.SnoozePaidTouchBrowser.capture();
