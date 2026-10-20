@@ -9,6 +9,10 @@
   var SENT_PREFIX = 'snooze_identity_sent_';
   var POLL_MS = 1000;
   var MAX_POLLS = 120;
+  var MAX_ATTEMPTS = 3;
+  var pending = {};
+  var attempts = {};
+  var fallbackClickTime = Date.now();
 
   function readCookie(name) {
     try {
@@ -50,7 +54,7 @@
     try {
       var qs = String(window.location.search || '');
       var m = qs.match(/[?&]fbclid=([^&]*)/);
-      if (m && m[1]) return 'fb.1.' + Date.now() + '.' + decodeURIComponent(m[1]);
+      if (m && m[1]) return 'fb.1.' + fallbackClickTime + '.' + decodeURIComponent(m[1]);
     } catch (e) {}
     return null;
   }
@@ -126,12 +130,12 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
   }
 
-  function alreadySent(hash) {
-    try { return window.sessionStorage.getItem(SENT_PREFIX + hash) === '1'; } catch (e) { return false; }
+  function alreadySent(hash, signature) {
+    try { return window.sessionStorage.getItem(SENT_PREFIX + hash) === signature; } catch (e) { return false; }
   }
 
-  function markSent(hash) {
-    try { window.sessionStorage.setItem(SENT_PREFIX + hash, '1'); } catch (e) {}
+  function markSent(hash, signature) {
+    try { window.sessionStorage.setItem(SENT_PREFIX + hash, signature); } catch (e) {}
   }
 
   function send(hash) {
@@ -156,46 +160,70 @@
       user_agent: navigator.userAgent
     };
 
+    var signature = JSON.stringify(payload);
+    var key = hash + ':' + signature;
+    if (alreadySent(hash, signature) || pending[hash] || (attempts[key] || 0) >= MAX_ATTEMPTS) {
+      return Promise.resolve(false);
+    }
+    pending[hash] = true;
+    attempts[key] = (attempts[key] || 0) + 1;
+    var request;
     try {
-      fetch(ENDPOINT, {
+      request = fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: signature,
         keepalive: true,
         credentials: 'include',
         mode: 'cors'
-      }).catch(function () {});
-    } catch (e) {}
-
-    markSent(hash);
-
-    try {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'checkout_identity_captured',
-        has_ga_client_id: !!payload.ga_client_id,
-        has_fbp: !!payload.fbp,
-        has_fbc: !!payload.fbc
       });
-    } catch (e) {}
+    } catch (e) {
+      pending[hash] = false;
+      return Promise.resolve(false);
+    }
+    return Promise.resolve(request).then(function (response) {
+      pending[hash] = false;
+      if (!response || !response.ok) return false;
+      markSent(hash, signature);
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'checkout_identity_captured',
+          capture_transport: 'accepted',
+          has_ga_client_id: !!payload.ga_client_id,
+          has_fbp: !!payload.fbp,
+          has_fbc: !!payload.fbc
+        });
+      } catch (e) {}
+      return true;
+    }, function () {
+      pending[hash] = false;
+      return false;
+    });
   }
 
   var polls = 0;
-  var lastSeen = null;
+  var timer = null;
 
   function tick() {
+    timer = null;
     polls += 1;
     var email = currentEmail();
-    if (looksLikeEmail(email) && email !== lastSeen) {
-      lastSeen = email;
+    if (looksLikeEmail(email)) {
       sha256Hex(email).then(function (hash) {
-        if (hash && !alreadySent(hash)) send(hash);
+        if (hash) send(hash);
       });
     }
-    if (polls < MAX_POLLS) window.setTimeout(tick, POLL_MS);
+    if (polls < MAX_POLLS) timer = window.setTimeout(tick, POLL_MS);
   }
 
-  window.setTimeout(tick, POLL_MS);
+  timer = window.setTimeout(tick, POLL_MS);
+  if (typeof document.addEventListener === 'function') {
+    document.addEventListener('input', function () {
+      polls = 0;
+      if (timer === null) timer = window.setTimeout(tick, POLL_MS);
+    }, true);
+  }
 
   window.SnoozeCheckoutIdentity = { send: send, hash: sha256Hex, currentEmail: currentEmail };
 })();
