@@ -218,3 +218,7 @@ See the `#ask-sally-page` System Initialization block (added January 2026) in `s
 - Source: `../../src/camp-vsl/index.html`.
 - Separate landing-page theme, with a full System Initialization block and page styles embedded in the one-file source. It does not inherit or require website theme CSS.
 - Local review only. No Kajabi page/theme created and no shared theme changes. Hosted video selection and production review remain open.
+
+### Camp Snooze VSL landing page (October 24, 2026)
+
+`#camp-vsl-page` has a complete System Initialization block in `src/camp-vsl/index.html`. Its generated landing-page block includes all CSS and JS. Landing theme 2168014017 uses Nova and requires no shared website stylesheet changes.
