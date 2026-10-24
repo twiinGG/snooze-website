@@ -211,3 +211,10 @@ See the `#ask-sally-page` System Initialization block (added January 2026) in `s
 ## CFB-002 prepared landing wrappers (October 05, 2026)
 
 `#cfb002-registration-page`, `#cfb002-thank-you-page`, `#cfb002-replay-page` and `#cfb002-camp-booking-page` are CFB-002 landing-page wrappers. Each uses its own landing theme and complete inline System Initialization before page-specific rules. They do not inherit website-theme CSS. Source: `src/campaigns/cfb002/prepare.py` and `design/templates.py`. Generated blocks include the exact canonical inline footer and its styles. Scoped enhancements correct footer contrast, provide the logo's accessible name and expose footer headings at the appropriate level. Six local states were reviewed at desktop and mobile sizes; source registration and local review do not imply platform publication or functional signup/payment proof. Receiving-system state is in the project BUILD-ACCEPTANCE and RESOURCE-MAP.
+
+### Camp VSL draft (October 23, 2026)
+
+- Wrapper: `#camp-vsl-page`.
+- Source: `../../src/camp-vsl/index.html`.
+- Separate landing-page theme, with a full System Initialization block and page styles embedded in the one-file source. It does not inherit or require website theme CSS.
+- Local review only. No Kajabi page/theme created and no shared theme changes. Hosted video selection and production review remain open.
