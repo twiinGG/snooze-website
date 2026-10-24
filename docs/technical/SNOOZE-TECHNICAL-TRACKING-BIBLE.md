@@ -63,7 +63,7 @@ The Snooze platform utilizes a **Hybrid Server-Side Tracking** architecture. Unl
 ### Data Flow Diagram
 
 ```mermaid
-[User Browser] 
+[User Browser]
       |
       +--- (Landing Pages) ---> [Google GTM (Lite)] ---> [GA4 / FB Basic Click Tracking]
       |
@@ -123,35 +123,35 @@ The script checks the URL slug.
 <script>
   // --- CONFIGURATION ---
   var containerId = 'GTM-KNRTH6P';
-  
+
   // Add any URL slug here that needs to load INSTANTLY (Delay tracking)
   var fastPages = [
-    '/links', 
+    '/links',
     '/snooze',
     '/bio',
-    '/free-guide' 
+    '/free-guide'
   ];
   // Live as of June 2026. The LCP preload (above) must point at the current /links
   // profile image on the active theme (2161797115). Confirm the href against live Kajabi.
   // ---------------------
 
   // Check if current URL matches any fast page
-  var isFastPage = fastPages.some(function(page) { 
-    return window.location.href.indexOf(page) > -1; 
+  var isFastPage = fastPages.some(function(page) {
+    return window.location.href.indexOf(page) > -1;
   });
 
   if (isFastPage) {
     // --- MODE A: DELAYED SPEED (Landing Pages) ---
     // Wait 1.5s for visuals to load, THEN load tracking.
     console.log('Snooze: Fast Page Detected - Delaying Tracking');
-    
+
     setTimeout(function() {
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer',containerId);
-    }, 1500); 
+    }, 1500);
 
   } else {
     // --- MODE B: INSTANT POWER (Sales/Checkout) ---
@@ -223,7 +223,7 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
       var finalPriceFound = false;
 
       // PRIORITY 1: Get FINAL price after discount (what customer actually pays)
-      
+
       // Strategy A1: Check #offer-price FIRST (most specific element for final price)
       // This element contains the final price after discount is applied
       var finalPriceEl = document.querySelector("#offer-price");
@@ -235,7 +235,7 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
           finalPriceFound = true;
         }
       }
-      
+
       // Strategy A2: Check "Due now" section (fallback if #offer-price not found)
       if (!finalPriceFound) {
         var dueNowSection = document.querySelector('.embedded-checkout-price-detail');
@@ -252,13 +252,13 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
           }
         }
       }
-      
+
       // FALLBACK: If final price not found, use base price (before discount)
       // This handles cases where discount hasn't been applied yet or coupon not entered
       if (!finalPriceFound) {
         var selectedOption = document.querySelector(".embedded-checkout-pricing-option.selected");
         if (selectedOption) {
-          var textContent = selectedOption.innerText; 
+          var textContent = selectedOption.innerText;
           var match = textContent.match(/\$([\d,]+(?:\.\d{2})?)/);
           if (match) {
             priceText = match[1];
@@ -287,7 +287,7 @@ this. Genuine 100%-off coupon orders and free lead-magnet claims are indistingui
   });
 
   // --- FIELD SCRAPING ---
-  
+
   // 1. Product Name
   try {
     var titleEl = document.querySelector("#offer-title");
@@ -549,4 +549,4 @@ Tag 122 advanced matching has been on since web GTM version 66. The shared event
 
 Google enhanced conversions for leads sends email as SHA-256 hex when email upload is enabled by the settings gate. Attribution captures `utm_id` into `ad_id`; `v_order_attribution` matches ad id first.
 
-Monitoring runs `tracking-health` on Navi. Failure handoffs go to the Navi inbox. The Hermes job is `655a32304afe` (Snooze Analytics Ops daily sync). The Chessy job `15b43d4554bc` is paused. Full live-state evidence: [ME-012 run log](../../../../docs/projects/measurement/4_working/2026-10-01-tracking-closure/RUN-LOG.md).
+Monitoring runs `tracking-health` on Navi. Failure handoffs go to the Donna inbox. The Hermes job is `655a32304afe` (Snooze Analytics Ops daily sync). The Chessy job `15b43d4554bc` is paused. Full live-state evidence: [ME-012 run log](../../../../docs/projects/measurement/4_working/2026-10-01-tracking-closure/RUN-LOG.md).
