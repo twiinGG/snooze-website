@@ -1173,3 +1173,11 @@ body.currency-loaded .dynamic-price {
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 600px) {
+  .camp-sales-hero { padding-top: 1.5rem !important; }
+  .camp-sales-hero .waving-flags { display: none !important; }
+  .camp-sales-hero > .camp-container > div > .font-display { font-size: 1.5rem !important; }
+  .camp-sales-hero h1 { font-size: 2.75rem !important; }
+  .camp-sales-hero .camp-hero-next { margin-bottom: 1rem; }
+}
