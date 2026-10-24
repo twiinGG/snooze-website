@@ -732,3 +732,9 @@ serial save, rollback and cache-busted verification.
 3. Any `.js` paste file must pass `node --check`.
 4. `GTM-KNRTH6P` at most once per assembled page type (site from A1; checkouts from A4).
 5. Never merge two paste targets into one file; never append a second file into a Kajabi field at paste time.
+
+## Camp Snooze coaching draft
+
+[Edit landing page](https://app.kajabi.com/admin/landing_pages/2152355854/edit) · [Theme builder](https://app.kajabi.com/admin/themes/2168014017/settings/edit)
+
+`pages/landing/camp-snooze-coaching/index.html` is the complete custom-code block. It contains its own System Initialization CSS, interactive fit-check JS, captions and canonical footer. Do not add shared theme CSS or a second footer. Rebuild with `python3 apps/snooze-website/src/camp-vsl/build.py`. `theme-payload.json` supplies the Nova section, full-width layout, zero padding and hidden native chrome. `theme-before.json` is the blank theme preimage. Status: draft, excluded from search.

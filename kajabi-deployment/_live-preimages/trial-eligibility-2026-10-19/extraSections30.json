@@ -1,0 +1,107 @@
+{
+  "theme": {
+    "id": 2156873377,
+    "name": "<user-supplied>Encore</user-supplied>",
+    "version": "2.14.9",
+    "themeable_type": "Site",
+    "themeable_id": 2148291177,
+    "updated_at": "2026-09-01T12:37:28Z"
+  },
+  "settings": {
+    "_defaults": {
+      "section": {
+        "bg_type": "none",
+        "bg_position": "center",
+        "background_fixed": "false",
+        "hide_on_desktop": "false",
+        "vertical": "center",
+        "horizontal": "center",
+        "equal_height": "false",
+        "hide_on_mobile": "false",
+        "reveal_units": "seconds"
+      },
+      "section/code": {
+        "width": "6",
+        "code": "<!-- Code Goes Here -->",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "left",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "left",
+        "animation_type": "none",
+        "animation_direction": "none",
+        "delay": "0",
+        "duration": "0",
+        "reveal_units": "seconds"
+      }
+    },
+    "sections": {
+      "1787863462881": {
+        "name": "Custom Code",
+        "type": "section",
+        "hidden": "false",
+        "hideable": true,
+        "saveable": true,
+        "settings": {
+          "bg_type": "none",
+          "bg_position": "center",
+          "background_fixed": false,
+          "hide_on_desktop": false,
+          "vertical": "center",
+          "horizontal": "center",
+          "equal_height": false,
+          "hide_on_mobile": false,
+          "reveal_units": "seconds",
+          "padding_desktop": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
+          "full_width": true
+        },
+        "blocks": {
+          "1783491341862_0": {
+            "id": "1783491341862_0",
+            "name": "Custom Code",
+            "hidden": "false",
+            "type": "code",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "schemaName": "Custom Code",
+            "sectionId": "1787863462881",
+            "sectionType": "section",
+            "settings": {
+              "width": "12",
+              "code": "<div id=\"snooze-village-page\">\n  <main>\n    <section class=\"village-hero\">\n      <div class=\"snooze-container village-hero-grid\">\n        <div class=\"village-hero-copy\">\n          <p class=\"village-kicker\">INSIDE THE SNOOZE MEMBERSHIP</p>\n          <h1>Your baby sleep resources, all in one calm place</h1>\n          <p class=\"village-lead\">See the courses, practical guides and expert support waiting inside Snooze. Start with your baby&rsquo;s stage, then find the next useful step without piecing advice together at 2am.</p>\n          <div class=\"village-actions\">\n            <a class=\"btn dynamic-cta\" data-checkout href=\"https://www.joinsnooze.com/offers/mqQikDM7/checkout\">Start your 7-day free trial</a>\n            <a class=\"village-text-link\" href=\"https://www.joinsnooze.com/login\">Already a member? Log in</a>\n          </div>\n          <p class=\"village-trial-note\">Pay $0 today. Your selected plan starts on day 8 unless you cancel during the trial.</p>\n        </div>\n        <div class=\"village-hero-showcase\" aria-label=\"A preview of resources inside Snooze\">\n          <div class=\"village-shelf village-shelf-top\">\n            <article class=\"village-mini-card village-mini-card-featured\"><span>COURSE</span><strong>5&ndash;12 Month Sleep</strong><small>Naps, nights and settling</small></article>\n            <article class=\"village-mini-card\"><span>GUIDE</span><strong>Catnapping</strong><small>Practical next steps</small></article>\n          </div>\n          <div class=\"village-phone\">\n            <div class=\"village-phone-top\"><span></span><strong>Snooze Village</strong><span></span></div>\n            <div class=\"village-post\"><span class=\"village-avatar\">S</span><p><strong>Snooze Specialist</strong><br>Let&rsquo;s look at the schedule first, then we can work out what to adjust.</p></div>\n            <div class=\"village-reply\"><p>That gives me a clear place to start. Thank you.</p><span class=\"village-avatar village-avatar-parent\">M</span></div>\n            <div class=\"village-phone-nav\"><span>Library</span><span class=\"is-active\">Village</span><span>Sessions</span></div>\n          </div>\n          <div class=\"village-shelf village-shelf-bottom\">\n            <article class=\"village-mini-card\"><span>SESSION</span><strong>Live masterclass</strong><small>With the Snooze Specialists</small></article>\n            <article class=\"village-mini-card village-mini-card-featured\"><span>TOOL</span><strong>Sleep schedules</strong><small>By age and stage</small></article>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"snooze-section bg-white\" aria-labelledby=\"village-courses-title\">\n      <div class=\"snooze-container\">\n        <div class=\"village-section-heading\"><p class=\"village-kicker\">AGE-BASED COURSES</p><h2 id=\"village-courses-title\">Start where your family is now</h2><p>Move through the Library from newborn sleep to the toddler years. Each stage gives you structured guidance and practical actions.</p></div>\n        <div class=\"village-course-grid\">\n          <article class=\"village-course-card\"><img src=\"https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/774dbd6-35da-e076-34fa-5d06bfe864f_Newborn_Guide_Summary_Thumb.webp\" alt=\"Newborn Sleep Guide resource preview\" loading=\"lazy\"><div><span>0&ndash;3 MONTHS</span><h3>Newborn Sleep Guide</h3><p>Understand newborn sleep, settling and realistic routines.</p></div></article>\n          <article class=\"village-course-card\"><img src=\"https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/702c22e-4664-7bd3-7855-428fd80f0_3-4_Month_Course_Summary_Thumb.webp\" alt=\"3 to 4 Month Sleep Course resource preview\" loading=\"lazy\"><div><span>3&ndash;4 MONTHS</span><h3>3&ndash;4 Month Sleep Course</h3><p>Prepare for changing sleep cycles and build settling foundations.</p></div></article>\n          <article class=\"village-course-card\"><img src=\"https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/c7082ba-ecf4-371a-1275-f7e23b420a0_5-12_Month_Course_Summary_Thumb.webp\" alt=\"5 to 12 Month Sleep Course resource preview\" loading=\"lazy\"><div><span>5&ndash;12 MONTHS</span><h3>5&ndash;12 Month Sleep Course</h3><p>Work through schedules, settling, night wakes and nap changes.</p></div></article>\n          <article class=\"village-course-card\"><img src=\"https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164408968/settings_images/35378e7-720-4374-f8e6-53287723ecf_Toddler_Toolkit_Summary_Thumb.webp\" alt=\"Toddler Toolkit resource preview\" loading=\"lazy\"><div><span>12+ MONTHS</span><h3>Toddler Toolkit</h3><p>Build clear routines and work through common toddler challenges.</p></div></article>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"snooze-section village-guides\" aria-labelledby=\"village-guides-title\">\n      <div class=\"snooze-container village-guides-grid\">\n        <div class=\"village-section-heading\"><p class=\"village-kicker\">FOCUSED GUIDES</p><h2 id=\"village-guides-title\">Find help for the problem happening tonight</h2><p>Use a focused guide when you need to troubleshoot one part of sleep without starting your research again.</p></div>\n        <div class=\"village-guide-stack\" aria-label=\"Focused sleep guides inside Snooze\">\n          <article><span>01</span><h3>Early rising</h3><p>Work through the common causes of starts before 6am.</p></article>\n          <article><span>02</span><h3>Catnapping</h3><p>Understand short naps and what to try next.</p></article>\n          <article><span>03</span><h3>Sleep regressions</h3><p>Make sense of changing sleep and developmental shifts.</p></article>\n          <article><span>04</span><h3>Nap transitions</h3><p>Move between nap schedules with a clearer plan.</p></article>\n          <article><span>05</span><h3>Bedtime battles</h3><p>Reset routines when bedtime becomes a struggle.</p></article>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"snooze-section bg-white\" aria-labelledby=\"village-support-title\">\n      <div class=\"snooze-container\">\n        <div class=\"village-section-heading text-center max-800\"><p class=\"village-kicker\">SUPPORT AS YOU GO</p><h2 id=\"village-support-title\">Learn the plan, then get help applying it</h2><p>Real life rarely follows an example perfectly. The Snooze Specialists help members work out what to adjust.</p></div>\n        <div class=\"village-support-grid\">\n          <article class=\"village-support-card village-support-card-dark\"><span class=\"village-support-number\">01</span><h3>The Snooze Village</h3><p>Share what is happening, learn from other parents and ask for help in the expert-moderated forum.</p><small>Responses within 24 hours, Monday to Friday.</small></article>\n          <article class=\"village-support-card\"><span class=\"village-support-number\">02</span><h3>Masterclasses and sessions</h3><p>Join focused live masterclasses and coaching sessions with the Snooze Specialists.</p><div class=\"village-session-preview\"><span>UP NEXT</span><strong>Practical troubleshooting</strong><small>Bring your questions</small></div></article>\n          <article class=\"village-support-card\"><span class=\"village-support-number\">03</span><h3>A Library that grows with your baby</h3><p>Move to the next age and stage without buying another course or piecing together a new plan.</p><div class=\"village-stage-track\"><span>Newborn</span><i></i><span>3&ndash;4m</span><i></i><span>5&ndash;12m</span><i></i><span>Toddler</span></div></article>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"snooze-section village-final\">\n      <div class=\"snooze-container village-final-inner\"><div><p class=\"village-kicker\">THE SNOOZE MEMBERSHIP</p><h2>One place to learn, ask and keep moving forward</h2><p>Get full access to the Library and Snooze Village for seven days.</p></div><div class=\"village-final-action\"><a class=\"btn dynamic-cta\" data-checkout href=\"https://www.joinsnooze.com/offers/mqQikDM7/checkout\">Start your 7-day free trial</a><p>Pay $0 today. Cancel online before your first charge.</p></div></div>\n    </section>\n  </main>\n</div>\n",
+              "border_width": "4",
+              "border_radius": "4",
+              "hide_on_desktop": false,
+              "text_align": "left",
+              "make_flush": false,
+              "make_block": false,
+              "hide_on_mobile": false,
+              "mobile_text_align": "left",
+              "animation_type": "none",
+              "animation_direction": "none",
+              "delay": "0",
+              "duration": "0",
+              "reveal_units": "seconds"
+            }
+          }
+        },
+        "block_order": [
+          "1783491341862_0"
+        ],
+        "blank": null
+      }
+    },
+    "not_found": [
+      "ws004code"
+    ]
+  }
+}

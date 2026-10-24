@@ -1,0 +1,761 @@
+{
+  "theme": {
+    "id": 2167137729,
+    "name": "<user-supplied>Encore</user-supplied>",
+    "version": "2.14.8",
+    "themeable_type": "LandingPage",
+    "themeable_id": 2152205840,
+    "updated_at": "2026-08-14T03:25:02Z"
+  },
+  "skill": {
+    "system_prompt": "You are editing a theme's `settings_data.json` through the Kajabi MCP theme tools.\nThis theme's skill content tells you how it composes pages (block inventory,\nlayout recipes, token system, etc.). That content is NOT in this payload and is\nnever returned inline \u2014 you load it yourself in step 2. This prompt tells you how\nto deliver the changes you compose from it.\n\n# Workflow\n\nEvery change follows the same five steps:\n\n1. **Read** \u2014 call `get_theme_content` to fetch the current `{theme, settings, skill}`.\n   Use the response to discover existing brand tokens, section IDs, and block IDs.\n2. **Load the skill content** \u2014 call `get_theme_skill_file_contents(site_id:,\n   theme_id:, key:)`. Pass the `skill.instructions_key` that came with this payload,\n   or, on a federated payload, a topic key from the `skill.base_instructions` menu.\n   Everywhere this prompt says \"the active skill file\", it means the document you\n   load here. Fetch it once and reuse it for the rest of the turn. Do not compose\n   block structure without it.\n3. **Modify** \u2014 assemble a partial `settings` hash with the keys you intend to change.\n4. **Write** \u2014 call `update_theme_content` with `{site_id, theme_id, settings: {...}}`.\n5. **Verify** \u2014 call `get_theme_content` again and confirm the change landed\n   (see \"Verification\" below). `{\"updated\": true}` from step 4 only means the API\n   accepted the payload, not that the page renders.\n\n# Payload shape\n\nThe `settings` argument is **flat**. Three kinds of keys live side by side at its root:\n\n- **Top-level theme tokens** (color/typography/button tokens defined by the theme's\n  Style Guide). Names vary by theme \u2014 the active skill file enumerates them.\n- **`content_for_<template>` arrays** of dynamic section IDs. The template name\n  varies by theme surface \u2014 the active skill file specifies which template arrays\n  exist and which one(s) you write to.\n- **`sections`** \u2014 the map of every section on the page, fixed and dynamic.\n\n**Do not wrap the payload.** Passing `settings: { \"current\": { \"sections\": ..., ... } }`\n(or any other parent key around `sections` / `content_for_<template>` / theme tokens)\ndeep-merges to a non-rendering sibling path. The API returns `{\"updated\": true}` and\nthe sections never render. This is the single most common silent-failure mode.\nPass these keys as direct siblings inside `settings`.\n\n# Rendering contract \u2014 the `content_for_<template>` silent-fail\n\nThe template renders the `content_for_<template>` array, not the `sections` map.\nA section defined in `settings.sections` but missing from any `content_for_*`\narray is **stored but never rendered**. `update_theme_content` will return success,\nthe editor will show the section is \"there\", and the page will not display it.\n\nRules:\n\n- `content_for_<template>` is a sibling of `sections`, not nested inside it.\n- List **only dynamic section IDs**. Fixed-chrome sections (header, footer, and\n  any other always-present sections the theme's skill file calls out) render\n  outside the dynamic loop and must not appear in any `content_for_*` array.\n- Order matters \u2014 sections render in array order.\n- If you omit the `content_for_<template>` key from the update payload, the array\n  may be discarded and every dynamic section disappears at once. When you're not\n  changing the array, include the existing value verbatim.\n\n# `block_order` is load-bearing\n\nInside a section, `block_order` controls render order (and, for themes with\nhorizontal block layout, left-to-right placement). A block defined in `blocks`\nbut missing from `block_order` does not render. Whenever you add or remove a\nblock, update `block_order` in the same payload.\n\nAnd the reverse: a block id listed in `block_order` but missing a matching\nentry in the section's `blocks` map does not render either. The renderer\niterates `block_order` and looks each id up in `blocks`; ids with no\nmatching definition are silently skipped. Every id in `block_order` must\nhave a corresponding `blocks[id]` entry with at minimum a `type` and a\n`settings` hash. This rule applies recursively for nested container blocks\n(e.g. `group`) that maintain their own internal `block_order` and `blocks`.\n\n# Preserve top-level theme tokens\n\nThe Style Guide tokens live at the top level of `settings`. If your update\npayload omits them, you can wipe them out by accident. Include the existing\nvalues verbatim for any token you are not changing.\n\n# Don't pattern-match existing content (the anchoring trap)\n\nWhen you read the existing JSON before modifying it, use it for **brand tokens,\ncopy patterns, and section IDs you intend to reuse** \u2014 not for block structure.\nSeeded and legacy themes frequently contain antipatterns (rich text holding entire\nlayouts, CTAs as inline `<a>` tags inside text blocks, images as `<img>` tags\ninside rich text). The active skill file's decomposition rules are the source of\ntruth \u2014 design each section's block structure fresh from those rules, even if\nthat contradicts what is already in the file.\n\n# Don't edit `settings_data` files directly\n\n`settings_data.json` (and any `settings_data/*.json`) on disk in a theme repo is\na dev template, not the source of truth. The persisted page lives in the database\nand is reached only through `update_theme_content`. Edits on disk will not\npropagate to the running site.\n\n# Verification checklist\n\nAfter every `update_theme_content` call, call `get_theme_content` and confirm:\n\n1. Every new section ID exists inside `settings.sections`.\n2. Every new section ID appears in the appropriate `content_for_<template>` array,\n   in display order.\n3. Each section's `block_order` lists every block ID present in its `blocks` map.\n4. Top-level theme tokens are still intact (you did not blow them away by omission).\n5. **Visually verify** the rendered page against the reference, if there is one.\n   JSON validity is not the same as design fidelity. Open the page in a browser,\n   compare against the reference, and call out mismatches. If you cannot open the\n   page, say so explicitly rather than asserting visual correctness from JSON.\n",
+    "revision": "v1",
+    "updated_at": "2026-06-17T20:27:20Z",
+    "instructions_key": "instructions",
+    "instructions_hint": "This theme's authoring guide is served on demand. Call get_theme_skill_file_contents with this site_id and theme_id and `key: \"instructions\"` to load it before composing or editing page content."
+  },
+  "guidance": "To update content, call update_theme_content with a partial settings hash containing only the sections/keys you want to change. Unchanged sections are preserved automatically via deep merge. Schema defaults are NOT copied onto each section: a single top-level `_defaults` map carries them, emitted once per type. Section defaults are keyed by the section type; block defaults are keyed `\"<section type>/<block type>\"` (block types are only unique within a section, so the parent section type disambiguates them). Each section's own `settings` hash holds only its explicit user choices. To read an effective value, check the section's or block's own `settings.<key>` first; if the key isn't there, fall back to `_defaults.<section type>.<key>` for a section, or `_defaults[\"<section type>/<block type>\"].<key>` for a block. When writing back via update_theme_content, omit the `_defaults` map \u2014 it is response-only metadata and is stripped on write so defaults aren't accidentally pinned as explicit choices (which would break theme version upgrades that change defaults). To make a default an explicit choice (e.g. lock `image_width` at its current default), copy the key from the matching `_defaults` entry into that section's (or block's) `settings` in your update payload.",
+  "settings": {
+    "content_for_index": [
+      "ws004code"
+    ],
+    "favicon": "",
+    "color_primary": "",
+    "font_family_body": "",
+    "font_weight_body": "400",
+    "line_height_body": "1.6",
+    "font_family_heading": "",
+    "font_weight_heading": "700",
+    "line_height_heading": "1.2",
+    "color_body": "#595959",
+    "color_heading": "#161E2A",
+    "font_size_h1_desktop": "48px",
+    "font_size_h2_desktop": "36px",
+    "font_size_h3_desktop": "30px",
+    "font_size_h4_desktop": "24px",
+    "font_size_h5_desktop": "20px",
+    "font_size_h6_desktop": "16px",
+    "font_size_body_desktop": "18px",
+    "font_size_h1_mobile": "36px",
+    "font_size_h2_mobile": "30px",
+    "font_size_h3_mobile": "24px",
+    "font_size_h4_mobile": "20px",
+    "font_size_h5_mobile": "18px",
+    "font_size_h6_mobile": "16px",
+    "font_size_body_mobile": "16px",
+    "error_message_text_color": "#ffffff",
+    "error_message_background_color": "#ff0000",
+    "show_guides": "true",
+    "show_grid": "false",
+    "css": "#nap-transition-ready-page {\n\n  --sn-coral: #F43357;\n  --sn-font-body: 'Poppins', sans-serif;\n  --sn-font-heading: 'Playfair Display', serif;\n  --sn-max-width: 1200px;\n  --sn-navy: #1F293B;\n  --sn-text-light: #94A3B8;\n  --sn-white: #FFFFFF;\n\n  --c-coral: #F43357;\n  --c-coral-hover: #D62646;\n  --c-navy: #1F293B;\n  --c-cream: #FAF7F4;\n  --c-beige: #F2EDEA;\n  --c-white: #FFFFFF;\n  --c-sage: #7C8A98;\n  --c-yellow: #FFC107;\n  --c-text: #161E2A;\n  --c-muted: #64748B;\n\n  --font-body: 'Poppins', sans-serif;\n  --font-head: 'Playfair Display', serif;\n\n  --radius: 20px;\n  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);\n  --shadow-pop: 0 10px 30px rgba(0,0,0,0.12);\n  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);\n  --ring: 0 0 0 4px rgba(244, 51, 87, 0.18);\n\n  width: 100%;\n  overflow-x: hidden;\n  font-family: var(--font-body);\n  color: var(--c-text);\n  line-height: 1.6;\n  background: var(--c-cream);\n  isolation: isolate;\n}\n\n#nap-transition-ready-page *,\n#nap-transition-ready-page *::before,\n#nap-transition-ready-page *::after { box-sizing: border-box; }\n#nap-transition-ready-page img { max-width: 100%; height: auto; display: block; }\n#nap-transition-ready-page a { text-decoration: none; transition: 0.3s ease; }\n\n#nap-transition-ready-page h1, #nap-transition-ready-page h2, #nap-transition-ready-page h3, #nap-transition-ready-page h4 {\n  font-family: var(--font-head);\n  color: var(--c-navy);\n  line-height: 1.2;\n  margin-bottom: 1rem;\n}\n#nap-transition-ready-page h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }\n#nap-transition-ready-page h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }\n#nap-transition-ready-page h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }\n\n#nap-transition-ready-page .ntr-wrap {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 24px;\n  width: 100%;\n}\n#nap-transition-ready-page .ntr-band { padding: 48px 0; }\n#nap-transition-ready-page .ntr-band.bg-white + .ntr-band.bg-white { padding-top: 0; }\n#nap-transition-ready-page .bg-white { background: var(--c-white); }\n#nap-transition-ready-page .bg-cream { background: var(--c-cream); }\n#nap-transition-ready-page .text-center { text-align: center; }\n#nap-transition-ready-page .max-800 { max-width: 800px; margin: 0 auto; }\n\n#nap-transition-ready-page .btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 32px;\n  background: var(--c-coral);\n  color: white;\n  font-weight: 600;\n  border-radius: 50px;\n  border: none;\n  cursor: pointer;\n  min-height: 48px;\n  box-shadow: 0 6px 18px rgba(244, 51, 87, 0.22);\n  letter-spacing: 0.1px;\n}\n#nap-transition-ready-page .btn:hover { background: var(--c-coral-hover); transform: translateY(-2px); color: white; }\n#nap-transition-ready-page .btn-outline {\n  background: transparent;\n  border: 1px solid rgba(244, 51, 87, 0.45);\n  color: var(--c-coral);\n  box-shadow: none;\n}\n#nap-transition-ready-page .btn-outline:hover {\n  background: rgba(244, 51, 87, 0.08);\n  border-color: rgba(244, 51, 87, 0.7);\n  color: var(--c-coral);\n}\n\n#nap-transition-ready-page .hero-wrap {\n  padding-top: 48px;\n  padding-bottom: 32px;\n}\n\n#nap-transition-ready-page .steps-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 24px;\n  margin-top: 28px;\n}\n#nap-transition-ready-page .step-card {\n  background: white;\n  padding: 26px;\n  border-radius: var(--radius);\n  text-align: center;\n  box-shadow: var(--shadow-card);\n  border: 1px solid rgba(15, 23, 42, 0.06);\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n#nap-transition-ready-page .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }\n\n#nap-transition-ready-page .ntr-band {\n  width: 100vw;\n  margin-left: calc(50% - 50vw);\n  margin-right: calc(50% - 50vw);\n}\n\n@media (max-width: 768px) {\n  #nap-transition-ready-page .ntr-band { padding: 36px 0; }\n  #nap-transition-ready-page .btn { width: 100%; }}\n\n\n#nap-transition-ready-page .ntr-hero-lead {\n  font-size: 1.1rem;\n  color: var(--c-muted);\n  margin: 0 auto 28px;\n  max-width: 640px;\n}\n\n#nap-transition-ready-page .ntr-preview {\n  margin: 0 auto;\n  max-width: 640px;\n  border: 1px solid var(--c-beige);\n  border-radius: var(--radius);\n  overflow: hidden;\n  background: var(--c-white);\n  box-shadow: var(--shadow-card);\n}\n#nap-transition-ready-page .ntr-preview iframe {\n  display: block;\n  width: 100%;\n  height: 640px;\n  border: none;\n}\n@media (max-width: 600px) {\n  #nap-transition-ready-page .ntr-preview iframe { height: 420px; }\n}\n\n#nap-transition-ready-page .ntr-trial-note {\n  font-size: 0.9rem;\n  color: var(--c-muted);\n  margin: 18px auto 0;\n  max-width: 640px;\n}\n\n#nap-transition-ready-page .ntr-next-lead {\n  font-size: 1.05rem;\n  color: var(--c-text);\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n#nap-transition-ready-page .ntr-membership-lead {\n  font-size: 1.05rem;\n  color: var(--c-text);\n  max-width: 720px;\n  margin: 0 auto 28px;\n}\n\n   .snooze-footer-clean {\n     background-color: var(--sn-navy);\n     color: var(--sn-white);\n     padding: 60px 0 30px;\n     font-family: var(--sn-font-body);\n     margin-top: auto;\n   }\n\n   .sf-container {\n     max-width: var(--sn-max-width);\n     margin: 0 auto;\n     padding: 0 24px;\n   }\n\n   .sf-grid {\n     display: grid;\n     grid-template-columns: 1fr;\n     gap: 40px;\n     margin-bottom: 60px;\n   }\n\n   @media (min-width: 768px) {\n     .sf-grid { grid-template-columns: 1.5fr repeat(4, 1fr); gap: 30px; }}\n\n\n   .sf-col { text-align: left; }\n   .sf-logo {\n     margin-bottom: 16px;\n     display: flex;\n     justify-content: flex-start;\n     align-items: center;\n   }\n   .sf-logo a {\n     text-decoration: none;\n     display: inline-block;\n     line-height: 1;\n   }\n   .sf-logo svg {\n     height: auto;\n     max-height: 52px;\n     width: 150px;\n     display: block !important;\n     flex-shrink: 0;\n   }\n   .sf-logo a svg {\n     visibility: visible !important;\n     opacity: 1 !important;\n   }\n   .sf-logo-text { font-family: var(--sn-font-heading); font-size: 24px; color: var(--sn-white); display: block; margin-bottom: 16px; }\n   .sf-tagline { color: var(--sn-text-light); font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 100%; }\n   .sf-socials { display: flex; gap: 16px; justify-content: flex-start; }\n   .sf-social-link { color: var(--sn-white); font-size: 13px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }\n   .sf-social-link:hover { opacity: 1; color: var(--sn-coral); }\n   .sf-heading { color: #F43357 !important; font-size: 16px; font-weight: 600; margin: 0 0 20px 0; font-family: var(--sn-font-heading); }\n   .sf-links { list-style: none; padding: 0; margin: 0; }\n   .sf-links li { margin-bottom: 12px; text-align: left; }\n   .sf-links a { color: var(--sn-text-light); text-decoration: none; font-size: 14px; transition: color 0.2s; }\n   .sf-links a:hover { color: var(--sn-coral); }\n   .sf-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }\n   .sf-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; margin: 0; }\n\n   @media (max-width: 767px) {\n     .snooze-footer-clean { padding: 40px 0 20px; }\n     .sf-container { padding: 0 20px; }\n     .sf-grid { gap: 24px; margin-bottom: 32px; }\n     .sf-logo svg {\n       max-height: 40px !important;\n       width: 120px !important;\n     }\n     .sf-logo-text { font-size: 20px; margin-bottom: 12px; }\n     .sf-tagline { font-size: 13px; margin-bottom: 16px; }\n     .sf-socials { gap: 12px; flex-wrap: wrap; justify-content: flex-start; }\n     .sf-social-link { font-size: 12px; }\n     .sf-heading { font-size: 14px; margin-bottom: 12px; }\n     .sf-links li { margin-bottom: 8px; }\n     .sf-links a { font-size: 13px; }\n     .sf-bottom { padding-top: 20px; }\n     .sf-bottom p { font-size: 11px; }}\n",
+    "js": "/* Javascript code goes here */",
+    "btn_background_color": "",
+    "btn_text_color": "#ffffff",
+    "btn_width": "auto",
+    "btn_style": "solid",
+    "btn_size": "medium",
+    "btn_border_radius": "4",
+    "color_body_secondary": "#888888",
+    "color_placeholder": "#cccccc",
+    "background_color": "",
+    "use_background_image": "false",
+    "background_image": "",
+    "_defaults": {
+      "section": {
+        "bg_type": "none",
+        "bg_position": "center",
+        "background_fixed": "false",
+        "hide_on_desktop": "false",
+        "vertical": "center",
+        "horizontal": "center",
+        "equal_height": "false",
+        "hide_on_mobile": "false",
+        "reveal_units": "seconds"
+      },
+      "section/code": {
+        "width": "6",
+        "code": "<!-- Code Goes Here -->",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "left",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "left",
+        "animation_type": "none",
+        "animation_direction": "none",
+        "delay": "0",
+        "duration": "0",
+        "reveal_units": "seconds"
+      },
+      "footer": {
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "hide_on_desktop": "false",
+        "vertical_layout": "false",
+        "hide_on_mobile": "false"
+      },
+      "footer/logo": {
+        "logo_type": "image",
+        "image_alt": "Footer Logo",
+        "logo_width": "50",
+        "logo_text": "Encore"
+      },
+      "footer/copyright": {
+        "copyright": "Kajabi"
+      },
+      "footer/link_list": {
+        "menu": "main-menu",
+        "vertical": "row",
+        "new_tab": "false",
+        "text_align": "right",
+        "mobile_text_align": "center"
+      },
+      "header": {
+        "cart": "false",
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "background_color": "#FFFFFF",
+        "position": "static",
+        "sticky": "false",
+        "hide_on_desktop": "false",
+        "horizontal": "between",
+        "hide_on_mobile": "false",
+        "close_on_scroll": "true",
+        "mobile_menu_text_alignment": "left"
+      },
+      "header/user": {
+        "language_login": "Log In",
+        "language_logout": "Logout",
+        "language_settings": "Settings",
+        "language_library": "My Library",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "alignment": "left",
+        "user_dropdown_menu_alignment": "left",
+        "stretch": "false"
+      },
+      "header/menu": {
+        "menu": "main-menu",
+        "alignment": "right",
+        "stretch": "true"
+      },
+      "header/logo": {
+        "logo_type": "image",
+        "image_alt": "Header logo",
+        "logo_width": "50",
+        "logo_text": "Encore",
+        "alignment": "left",
+        "stretch": "false"
+      },
+      "exit_pop": {
+        "modal_edit": "false",
+        "enable_modal": "false",
+        "frequency": "0",
+        "popup_reveal": "0",
+        "vertical": "start",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "exit_pop/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "image_align_desktop": "flex-start",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "image_align_mobile": "flex-start",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "exit_pop/form": {
+        "width": "12",
+        "text": "<h4>Join Our Free Trial</h4><p>Get started today before this once in a lifetime opportunity expires.</p>",
+        "disclaimer_text_color": "#888",
+        "input_label": "placeholder",
+        "inline": "false",
+        "btn_text": "Submit",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "center",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "center"
+      },
+      "two_step": {
+        "two_step_edit": "false",
+        "vertical": "top",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "two_step/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "image_align_desktop": "flex-start",
+        "hide_on_desktop": "false",
+        "make_flush": "false",
+        "make_block": "false",
+        "image_align_mobile": "flex-start",
+        "hide_on_mobile": "false",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step/form": {
+        "width": "12",
+        "text": "<h4>Join Our Free Trial</h4><p>Get started today before this once in a lifetime opportunity expires.</p>",
+        "disclaimer_text_color": "#888",
+        "input_label": "placeholder",
+        "inline": "false",
+        "btn_text": "Submit",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "center",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "center"
+      }
+    },
+    "sections": {
+      "ws004code": {
+        "name": "Custom Code",
+        "type": "section",
+        "hidden": "false",
+        "settings": {
+          "bg_type": "none",
+          "bg_position": "center",
+          "background_fixed": false,
+          "hide_on_desktop": false,
+          "vertical": "center",
+          "horizontal": "center",
+          "equal_height": false,
+          "hide_on_mobile": false,
+          "reveal_units": "seconds",
+          "padding_desktop": {
+            "left": "0",
+            "top": "0",
+            "right": "0",
+            "bottom": "0"
+          },
+          "full_width": true,
+          "padding_mobile": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "blocks": {
+          "ws004code_0": {
+            "id": "ws004code_0",
+            "name": "Custom Code",
+            "hidden": "false",
+            "type": "code",
+            "schemaName": "Custom Code",
+            "sectionId": "ws004code",
+            "sectionType": "section",
+            "settings": {
+              "width": "12",
+              "code": "<div id=\"nap-transition-ready-page\">\n\n<section class=\"hero-wrap\">\n  <div class=\"ntr-wrap text-center max-800\">\n    <h1>You're in. Your 3-to-2 nap transition guide is ready.</h1>\n    <p class=\"ntr-hero-lead\">Everything below is yours to keep. Save it, print it, or read it right here.</p>\n    <a class=\"btn\" href=\"https://tscmedia.khorus.ai/guides/3-to-2-nap-transition-guide.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the guide</a>\n    <p class=\"ntr-trial-note\">I have emailed you the same link, so you can find it again later.</p>\n  </div>\n</section>\n\n<section class=\"ntr-band bg-white\">\n  <div class=\"ntr-wrap text-center max-800\">\n    <div class=\"ntr-preview\">\n      <iframe src=\"https://tscmedia.khorus.ai/guides/3-to-2-nap-transition-guide.pdf\" title=\"3 to 2 nap transition guide preview\" loading=\"lazy\"></iframe>\n    </div>\n  </div>\n</section>\n\n<section class=\"ntr-band bg-white\">\n  <div class=\"ntr-wrap\">\n    <h2 class=\"text-center\">Start here</h2>\n    <div class=\"steps-grid\">\n      <div class=\"step-card\">\n        <h3>Find your baby's age first</h3>\n        <p>The guide runs 6 to 9 months. Start on the schedule closest to yours.</p>\n      </div>\n      <div class=\"step-card\">\n        <h3>Cap before you drop</h3>\n        <p>Shortening the third nap usually buys you weeks before you need to drop it.</p>\n      </div>\n      <div class=\"step-card\">\n        <h3>The first week is the adjustment</h3>\n        <p>Bedtime moves earlier while they adjust. That is the transition working, not failing.</p>\n      </div>\n    </div>\n  </div>\n</section>\n\n<section class=\"ntr-band bg-white\">\n  <div class=\"ntr-wrap text-center max-800\">\n    <h2>What comes next</h2>\n    <p class=\"ntr-next-lead\">Over the next week I will send you three short emails: how to start, why early waking in the first fortnight is the transition working rather than failing, and what the next transition looks like. The guide is yours either way.</p>\n  </div>\n</section>\n\n<section class=\"ntr-band bg-cream\">\n  <div class=\"ntr-wrap text-center max-800\">\n    <h2>After the transition</h2>\n    <p class=\"ntr-membership-lead\">This guide covers one transition. Every other one, from the newborn weeks through to toddler bedtimes, sits inside the Snooze Membership with the full courses and Sally's coaching.</p>\n    <a class=\"btn-outline btn\" href=\"https://www.joinsnooze.com/offers/mqQikDM7/checkout\">Start the 7 day trial</a>\n    <p class=\"ntr-trial-note\">The first 7 days are free. Your plan starts on day 8 unless you cancel inside the trial.</p>\n  </div>\n</section>\n\n<footer class=\"snooze-footer-clean\">\n  <div class=\"sf-container\">\n    <div class=\"sf-grid\">\n      \n      <div class=\"sf-col sf-brand-col\">\n        <div class=\"sf-logo\">\n          <a href=\"/\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"150\" viewBox=\"0 0 750 262.499992\" height=\"52\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.0\" style=\"max-height: 52px;\">\n              <path fill=\"#ffffff\" d=\"M 68.695312 184.851562 C 62.671875 184.851562 56.769531 183.949219 50.992188 182.148438 C 45.277344 180.40625 40.835938 178.542969 37.667969 176.558594 L 34.871094 182.894531 L 27.605469 182.894531 L 26.390625 148.136719 L 33.195312 148.136719 C 34.125 150.933594 35.679688 154.101562 37.851562 157.640625 C 40.027344 161.121094 42.511719 164.257812 45.308594 167.050781 C 48.226562 169.847656 51.550781 172.207031 55.277344 174.132812 C 59.066406 176.058594 63.105469 177.023438 67.390625 177.023438 C 73.046875 177.023438 77.238281 175.933594 79.972656 173.761719 C 82.765625 171.523438 84.164062 168.109375 84.164062 163.511719 C 84.164062 161.027344 83.542969 158.976562 82.300781 157.359375 C 81.058594 155.746094 79.351562 154.347656 77.175781 153.167969 C 74.753906 151.925781 72.082031 150.871094 69.164062 150 C 66.304688 149.128906 62.765625 148.074219 58.539062 146.832031 C 54.316406 145.589844 50.679688 144.347656 47.636719 143.105469 C 44.65625 141.800781 41.550781 139.78125 38.320312 137.046875 C 35.523438 134.625 33.289062 131.707031 31.609375 128.289062 C 29.933594 124.871094 29.09375 120.804688 29.09375 116.082031 C 29.09375 107.324219 32.757812 100.242188 40.089844 94.835938 C 47.480469 89.433594 57.140625 86.730469 69.070312 86.730469 C 74.722656 86.730469 79.910156 87.320312 84.628906 88.5 C 89.414062 89.617188 93.421875 90.859375 96.652344 92.226562 L 98.609375 86.730469 L 105.6875 86.730469 L 107.179688 118.503906 L 100.5625 118.503906 C 98.390625 112.042969 94.664062 106.484375 89.382812 101.824219 C 84.101562 97.105469 78.417969 94.742188 72.332031 94.742188 C 67.546875 94.742188 63.789062 95.738281 61.054688 97.726562 C 58.320312 99.714844 56.957031 102.476562 56.957031 106.019531 C 56.957031 110.738281 58.945312 114.15625 62.917969 116.269531 C 66.957031 118.378906 72.578125 120.367188 79.785156 122.230469 C 90.90625 125.089844 99.042969 129.003906 104.199219 133.972656 C 109.355469 138.878906 111.933594 145.15625 111.933594 152.796875 C 111.933594 162.984375 107.925781 170.871094 99.910156 176.464844 C 91.960938 182.054688 81.554688 184.851562 68.695312 184.851562 Z M 242.578125 181.679688 L 186.480469 181.679688 L 186.480469 174.878906 C 187.660156 174.753906 189.089844 174.601562 190.765625 174.414062 C 192.445312 174.226562 193.71875 173.917969 194.585938 173.480469 C 195.890625 172.796875 196.824219 171.804688 197.382812 170.5 C 197.941406 169.195312 198.222656 167.269531 198.222656 164.722656 L 198.222656 121.113281 C 198.222656 114.777344 197.042969 110.023438 194.679688 106.855469 C 192.382812 103.625 188.964844 102.011719 184.429688 102.011719 C 181.945312 102.011719 179.617188 102.382812 177.441406 103.128906 C 175.332031 103.875 173.25 104.960938 171.199219 106.390625 C 169.398438 107.632812 167.9375 108.90625 166.820312 110.210938 C 165.765625 111.515625 164.863281 112.664062 164.117188 113.660156 L 164.117188 163.699219 C 164.117188 165.871094 164.429688 167.703125 165.050781 169.195312 C 165.671875 170.625 166.695312 171.710938 168.125 172.457031 C 169.117188 173.015625 170.359375 173.511719 171.851562 173.949219 C 173.34375 174.382812 174.800781 174.691406 176.230469 174.878906 L 176.230469 181.679688 L 119.578125 181.679688 L 119.578125 174.878906 C 121.128906 174.753906 122.683594 174.601562 124.234375 174.414062 C 125.851562 174.164062 127.21875 173.855469 128.335938 173.480469 C 130.324219 172.796875 131.691406 171.742188 132.4375 170.3125 C 133.179688 168.882812 133.554688 167.019531 133.554688 164.722656 L 133.554688 110.492188 C 133.554688 108.566406 133.058594 106.671875 132.0625 104.808594 C 131.070312 102.945312 129.765625 101.421875 128.148438 100.242188 C 127.03125 99.496094 125.601562 98.875 123.863281 98.378906 C 122.1875 97.878906 120.324219 97.539062 118.273438 97.351562 L 118.273438 90.550781 L 162.71875 88.128906 L 164.117188 89.527344 L 164.117188 103.035156 L 164.492188 103.035156 C 166.230469 101.484375 168.34375 99.621094 170.828125 97.445312 C 173.3125 95.273438 175.609375 93.5 177.722656 92.132812 C 180.019531 90.644531 183.035156 89.371094 186.761719 88.3125 C 190.488281 87.257812 194.464844 86.730469 198.6875 86.730469 C 208.8125 86.730469 216.390625 89.617188 221.425781 95.394531 C 226.515625 101.109375 229.066406 108.722656 229.066406 118.226562 L 229.066406 163.882812 C 229.066406 166.183594 229.40625 168.015625 230.089844 169.382812 C 230.773438 170.75 232.046875 171.835938 233.910156 172.644531 C 234.902344 173.078125 236.117188 173.511719 237.542969 173.949219 C 239.035156 174.382812 240.710938 174.691406 242.578125 174.878906 Z M 342.65625 100.242188 C 347.253906 104.527344 350.761719 109.652344 353.1875 115.617188 C 355.609375 121.578125 356.820312 128.039062 356.820312 134.996094 C 356.820312 141.894531 355.609375 148.414062 353.1875 154.566406 C 350.828125 160.652344 347.347656 165.871094 342.75 170.21875 C 337.839844 174.878906 331.972656 178.453125 325.140625 180.9375 C 318.367188 183.421875 310.601562 184.664062 301.84375 184.664062 C 294.261719 184.664062 287.277344 183.578125 280.878906 181.402344 C 274.542969 179.226562 268.917969 175.964844 264.011719 171.617188 C 259.292969 167.457031 255.5625 162.332031 252.832031 156.242188 C 250.097656 150.09375 248.730469 143.230469 248.730469 135.648438 C 248.730469 128.195312 249.910156 121.578125 252.269531 115.800781 C 254.691406 109.964844 258.296875 104.777344 263.078125 100.242188 C 267.675781 95.894531 273.328125 92.539062 280.039062 90.179688 C 286.808594 87.753906 294.355469 86.542969 302.683594 86.542969 C 311.378906 86.542969 319.019531 87.753906 325.605469 90.179688 C 332.25 92.539062 337.933594 95.894531 342.65625 100.242188 Z M 318.800781 164.816406 C 320.167969 161.335938 321.164062 157.113281 321.785156 152.144531 C 322.46875 147.171875 322.808594 141.394531 322.808594 134.8125 C 322.808594 130.464844 322.5 125.492188 321.875 119.902344 C 321.257812 114.3125 320.324219 109.902344 319.082031 106.671875 C 317.589844 102.757812 315.511719 99.683594 312.839844 97.445312 C 310.230469 95.210938 306.90625 94.089844 302.867188 94.089844 C 298.457031 94.089844 294.917969 95.300781 292.246094 97.726562 C 289.636719 100.148438 287.617188 103.285156 286.1875 107.136719 C 284.886719 110.675781 283.984375 114.839844 283.488281 119.621094 C 282.992188 124.34375 282.742188 129.28125 282.742188 134.4375 C 282.742188 141.210938 282.957031 146.832031 283.394531 151.304688 C 283.828125 155.714844 284.886719 160.15625 286.5625 164.628906 C 287.988281 168.480469 290.039062 171.523438 292.710938 173.761719 C 295.382812 175.996094 298.769531 177.117188 302.867188 177.117188 C 306.597656 177.117188 309.792969 176.089844 312.464844 174.039062 C 315.136719 171.929688 317.25 168.855469 318.800781 164.816406 Z M 460.160156 100.242188 C 464.757812 104.527344 468.269531 109.652344 470.691406 115.617188 C 473.113281 121.578125 474.324219 128.039062 474.324219 134.996094 C 474.324219 141.894531 473.113281 148.414062 470.691406 154.566406 C 468.332031 160.652344 464.851562 165.871094 460.253906 170.21875 C 455.347656 174.878906 449.476562 178.453125 442.644531 180.9375 C 435.871094 183.421875 428.105469 184.664062 419.347656 184.664062 C 411.769531 184.664062 404.78125 183.578125 398.382812 181.402344 C 392.046875 179.226562 386.425781 175.964844 381.515625 171.617188 C 376.796875 167.457031 373.070312 162.332031 370.335938 156.242188 C 367.601562 150.09375 366.234375 143.230469 366.234375 135.648438 C 366.234375 128.195312 367.414062 121.578125 369.777344 115.800781 C 372.199219 109.964844 375.800781 104.777344 380.585938 100.242188 C 385.183594 95.894531 390.832031 92.539062 397.542969 90.179688 C 404.316406 87.753906 411.863281 86.542969 420.1875 86.542969 C 428.882812 86.542969 436.523438 87.753906 443.109375 90.179688 C 449.757812 92.539062 455.441406 95.894531 460.160156 100.242188 Z M 436.304688 164.816406 C 437.675781 161.335938 438.667969 157.113281 439.289062 152.144531 C 439.972656 147.171875 440.3125 141.394531 440.3125 134.8125 C 440.3125 130.464844 440.003906 125.492188 439.382812 119.902344 C 438.761719 114.3125 437.828125 109.902344 436.585938 106.671875 C 435.097656 102.757812 433.015625 99.683594 430.34375 97.445312 C 427.734375 95.210938 424.410156 94.089844 420.375 94.089844 C 415.960938 94.089844 412.421875 95.300781 409.75 97.726562 C 407.140625 100.148438 405.121094 103.285156 403.695312 107.136719 C 402.390625 110.675781 401.488281 114.839844 400.992188 119.621094 C 400.496094 124.34375 400.246094 129.28125 400.246094 134.4375 C 400.246094 141.210938 400.464844 146.832031 400.898438 151.304688 C 401.332031 155.714844 402.390625 160.15625 404.066406 164.628906 C 405.496094 168.480469 407.546875 171.523438 410.214844 173.761719 C 412.886719 175.996094 416.273438 177.117188 420.375 177.117188 C 424.101562 177.117188 427.300781 176.089844 429.972656 174.039062 C 432.644531 171.929688 434.753906 168.855469 436.304688 164.816406 Z M 572.914062 181.679688 L 481.222656 181.679688 L 481.222656 175.253906 L 534.710938 97.726562 C 527.320312 97.726562 520.671875 97.820312 514.769531 98.003906 C 508.867188 98.191406 504.210938 98.9375 500.792969 100.242188 C 499.613281 100.675781 498.027344 102.945312 496.039062 107.042969 C 494.113281 111.082031 492.59375 115.304688 491.472656 119.714844 L 484.859375 119.714844 L 484.859375 89.246094 L 571.515625 89.246094 L 571.515625 95.023438 L 517.84375 173.203125 C 519.335938 173.203125 521.511719 173.234375 524.367188 173.296875 C 527.226562 173.355469 529.957031 173.386719 532.566406 173.386719 C 535.609375 173.386719 538.871094 173.328125 542.351562 173.203125 C 545.828125 173.015625 548.53125 172.796875 550.457031 172.550781 C 553.003906 172.238281 555.023438 171.371094 556.515625 169.941406 C 558.066406 168.511719 559.28125 166.804688 560.148438 164.816406 C 560.957031 163.015625 562.011719 160.3125 563.316406 156.710938 C 564.621094 153.042969 565.613281 149.78125 566.296875 146.925781 L 572.914062 146.925781 Z M 679.144531 159.410156 C 676.972656 162.953125 674.328125 166.304688 671.222656 169.476562 C 668.179688 172.582031 664.703125 175.253906 660.789062 177.488281 C 656.625 179.847656 652.402344 181.621094 648.113281 182.800781 C 643.890625 184.042969 639.015625 184.664062 633.488281 184.664062 C 624.292969 184.664062 616.339844 183.359375 609.632812 180.75 C 602.984375 178.140625 597.484375 174.628906 593.140625 170.21875 C 588.789062 165.808594 585.527344 160.621094 583.355469 154.660156 C 581.242188 148.632812 580.1875 142.109375 580.1875 135.089844 C 580.1875 128.753906 581.335938 122.699219 583.632812 116.921875 C 585.996094 111.082031 589.316406 105.894531 593.605469 101.359375 C 597.828125 96.949219 603.140625 93.375 609.539062 90.644531 C 616 87.910156 623.207031 86.542969 631.15625 86.542969 C 639.855469 86.542969 646.996094 87.601562 652.585938 89.710938 C 658.179688 91.824219 662.808594 94.742188 666.472656 98.472656 C 670.011719 102.011719 672.589844 106.203125 674.207031 111.050781 C 675.820312 115.832031 676.628906 120.867188 676.628906 126.144531 L 676.628906 132.203125 L 613.636719 132.203125 C 613.636719 144.9375 616.09375 154.628906 621 161.273438 C 625.90625 167.921875 633.703125 171.246094 644.386719 171.246094 C 650.226562 171.246094 655.476562 169.660156 660.136719 166.492188 C 664.796875 163.261719 668.769531 159.195312 672.0625 154.285156 Z M 643.550781 124.003906 C 643.550781 120.273438 643.363281 116.453125 642.992188 112.542969 C 642.617188 108.628906 641.964844 105.429688 641.03125 102.945312 C 639.976562 100.023438 638.519531 97.820312 636.652344 96.328125 C 634.851562 94.835938 632.554688 94.089844 629.757812 94.089844 C 624.972656 94.089844 621.152344 96.515625 618.296875 101.359375 C 615.4375 106.203125 613.886719 113.875 613.636719 124.375 Z M 728.722656 166.214844 C 728.722656 171.121094 726.886719 175.375 723.222656 178.980469 C 719.621094 182.582031 715.332031 184.382812 710.363281 184.382812 C 705.332031 184.382812 700.984375 182.613281 697.320312 179.074219 C 693.714844 175.46875 691.914062 171.183594 691.914062 166.214844 C 691.914062 161.242188 693.714844 156.957031 697.320312 153.355469 C 700.984375 149.6875 705.332031 147.855469 710.363281 147.855469 C 715.332031 147.855469 719.621094 149.6875 723.222656 153.355469 C 726.886719 157.019531 728.722656 161.304688 728.722656 166.214844 Z M 728.722656 166.214844 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/>\n            </svg>\n          </a>\n        </div>\n        <p class=\"sf-tagline\">Everything you need for great baby sleep,<br>all in one place.</p>\n        <div class=\"sf-socials\">\n          <a href=\"https://www.instagram.com/thesleepconcierge/\" \n             target=\"_blank\" \n             rel=\"noopener noreferrer\" \n             class=\"sf-social-link\"\n             aria-label=\"Instagram\">Instagram</a>\n          <a href=\"https://www.tiktok.com/@thesleepconcierge\" \n             target=\"_blank\" \n             rel=\"noopener noreferrer\" \n             class=\"sf-social-link\"\n             aria-label=\"TikTok\">TikTok</a>\n          <a href=\"https://www.facebook.com/thesleepconcierge\" \n             target=\"_blank\" \n             rel=\"noopener noreferrer\" \n             class=\"sf-social-link\"\n             aria-label=\"Facebook\">Facebook</a>\n        </div>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Sleep Help</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/newborn-baby-sleep-help\">Newborn Sleep Help</a></li>\n          <li><a href=\"/3-4-month-baby-sleep-help\">3-4 Month Sleep Help</a></li>\n          <li><a href=\"/5-12-month-baby-sleep-help\">5-12 Month Sleep Help</a></li>\n          <li><a href=\"/toddler-sleep-help\">Toddler Sleep Help</a></li>\n          <li><a href=\"/baby-sleep-glossary\">Sleep Glossary</a></li>\n          <li><a href=\"/blog\">Blog</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Programs</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/snooze-membership\">Snooze Membership</a></li>\n          <li><a href=\"/store\">Courses &amp; Guides</a></li>\n          <li><a href=\"/camp-snooze-sleep-coaching\">Camp Snooze</a></li>\n          <li><a href=\"/one-on-one-sleep-consultations\">Consultations</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Members</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/snooze-library\">Library Access</a></li>\n          <li><a href=\"https://www.joinsnooze.com/products/communities/v2/snooze\">Snooze Village</a></li>\n          <li><a href=\"/login\">Log In</a></li>\n          <li><a href=\"/library\">Your Account</a></li>\n        </ul>\n      </div>\n\n      <div class=\"sf-col\">\n        <h4 class=\"sf-heading\">Company &amp; Support</h4>\n        <ul class=\"sf-links\">\n          <li><a href=\"/about-sally\">About Sally</a></li>\n          <li><a href=\"/reviews\">Reviews</a></li>\n          <li><a href=\"/the-snooze-method\">The Snooze Method</a></li>\n          <li><a href=\"/contact\">Contact</a></li>\n          <li><a href=\"/terms-conditions\">Terms</a></li>\n          <li><a href=\"/privacy-policy\">Privacy</a></li>\n        </ul>\n      </div>\n\n    </div>\n\n    <div class=\"sf-bottom\">\n      <p>&copy; 2026 Snooze by The Sleep Concierge. All rights reserved.</p>\n    </div>\n  </div>\n</footer>\n\n</div>\n",
+              "border_width": "4",
+              "border_radius": "4",
+              "hide_on_desktop": false,
+              "text_align": "left",
+              "make_flush": true,
+              "make_block": false,
+              "hide_on_mobile": false,
+              "mobile_text_align": "left",
+              "animation_type": "none",
+              "animation_direction": "none",
+              "delay": "0",
+              "duration": "0",
+              "reveal_units": "seconds"
+            },
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          }
+        },
+        "block_order": [
+          "ws004code_0"
+        ],
+        "hideable": true,
+        "saveable": true,
+        "blank": null
+      },
+      "footer": {
+        "name": "Footer",
+        "type": "footer",
+        "blocks": {
+          "1555988519593": {
+            "name": "Logo",
+            "type": "logo",
+            "hidden": "false",
+            "settings": {
+              "logo": "",
+              "image_alt": "Footer Logo",
+              "logo_text": "Encore",
+              "logo_type": "image",
+              "logo_width": "50",
+              "logo_text_color": ""
+            }
+          },
+          "1555988525205": {
+            "name": "Copyright",
+            "type": "copyright",
+            "hidden": "false",
+            "settings": {
+              "copyright": "Kajabi"
+            }
+          },
+          "1602193175296": {
+            "name": "Link List",
+            "type": "link_list",
+            "hidden": "false",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": "false",
+              "vertical": "row",
+              "link_color": "",
+              "text_align": "right",
+              "mobile_text_align": "center"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "text_color": "",
+          "hide_on_mobile": "true",
+          "hide_on_desktop": "true",
+          "vertical_layout": "false",
+          "background_color": "#161E2A",
+          "font_size_mobile": "16px",
+          "font_size_desktop": "18px",
+          "copyright_text_color": "",
+          "powered_by_text_color": ""
+        },
+        "block_order": [
+          "1555988519593",
+          "1602193175296",
+          "1555988525205"
+        ]
+      },
+      "header": {
+        "name": "Header",
+        "type": "header",
+        "blocks": {
+          "1555988487706": {
+            "name": "User Menu",
+            "type": "user",
+            "hidden": "false",
+            "settings": {
+              "stretch": "false",
+              "alignment": "left",
+              "text_color": "#595959",
+              "language_login": "Log In",
+              "language_logout": "Log Out",
+              "background_color": "#FFFFFF",
+              "language_library": "My Library",
+              "language_settings": "Settings",
+              "user_dropdown_menu_alignment": "left"
+            }
+          },
+          "1555988491313": {
+            "name": "Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": "false",
+              "stretch": "true",
+              "alignment": "right"
+            }
+          },
+          "1555988494486": {
+            "name": "Logo",
+            "type": "logo",
+            "hidden": "false",
+            "settings": {
+              "logo": "",
+              "stretch": "false",
+              "alignment": "left",
+              "image_alt": "Header Logo",
+              "logo_text": "Encore",
+              "logo_type": "image",
+              "logo_width": "50",
+              "logo_text_color": ""
+            }
+          },
+          "1602256221872": {
+            "name": "Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "about-menu",
+              "new_tab": "false",
+              "stretch": "false",
+              "alignment": "right"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "sticky": "false",
+          "position": "static",
+          "horizontal": "left",
+          "text_color": "",
+          "hide_on_mobile": "true",
+          "close_on_scroll": "true",
+          "hamburger_color": "",
+          "hide_on_desktop": "true",
+          "background_color": "",
+          "font_size_mobile": "16px",
+          "font_size_desktop": "18px",
+          "sticky_text_color": "",
+          "sticky_hamburger_color": "",
+          "sticky_background_color": "",
+          "mobile_header_text_color": "",
+          "mobile_menu_text_alignment": "left",
+          "mobile_header_background_color": ""
+        },
+        "block_order": [
+          "1555988494486",
+          "1555988491313",
+          "1602256221872",
+          "1555988487706"
+        ]
+      },
+      "exit_pop": {
+        "name": "Exit Popup",
+        "type": "exit_pop",
+        "blocks": {
+          "1585757552293": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "",
+              "width": "12",
+              "new_tab": "false",
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "",
+              "make_block": "false",
+              "make_flush": "false",
+              "border_type": "none",
+              "image_first": "false",
+              "image_width": "",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": "false",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "flex-start",
+              "overlay_text_color": "",
+              "image_align_desktop": "flex-start",
+              "always_show_on_mobile": "false",
+              "overlay_background_color": "#fff"
+            }
+          },
+          "1585757555485": {
+            "name": "Form",
+            "type": "form",
+            "hidden": "false",
+            "settings": {
+              "form": "",
+              "text": "<h4>Join Our Free Trial</h4>\r\n<p>Get started today before this once in a lifetime opportunity expires.</p>",
+              "width": "12",
+              "inline": "false",
+              "btn_text": "Submit",
+              "thank_you": "",
+              "box_shadow": "none",
+              "make_block": "false",
+              "make_flush": "false",
+              "text_align": "center",
+              "border_type": "none",
+              "input_label": "placeholder",
+              "border_color": "",
+              "border_width": "4",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "btn_text_color": "",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "disclaimer_text": "",
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "btn_border_radius": "",
+              "mobile_text_align": "center",
+              "btn_background_color": "",
+              "disclaimer_text_color": "#888"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "frequency": "0",
+          "horizontal": "left",
+          "make_flush": "false",
+          "modal_edit": "false",
+          "enable_modal": "false",
+          "popup_reveal": "0",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757552293",
+          "1585757555485"
+        ]
+      },
+      "two_step": {
+        "name": "Two Step Optin",
+        "type": "two_step",
+        "blocks": {
+          "1585757540189": {
+            "name": "Image",
+            "type": "image",
+            "hidden": "false",
+            "settings": {
+              "image": "",
+              "width": "12",
+              "new_tab": "false",
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "",
+              "make_block": "false",
+              "make_flush": "false",
+              "border_type": "none",
+              "image_first": "false",
+              "image_width": "",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": "false",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "flex-start",
+              "overlay_text_color": "",
+              "image_align_desktop": "flex-start",
+              "always_show_on_mobile": "false",
+              "overlay_background_color": "#fff"
+            }
+          },
+          "1585757543890": {
+            "name": "Form",
+            "type": "form",
+            "hidden": "false",
+            "settings": {
+              "form": "",
+              "text": "<h4>Join Our Free Trial</h4>\r\n<p>Get started today before this once in a lifetime opportunity expires.</p>",
+              "width": "12",
+              "inline": "false",
+              "btn_text": "Submit",
+              "thank_you": "",
+              "box_shadow": "none",
+              "make_block": "false",
+              "make_flush": "false",
+              "text_align": "center",
+              "border_type": "none",
+              "input_label": "placeholder",
+              "border_color": "",
+              "border_width": "4",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "btn_text_color": "",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "disclaimer_text": "",
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "btn_border_radius": "",
+              "mobile_text_align": "center",
+              "btn_background_color": "",
+              "disclaimer_text_color": "#888"
+            }
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "horizontal": "left",
+          "make_flush": "false",
+          "two_step_edit": "false",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757540189",
+          "1585757543890"
+        ]
+      }
+    }
+  },
+  "page": {
+    "id": 2152205840,
+    "title": "<user-supplied>Your 3-to-2 Nap Transition Guide Is Ready</user-supplied>",
+    "path": "nap-transition-mini-guide-ready",
+    "status": "published",
+    "page_title": "<user-supplied>Your 3-to-2 Nap Transition Guide Is Ready</user-supplied>",
+    "page_description": "<user-supplied>Your free 3-to-2 nap transition guide is in your library, plus what Sally will send you next.</user-supplied>",
+    "page_image": null,
+    "publish_at": "2026-08-10T00:00:00Z",
+    "hide_from_search_engines": true,
+    "form_count": 0,
+    "attached_forms": [],
+    "post_purchase_offers": [
+      {
+        "id": 2151272119,
+        "title": "<user-supplied>3-to-2 Nap Transition Mini Guide</user-supplied>",
+        "admin_url": "https://app.kajabi.com/admin/offers/2151272119/edit",
+        "links": {
+          "edit": {
+            "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=2151272119&resource_type=Offer&view=edit",
+            "hint": "Edit basic offer details like name, internal title, and description"
+          },
+          "checkout": {
+            "url": "https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2151272119&resource_type=Offer&view=checkout",
+            "hint": "Customize the checkout page appearance, form fields, and branding"
+          },
+          "dashboard": {
+            "url": "https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2151272119&resource_type=Offer&view=dashboard",
+            "hint": "View analytics, sales metrics, and performance data for this offer"
+          },
+          "pricing": {
+            "url": "https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2151272119&resource_type=Offer&view=pricing",
+            "hint": "Manage pricing tiers, payment plans, and subscription options, payment providers and limits for offers"
+          },
+          "settings": {
+            "url": "https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2151272119&resource_type=Offer&view=settings",
+            "hint": "Configure advanced settings including access rules, expiration dates, and post-purchase redirects"
+          }
+        }
+      }
+    ],
+    "active_theme_id": 2167137729,
+    "public_url": "https://www.joinsnooze.com/nap-transition-mini-guide-ready",
+    "admin_url": "https://app.kajabi.com/admin/landing_pages/2152205840/edit",
+    "created_at": "2026-08-09T00:35:10Z",
+    "updated_at": "2026-08-14T03:25:02Z",
+    "links": {
+      "edit": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=2152205840&resource_type=LandingPage&view=edit",
+        "hint": "Edit this landing page's title, URL path, and publishing settings"
+      },
+      "customize": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?landing_page_id=2152205840&resource_type=LandingPage&view=customize",
+        "hint": "Open the Theme Builder to customize this landing page's design and layout"
+      },
+      "stats": {
+        "url": "https://app.kajabi.com/admin/cofounder/deep_link?id=2152205840&resource_type=LandingPage&view=stats",
+        "hint": "View analytics, views, opt-ins, and conversion data for this landing page"
+      }
+    }
+  }
+}

@@ -1,0 +1,867 @@
+{
+  "theme": {
+    "id": 2166681818,
+    "name": "<user-supplied>Encore</user-supplied>",
+    "version": "2.14.8",
+    "themeable_type": "Offer",
+    "themeable_id": 2151254578,
+    "updated_at": "2026-09-23T00:58:22Z"
+  },
+  "skill": {
+    "system_prompt": "You are editing a theme's `settings_data.json` through the Kajabi MCP theme tools.\nThis theme's skill content tells you how it composes pages (block inventory,\nlayout recipes, token system, etc.). That content is NOT in this payload and is\nnever returned inline \u2014 you load it yourself in step 2. This prompt tells you how\nto deliver the changes you compose from it.\n\n# Workflow\n\nEvery change follows the same five steps:\n\n1. **Read** \u2014 call `get_theme_content` to fetch the current `{theme, settings, skill}`.\n   Use the response to discover existing brand tokens, section IDs, and block IDs.\n2. **Load the skill content** \u2014 call `get_theme_skill_file_contents(site_id:,\n   theme_id:, key:)`. Pass the `skill.instructions_key` that came with this payload,\n   or, on a federated payload, a topic key from the `skill.base_instructions` menu.\n   Everywhere this prompt says \"the active skill file\", it means the document you\n   load here. Fetch it once and reuse it for the rest of the turn. Do not compose\n   block structure without it.\n3. **Modify** \u2014 assemble a partial `settings` hash with the keys you intend to change.\n4. **Write** \u2014 call `update_theme_content` with `{site_id, theme_id, settings: {...}}`.\n5. **Verify** \u2014 call `get_theme_content` again and confirm the change landed\n   (see \"Verification\" below). `{\"updated\": true}` from step 4 only means the API\n   accepted the payload, not that the page renders.\n\n# Payload shape\n\nThe `settings` argument is **flat**. Three kinds of keys live side by side at its root:\n\n- **Top-level theme tokens** (color/typography/button tokens defined by the theme's\n  Style Guide). Names vary by theme \u2014 the active skill file enumerates them.\n- **`content_for_<template>` arrays** of dynamic section IDs. The template name\n  varies by theme surface \u2014 the active skill file specifies which template arrays\n  exist and which one(s) you write to.\n- **`sections`** \u2014 the map of every section on the page, fixed and dynamic.\n\n**Do not wrap the payload.** Passing `settings: { \"current\": { \"sections\": ..., ... } }`\n(or any other parent key around `sections` / `content_for_<template>` / theme tokens)\ndeep-merges to a non-rendering sibling path. The API returns `{\"updated\": true}` and\nthe sections never render. This is the single most common silent-failure mode.\nPass these keys as direct siblings inside `settings`.\n\n# Rendering contract \u2014 the `content_for_<template>` silent-fail\n\nThe template renders the `content_for_<template>` array, not the `sections` map.\nA section defined in `settings.sections` but missing from any `content_for_*`\narray is **stored but never rendered**. `update_theme_content` will return success,\nthe editor will show the section is \"there\", and the page will not display it.\n\nRules:\n\n- `content_for_<template>` is a sibling of `sections`, not nested inside it.\n- List **only dynamic section IDs**. Fixed-chrome sections (header, footer, and\n  any other always-present sections the theme's skill file calls out) render\n  outside the dynamic loop and must not appear in any `content_for_*` array.\n- Order matters \u2014 sections render in array order.\n- If you omit the `content_for_<template>` key from the update payload, the array\n  may be discarded and every dynamic section disappears at once. When you're not\n  changing the array, include the existing value verbatim.\n\n# `block_order` is load-bearing\n\nInside a section, `block_order` controls render order (and, for themes with\nhorizontal block layout, left-to-right placement). A block defined in `blocks`\nbut missing from `block_order` does not render. Whenever you add or remove a\nblock, update `block_order` in the same payload.\n\nAnd the reverse: a block id listed in `block_order` but missing a matching\nentry in the section's `blocks` map does not render either. The renderer\niterates `block_order` and looks each id up in `blocks`; ids with no\nmatching definition are silently skipped. Every id in `block_order` must\nhave a corresponding `blocks[id]` entry with at minimum a `type` and a\n`settings` hash. This rule applies recursively for nested container blocks\n(e.g. `group`) that maintain their own internal `block_order` and `blocks`.\n\n# Preserve top-level theme tokens\n\nThe Style Guide tokens live at the top level of `settings`. If your update\npayload omits them, you can wipe them out by accident. Include the existing\nvalues verbatim for any token you are not changing.\n\n# Don't pattern-match existing content (the anchoring trap)\n\nWhen you read the existing JSON before modifying it, use it for **brand tokens,\ncopy patterns, and section IDs you intend to reuse** \u2014 not for block structure.\nSeeded and legacy themes frequently contain antipatterns (rich text holding entire\nlayouts, CTAs as inline `<a>` tags inside text blocks, images as `<img>` tags\ninside rich text). The active skill file's decomposition rules are the source of\ntruth \u2014 design each section's block structure fresh from those rules, even if\nthat contradicts what is already in the file.\n\n# Don't edit `settings_data` files directly\n\n`settings_data.json` (and any `settings_data/*.json`) on disk in a theme repo is\na dev template, not the source of truth. The persisted page lives in the database\nand is reached only through `update_theme_content`. Edits on disk will not\npropagate to the running site.\n\n# Verification checklist\n\nAfter every `update_theme_content` call, call `get_theme_content` and confirm:\n\n1. Every new section ID exists inside `settings.sections`.\n2. Every new section ID appears in the appropriate `content_for_<template>` array,\n   in display order.\n3. Each section's `block_order` lists every block ID present in its `blocks` map.\n4. Top-level theme tokens are still intact (you did not blow them away by omission).\n5. **Visually verify** the rendered page against the reference, if there is one.\n   JSON validity is not the same as design fidelity. Open the page in a browser,\n   compare against the reference, and call out mismatches. If you cannot open the\n   page, say so explicitly rather than asserting visual correctness from JSON.\n",
+    "revision": "v1",
+    "updated_at": "2026-06-17T20:26:23Z",
+    "instructions_key": "instructions",
+    "instructions_hint": "This theme's authoring guide is served on demand. Call get_theme_skill_file_contents with this site_id and theme_id and `key: \"instructions\"` to load it before composing or editing page content."
+  },
+  "guidance": "To update content, call update_theme_content with a partial settings hash containing only the sections/keys you want to change. Unchanged sections are preserved automatically via deep merge. Schema defaults are NOT copied onto each section: a single top-level `_defaults` map carries them, emitted once per type. Section defaults are keyed by the section type; block defaults are keyed `\"<section type>/<block type>\"` (block types are only unique within a section, so the parent section type disambiguates them). Each section's own `settings` hash holds only its explicit user choices. To read an effective value, check the section's or block's own `settings.<key>` first; if the key isn't there, fall back to `_defaults.<section type>.<key>` for a section, or `_defaults[\"<section type>/<block type>\"].<key>` for a block. When writing back via update_theme_content, omit the `_defaults` map \u2014 it is response-only metadata and is stripped on write so defaults aren't accidentally pinned as explicit choices (which would break theme version upgrades that change defaults). To make a default an explicit choice (e.g. lock `image_width` at its current default), copy the key from the matching `_defaults` entry into that section's (or block's) `settings` in your update payload.",
+  "settings": {
+    "content_for_index": [
+      "",
+      "1744906803654"
+    ],
+    "favicon": "file-uploads/themes/2156873377/settings_images/4b6b581-fc2-a3c4-e1c-e5a8c17001ca_6a94d241-e92f-46fd-a22a-5da426782f0b.png",
+    "color_primary": "#f43357",
+    "font_family_body": "Poppins",
+    "font_weight_body": "400",
+    "line_height_body": "1.6",
+    "font_family_heading": "Playfair Display",
+    "font_weight_heading": "700",
+    "line_height_heading": "1",
+    "color_body": "#2d2d2d",
+    "color_heading": "#2d2d2d",
+    "font_size_h1_desktop": "56px",
+    "font_size_h2_desktop": "28px",
+    "font_size_h3_desktop": "21px",
+    "font_size_h4_desktop": "20px",
+    "font_size_h5_desktop": "20px",
+    "font_size_h6_desktop": "16px",
+    "font_size_body_desktop": "16px",
+    "font_size_h1_mobile": "32px",
+    "font_size_h2_mobile": "24px",
+    "font_size_h3_mobile": "21px",
+    "font_size_h4_mobile": "20px",
+    "font_size_h5_mobile": "18px",
+    "font_size_h6_mobile": "16px",
+    "font_size_body_mobile": "12px",
+    "error_message_text_color": "#ffffff",
+    "error_message_background_color": "#7d251c",
+    "show_guides": true,
+    "show_grid": false,
+    "css": "#snooze-custom-checkout {\n  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;\n  color: #1F293B;\n  line-height: 1.6;\n  max-width: 1100px;\n  margin: 0 auto;\n}\n\n#snooze-custom-checkout .snooze-checkout-hero {\n  margin-bottom: 2rem;\n}\n\n#snooze-custom-checkout .snooze-checkout-hero h1 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 2.25rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 1rem;\n  line-height: 1.2;\n}\n\n#snooze-custom-checkout .snooze-checkout-hero .subheadline {\n  font-size: 1.125rem;\n  color: #7C8A98;\n  margin-bottom: 1.5rem;\n}\n\n#snooze-custom-checkout .trial-highlight {\n  background: #FFE7EA;\n  border-radius: 12px;\n  padding: 2rem;\n  margin-bottom: 2rem;\n  text-align: center;\n  border: 2px solid #F43357;\n}\n\n#snooze-custom-checkout .trial-highlight h2 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 1rem;\n}\n\n#snooze-custom-checkout .trial-highlight p {\n  color: #1F293B;\n  font-size: 1rem;\n  line-height: 1.6;\n  margin: 0;\n}\n\n#snooze-custom-checkout .whats-included {\n  margin-bottom: 2rem;\n  background: white;\n  border-radius: 12px;\n  padding: 2rem;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);\n}\n\n#snooze-custom-checkout .whats-included h2 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 1.25rem;\n}\n\n#snooze-custom-checkout .benefits-list {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n\n#snooze-custom-checkout .benefits-list li {\n  display: flex;\n  align-items: flex-start;\n  gap: 0.75rem;\n  padding: 0.875rem 0;\n  border-bottom: 1px solid #F2EDEA;\n}\n\n#snooze-custom-checkout .benefits-list li:last-child {\n  border-bottom: none;\n}\n\n#snooze-custom-checkout .benefits-list .check-icon {\n  color: #F43357;\n  font-size: 1.25rem;\n  flex-shrink: 0;\n  margin-top: 0.125rem;\n  font-weight: bold;\n}\n\n#snooze-custom-checkout .benefits-list .benefit-text {\n  flex: 1;\n  color: #1F293B;\n  font-size: 0.95rem;\n}\n\n#snooze-custom-checkout .benefits-list .benefit-detail {\n  color: #7C8A98;\n  font-size: 0.875rem;\n  margin-top: 0.25rem;\n}\n\n#snooze-custom-checkout .how-it-works {\n  margin-bottom: 2rem;\n  background: white;\n  border-radius: 12px;\n  padding: 2rem;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);\n}\n\n#snooze-custom-checkout .how-it-works h2 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 1.5rem;\n  text-align: center;\n}\n\n#snooze-custom-checkout .steps {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 2rem;\n  margin-bottom: 1.5rem;\n}\n\n#snooze-custom-checkout .step {\n  text-align: center;\n}\n\n#snooze-custom-checkout .step-number {\n  width: 3rem;\n  height: 3rem;\n  background: #F43357;\n  color: white;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 1.5rem;\n  font-weight: 700;\n  margin: 0 auto 1rem;\n  font-family: 'Playfair Display', Georgia, serif;\n}\n\n#snooze-custom-checkout .step-content h3 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 1.25rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 0.5rem;\n}\n\n#snooze-custom-checkout .step-content p {\n  color: #7C8A98;\n  font-size: 0.95rem;\n  line-height: 1.5;\n  margin: 0;\n}\n\n#snooze-custom-checkout .why-join {\n  background: #FFE7EA;\n  border-radius: 12px;\n  padding: 1.5rem;\n  margin-bottom: 2rem;\n}\n\n#snooze-custom-checkout .why-join h2 {\n  font-family: 'Playfair Display', Georgia, serif;\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #1F293B;\n  margin-bottom: 1.25rem;\n}\n\n#snooze-custom-checkout .why-join p {\n  color: #1F293B;\n  font-size: 0.95rem;\n  line-height: 1.6;\n  margin-bottom: 1rem;\n}\n\n#snooze-custom-checkout .why-join p:last-child {\n  margin-bottom: 0;\n}\n\n#snooze-custom-checkout .checkout-footer-note {\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #E5E7EB;\n  font-size: 0.875rem;\n  color: #7C8A98;\n  line-height: 1.6;\n}\n\n#snooze-custom-checkout .checkout-footer-note a {\n  color: #F43357;\n  text-decoration: underline;\n}\n\n#snooze-custom-checkout .checkout-currency-link {\n  font-size: 0.875rem;\n  color: #7C8A98;\n}\n\n#snooze-custom-checkout .checkout-currency-link a {\n  color: #F43357;\n  text-decoration: underline;\n}\n\n#snooze-custom-checkout .mobile-scroll-to-checkout {\n  display: none;\n  width: 100%;\n  background: #F43357;\n  color: white;\n  padding: 1rem 2rem;\n  font-size: 1.125rem;\n  font-weight: 600;\n  border-radius: 9999px;\n  text-decoration: none;\n  text-align: center;\n  margin-top: 1.5rem;\n  box-shadow: 0 4px 12px rgba(244, 51, 87, 0.3);\n  transition: all 0.3s ease;\n}\n\n#snooze-custom-checkout .mobile-scroll-to-checkout:hover {\n  background: #e02d4f;\n  transform: translateY(-2px);\n  box-shadow: 0 6px 16px rgba(244, 51, 87, 0.4);\n}\n\n@media (max-width: 768px) {\n  #snooze-custom-checkout .snooze-checkout-hero h1 {\n    font-size: 1.75rem;\n  }\n\n  #snooze-custom-checkout .snooze-checkout-hero .subheadline {\n    font-size: 1rem;\n  }\n\n  #snooze-custom-checkout .trial-highlight,\n  #snooze-custom-checkout .whats-included,\n  #snooze-custom-checkout .how-it-works {\n    padding: 1.5rem;\n  }\n\n  #snooze-custom-checkout .whats-included h2,\n  #snooze-custom-checkout .how-it-works h2,\n  #snooze-custom-checkout .why-join h2 {\n    font-size: 1.5rem;\n  }\n\n  #snooze-custom-checkout .steps {\n    grid-template-columns: 1fr;\n    gap: 1.5rem;\n  }\n\n  #snooze-custom-checkout .mobile-scroll-to-checkout {\n    display: block;\n  }\n}\n\n@media (max-width: 360px) {\n  .embedded-checkout-price-summary .offer-summary {\n    display: grid !important;\n    grid-template-columns: 4rem minmax(0, 1fr) !important;\n    gap: 0.5rem !important;\n  }\n\n  .embedded-checkout-price-summary .offer-summary > div:first-child {\n    width: 4rem !important;\n  }\n\n  .embedded-checkout-price-summary .offer-summary > pds-box:nth-of-type(1) {\n    min-width: 0 !important;\n  }\n\n  .embedded-checkout-price-summary .offer-summary > pds-box:last-child {\n    grid-column: 2;\n    align-items: flex-start !important;\n    min-width: 0 !important;\n  }\n\n  .embedded-checkout-price-summary .offer-summary > pds-box:last-child pds-text {\n    text-align: left !important;\n  }\n}\n",
+    "js": "(function() {\n  'use strict';\n\n  const PLAN_CONFIG = {\n    USD: {\n      offerCode: 'PUBMS02_USD',\n      monthly: { variantId: '160544', plan: 'monthly', cadence: 'monthly', amount: 79 },\n      quarterly: { variantId: '64815', plan: 'quarterly', cadence: 'every_3_months', amount: 198 },\n      annual: { variantId: '64816', plan: 'annual', cadence: 'yearly', amount: 660 }\n    },\n    AUD: {\n      offerCode: 'PUBMS02_AUD',\n      monthly: { variantId: '160790', plan: 'monthly', cadence: 'monthly', amount: 119 },\n      quarterly: { variantId: '160791', plan: 'quarterly', cadence: 'every_3_months', amount: 297 },\n      annual: { variantId: '160792', plan: 'annual', cadence: 'yearly', amount: 996 }\n    }\n  };\n  const ATTRIBUTION_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];\n  const OPTION_SELECTOR = '.embedded-checkout-pricing-option, [data-pricing-option-id], [data-variant-id]';\n  const SELECTED_SELECTOR = '.embedded-checkout-pricing-option.selected, .embedded-checkout-pricing-option[aria-checked=\"true\"], [data-pricing-option-id].selected, [data-pricing-option-id][aria-checked=\"true\"], [data-variant-id].selected, [data-variant-id][aria-checked=\"true\"]';\n  let lastSelectionKey = '';\n\n  function pushEvent(payload) {\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push(payload);\n  }\n\n  function checkoutContext() {\n    const wrapper = document.getElementById('snooze-custom-checkout');\n    if (!wrapper) return null;\n    const currency = String(wrapper.getAttribute('data-currency') || '').toUpperCase();\n    if (!PLAN_CONFIG[currency]) return null;\n    return {\n      wrapper: wrapper,\n      currency: currency,\n      offerId: String(wrapper.getAttribute('data-offer-id') || ''),\n      offerCode: PLAN_CONFIG[currency].offerCode\n    };\n  }\n\n  function optionText(option) {\n    return String((option && (option.innerText || option.textContent)) || '').toLowerCase();\n  }\n\n  function optionVariantId(option) {\n    if (!option) return '';\n    const attributes = ['data-variant-id', 'data-pricing-option-id', 'data-variant', 'value'];\n    for (let index = 0; index < attributes.length; index += 1) {\n      const value = option.getAttribute && option.getAttribute(attributes[index]);\n      if (value) return String(value);\n    }\n    const input = option.querySelector && option.querySelector('input[value], option[value]');\n    return input && input.value ? String(input.value) : '';\n  }\n\n  function planFromOption(option, currency) {\n    const plans = PLAN_CONFIG[currency];\n    const variantId = optionVariantId(option);\n    const keys = Object.keys(plans);\n    for (let index = 0; index < keys.length; index += 1) {\n      if (plans[keys[index]].variantId === variantId) return plans[keys[index]];\n    }\n    const text = optionText(option);\n    if (text.indexOf('quarter') > -1 || text.indexOf('3 month') > -1) return plans.quarterly;\n    if (text.indexOf('annual') > -1 || text.indexOf('year') > -1) return plans.annual;\n    if (text.indexOf('month') > -1) return plans.monthly;\n    return null;\n  }\n\n  function selectedOption() {\n    const explicit = document.querySelector(SELECTED_SELECTOR);\n    if (explicit) return explicit;\n    const checked = document.querySelector('input:checked');\n    return checked && checked.closest ? checked.closest(OPTION_SELECTOR) : null;\n  }\n\n  function syncSelection(emitEvent) {\n    const context = checkoutContext();\n    if (!context) return;\n    const plan = planFromOption(selectedOption(), context.currency);\n    if (!plan) return;\n    const selectionKey = context.offerId + ':' + plan.variantId;\n    if (emitEvent && lastSelectionKey && selectionKey !== lastSelectionKey) {\n      pushEvent({\n        event: 'pricing_option_selected',\n        offer_id: context.offerId,\n        offer_code: context.offerCode,\n        variant_id: plan.variantId,\n        plan: plan.plan,\n        cadence: plan.cadence,\n        amount: plan.amount,\n        currency: context.currency,\n        surface: 'trial_checkout'\n      });\n    }\n    lastSelectionKey = selectionKey;\n  }\n\n  function preserveAttribution(link) {\n    if (!link || !link.getAttribute) return;\n    try {\n      const destination = new URL(link.getAttribute('href'), window.location.origin);\n      const current = new URL(window.location.href);\n      ATTRIBUTION_KEYS.forEach(function(key) {\n        if (!destination.searchParams.has(key) && current.searchParams.has(key)) {\n          destination.searchParams.set(key, current.searchParams.get(key));\n        }\n      });\n      link.setAttribute('href', destination.toString());\n    } catch (error) {}\n  }\n\n  function isPricingOption(node) {\n    return !!(node && node.nodeType === 1 && (\n      (node.matches && node.matches(OPTION_SELECTOR)) ||\n      (node.closest && node.closest(OPTION_SELECTOR))\n    ));\n  }\n\n  function containsPricingOption(node) {\n    return !!(node && node.nodeType === 1 && (\n      isPricingOption(node) ||\n      (node.querySelector && node.querySelector(OPTION_SELECTOR))\n    ));\n  }\n\n  function mutationTouchesPricing(mutation) {\n    if (!mutation) return false;\n    if (mutation.type === 'attributes') return isPricingOption(mutation.target);\n    if (mutation.type !== 'childList') return false;\n    if (isPricingOption(mutation.target)) return true;\n    const changedNodes = Array.prototype.slice.call(mutation.addedNodes || [])\n      .concat(Array.prototype.slice.call(mutation.removedNodes || []));\n    return changedNodes.some(containsPricingOption);\n  }\n\n  function scrollToCheckout(event) {\n    if (event) event.preventDefault();\n    const checkoutSelectors = [\n      '.checkout-form', '.kajabi-checkout', '.checkout-container', '[data-checkout]',\n      '.offer-checkout', '.checkout-wrapper', '.checkout-form-container',\n      '.enhanced-checkout', '.checkout-right', '.checkout-sidebar',\n      'form[action*=\"checkout\"]', 'form[action*=\"offer\"]'\n    ];\n    let checkoutElement = null;\n    for (let index = 0; index < checkoutSelectors.length; index += 1) {\n      checkoutElement = document.querySelector(checkoutSelectors[index]);\n      if (checkoutElement) break;\n    }\n    if (checkoutElement) {\n      checkoutElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });\n      window.setTimeout(function() {\n        const firstInput = checkoutElement.querySelector('input, select, textarea, button');\n        if (firstInput && firstInput.focus) firstInput.focus();\n      }, 500);\n      return;\n    }\n    const forms = document.querySelectorAll('form');\n    if (forms.length > 0) {\n      forms[forms.length - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });\n    } else {\n      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });\n    }\n  }\n\n  function init() {\n    const context = checkoutContext();\n    if (!context) return;\n    const initialPlan = planFromOption(selectedOption(), context.currency) || PLAN_CONFIG[context.currency].monthly;\n\n    if (!window.__snoozeTrialBeginCheckoutFired) {\n      window.__snoozeTrialBeginCheckoutFired = true;\n      pushEvent({\n        event: 'begin_checkout',\n        offer_id: context.offerId,\n        offer_code: context.offerCode,\n        currency: context.currency,\n        value: initialPlan.amount,\n        checkout_mode: '7_day_trial',\n        surface: 'trial_checkout',\n        ecommerce: {\n          currency: context.currency,\n          value: initialPlan.amount,\n          items: [{\n            item_id: context.offerCode,\n            item_name: 'The Snooze Membership - 7 Day Trial',\n            item_variant: initialPlan.plan,\n            price: initialPlan.amount,\n            quantity: 1\n          }]\n        }\n      });\n    }\n\n    context.wrapper.querySelectorAll('.scroll-to-checkout, .mobile-scroll-to-checkout').forEach(function(button) {\n      button.addEventListener('click', scrollToCheckout);\n    });\n\n    const currencyLink = context.wrapper.querySelector('[data-currency-switch]');\n    preserveAttribution(currencyLink);\n    if (currencyLink) {\n      currencyLink.addEventListener('click', function() { preserveAttribution(currencyLink); }, true);\n    }\n\n    syncSelection(false);\n    document.addEventListener('click', function(event) {\n      if (event.target && event.target.closest && event.target.closest(OPTION_SELECTOR)) {\n        window.setTimeout(function() { syncSelection(true); }, 0);\n      }\n    }, true);\n    document.addEventListener('change', function(event) {\n      if (event.target && event.target.closest && event.target.closest(OPTION_SELECTOR)) syncSelection(true);\n    }, true);\n\n    if (typeof MutationObserver !== 'undefined') {\n      let syncScheduled = false;\n      const observer = new MutationObserver(function(mutations) {\n        if (!Array.prototype.some.call(mutations || [], mutationTouchesPricing) || syncScheduled) return;\n        syncScheduled = true;\n        window.setTimeout(function() {\n          syncScheduled = false;\n          syncSelection(true);\n        }, 0);\n      });\n      observer.observe(document.body, { attributes: true, attributeFilter: ['class', 'aria-checked', 'checked'], childList: true, subtree: true });\n    }\n  }\n\n  if (document.readyState === 'loading') {\n    document.addEventListener('DOMContentLoaded', init);\n  } else {\n    init();\n  }\n})();\n",
+    "btn_background_color": "#f43357",
+    "btn_text_color": "#ffffff",
+    "btn_width": "auto",
+    "btn_style": "solid",
+    "btn_size": "small",
+    "btn_border_radius": "15",
+    "color_body_secondary": "#2d2d2d",
+    "color_placeholder": "#acacac",
+    "background_color": "#faf7f4",
+    "use_background_image": false,
+    "background_image": "",
+    "brand": {
+      "primary_color": "#f43357",
+      "accent_color": "#f43357",
+      "logo": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/b26e7af-3fa3-805e-8e07-53efb06fdc7d_TSC_-_Logomark_Coral.png",
+      "favicon": "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148291177/images/2c74-00f-a2aa-e5d-442be45717a2_TSC_-_Favicon_Coral.png",
+      "font_family_heading": "Playfair Display",
+      "font_family_body": "Poppins",
+      "social": {
+        "facebook": null,
+        "instagram": null,
+        "x": null,
+        "youtube": null,
+        "linkedin": null,
+        "tiktok": null
+      }
+    },
+    "_defaults": {
+      "offer_embedded_checkout": {
+        "checkout_block_column_width": "5",
+        "checkout_block_standalone_width": "8",
+        "show_checkout_block_first_on_mobile": "true",
+        "show_checkout_block_right_on_desktop": "true",
+        "inject_header_tracking_code": "true",
+        "inject_footer_tracking_code": "true",
+        "sync_checkout_block_to_offer": "true",
+        "show_checkout_block_price_text_override": "false",
+        "checkout_block_btn_border_radius": "50",
+        "checkout_block_btn_color": "#343332",
+        "show_checkout_block_btn_text_override": "false",
+        "checkout_block_border_radius": "0",
+        "checkout_block_border_type": "none",
+        "checkout_block_border_width": "0",
+        "checkout_block_border_color": "#343332",
+        "checkout_block_box_shadow": "small",
+        "bg_type": "none",
+        "bg_position": "center",
+        "background_fixed": "false"
+      },
+      "offer_embedded_checkout/code": {
+        "width": "6",
+        "code": "<!-- Code Goes Here -->",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "left",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "left",
+        "animation_type": "none",
+        "animation_direction": "none",
+        "delay": "0",
+        "duration": "0",
+        "reveal_units": "seconds"
+      },
+      "footer": {
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "hide_on_desktop": "false",
+        "vertical_layout": "false",
+        "hide_on_mobile": "false"
+      },
+      "footer/link_list": {
+        "menu": "main-menu",
+        "vertical": "row",
+        "new_tab": "false",
+        "text_align": "right",
+        "mobile_text_align": "center"
+      },
+      "footer/copyright": {
+        "copyright": "Kajabi"
+      },
+      "footer/social_icons": {
+        "new_tab": "false"
+      },
+      "header": {
+        "cart": "false",
+        "font_size_desktop": "18px",
+        "font_size_mobile": "16px",
+        "background_color": "#FFFFFF",
+        "position": "static",
+        "sticky": "false",
+        "hide_on_desktop": "false",
+        "horizontal": "between",
+        "hide_on_mobile": "false",
+        "close_on_scroll": "true",
+        "mobile_menu_text_alignment": "left"
+      },
+      "header/logo": {
+        "logo_type": "image",
+        "image_alt": "Header logo",
+        "logo_width": "50",
+        "logo_text": "Encore",
+        "alignment": "left",
+        "stretch": "false"
+      },
+      "header/menu": {
+        "menu": "main-menu",
+        "alignment": "right",
+        "stretch": "true"
+      },
+      "header/user": {
+        "language_login": "Log In",
+        "language_logout": "Logout",
+        "language_settings": "Settings",
+        "language_library": "My Library",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "alignment": "left",
+        "user_dropdown_menu_alignment": "left",
+        "stretch": "false"
+      },
+      "header/dropdown": {
+        "trigger": "Dropdown",
+        "menu": "main-menu",
+        "text_color": "#595959",
+        "background_color": "#FFFFFF",
+        "dropdown_menu_alignment": "left",
+        "alignment": "left",
+        "show_icon": "true",
+        "stretch": "false"
+      },
+      "header/cta": {
+        "btn_text": "Call to action",
+        "stretch": "false",
+        "alignment": "left"
+      },
+      "exit_pop": {
+        "modal_edit": "false",
+        "enable_modal": "false",
+        "frequency": "0",
+        "popup_reveal": "0",
+        "vertical": "start",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "exit_pop/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "image_align_desktop": "flex-start",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "image_align_mobile": "flex-start",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step": {
+        "two_step_edit": "false",
+        "vertical": "top",
+        "horizontal": "left",
+        "make_flush": "false"
+      },
+      "two_step/image": {
+        "width": "12",
+        "border_width": "4",
+        "border_radius": "4",
+        "image_align_desktop": "flex-start",
+        "hide_on_desktop": "false",
+        "make_flush": "false",
+        "make_block": "false",
+        "image_align_mobile": "flex-start",
+        "hide_on_mobile": "false",
+        "image_first": "false",
+        "enable_overlay": "false",
+        "always_show_on_mobile": "false",
+        "overlay_text": "Click Here for More Details",
+        "overlay_background_color": "#fff"
+      },
+      "two_step/form": {
+        "width": "12",
+        "text": "<h4>Join Our Free Trial</h4><p>Get started today before this once in a lifetime opportunity expires.</p>",
+        "disclaimer_text_color": "#888",
+        "input_label": "placeholder",
+        "inline": "false",
+        "btn_text": "Submit",
+        "border_width": "4",
+        "border_radius": "4",
+        "hide_on_desktop": "false",
+        "text_align": "center",
+        "make_flush": "false",
+        "make_block": "false",
+        "hide_on_mobile": "false",
+        "mobile_text_align": "center"
+      }
+    },
+    "sections": {
+      "1744906803654": {
+        "name": "Checkout",
+        "type": "offer_embedded_checkout",
+        "blocks": {
+          "1744906803654_0": {
+            "id": "1744906803654_0",
+            "name": "Custom Code",
+            "type": "code",
+            "hidden": "false",
+            "hideable": true,
+            "settings": {
+              "delay": "0",
+              "image": "",
+              "width": "8",
+              "gallery": false,
+              "new_tab": "",
+              "duration": "0",
+              "image_alt": "",
+              "box_shadow": "",
+              "img_action": "",
+              "make_block": false,
+              "make_flush": false,
+              "border_type": "",
+              "image_first": false,
+              "image_width": "500",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "reveal_event": "",
+              "reveal_units": "seconds",
+              "border_radius": "4",
+              "image_caption": "",
+              "margin_mobile": {
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0"
+              },
+              "reveal_offset": "",
+              "animation_type": "none",
+              "cta_popup_edit": "",
+              "cta_popup_text": "Enter your text here.",
+              "enable_overlay": false,
+              "hide_on_mobile": false,
+              "margin_desktop": {
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0"
+              },
+              "padding_mobile": {
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0"
+              },
+              "hide_on_desktop": false,
+              "padding_desktop": {
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0"
+              },
+              "background_color": "",
+              "image_align_mobile": "center",
+              "overlay_text_color": "",
+              "animation_direction": "none",
+              "image_align_desktop": "center",
+              "image_border_radius": "4",
+              "cta_popup_text_align": "left",
+              "cta_popup_text_color": "",
+              "always_show_on_mobile": false,
+              "overlay_background_color": "#fff",
+              "cta_popup_background_color": "",
+              "code": "<div id=\"snooze-custom-checkout\" class=\"snooze-checkout-content\" data-offer-id=\"2151254578\" data-currency=\"AUD\">\n  <div class=\"snooze-checkout-hero\">\n    <p class=\"checkout-eyebrow\">The Snooze Membership</p>\n    <h1>Start your 7-day free trial</h1>\n    <p class=\"subheadline\">Get clear sleep guidance and practical support for your baby&rsquo;s current stage.</p>\n  </div>\n\n  <div class=\"checkout-inclusions\" aria-label=\"Your trial includes\">\n    <p><strong>Your trial includes:</strong></p>\n    <ul class=\"benefits-list\">\n      <li><span class=\"check-icon\" aria-hidden=\"true\">&#10003;</span><span>Every Snooze sleep course and guide</span></li>\n      <li><span class=\"check-icon\" aria-hidden=\"true\">&#10003;</span><span>Age-based pathways from newborn to toddler</span></li>\n      <li><span class=\"check-icon\" aria-hidden=\"true\">&#10003;</span><span>The Snooze Village for ongoing community support</span></li>\n    </ul>\n  </div>\n\n  <div class=\"trial-highlight\">\n    <h2>Choose your plan,<br>pay nothing now.</h2>\n    <p>Choose monthly, quarterly or annual pricing.</p>\n  </div>\n\n  <div class=\"selected-plan-disclosure\" data-selected-plan-disclosure role=\"status\" aria-live=\"polite\">\n    <strong>Due today: $0.</strong>\n    <span data-selected-plan-copy>After your 7-day trial: your selected plan begins unless you cancel.</span>\n    Cancel before your first charge by logging in and visiting your\n    <a href=\"https://www.joinsnooze.com/settings/cards\">payment settings</a>.\n  </div>\n<br>\n  <p class=\"checkout-trust\">Secure checkout.</p>\n\n  <div class=\"checkout-footer-note\">\n    <p class=\"checkout-currency-link\">Need USD pricing? <a href=\"https://www.joinsnooze.com/offers/mqQikDM7/checkout\" data-currency-switch=\"USD\">View USD pricing</a>.</p>\n    <p>All products and services are covered by our <a href=\"/terms-conditions\" target=\"_blank\" rel=\"noopener\">Terms &amp; Conditions</a>.</p>\n  </div>\n</div>\n",
+              "text_align": "left",
+              "mobile_text_align": "left"
+            },
+            "deletable": true,
+            "sectionId": "1744906803654",
+            "schemaName": "Custom Code",
+            "sectionType": "offer_embedded_checkout",
+            "duplicatable": true
+          }
+        },
+        "hidden": "false",
+        "hideable": false,
+        "settings": {
+          "bg_type": "none",
+          "bg_position": "center",
+          "background_fixed": false,
+          "checkout_block_btn_color": "#343332",
+          "checkout_block_box_shadow": "small",
+          "checkout_block_border_type": "none",
+          "checkout_block_border_color": "#343332",
+          "checkout_block_border_width": "0",
+          "checkout_block_column_width": "6",
+          "inject_footer_tracking_code": true,
+          "inject_header_tracking_code": true,
+          "checkout_block_border_radius": "0",
+          "sync_checkout_block_to_offer": true,
+          "checkout_block_standalone_width": "8",
+          "checkout_block_btn_border_radius": "50",
+          "show_checkout_block_first_on_mobile": "false",
+          "show_checkout_block_right_on_desktop": "true",
+          "show_checkout_block_btn_text_override": false,
+          "show_checkout_block_price_text_override": false
+        },
+        "block_order": [
+          "1744906803654_0"
+        ],
+        "saveable": false,
+        "blank": null
+      },
+      "footer": {
+        "name": "Footer",
+        "type": "footer",
+        "blocks": {
+          "1602193175296": {
+            "id": "1602193175296",
+            "name": "Link List",
+            "type": "link_list",
+            "hidden": "false",
+            "hideable": true,
+            "settings": {
+              "menu": "2dL9DzzU",
+              "new_tab": false,
+              "vertical": "column",
+              "text_align": "left",
+              "mobile_text_align": "center",
+              "link_color": ""
+            },
+            "deletable": true,
+            "sectionId": "footer",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "duplicatable": true
+          },
+          "1555988525205": {
+            "name": "Copyright",
+            "type": "copyright",
+            "hidden": "false",
+            "settings": {
+              "copyright": " The Sleep Concierge"
+            },
+            "id": "1555988525205",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Copyright",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1607561009889": {
+            "name": "Social Icons",
+            "type": "social_icons",
+            "hidden": "false",
+            "settings": {
+              "new_tab": false,
+              "social_icon_link_yelp": "",
+              "social_icon_link_slack": "",
+              "social_icon_link_vimeo": "",
+              "social_icon_link_flickr": "",
+              "social_icon_link_github": "",
+              "social_icon_link_itunes": "",
+              "social_icon_link_medium": "",
+              "social_icon_link_tiktok": "https://www.tiktok.com/@thesleepconcierge",
+              "social_icon_link_tumblr": "",
+              "social_icons_text_color": "#fffbf5",
+              "social_icon_link_spotify": "",
+              "social_icon_link_twitter": "",
+              "social_icon_link_youtube": "",
+              "social_icon_link_dribbble": "",
+              "social_icon_link_facebook": "",
+              "social_icon_link_linkedin": "",
+              "social_icon_link_podcasts": "",
+              "social_icon_link_instagram": "https://www.instagram.com/thesleepconcierge",
+              "social_icon_link_pinterest": "",
+              "social_icon_link_soundcloud": "",
+              "social_icon_background_style": "",
+              "social_icons_background_color": "#fffbf5"
+            },
+            "id": "1607561009889",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Social Icons",
+            "sectionId": "footer",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1722697240868": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "S8etzdXL",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "column",
+              "text_align": "left",
+              "mobile_text_align": "center"
+            },
+            "id": "1722697240868",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          },
+          "1730279993182": {
+            "type": "link_list",
+            "name": "Link List",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "footer",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "link_color": "",
+              "vertical": "row",
+              "text_align": "right",
+              "mobile_text_align": "center"
+            },
+            "id": "1730279993182",
+            "schemaName": "Link List",
+            "sectionType": "footer",
+            "hideable": true
+          }
+        },
+        "hidden": "false",
+        "hideable": true,
+        "settings": {
+          "text_color": "#fffbf5",
+          "hide_on_mobile": true,
+          "hide_on_desktop": true,
+          "vertical_layout": false,
+          "background_color": "#1f293b",
+          "font_size_mobile": "12px",
+          "font_size_desktop": "12px",
+          "copyright_text_color": "",
+          "powered_by_text_color": "#898989"
+        },
+        "block_order": [
+          "1607561009889",
+          "1602193175296",
+          "1722697240868",
+          "1555988525205",
+          "1730279993182"
+        ],
+        "saveable": true
+      },
+      "header": {
+        "name": "Header",
+        "type": "header",
+        "blocks": {
+          "1555988494486": {
+            "id": "1555988494486",
+            "name": "Logo",
+            "type": "logo",
+            "hidden": "false",
+            "hideable": true,
+            "settings": {
+              "logo": "file-uploads/themes/2156873377/settings_images/ce2741b-f0b0-0bca-165-eeed3d8caa5_28302add-87f7-4100-9588-31e6e3087fce.png",
+              "stretch": false,
+              "alignment": "left",
+              "image_alt": "Snooze Logo",
+              "logo_text": "Sleep Concierge - Expert Baby Sleep Support",
+              "logo_type": "image",
+              "logo_width": "200",
+              "logo_text_color": "#f7a292"
+            },
+            "deletable": true,
+            "sectionId": "header",
+            "schemaName": "Logo",
+            "sectionType": "header",
+            "duplicatable": true
+          },
+          "1607554198094": {
+            "id": "1607554198094",
+            "name": "Main Menu",
+            "type": "menu",
+            "hidden": "false",
+            "settings": {
+              "menu": "main-menu",
+              "new_tab": false,
+              "stretch": false,
+              "alignment": "center"
+            },
+            "sectionId": "header",
+            "schemaName": "Menu",
+            "sectionType": "header",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true
+          },
+          "1718599174110": {
+            "type": "user",
+            "name": "User Menu",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "sectionId": "header",
+            "settings": {
+              "text_color": "#595959",
+              "background_color": "#FFFFFF",
+              "language_login": "Log In",
+              "language_logout": "Logout",
+              "language_settings": "Settings",
+              "language_library": "My Library",
+              "user_dropdown_menu_alignment": "left",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1718599174110",
+            "schemaName": "User dropdown",
+            "sectionType": "header",
+            "hideable": true
+          },
+          "1767078477372": {
+            "type": "dropdown",
+            "name": "Products & Services",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "trigger": "Baby Sleep Help",
+              "menu": "9poNSX6H",
+              "text_color": "#1f293b",
+              "background_color": "#FFFFFF",
+              "dropdown_menu_alignment": "left",
+              "alignment": "left",
+              "show_icon": true,
+              "new_tab": "",
+              "stretch": false
+            },
+            "id": "1767078477372",
+            "schemaName": "Dropdown menu",
+            "sectionType": "header"
+          },
+          "1767079787493": {
+            "type": "cta",
+            "name": "Call to action",
+            "hidden": "false",
+            "deletable": true,
+            "duplicatable": true,
+            "hideable": true,
+            "sectionId": "header",
+            "settings": {
+              "btn_text": "Join Snooze",
+              "btn_action": "/resource_redirect/offers/6iRarwak",
+              "new_tab": "",
+              "btn_width": "auto",
+              "btn_style": "",
+              "btn_size": "small",
+              "btn_border_radius": "25",
+              "btn_text_color": "",
+              "btn_background_color": "",
+              "stretch": false,
+              "alignment": "left"
+            },
+            "id": "1767079787493",
+            "schemaName": "Call to action",
+            "sectionType": "header"
+          }
+        },
+        "hidden": "false",
+        "hideable": true,
+        "settings": {
+          "cart": false,
+          "sticky": false,
+          "position": "static",
+          "horizontal": "center",
+          "text_color": "#1f293b",
+          "hide_on_mobile": true,
+          "close_on_scroll": true,
+          "hamburger_color": "#1f293b",
+          "hide_on_desktop": true,
+          "background_color": "",
+          "font_size_mobile": "16px",
+          "font_size_desktop": "14px",
+          "sticky_text_color": "#ff644a",
+          "sticky_hamburger_color": "",
+          "sticky_background_color": "",
+          "mobile_menu_text_alignment": "center",
+          "mobile_header_text_color": "",
+          "mobile_header_background_color": ""
+        },
+        "block_order": [
+          "1555988494486",
+          "1767078477372",
+          "1607554198094",
+          "1718599174110",
+          "1767079787493"
+        ],
+        "saveable": true
+      },
+      "exit_pop": {
+        "name": "Exit Popup",
+        "type": "exit_pop",
+        "blocks": {
+          "1585757552293": {
+            "type": "image",
+            "settings": {
+              "image": "file-uploads/themes/2156873377/settings_images/21700ac-32ed-c8a8-2a88-56c13d1d6e_The_Sleep_Concierge_Black_Friday_Sale.png",
+              "width": "12",
+              "new_tab": false,
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "/store",
+              "make_block": false,
+              "make_flush": false,
+              "border_type": "none",
+              "image_first": false,
+              "image_width": "",
+              "border_color": "",
+              "border_width": "0",
+              "overlay_text": "Click Here For Better Sleep!",
+              "border_radius": "0",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": true,
+              "hide_on_mobile": false,
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": false,
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "center",
+              "overlay_text_color": "",
+              "image_align_desktop": "center",
+              "always_show_on_mobile": false,
+              "overlay_background_color": "#fff"
+            },
+            "name": "Image",
+            "hidden": "false",
+            "id": "1585757552293",
+            "deletable": true,
+            "duplicatable": true,
+            "schemaName": "Image",
+            "sectionId": "exit_pop",
+            "sectionType": "exit_pop"
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "frequency": "0",
+          "horizontal": "left",
+          "make_flush": false,
+          "modal_edit": false,
+          "enable_modal": false,
+          "popup_reveal": "3",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757552293"
+        ]
+      },
+      "two_step": {
+        "name": "Two Step Optin",
+        "type": "two_step",
+        "blocks": {
+          "1585757540189": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "width": "12",
+              "new_tab": "false",
+              "image_alt": "",
+              "box_shadow": "none",
+              "img_action": "",
+              "make_block": "false",
+              "make_flush": "false",
+              "border_type": "none",
+              "image_first": "false",
+              "image_width": "",
+              "border_color": "",
+              "border_width": "4",
+              "overlay_text": "Click Here for More Details",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "enable_overlay": "false",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "image_align_mobile": "flex-start",
+              "overlay_text_color": "",
+              "image_align_desktop": "flex-start",
+              "always_show_on_mobile": "false",
+              "overlay_background_color": "#fff"
+            },
+            "name": "Image",
+            "hidden": "false"
+          },
+          "1585757543890": {
+            "type": "form",
+            "settings": {
+              "form": "",
+              "text": "<h4>Join Our Free Trial</h4>\r\n<p>Get started today before this once in a lifetime opportunity expires.</p>",
+              "width": "12",
+              "inline": "false",
+              "btn_text": "Submit",
+              "thank_you": "",
+              "box_shadow": "none",
+              "make_block": "false",
+              "make_flush": "false",
+              "text_align": "center",
+              "border_type": "none",
+              "input_label": "placeholder",
+              "border_color": "",
+              "border_width": "4",
+              "border_radius": "4",
+              "margin_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "btn_text_color": "",
+              "hide_on_mobile": "false",
+              "margin_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "padding_mobile": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "disclaimer_text": "",
+              "hide_on_desktop": "false",
+              "padding_desktop": {
+                "top": "",
+                "left": "",
+                "right": "",
+                "bottom": ""
+              },
+              "background_color": "",
+              "btn_border_radius": "",
+              "mobile_text_align": "center",
+              "btn_background_color": "",
+              "disclaimer_text_color": "#888"
+            },
+            "name": "Form",
+            "hidden": "false"
+          }
+        },
+        "hidden": "false",
+        "settings": {
+          "vertical": "start",
+          "horizontal": "left",
+          "make_flush": "false",
+          "two_step_edit": "false",
+          "background_color": ""
+        },
+        "block_order": [
+          "1585757540189",
+          "1585757543890"
+        ]
+      }
+    }
+  }
+}
