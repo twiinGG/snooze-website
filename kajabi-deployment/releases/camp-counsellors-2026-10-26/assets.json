@@ -1,0 +1,28 @@
+[
+  {
+    "person": "Sally",
+    "approved_source": "sally-camp-counsellor-v4-branded.png",
+    "master": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/snooze-OS-media-library/website/camp-counsellors-2026-10-26/approved/Camp_Snooze_Sally_Approved_2026-10-26.png",
+    "web": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/snooze-OS-media-library/website/camp-counsellors-2026-10-26/approved/Camp_Snooze_Sally_Approved_2026-10-26.webp",
+    "dimensions": [
+      1122,
+      1402
+    ],
+    "bytes": 173524,
+    "url": "https://tscmedia.khorus.ai/website/camp-counsellors/2026-10-26/3cbb11e2d7e6-Camp_Snooze_Sally_Approved_2026-10-26.webp",
+    "public_hash_verified": true
+  },
+  {
+    "person": "Bec",
+    "approved_source": "bec-camp-counsellor-v5-colour-matched.png",
+    "master": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/snooze-OS-media-library/website/camp-counsellors-2026-10-26/approved/Camp_Snooze_Bec_Approved_2026-10-26.png",
+    "web": "/Users/kadegreenland/Documents/Projects/The Sleep Concierge/snooze-OS-media-library/website/camp-counsellors-2026-10-26/approved/Camp_Snooze_Bec_Approved_2026-10-26.webp",
+    "dimensions": [
+      1122,
+      1402
+    ],
+    "bytes": 171006,
+    "url": "https://tscmedia.khorus.ai/website/camp-counsellors/2026-10-26/3e4827b918ce-Camp_Snooze_Bec_Approved_2026-10-26.webp",
+    "public_hash_verified": true
+  }
+]
