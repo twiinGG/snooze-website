@@ -25,3 +25,9 @@ Released from commit `4271394e2`, tag `website-v1.6.23`. Staging saved first and
 A cache-busted public fetch returned HTTP 200 with both approved URLs and no old portrait references. Desktop and 390px mobile browser checks decoded both images at the intended 256 by 320 pixel size, with no horizontal overflow on mobile. Screenshots and public HTML verification live in the external media library beside the approved assets. Drive metadata confirms all four files in the intended shared folder.
 
 No old portrait references remain in active website source. Historical preimages and backup snapshots retain the originals for rollback.
+
+## Additional published-page sweep and cache limitation
+
+The Kajabi published-page inventory includes 24 pages, including unlisted pages omitted from the sitemap. The [Camp waitlist page, 2151845416](https://app.kajabi.com/admin/landing_pages/2151845416/edit), [theme 2164775842](https://app.kajabi.com/admin/themes/2164775842/settings/edit), also carried the old portraits. Updated all three matching sections there, including its duplicate code block and gallery. The patch generator was executed successfully against all four private snapshots. Release tag for this follow-up: `website-v1.6.24`.
+
+Fresh theme reads and cache-busted public responses show the new portraits on both published Camp pages. Plain URLs still return cached old HTML as of October 26, 2026 at 4:00 pm Melbourne time, including in a fresh browser. Re-saving metadata and republishing both pages did not clear that cache. Both pages remain published; the VSL remains a draft. The connector offers no cache-purge action. Visitor-wide visibility is therefore pending Kajabi cache refresh, despite the verified saved changes. Do not report plain-URL replacement as complete until a fresh check confirms it.
