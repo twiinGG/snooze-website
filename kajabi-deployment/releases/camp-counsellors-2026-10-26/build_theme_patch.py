@@ -16,8 +16,8 @@ def build(snapshot):
     text = json.dumps(original)
     prefix = 'https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/'
     for old, new in replacements.items():
-        text = text.replace(prefix+'file-uploads/themes/2164288957/settings_images/'+old, new)
-    text = text.replace(prefix+old, urls[who]).replace(old, urls[who])
+        relative = 'file-uploads/themes/2164288957/settings_images/'+old
+        text = text.replace(prefix+relative, new).replace(relative, new)
     text = text.replace('width: 16rem; height: 12rem; object-fit: cover;', 'width: 16rem; height: 20rem; object-fit: cover;')
     updated = json.loads(text)
     gallery = updated['sections'].get('1767353754187', {}).get('blocks', {})
