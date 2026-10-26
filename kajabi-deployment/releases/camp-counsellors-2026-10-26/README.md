@@ -17,3 +17,11 @@ Full before-settings snapshots and generated payloads are private backups in the
 Preflight: all 109 public sitemap pages fetched without request errors. The live Camp page was the only public page referencing these old portraits. Both hosted WebP hashes match the local approved assets. Placeholder scanner passes. Environment validator passes after loading the umbrella .env and mapping its existing SUPABASE_ANON_KEY to the validator's SUPABASE_KEY alias; the default stdlib validator does not itself load dotenv. No database access is required for this image replacement.
 
 Local references updated in both Camp landing variants, Camp VSL source and packaged draft. Current hybrid-video image inputs replaced with approved images; dated backups and original headshots retained.
+
+## Verified deployment
+
+Released from commit `4271394e2`, tag `website-v1.6.23`. Staging saved first and persisted settings checked. Its public URL remains a draft 404, so pre-release visual checking used the saved public page with the exact image substitutions and original CSS. Live Camp and the VSL draft then saved successfully. Fresh theme reads match the expected changed sections exactly and preserve render order. The VSL remains a draft.
+
+A cache-busted public fetch returned HTTP 200 with both approved URLs and no old portrait references. Desktop and 390px mobile browser checks decoded both images at the intended 256 by 320 pixel size, with no horizontal overflow on mobile. Screenshots and public HTML verification live in the external media library beside the approved assets. Drive metadata confirms all four files in the intended shared folder.
+
+No old portrait references remain in active website source. Historical preimages and backup snapshots retain the originals for rollback.
