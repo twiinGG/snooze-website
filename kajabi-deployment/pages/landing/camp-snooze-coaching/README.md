@@ -39,3 +39,13 @@ Planning procedure: `docs/operations/BUSINESS-DEVELOPMENT-PLANNING.md`. This acq
 Rollback: leave the page in draft and restore `theme-before.json` through `update_theme_content`, including its original render order and visible chrome. That restores the blank theme; the unused Camp section may remain stored but will not render. Do not delete shared media objects.
 
 Work is isolated in the managed `camp-vsl-kajabi` worktree because the main checkout has unrelated unresolved merge work. Do not overwrite or merge through that work without resolving it separately.
+
+## October 28, 2026 draft refresh
+
+Kade authorised updating this existing draft with the latest local page changes while keeping it unpublished. Saved the revised styling, approved counsellor portraits and 31-review wall. Haley C.'s 5.5-month review is excluded. The short hosted review video remains pending Sally's new recording.
+
+Release tag: `website-v1.6.26`, commit `97c709a73`. Lossless preimage: `kajabi-deployment/_live-preimages/camp-snooze-coaching/2026-10-28-theme.json`. Kajabi readback matched all 79,869 characters of the code block exactly. The sole render section remains `camp-vsl-1792800000`. Page metadata confirmed draft, null publication date and hidden from search after saving. Theme updated at `2026-10-28T05:15:54Z`.
+
+Placeholder, environment, JavaScript syntax, package-integrity and anchor checks passed. All pre-commit hooks passed. Current public marketing destinations, images, video and font stylesheet returned HTTP 200. Four authenticated member destinations return 403 to anonymous curl, as before. Font preconnect roots return 404 when requested as documents; those are connection hints, not page links. No signed-in rendered Kajabi preview was inspected in this update. Open the design editor above to review this saved revision.
+
+The first write rejected a retired `nova-intro` stub. No save occurred from that attempt. The generator now omits the retired stub; the corrected write and full readback succeeded.
