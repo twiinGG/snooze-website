@@ -1181,3 +1181,26 @@ body.currency-loaded .dynamic-price {
   .camp-sales-hero h1 { font-size: 2.75rem !important; }
   .camp-sales-hero .camp-hero-next { margin-bottom: 1rem; }
 }
+
+#camp-wall{background:var(--camp-cream,#f7f4ee);padding:5rem 0}
+#camp-wall .cw-intro{text-align:center;max-width:44rem;margin:0 auto 2.5rem;padding:0 1rem}
+#camp-wall .cw-kicker{font-family:'Satisfy',cursive;font-size:1.75rem;color:hsl(36,72%,36%);margin:0 0 .25rem}
+#camp-wall h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,2.75rem);font-weight:700;color:var(--camp-forest,#295641);margin:0 0 .75rem;line-height:1.1}
+#camp-wall .cw-sub{font-family:'DM Sans',sans-serif;color:hsl(150,15%,36%);font-size:1.05rem;margin:0}
+#camp-wall .cw-grid{max-width:72rem;margin:0 auto;padding:0 1.25rem;columns:3 18rem;column-gap:1.25rem}
+#camp-wall .cw-card{break-inside:avoid;margin:0 0 1.25rem;background:#fff;border-radius:1rem;padding:1.4rem 1.5rem 1.2rem;box-shadow:0 10px 26px -14px hsl(150 25% 20% / .35);font-family:'DM Sans',sans-serif}
+#camp-wall .cw-stars{color:hsl(38,70%,52%);letter-spacing:.15em;font-size:1rem;margin-bottom:.6rem}
+#camp-wall blockquote{margin:0}
+#camp-wall blockquote p{margin:0;color:hsl(150,25%,18%);font-size:1rem;line-height:1.6}
+#camp-wall .cw-head{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--camp-forest,#295641);line-height:1.2;margin:0 0 .5rem!important}
+#camp-wall strong{font-weight:700;color:var(--camp-forest,#295641);background:linear-gradient(transparent 60%,hsl(38 70% 88%) 60%)}
+#camp-wall figcaption{margin-top:.9rem;display:flex;flex-direction:column;gap:.1rem}
+#camp-wall .cw-name{font-weight:700;color:hsl(150,25%,18%);font-size:.95rem}
+#camp-wall .cw-src{color:hsl(150,15%,36%);font-size:.82rem}
+#camp-wall .cw-more{display:none}
+#camp-wall.is-open .cw-more{display:block}
+#camp-wall .cw-actions{text-align:center;margin-top:1.5rem}
+#camp-wall .cw-toggle{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;color:var(--camp-forest,#295641);background:#fff;border:2px solid var(--camp-forest,#295641);border-radius:999px;padding:.8rem 1.8rem;cursor:pointer}
+#camp-wall .cw-toggle:hover{background:hsl(140,25%,92%)}
+#camp-wall.is-open .cw-toggle{display:none}
+@media(max-width:640px){#camp-wall{padding:3.5rem 0}#camp-wall .cw-grid{columns:1}}
