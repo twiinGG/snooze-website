@@ -26,7 +26,7 @@ def build():
     (OUT / "index.html").write_text(html)
     zero=dict.fromkeys(['top','right','bottom','left'],'0')
     s={'name':'Camp Snooze landing page','type':'section','settings':{'full_width':True,'padding_desktop':zero,'padding_mobile':zero,'background_color':'#faf8f2','hide_on_desktop':False,'hide_on_mobile':False},'blocks':{'camp-code':{'name':'Camp HTML, CSS and JavaScript','type':'code','settings':{'code':(OUT/'index.html').read_text(),'width':'fill','mobile_width':'fill','padding_desktop':zero,'padding_mobile':zero}}},'block_order':['camp-code']}
-    payload={'content_for_index':['camp-vsl-1792800000'],'sections':{'camp-vsl-1792800000':s,**{k:{'hidden':True} for k in ['header','footer','modals','nova-intro']}},'custom_css':'','custom_js':''}
+    payload={'content_for_index':['camp-vsl-1792800000'],'sections':{'camp-vsl-1792800000':s,**{k:{'hidden':True} for k in ['header','footer','modals']}},'custom_css':'','custom_js':''}
     (OUT/'theme-payload.json').write_text(json.dumps(payload,indent=2)+'\n')
     print(OUT / "index.html")
 
