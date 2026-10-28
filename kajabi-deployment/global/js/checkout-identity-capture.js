@@ -48,42 +48,82 @@
     return null;
   }
 
-  function getFbc() {
-    var fbc = readCookie('_fbc');
-    if (fbc) return fbc;
-    try {
-      var qs = String(window.location.search || '');
-      var m = qs.match(/[?&]fbclid=([^&]*)/);
-      if (m && m[1]) return 'fb.1.' + fallbackClickTime + '.' + decodeURIComponent(m[1]);
-    } catch (e) {}
-    return null;
-  }
+  var TOUCH_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'gclid', 'fbclid', 'fbc'];
+  var TOUCH_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 
   function queryParam(name) {
     try {
       var m = String(window.location.search || '').match(new RegExp('[?&]' + name + '=([^&]*)'));
-      return m && m[1] ? decodeURIComponent(m[1]) : null;
+      return m && m[1] ? decodeURIComponent(m[1].split(String.fromCharCode(43)).join(' ')) : null;
     } catch (e) { return null; }
   }
 
-  function storedAttribution() {
-    var merged = {};
-    var keys = [UTM_STORAGE_KEY, FIRST_TOUCH_KEY, CURRENT_TOUCH_KEY];
-    for (var i = 0; i < keys.length; i++) {
-      try {
-        var raw = window.localStorage.getItem(keys[i]);
-        if (!raw) continue;
-        var parsed = JSON.parse(raw);
-        if (!parsed || typeof parsed !== 'object') continue;
-        for (var k in parsed) {
-          if (Object.prototype.hasOwnProperty.call(parsed, k)
-              && merged[k] === undefined && parsed[k] !== null && parsed[k] !== '') {
-            merged[k] = parsed[k];
-          }
-        }
-      } catch (e) {}
+  function readObject(key) {
+    try {
+      var value = JSON.parse(window.localStorage.getItem(key));
+      return value && typeof value === 'object' && !Array.isArray(value) ? value : null;
+    } catch (e) { return null; }
+  }
+
+  function coherentTouch(value, query) {
+    if (!value || typeof value !== 'object') return null;
+    var timestamp = query ? new Date(fallbackClickTime).toISOString() : value.captured_at || value.occurred_at;
+    if (typeof timestamp !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(timestamp)) return null;
+    var age = Date.now() - Date.parse(timestamp);
+    if (!isFinite(age) || age < 0 || age > TOUCH_WINDOW_MS) return null;
+    var touch = { captured_at: timestamp };
+    var found = false;
+    TOUCH_KEYS.forEach(function (key) {
+      if (typeof value[key] === 'string' && value[key] && value[key].length <= 512) {
+        touch[key] = value[key];
+        found = true;
+      }
+    });
+    if (!found) return null;
+    var source = String(touch.utm_source || '').toLowerCase();
+    var google = source === 'google' || !!touch.gclid;
+    var meta = /^(facebook|meta|instagram|fb|ig)$/.test(source) || !!touch.fbclid || !!touch.fbc;
+    if (touch.gclid && (touch.fbclid || touch.fbc)) { delete touch.gclid; delete touch.fbclid; delete touch.fbc; }
+    else if (source === 'google') { delete touch.fbclid; delete touch.fbc; }
+    else if (/^(facebook|meta|instagram|fb|ig)$/.test(source)) delete touch.gclid;
+    else if (google && meta) { delete touch.gclid; delete touch.fbclid; delete touch.fbc; }
+    return touch;
+  }
+
+  function boundedCookie(name) {
+    var value = readCookie(name);
+    return value && value.length <= 512 ? value : null;
+  }
+
+  function touchSelection() {
+    var legacy = coherentTouch(readObject(UTM_STORAGE_KEY));
+    var first = coherentTouch(readObject(FIRST_TOUCH_KEY)) || legacy;
+    var storedCurrent = coherentTouch(readObject(CURRENT_TOUCH_KEY));
+    var state = readObject('snooze_paid_touch_state_v1');
+    var finalTouch = coherentTouch(state && state.final_touch);
+    if (finalTouch && (!storedCurrent || Date.parse(finalTouch.captured_at) > Date.parse(storedCurrent.captured_at))) storedCurrent = finalTouch;
+    var incoming = {};
+    TOUCH_KEYS.forEach(function (key) { if (key !== 'fbc') incoming[key] = queryParam(key); });
+    var current = coherentTouch(incoming, true);
+    var selected = current || storedCurrent || first;
+    return {
+      version: 1,
+      selection: current ? 'current_query' : storedCurrent ? 'stored_current' : selected ? 'stored_first' : 'none',
+      first_touch: first,
+      current_touch: current || storedCurrent,
+      selected_touch: selected,
+      browser_click_cookies: { fbc: boundedCookie('_fbc'), gcl_aw: boundedCookie('_gcl_aw') }
+    };
+  }
+
+  function touchFbc(touch) {
+    if (!touch) return null;
+    if (touch.fbclid) {
+      var cookie = readCookie('_fbc');
+      if (cookie && cookie.slice(-(touch.fbclid.length + 1)) === '.' + touch.fbclid) return cookie;
+      return 'fb.1.' + Date.parse(touch.captured_at) + '.' + touch.fbclid;
     }
-    return merged;
+    return touch.fbc || null;
   }
 
   function offerToken() {
@@ -139,22 +179,24 @@
   }
 
   function send(hash) {
-    var attribution = storedAttribution();
-    var utmId = attribution.utm_id || queryParam('utm_id') || null;
+    var evidence = touchSelection();
+    var attribution = evidence.selected_touch || {};
+    var utmId = attribution.utm_id || null;
     var payload = {
       email_sha256: hash,
       ga_client_id: gaClientId(),
       ga_session_id: gaSessionId(),
       fbp: readCookie('_fbp'),
-      fbc: getFbc(),
-      gclid: queryParam('gclid') || attribution.gclid || null,
-      utm_source: attribution.utm_source || queryParam('utm_source') || null,
-      utm_medium: attribution.utm_medium || queryParam('utm_medium') || null,
-      utm_campaign: attribution.utm_campaign || queryParam('utm_campaign') || null,
-      utm_content: attribution.utm_content || queryParam('utm_content') || null,
-      utm_term: attribution.utm_term || queryParam('utm_term') || null,
+      fbc: touchFbc(evidence.selected_touch),
+      gclid: attribution.gclid || null,
+      utm_source: attribution.utm_source || null,
+      utm_medium: attribution.utm_medium || null,
+      utm_campaign: attribution.utm_campaign || null,
+      utm_content: attribution.utm_content || null,
+      utm_term: attribution.utm_term || null,
       utm_id: utmId,
       ad_id: utmId,
+      touch_evidence: evidence,
       offer_token: offerToken(),
       page_location: String(window.location.origin || '') + String(window.location.pathname || ''),
       user_agent: navigator.userAgent
