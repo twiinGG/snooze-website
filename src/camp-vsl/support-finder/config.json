@@ -1,0 +1,36 @@
+{
+  "formId": "2149767172",
+  "emailDeliveryActive": false,
+  "questions": [
+    {"key":"age","title":"How old is your baby?","options":[["newborn","0 to 2 months"],["threefour","3 to 4 months"],["five","5 months"],["sixtoeight","6 to 8 months"],["ninetotwelve","9 to 12 months"],["toddler","13 months or older"]]},
+    {"key":"concern","title":"What feels hardest right now?","options":[["settling","Getting to sleep"],["nights","Waking through the night"],["naps","Short or unpredictable naps"],["early","Starting the day too early"],["unsure","Knowing where to start"]]},
+    {"key":"support","title":"What kind of support would help you most?","options":[["group","Daily coaching with a small group"],["flexible","Guidance I can use around my own day"],["private","Individual support for my family"],["unsure","Help choosing the right support"]]},
+    {"key":"barrier","title":"What would you like to feel clearer about?","options":[["approach","Whether the approach will feel right for us"],["time","How to fit support into our days"],["calls","What happens if I miss a live call"],["tried","How this differs from things we have tried"],["none","I feel ready to take the next step"]]},
+    {"key":"timing","title":"When would you like support?","options":[["now","As soon as possible"],["soon","In the next few weeks"],["exploring","I am exploring for later"]]}
+  ],
+  "routes": {
+    "camp":{"title":"Take a closer look at Camp Snooze","why":"You want daily group coaching and your baby is within Camp's six-month-plus age range. Camp brings a personalised plan, daily roll call and a private forum into two weeks of support.","cta":"See Camp dates and pricing","url":"https://www.joinsnooze.com/camp-snooze-sleep-coaching#pricing-section"},
+    "snooze":{"title":"Explore flexible support with Snooze","why":"You want guidance you can use around your own day. Snooze brings support from Sally and her team together with resources you can return to.","cta":"Explore Snooze support","url":"https://www.joinsnooze.com/snooze-membership"},
+    "young":{"title":"Start with support for your baby's age","why":"Camp starts from six months. Sally's age-specific resources and Snooze support are a place to explore what is available for your family now.","cta":"Explore Snooze support","url":"https://www.joinsnooze.com/snooze-membership"},
+    "private":{"title":"Explore individual support","why":"You would prefer support focused on your family. The consultation page explains Sally's individual support options so you can compare them with Camp.","cta":"Explore individual consultations","url":"https://www.joinsnooze.com/one-on-one-sleep-consultations"},
+    "talk":{"title":"Talk through your questions before choosing","why":"You would like more clarity before deciding on a support format. Bring the questions below to the team so you can understand how the support would fit your family.","cta":"Ask the Snooze team","url":"mailto:camp@joinsnooze.com?subject=My%20sleep%20support%20questions"}
+  },
+  "resources": {
+    "newborn":{"title":"Sally's newborn sleep support overview","url":"https://www.joinsnooze.com/newborn-baby-sleep-help","why":"A starting point matched to your baby's age."},
+    "threefour":{"title":"Sally's 3 to 4 month sleep support overview","url":"https://www.joinsnooze.com/3-4-month-baby-sleep-help","why":"An overview of the support for your baby's age."},
+    "five":{"title":"Sally's 5 to 12 month sleep support overview","url":"https://www.joinsnooze.com/5-12-month-baby-sleep-help","why":"An age-specific starting point while you explore support before Camp."},
+    "settling":{"title":"Sally's bedtime battles resource","url":"https://www.joinsnooze.com/bedtime-battles","why":"You chose getting to sleep as the part you want help with."},
+    "nights":{"title":"Sally's night wakings resource","url":"https://www.joinsnooze.com/night-wakings","why":"You chose waking through the night as your main concern."},
+    "naps":{"title":"Sally's free catnapping guide","url":"https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf","why":"You chose short or unpredictable naps. This is an existing general guide, rather than a plan for your baby."},
+    "early":{"title":"Sally's early rising resource","url":"https://www.joinsnooze.com/early-rising","why":"You chose early starts as the part you want help with."},
+    "toddler":{"title":"Sally's toddler sleep support overview","url":"https://www.joinsnooze.com/toddler-sleep-help","why":"A starting point matched to your child's age."},
+    "unsure":{"title":"The Snooze Method explained","url":"https://www.joinsnooze.com/the-snooze-method","why":"A starting point for understanding how Sally and her team approach support."}
+  },
+  "coachQuestions": {
+    "approach":"Which approaches do you use, and how do we choose one that feels right for our family?",
+    "time":"What would I need to do each day, and how can that fit around our commitments?",
+    "calls":"How do replays and forum support work if I miss a live call?",
+    "tried":"How would you take account of the support and approaches we have already tried?",
+    "none":"What should I prepare before support starts?"
+  }
+}

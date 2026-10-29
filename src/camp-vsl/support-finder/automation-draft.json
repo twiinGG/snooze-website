@@ -1,0 +1,22 @@
+{
+  "site_id": "2148291177",
+  "name": "Camp support finder | requested summary | DRAFT",
+  "trigger": {
+    "type": "form_submitted",
+    "resource_id": "2149767172"
+  },
+  "steps": [
+    {
+      "action": {
+        "type": "email_send",
+        "options": {
+          "subject": "Your sleep support summary and resource",
+          "body": "<p>Hi {{ first_name | default: \"there\" | escape }},</p><p>Here is the sleep support summary you requested.</p><p>{{ custom_22 | escape | newline_to_br }}</p><p><strong>Your selected resource</strong></p>{% case custom_24 %}{% when \"newborn\" %}<p><a href=\"https://www.joinsnooze.com/newborn-baby-sleep-help\">Sally's newborn sleep support overview</a></p>{% when \"threefour\" %}<p><a href=\"https://www.joinsnooze.com/3-4-month-baby-sleep-help\">Sally's 3 to 4 month sleep support overview</a></p>{% when \"five\" %}<p><a href=\"https://www.joinsnooze.com/5-12-month-baby-sleep-help\">Sally's 5 to 12 month sleep support overview</a></p>{% when \"settling\" %}<p><a href=\"https://www.joinsnooze.com/bedtime-battles\">Sally's bedtime battles resource</a></p>{% when \"nights\" %}<p><a href=\"https://www.joinsnooze.com/night-wakings\">Sally's night wakings resource</a></p>{% when \"naps\" %}<p><a href=\"https://tscmedia.khorus.ai/guides/free-catnapping-guide.pdf\">Sally's free catnapping guide</a></p>{% when \"early\" %}<p><a href=\"https://www.joinsnooze.com/early-rising\">Sally's early rising resource</a></p>{% when \"toddler\" %}<p><a href=\"https://www.joinsnooze.com/toddler-sleep-help\">Sally's toddler sleep support overview</a></p>{% when \"unsure\" %}<p><a href=\"https://www.joinsnooze.com/the-snooze-method\">The Snooze Method explained</a></p>{% else %}<p><a href=\"https://www.joinsnooze.com/the-snooze-method\">The Snooze Method explained</a></p>{% endcase %}<p><strong>A blank sleep log to keep</strong></p><p>Use the lines below to note what happens so you can discuss it with your coach. There is no target schedule to follow.</p><p>Date:<br>Nap or night:<br>Put down at:<br>Fell asleep at:<br>Woke at:<br>How settling went and anything you would like to ask:</p><p>Copy those headings for each sleep you want to note. You can also save or print a copy from your support finder result.</p><p>This suggests a support format. It does not assess your baby or provide a sleep or feeding plan.</p><p>The Snooze team</p><p>You requested this summary through the support finder. Further sleep tips and Snooze updates are a separate, optional choice.</p>",
+          "recipient_option": "contact",
+          "using_theme": "false",
+          "is_published": "false"
+        }
+      }
+    }
+  ]
+}
