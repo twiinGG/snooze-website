@@ -53,7 +53,9 @@ This is not Header Page Scripts and not website theme JS.
 
 **Deployment location:** Kajabi Settings > Site Details > Header Page Scripts
 
-Paste schema snippets in this order for the Phase 5 GEO deploy:
+The complete deployable field is `site-header-page-scripts.html`. Deploy that file as one whole-field overwrite. Do not append these reference snippets to the live field; the complete file already includes them.
+
+Reference snippets for the graph:
 
 1. `schema-organization.html`
 2. `schema-person-sally.html`
