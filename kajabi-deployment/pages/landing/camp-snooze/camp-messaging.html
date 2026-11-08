@@ -1,0 +1,64 @@
+<style>
+#camp-inquiry-widget{--ci-pine:#295640;--ci-paper:#fffdf7;--ci-gold:#e5bf65;position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:1000;color:#203d2e;font-family:inherit;font-size:16px;line-height:1.5;text-align:left}
+#camp-inquiry-widget summary{display:flex;align-items:center;gap:9px;min-height:48px;padding:12px 18px;border:1px solid #fffdf7;border-radius:30px;background:var(--ci-pine);color:#fffdf7;box-shadow:0 3px 18px #152c2830;font-weight:700;cursor:pointer;list-style:none}
+#camp-inquiry-widget summary::-webkit-details-marker{display:none}
+#camp-inquiry-widget summary svg{width:22px;height:22px;flex:none}
+#camp-inquiry-widget .ci-panel{position:absolute;right:0;bottom:calc(100% + 12px);width:330px;max-width:calc(100vw - 32px);padding:23px;border:1px solid #dce3d8;border-radius:18px;background:var(--ci-paper);box-shadow:0 8px 30px #152c2826}
+#camp-inquiry-widget h2{margin:0 28px 8px 0;color:var(--ci-pine);font-family:inherit;font-size:22px;line-height:1.2}
+#camp-inquiry-widget p{margin:0 0 16px;font-size:15px}
+#camp-inquiry-widget .ci-close{position:absolute;top:12px;right:12px;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:#e9eee6;color:#203d2e;font-size:23px;cursor:pointer}
+#camp-inquiry-widget a.ci-channel{display:block;margin-top:10px;padding:12px 15px;border:1px solid var(--ci-pine);border-radius:9px;color:var(--ci-pine);background:transparent;text-align:center;text-decoration:none;font-weight:700}
+#camp-inquiry-widget a.ci-channel:first-of-type{background:var(--ci-pine);color:#fffdf7}
+#camp-inquiry-widget a.ci-email{display:block;margin-top:15px;color:var(--ci-pine);font-size:14px;text-align:center;text-decoration:underline}
+#camp-inquiry-widget small{display:block;margin-top:14px;font-size:12px;line-height:1.45;color:#546458}
+#camp-inquiry-widget a:focus-visible,#camp-inquiry-widget button:focus-visible,#camp-inquiry-widget summary:focus-visible,#camp-inquiry-inline a:focus-visible{outline:3px solid #c68b27;outline-offset:4px}
+#camp-inquiry-inline{margin:20px auto 0;max-width:580px;color:#295640;font-family:inherit;font-size:16px;line-height:1.5;text-align:center}
+#camp-inquiry-inline p{margin:0 0 10px}
+#camp-inquiry-inline .ci-inline-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+#camp-inquiry-inline a{display:inline-block;padding:10px 18px;border:1px solid #295640;border-radius:9px;color:#295640;background:#fffdf7;font-weight:600;text-decoration:none;min-height:44px}
+#camp-inquiry-inline small{display:block;margin-top:9px;font-size:12px;color:#546458}
+@media(max-width:600px){#camp-inquiry-widget{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}#camp-inquiry-widget summary{padding:11px 15px;font-size:14px}#camp-inquiry-widget .ci-panel{width:310px;padding:21px}#camp-inquiry-inline{padding:0 12px}#camp-inquiry-inline a{font-size:14px}}
+@media print{#camp-inquiry-widget{display:none}}
+</style>
+<div id="camp-inquiry-inline">
+  <p>Want to ask us something about Camp Snooze?</p>
+  <div class="ci-inline-links">
+    <a href="https://m.me/1046464758876856?ref=camp_snooze_website" target="_blank" rel="noopener" data-camp-inquiry="messenger" data-camp-inquiry-placement="under_video">Message us on Messenger</a>
+    <a href="https://ig.me/m/thesleepconcierge?ref=camp_snooze_website" target="_blank" rel="noopener" data-camp-inquiry="instagram" data-camp-inquiry-placement="under_video">Message us on Instagram</a>
+  </div>
+  <small>Opens your chosen messaging service. Your Camp page stays open.</small>
+</div>
+<details id="camp-inquiry-widget">
+  <summary aria-controls="camp-inquiry-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 3V11.5a9 9 0 0 1 18 0Z"/><path d="M7 10h8M7 14h5"/></svg>Ask about Camp Snooze</summary>
+  <div class="ci-panel" id="camp-inquiry-panel">
+    <button type="button" class="ci-close" aria-label="Close Camp inquiry options">&times;</button>
+    <h2>Ask us about Camp</h2>
+    <p>Wondering how Camp works or whether it could suit your family? Send our team a message.</p>
+    <a class="ci-channel" href="https://m.me/1046464758876856?ref=camp_snooze_website" target="_blank" rel="noopener" data-camp-inquiry="messenger" data-camp-inquiry-placement="floating_panel">Message us on Messenger</a>
+    <a class="ci-channel" href="https://ig.me/m/thesleepconcierge?ref=camp_snooze_website" target="_blank" rel="noopener" data-camp-inquiry="instagram" data-camp-inquiry-placement="floating_panel">Message us on Instagram</a>
+    <a class="ci-email" href="mailto:camp@joinsnooze.com?subject=Question%20about%20Camp%20Snooze" data-camp-inquiry="email" data-camp-inquiry-placement="floating_panel">Prefer email? Write to the Camp team</a>
+    <small>Messenger or Instagram opens separately, so your place in the video is kept. You may need to sign in.</small>
+  </div>
+</details>
+<script>
+(function(){
+  'use strict';
+  var widget=document.getElementById('camp-inquiry-widget');
+  var inline=document.getElementById('camp-inquiry-inline');
+  if(!widget||widget.dataset.ready)return;
+  widget.dataset.ready='true';
+  var summary=widget.querySelector('summary');
+  var videoSection=document.querySelector('.camp-main-vsl');
+  if(videoSection&&inline)videoSection.appendChild(inline);
+  function closePanel(){widget.open=false;summary.focus();}
+  widget.querySelector('.ci-close').addEventListener('click',closePanel);
+  widget.addEventListener('keydown',function(event){if(event.key==='Escape'&&widget.open){event.preventDefault();closePanel();}});
+  document.addEventListener('click',function(event){if(widget.open&&!widget.contains(event.target))widget.open=false;});
+  document.querySelectorAll('[data-camp-inquiry]').forEach(function(link){
+    link.addEventListener('click',function(){
+      window.dataLayer=window.dataLayer||[];
+      window.dataLayer.push({event:'camp_inquiry_click',inquiry_channel:link.dataset.campInquiry,inquiry_placement:link.dataset.campInquiryPlacement});
+    });
+  });
+})();
+</script>
