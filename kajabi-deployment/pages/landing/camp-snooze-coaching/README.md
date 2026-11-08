@@ -1,51 +1,38 @@
-# Camp Snooze Kajabi landing page
+# Camp Snooze VSL landing page
 
-Saved in Kajabi as a draft on October 24, 2026. No public launch, traffic or shared-theme changes.
+Owner: Kade. Published and verified November 09, 2026. Current content release: `website-v1.6.46`.
 
-- [Page settings: 2152355854](https://app.kajabi.com/admin/landing_pages/2152355854/edit)
-- [Theme builder: 2168014017](https://app.kajabi.com/admin/themes/2168014017/settings/edit)
-- Future public path: https://www.joinsnooze.com/camp-snooze-coaching
-- Deployment commit: `90e7f88d6`; release tag: `website-v1.6.22`.
+- [Live page](https://www.joinsnooze.com/camp-snooze-coaching)
+- [Page settings 2152355854](https://app.kajabi.com/admin/landing_pages/2152355854/edit)
+- [Theme 2168014017](https://app.kajabi.com/admin/themes/2168014017/settings/edit)
+- [Main booking page](https://www.joinsnooze.com/camp-snooze-sleep-coaching)
 
-## Package
+## Source and deployment
 
-`index.html` is the single custom-code block with complete System Initialization CSS, page HTML, canonical inline footer and fit-check JavaScript. Top-level custom CSS and JS fields stay blank to avoid duplicate execution. `theme-payload.json` sets full-width Nova layout, zero padding and hidden native header, footer and modals. Nova v0.2.7 uses boolean `full_width`; this follows its live authoring schema rather than the older Encore string settings.
+`index.html` is the current, self-contained page: CSS, HTML, VSL embed, review wall and inline footer. `theme-payload.json` contains the same code under `sections.camp-vsl-1792800000.blocks.camp-code.settings.code`. Keep these identical. Top-level custom CSS and JavaScript stay blank. The page renders one code section, with native header/footer suppressed to avoid duplicates.
 
-Rebuild from the repository root:
+The generator at `apps/snooze-website/src/camp-vsl/build.py` and its local page/media manifest describe the superseded short-video draft. **Do not run that generator over this release.** It would restore obsolete media and finder markup. Edit the deployed source here and update the matching payload field deterministically. The paused finder has no rendered form or runtime and this page collects no leads. Booking buttons route to the main page’s live dates and pricing.
 
-```sh
-python3 apps/snooze-website/src/camp-vsl/build.py
-```
+Follow `apps/snooze-website/docs/DEPLOYMENT-CHECKLIST.md` and `docs/technical/KAJABI-SURFACE-CODE-SETUP.md` within the website app. Changes to a published Kajabi theme take effect immediately. Read current live settings first, preserve a private preimage, validate in hidden Kajabi staging, commit/tag, deploy and compare persisted plus anonymous rendered content. Restore temporary staging code after review.
 
-The generator uses the reviewed local page and media manifest. Video and poster are hosted on the existing R2 media domain with immutable content-derived paths. Public asset bytes matched the uploaded files. Captions are embedded as a VTT Blob because the media host does not supply cross-origin caption headers. The fit check stores no answers and submits no leads.
+## Video hosting
 
-## Verification
+The final master is `camp-main-v07.mp4`, 226,912,138 bytes, 455.12 seconds (7:35). SHA-256: `d487f90a4f526bbfb8419babe80b6c0b35b0472fa4692e4b4506f047f1c627a9`.
 
-- All repository pre-commit hooks passed; no bypass. Hook findings for content hashes and an HTML comment were resolved before commit.
-- Placeholder scanner, JavaScript syntax and git whitespace checks passed.
-- Environment validator passed after loading umbrella `.env` and using the existing anonymous Supabase key alias. No credentials copied into this worktree.
-- Kajabi readback exactly matched the generated code. Render order contains only the Camp section. Native header and footer are hidden. Metadata readback confirmed draft, no publish date and hidden from search.
-- Packaged block rendered locally at 1440px and 320px without overflow. Images decoded. Hosted video playback advanced with no media error. All 13 caption cues loaded.
-- Empty-selection validation and all six fit-check paths passed, including restart. No browser JavaScript errors.
-- Linkinator's first directory scan treated relative footer URLs as local paths. A second scan resolved those links against the production domain: all public marketing pages and media returned 200. Four member destinations returned 403 (`/login`, `/library`, `/snooze-library`, `/products/communities/v2/snooze`), so their authenticated availability remains unverified.
-- Evidence: `docs/projects/camp-full-funnel-buildout/4_working/vsl-landing-2026-10-23/kajabi-review/`.
+[Kajabi Media Library asset 5221719](https://app.kajabi.com/admin/media_library/assets/5221719), now named Camp Snooze VSL_2611, owns this upload. Both Camp pages use its Kajabi-managed Wistia player `ud1nugmerp`. English captions were uploaded from the final SRT. No separate Wistia account was created. Kajabi uses Wistia for video encoding and delivery: [Kajabi documentation](https://help.kajabi.com/en/articles/17174547-upload-videos-to-course-lessons).
 
-## Release boundary and remaining review
+The library asset currently reports zero Locations, while its player ID exactly matches the live page. The custom-code embed is not appearing in that native usage list. Do not treat that asset as unused or delete it based on Locations. No native placement was added solely to make the counter change.
 
-This is saved draft content, not a public deployment. The signed-in Kajabi visual preview is still unverified: no authenticated Kajabi browser session was available and the anonymous draft URL returned 404. The repository forbids automated admin navigation: `apps/snooze-website/AGENTS.md`, section "Parallel live deploy + the two Kajabi WAF walls". Open the theme builder in a signed-in session to check the Nova outer wrapper before approving launch. The short Camp video remains a review asset; obtain public-use approval before launch.
+## Approved content
 
-Planning procedure: `docs/operations/BUSINESS-DEVELOPMENT-PLANNING.md`. This acquisition page routes qualified visitors to existing Camp dates and pricing. Kade owns the release decision. Do not change paid traffic, offers or cohort access as part of this page build.
+The hero uses Kade’s exact 100+ families wording. Eligibility remains 5 months plus in the body/FAQ. Labels and review copy use readable DM Sans. Decorative crescents respect reduced-motion preferences. Onboarding copy tells parents to watch the modules before Camp starts.
 
-Rollback: leave the page in draft and restore `theme-before.json` through `update_theme_content`, including its original render order and visible chrome. That restores the blank theme; the unused Camp section may remain stored but will not render. Do not delete shared media objects.
+The included Snooze Membership month starts on the Friday before Camp and covers the two-week Camp. It then continues at the discounted rate; parents can cancel ongoing membership anytime. Kade explicitly confirmed this wording. Prices, offers, entitlement and billing settings were not changed.
 
-Work is isolated in the managed `camp-vsl-kajabi` worktree because the main checkout has unrelated unresolved merge work. Do not overwrite or merge through that work without resolving it separately.
+There are 34 review placements: the opening Jade excerpt, two supporting excerpts and the 31-review wall. Each uses one paragraph, consistent upright typography, an in-paragraph highlight, attribution and the Google logo. The opening disclaimer was removed at Kade’s request. Review wording remains excerpted from the existing Google review corpus. The final VSL remained unchanged during the copy revisions.
 
-## October 28, 2026 draft refresh
+## Verification and rollback
 
-Kade authorised updating this existing draft with the latest local page changes while keeping it unpublished. Saved the revised styling, approved counsellor portraits and 31-review wall. Haley C.'s 5.5-month review is excluded. The short hosted review video remains pending Sally's new recording.
+See [session closeout](RELEASE-CLOSEOUT-2026-11-09.md), [Sally feedback log](SALLY-FEEDBACK-RELEASE-2026-11-09.md) and [final readback receipt](final-readback-2026-11-09.json). `release-receipt-2026-11-09.json` records the initial VSL publication, not the final copy revision. Earlier October draft states are historical.
 
-Release tag: `website-v1.6.26`, commit `97c709a73`. Lossless preimage: `kajabi-deployment/_live-preimages/camp-snooze-coaching/2026-10-28-theme.json`. Kajabi readback matched all 79,869 characters of the code block exactly. The sole render section remains `camp-vsl-1792800000`. Page metadata confirmed draft, null publication date and hidden from search after saving. Theme updated at `2026-10-28T05:15:54Z`.
-
-Placeholder, environment, JavaScript syntax, package-integrity and anchor checks passed. All pre-commit hooks passed. Current public marketing destinations, images, video and font stylesheet returned HTTP 200. Four authenticated member destinations return 403 to anonymous curl, as before. Font preconnect roots return 404 when requested as documents; those are connection hints, not page links. No signed-in rendered Kajabi preview was inspected in this update. Open the design editor above to review this saved revision.
-
-The first write rejected a retired `nova-intro` stub. No save occurred from that attempt. The generator now omits the retired stub; the corrected write and full readback succeeded.
+For a recent content rollback, restore `index.html` and its matching payload from the chosen prior `website-v*` tag, validate and redeploy the code block. The full pre-session draft is preserved in `../../../_live-preimages/camp-snooze-coaching/2026-11-09-theme.json`; restoring it also restores the paused draft content, so return the page to draft if rolling back the full launch. Preserve the media asset and do not change shared website themes.

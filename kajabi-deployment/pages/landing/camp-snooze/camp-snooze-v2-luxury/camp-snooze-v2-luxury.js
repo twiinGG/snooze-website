@@ -58,18 +58,9 @@ window.CampCapacityWidget = (function () {
 
   function closeLabel(value) {
     if (!value) return '';
-    const parts = new Intl.DateTimeFormat('en-AU', {
-      timeZone: 'Australia/Melbourne',
-      weekday: 'long', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true
-    }).formatToParts(new Date(value));
-    const get = function (type) {
-      const part = parts.find(function (p) { return p.type === type; });
-      return part ? part.value : '';
-    };
-    const month = CAMP_MONTHS[parseInt(get('month'), 10) - 1] || get('month');
-    const period = (get('dayPeriod') || '').toLowerCase().replace(/\s|\./g, '');
-    return get('weekday') + ' ' + parseInt(get('day'), 10) + ' ' + month +
-      ', ' + parseInt(get('hour'), 10) + ':' + get('minute') + period + (new Intl.DateTimeFormat('en', { timeZone: 'Australia/Melbourne', timeZoneName: 'shortOffset' }).formatToParts(new Date(value)).some(function (part) { return part.type === 'timeZoneName' && part.value === 'GMT+11'; }) ? ' AEDT / UTC+11' : ' AEST / UTC+10');
+    return new Intl.DateTimeFormat('en-AU', {
+      timeZone: 'Australia/Melbourne', weekday: 'long', day: 'numeric', month: 'short'
+    }).format(new Date(value)).replace(',', '');
   }
 
   function countdownLabel(value, nowMs) {
@@ -127,7 +118,6 @@ window.CampCapacityWidget = (function () {
       '<h3>Camp Snooze #' + cohort.cohort_number + '</h3>' +
       '<p class="camp-capacity-date">Starts ' + dateLabel(cohort.start_date) + '</p>' +
       
-      (cohort.access_friday ? '<p class="camp-capacity-access">Snooze access opens ' + dateLabel(cohort.access_friday) + '</p>' : '') +
       (isAvailable && closes ? '<p class="camp-capacity-close">Intake closes ' + closes + '</p>' : '') +
       (isAvailable && countdown ? '<p class="camp-capacity-countdown" data-camp-countdown data-close-at="' + cohort.checkout_close_at + '">' + countdown + '</p>' : '') +
       (availability ? '<p class="camp-capacity-places">' + availability + '</p>' : '') + action + '</article>';

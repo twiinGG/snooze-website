@@ -80,15 +80,16 @@ assert.match(minutes, /Closes in 40 minutes/);
 const past = await render([cohort(16, 'open', { checkout_close_at: '2026-08-24T12:00:00+10:00' })], now);
 assert.doesNotMatch(past, /camp-capacity-countdown/);
 
-// Show the stored deadline in Melbourne's actual timezone without moving the cutoff.
+// Show the deadline date in Melbourne time, without the time and timezone labels.
 // 2026-10-22T13:59:59Z is 00:59 AEDT the next day. The label must
-// convert the stored instant, including the local date rollover.
+// preserve the local date rollover, even though only the date is displayed.
 const summer = await render([cohort(19, 'open', {
   start_date: '2026-10-26',
   access_friday: '2026-10-23',
   checkout_close_at: '2026-10-22T13:59:59.000Z',
 })], Date.parse('2026-10-20T12:00:00+10:00'));
-assert.match(summer, /Intake closes Friday 23 Oct, 12:59am AEDT \/ UTC\+11/);
+assert.match(summer, /Intake closes Friday 23 Oct<\/p>/);
+assert.doesNotMatch(summer, /12:59am|AEDT|UTC\+11|camp-capacity-access/);
 assert.doesNotMatch(summer, /Melbourne/);
 assert.doesNotMatch(summer, /Intake closes Thursday/);
 
