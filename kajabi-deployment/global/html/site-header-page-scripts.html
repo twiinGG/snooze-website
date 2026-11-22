@@ -2789,3 +2789,110 @@ document.addEventListener('DOMContentLoaded', function () {
     window.SnoozeCheckoutIdentity = { send: send, hash: sha256Hex, currentEmail: currentEmail };
   })();
 </script>
+
+<script>
+void "CMI-001 native website enquiry chat; public marketing surfaces only.";
+(function () {
+  'use strict';
+
+  function loadChat() {
+    var location = window.location;
+    var host = location.hostname.toLowerCase();
+    var preview = /^(localhost|127\.0\.0\.1)$/.test(host);
+    var publicHost = /^(www\.)?joinsnooze\.com$/.test(host);
+    var kajabiPreview = false;
+    if (host === 'joinsnooze.mykajabi.com') {
+      var previewThemes = new URLSearchParams(location.search).getAll('preview_theme_id');
+      kajabiPreview = previewThemes.length === 1 && /^[0-9]+$/.test(previewThemes[0]);
+    }
+    var path;
+    try { path = decodeURIComponent(location.pathname).toLowerCase(); }
+    catch (error) { return; }
+
+    // Site scripts may propagate beyond marketing pages. Fail closed there.
+    var excluded = /(?:^|\/)(?:checkouts?|offers?|products?|courses?|lessons?|members?|library|communities|community|admin|auth|accounts?|settings|billing|purchases?|payments?|login|logout|sign[-_]?in|sign[-_]?up|register|registration|password[^/]*|reset[-_]?password|thankyou|thank-you|confirm(?:ation)?)(?:\/|$)/;
+    if (excluded.test(path) || /(?:^|[-/])(?:checkout|thank-you|thankyou|confirm|confirmation)(?:[-/]|$)/.test(path)) return;
+    // Encore's public index markers are observed on both live Camp and home.
+    // Unknown hosts, custom/member themes and unrecognised surfaces stay inert.
+    if (!preview && ((!publicHost && !kajabiPreview) || !document.querySelector('body#encore-theme') ||
+      !document.querySelector('[data-content-for-index]'))) return;
+
+    // Never add a second bootstrap, including when a legacy embed already exists.
+    if (window.SnoozeChat || window.__snoozeChatLoaded ||
+      document.querySelector('script[src^="https://embed.tawk.to/"]')) return;
+
+    var campPage = /^\/camp(?:[-/]|$)/i.test(path) ||
+      Boolean(document.querySelector('#camp-vsl-page'));
+    var widget = campPage ? '1k71ek3h1' : '1k71j9h7k';
+    var api = window.Tawk_API = window.Tawk_API || {};
+    var previousOnLoad = api.onLoad;
+    var pendingOpen = false;
+    var timer;
+    var chat = window.SnoozeChat = { state: 'loading', open: openChat };
+
+    function setState(state) {
+      chat.state = state;
+      document.dispatchEvent(new CustomEvent('snooze:chat-state', { detail: { state: state } }));
+    }
+
+    function fail() {
+      pendingOpen = false;
+      window.clearTimeout(timer);
+      setState('failed');
+    }
+
+    function openChat() {
+      if (chat.state === 'failed') return false;
+      if (chat.state !== 'ready') {
+        pendingOpen = true;
+        return true;
+      }
+      try {
+        // Tawk documents these methods for use after onLoad (widget rendered).
+        if (typeof api.showWidget !== 'function' || typeof api.maximize !== 'function') {
+          fail();
+          return false;
+        }
+        api.showWidget();
+        api.maximize();
+        return true;
+      } catch (error) {
+        fail();
+        return false;
+      }
+    }
+
+    api.onLoad = function () {
+      try {
+        if (typeof previousOnLoad === 'function') previousOnLoad.apply(this, arguments);
+      } finally {
+        window.clearTimeout(timer);
+        setState('ready');
+        if (pendingOpen) {
+          pendingOpen = false;
+          openChat();
+        }
+      }
+    };
+
+    var script = document.createElement('script');
+    window.__snoozeChatLoaded = true;
+    window.Tawk_LoadStart = new Date();
+    script.async = true;
+    script.src = 'https://embed.tawk.to/6af268f81f19073c43a64ed4/' + widget;
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    script.onerror = fail;
+    // Blockers can suppress both the request and its error event.
+    timer = window.setTimeout(fail, 15000);
+    try { document.head.appendChild(script); }
+    catch (error) { fail(); }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChat, { once: true });
+  } else {
+    loadChat();
+  }
+}());
+</script>

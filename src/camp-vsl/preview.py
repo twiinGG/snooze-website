@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 ROOT = Path(__file__).resolve().parent
-BUILT = ROOT.parents[1] / 'kajabi-deployment/pages/landing/camp-snooze-coaching'
+BUILT = ROOT.parents[1] / 'kajabi-deployment/_retired/landing-camp-snooze-coaching'
 MEDIA = Path.home() / 'Documents/Projects/The Sleep Concierge/snooze-OS-media-library/meta-ads/2026-10-18/creative-proposals/videos'
 FILES = {
     '/camp-vsl-media/how-camp.mp4': MEDIA / 'how-camp-4x5.mp4',

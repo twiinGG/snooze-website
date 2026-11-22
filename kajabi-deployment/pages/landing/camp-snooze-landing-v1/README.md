@@ -3,6 +3,8 @@
 The original Camp booking page, "Welcome to Camp Snooze". Folder renamed from `camp-snooze/camp-snooze-v2-luxury/` on November 22, 2026; its CSS and JS were renamed from `camp-snooze-v2-luxury.*` to `camp-snooze-landing-v1.*` (same content). The new VSL page is `../camp-snooze-landing-v2/`. The waitlist next-steps page moved to `../camp-snooze-waitlist-next-steps/`, the pricing mockup and old briefs to `apps/snooze-website/docs/camp-snooze-reference/`, and the Camp email templates to `kajabi-deployment/sequences/camp-snooze-email-templates/`.
 
 
+Current November 09, 2026 release: see [release log](RELEASE-2026-11-09.md) and the [session closeout](../../camp-snooze-coaching/RELEASE-CLOSEOUT-2026-11-09.md). The release log supersedes older copy and display instructions below.
+
 ## File map
 
 | File | Purpose |

@@ -3,15 +3,17 @@ const fs = require('node:fs');
 const path = require('node:path');
 const pricing = require('./pricing.js');
 
-const camp = path.resolve(__dirname, '..');
-const oldDir = path.resolve(camp, '../../kajabi-deployment/pages/landing/camp-snooze-landing-v1');
-const oldJs = fs.readFileSync(path.join(oldDir, 'camp-snooze-landing-v1.js'), 'utf8');
+const builtDir = path.resolve(__dirname, '..');
+const oldDir = path.resolve(builtDir, '../camp-snooze/camp-snooze-v2-luxury');
+const oldJs = fs.readFileSync(path.join(oldDir, 'camp-snooze-v2-luxury.js'), 'utf8');
 const oldHtml = fs.readFileSync(path.join(oldDir, 'camp-snooze-landing-page-blocks.html'), 'utf8');
-const newHtml = fs.readFileSync(path.join(camp, 'index.html'), 'utf8');
-const builtDir = path.resolve(camp, '../../kajabi-deployment/_retired/landing-camp-snooze-coaching');
 const builtHtml = fs.readFileSync(path.join(builtDir, 'index.html'), 'utf8');
 const builtCss = fs.readFileSync(path.join(builtDir, 'camp-snooze-coaching.css'), 'utf8');
 const builtJs = fs.readFileSync(path.join(builtDir, 'camp-snooze-coaching.js'), 'utf8');
+const pricingSource = fs.readFileSync(path.join(__dirname, 'pricing.js'), 'utf8').trim();
+const mediaRoot = process.env.SNOOZE_MEDIA_ROOT || '/Users/kadegreenland/Documents/Projects/The Sleep Concierge/snooze-OS-media-library';
+const captionsPath = path.join(mediaRoot, 'website/camp-vsl-clip-2026-10-24/captions.vtt');
+const captions = fs.existsSync(captionsPath) ? fs.readFileSync(captionsPath, 'utf8') : null;
 const payload = JSON.parse(fs.readFileSync(path.join(builtDir, 'theme-payload.json'), 'utf8'));
 
 let count = 0;
@@ -28,7 +30,7 @@ function test(name, fn) {
 
 function priceTuples(html) {
   const out = new Set();
-  const re = /<span class="dynamic-price"([^>]*)>/g;
+  const re = /<span class="(?:[\w-]+ )?dynamic-price"([^>]*)>/g;
   let m;
   while ((m = re.exec(html))) {
     const attr = (n) => { const x = new RegExp(n + '="([^"]*)"').exec(m[1]); return x ? x[1] : ''; };
@@ -48,25 +50,27 @@ test('config matches old page source (checkout bases, feed, key)', () => {
   assert.match(pricing.CONFIG.audCheckoutUrl, /\/offers\/[^/?#]+\/checkout$/);
 });
 
-test('every price on the new page exists on the old page with identical data-usd/data-aud/period values', () => {
+test('every price on the page exists on the old page with identical data-usd/data-aud/period values', () => {
   const oldSet = priceTuples(oldHtml);
-  const newSet = priceTuples(newHtml);
-  assert.ok(newSet.size >= 4);
+  const newSet = priceTuples(builtHtml);
+  assert.ok(newSet.size >= 3);
   for (const t of newSet) assert.ok(oldSet.has(t), 'not on old page: ' + t);
   const flat = [...newSet].join(' ');
-  for (const needle of ['690|997', '3500|5250', '79|119', '39.50|59.50']) assert.ok(flat.includes(needle), needle);
+  for (const needle of ['690|997', '3500|5250', '39.50|59.50']) assert.ok(flat.includes(needle), needle);
 });
 
-test('built page: markup only, price tuples intact, no link to the old pricing section', () => {
-  assert.deepEqual([...priceTuples(builtHtml)].sort(), [...priceTuples(newHtml)].sort());
-  for (const text of [newHtml, builtHtml, builtJs]) assert.ok(!/camp-snooze-sleep-coaching#pricing-section/.test(text));
-  assert.ok(builtHtml.includes('id="camp-pricing"'));
+test('built html is markup only, links to its own pricing section and keeps the footer', () => {
   assert.ok(!/<style|<script/i.test(builtHtml));
   assert.ok(!/<style|<script/i.test(builtCss + builtJs));
-  assert.ok(builtJs.includes('CampPricing'));
-  assert.ok(!builtJs.includes('pricing/pricing.js'));
-  assert.ok(builtCss.includes('#camp-vsl-page .snooze-container') && builtCss.includes('#camp-vsl-page .pricing{'));
+  for (const text of [builtHtml, builtJs]) {
+    assert.ok(!/camp-snooze-sleep-coaching#pricing-section/.test(text));
+    assert.ok(!/camp-snooze-sleep-coaching#camp-value/.test(text));
+  }
+  assert.ok(builtHtml.includes('id="camp-pricing"'));
+  assert.ok(builtHtml.includes('href="#camp-pricing"'));
   assert.ok(builtHtml.includes('snooze-footer-clean'));
+  assert.ok(builtCss.includes('#camp-vsl-page .snooze-container') && builtCss.includes('#camp-vsl-page .pricing{'));
+  assert.ok(!builtCss.includes('/*') && !builtJs.includes('/*'));
 });
 
 test('theme payload carries css, js and the markup-only block', () => {
@@ -76,12 +80,35 @@ test('theme payload carries css, js and the markup-only block', () => {
   assert.equal(code, builtHtml);
 });
 
-test('built js is valid and guards: runs once, waits for DOM and root', () => {
+test('built js embeds pricing.js verbatim and the captions file, injects Wistia, guards double runs', () => {
   new (require('node:vm').Script)(builtJs);
+  assert.ok(builtJs.includes(pricingSource));
+  if (captions) assert.ok(builtJs.includes(JSON.stringify(captions).replace(/</g, '\\u003c')));
+  else assert.ok(builtJs.includes('WEBVTT'));
   assert.ok(builtJs.includes("root.dataset.campReady"));
   assert.ok(builtJs.includes('DOMContentLoaded'));
   assert.ok(builtJs.includes('MutationObserver'));
   assert.ok(builtJs.includes('data-pricing-ready'));
+  assert.ok(builtJs.includes('https://fast.wistia.com/assets/external/E-v1.js'));
+  assert.ok(builtJs.includes('createObjectURL'));
+});
+
+test('Kade rulings: no qualifying lines, hero video and copy, 34 Google reviews, clip in How it works', () => {
+  for (const phrase of ['Your answers stay on this page', "One parent", 'Shared experiences', 'Individual results vary', 'word for word',
+    'Review the current price', 'One camp at a time', 'does not confirm suitability', 'Prefer to read']) {
+    assert.ok(!builtHtml.includes(phrase) && !builtJs.includes(phrase), phrase);
+  }
+  assert.ok(builtHtml.includes('Read the reviews from previous Camp participants'));
+  assert.ok(builtHtml.includes('wistia_async_ud1nugmerp'));
+  assert.ok(builtHtml.includes('<p class="duration">How Camp works · 8 minutes</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily roll call. It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
+  assert.ok(builtHtml.includes('Join over 100+ families'));
+  assert.equal((builtHtml.match(/<blockquote><p>/g) || []).length, 34);
+  assert.equal((builtHtml.match(/googleg_48dp\.png/g) || []).length, 34);
+  assert.ok(builtHtml.includes('A look inside Camp · 29 seconds'));
+  assert.ok(builtHtml.includes('how-camp-4x5.mp4') && builtHtml.includes('how-camp-4x5-poster.jpg'));
+  assert.ok(builtHtml.indexOf('rhythm-film') > builtHtml.indexOf('id="how-camp-works"') && builtHtml.indexOf('rhythm-film') < builtHtml.indexOf('id="camp-pricing"'));
+  assert.ok(builtHtml.includes('Friday before Camp'));
+  assert.ok(builtHtml.includes('Cancel ongoing membership anytime'));
 });
 
 test('price formatting matches old formatPriceNum', () => {

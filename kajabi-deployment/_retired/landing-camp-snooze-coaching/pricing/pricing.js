@@ -319,7 +319,7 @@
       '<p class="cap-line">Starts ' + esc(dateLabel(cohort.start_date)) + '</p>' +
       (call ? '<p class="cap-line" data-camp-first-call>First roll call: ' + esc(call.text) + '</p>' +
         (call.overnight ? '<p class="cap-note" data-camp-overnight>' + OVERNIGHT_NOTE + '</p>' : '') : '') +
-      (cohort.access_friday ? '<p class="cap-line">Snooze access opens ' + esc(dateLabel(cohort.access_friday)) + '</p>' : '') +
+      (cohort.access_friday ? '<p class="cap-line">Included Snooze Membership starts ' + esc(dateLabel(cohort.access_friday)) + '</p>' : '') +
       (available && closes ? '<p class="cap-line cap-close">Intake closes ' + esc(closes) + '</p>' : '') +
       (available && countdown ? '<p class="cap-line cap-countdown" data-camp-countdown data-close-at="' + esc(cohort.checkout_close_at) + '">' + esc(countdown) + '</p>' : '') +
       (availability ? '<p class="cap-places">' + availability + '</p>' : '') + action + '</article>';

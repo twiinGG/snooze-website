@@ -2,7 +2,7 @@
 
 # Camp Snooze VSL landing page
 
-Current state and deploy shape: see `../../kajabi-deployment/_retired/landing-camp-snooze-coaching/README.md` (three paste targets: theme Custom CSS, theme Custom JS, markup-only block). `pricing/` holds the dates, pricing and local call-time logic and its tests. The sections below record the October draft.
+Superseded October draft source and generator. The Camp page paste source is `../../kajabi-deployment/pages/landing/camp-snooze-landing-v2/` (live at /camp-snooze-program); the /camp-snooze-coaching copy is retired to `../../kajabi-deployment/_retired/landing-camp-snooze-coaching/`. The sections below record the October draft.
 
 Local draft prepared October 23, 2026. Owner: Kade Greenland.
 

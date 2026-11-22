@@ -1174,33 +1174,47 @@ body.currency-loaded .dynamic-price {
   }
 }
 
-@media (max-width: 600px) {
-  .camp-sales-hero { padding-top: 1.5rem !important; }
-  .camp-sales-hero .waving-flags { display: none !important; }
-  .camp-sales-hero > .camp-container > div > .font-display { font-size: 1.5rem !important; }
-  .camp-sales-hero h1 { font-size: 2.75rem !important; }
-  .camp-sales-hero .camp-hero-next { margin-bottom: 1rem; }
-}
+.camp-proof-heading{font-family:var(--font-body);font-size:1.125rem;font-weight:600;line-height:1.5;color:var(--camp-forest);margin:0 auto 1.5rem;text-align:center;text-shadow:none}
+.camp-value-intro{max-width:44rem;margin:0 auto 2rem;text-align:center}
+.camp-value-intro h2{font-size:clamp(2rem,5vw,2.75rem);font-weight:700;line-height:1.12;color:var(--camp-forest);margin-bottom:1rem}
+.camp-value-intro p{font-size:1.05rem;line-height:1.7;color:var(--muted-foreground);margin-bottom:1.25rem}
+.camp-value-card{max-width:54rem;margin:0 auto;border:1px solid hsl(140,25%,75% / .5);border-radius:1.25rem;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft)}
+.camp-value-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.95rem;line-height:1.5;color:var(--foreground)}
+.camp-value-table th,.camp-value-table td{padding:1rem 1.25rem;text-align:left;vertical-align:top;border-bottom:1px solid hsl(140,25%,75% / .4);overflow-wrap:break-word}
+.camp-value-table thead th{font-weight:700;color:var(--camp-forest);background:#f4f4ed}
+.camp-value-table th:first-child{width:36%}
+.camp-value-table tbody th{font-weight:500}
+.camp-value-table th:nth-child(3),.camp-value-table td:nth-child(3){background:#edf3eb}
+.camp-value-table tbody td:nth-child(3){color:var(--camp-forest);font-weight:600}
+.camp-value-price{display:block;font-size:1.7rem;font-weight:700;line-height:1.2;margin-top:.65rem;letter-spacing:-.03em}
+.camp-value-bonus{padding:1.25rem 1.5rem;background:var(--camp-forest);color:var(--camp-cream);line-height:1.65}
+.camp-value-bonus strong{font-size:1.05rem}
+.camp-value-bonus p{font-size:.95rem;margin:.35rem 0 0;color:var(--camp-cream)}
+.camp-value-takeaway{max-width:44rem;margin:1.5rem auto .75rem;font-size:1.2rem;font-weight:600;line-height:1.5;color:var(--camp-forest);text-align:center}
+.camp-value-terms{max-width:44rem;margin:0 auto;font-size:.9rem;line-height:1.7;color:var(--muted-foreground);text-align:center}
+.camp-value-cta{text-align:center;margin-top:2rem}
+.camp-value-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){.camp-value-table{font-size:.8rem;line-height:1.45}.camp-value-table th,.camp-value-table td{padding:.85rem .65rem}.camp-value-table th:first-child{width:35%}.camp-value-price{font-size:1.2rem;letter-spacing:-.04em}.camp-value-price-note{font-size:.72rem}.camp-value-bonus{padding:1.1rem}.camp-value-takeaway{font-size:1.05rem}.camp-proof-heading{font-size:1.1rem}}
 
-#camp-wall{background:var(--camp-cream,#f7f4ee);padding:5rem 0}
-#camp-wall .cw-intro{text-align:center;max-width:44rem;margin:0 auto 2.5rem;padding:0 1rem}
-#camp-wall .cw-kicker{font-family:'Satisfy',cursive;font-size:1.75rem;color:hsl(36,72%,36%);margin:0 0 .25rem}
-#camp-wall h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,2.75rem);font-weight:700;color:var(--camp-forest,#295641);margin:0 0 .75rem;line-height:1.1}
-#camp-wall .cw-sub{font-family:'DM Sans',sans-serif;color:hsl(150,15%,36%);font-size:1.05rem;margin:0}
-#camp-wall .cw-grid{max-width:72rem;margin:0 auto;padding:0 1.25rem;columns:3 18rem;column-gap:1.25rem}
-#camp-wall .cw-card{break-inside:avoid;margin:0 0 1.25rem;background:#fff;border-radius:1rem;padding:1.4rem 1.5rem 1.2rem;box-shadow:0 10px 26px -14px hsl(150 25% 20% / .35);font-family:'DM Sans',sans-serif}
-#camp-wall .cw-stars{color:hsl(38,70%,52%);letter-spacing:.15em;font-size:1rem;margin-bottom:.6rem}
-#camp-wall blockquote{margin:0}
-#camp-wall blockquote p{margin:0;color:hsl(150,25%,18%);font-size:1rem;line-height:1.6}
-#camp-wall .cw-head{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--camp-forest,#295641);line-height:1.2;margin:0 0 .5rem!important}
-#camp-wall strong{font-weight:700;color:var(--camp-forest,#295641);background:linear-gradient(transparent 60%,hsl(38 70% 88%) 60%)}
-#camp-wall figcaption{margin-top:.9rem;display:flex;flex-direction:column;gap:.1rem}
-#camp-wall .cw-name{font-weight:700;color:hsl(150,25%,18%);font-size:.95rem}
-#camp-wall .cw-src{color:hsl(150,15%,36%);font-size:.82rem}
-#camp-wall .cw-more{display:none}
-#camp-wall.is-open .cw-more{display:block}
-#camp-wall .cw-actions{text-align:center;margin-top:1.5rem}
-#camp-wall .cw-toggle{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;color:var(--camp-forest,#295641);background:#fff;border:2px solid var(--camp-forest,#295641);border-radius:999px;padding:.8rem 1.8rem;cursor:pointer}
-#camp-wall .cw-toggle:hover{background:hsl(140,25%,92%)}
-#camp-wall.is-open .cw-toggle{display:none}
-@media(max-width:640px){#camp-wall{padding:3.5rem 0}#camp-wall .cw-grid{columns:1}}
+.camp-proof-heading{margin-bottom:.5rem}
+.camp-proof-stars{font-size:1.3rem;letter-spacing:.18em;line-height:1.5;margin:0 0 1.5rem;text-align:center}
+.camp-main-vsl{max-width:54rem;margin:0 auto 3rem;text-align:center}
+.camp-main-vsl h2{font-size:clamp(1.65rem,4vw,2.25rem);font-weight:700;line-height:1.2;color:var(--camp-forest);margin:0 0 1.25rem}
+.camp-main-vsl-player{width:100%;min-width:0;aspect-ratio:16/9;overflow:hidden;border-radius:1rem;background:var(--camp-forest);box-shadow:var(--shadow-soft)}
+
+.camp-value-caption{caption-side:top;text-align:left;font-family:var(--font-heading);font-size:1.75rem;font-weight:700;line-height:1.2;color:var(--camp-forest);padding:1.25rem}
+.camp-value-tick{display:inline-flex;width:1.6rem;height:1.6rem;align-items:center;justify-content:center;border-radius:50%;background:var(--camp-forest);color:var(--camp-cream);font-size:1.05rem;font-weight:700;line-height:1}
+.camp-value-table tfoot th,.camp-value-table tfoot td{border-top:2px solid hsl(140,25%,75% / .6);border-bottom:0;vertical-align:middle}
+.camp-value-table tfoot th{font-weight:700;color:var(--camp-forest)}
+.camp-value-table tfoot .camp-value-price{margin-top:0}
+@media(max-width:600px){.camp-value-caption{padding:1.1rem .85rem;font-size:1.5rem}}
+
+@media (max-width: 767px) {
+  .camp-closing {
+    padding-bottom: calc(10rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sticky-cta {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+}
