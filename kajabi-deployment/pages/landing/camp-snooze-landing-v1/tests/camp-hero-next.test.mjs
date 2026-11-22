@@ -30,7 +30,7 @@ globalThis.document = {
   querySelector: (selector) => (selector === '[data-camp-hero-next]' ? hero : null),
 };
 
-await import('../camp-snooze-v2-luxury.js?hero-next-test');
+await import('../camp-snooze-landing-v1.js?hero-next-test');
 
 function cohort(number, state, extra) {
   return Object.assign({

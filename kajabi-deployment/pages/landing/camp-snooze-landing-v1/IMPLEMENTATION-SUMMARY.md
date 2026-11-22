@@ -35,8 +35,8 @@ This implementation introduces a simplified, conversion-optimized pricing experi
 |------|---------|
 | `camp-snooze-landing-page-blocks.html` | **Checkout mode:** CTAs to checkout, pricing section, currency toggle, countdown |
 | `camp-snooze-landing-page-blocks-waitlist.html` | **Waitlist mode:** CTAs to #waitlist-section, waitlist form embed, no pricing/checkout |
-| `camp-snooze-v2-luxury.css` | Shared styles for both landing versions |
-| `camp-snooze-v2-luxury.js` | Shared JS; detects waitlist vs checkout (data-camp-mode / #waitlist-section) and injects appropriate sticky CTA, runs countdown only in checkout mode |
+| `camp-snooze-landing-v1.css` | Shared styles for both landing versions |
+| `camp-snooze-landing-v1.js` | Shared JS; detects waitlist vs checkout (data-camp-mode / #waitlist-section) and injects appropriate sticky CTA, runs countdown only in checkout mode |
 
 ### Checkout Page Files
 | File | Purpose | Lines |
@@ -261,9 +261,9 @@ const COUNTDOWN_DEADLINE = new Date('2026-01-10T00:00:00+11:00').getTime();
 2. Add Custom Code Block to page
 3. Paste contents of `camp-snooze-landing-page-blocks.html`
 4. In Page Settings → Custom CSS:
-   - Paste contents of `camp-snooze-v2-luxury.css`
+   - Paste contents of `camp-snooze-landing-v1.css`
 5. In Page Settings → Custom JavaScript:
-   - Paste contents of `camp-snooze-v2-luxury.js`
+   - Paste contents of `camp-snooze-landing-v1.js`
 6. In Site Settings → Header Tracking Code (or page head):
    ```html
    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">

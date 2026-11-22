@@ -158,7 +158,7 @@ Mobile-only (hidden >768px). Appears after scrolling past 80% of hero height. Di
 
 These files run on specific pages only (separate from `snooze-globals.js`):
 
-### Camp Snooze Landing (`camp-snooze-v2-luxury.js`)
+### Camp Snooze Landing (`camp-snooze-landing-v1.js`)
 
 The most complex page-level JS. Implements:
 
@@ -356,7 +356,7 @@ Camp Snooze uses a separate palette: forest `#355E3B`, gold `#D4A574`, cream `#F
 
 ## Known Issues and Placeholders
 
-- **Camp Snooze countdown deadline** is hardcoded to March 31, 2026 AEDT (expired). Update `camp-snooze-v2-luxury.js` before next cohort.
+- **Camp Snooze countdown deadline** is hardcoded to March 31, 2026 AEDT (expired). Update `camp-snooze-landing-v1.js` before next cohort.
 - **`camp-snooze-member-checkout-blocks.html`** still has `[YOUR_OFFER_ID]` placeholder. Not production-ready.
 - **Day pass checkout** has an `alert()` placeholder instead of a real checkout URL. Not production-ready.
 - **Launch banner** text references "Founding Member pricing" and January 2026 dates. Outdated.

@@ -43,8 +43,8 @@ Display format: `$` for both (e.g. `$885 AUD`, not `A$885`).
 | File | Role |
 |------|------|
 | `camp-snooze-landing-page-blocks.html` | Data attributes on price elements; inline pricing-section toggle; `dynamic-cta` / `data-checkout` on all checkout links |
-| `camp-snooze-v2-luxury.css` | FOUC prevention, `.camp-currency-toggle`, `.camp-nav-currency-toggle`, `.sticky-currency-toggle` |
-| `camp-snooze-v2-luxury.js` | `CAMP_CURRENCY_CONFIG`, `campSetCurrency`, `campUpdatePrices`, `campUpdateLinks`, `campUpdateToggleUI`, `campInitCurrency`, `campInjectToggles`; sticky CTA markup includes toggle and dynamic price/link |
+| `camp-snooze-landing-v1.css` | FOUC prevention, `.camp-currency-toggle`, `.camp-nav-currency-toggle`, `.sticky-currency-toggle` |
+| `camp-snooze-landing-v1.js` | `CAMP_CURRENCY_CONFIG`, `campSetCurrency`, `campUpdatePrices`, `campUpdateLinks`, `campUpdateToggleUI`, `campInitCurrency`, `campInjectToggles`; sticky CTA markup includes toggle and dynamic price/link |
 
 ---
 

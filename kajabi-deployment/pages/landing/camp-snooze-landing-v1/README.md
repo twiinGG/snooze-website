@@ -1,4 +1,7 @@
-# Camp Snooze V2 Luxury - Deploy Notes
+# Camp Snooze landing page v1 (/camp-snooze-sleep-coaching)
+
+The original Camp booking page, "Welcome to Camp Snooze". Folder renamed from `camp-snooze/camp-snooze-v2-luxury/` on November 22, 2026; its CSS and JS were renamed from `camp-snooze-v2-luxury.*` to `camp-snooze-landing-v1.*` (same content). The new VSL page is `../camp-snooze-landing-v2/`. The waitlist next-steps page moved to `../camp-snooze-waitlist-next-steps/`, the pricing mockup and old briefs to `apps/snooze-website/docs/camp-snooze-reference/`, and the Camp email templates to `kajabi-deployment/sequences/camp-snooze-email-templates/`.
+
 
 ## File map
 
@@ -6,12 +9,9 @@
 |------|---------|
 | `camp-snooze-landing-page-blocks.html` | Landing page blocks - CHECKOUT mode (live intake) |
 | `camp-snooze-landing-page-blocks-waitlist.html` | Landing page blocks with live capacity and waitlist capture |
-| `camp-snooze-v2-luxury.css` | Shared stylesheet for both landing page variants |
-| `camp-snooze-v2-luxury.js` | Shared JavaScript for both landing page variants |
-| `Camp Snooze Pricing V2 Mockup.html` | Standalone pricing mockup (self-contained, not Kajabi blocks) |
-| `camp-snooze-waitlist-next-steps.html` | Post-waitlist-signup confirmation page blocks |
-| `camp-snooze-waitlist-next-steps.css` | Stylesheet for waitlist next-steps page |
-| `camp-snooze-waitlist-next-steps.js` | JavaScript for waitlist next-steps page |
+| `camp-snooze-landing-v1.css` | Shared stylesheet for both landing page variants |
+| `camp-snooze-landing-v1.js` | Shared JavaScript for both landing page variants |
+| `camp-messaging.html` | Camp enquiry block (floating widget and inline `#camp-inquiry-inline`), the page's second code block |
 
 ---
 
@@ -23,8 +23,8 @@ live on **that page's theme**, not the site theme:
 
 | File | Kajabi location |
 |------|-----------------|
-| `camp-snooze-v2-luxury.css` | Theme editor -> Settings -> Custom Code -> Custom CSS |
-| `camp-snooze-v2-luxury.js` | Theme editor -> Settings -> Custom Code -> Custom JavaScript |
+| `camp-snooze-landing-v1.css` | Theme editor -> Settings -> Custom Code -> Custom CSS |
+| `camp-snooze-landing-v1.js` | Theme editor -> Settings -> Custom Code -> Custom JavaScript |
 | `camp-snooze-landing-page-blocks.html` | Theme editor -> Sections -> Full Page -> Custom Code block |
 
 Theme editor URL: `https://app.kajabi.com/admin/themes/2164288957/settings/edit`.
@@ -109,7 +109,7 @@ Live toggles, as of 2026-08-23: the **sticky footer** one (built in JS) and the
 exposes a matching container). The inline toggle that used to sit above the
 cohort cards was removed — see `CURRENCY-TOGGLE.md`.
 
-`CAMP_CURRENCY_CONFIG` in `camp-snooze-v2-luxury.js` holds the USD and AUD checkout URLs.
+`CAMP_CURRENCY_CONFIG` in `camp-snooze-landing-v1.js` holds the USD and AUD checkout URLs.
 Dynamic prices use `data-usd` and `data-aud` attributes on `.dynamic-price` elements.
 Default currency auto-detects from the visitor's timezone (Australia/* -> AUD, all others -> USD).
 Preference is persisted in localStorage under the key `snooze_currency_preference`.
@@ -155,7 +155,7 @@ The `pragma: allowlist secret` directive has been removed from the inline HTML a
 
 ## Cohort date format
 
-`dateLabel` in `camp-snooze-v2-luxury.js` renders cohort start dates as
+`dateLabel` in `camp-snooze-landing-v1.js` renders cohort start dates as
 `Monday 14 Sept 2026`. Months come from the `CAMP_MONTHS` table, deliberately
 not from `Intl`'s `month: 'short'` — ICU disagrees across browsers on `Sep` vs
 `Sept`, and mixed widths made some cards wrap to two lines while their

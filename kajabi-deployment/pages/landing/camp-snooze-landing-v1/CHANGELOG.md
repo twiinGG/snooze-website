@@ -1,6 +1,6 @@
 # Camp Snooze V2 - Changelog
 
-**Location:** `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/`
+**Location:** `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/`
 
 ---
 
@@ -45,11 +45,11 @@ one.
 - **Hero next-camp banner** on both the landing page and the waitlist variant:
   "Next Camp starts on <date>" with "Spots strictly limited" beneath it, sitting
   above the hero CTA.
-- **`renderHeroNext(cohort)`** in `camp-snooze-v2-luxury.js`, called from
+- **`renderHeroNext(cohort)`** in `camp-snooze-landing-v1.js`, called from
   `renderCohorts`. It reads `start_date` off the same chosen cohort the capacity
   card renders and formats it with the same `dateLabel`, so the hero and the card
   can never print different dates. No hardcoded date anywhere.
-- **`.camp-hero-next`** styles in `camp-snooze-v2-luxury.css` (gold-bordered
+- **`.camp-hero-next`** styles in `camp-snooze-landing-v1.css` (gold-bordered
   cream banner, heading font, uppercase scarcity line).
 
 ### Behaviour
@@ -87,7 +87,7 @@ one.
 - **The JS shipped twice.** The first paste carried comments, which the
   `no-comments-in-paste-targets` hook rejected at commit time (Kade's rule, same day:
   paste targets ship comment-free, reasoning goes to `notes/`). The reasoning was moved
-  to `notes/camp-snooze-v2-luxury.js.NOTES.md` via `scripts/kajabi/extract-comments.mjs`
+  to `notes/camp-snooze-landing-v1.js.NOTES.md` via `scripts/kajabi/extract-comments.mjs`
   and the stripped file re-pasted on both themes. On the landing theme, two clean pastes
   left Save disabled; focusing the editor and inserting-then-removing a newline dirtied
   the form without changing the value (length stayed 25,393).
@@ -185,7 +185,7 @@ nothing on the page ever closed and there was no reason to decide today.
   January 23", "starts Monday 23 February" and "only 6 spots" against a cap that is fifteen. Their
   twelve emails are published theme-builder emails, which deliver a snapshot from publish time and
   cannot be edited at all, so they are prefixed `[RETIRED 2026-08-25 stale-dates]` on Kade's ruling. The
-  evergreen replacement copy is in the repo at `pages/landing/camp-snooze/emails/`, to be built as one
+  evergreen replacement copy is in the repo at `pages/landing/camp-snooze-landing-v1/emails/`, to be built as one
   classic-builder sequence at the next launch.
 - **Three legacy thank-you assets retired** to `_retired/camp-snooze-thank-you-legacy/`. The old
   thank-you page hardcoded January 2026 dates in AEDT and ET; `/camp-confirm` replaced it.
@@ -248,7 +248,7 @@ reverted both.
 
 ### Files Modified
 - `camp-snooze-landing-page-blocks.html`
-- `camp-snooze-v2-luxury.js`
+- `camp-snooze-landing-v1.js`
 - `README.md` (deploy route, mode switching, cohort date format)
 - `CURRENCY-TOGGLE.md` (toggle placement)
 
@@ -278,8 +278,8 @@ here, and the reminder to diff live against the repo first.
 
 ### Files Modified
 - `camp-snooze-landing-page-blocks.html`
-- `camp-snooze-v2-luxury.css`
-- `camp-snooze-v2-luxury.js`
+- `camp-snooze-landing-v1.css`
+- `camp-snooze-landing-v1.js`
 
 ### Files Created
 - `CURRENCY-TOGGLE.md` (implementation reference)
@@ -299,15 +299,15 @@ here, and the reminder to diff live against the repo first.
 - **Value breakdown section:** "Why Camp Costs Less" after Key Dates (Camp vs 1:1: $3,500 + $79, discount, $590). Uses existing `.breakdown-container` / `.breakdown-row` styles.
 - **Quarterly option:** Copy and checkout block show $197/quarter option alongside one-time $590.
 - **Checkout block:** `camp-snooze-feb9-checkout-blocks.html` (one-time + quarterly, Feb 9 dates, Snooze access Feb 6).
-- **Doc:** `../CAMP-SNOOZE-FEB9-INTAKE.md` – pricing, dates, file list, deployment checklist.
+- **Doc:** `../../../../docs/camp-snooze-reference/CAMP-SNOOZE-FEB9-INTAKE.md` – pricing, dates, file list, deployment checklist.
 
 ### Files Modified
 - `camp-snooze-landing-page-blocks.html`
-- `camp-snooze-v2-luxury.js`
+- `camp-snooze-landing-v1.js`
 
 ### Files Created
 - `camp-snooze-feb9-checkout-blocks.html` (in `pages/checkout/camp-snooze-v2-luxury/`)
-- `../CAMP-SNOOZE-FEB9-INTAKE.md`
+- `../../../../docs/camp-snooze-reference/CAMP-SNOOZE-FEB9-INTAKE.md`
 
 ---
 

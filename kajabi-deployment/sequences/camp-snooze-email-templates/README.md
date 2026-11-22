@@ -2,7 +2,7 @@
 
 ## Status, 2026-08-25
 
-The funnel sells one intake at a time (see `../camp-snooze-v2-luxury/CHANGELOG.md`, 2026-08-25). Every camp email here was swept the same day for language that assumed a buyer could pick from a list of dates, and for dates hardcoded to a camp that has already run.
+The funnel sells one intake at a time (see `../../pages/landing/camp-snooze-landing-v1/CHANGELOG.md`, 2026-08-25). Every camp email here was swept the same day for language that assumed a buyer could pick from a list of dates, and for dates hardcoded to a camp that has already run.
 
 | Directory | What it is | Live? |
 |---|---|---|

@@ -19,7 +19,7 @@ globalThis.document = {
   querySelectorAll: () => []
 };
 
-await import('../camp-snooze-v2-luxury.js?fallback-test');
+await import('../camp-snooze-landing-v1.js?fallback-test');
 
 const root = {
   dataset: {},

@@ -159,7 +159,7 @@ See root `.env.example` for complete list.
 
 ## Browser automation
 
-Use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
+Reuse the user's existing authenticated Chrome profile and relevant open tab for browser work. Kade's Kade@khorus profile is the preferred session when available (October 29, 2026 ruling). Use the connected browser capability that can access that session. Do not require a separate browser, fresh profile, CDP launch or repeat login when the existing session works. Keep one operator per account write window and preserve unrelated tabs. Use `agent-browser` when it can access the intended session; run `agent-browser --help` for its commands.
 
 Core workflow:
 
@@ -190,12 +190,15 @@ The eval returns `{ok, length, expected, sha256prefix}`: verify by length/hash, 
 
 Full write-path decision table and mechanics: `docs/technical/KAJABI-SURFACE-CODE-SETUP.md`.
 
-### Parallel live deploy + the two Kajabi WAF walls
+### Existing authenticated Chrome session
 
-For multi-surface live pushes, the proven repeatable model is CDP-attach to real headed Chrome, in parallel — full runbook `docs/technical/KAJABI-PARALLEL-CDP-DEPLOY.md`. Two hard rules bind every Kajabi admin browser task:
+Kade's October 29, 2026 ruling replaces the mandatory separate-browser and human-login setup. Reuse the existing authenticated Chrome profile, preferably Kade@khorus, and the relevant open Kajabi tab through the available connected browser capability. An existing working session is sufficient. Do not launch a fresh browser, require CDP or ask for another login as routine preparation.
 
-- **Never auto-navigate a `app.kajabi.com` URL** (agent-browser `open`/`goto`/`reload`, or a Chrome launched at an admin URL). It returns HTTP 406 and burns the window. Launch windows to `about:blank`, have a HUMAN log in (clears Cloudflare), then move only by in-app clicks. Headless / fresh-profile browsers are hard-blocked outright. Attach lanes with `agent-browser --cdp <port> --session <UNIQUE-name>` (unique session per lane is mandatory); never `close --all` (unscoped — kills every window).
-- **Page wrapper MUST be `<div id="X-page">`, never `<body id>`** (§5 says div — this is why): Kajabi strips `<body>` from fragments, so a `<body id>` wrapper yields no `#X-page` element live and all id-scoped CSS silently dies (passes curl 0-missing, renders unstyled). Adding a page = `<div id>` wrapper + add the id to the `:is()` scope in `global/css/theme-custom-code.css`; verify with `getComputedStyle`, not just a line-match.
+Keep one browser operator per Kajabi/ad account write window. Preserve unrelated tabs and never use an unscoped close-all command. Prefer in-app links when moving through Kajabi. If a real authentication or Cloudflare failure occurs, record the exact evidence and repair that affected session; historical WAF reports alone do not establish a current block. A new login or separate browser is a recovery option only when the intended session is unavailable and Kade agrees.
+
+The parallel CDP runbook at `docs/technical/KAJABI-PARALLEL-CDP-DEPLOY.md` remains a historical recovery method, not a mandatory startup requirement. Existing publication approvals, token-safe paste, field preimages and receiving-system readback remain binding.
+
+The page wrapper must be `<div id="X-page">`, never `<body id="X-page">`. Kajabi strips `<body>` from fragments. Confirm scoped styles with computed-style and visual checks.
 
 ### Kajabi admin mechanics learned the hard way (WS-006, August 13 2026)
 
@@ -302,8 +305,7 @@ the id is what the MCP tools and scripts take as input.
 The Kajabi MCP already returns `admin_url` on most `get_*` responses. Use it rather than composing a
 URL by hand, and never invent a pattern that is not in this table or in a tool response.
 
-**These are for the human to click.** The agent still must not auto-navigate them: `open`, `goto` and
-`reload` on `app.kajabi.com` return HTTP 406 and burn the window.
+Use these verified links from the existing authenticated Kajabi session. Prefer in-app navigation and inspect the actual result. A historical HTTP 406 report does not require a new browser or human navigation when the current session works.
 
 ## Snooze support naming
 

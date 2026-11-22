@@ -26,7 +26,7 @@ const TOGGLE_PATH = path.resolve(__dirname, '..', 'currency-toggle.js');
 const FILES = [
   'pages/checkout/camp-snooze-v2-luxury/camp-snooze-checkout-blocks.html',
   'pages/checkout/camp-snooze-v2-luxury/camp-snooze-member-checkout-blocks.html',
-  'pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html',
+  'pages/landing/camp-snooze-landing-v1/camp-snooze-landing-page-blocks.html',
   'pages/website/product-pages/3-4-month-course/3-4-month-course-landing-page.html',
   'pages/website/product-pages/5-12-month-course/5-12-month-guide-landing-page.html',
   'pages/website/product-pages/newborn-guide/newborn-guide-landing-page.html',

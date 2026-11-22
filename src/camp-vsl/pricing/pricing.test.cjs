@@ -4,11 +4,11 @@ const path = require('node:path');
 const pricing = require('./pricing.js');
 
 const camp = path.resolve(__dirname, '..');
-const oldDir = path.resolve(camp, '../../kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury');
-const oldJs = fs.readFileSync(path.join(oldDir, 'camp-snooze-v2-luxury.js'), 'utf8');
+const oldDir = path.resolve(camp, '../../kajabi-deployment/pages/landing/camp-snooze-landing-v1');
+const oldJs = fs.readFileSync(path.join(oldDir, 'camp-snooze-landing-v1.js'), 'utf8');
 const oldHtml = fs.readFileSync(path.join(oldDir, 'camp-snooze-landing-page-blocks.html'), 'utf8');
 const newHtml = fs.readFileSync(path.join(camp, 'index.html'), 'utf8');
-const builtDir = path.resolve(camp, '../../kajabi-deployment/pages/landing/camp-snooze-coaching');
+const builtDir = path.resolve(camp, '../../kajabi-deployment/_retired/landing-camp-snooze-coaching');
 const builtHtml = fs.readFileSync(path.join(builtDir, 'index.html'), 'utf8');
 const builtCss = fs.readFileSync(path.join(builtDir, 'camp-snooze-coaching.css'), 'utf8');
 const builtJs = fs.readFileSync(path.join(builtDir, 'camp-snooze-coaching.js'), 'utf8');

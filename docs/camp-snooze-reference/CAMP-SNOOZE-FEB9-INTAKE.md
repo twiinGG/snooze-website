@@ -34,8 +34,8 @@ Login details for the included Snooze month are in the post-purchase email and i
 
 **Landing page (sales mode):**
 - `camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html` – hero, pricing ($590 / $510 / $197 quarter), value breakdown (Camp vs 1:1), Key Dates, FAQs, all CTAs → checkout
-- `camp-snooze-v2-luxury/camp-snooze-v2-luxury.css` – theme + breakdown styles
-- `camp-snooze-v2-luxury/camp-snooze-v2-luxury.js` – sticky CTA (links to checkout), countdown (applications close Feb 6)
+- `camp-snooze-v2-luxury/camp-snooze-landing-v1.css` – theme + breakdown styles
+- `camp-snooze-v2-luxury/camp-snooze-landing-v1.js` – sticky CTA (links to checkout), countdown (applications close Feb 6)
 
 **Checkout (Kajabi offer K3Y6FEKX):**
 - `pages/checkout/camp-snooze-v2-luxury/camp-snooze-feb9-checkout-blocks.html` – order summary (one-time $590 + quarterly $197/quarter), what’s included, key dates

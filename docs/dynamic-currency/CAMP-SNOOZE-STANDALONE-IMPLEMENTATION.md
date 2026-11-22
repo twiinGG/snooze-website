@@ -16,9 +16,9 @@ A self-contained AUD/USD currency toggle was implemented on the Camp Snooze land
 
 | Item | Path |
 |------|------|
-| Landing page HTML | `snooze-product/projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html` |
-| CSS | `camp-snooze-v2-luxury.css` (currency toggle section at end) |
-| JavaScript | `camp-snooze-v2-luxury.js` (CAMP_CURRENCY_CONFIG, campSetCurrency, campUpdatePrices, campUpdateLinks, campInjectToggles, etc.) |
+| Landing page HTML | `snooze-product/projects/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-landing-page-blocks.html` |
+| CSS | `camp-snooze-landing-v1.css` (currency toggle section at end) |
+| JavaScript | `camp-snooze-landing-v1.js` (CAMP_CURRENCY_CONFIG, campSetCurrency, campUpdatePrices, campUpdateLinks, campInjectToggles, etc.) |
 | Documentation | `camp-snooze-v2-luxury/CURRENCY-TOGGLE.md` |
 
 ---

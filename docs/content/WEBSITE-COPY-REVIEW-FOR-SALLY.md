@@ -7631,8 +7631,8 @@ By signing up for the Snooze Social membership, you acknowledge that you have re
 
 These files are older versions, drafts, mockups or thin stubs of pages already covered above. They are listed for completeness and are not reproduced in full.
 
-- **Camp Snooze Thank You Page Brief** (60 words) — `kajabi-deployment/pages/landing/camp-snooze/camp-snooze-thank-you-page-brief.html`
-- **Camp Snooze Pricing V2 Mockup** (64 words) — `kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/Camp Snooze Pricing V2 Mockup.html`
+- **Camp Snooze Thank You Page Brief** (60 words) — `kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-thank-you-page-brief.html`
+- **Camp Snooze Pricing V2 Mockup** (64 words) — `docs/camp-snooze-reference/Camp Snooze Pricing V2 Mockup.html`
 - **Ask Sally Page Blog Only** (124 words) — `kajabi-deployment/pages/website/ask-sally/ask-sally-page-blog-only.html`
 - **Library Page Complete** (76 words) — `kajabi-deployment/pages/website/library/library-page-complete.html`
 - **Snooze Method Page Complete** (75 words) — `kajabi-deployment/pages/website/snooze-method/snooze-method-page-complete.html`

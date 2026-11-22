@@ -1,10 +1,10 @@
-# camp-snooze-v2-luxury.js - notes
+# camp-snooze-landing-v1.js - notes
 
-Comments extracted from `camp-snooze-v2-luxury.js`. That file is pasted into Kajabi and ships to
+Comments extracted from `camp-snooze-landing-v1.js`. That file is pasted into Kajabi and ships to
 every visitor, so the reasoning lives here instead. Each note names the line it sat above and the
 code that followed it, so a note whose anchor no longer exists is a note to re-check.
 
-Regenerate with `node scripts/kajabi/extract-comments.mjs apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js`.
+Regenerate with `node scripts/kajabi/extract-comments.mjs apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-landing-v1.js`.
 
 > **The extractor overwrites this file, it does not merge.** `extract-comments.mjs` regenerates the
 > notes from the comments still present in the source, so running it after the source has already

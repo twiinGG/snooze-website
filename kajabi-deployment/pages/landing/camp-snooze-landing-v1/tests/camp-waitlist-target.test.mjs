@@ -23,7 +23,7 @@ globalThis.document = {
   querySelector: () => null
 };
 
-await import('../camp-snooze-v2-luxury.js');
+await import('../camp-snooze-landing-v1.js');
 
 async function render(payload) {
   const root = { dataset: {}, innerHTML: '', querySelectorAll: () => [] };

@@ -306,8 +306,8 @@ A complete redesign implementing a Luxury Escapes-inspired member-first pricing 
 
 ### V2 Files
 - `camp-snooze-landing-page-blocks.html` - Main landing page (724 lines)
-- `camp-snooze-v2-luxury.css` - Landing page styles (825 lines)
-- `camp-snooze-v2-luxury.js` - Landing page interactions (258 lines)
+- `camp-snooze-landing-v1.css` - Landing page styles (825 lines)
+- `camp-snooze-landing-v1.js` - Landing page interactions (258 lines)
 - `camp-snooze-bundle-checkout-blocks.html` - Member bundle checkout ($587)
 - `camp-snooze-checkout-blocks.html` - Standalone checkout ($690)
 - `camp-snooze-member-checkout-blocks.html` - **NEW** Member-only checkout ($390)

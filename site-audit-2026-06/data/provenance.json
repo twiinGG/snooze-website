@@ -620,7 +620,7 @@
     "slug": "camp_snooze_sleep_coaching",
     "page_type": "landing",
     "http_status": "200",
-    "source_file_path": "apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html",
+    "source_file_path": "apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-landing-page-blocks.html",
     "wrapper_id": "",
     "match_method": "id_overlap",
     "found": true,

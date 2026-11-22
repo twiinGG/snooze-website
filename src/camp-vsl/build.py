@@ -1,6 +1,6 @@
 """Build the Kajabi paste targets from the reviewed Camp page.
 
-Emits three files into kajabi-deployment/pages/landing/camp-snooze-coaching/:
+Emits three files into kajabi-deployment/_retired/landing-camp-snooze-coaching/:
 camp-snooze-coaching.css (theme Custom CSS), camp-snooze-coaching.js (theme Custom JS)
 and index.html (markup-only code block). theme-payload.json carries all three.
 """
@@ -10,7 +10,7 @@ import re
 
 SOURCE = Path(__file__).resolve().parent
 ROOT = SOURCE.parents[3]
-OUT = ROOT / "apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-coaching"
+OUT = ROOT / "apps/snooze-website/kajabi-deployment/_retired/landing-camp-snooze-coaching"
 NAME = "camp-snooze-coaching"
 
 READY = (
@@ -70,4 +70,4 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    raise SystemExit("Retired November 22, 2026. The Camp page paste source is apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v2/; edit those files directly.")

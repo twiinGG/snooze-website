@@ -70,12 +70,12 @@ This page is its own Kajabi theme (`2167276583`), so it cannot share the camp la
 CSS field. One repo file maps to one paste target and a field may never be composed from two files,
 so the camp palette, fonts, and the `.btn-camp` / `.btn-camp-cta` / `.btn-outline` / `.camp-badge` /
 `.section-divider` / `.pine-pattern` / `.camp-container` component rules are restated here rather
-than imported. **Keep the values in step with `camp-snooze-v2-luxury.css`** — they are byte-identical
+than imported. **Keep the values in step with `camp-snooze-landing-v1.css`** — they are byte-identical
 on purpose, and a divergence is a bug, not a variation.
 
 The `impeccable` design hook flags these fonts and colours as outside `DESIGN.md`. That is expected:
 the design source for this page is the camp landing theme, not the site design system, and every
-flagged value was verified present in `camp-snooze-v2-luxury.css` before it was written here.
+flagged value was verified present in `camp-snooze-landing-v1.css` before it was written here.
 
 ### `.sn-cc-hero` padding, and `.sn-cc-app-card`
 

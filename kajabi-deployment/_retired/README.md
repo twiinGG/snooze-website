@@ -15,3 +15,7 @@ Added by PRD-CLOSEOUT hygiene tail (2026-07-05):
 - `library-page-complete/` (was `pages/website/library/library-page-complete.html`): alternate/older single-file library build, superseded by the remediated `pages/website/library/library-page.html` per the two-surface architecture decision in `apps/snooze-website/docs/KICKOFF-DEPLOY-COMPLETION.md` (curated content pastes to `/snooze-library`; `library-page.html` is the paste target, not this file). No live surface referenced it at time of archiving; only historical audit docs (copy-uplift baselines, PRD status docs) mention its path.
 
 Copy sweeps: exclude this folder (like `_live-preimages/`).
+
+Added November 22, 2026 (Camp page consolidation):
+
+- `landing-camp-snooze-coaching/` (was `pages/landing/camp-snooze-coaching/`): the Camp VSL page on the Nova theme 2168014017 at /camp-snooze-coaching. Nova prints the Custom JS field as literal text, so the page's JavaScript never ran (video, fit check and pricing failed). Kade moved the page to a duplicate of the old Camp booking page at /camp-snooze-program. The paste source is now `pages/landing/camp-snooze-program/`. This copy is the older `website-v1.6.50` build from `main`; the reconciled release lives on branch `merge/origin-main-2026-11-22`.

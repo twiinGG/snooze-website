@@ -10,4 +10,4 @@ Retired 2026-08-25, as part of the single-intake urgency change.
 
 Nothing here is a paste target. The live post-purchase path is: the offer's thank-you redirect to `/camp-confirm`, then the confirmation email for that buyer's arm (AUD or USD, member or non-member).
 
-`docs/projects/business-model/4_working/ALUMNI-OFFER-BUILD-PLAN.md` cites the first and third file for their alumni-rate paragraph. That paragraph survives at `pages/landing/camp-snooze/emails/EMCMAL01/close-out-perk-paragraph.html`, which is where to read it now.
+`docs/projects/business-model/4_working/ALUMNI-OFFER-BUILD-PLAN.md` cites the first and third file for their alumni-rate paragraph. That paragraph survives at `pages/landing/camp-snooze-landing-v1/emails/EMCMAL01/close-out-perk-paragraph.html`, which is where to read it now.

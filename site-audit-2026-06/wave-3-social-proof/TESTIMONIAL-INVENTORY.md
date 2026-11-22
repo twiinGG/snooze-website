@@ -41,7 +41,7 @@ Source: `apps/snooze-website/archive/website/home/snooze-home-page-blocks.html`
 | Emily | "We went from chaos to calm in one week. The coaching support is next level." | Coaching | fast turnaround |
 
 ### Camp Snooze wrap-up quotes (verbatim participants, anonymous)
-Source: `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-landing-page-blocks.html`
+Source: `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-landing-page-blocks.html`
 (15 unique quotes, already live on the Camp landing page; drawn from camp
 wrap-up calls). Tagged by theme for reuse.
 

@@ -110,7 +110,7 @@ site-wide Footer Page Scripts field (older docs that reference it are wrong).
 | **Website theme Custom CSS** | Website → Theme → Custom CSS | `kajabi-deployment/global/css/snooze-unified-theme.css` (+ merge `global/css/currency-toggle.css`) | All **Website**-type pages on theme `2156873377` (home, age pages, library, blog, product landings, etc.) |
 | **Website theme Custom Javascript** | Website → Theme → Custom Javascript | `docs/home-page-v2/assets/home-page-v2.js` | Same website theme. Home-only logic; scoped to `#home-page` and no-ops elsewhere. |
 | | | `global/html/currency-toggle-fouc.html` then `global/js/currency-toggle.js` | Same website theme — **TODO deploy**. Rewrites checkout links and `.dynamic-price` before navigation. |
-| **Landing-page theme Custom JS/CSS** | Each landing page's own theme settings | Camp: standalone pilot (`camp-snooze-v2-luxury.js`, theme `2164288957`) | That landing theme only |
+| **Landing-page theme Custom JS/CSS** | Each landing page's own theme settings | Camp: standalone pilot (`camp-snooze-landing-v1.js`, theme `2164288957`) | That landing theme only |
 | | | Day Pass cold-ads, founding member, other pricing landings: paste `currency-toggle.js` (+ FOUC) when those pages show paid pricing | Per landing theme (not Camp while pilot is active) |
 | **Code-block inline `<script>`** | Page editor → Custom Code block | Per-page HTML under `kajabi-deployment/pages/website/` | That page only (age pages, library, glossary, reviews, store) |
 | **Checkout offer pages** | Kajabi embedded checkout (per-offer theme) | Custom HTML paste packs only; **no currency-toggle script** | Single-currency per offer. Optional static sibling-offer link in footer HTML. |
@@ -147,7 +147,7 @@ marketing surfaces, not Camp-only).
 
 | Implementation | Scope | Status | Repo |
 |---|---|---|---|
-| **Camp Snooze standalone pilot** | Camp landing theme only | **LIVE** on theme `2164288957` | `pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js` + inline HTML toggle + camp CSS. See `docs/dynamic-currency/CAMP-SNOOZE-STANDALONE-IMPLEMENTATION.md`. |
+| **Camp Snooze standalone pilot** | Camp landing theme only | **LIVE** on theme `2164288957` | `pages/landing/camp-snooze-landing-v1/camp-snooze-landing-v1.js` + inline HTML toggle + camp CSS. See `docs/dynamic-currency/CAMP-SNOOZE-STANDALONE-IMPLEMENTATION.md`. |
 | **Global `currency-toggle.js`** | Website theme + pricing landing themes | **NOT LIVE** | `kajabi-deployment/global/js/currency-toggle.js` |
 
 Both share `localStorage` key `snooze_currency_preference`.

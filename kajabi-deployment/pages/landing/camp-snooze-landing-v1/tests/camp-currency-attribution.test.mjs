@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
-const source = fs.readFileSync(new URL('../camp-snooze-v2-luxury.js', import.meta.url), 'utf8');
+const source = fs.readFileSync(new URL('../camp-snooze-landing-v1.js', import.meta.url), 'utf8');
 
 function classList(initial) {
   const values = new Set(initial || []);
@@ -58,7 +58,7 @@ function load(pageUrl, buttons = [], storedCurrency = null) {
       createElement: () => ({ style: {}, appendChild: () => {}, setAttribute: () => {} }),
     },
   };
-  vm.runInNewContext(source, context, { filename: 'camp-snooze-v2-luxury.js' });
+  vm.runInNewContext(source, context, { filename: 'camp-snooze-landing-v1.js' });
   return { context, dataLayer, bodyClasses };
 }
 

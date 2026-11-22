@@ -20,7 +20,7 @@ Date: November 22, 2026. Source: `apps/snooze-website/src/camp-vsl/index.html` p
 
 Nothing in the old folder was modified or shared. Logic was ported into `pricing.js`.
 
-| New function / constant | Ported from (camp-snooze-v2-luxury.js) | Differences |
+| New function / constant | Ported from (camp-snooze-landing-v1.js) | Differences |
 | --- | --- |---|
 | `CONFIG` (checkout bases, feed URL, public anon key alias, storage key) | `CAMP_CURRENCY_CONFIG`, `CAMP_CAPACITY_FEED_URL`, `CAMP_CAPACITY_ANON_KEY` | Values identical; test reads the old file and asserts equality. |
 | `currencyFor` | `campInitCurrency` | Same rule: stored `snooze_currency_preference`, else timezone containing `Australia` is AUD, else USD. Takes inputs so it is testable. |

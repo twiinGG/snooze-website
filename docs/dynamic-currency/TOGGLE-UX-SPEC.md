@@ -103,7 +103,7 @@ Replace the `.currency-toggle-btn` ruleset (current file lines 13-73, including 
 
 ### 3.2 Camp Snooze note
 
-Camp Snooze runs its own standalone currency script (not the global engine) and its own `.currency-toggle-btn` visual inheritance. Per plan §2.3: align Camp's price *display format* (`A$` prefix instead of `$885 AUD` suffix) and have it adopt the v2 switch component's CSS classes, but do NOT merge Camp's engine logic into the global `currency-toggle.js` in this pass. File: `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze/camp-snooze-v2-luxury/camp-snooze-v2-luxury.js` and its `CURRENCY-TOGGLE.md`.
+Camp Snooze runs its own standalone currency script (not the global engine) and its own `.currency-toggle-btn` visual inheritance. Per plan §2.3: align Camp's price *display format* (`A$` prefix instead of `$885 AUD` suffix) and have it adopt the v2 switch component's CSS classes, but do NOT merge Camp's engine logic into the global `currency-toggle.js` in this pass. File: `apps/snooze-website/kajabi-deployment/pages/landing/camp-snooze-landing-v1/camp-snooze-landing-v1.js` and its `CURRENCY-TOGGLE.md`.
 
 ## 4. Placement system
 

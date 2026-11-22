@@ -24,16 +24,16 @@ globalThis.document = {
   querySelector: () => null,
 };
 
-const mod = await import('../camp-snooze-v2-luxury.js');
+const mod = await import('../camp-snooze-landing-v1.js');
 void mod;
 
 // Both configured bases must be checkout URLs, not offer landing URLs. CAMP_CURRENCY_CONFIG is a
 // top-level const in a file that gets pasted into a Kajabi theme, so it is not exported and not on
 // window. Assert against the source text, which is the thing that actually gets pasted.
-const src = await readFile(new URL('../camp-snooze-v2-luxury.js', import.meta.url), 'utf8');
+const src = await readFile(new URL('../camp-snooze-landing-v1.js', import.meta.url), 'utf8');
 for (const name of ['usdCheckoutUrl', 'audCheckoutUrl']) {
   const m = src.match(new RegExp(name + ":\\s*'([^']+)'"));
-  assert.ok(m, `${name} not found in camp-snooze-v2-luxury.js`);
+  assert.ok(m, `${name} not found in camp-snooze-landing-v1.js`);
   assert.ok(
     /\/offers\/[^/?#]+\/checkout$/.test(m[1]),
     `${name} must end in /offers/{slug}/checkout so Kajabi does not redirect and drop the query string, got ${m[1]}`,
@@ -79,7 +79,7 @@ console.log('camp-checkout-url: ok');
 // The landing page and the checkout must request the same feed window, or the checkout cannot resolve a
 // ?cohort=N that sits outside its own window and silently falls back to the soonest camp.
 const checkoutSrc = await readFile(
-  new URL('../../../../checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js', import.meta.url),
+  new URL('../../../checkout/camp-snooze-v2-luxury/camp-snooze-v2-checkout.js', import.meta.url),
   'utf8',
 );
 const landingLimit = src.match(/\?limit=(\d+)/);
