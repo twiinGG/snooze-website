@@ -1,6 +1,6 @@
 # Camp Snooze VSL landing page
 
-Current state and deploy shape: see `../../kajabi-deployment/pages/landing/camp-snooze-coaching/README.md` (three paste targets: theme Custom CSS, theme Custom JS, markup-only block). `pricing/` holds the dates, pricing and local call-time logic and its tests. The sections below record the October draft.
+**Retired (November 22, 2026).** This folder is the superseded October draft source and generator. The live Camp page, its three paste targets (`camp-snooze-coaching.css`, `camp-snooze-coaching.js`, markup-only `index.html`), the pricing and local call-time module with its tests, `captions.vtt` and the preview server now live in `../../kajabi-deployment/pages/landing/camp-snooze-coaching/`. Do not run `build.py` or edit `index.html` here; both would overwrite or contradict the live page. Only `support-finder/` and `media-manifest.json` (R2 URLs for the 29 second clip) are still read from here. The sections below are historical.
 
 Local draft prepared October 23, 2026. Owner: Kade Greenland.
 

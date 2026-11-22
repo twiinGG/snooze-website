@@ -1,5 +1,7 @@
 # Camp Snooze V2 Luxury - Deploy Notes
 
+Current November 09, 2026 release: see [release log](RELEASE-2026-11-09.md) and the [session closeout](../../camp-snooze-coaching/RELEASE-CLOSEOUT-2026-11-09.md). The release log supersedes older copy and display instructions below.
+
 ## File map
 
 | File | Purpose |

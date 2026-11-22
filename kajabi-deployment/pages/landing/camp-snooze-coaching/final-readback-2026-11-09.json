@@ -1,0 +1,45 @@
+{
+  "verifiedAt": "2026-11-08T22:57:00.593875+00:00",
+  "contentTag": "website-v1.6.46",
+  "readback": [
+    {
+      "page": "camp-snooze-sleep-coaching",
+      "file": "camp-snooze-landing-page-blocks.html",
+      "http": 200,
+      "sourceLines": 819,
+      "missingLines": []
+    },
+    {
+      "page": "camp-snooze-sleep-coaching",
+      "file": "camp-snooze-v2-luxury.css",
+      "http": 200,
+      "sourceLines": 1220,
+      "missingLines": []
+    },
+    {
+      "page": "camp-snooze-sleep-coaching",
+      "file": "camp-snooze-v2-luxury.js",
+      "http": 200,
+      "sourceLines": 630,
+      "missingLines": []
+    },
+    {
+      "page": "camp-snooze-coaching",
+      "file": "index.html",
+      "http": 200,
+      "sourceLines": 293,
+      "missingLines": []
+    }
+  ],
+  "persistedKajabiSettingsMatch": true,
+  "newPayloadMatchesSource": true,
+  "behaviorTestsPassed": 7,
+  "vsl": {
+    "kajabiAssetAdmin": "https://app.kajabi.com/admin/media_library/assets/5221719",
+    "wistiaPlayer": "ud1nugmerp",
+    "durationSeconds": 455.12,
+    "locationsReported": 0,
+    "customCodeEmbedConfirmed": true
+  },
+  "sourceRevision": "68fbbbd55a"
+}

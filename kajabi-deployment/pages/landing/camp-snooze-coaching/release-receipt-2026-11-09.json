@@ -1,0 +1,15 @@
+{
+  "url": "https://www.joinsnooze.com/camp-snooze-coaching?v=1794164046",
+  "http": 200,
+  "sourceLines": 375,
+  "missingLines": [],
+  "normalization": "Whitespace and Cloudflare mailto obfuscation decoded",
+  "video": "ud1nugmerp",
+  "pausedFinderAbsent": true,
+  "releaseTag": "website-v1.6.38",
+  "sourceCommit": "4110688cb",
+  "desktopPlayback": "Observed with sound; duration 455.12 seconds; no media error",
+  "mobileWidth": 390,
+  "mobilePlayerWidth": 358,
+  "captions": "English menu verified, uploaded matching final SRT"
+}

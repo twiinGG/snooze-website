@@ -1,0 +1,24 @@
+{
+  "url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching?v=1794166108",
+  "http": 200,
+  "sourceReadback": {
+    "camp-snooze-landing-page-blocks.html": {
+      "lines": 717,
+      "missing": []
+    },
+    "camp-snooze-v2-luxury.css": {
+      "lines": 1017,
+      "missing": []
+    },
+    "camp-snooze-v2-luxury.js": {
+      "lines": 552,
+      "missing": []
+    }
+  },
+  "tag": "website-v1.6.40",
+  "commit": "a710a0f63",
+  "mobileViewport": 390,
+  "mobileComparisonWidth": 358,
+  "currencySwitch": "AUD and USD table prices and checkout routing verified in staging",
+  "tests": "Seven existing Camp suites passed"
+}
