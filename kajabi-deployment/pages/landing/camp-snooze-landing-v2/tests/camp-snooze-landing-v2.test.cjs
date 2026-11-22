@@ -94,7 +94,6 @@ test('Kade rulings: no qualifying lines, hero video and copy, 32 Google reviews,
     'Review the current price', 'One camp at a time', 'does not confirm suitability', 'Prefer to read']) {
     assert.ok(!builtHtml.includes(phrase) && !builtJs.includes(phrase), phrase);
   }
-  assert.ok(builtHtml.includes('Read the reviews from previous Camp participants'));
   assert.ok(builtHtml.includes('wistia_async_ud1nugmerp'));
   assert.ok(builtHtml.includes('<p class="duration">How Camp works</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily Roll Call.<br>It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
   assert.ok(builtHtml.includes('Join over 100+ families'));
@@ -350,7 +349,8 @@ test('dateLabel and countdown match the old page', () => {
   assert.equal(pricing.countdownLabel('2026-12-05T00:00:00Z', Date.parse('2026-12-05T00:00:00Z')), '');
 });
 
-const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu'];
+const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu', '3dmlbvluc1'];
+const storySlugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c', 'bec-k'];
 const storySection = /(<section id="camp-stories"[^>]*>[\s\S]*?<\/section>)/.exec(builtHtml)?.[1] || '';
 
 test('Camp stories sits immediately above the review wall', () => {
@@ -363,16 +363,31 @@ test('Camp stories sits immediately above the review wall', () => {
   assert.match(builtCss, /#camp-vsl-page #camp-stories\s*\{\s*background:\s*var\(--camp-cream,\s*#f7f4ee\)\s*;?\s*\}/);
 });
 
-test('Camp stories has four cards in order with unique embed ids and the approved captions', () => {
-  const cards = [...storySection.matchAll(/<figure class="cs-card">([\s\S]*?)<\/figure>/g)];
-  const names = ['Alicia E.', 'Chelsi B.', 'Chantelle C.', 'Penny C.'];
-  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
-  assert.equal(cards.length, storyIds.length);
-  for (const [index, [, card]] of cards.entries()) {
+test('Review wall uses the approved intro copy', () => {
+  const intro = /<section id="camp-wall"[^>]*>\s*<div class="cw-intro">([\s\S]*?)<\/div>/.exec(builtHtml)?.[1] || '';
+  assert.ok(intro.includes('<p class="cw-kicker">More reviews from happy Campers</p>'));
+  assert.ok(intro.includes('<h2 id="camp-wall-title">Giving nights back, one family at a time</h2>'));
+  assert.ok(intro.includes('<p class="cw-sub">We’re proud of our success, but even prouder of our Camp Alumni</p>'));
+});
+
+test('Camp stories has five named cards in order with unique embed ids and no captions', () => {
+  const cards = [...storySection.matchAll(/<figure class="cs-card" aria-label="([^"]+)">([\s\S]*?)<\/figure>/g)];
+  const labels = [
+    'Alicia E., Camp #19 Alumni',
+    'Chelsi B., Camp #19 Alumni',
+    'Chantelle C., Camp #19 Alumni',
+    'Penny C., Camp #19 Alumni',
+    'Bec K., Camp #12 Alumni',
+  ];
+  assert.equal(cards.length, 5);
+  assert.equal((storySection.match(/<figure class="cs-card"/g) || []).length, cards.length);
+  assert.doesNotMatch(storySection, /\bcs-caption\b/);
+  assert.doesNotMatch(builtCss, /\.cs-caption\b/);
+  for (const [index, [, label, card]] of cards.entries()) {
     const id = storyIds[index];
     assert.ok(card.includes('data-wistia-id="' + id + '"'));
-    assert.ok(card.includes('data-story="' + slugs[index] + '"'));
-    assert.ok(card.includes('>' + names[index] + '</span><span>Camp Snooze parent</span>'));
+    assert.ok(card.includes('data-story="' + storySlugs[index] + '"'));
+    assert.equal(label, labels[index]);
     assert.equal(builtHtml.split(id).length - 1, 1);
     assert.ok(!builtJs.includes(id) && !builtCss.includes(id));
   }
@@ -380,6 +395,107 @@ test('Camp stories has four cards in order with unique embed ids and the approve
 
 test('Camp stories ships markup only with no pre-initialized Wistia embeds', () => {
   assert.doesNotMatch(storySection, /\bstyle\s*=|<(?:style|script)\b|wistia_async_/i);
+});
+
+test('Camp stories uses a mobile-only View more button after the controlled track', () => {
+  const trackId = /<div class="cs-track" id="([^"]+)"/.exec(storySection)?.[1];
+  assert.ok(trackId);
+  const button = /<\/figure>\s*<\/div>\s*(<button\b[^>]*>View more<\/button>)/.exec(storySection)?.[1] || '';
+  assert.match(button, /type="button"/);
+  assert.match(button, /class="cs-more btn btn-outline"/);
+  assert.ok(button.includes('aria-controls="' + trackId + '"'));
+  assert.match(button, /aria-expanded="false"/);
+  assert.match(builtCss, /\.cs-more\[aria-expanded="true"\]\s*\{\s*display:none/);
+  const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
+  assert.match(desktopRules, /\.cs-more\s*\{\s*display:none/);
+});
+
+test('Camp stories stacks in page flow before restoring desktop scrolling and all five cards', () => {
+  const trackRules = /\.cs-track\s*\{([^}]+)\}/.exec(builtCss)?.[1] || '';
+  assert.match(trackRules, /display:flex;flex-direction:column;align-items:center;gap:/);
+  assert.doesNotMatch(trackRules, /overflow|scroll-snap/);
+  assert.match(builtCss, /\.cs-card\{width:min\(86vw,360px,100%\)/);
+  assert.match(builtCss, /\.cs-video\{[^}]+aspect-ratio:9\/16/);
+  const hiddenCards = /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:none/;
+  assert.match(builtCss, hiddenCards);
+  const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
+  assert.match(desktopRules, /\.cs-track\s*\{[^}]*flex-direction:row;[^}]*overflow-x:auto;scroll-snap-type:x mandatory/);
+  assert.match(desktopRules, /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:block/);
+});
+
+test('Camp stories restores the region on desktop and keeps the mobile reveal state through resize', () => {
+  function element(attributes = {}) {
+    return {
+      listeners: {},
+      addEventListener(name, handler) { this.listeners[name] = handler; },
+      getAttribute(name) { return attributes[name] ?? null; },
+      setAttribute(name, value) { attributes[name] = value; },
+      removeAttribute(name) { delete attributes[name]; }
+    };
+  }
+  const cards = Array.from({ length: 5 }, () => element());
+  cards[2].focus = () => { focused = cards[2]; };
+  let focused;
+  const classes = new Set();
+  const track = Object.assign(element({ role: 'region', 'aria-label': 'Camp stories' }), {
+    classList: classes,
+    querySelectorAll: () => cards,
+    scrollWidth: 1,
+    clientWidth: 1,
+    scrollLeft: 0
+  });
+  const more = element({ 'aria-expanded': 'false' });
+  const elements = {
+    '.cs-track': track,
+    '.cs-more': more,
+    '.cs-prev': element(),
+    '.cs-next': element(),
+    '.cs-controls': { classList: { toggle() {} } }
+  };
+  const section = { querySelector: selector => elements[selector], querySelectorAll: () => [] };
+  const root = {
+    dataset: {},
+    querySelector: selector => selector === '#camp-stories' ? section : null,
+    querySelectorAll: () => []
+  };
+  const document = { getElementById: id => id === 'camp-vsl-page' ? root : null };
+  const breakpoint = { matches: false };
+  const window = Object.assign(element(), {
+    matchMedia: query => {
+      assert.equal(query, '(min-width: 768px)');
+      return breakpoint;
+    }
+  });
+  class IntersectionObserver { observe() {} }
+  new Function('document', 'window', 'IntersectionObserver', builtJs)(document, window, IntersectionObserver);
+
+  function resize(isDesktop) {
+    breakpoint.matches = isDesktop;
+    window.listeners.resize();
+  }
+  function assertMobileTrack() {
+    assert.equal(track.tabIndex, -1);
+    assert.equal(track.getAttribute('role'), null);
+    assert.equal(track.getAttribute('aria-label'), null);
+  }
+  assertMobileTrack();
+  resize(true);
+  assert.equal(track.tabIndex, 0);
+  assert.equal(track.getAttribute('role'), 'region');
+  assert.equal(track.getAttribute('aria-label'), 'Camp stories');
+  resize(false);
+  assertMobileTrack();
+  assert.equal(more.getAttribute('aria-expanded'), 'false');
+  assert.equal(classes.has('cs-track--expanded'), false);
+
+  more.listeners.click();
+  resize(true);
+  resize(false);
+  assertMobileTrack();
+  assert.equal(more.getAttribute('aria-expanded'), 'true');
+  assert.equal(classes.has('cs-track--expanded'), true);
+  assert.equal(cards[2].tabIndex, -1);
+  assert.equal(focused, cards[2]);
 });
 
 test('Camp stories controls reserve their row on desktop and stay out of mobile layout', () => {
@@ -407,11 +523,10 @@ test('Camp stories shares the only Wistia script reference with the VSL', () => 
 });
 
 test('Camp stories renders each poster as the first video child and uses it as the Wistia still', () => {
-  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
   const posters = [...storySection.matchAll(/<div class="cs-video"[^>]* data-story="([^"]+)">\s*<img class="cs-poster" src="([^"]+)" alt="" loading="lazy" decoding="async" width="1080" height="1920">/g)];
-  assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), slugs.map(slug => [
+  assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), storySlugs.map(slug => [
     slug,
-    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-22/' + slug + '-poster.jpg'
+    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-23/' + slug + '-poster.jpg'
   ]));
   assert.match(builtCss, /#camp-vsl-page \.cs-poster\{position:absolute;inset:0;width:100%;height:100%;object-fit:cover\}/);
   assert.match(builtJs, /options:\s*\{\s*stillUrl: box\.querySelector\('\.cs-poster'\)\.src,/);
