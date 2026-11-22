@@ -13,7 +13,7 @@ Kade duplicated the old Camp booking page (/camp-snooze-sleep-coaching) in Kajab
 | `camp-snooze-landing-v2.js` | Theme settings, **Custom JS** (replace everything) |
 | `camp-snooze-landing-v2.html` | The page's main custom-code block, `block-1767342511785_0` in section `1767342511785` (replace everything; markup only, no style or script tags) |
 
-The duplicate still carries the old page's second block in that section, `block-camp-inquiry-261109` (the old inline enquiry form). It renders below the new page's inline footer, so delete or hide it. The CSS hides the native header and footer (`#section-header`, `#section-footer`); the page supplies its own footer inline.
+The duplicate still carries the old page's second block in that section, `block-camp-inquiry-261109` (the old inline enquiry form). It renders below the new page's inline footer, so delete or hide it. The page uses Kajabi's native header (same as v1, set in the page builder). The CSS hides only the native footer (`#section-footer`); the page supplies its own footer inline.
 
 Pastes go through `apps/snooze-website/scripts/emit_paste_js.py` (token-safe, verify by length and hash), or by manual copy and paste. After saving, run a cache-busted curl of the public URL and check for `camp-vsl-page`, `CampPricing` and `fast.wistia.com` in the live HTML. Then check in a browser that the video plays, the fit check advances and cohort pricing loads.
 

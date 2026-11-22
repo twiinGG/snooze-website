@@ -438,9 +438,25 @@ const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||r
       }, 60000);
     }
 
+    function syncSecure() {
+      var source = widget.querySelector('[data-checkout]');
+      root.querySelectorAll('[data-camp-secure]').forEach(function (btn) {
+        if (source) {
+          btn.setAttribute('data-checkout', '');
+          if (source.getAttribute('data-cohort')) btn.setAttribute('data-cohort', source.getAttribute('data-cohort'));
+          else btn.removeAttribute('data-cohort');
+        } else {
+          btn.removeAttribute('data-checkout');
+          btn.removeAttribute('data-cohort');
+          btn.setAttribute('href', '#camp-next');
+        }
+      });
+    }
+
     function renderCohorts(cohorts) {
       widget.setAttribute('data-capacity-state', 'ready');
       widget.innerHTML = cohortHtml(chooseCohort(cohorts), ctx());
+      syncSecure();
       updateLinks(currentCurrency());
       startCountdown();
     }
@@ -448,6 +464,7 @@ const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||r
     function renderFallback() {
       widget.setAttribute('data-capacity-state', 'fallback');
       widget.innerHTML = fallbackHtml();
+      syncSecure();
       updateLinks(currentCurrency());
     }
 

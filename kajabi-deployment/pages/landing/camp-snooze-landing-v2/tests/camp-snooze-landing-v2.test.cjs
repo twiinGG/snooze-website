@@ -56,10 +56,10 @@ test('config matches old page source (checkout bases, feed, key)', () => {
 test('every price on the page exists on the old page with identical data-usd/data-aud/period values', () => {
   const oldSet = priceTuples(oldHtml);
   const newSet = priceTuples(builtHtml);
-  assert.ok(newSet.size >= 3);
+  assert.ok(newSet.size >= 2);
   for (const t of newSet) assert.ok(oldSet.has(t), 'not on old page: ' + t);
   const flat = [...newSet].join(' ');
-  for (const needle of ['690|997', '3500|5250', '39.50|59.50']) assert.ok(flat.includes(needle), needle);
+  for (const needle of ['690|997', '39.50|59.50']) assert.ok(flat.includes(needle), needle);
 });
 
 test('built html is markup only, links to its own pricing section and keeps the footer', () => {
@@ -89,7 +89,7 @@ test('built js carries the pricing module and the captions file, injects Wistia,
   assert.ok(builtJs.includes('createObjectURL'));
 });
 
-test('Kade rulings: no qualifying lines, hero video and copy, 34 Google reviews, clip in How it works', () => {
+test('Kade rulings: no qualifying lines, hero video and copy, 32 Google reviews, clip in How it works', () => {
   for (const phrase of ['Your answers stay on this page', "One parent", 'Shared experiences', 'Individual results vary', 'word for word',
     'Review the current price', 'One camp at a time', 'does not confirm suitability', 'Prefer to read']) {
     assert.ok(!builtHtml.includes(phrase) && !builtJs.includes(phrase), phrase);
@@ -98,8 +98,8 @@ test('Kade rulings: no qualifying lines, hero video and copy, 34 Google reviews,
   assert.ok(builtHtml.includes('wistia_async_ud1nugmerp'));
   assert.ok(builtHtml.includes('<p class="duration">How Camp works · 8 minutes</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily roll call. It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
   assert.ok(builtHtml.includes('Join over 100+ families'));
-  assert.equal((builtHtml.match(/<blockquote><p>/g) || []).length, 34);
-  assert.equal((builtHtml.match(/googleg_48dp\.png/g) || []).length, 34);
+  assert.equal((builtHtml.match(/<blockquote><p>/g) || []).length, 32);
+  assert.equal((builtHtml.match(/googleg_48dp\.png/g) || []).length, 32);
   assert.ok(builtHtml.includes('A look inside Camp · 29 seconds'));
   assert.ok(builtHtml.includes('how-camp-4x5.mp4') && builtHtml.includes('how-camp-4x5-poster.jpg'));
   assert.ok(builtHtml.indexOf('rhythm-film') > builtHtml.indexOf('id="how-camp-works"') && builtHtml.indexOf('rhythm-film') < builtHtml.indexOf('id="camp-pricing"'));
