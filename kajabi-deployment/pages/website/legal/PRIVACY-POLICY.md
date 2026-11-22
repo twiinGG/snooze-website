@@ -1,12 +1,12 @@
 # Snooze Privacy Policy
 
-**Last Updated:** December 2025
+**Last Updated:** November 22, 2026
 
 ---
 
 ## 1. Introduction/Overview
 
-Welcome to Snooze! At Snooze (operated by The Sleep Concierge Pty Ltd, ABN 787 548 648 09), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our website, products, and services (collectively, the "Services"). This policy applies to all users of our Services, regardless of location. By using our Services, you consent to the practices described in this Privacy Policy. If you do not agree with our practices, please do not use our Services.
+Welcome to Snooze! At Snooze (operated by The Sleep Concierge Pty Ltd, ABN 24 682 638 384), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our website, products, and services (collectively, the "Services"). This policy applies to all users of our Services, regardless of location. By using our Services, you consent to the practices described in this Privacy Policy. If you do not agree with our practices, please do not use our Services.
 
 This Privacy Policy is part of our overall commitment to transparency and accountability in how we handle your data. It should be read in conjunction with our [Terms and Conditions](/terms-conditions), which govern your use of our Services.
 
@@ -155,6 +155,21 @@ You can control cookies through your browser settings. You can choose to disable
 We use Google Analytics to understand how users use our products. These cookies can be disabled.
 
 For more information about cookies and how to control them, please visit [www.allaboutcookies.org](https://www.allaboutcookies.org/).
+
+---
+
+## 8A. Snooze Mobile App
+
+The Snooze app for iOS and Android is provided by The Sleep Concierge Pty Ltd and runs on the Kajabi platform. When you use the app, we and Kajabi process:
+
+- **Account information:** your name, email address and login details, used to sign you in and show the content you have access to.
+- **Content you post:** posts, comments and photos you share in Snooze Village.
+- **Device and diagnostic information:** device type, operating system, app version, crash reports and in-app activity, used to keep the app working and to improve it.
+- **Push notification tokens:** if you allow notifications, a device token so we can send you updates. You can turn notifications off in your device settings at any time.
+
+We do not sell personal information collected through the app.
+
+**Deleting your account:** You can ask us to delete your Snooze account and the personal information associated with it at any time by emailing privacy@sleepconcierge.com.au from the email address on your account. We will confirm your request and complete the deletion within 30 days, except for records we must keep by law, such as purchase and tax records.
 
 ---
 
