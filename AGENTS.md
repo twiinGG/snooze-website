@@ -260,6 +260,15 @@ Build, publish, **save**, then rename from the automations list row's own **Rena
 in-canvas title editor silently refuses to commit on an unsaved record and each Enter queues a
 navigation; that fault created four duplicate records in one session.
 
+### Media Library videos, posters and preimages (CFB-007, 23 Nov 2026)
+
+- **Wistia hashed id of a Kajabi Media Library video:** the MCP (`get_media`) does not return it. Open `https://app.kajabi.com/admin/media_library/assets/<media id>` in agent-browser and read the player's `wistia_async_<id>` class. Prove the id before using it: `https://fast.wistia.com/embed/medias/<id>.json` → the `original` asset's `size` must equal the Kajabi `file_size`. Never guess an id.
+- **agent-browser Kajabi login:** the saved profile `~/.agent-browser-profiles/kajabi-1` holds a login (Kade signs in once in a `--headed` window). Fresh sessions and `--profile 'Snooze Ops'` hit Cloudflare plus `/login`. Reopening a session without `--profile` silently drops the login, so pass it on every `open` after a `close`.
+- **Self-hosted images (R2 → `tscmedia.khorus.ai`):** upload with `CLOUDFLARE_ACCOUNT_ID=aa7cd5f26a39d69af3c32b0957ca2f51 npx -y wrangler@4 r2 object put postiz-media/<path> --file=<f> --content-type=image/jpeg --remote` and verify the served SHA-256. **Upload before any page or preview references the URL:** a URL requested before upload served 404 from some edges and from the browser cache for minutes afterwards. Prefer a fresh dated path for each poster revision.
+- **Wistia posters:** pass `stillUrl` in the `_wq` embed options and put the same image in the markup as an `<img>` under the embed, so the poster shows before the player loads.
+- **`_live-preimages/` captures stay untracked.** A full public-page curl contains the live pricing feed key and comments, which the detect-secrets and comment-free hooks block. Keep the file locally at its path and record its size and hash in the run log.
+- **Repo blocks media in commits** (screenshots included). QA screenshots go to the media library `snooze-content/projects/snooze-website-qa/<run>/`.
+
 ### Before concluding a paste did not land, prove your marker exists
 
 Learned August 14, 2026, after two live surfaces were reported broken when both were fully deployed.

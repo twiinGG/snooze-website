@@ -71,6 +71,16 @@ Not ported: hero next-camp strip, sticky CTA, falling leaves, expired-countdown 
 - Hero video stays the final VSL. Kajabi Media Library asset 5221719 (Camp Snooze VSL_2611, `camp-main-v07.mp4`, 226,912,138 bytes, 455.12 s) uses Wistia player `ud1nugmerp`, the same embed as the old Camp page. Kajabi's `used_count` stays 0 for code-block embeds; that is expected.
 - Landing-page code in Custom CSS and Custom JS, markup-only code block (see Structure).
 
+## Kade rulings, November 23, 2026 (Camp stories, CFB-007 Phase 4)
+
+- **Camp stories section** `#camp-stories` sits immediately before `#camp-wall`. Kicker "Camp stories", heading "Hear it from Camp parents", no intro paragraph.
+- **Order:** Bec K., Penny C., Alicia E., Chelsi B., Chantelle C.
+- **Labels:** the role is "Camp #N Alumni" (Bec #12; the other four #19), shown on the posters and in each card's `aria-label`. There are no captions under the cards; the posters carry the names.
+- **Posters:** VSL-style, with the first name as the kicker and the parent's own spoken hook line. Bec: “Immediately his sleep improved.” Penny: “He can put himself to sleep within about seven minutes.” Alicia: “My baby now sleeps 7.30pm till 7am.” Chelsi: “Honestly, it has been life-changing.” Chantelle: “Our little girl sleeps through the night.”
+- **Mobile (≤ 767 px):** a plain vertical stack in the page flow (no horizontal gallery scroll), two cards then a "View more" button, with a 10 px gap. **Desktop:** a horizontal scroll-snap track with prev/next arrows.
+- **Reviews intro (`#camp-wall`):** "More reviews from happy Campers" / "Giving nights back, one family at a time" / "We’re proud of our success, but even prouder of our Camp Alumni".
+- **Consent:** a parent's video submission is consent for all usage. The burned-in video name plates stay "Camp Snooze parent".
+
 ## Not verified
 
 - Live checkout click-through and Kajabi render (not deployed, by instruction).
