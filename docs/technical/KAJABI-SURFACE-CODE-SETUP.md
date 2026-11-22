@@ -26,8 +26,9 @@ The Kade one-file ruling (2026-07-06: one canonical repo file per paste surface,
 
 ### 2. Landing pages (12 published: /links, /snooze-access, camp waitlist, day-pass...)
 - **Theme model:** EACH landing page has its OWN theme instance (verified: /snooze-access = theme 2166700952; the LMCR04 thank-you = theme 2164551197). They do NOT inherit the website theme's Custom Code CSS/JS.
-- **Consequence:** every landing page must be **fully self-contained** - its repo file carries its complete `<style>` and any JS inside the page's custom-code block. Never rely on a class defined in the website theme CSS.
-- **Where code lives:** custom-code block in the page's own theme, via builder Ace editor `settings-sections-<sectionId>-blocks-<blockId>-settings-code-input`, or MCP `update_theme_content` on the page's `active_theme_id` (code blocks, ~10KB each, batch writes in one call).
+- **Correction, November 22, 2026 (Kade ruling, verified on the live Camp page theme 2164288957, whose `css` and `js` theme fields are populated):** landing pages keep their CSS in the page theme's own **Custom CSS** field and their JS in its **Custom JS** field. The custom-code block carries markup only, with no inline `<style>` or `<script>`. Repo shape: `<page>.css`, `<page>.js` and a markup-only `index.html`. The two bullets below describe the older single-block pattern and are superseded for new builds.
+- **Consequence (superseded):** every landing page must be **fully self-contained** - its repo file carries its complete `<style>` and any JS inside the page's custom-code block. Never rely on a class defined in the website theme CSS.
+- **Where code lives (superseded for CSS/JS):** custom-code block in the page's own theme, via builder Ace editor `settings-sections-<sectionId>-blocks-<blockId>-settings-code-input`, or MCP `update_theme_content` on the page's `active_theme_id` (code blocks, ~10KB each, batch writes in one call).
 - **Consolidation ruling APPLIES** (one block, one repo file: `pages/landing/<page>/index.html` or equivalent).
 - **Publish state:** MCP `update_landing_page` with `publish_at` works (verified 2026-07-01).
 

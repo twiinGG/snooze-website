@@ -1,5 +1,7 @@
 # Camp Snooze VSL landing page
 
+Current state and deploy shape: see `../../kajabi-deployment/pages/landing/camp-snooze-coaching/README.md` (three paste targets: theme Custom CSS, theme Custom JS, markup-only block). `pricing/` holds the dates, pricing and local call-time logic and its tests. The sections below record the October draft.
+
 Local draft prepared October 23, 2026. Owner: Kade Greenland.
 
 Run `python3 apps/snooze-website/src/camp-vsl/preview.py` from the repo root, then open http://127.0.0.1:4327.
@@ -9,12 +11,12 @@ Run `python3 apps/snooze-website/src/camp-vsl/preview.py` from the repo root, th
 ## Behaviour
 
 - Two-question local fit check, with required-answer validation, back and restart.
-- Under six months routes to Snooze support; uncertainty routes to email; ready families reach the existing Camp date/pricing section.
+- Under five months routes to Snooze support; uncertainty routes to email; ready families reach the existing Camp date/pricing section.
 - No submission endpoint, lead collection, storage or analytics payload. The check cannot reserve a place or confirm clinical suitability.
 - Native video controls and optional captions; native expandable FAQs.
 - Footer source remains verbatim. Page script resolves relative footer links to joinsnooze.com and supplies missing accessible semantics.
 
-## Release boundary
+## Release boundary (historical, October 2026)
 
 Built for local review only, not published. The provisional video was already marked FOR_REVIEW_NOT_APPROVED in the October 18 creative manifest. It is a short explanation of daily coaching, not an approved full VSL. Select an approved final video, host it with captions and replace local media URLs before production. A new longer video is outside this page build.
 

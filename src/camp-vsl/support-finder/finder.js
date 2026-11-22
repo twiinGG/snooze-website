@@ -4,7 +4,7 @@
   const label = (key, value) => C.questions.find(q => q.key === key)?.options.find(o => o[0] === value)?.[1];
   function recommend(a) {
     if (!C.questions.every(q => q.options.some(o => o[0] === a[q.key]))) throw new Error('Complete all five questions.');
-    const young = ['newborn', 'threefour', 'five'].includes(a.age);
+    const young = ['newborn', 'threefour'].includes(a.age);
     let route = young ? 'young' : 'camp';
     if (a.support === 'private') route = 'private';
     else if (a.support === 'unsure') route = 'talk';

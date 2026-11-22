@@ -18,7 +18,7 @@ let count=0;const routes=new Set();
 function walk(a,i){
  if(i===config.questions.length){
   const r=recommend(a);count++;routes.add(r.route);
-  if(['newborn','threefour','five'].includes(a.age))assert.notEqual(r.route,'camp');
+  if(['newborn','threefour'].includes(a.age))assert.notEqual(r.route,'camp');
   if(a.support==='private')assert.equal(r.route,'private');
   for(const q of config.questions)assert.ok(r.summary.includes(q.options.find(x=>x[0]===a[q.key])[1]));
   assert.ok(r.summary.includes(r.reading.url));assert.ok(r.summary.includes(config.coachQuestions[a.barrier]));
