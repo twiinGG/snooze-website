@@ -1,7 +1,114 @@
 (function(){
 const ready=fn=>{const id='camp-vsl-page';const attempt=()=>{if(document.getElementById(id)){fn();return true}return false};const afterLoad=()=>{if(attempt())return;if(typeof MutationObserver!=='function')return;const obs=new MutationObserver(()=>{if(attempt())obs.disconnect()});obs.observe(document.documentElement,{childList:true,subtree:true})};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',afterLoad);else afterLoad()};
 const CAPTIONS="WEBVTT\n\n00:00:00.130 --> 00:00:01.750\nevery morning at seven a.m.,\n\n00:00:01.750 --> 00:00:03.510\nyou'll get a post from me saying,\n\n00:00:03.510 --> 00:00:06.070\ncould we please have your 24-hour sleep logs?\n\n00:00:06.850 --> 00:00:08.790\nBec and I will then go through all of them\n\n00:00:08.790 --> 00:00:11.470\nwith a fine-toothed comb and write back to you\n\n00:00:11.470 --> 00:00:14.270\nwith any notes, suggestions, tweaks, cheerleading,\n\n00:00:14.750 --> 00:00:17.310\na lot of exclamation marks of woo-hoo,\n\n00:00:17.590 --> 00:00:18.510\nlook at that night feed.\n\n00:00:19.750 --> 00:00:21.670\nAll of that, we will put that in there\n\n00:00:21.670 --> 00:00:23.030\nand then we meet at 10 a.m.\n\n00:00:23.530 --> 00:00:25.310\nThen we have our 10 a.m. roll call,\n\n00:00:25.510 --> 00:00:26.590\nwhere we chat to all of you,\n\n00:00:26.670 --> 00:00:28.410\nwe work through one family at a time.\n";
-const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||root.dataset.campReady)return;root.dataset.campReady='true';if(root.querySelector('.wistia_embed')&&!window.Wistia&&!document.querySelector('script[src*="fast.wistia.com/assets/external/E-v1.js"]')){const w=document.createElement('script');w.src='https://fast.wistia.com/assets/external/E-v1.js';w.async=true;document.head.appendChild(w)}const track=root.querySelector('[data-camp-captions]');if(track)track.src=URL.createObjectURL(new Blob([CAPTIONS],{type:'text/vtt'}));root.querySelectorAll('.snooze-footer-clean a[href^="/"]').forEach(a=>{a.href=new URL(a.getAttribute('href'),'https://www.joinsnooze.com').href});const logo=root.querySelector('.sf-logo a');if(logo)logo.setAttribute('aria-label','Snooze home');root.querySelectorAll('.sf-heading').forEach(h=>h.setAttribute('aria-level','3'))};
+function loadWistia(){
+  const src = 'https://fast.wistia.com/assets/external/E-v1.js';
+  if (window.Wistia || document.querySelector('script[src*="' + new URL(src).pathname + '"]')) return;
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+function startCampStories(root, vsl){
+  const section = root.querySelector('#camp-stories');
+  if (!section) return;
+  const track = section.querySelector('.cs-track');
+  const controls = section.querySelector('.cs-controls');
+  const prev = section.querySelector('.cs-prev');
+  const next = section.querySelector('.cs-next');
+  if (!track || !controls || !prev || !next) return;
+  const cards = track.querySelectorAll('.cs-card');
+  if (cards.length < 2) return;
+
+  function syncControls(){
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    controls.classList.toggle('cs-controls--off', maxScroll <= 1);
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= maxScroll - 1;
+  }
+
+  function scrollCard(direction){
+    const step = cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollBy({ left: step * direction, behavior: reducedMotion ? 'auto' : 'smooth' });
+  }
+
+  prev.addEventListener('click', () => scrollCard(-1));
+  next.addEventListener('click', () => scrollCard(1));
+  track.addEventListener('scroll', syncControls, { passive: true });
+  window.addEventListener('resize', syncControls);
+  syncControls();
+
+  const embeds = Array.from(section.querySelectorAll('.cs-video'));
+  const stories = new Map(embeds.map(box => [box.dataset.wistiaId, box.dataset.story]));
+  const embedPrefix = 'wistia_async_';
+  const vslClass = vsl && Array.from(vsl.classList).find(name => name.startsWith(embedPrefix));
+  const vslId = vslClass && vslClass.slice(embedPrefix.length);
+  const players = new Set();
+  const playedStories = new Set();
+  window._wq = window._wq || [];
+  window._wq.push({
+    id: '_all',
+    onReady: function(video){
+      const id = video.hashedId();
+      const story = stories.get(id);
+      if ((!story && id !== vslId) || players.has(video)) return;
+      players.add(video);
+      video.bind('play', function(){
+        players.forEach(other => {
+          if (other !== video && other.state() === 'playing') other.pause();
+        });
+        if (story && !playedStories.has(story)) {
+          playedStories.add(story);
+          if (window.dataLayer) window.dataLayer.push({ event: 'camp_story_play', story, surface: 'camp_snooze_program' });
+        }
+      });
+    }
+  });
+
+  function loadStories(){
+    embeds.forEach(box => {
+      const id = box.dataset.wistiaId;
+      window._wq.push({
+        id,
+        options: {
+          playerColor: '203d34',
+          videoFoam: false,
+          fitStrategy: 'cover',
+          controlsVisibleOnLoad: false,
+          playbar: true,
+          volumeControl: true,
+          fullscreenButton: true,
+          settingsControl: false,
+          playButton: true,
+          playsinline: true,
+          muted: false,
+          autoPlay: false,
+          silentAutoPlay: false,
+          plugin: { 'captions-v1': { onByDefault: false }, captions: { onByDefault: false } }
+        }
+      });
+      const embed = document.createElement('div');
+      embed.className = 'cs-embed wistia_embed ' + embedPrefix + id;
+      box.appendChild(embed);
+    });
+    loadWistia();
+  }
+
+  if (typeof IntersectionObserver === 'function') {
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      loadStories();
+    }, { rootMargin: '600px' });
+    observer.observe(section);
+  } else {
+    loadStories();
+  }
+}
+
+const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||root.dataset.campReady)return;root.dataset.campReady='true';const vsl=root.querySelector('.wistia_embed');if(vsl)loadWistia();startCampStories(root,vsl);const track=root.querySelector('[data-camp-captions]');if(track)track.src=URL.createObjectURL(new Blob([CAPTIONS],{type:'text/vtt'}));root.querySelectorAll('.snooze-footer-clean a[href^="/"]').forEach(a=>{a.href=new URL(a.getAttribute('href'),'https://www.joinsnooze.com').href});const logo=root.querySelector('.sf-logo a');if(logo)logo.setAttribute('aria-label','Snooze home');root.querySelectorAll('.sf-heading').forEach(h=>h.setAttribute('aria-level','3'))};
 (function () {
   'use strict';
 
