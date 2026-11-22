@@ -195,7 +195,7 @@ const css = `#${WRAP}{--c-coral:#F43357;--c-coral-hover:#D62646;--c-navy:#1F293B
 #${WRAP} .gl-term.is-open .gl-more{display:block}
 #${WRAP} .gl-context{color:var(--c-muted);margin:0 0 14px}
 #${WRAP} .gl-related{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 14px}
-#${WRAP} .gl-related-label{font-size:.8rem;font-weight:600;color:var(--c-sage);margin-right:2px}
+#${WRAP} .gl-related-label{font-size:.8rem;font-weight:600;color:var(--c-navy);margin-right:2px}
 #${WRAP} .gl-chip{font-size:.82rem;font-weight:500;color:var(--c-coral-hover);background:rgba(244,51,87,.08);border-radius:50px;padding:5px 12px}
 #${WRAP} .gl-chip:hover{background:rgba(244,51,87,.18)}
 #${WRAP} .gl-cta{display:inline-block;font-size:.92rem;font-weight:600;color:var(--c-coral)}

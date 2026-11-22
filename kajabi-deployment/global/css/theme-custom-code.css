@@ -13013,3 +13013,20 @@ body.currency-loaded .dynamic-cta {
 @media (max-width: 600px) {
   #snooze-membership-page .membership-hero { padding-top: 2rem; }
 }
+
+:is(#section-1730252376707, #section-1764977266941) #block-1730252376707_0 h1 {
+  font-size: 2rem !important;
+}
+
+:is(#section-1730252376707, #section-1764977266941) #block-1730252376707_0 h2 {
+  font-size: 1.5rem !important;
+}
+
+:is(#section-1730252376707, #section-1764977266941) #block-1730252376707_0 h3 {
+  font-size: 1.2rem !important;
+}
+
+:is(#section-1730252376707, #section-1764977266941) #block-1730252376707_0 a {
+  color: #D62646;
+  text-decoration: underline;
+}
