@@ -46,9 +46,9 @@
 #camp-vsl-page .snooze-footer-clean{background:var(--forest-deep);color:var(--cream);padding:54px 24px 24px}#camp-vsl-page .sf-container{max-width:1080px;margin:auto}#camp-vsl-page .sf-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:30px}#camp-vsl-page .sf-logo svg{width:130px;height:45px;fill:var(--cream)}#camp-vsl-page .sf-logo svg path{fill:var(--cream)}#camp-vsl-page .sf-heading{font:600 16px var(--body);margin:0 0 20px;color:var(--cream)}#camp-vsl-page .sf-links{list-style:none;padding:0;margin:0}#camp-vsl-page .sf-links li{margin:9px 0}#camp-vsl-page .sf-links a,#camp-vsl-page .sf-socials a{font-size:12px;text-decoration:none;color:var(--sage-soft)}#camp-vsl-page .sf-links a:hover,#camp-vsl-page .sf-socials a:hover{text-decoration:underline}#camp-vsl-page .sf-tagline{font-size:12px;color:var(--sage-soft)}#camp-vsl-page .sf-socials{display:flex;gap:12px;flex-wrap:wrap}#camp-vsl-page .sf-bottom{border-top:1px solid #ffffff30;margin-top:36px;padding-top:22px;font-size:12px;color:var(--sage-soft)}
 #camp-vsl-page .skip-link{position:absolute;left:16px;top:-100px;background:white;padding:10px;z-index:2}#camp-vsl-page .skip-link:focus{top:10px}
 #camp-wall{background:var(--camp-cream,#f7f4ee);padding:5rem 0}
-#camp-wall .cw-intro{text-align:center;max-width:44rem;margin:0 auto 2.5rem;padding:0 1rem}
-#camp-wall .cw-kicker{font-family:'Satisfy',cursive;font-size:1.75rem;color:hsl(36,72%,36%);margin:0 0 .25rem}
-#camp-wall h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,2.75rem);font-weight:700;color:var(--camp-forest,#295641);margin:0 0 .75rem;line-height:1.1}
+#camp-wall .cw-intro,#camp-vsl-page .cs-intro{text-align:center;max-width:44rem;margin:0 auto 2.5rem;padding:0 1rem}
+#camp-wall .cw-kicker,#camp-vsl-page .cs-kicker{font-family:'Satisfy',cursive;font-size:1.75rem;color:hsl(36,72%,36%);margin:0 0 .25rem}
+#camp-wall h2,#camp-vsl-page .cs-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,2.75rem);font-weight:700;color:var(--camp-forest,#295641);margin:0 0 .75rem;line-height:1.1}
 #camp-wall .cw-sub{font-family:'DM Sans',sans-serif;color:hsl(150,15%,36%);font-size:1.05rem;margin:0}
 #camp-wall .cw-grid{max-width:72rem;margin:0 auto;padding:0 1.25rem;columns:3 18rem;column-gap:1.25rem}
 #camp-wall .cw-card{break-inside:avoid;margin:0 0 1.25rem;background:#fff;border-radius:1rem;padding:1.4rem 1.5rem 1.2rem;box-shadow:0 10px 26px -14px hsl(150 25% 20% / .35);font-family:'DM Sans',sans-serif}
@@ -94,7 +94,22 @@
 #camp-vsl-page .camp-review-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;color:var(--muted)}
 #camp-vsl-page .camp-google-source{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 #camp-vsl-page .camp-google-source img{display:block;width:20px;height:20px;object-fit:contain}
-#camp-vsl-page #camp-wall .cw-kicker{font:600 18px/1.4 var(--body)}
+#camp-vsl-page #camp-wall .cw-kicker,#camp-vsl-page .cs-kicker{font:600 18px/1.4 var(--body)}
+#camp-vsl-page .cs-intro{padding-top:5rem}
+#camp-vsl-page .cs-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-behavior:auto}
+#camp-vsl-page .cs-track::-webkit-scrollbar{display:none}
+#camp-vsl-page .cs-card{flex:0 0 min(72vw,300px);min-width:0;margin:0;scroll-snap-align:start}
+#camp-vsl-page .cs-video{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:var(--radius);background:var(--forest-deep)}
+#camp-vsl-page .cs-embed{position:absolute;inset:0;width:100%;height:100%}
+#camp-vsl-page .cs-caption{display:flex;flex-direction:column;gap:.1rem;margin:12px 0 0;color:var(--muted);font-size:.82rem}
+#camp-vsl-page .cs-name{font-weight:700;color:var(--ink);font-size:.95rem}
+#camp-vsl-page .cs-controls{display:none}
+@media(min-width:768px){
+  #camp-vsl-page .cs-card{flex-basis:300px}
+  #camp-vsl-page .cs-controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  #camp-vsl-page .cs-prev,#camp-vsl-page .cs-next{width:44px;height:44px;padding:0;border:1px solid var(--forest);border-radius:50%;background:var(--white);color:var(--forest);cursor:pointer}
+  #camp-vsl-page .cs-prev:disabled,#camp-vsl-page .cs-next:disabled{opacity:.45;cursor:default}
+}
 @media(max-width:700px){#camp-vsl-page .camp-review{padding:24px}#camp-vsl-page .camp-review blockquote,#camp-vsl-page .camp-review blockquote p{font-size:16px}}
 #camp-vsl-page .rhythm-split{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:center}
 #camp-vsl-page .rhythm-points{display:grid;gap:18px}

@@ -350,4 +350,46 @@ test('dateLabel and countdown match the old page', () => {
   assert.equal(pricing.countdownLabel('2026-12-05T00:00:00Z', Date.parse('2026-12-05T00:00:00Z')), '');
 });
 
+const storyIds = ['CSID_ALICIA', 'CSID_CHELSI', 'CSID_CHANTELLE', 'CSID_PENNY'];
+const storySection = /(<section id="camp-stories"[^>]*>[\s\S]*?<\/section>)/.exec(builtHtml)?.[1] || '';
+
+test('Camp stories sits immediately above the review wall', () => {
+  assert.ok(storySection);
+  const afterStories = builtHtml.slice(builtHtml.indexOf(storySection) + storySection.length);
+  assert.match(afterStories, /^\s*<section id="camp-wall"/);
+  assert.match(storySection, /aria-labelledby="camp-stories-title"/);
+  assert.match(storySection, /<p class="cw-kicker cs-kicker">Camp stories<\/p>/);
+  assert.match(storySection, /id="camp-stories-title">Hear it from Camp parents<\/h2>/);
+});
+
+test('Camp stories has four cards in order with unique embed ids and the approved captions', () => {
+  const cards = [...storySection.matchAll(/<figure class="cs-card">([\s\S]*?)<\/figure>/g)];
+  const names = ['Alicia E.', 'Chelsi B.', 'Chantelle C.', 'Penny C.'];
+  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
+  assert.equal(cards.length, storyIds.length);
+  for (const [index, [, card]] of cards.entries()) {
+    const id = storyIds[index];
+    assert.ok(card.includes('data-wistia-id="' + id + '"'));
+    assert.ok(card.includes('data-story="' + slugs[index] + '"'));
+    assert.ok(card.includes('>' + names[index] + '</span><span>Camp Snooze parent</span>'));
+    assert.equal(builtHtml.split(id).length - 1, 1);
+    assert.ok(!builtJs.includes(id) && !builtCss.includes(id));
+  }
+});
+
+test('Camp stories ships markup only with no pre-initialized Wistia embeds', () => {
+  assert.doesNotMatch(storySection, /\bstyle\s*=|<(?:style|script)\b|wistia_async_/i);
+});
+
+test('Camp stories code lazy-loads at 600px, coordinates playback with the VSL and tracks first plays', () => {
+  assert.match(builtJs, /new IntersectionObserver\([\s\S]*?rootMargin:\s*'600px'/);
+  assert.match(builtJs, /id:\s*'_all',[\s\S]*?video\.bind\('play'/);
+  assert.match(builtJs, /video\.hashedId\(\)[\s\S]*?id !== vslId[\s\S]*?other\.pause\(\)/);
+  assert.match(builtJs, /!playedStories\.has\(story\)[\s\S]*?window\.dataLayer\.push\(\{ event: 'camp_story_play', story, surface: 'camp_snooze_program' \}\)/);
+});
+
+test('Camp stories shares the only Wistia script reference with the VSL', () => {
+  assert.equal(((builtJs + builtHtml).match(/E-v1\.js/g) || []).length, 1);
+});
+
 console.log('\n' + count + ' tests passed');
