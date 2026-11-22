@@ -94,7 +94,6 @@ test('Kade rulings: no qualifying lines, hero video and copy, 32 Google reviews,
     'Review the current price', 'One camp at a time', 'does not confirm suitability', 'Prefer to read']) {
     assert.ok(!builtHtml.includes(phrase) && !builtJs.includes(phrase), phrase);
   }
-  assert.ok(builtHtml.includes('Read the reviews from previous Camp participants'));
   assert.ok(builtHtml.includes('wistia_async_ud1nugmerp'));
   assert.ok(builtHtml.includes('<p class="duration">How Camp works</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily Roll Call.<br>It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
   assert.ok(builtHtml.includes('Join over 100+ families'));
@@ -350,7 +349,8 @@ test('dateLabel and countdown match the old page', () => {
   assert.equal(pricing.countdownLabel('2026-12-05T00:00:00Z', Date.parse('2026-12-05T00:00:00Z')), '');
 });
 
-const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu'];
+const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu', 'CSID_BEC'];
+const storySlugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c', 'bec-k'];
 const storySection = /(<section id="camp-stories"[^>]*>[\s\S]*?<\/section>)/.exec(builtHtml)?.[1] || '';
 
 test('Camp stories sits immediately above the review wall', () => {
@@ -363,16 +363,30 @@ test('Camp stories sits immediately above the review wall', () => {
   assert.match(builtCss, /#camp-vsl-page #camp-stories\s*\{\s*background:\s*var\(--camp-cream,\s*#f7f4ee\)\s*;?\s*\}/);
 });
 
-test('Camp stories has four cards in order with unique embed ids and the approved captions', () => {
-  const cards = [...storySection.matchAll(/<figure class="cs-card">([\s\S]*?)<\/figure>/g)];
-  const names = ['Alicia E.', 'Chelsi B.', 'Chantelle C.', 'Penny C.'];
-  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
-  assert.equal(cards.length, storyIds.length);
-  for (const [index, [, card]] of cards.entries()) {
+test('Review wall uses the approved intro copy', () => {
+  const intro = /<section id="camp-wall"[^>]*>\s*<div class="cw-intro">([\s\S]*?)<\/div>/.exec(builtHtml)?.[1] || '';
+  assert.ok(intro.includes('<p class="cw-kicker">More reviews from happy Campers</p>'));
+  assert.ok(intro.includes('<h2 id="camp-wall-title">Giving nights back, one family at a time</h2>'));
+  assert.ok(intro.includes('<p class="cw-sub">We’re proud of our success, but even prouder of our Camp Alumni</p>'));
+});
+
+test('Camp stories has five named cards in order with unique embed ids and no captions', () => {
+  const cards = [...storySection.matchAll(/<figure class="cs-card" aria-label="([^"]+)">([\s\S]*?)<\/figure>/g)];
+  const labels = [
+    'Alicia E., Camp #19 Alumni',
+    'Chelsi B., Camp #19 Alumni',
+    'Chantelle C., Camp #19 Alumni',
+    'Penny C., Camp #19 Alumni',
+    'Bec K.',
+  ];
+  assert.equal(cards.length, 5);
+  assert.equal((storySection.match(/<figure class="cs-card"/g) || []).length, cards.length);
+  assert.doesNotMatch(storySection, /\bcs-caption\b/);
+  for (const [index, [, label, card]] of cards.entries()) {
     const id = storyIds[index];
     assert.ok(card.includes('data-wistia-id="' + id + '"'));
-    assert.ok(card.includes('data-story="' + slugs[index] + '"'));
-    assert.ok(card.includes('>' + names[index] + '</span><span>Camp Snooze parent</span>'));
+    assert.ok(card.includes('data-story="' + storySlugs[index] + '"'));
+    assert.equal(label, labels[index]);
     assert.equal(builtHtml.split(id).length - 1, 1);
     assert.ok(!builtJs.includes(id) && !builtCss.includes(id));
   }
@@ -407,11 +421,10 @@ test('Camp stories shares the only Wistia script reference with the VSL', () => 
 });
 
 test('Camp stories renders each poster as the first video child and uses it as the Wistia still', () => {
-  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
   const posters = [...storySection.matchAll(/<div class="cs-video"[^>]* data-story="([^"]+)">\s*<img class="cs-poster" src="([^"]+)" alt="" loading="lazy" decoding="async" width="1080" height="1920">/g)];
-  assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), slugs.map(slug => [
+  assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), storySlugs.map(slug => [
     slug,
-    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-22/' + slug + '-poster.jpg'
+    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-23/' + slug + '-poster.jpg'
   ]));
   assert.match(builtCss, /#camp-vsl-page \.cs-poster\{position:absolute;inset:0;width:100%;height:100%;object-fit:cover\}/);
   assert.match(builtJs, /options:\s*\{\s*stillUrl: box\.querySelector\('\.cs-poster'\)\.src,/);
