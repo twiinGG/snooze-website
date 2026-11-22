@@ -349,8 +349,8 @@ test('dateLabel and countdown match the old page', () => {
   assert.equal(pricing.countdownLabel('2026-12-05T00:00:00Z', Date.parse('2026-12-05T00:00:00Z')), '');
 });
 
-const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu', '3dmlbvluc1'];
-const storySlugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c', 'bec-k'];
+const storyIds = ['3dmlbvluc1', 'ulv9zvm4mu', 'ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp'];
+const storySlugs = ['bec-k', 'penny-c', 'alicia-e', 'chelsi-b', 'chantelle-c'];
 const storySection = /(<section id="camp-stories"[^>]*>[\s\S]*?<\/section>)/.exec(builtHtml)?.[1] || '';
 
 test('Camp stories sits immediately above the review wall', () => {
@@ -373,11 +373,11 @@ test('Review wall uses the approved intro copy', () => {
 test('Camp stories has five named cards in order with unique embed ids and no captions', () => {
   const cards = [...storySection.matchAll(/<figure class="cs-card" aria-label="([^"]+)">([\s\S]*?)<\/figure>/g)];
   const labels = [
+    'Bec K., Camp #12 Alumni',
+    'Penny C., Camp #19 Alumni',
     'Alicia E., Camp #19 Alumni',
     'Chelsi B., Camp #19 Alumni',
     'Chantelle C., Camp #19 Alumni',
-    'Penny C., Camp #19 Alumni',
-    'Bec K., Camp #12 Alumni',
   ];
   assert.equal(cards.length, 5);
   assert.equal((storySection.match(/<figure class="cs-card"/g) || []).length, cards.length);
