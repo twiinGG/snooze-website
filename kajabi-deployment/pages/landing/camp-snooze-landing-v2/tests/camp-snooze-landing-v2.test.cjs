@@ -349,7 +349,7 @@ test('dateLabel and countdown match the old page', () => {
   assert.equal(pricing.countdownLabel('2026-12-05T00:00:00Z', Date.parse('2026-12-05T00:00:00Z')), '');
 });
 
-const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu', 'CSID_BEC'];
+const storyIds = ['ta6pdclyxs', 'mkvfx9ejzr', 'acv79nzthp', 'ulv9zvm4mu', '3dmlbvluc1'];
 const storySlugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c', 'bec-k'];
 const storySection = /(<section id="camp-stories"[^>]*>[\s\S]*?<\/section>)/.exec(builtHtml)?.[1] || '';
 
