@@ -96,7 +96,7 @@ test('Kade rulings: no qualifying lines, hero video and copy, 32 Google reviews,
   }
   assert.ok(builtHtml.includes('Read the reviews from previous Camp participants'));
   assert.ok(builtHtml.includes('wistia_async_ud1nugmerp'));
-  assert.ok(builtHtml.includes('<p class="duration">How Camp works · 8 minutes</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily roll call. It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
+  assert.ok(builtHtml.includes('<p class="duration">How Camp works</p><h2>Here’s how your two weeks at Camp work.</h2><p>Sally walks you through it, from your personalised plan to daily Roll Call.<br>It’s the same approach she’s used to help thousands of families get better sleep.</p>'));
   assert.ok(builtHtml.includes('Join over 100+ families'));
   assert.equal((builtHtml.match(/<blockquote><p>/g) || []).length, 32);
   assert.equal((builtHtml.match(/googleg_48dp\.png/g) || []).length, 32);
