@@ -95,6 +95,7 @@
 #camp-vsl-page .camp-google-source{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 #camp-vsl-page .camp-google-source img{display:block;width:20px;height:20px;object-fit:contain}
 #camp-vsl-page #camp-wall .cw-kicker,#camp-vsl-page .cs-kicker{font:600 18px/1.4 var(--body)}
+#camp-vsl-page #camp-stories{background:var(--camp-cream,#f7f4ee)}
 #camp-vsl-page .cs-intro{padding-top:5rem}
 #camp-vsl-page .cs-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-behavior:auto}
 #camp-vsl-page .cs-track::-webkit-scrollbar{display:none}
@@ -107,6 +108,7 @@
 @media(min-width:768px){
   #camp-vsl-page .cs-card{flex-basis:300px}
   #camp-vsl-page .cs-controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  #camp-vsl-page .cs-controls--off{visibility:hidden}
   #camp-vsl-page .cs-prev,#camp-vsl-page .cs-next{width:44px;height:44px;padding:0;border:1px solid var(--forest);border-radius:50%;background:var(--white);color:var(--forest);cursor:pointer}
   #camp-vsl-page .cs-prev:disabled,#camp-vsl-page .cs-next:disabled{opacity:.45;cursor:default}
 }

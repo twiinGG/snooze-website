@@ -14,14 +14,16 @@ function startCampStories(root, vsl){
   const section = root.querySelector('#camp-stories');
   if (!section) return;
   const track = section.querySelector('.cs-track');
-  const cards = track.querySelectorAll('.cs-card');
   const controls = section.querySelector('.cs-controls');
   const prev = section.querySelector('.cs-prev');
   const next = section.querySelector('.cs-next');
+  if (!track || !controls || !prev || !next) return;
+  const cards = track.querySelectorAll('.cs-card');
+  if (cards.length < 2) return;
 
   function syncControls(){
     const maxScroll = track.scrollWidth - track.clientWidth;
-    controls.hidden = maxScroll <= 1;
+    controls.classList.toggle('cs-controls--off', maxScroll <= 1);
     prev.disabled = track.scrollLeft <= 1;
     next.disabled = track.scrollLeft >= maxScroll - 1;
   }
@@ -106,7 +108,7 @@ function startCampStories(root, vsl){
   }
 }
 
-const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||root.dataset.campReady)return;root.dataset.campReady='true';const vsl=root.querySelector('.wistia_embed');startCampStories(root,vsl);if(vsl)loadWistia();const track=root.querySelector('[data-camp-captions]');if(track)track.src=URL.createObjectURL(new Blob([CAPTIONS],{type:'text/vtt'}));root.querySelectorAll('.snooze-footer-clean a[href^="/"]').forEach(a=>{a.href=new URL(a.getAttribute('href'),'https://www.joinsnooze.com').href});const logo=root.querySelector('.sf-logo a');if(logo)logo.setAttribute('aria-label','Snooze home');root.querySelectorAll('.sf-heading').forEach(h=>h.setAttribute('aria-level','3'))};
+const start=()=>{const root=document.getElementById('camp-vsl-page');if(!root||root.dataset.campReady)return;root.dataset.campReady='true';const vsl=root.querySelector('.wistia_embed');if(vsl)loadWistia();startCampStories(root,vsl);const track=root.querySelector('[data-camp-captions]');if(track)track.src=URL.createObjectURL(new Blob([CAPTIONS],{type:'text/vtt'}));root.querySelectorAll('.snooze-footer-clean a[href^="/"]').forEach(a=>{a.href=new URL(a.getAttribute('href'),'https://www.joinsnooze.com').href});const logo=root.querySelector('.sf-logo a');if(logo)logo.setAttribute('aria-label','Snooze home');root.querySelectorAll('.sf-heading').forEach(h=>h.setAttribute('aria-level','3'))};
 (function () {
   'use strict';
 

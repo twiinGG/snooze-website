@@ -360,6 +360,7 @@ test('Camp stories sits immediately above the review wall', () => {
   assert.match(storySection, /aria-labelledby="camp-stories-title"/);
   assert.match(storySection, /<p class="cw-kicker cs-kicker">Camp stories<\/p>/);
   assert.match(storySection, /id="camp-stories-title">Hear it from Camp parents<\/h2>/);
+  assert.match(builtCss, /#camp-vsl-page #camp-stories\s*\{\s*background:\s*var\(--camp-cream,\s*#f7f4ee\)\s*;?\s*\}/);
 });
 
 test('Camp stories has four cards in order with unique embed ids and the approved captions', () => {
@@ -381,6 +382,18 @@ test('Camp stories ships markup only with no pre-initialized Wistia embeds', () 
   assert.doesNotMatch(storySection, /\bstyle\s*=|<(?:style|script)\b|wistia_async_/i);
 });
 
+test('Camp stories controls reserve their row on desktop and stay out of mobile layout', () => {
+  const controlsTag = /<div class="cs-controls\b[^>]*>/.exec(storySection)?.[0] || '';
+  assert.match(controlsTag, /class="cs-controls cs-controls--off"/);
+  assert.doesNotMatch(controlsTag, /\s(?:hidden|style)\b/);
+  assert.match(builtCss, /#camp-vsl-page \.cs-controls\s*\{\s*display:\s*none\s*;?\s*\}/);
+  const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
+  assert.match(desktopRules, /#camp-vsl-page \.cs-controls\s*\{\s*display:\s*flex\b/);
+  assert.match(desktopRules, /#camp-vsl-page \.cs-controls--off\s*\{\s*visibility:\s*hidden\s*;?\s*\}/);
+  assert.match(builtJs, /controls\.classList\.toggle\('cs-controls--off',\s*maxScroll <= 1\)/);
+  assert.doesNotMatch(builtJs, /controls\.hidden\b/);
+});
+
 test('Camp stories code lazy-loads at 600px, coordinates playback with the VSL and tracks first plays', () => {
   assert.match(builtJs, /new IntersectionObserver\([\s\S]*?rootMargin:\s*'600px'/);
   assert.match(builtJs, /id:\s*'_all',[\s\S]*?video\.bind\('play'/);
@@ -390,6 +403,7 @@ test('Camp stories code lazy-loads at 600px, coordinates playback with the VSL a
 
 test('Camp stories shares the only Wistia script reference with the VSL', () => {
   assert.equal(((builtJs + builtHtml).match(/E-v1\.js/g) || []).length, 1);
+  assert.match(builtJs, /const start=\(\)=>\{[^\n]*if\(vsl\)loadWistia\(\);\s*startCampStories\(root,vsl\);/);
 });
 
 console.log('\n' + count + ' tests passed');
