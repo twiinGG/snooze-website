@@ -22,7 +22,7 @@ Pastes go through `apps/snooze-website/scripts/emit_paste_js.py` (token-safe, ve
 These are the only paste targets. Edit these files directly; there is no generator. Folder renamed from `camp-snooze-program/` on November 22, 2026; v1 is `../camp-snooze-landing-v1/`. Content matches the reconciled release `7633b9142c` on branch `merge/origin-main-2026-11-22` (the November 9 published page plus the November 22 pricing, local call times and VSL changes), with files renamed to this page.
 
 - `camp-snooze-landing-v2.js` is the only JavaScript, pricing included. There is no separate pricing file.
-- `notes/index.html.NOTES.md` covers the ported functions and Kade's copy rulings.
+- `notes/camp-snooze-landing-v2.html.NOTES.md` covers the ported functions and Kade's copy rulings.
 - `src/camp-vsl/` and the generator `build.py` are retired. Do not use them.
 
 ## Tests and preview
