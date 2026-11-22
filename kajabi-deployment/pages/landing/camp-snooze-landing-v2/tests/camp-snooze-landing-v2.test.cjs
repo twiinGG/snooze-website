@@ -406,4 +406,15 @@ test('Camp stories shares the only Wistia script reference with the VSL', () => 
   assert.match(builtJs, /const start=\(\)=>\{[^\n]*if\(vsl\)loadWistia\(\);\s*startCampStories\(root,vsl\);/);
 });
 
+test('Camp stories renders each poster as the first video child and uses it as the Wistia still', () => {
+  const slugs = ['alicia-e', 'chelsi-b', 'chantelle-c', 'penny-c'];
+  const posters = [...storySection.matchAll(/<div class="cs-video"[^>]* data-story="([^"]+)">\s*<img class="cs-poster" src="([^"]+)" alt="" loading="lazy" decoding="async" width="1080" height="1920">/g)];
+  assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), slugs.map(slug => [
+    slug,
+    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-22/' + slug + '-poster.jpg'
+  ]));
+  assert.match(builtCss, /#camp-vsl-page \.cs-poster\{position:absolute;inset:0;width:100%;height:100%;object-fit:cover\}/);
+  assert.match(builtJs, /options:\s*\{\s*stillUrl: box\.querySelector\('\.cs-poster'\)\.src,/);
+});
+
 console.log('\n' + count + ' tests passed');

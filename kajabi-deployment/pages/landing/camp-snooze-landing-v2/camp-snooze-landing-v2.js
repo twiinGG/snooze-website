@@ -73,6 +73,7 @@ function startCampStories(root, vsl){
       window._wq.push({
         id,
         options: {
+          stillUrl: box.querySelector('.cs-poster').src,
           playerColor: '203d34',
           videoFoam: false,
           fitStrategy: 'cover',
