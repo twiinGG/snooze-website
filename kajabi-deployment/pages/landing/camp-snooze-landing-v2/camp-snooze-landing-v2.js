@@ -17,9 +17,12 @@ function startCampStories(root, vsl){
   const controls = section.querySelector('.cs-controls');
   const prev = section.querySelector('.cs-prev');
   const next = section.querySelector('.cs-next');
+  const more = section.querySelector('.cs-more');
   if (!track || !controls || !prev || !next) return;
   const cards = track.querySelectorAll('.cs-card');
   if (cards.length < 2) return;
+  const desktop = window.matchMedia('(min-width: 768px)');
+  const trackLabel = track.getAttribute('aria-label');
 
   function syncControls(){
     const maxScroll = track.scrollWidth - track.clientWidth;
@@ -34,11 +37,31 @@ function startCampStories(root, vsl){
     track.scrollBy({ left: step * direction, behavior: reducedMotion ? 'auto' : 'smooth' });
   }
 
+  function syncLayout(){
+    track.tabIndex = desktop.matches ? 0 : -1;
+    if (desktop.matches) {
+      track.setAttribute('role', 'region');
+      track.setAttribute('aria-label', trackLabel);
+    } else {
+      track.removeAttribute('role');
+      track.removeAttribute('aria-label');
+    }
+    syncControls();
+  }
+
+  if (more && cards[2]) {
+    more.addEventListener('click', () => {
+      track.classList.add('cs-track--expanded');
+      more.setAttribute('aria-expanded', 'true');
+      cards[2].tabIndex = -1;
+      cards[2].focus();
+    });
+  }
   prev.addEventListener('click', () => scrollCard(-1));
   next.addEventListener('click', () => scrollCard(1));
   track.addEventListener('scroll', syncControls, { passive: true });
-  window.addEventListener('resize', syncControls);
-  syncControls();
+  window.addEventListener('resize', syncLayout);
+  syncLayout();
 
   const embeds = Array.from(section.querySelectorAll('.cs-video'));
   const stories = new Map(embeds.map(box => [box.dataset.wistiaId, box.dataset.story]));

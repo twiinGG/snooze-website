@@ -377,11 +377,12 @@ test('Camp stories has five named cards in order with unique embed ids and no ca
     'Chelsi B., Camp #19 Alumni',
     'Chantelle C., Camp #19 Alumni',
     'Penny C., Camp #19 Alumni',
-    'Bec K.',
+    'Bec K., Camp #12 Alumni',
   ];
   assert.equal(cards.length, 5);
   assert.equal((storySection.match(/<figure class="cs-card"/g) || []).length, cards.length);
   assert.doesNotMatch(storySection, /\bcs-caption\b/);
+  assert.doesNotMatch(builtCss, /\.cs-caption\b/);
   for (const [index, [, label, card]] of cards.entries()) {
     const id = storyIds[index];
     assert.ok(card.includes('data-wistia-id="' + id + '"'));
@@ -394,6 +395,107 @@ test('Camp stories has five named cards in order with unique embed ids and no ca
 
 test('Camp stories ships markup only with no pre-initialized Wistia embeds', () => {
   assert.doesNotMatch(storySection, /\bstyle\s*=|<(?:style|script)\b|wistia_async_/i);
+});
+
+test('Camp stories uses a mobile-only View more button after the controlled track', () => {
+  const trackId = /<div class="cs-track" id="([^"]+)"/.exec(storySection)?.[1];
+  assert.ok(trackId);
+  const button = /<\/figure>\s*<\/div>\s*(<button\b[^>]*>View more<\/button>)/.exec(storySection)?.[1] || '';
+  assert.match(button, /type="button"/);
+  assert.match(button, /class="cs-more btn btn-outline"/);
+  assert.ok(button.includes('aria-controls="' + trackId + '"'));
+  assert.match(button, /aria-expanded="false"/);
+  assert.match(builtCss, /\.cs-more\[aria-expanded="true"\]\s*\{\s*display:none/);
+  const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
+  assert.match(desktopRules, /\.cs-more\s*\{\s*display:none/);
+});
+
+test('Camp stories stacks in page flow before restoring desktop scrolling and all five cards', () => {
+  const trackRules = /\.cs-track\s*\{([^}]+)\}/.exec(builtCss)?.[1] || '';
+  assert.match(trackRules, /display:flex;flex-direction:column;align-items:center;gap:/);
+  assert.doesNotMatch(trackRules, /overflow|scroll-snap/);
+  assert.match(builtCss, /\.cs-card\{width:min\(86vw,360px,100%\)/);
+  assert.match(builtCss, /\.cs-video\{[^}]+aspect-ratio:9\/16/);
+  const hiddenCards = /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:none/;
+  assert.match(builtCss, hiddenCards);
+  const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
+  assert.match(desktopRules, /\.cs-track\s*\{[^}]*flex-direction:row;[^}]*overflow-x:auto;scroll-snap-type:x mandatory/);
+  assert.match(desktopRules, /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:block/);
+});
+
+test('Camp stories restores the region on desktop and keeps the mobile reveal state through resize', () => {
+  function element(attributes = {}) {
+    return {
+      listeners: {},
+      addEventListener(name, handler) { this.listeners[name] = handler; },
+      getAttribute(name) { return attributes[name] ?? null; },
+      setAttribute(name, value) { attributes[name] = value; },
+      removeAttribute(name) { delete attributes[name]; }
+    };
+  }
+  const cards = Array.from({ length: 5 }, () => element());
+  cards[2].focus = () => { focused = cards[2]; };
+  let focused;
+  const classes = new Set();
+  const track = Object.assign(element({ role: 'region', 'aria-label': 'Camp stories' }), {
+    classList: classes,
+    querySelectorAll: () => cards,
+    scrollWidth: 1,
+    clientWidth: 1,
+    scrollLeft: 0
+  });
+  const more = element({ 'aria-expanded': 'false' });
+  const elements = {
+    '.cs-track': track,
+    '.cs-more': more,
+    '.cs-prev': element(),
+    '.cs-next': element(),
+    '.cs-controls': { classList: { toggle() {} } }
+  };
+  const section = { querySelector: selector => elements[selector], querySelectorAll: () => [] };
+  const root = {
+    dataset: {},
+    querySelector: selector => selector === '#camp-stories' ? section : null,
+    querySelectorAll: () => []
+  };
+  const document = { getElementById: id => id === 'camp-vsl-page' ? root : null };
+  const breakpoint = { matches: false };
+  const window = Object.assign(element(), {
+    matchMedia: query => {
+      assert.equal(query, '(min-width: 768px)');
+      return breakpoint;
+    }
+  });
+  class IntersectionObserver { observe() {} }
+  new Function('document', 'window', 'IntersectionObserver', builtJs)(document, window, IntersectionObserver);
+
+  function resize(isDesktop) {
+    breakpoint.matches = isDesktop;
+    window.listeners.resize();
+  }
+  function assertMobileTrack() {
+    assert.equal(track.tabIndex, -1);
+    assert.equal(track.getAttribute('role'), null);
+    assert.equal(track.getAttribute('aria-label'), null);
+  }
+  assertMobileTrack();
+  resize(true);
+  assert.equal(track.tabIndex, 0);
+  assert.equal(track.getAttribute('role'), 'region');
+  assert.equal(track.getAttribute('aria-label'), 'Camp stories');
+  resize(false);
+  assertMobileTrack();
+  assert.equal(more.getAttribute('aria-expanded'), 'false');
+  assert.equal(classes.has('cs-track--expanded'), false);
+
+  more.listeners.click();
+  resize(true);
+  resize(false);
+  assertMobileTrack();
+  assert.equal(more.getAttribute('aria-expanded'), 'true');
+  assert.equal(classes.has('cs-track--expanded'), true);
+  assert.equal(cards[2].tabIndex, -1);
+  assert.equal(focused, cards[2]);
 });
 
 test('Camp stories controls reserve their row on desktop and stay out of mobile layout', () => {
