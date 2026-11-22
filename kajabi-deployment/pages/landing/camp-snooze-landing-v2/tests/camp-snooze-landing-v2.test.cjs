@@ -412,14 +412,14 @@ test('Camp stories uses a mobile-only View more button after the controlled trac
 
 test('Camp stories stacks in page flow before restoring desktop scrolling and all five cards', () => {
   const trackRules = /\.cs-track\s*\{([^}]+)\}/.exec(builtCss)?.[1] || '';
-  assert.match(trackRules, /display:flex;flex-direction:column;align-items:center;gap:/);
+  assert.match(trackRules, /display:flex;flex-direction:column;align-items:center;gap:10px(?:;|$)/);
   assert.doesNotMatch(trackRules, /overflow|scroll-snap/);
   assert.match(builtCss, /\.cs-card\{width:min\(86vw,360px,100%\)/);
   assert.match(builtCss, /\.cs-video\{[^}]+aspect-ratio:9\/16/);
   const hiddenCards = /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:none/;
   assert.match(builtCss, hiddenCards);
   const desktopRules = /@media\s*\(\s*min-width:\s*768px\s*\)\s*\{([\s\S]*?)^\}/m.exec(builtCss)?.[1] || '';
-  assert.match(desktopRules, /\.cs-track\s*\{[^}]*flex-direction:row;[^}]*overflow-x:auto;scroll-snap-type:x mandatory/);
+  assert.match(desktopRules, /\.cs-track\s*\{[^}]*flex-direction:row;[^}]*gap:18px;overflow-x:auto;scroll-snap-type:x mandatory/);
   assert.match(desktopRules, /\.cs-track:not\(\.cs-track--expanded\) > \.cs-card:nth-child\(n\+3\)\s*\{\s*display:block/);
 });
 
@@ -526,7 +526,7 @@ test('Camp stories renders each poster as the first video child and uses it as t
   const posters = [...storySection.matchAll(/<div class="cs-video"[^>]* data-story="([^"]+)">\s*<img class="cs-poster" src="([^"]+)" alt="" loading="lazy" decoding="async" width="1080" height="1920">/g)];
   assert.deepEqual(posters.map(([, slug, url]) => [slug, url]), storySlugs.map(slug => [
     slug,
-    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-23/' + slug + '-poster.jpg'
+    'https://tscmedia.khorus.ai/website/camp-stories/2026-11-23b/' + slug + '-poster.jpg'
   ]));
   assert.match(builtCss, /#camp-vsl-page \.cs-poster\{position:absolute;inset:0;width:100%;height:100%;object-fit:cover\}/);
   assert.match(builtJs, /options:\s*\{\s*stillUrl: box\.querySelector\('\.cs-poster'\)\.src,/);

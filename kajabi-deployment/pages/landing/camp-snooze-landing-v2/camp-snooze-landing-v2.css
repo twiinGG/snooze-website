@@ -97,7 +97,7 @@
 #camp-vsl-page #camp-wall .cw-kicker,#camp-vsl-page .cs-kicker{font:600 18px/1.4 var(--body)}
 #camp-vsl-page #camp-stories{background:var(--camp-cream,#f7f4ee)}
 #camp-vsl-page .cs-intro{padding-top:5rem}
-#camp-vsl-page .cs-track{display:flex;flex-direction:column;align-items:center;gap:24px}
+#camp-vsl-page .cs-track{display:flex;flex-direction:column;align-items:center;gap:10px}
 #camp-vsl-page .cs-card{width:min(86vw,360px,100%);min-width:0;margin:0}
 #camp-vsl-page .cs-track:not(.cs-track--expanded) > .cs-card:nth-child(n+3){display:none}
 #camp-vsl-page .cs-video{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:var(--radius);background:var(--forest-deep)}
